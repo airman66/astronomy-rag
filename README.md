@@ -40,7 +40,7 @@ python scripts/build_index.py data/index --model-file data/models/Qwen3-Embeddin
 
 Скрипт сохраняет FAISS `IndexFlatIP`, таблицу ID, кэш векторов по хэшу текста и манифест с хэшами модели/файлов. Публикуйте артефакты после проверки хэшей. Сервис сверяет их перед загрузкой. Для запросов подаётся инструкция Qwen `Instruct: ...\nQuery: ...`, для документов — исходный текст чанка. Pod для онлайн запросов не нужен.
 
-Карта часовых поясов локализована из [векторного исходника Wikimedia Commons](https://commons.wikimedia.org/wiki/File:World_Time_Zones_Map.svg): 693 текстовые метки, словарь `data/processed/image_labels/world_time_zones.json`. Для повторной сборки нужен `rsvg-convert`:
+Карта часовых поясов локализована из [векторного исходника Wikimedia Commons](https://commons.wikimedia.org/wiki/File:World_Time_Zones_Map.svg): 693 текстовые метки, словарь `data/processed/image_labels/world_time_zones.json`. Исходный SVG не входит в репозиторий; для повторной сборки сохраните его как `data/raw/world_time_zones_map_source.svg` и установите `rsvg-convert`:
 
 ```sh
 python3 scripts/localize_timezone_svg.py data/raw/world_time_zones_map_source.svg data/processed/image_labels/world_time_zones.json data/media/ru/media_jh312430Ry7.png
