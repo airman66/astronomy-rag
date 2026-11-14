@@ -35,13 +35,18 @@ def main() -> None:
     args = parser.parse_args()
     root = args.index_dir
     chunks_file = root / "chunks.jsonl"
-    chunks = [json.loads(line) for line in chunks_file.read_text().splitlines() if line.strip()]
+    chunks = [json.loads(line) for line in chunks_file.read_text(encoding="utf-8").splitlines() if line.strip()]
     source = json.loads((root / "chunk-manifest.json").read_text())
     if checksum(chunks_file) != source["chunks_sha256"] or len(chunks) != source["chunk_count"]:
         raise ValueError("Chunk manifest does not match chunks.jsonl")
     if not chunks:
         raise ValueError("No chunks to index")
-    model_checksum = checksum(args.model_file)
+    try:  # reuse the "<sha> <size> <mtime>" marker written after a full check of the 4.7 GB file
+        from app.vector import model_checksum as verified_checksum
+
+        model_checksum = verified_checksum(args.model_file)
+    except ImportError:
+        model_checksum = checksum(args.model_file)
     cache_path = root / f"embedding-cache-{model_checksum[:16]}.npz"
     cache = {}
     if cache_path.exists():

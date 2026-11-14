@@ -22,6 +22,30 @@ end
 return 0
 """
 
+# Assistant: one accepted request per 10 s. An early retry gets the remaining time of that
+# interval and does not start a new penalty (SPEC: Retry-After = остаток ожидания).
+_ONCE = """
+if redis.call('SET', KEYS[1], '1', 'EX', ARGV[1], 'NX') then return 0 end
+local ttl = redis.call('TTL', KEYS[1])
+if ttl < 1 then ttl = 1 end
+return ttl
+"""
+
+# Shared per-IP ceiling for the assistant: a fixed 10 s window without extra cooldown.
+_CEILING = """
+local count = redis.call('INCR', KEYS[1])
+if count == 1 then redis.call('EXPIRE', KEYS[1], ARGV[2]) end
+if count > tonumber(ARGV[1]) then
+  local ttl = redis.call('TTL', KEYS[1])
+  if ttl < 1 then ttl = 1 end
+  return ttl
+end
+return 0
+"""
+
+# Lease of a DeepSeek slot; must outlive the assistant deadline (main.ASSISTANT_DEADLINE).
+CALL_LEASE_SECONDS = 150
+
 
 def client_ip(request: Request) -> str:
     peer = request.client.host if request.client else "unknown"
@@ -63,6 +87,11 @@ class RedisLimiter:
         limit = {"assistant": 1, "read": 30, "media": 120}[category]
         key = hashlib.sha256(identity.encode()).hexdigest()
         ip_key = hashlib.sha256(ip.encode()).hexdigest()
+        if category == "assistant":
+            retry = int(self.redis.eval(_ONCE, 1, f"rl:assistant:{key}", 10))
+            if retry:
+                return retry
+            return int(self.redis.eval(_CEILING, 1, f"rl:ip:assistant:{ip_key}", limit * 4, 10))
         retry = int(self.redis.eval(_WINDOW, 2, f"rl:{category}:{key}", f"rl:cool:{category}:{key}", limit))
         if retry:
             return retry
@@ -74,13 +103,13 @@ class RedisLimiter:
         redis.call('ZREMRANGEBYSCORE', KEYS[1], '-inf', ARGV[1])
         if redis.call('ZCARD', KEYS[1]) >= tonumber(ARGV[3]) then return 0 end
         redis.call('ZADD', KEYS[1], ARGV[2], ARGV[4])
-        redis.call('EXPIRE', KEYS[1], 180)
+        redis.call('EXPIRE', KEYS[1], 300)
         return 1
         """
         import time
 
         now = time.time()
-        return bool(self.redis.eval(script, 1, "deepseek:inflight", now, now + 120, maximum, token))
+        return bool(self.redis.eval(script, 1, "deepseek:inflight", now, now + CALL_LEASE_SECONDS, maximum, token))
 
     def release_call(self, token: str) -> None:
         self.redis.zrem("deepseek:inflight", token)

@@ -57,3 +57,17 @@ python3 -m scripts.evaluate --answers 10
 ```
 
 Для последней команды нужны `DEEPSEEK_API_KEY` и запущенный сервер эмбеддингов. Результат 50 контрольных вопросов — `data/eval/report.json`; сравнение размеров чанков — `data/eval/chunk_config.json`. OpenAPI доступен в `/openapi.json`, Swagger UI — в `/docs`.
+
+## Ревью переводов и иллюстрации
+
+```sh
+python3 -m scripts.translation_audit all --workers 8        # полный проход: сбор, ревью, проверка, применение, отчёт
+python3 -m scripts.translation_audit report                 # пересобрать отчёт по каждому из 501 ID
+python3 -m scripts.illustrations manifest                   # манифест иллюстраций для всех терминов
+python3 -m scripts.illustrations batches --threads 4        # пакеты для ChatGPT в 4 потока
+python3 -m scripts.illustrations run --workers 1            # очередь генерации через Codex CLI
+python3 -m scripts.illustrations import --dir data/illustrations/inbox
+python3 -m scripts.illustrations verify                     # 501 привязка, файлы, хэши, размеры
+```
+
+Ревью и очередь возобновляемы: готовые элементы не повторяются. Задание для ChatGPT — `data/illustrations/CHATGPT_TASK.md`.

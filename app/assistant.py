@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import asyncio
 import json
 import os
 import re
@@ -19,6 +20,14 @@ GENERAL_PROMPT = """You are a concise astronomy educator. Answer in the requeste
 
 class AssistantUnavailable(Exception):
     pass
+
+
+class AssistantNotConfigured(AssistantUnavailable):
+    """DeepSeek rejected the account (no key, wrong key, no balance): not a transient failure."""
+
+    def __init__(self, message: str, status: int) -> None:
+        super().__init__(message)
+        self.status = status
 
 
 class DeepSeekClient:
@@ -46,6 +55,13 @@ class DeepSeekClient:
                 )
                 response.raise_for_status()
             return json.loads(response.json()["choices"][0]["message"]["content"])
+        except httpx.HTTPStatusError as exc:
+            status = exc.response.status_code
+            if status == 402:
+                raise AssistantNotConfigured("На аккаунте DeepSeek закончился баланс", status) from exc
+            if status in (401, 403):
+                raise AssistantNotConfigured("DeepSeek отклонил ключ API", status) from exc
+            raise AssistantUnavailable(f"DeepSeek request failed: HTTP {status}") from exc
         except (httpx.HTTPError, KeyError, ValueError, TypeError) as exc:
             raise AssistantUnavailable(f"DeepSeek request failed: {type(exc).__name__}") from exc
 
@@ -85,14 +101,34 @@ def candidates_for(question: str, locale: str) -> list[dict]:
     return list(unique.values())[:8]
 
 
+def _decision(value: Any) -> tuple[str, list[str]]:
+    """Validate the mode-selection JSON; json_object mode does not guarantee field types."""
+    if not isinstance(value, dict):
+        raise AssistantUnavailable("DeepSeek returned an invalid decision")
+    mode = value.get("mode")
+    identifiers = value.get("record_ids") or []
+    if not isinstance(identifiers, list):
+        identifiers = []
+    return (mode if isinstance(mode, str) else "general"), [x for x in identifiers if isinstance(x, str)]
+
+
+def _answer(value: Any) -> tuple[str, set[str]]:
+    if not isinstance(value, dict) or not isinstance(value.get("answer"), str) or not value["answer"].strip():
+        raise AssistantUnavailable("DeepSeek returned an invalid answer")
+    used = value.get("used_record_ids") or []
+    if not isinstance(used, list):
+        used = []
+    return value["answer"], {x for x in used if isinstance(x, str)}
+
+
 async def answer(question: str, mode: str, locale: str, context: dict | None, client: DeepSeekClient) -> dict:
-    candidates = candidates_for(question, locale)
+    # Retrieval is synchronous (SQLite, embedding HTTP call): keep it off the event loop.
+    candidates = [] if mode == "general" else await asyncio.to_thread(candidates_for, question, locale)
     valid = {item["record_id"]: item for item in candidates}
     if mode == "auto":
         if candidates:
-            decision = await client.complete(SELECT_PROMPT, {"question": question, "locale": locale, "context": context or {}, "candidates": candidates})
-            mode = decision.get("mode", "general")
-            selected = [valid[x] for x in decision.get("record_ids", []) if x in valid]
+            mode, chosen = _decision(await client.complete(SELECT_PROMPT, {"question": question, "locale": locale, "context": context or {}, "candidates": candidates}))
+            selected = [valid[x] for x in chosen if x in valid]
         else:
             mode, selected = "general", []
     else:
@@ -112,19 +148,18 @@ async def answer(question: str, mode: str, locale: str, context: dict | None, cl
             if not selected:
                 mode = "general"
     prompt = GENERAL_PROMPT if mode == "general" else ANSWER_PROMPT
-    result = await client.complete(prompt, {"question": question, "locale": locale, "mode": mode, "context": context or {}, "sources": selected})
-    used = set(result.get("used_record_ids", []))
+    text, used = _answer(await client.complete(prompt, {"question": question, "locale": locale, "mode": mode, "context": context or {}, "sources": selected}))
     sources = [
         {"record_id": x["record_id"], "section_id": x["section_id"], "url": x["url"], "review_status": x["review_status"]}
         for x in selected if x["record_id"] in used
     ]
     if mode != "general" and not sources:
         mode = "general"
-        result = await client.complete(GENERAL_PROMPT, {"question": question, "locale": locale, "mode": mode, "context": context or {}, "sources": []})
+        text, _ = _answer(await client.complete(GENERAL_PROMPT, {"question": question, "locale": locale, "mode": mode, "context": context or {}, "sources": []}))
     return {
         "mode": mode,
         "grounding": "model" if mode == "general" else "knowledge_base",
-        "answer": str(result.get("answer", "")),
+        "answer": text,
         "primary_url": sources[0]["url"] if sources else None,
         "sources": sources,
         "review_status": "draft" if any(x["review_status"] == "draft" for x in sources) else ("reviewed" if sources else None),

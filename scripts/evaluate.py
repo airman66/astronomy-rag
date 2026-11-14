@@ -30,9 +30,28 @@ async def evaluate_model(question: dict, candidates: list[dict], client: DeepSee
 async def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--answers", type=int, default=10, help="Number of full answers to inspect in addition to 50 mode choices")
+    parser.add_argument("--retrieval-only", action="store_true", help="Recall@5 and MRR without DeepSeek; writes data/eval/retrieval_report.json")
     args = parser.parse_args()
-    rows = json.loads((DATA / "eval" / "questions.json").read_text())["questions"]
+    rows = json.loads((DATA / "eval" / "questions.json").read_text(encoding="utf-8"))["questions"]
     assert len(rows) >= 50
+    if args.retrieval_only:
+        from app import storage
+
+        results = []
+        for row in rows:
+            ids = [candidate["record_id"] for candidate in candidates_for(row["question"], row["locale"])]
+            gold = set(row["expected_record_ids"])
+            ranks = [ids.index(item) + 1 for item in gold if item in ids]
+            results.append({"id": row["id"], "question": row["question"], "expected": sorted(gold), "candidate_ids": ids, "recall_at_5": bool(gold and any(rank <= 5 for rank in ranks)), "mrr": (1 / min(ranks)) if ranks else 0})
+        with_gold = [row for row in results if row["expected"]]
+        _, mode = storage.search_with_mode(rows[0]["question"], rows[0]["locale"], 5)
+        report = {"timestamp": datetime.now(timezone.utc).isoformat(), "search_mode": mode, "question_count": len(results),
+                  "retrieval_recall_at_5": sum(row["recall_at_5"] for row in with_gold) / len(with_gold),
+                  "retrieval_mrr": sum(row["mrr"] for row in with_gold) / len(with_gold), "results": results}
+        (DATA / "eval" / "retrieval_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
+        print(json.dumps({key: value for key, value in report.items() if key != "results"}, ensure_ascii=False))
+        print("misses:", [(row["id"], row["expected"], row["candidate_ids"][:5]) for row in with_gold if not row["recall_at_5"]])
+        return
     client = DeepSeekClient()
     semaphore = asyncio.Semaphore(4)
     candidates = [candidates_for(row["question"], row["locale"]) for row in rows]

@@ -222,14 +222,25 @@ def import_term(number: int) -> tuple[int, str]:
     prior = json.loads(processed_path.read_text()) if processed_path.exists() else {}
     old_sections = {section["id"]: section for section in prior.get("sections", [])}
     source_changed = False
-    for section in sections:
+    # A changed English source invalidates its translation, but an editor's Russian text is
+    # never discarded: it is kept here for the next translation/review pass.
+    stale = list(prior.get("stale_translations", []))
+
+    def keep_stale(path: str, previous_en: str | None, previous_ru: str | None) -> None:
+        if previous_ru and previous_ru.strip():
+            stale.append({"path": path, "previous_en": previous_en or "", "previous_ru": previous_ru, "detected_at": now()})
+
+    for index, section in enumerate(sections):
         previous = old_sections.get(section["id"], {})
+        if prior and not previous:
+            source_changed = True  # a new section has no translation or review yet
         for field in ("heading", "body"):
             if previous.get(field) == section.get(field):
                 if field + "_ru" in previous:
                     section[field + "_ru"] = previous[field + "_ru"]
             elif previous and section.get(field):
                 source_changed = True
+                keep_stale(f"/sections/{index}/{field}_ru", previous.get(field), previous.get(field + "_ru"))
         old_links = {(link.get("url"), link.get("text")): link for link in previous.get("links", [])}
         if previous and {(link.get("url"), link.get("text")) for link in previous.get("links", [])} != {(link.get("url"), link.get("text")) for link in section["links"]}:
             source_changed = True
@@ -238,17 +249,20 @@ def import_term(number: int) -> tuple[int, str]:
             if "text_ru" in old_link:
                 link["text_ru"] = old_link["text_ru"]
     old_media = {m["id"]: m for m in prior.get("media", [])}
-    for row in media_rows:
+    for media_index, row in enumerate(media_rows):
         previous = old_media.get(row["id"], {})
+        media_changed = False
         for field in ("title", "short_caption", "caption", "alt"):
             if row.get(field + "_en") == previous.get(field + "_en"):
                 row[field + "_ru"] = previous.get(field + "_ru", row[field + "_ru"])
             elif previous and row.get(field + "_en"):
-                source_changed = True
+                source_changed = media_changed = True
+                keep_stale(f"/media/{media_index}/{field}_ru", previous.get(field + "_en"), previous.get(field + "_ru"))
         for field in ("ru_path", "ru_sha256"):
             if field in previous:
                 row[field] = previous[field]
-        row["review"] = previous.get("review", row["review"])
+        # A reviewed caption whose source changed must return to the translation queue.
+        row["review"] = row["review"] if media_changed else previous.get("review", row["review"])
         for field in ("original_path", "sha256", "size"):
             row[field] = previous.get(field, row[field])
     old_ru = prior.get("locales", {}).get("ru", {})
@@ -265,6 +279,7 @@ def import_term(number: int) -> tuple[int, str]:
                 blocks_ru[sid][field] = ""
                 if old_en_blocks.get(sid, {}).get(field):
                     source_changed = True
+                    keep_stale(f"/locales/ru/blocks/{sid}/{field}", old_en_blocks[sid][field], old_ru.get("blocks", {}).get(sid, {}).get(field))
     old_en = prior.get("locales", {}).get("en", {})
     old_metadata = prior.get("metadata", {})
     if old_en.get("title") != (term.get("term_name") or "") and old_en:
@@ -312,6 +327,10 @@ def import_term(number: int) -> tuple[int, str]:
         "media": media_rows,
         "review": {"status": "draft", "reviewer": None, "notes": "Source changed; translation requires review"} if source_changed else prior.get("review", {"status": "draft", "reviewer": None}),
     }
+    if old_en.get("title") and old_en.get("title") != record["locales"]["en"]["title"]:
+        keep_stale("/locales/ru/title", old_en.get("title"), old_ru.get("title"))
+    if stale:
+        record["stale_translations"] = stale
     write_json(processed_path, record)
     return number, "imported"
 
@@ -330,18 +349,30 @@ def download_media(workers: int = 8) -> tuple[int, int]:
         url = item.get("source_url")
         if not url:
             return identifier, False, None
-        if item.get("file_type") not in (None, "img"):
-            return identifier, False, None
         matches = re.findall(r"\.(png|jpe?g|webp|gif|svg|tiff?)(?:/|$)", urlparse(url).path, re.I)
+        # Animated GIFs are typed "vid" by the source API but are still image files to mirror.
+        if item.get("file_type") not in (None, "img") and not matches:
+            return identifier, False, None
         extension = "." + matches[-1].lower() if matches else ".bin"
         path = DATA / "media" / "original" / f"{identifier.replace(':', '_')}{extension}"
+        # The recorded checksum is authoritative: a restored file must match it, otherwise the
+        # source changed since import and the file is reported instead of silently accepted.
+        expected = item.get("sha256")
         try:
             created = False
             if not path.exists():
-                write_bytes(path, fetch(url, binary=True))
+                content = fetch(url, binary=True)
+                actual = digest(content)
+                if expected and actual != expected:
+                    return identifier, False, f"checksum mismatch: source changed since import (recorded {expected[:12]}, downloaded {actual[:12]}); file not stored"
+                write_bytes(path, content)
                 created = True
-            item["original_path"] = str(path)
-            item["sha256"] = digest(path.read_bytes())
+            else:
+                actual = digest(path.read_bytes())
+                if expected and actual != expected:
+                    return identifier, False, f"local file differs from recorded checksum {expected[:12]}"
+            item["original_path"] = path.as_posix()
+            item["sha256"] = expected or actual
             item["size"] = path.stat().st_size
             return identifier, created, None
         except Exception as exc:

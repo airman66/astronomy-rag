@@ -57,7 +57,7 @@ def paragraphs(body: str, budget: int, overlap: float) -> list[str]:
     return groups
 
 
-def make_chunk(record_id: str, section_id: str, locale: str, title: str, heading: str, body: str, kind: str, url: str, status: str, ordinal: int = 0, media_id: str | None = None) -> dict:
+def make_chunk(record_id: str, section_id: str, locale: str, title: str, heading: str, body: str, kind: str, url: str, status: str, ordinal: int = 0, media_id: str | None = None, source_record_id: str | None = None) -> dict:
     identifier = f"{record_id}/{section_id}/{locale}/{ordinal}"
     searchable = " → ".join(filter(None, (title, heading))) + "\n" + body
     return {
@@ -74,6 +74,8 @@ def make_chunk(record_id: str, section_id: str, locale: str, title: str, heading
         "url": url,
         "review_status": status,
         "media_id": media_id,
+        # Media captions are indexed once; search maps them back to the first record that shows them.
+        "source_record_id": source_record_id,
     }
 
 
@@ -82,7 +84,7 @@ def build_chunks(budget: int = 400, overlap: float = 0.1) -> list[dict]:
     seen_media: set[tuple[str, str]] = set()
     files = sorted((DATA / "processed" / "terms").glob("*.json")) + sorted((DATA / "processed" / "articles").glob("*.json"))
     for path in files:
-        record = json.loads(path.read_text())
+        record = json.loads(path.read_text(encoding="utf-8"))
         record_id = record["id"]
         kind = "article" if record_id.startswith("article:") else "term"
         route = f"/api/v1/articles/{record_id}" if kind == "article" else f"/api/v1/terms/{record['source']['term_number']}"
@@ -103,7 +105,7 @@ def build_chunks(budget: int = 400, overlap: float = 0.1) -> list[dict]:
                 seen_media.add(key)
                 body = (item.get(f"caption_{locale}") or item.get(f"short_caption_{locale}") or item.get(f"alt_{locale}") or "").strip()
                 if body:
-                    result.append(make_chunk(item["id"], "caption", locale, item.get(f"title_{locale}") or "", "", body, item["kind"], f"/api/v1/media/{item['id']}", item["review"]["status"], media_id=item["id"]))
+                    result.append(make_chunk(item["id"], "caption", locale, item.get(f"title_{locale}") or "", "", body, item["kind"], f"/api/v1/media/{item['id']}", item["review"]["status"], media_id=item["id"], source_record_id=record_id))
     return sorted(result, key=lambda x: x["id"])
 
 

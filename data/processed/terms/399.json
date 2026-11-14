@@ -282,7 +282,7 @@
       }
     },
     "ru": {
-      "title": "Луна в фазе половины",
+      "title": "Луна в фазе четверти",
       "aliases": [],
       "blocks": {
         "definition": {
@@ -320,7 +320,7 @@
       "short_caption_en": "First quarter moon",
       "short_caption_ru": "Луна в первой четверти",
       "caption_en": "The first quarter moon photographed from New Zealand. As half of the moon's illuminated half is visible, this is phase is popularly know as half moon.",
-      "caption_ru": "Луна в первой четверти, сфотографированная из Новой Зеландии. Поскольку видна половина освещённой половины Луны, эту фазу в народе называют половинной Луной.",
+      "caption_ru": "Луна в первой четверти, сфотографированная из Новой Зеландии. Поскольку видна половина освещённой половины Луны, эту фазу в обиходе называют «половиной Луны».",
       "alt_en": "The left half of the moon is bright and the right half is dark.",
       "alt_ru": "Левая половина Луны яркая, а правая половина тёмная.",
       "credit": "Dave Young / dcysurfer",
@@ -353,7 +353,7 @@
       "short_caption_en": "First quarter moon",
       "short_caption_ru": "Луна в первой четверти",
       "caption_en": "The first quarter moon photographed from the Northern Hemisphere (USA). At this phase half of the moon's illuminated half is visible. This phase is popularly known as half moon.",
-      "caption_ru": "Луна в первой четверти, сфотографированная из Северного полушария (США). В этой фазе видна половина освещённой половины Луны. Эту фазу в народе называют половинной Луной.",
+      "caption_ru": "Луна в первой четверти, сфотографированная из Северного полушария (США). В этой фазе видна половина освещённой половины Луны. Эту фазу в обиходе называют «половиной Луны».",
       "alt_en": "The right half of the moon is bright and the left half of the moon is dark",
       "alt_ru": "Правая половина Луны яркая, а левая половина Луны тёмная",
       "credit": "Stephen Rahn",
@@ -386,7 +386,7 @@
       "short_caption_en": "Last quarter moon",
       "short_caption_ru": "Луна в последней четверти",
       "caption_en": "This shows the last quarter moon photographed from the Northern Hemisphere (USA). During this phase half of the moon's illuminated half is visible. This phase is popularly known as half moon.",
-      "caption_ru": "Здесь показана Луна в последней четверти, сфотографированная из Северного полушария (США). В течение этой фазы видна половина освещённой половины Луны. Эту фазу в народе называют половинной Луной.",
+      "caption_ru": "Здесь показана Луна в последней четверти, сфотографированная из Северного полушария (США). В течение этой фазы видна половина освещённой половины Луны. Эту фазу в обиходе называют «половиной Луны».",
       "alt_en": "The moon appears as a disk. The left half of the moon is bright but the right half is dark.",
       "alt_ru": "Луна выглядит как диск. Левая половина Луны яркая, но правая половина тёмная.",
       "credit": "Stephen Rahn",
@@ -419,9 +419,9 @@
       "short_caption_en": "Waning gibbous to last quarter",
       "short_caption_ru": "От убывающей выпуклой Луны до последней четверти",
       "caption_en": "Three images of the moon from the waning gibbous phase (left) to the last quarter phase (right) taken from the Southern Hemisphere (New Zealand). The illuminated area visible appears to shrink as the images progress. \r\n\r\nIn the last phase visible here (the last quarter) only half of the moon's illuminated half is visible. This phase is popularly known as half moon.",
-      "caption_ru": "Три изображения Луны от фазы убывающей выпуклой Луны (слева) до фазы последней четверти (справа), сделанные из Южного полушария (Новая Зеландия). Видимая освещённая область, по-видимому, уменьшается по мере продвижения изображений.\n\nВ последней видимой здесь фазе (последняя четверть) видна только половина освещённой половины Луны. Эту фазу в народе называют половинной Луной.",
+      "caption_ru": "Три изображения Луны от фазы убывающей выпуклой Луны (слева) до фазы последней четверти (справа), сделанные из Южного полушария (Новая Зеландия). Видимая освещённая область уменьшается от снимка к снимку.\n\nВ последней показанной здесь фазе (последняя четверть) видна только половина освещённой половины Луны. Эту фазу в обиходе называют «половиной Луны».",
       "alt_en": "3 images of the moon. The dark area on the left of each lunar image grows from a crescent to cover half the moon",
-      "alt_ru": "3 изображений Луны. Тёмная область слева на каждом изображении Луны растёт от серпа до половины Луны",
+      "alt_ru": "3 изображения Луны. Тёмная область слева на каждом изображении Луны увеличивается: сначала она имеет форму серпа, а затем занимает половину лунного диска",
       "credit": "Dave Young / dcysurfer",
       "credit_url": "https://www.flickr.com/photos/22018552@N08/5391926860",
       "license": "CC-BY-2.0",

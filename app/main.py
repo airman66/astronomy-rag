@@ -1,22 +1,29 @@
 """Read-only glossary API and DeepSeek assistant."""
 from __future__ import annotations
 
+import asyncio
 import os
 import uuid
+from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Any, Literal
 
 import redis
 from fastapi import Body, FastAPI, Query, Request
+from fastapi.concurrency import run_in_threadpool
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 from pydantic import BaseModel, Field
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
-from app import storage
-from app.assistant import AssistantUnavailable, DeepSeekClient, answer
+from app import storage, vector
+from app.assistant import AssistantNotConfigured, AssistantUnavailable, DeepSeekClient, answer
 from app.rate_limit import RedisLimiter
+
+# Must stay below the gateway proxy_read_timeout (120 s) and the DeepSeek slot lease (150 s).
+ASSISTANT_DEADLINE = float(os.getenv("ASSISTANT_DEADLINE", "100"))
+SEARCH_POOL = 200
 
 
 class HealthResponse(BaseModel):
@@ -33,9 +40,12 @@ class ErrorResponse(BaseModel):
 class ListItem(BaseModel):
     id: str
     title: str
+    title_en: str | None = None
     url: str
     review_status: Literal["draft", "reviewed"]
     categories: list[str]
+    categories_ru: list[str] = Field(default_factory=list)
+    illustration_url: str | None = None
 
 
 class ListResponse(BaseModel):
@@ -43,6 +53,24 @@ class ListResponse(BaseModel):
     total: int
     page: int
     page_size: int
+
+
+class FacetLetter(BaseModel):
+    letter: str
+    count: int
+
+
+class FacetCategory(BaseModel):
+    id: str
+    title: str
+    count: int
+
+
+class FacetsResponse(BaseModel):
+    locale: Literal["ru", "en"]
+    total: int
+    letters: list[FacetLetter]
+    categories: list[FacetCategory]
 
 
 class ReviewInfo(BaseModel):
@@ -97,6 +125,21 @@ class MediaDetail(BaseModel):
     review: ReviewInfo
 
 
+class IllustrationInfo(BaseModel):
+    """Team illustration generated for the term; stored apart from Astro4Edu media."""
+
+    term_number: int
+    url: str
+    width: int | None = None
+    height: int | None = None
+    alt_ru: str = ""
+    alt_en: str = ""
+    caption_ru: str = ""
+    kind: Literal["conceptual", "diagram"] = "conceptual"
+    status: Literal["generated", "approved"]
+    generator: str = ""
+
+
 class RecordDetail(BaseModel):
     id: str
     kind: str
@@ -105,6 +148,7 @@ class RecordDetail(BaseModel):
     sections: list[Section]
     locales: dict[str, LocaleContent]
     media: list[MediaDetail] = Field(default_factory=list)
+    illustration: IllustrationInfo | None = None
     review: ReviewInfo
 
 
@@ -124,6 +168,7 @@ class SearchResponse(BaseModel):
     total: int
     page: int
     page_size: int
+    mode: Literal["hybrid", "lexical"] = Field("hybrid", description="lexical: семантический индекс или сервер эмбеддингов недоступен, выдача только по FTS")
 
 
 class AnswerRequest(BaseModel):
@@ -154,7 +199,23 @@ def error(status: int, code: str, message: str, details: Any = None, headers: di
     return JSONResponse(status_code=status, content=ErrorResponse(code=code, message=message, details=details).model_dump(), headers=headers)
 
 
-app = FastAPI(title="Astronomy Glossary and RAG", version="1.0.0", responses={422: {"model": ErrorResponse}})
+RETRY_HEADER = {"Retry-After": {"description": "Секунды до повторной попытки", "schema": {"type": "integer"}}}
+LIMITS = {
+    429: {"model": ErrorResponse, "description": "Лимит запросов превышен", "headers": RETRY_HEADER},
+    503: {"model": ErrorResponse, "description": "Сервис ограничений временно недоступен", "headers": RETRY_HEADER},
+}
+IMAGE_TYPES = {"image/png": {}, "image/jpeg": {}, "image/webp": {}, "image/gif": {}, "image/svg+xml": {}}
+
+
+@asynccontextmanager
+async def lifespan(_app: FastAPI):
+    # Rebuild a stale SQLite DB before serving and verify the vector index in the background.
+    await run_in_threadpool(storage.ensure_database, True)
+    vector.warm_up()
+    yield
+
+
+app = FastAPI(title="Astronomy Glossary and RAG", version="1.1.0", responses={422: {"model": ErrorResponse}}, lifespan=lifespan)
 origins = [origin.strip() for origin in os.getenv("CORS_ORIGINS", "").split(",") if origin.strip()]
 if origins:
     app.add_middleware(CORSMiddleware, allow_origins=origins, allow_methods=["GET", "POST"], allow_headers=["Content-Type"], allow_credentials=True)
@@ -172,19 +233,37 @@ async def http_error(_request: Request, exc: StarletteHTTPException) -> JSONResp
     return error(exc.status_code, "not_found" if exc.status_code == 404 else "http_error", str(exc.detail))
 
 
+_limiter_warned = [0.0]
+
+
+def limiter_down_warning() -> None:
+    import logging
+    import time
+
+    if time.monotonic() - _limiter_warned[0] > 60:
+        logging.getLogger("glossary.limits").warning("Redis unavailable: read limits are not enforced, assistant is closed")
+        _limiter_warned[0] = time.monotonic()
+
+
 @app.middleware("http")
 async def request_limits(request: Request, call_next):
     path = request.url.path
     if not path.startswith("/api/v1/"):
         return await call_next(request)
-    category = "assistant" if path == "/api/v1/assistant/answer" else "media" if path.endswith("/file") else "read"
+    category = "assistant" if path == "/api/v1/assistant/answer" else "media" if path.endswith(("/file", "/illustration")) else "read"
     if category == "assistant":
         if int(request.headers.get("content-length", "0") or "0") > 16384 or len(await request.body()) > 16384:
             return error(413, "body_too_large", "Тело запроса превышает 16 КиБ")
     try:
-        retry = request.app.state.rate_limiter.check(request, category)
+        # Redis calls are blocking; run them off the event loop.
+        retry = await run_in_threadpool(request.app.state.rate_limiter.check, request, category)
     except redis.RedisError:
-        return error(503, "rate_limit_unavailable", "Сервис ограничений временно недоступен", headers={"Retry-After": "10"})
+        if category == "assistant":
+            return error(503, "rate_limit_unavailable", "Сервис ограничений временно недоступен", headers={"Retry-After": "10"})
+        # Reading the glossary must not depend on Redis: without shared counters only the
+        # assistant (which spends DeepSeek calls) is closed; reads and media stay available.
+        limiter_down_warning()
+        retry = 0
     if retry:
         return error(429, "rate_limited", "Лимит запросов превышен", headers={"Retry-After": str(min(10, max(1, retry)))})
     return await call_next(request)
@@ -195,37 +274,57 @@ def health() -> HealthResponse:
     return HealthResponse(status="ok", service="glossary-rag")
 
 
-@app.get("/api/v1/terms", response_model=ListResponse, responses={503: {"model": ErrorResponse}})
-def terms(page: int = Query(1, ge=1), page_size: int = Query(20, ge=1, le=100), q: str = Query("", max_length=200), category: str = "", letter: str = "", status: Literal["", "draft", "reviewed"] = "", locale: Literal["ru", "en"] = "ru") -> ListResponse:
+@app.get("/api/v1/terms", response_model=ListResponse, responses=LIMITS)
+def terms(page: int = Query(1, ge=1), page_size: int = Query(20, ge=1, le=100), q: str = Query("", max_length=200), category: str = "", letter: str = Query("", max_length=1), status: Literal["", "draft", "reviewed"] = "", locale: Literal["ru", "en"] = "ru") -> ListResponse:
+    """Список терминов. Поиск по названию и алиасам и фильтр по букве не зависят от регистра и «ё»; сортировка — по названию на языке `locale`."""
     items, total = storage.list_records("term", page=page, page_size=page_size, locale=locale, query=q, category=category, letter=letter, status=status)
     return ListResponse(items=items, total=total, page=page, page_size=page_size)
 
 
-@app.get("/api/v1/terms/{term_number}", response_model=RecordDetail, responses={404: {"model": ErrorResponse}})
+@app.get("/api/v1/terms/facets", response_model=FacetsResponse, responses=LIMITS)
+def term_facets(locale: Literal["ru", "en"] = "ru") -> FacetsResponse:
+    """Первые буквы названий и категории с числом терминов — для алфавитного указателя и фильтров."""
+    letters = storage.letters(locale)
+    return FacetsResponse(locale=locale, total=sum(item["count"] for item in letters), letters=letters, categories=storage.categories(locale))
+
+
+@app.get("/api/v1/terms/{term_number}", response_model=RecordDetail, responses={404: {"model": ErrorResponse}, **LIMITS})
 def term_detail(term_number: int):
     record = storage.get_term(term_number)
     return RecordDetail.model_validate(record) if record else error(404, "term_not_found", "Термин не найден")
 
 
-@app.get("/api/v1/articles", response_model=ListResponse)
+@app.get("/api/v1/terms/{term_number}/illustration", response_class=FileResponse, responses={200: {"content": IMAGE_TYPES, "description": "Иллюстрация термина"}, 404: {"model": ErrorResponse}, **LIMITS})
+def term_illustration(term_number: int):
+    """Файл иллюстрации команды; 404 `illustration_not_found`, пока она не сгенерирована и не проверена."""
+    item = storage.get_illustration(term_number)
+    if not item:
+        return error(404, "illustration_not_found", "Иллюстрация ещё не готова")
+    path = (storage.DATA / item["path"]).resolve() if not Path(item["path"]).is_absolute() else Path(item["path"]).resolve()
+    if not path.is_relative_to(storage.DATA.resolve()) or not path.is_file():
+        return error(404, "illustration_not_found", "Файл иллюстрации не найден")
+    return FileResponse(path, headers={"Cache-Control": "public, max-age=86400"})
+
+
+@app.get("/api/v1/articles", response_model=ListResponse, responses=LIMITS)
 def articles(page: int = Query(1, ge=1), page_size: int = Query(20, ge=1, le=100), q: str = Query("", max_length=200), status: Literal["", "draft", "reviewed"] = "", locale: Literal["ru", "en"] = "ru") -> ListResponse:
     items, total = storage.list_records("article", page=page, page_size=page_size, locale=locale, query=q, status=status)
     return ListResponse(items=items, total=total, page=page, page_size=page_size)
 
 
-@app.get("/api/v1/articles/{article_id}", response_model=RecordDetail, responses={404: {"model": ErrorResponse}})
+@app.get("/api/v1/articles/{article_id}", response_model=RecordDetail, responses={404: {"model": ErrorResponse}, **LIMITS})
 def article_detail(article_id: str):
     record = storage.get_article(article_id)
     return RecordDetail.model_validate(record) if record else error(404, "article_not_found", "Статья не найдена")
 
 
-@app.get("/api/v1/media/{media_id}", response_model=MediaDetail, responses={404: {"model": ErrorResponse}})
+@app.get("/api/v1/media/{media_id}", response_model=MediaDetail, responses={404: {"model": ErrorResponse}, **LIMITS})
 def media_detail(media_id: str):
     item = storage.get_media(media_id)
     return MediaDetail.model_validate(item) if item else error(404, "media_not_found", "Медиа не найдено")
 
 
-@app.get("/api/v1/media/{media_id}/file", responses={404: {"model": ErrorResponse}})
+@app.get("/api/v1/media/{media_id}/file", response_class=FileResponse, responses={200: {"content": IMAGE_TYPES, "description": "Файл изображения на выбранном языке"}, 404: {"model": ErrorResponse}, **LIMITS})
 def media_file(media_id: str, locale: Literal["ru", "en"] = "ru"):
     item = storage.get_media(media_id)
     if not item:
@@ -236,16 +335,22 @@ def media_file(media_id: str, locale: Literal["ru", "en"] = "ru"):
     path = Path(filename).resolve()
     if not path.is_relative_to(storage.DATA.resolve()) or not path.is_file():
         return error(404, "media_file_not_found", "Файл медиа не найден")
-    return FileResponse(path)
+    return FileResponse(path, headers={"Cache-Control": "public, max-age=86400"})
 
 
-@app.get("/api/v1/search", response_model=SearchResponse)
+@app.get("/api/v1/search", response_model=SearchResponse, responses=LIMITS)
 def search(q: str = Query(min_length=1, max_length=200), locale: Literal["ru", "en"] = "ru", page: int = Query(1, ge=1), page_size: int = Query(20, ge=1, le=100)) -> SearchResponse:
-    matches = storage.search(q, locale, limit=10000)
-    return SearchResponse(items=matches[(page - 1) * page_size : page * page_size], total=len(matches), page=page, page_size=page_size)
+    """Гибридный поиск (FTS5 со стеммингом + векторный индекс). `total` — размер пула релевантных результатов (не больше 200)."""
+    matches, mode = storage.search_with_mode(q, locale, limit=SEARCH_POOL)
+    return SearchResponse(items=matches[(page - 1) * page_size : page * page_size], total=len(matches), page=page, page_size=page_size, mode=mode)
 
 
-@app.post("/api/v1/assistant/answer", response_model=AnswerResponse, responses={429: {"model": ErrorResponse, "content": {"application/json": {"example": {"code": "rate_limited", "message": "Лимит запросов превышен", "details": None}}}}, 503: {"model": ErrorResponse, "content": {"application/json": {"example": {"code": "assistant_unavailable", "message": "Ключ DeepSeek не настроен", "details": None}}}}, 502: {"model": ErrorResponse, "content": {"application/json": {"example": {"code": "deepseek_error", "message": "Сбой запроса DeepSeek", "details": None}}}}})
+@app.post("/api/v1/assistant/answer", response_model=AnswerResponse, responses={
+    429: {"model": ErrorResponse, "headers": RETRY_HEADER, "content": {"application/json": {"example": {"code": "rate_limited", "message": "Лимит запросов превышен", "details": None}}}},
+    503: {"model": ErrorResponse, "headers": RETRY_HEADER, "content": {"application/json": {"example": {"code": "assistant_unavailable", "message": "Ключ DeepSeek не настроен", "details": None}}}},
+    502: {"model": ErrorResponse, "content": {"application/json": {"example": {"code": "deepseek_error", "message": "Сбой запроса DeepSeek", "details": None}}}},
+    504: {"model": ErrorResponse, "content": {"application/json": {"example": {"code": "assistant_timeout", "message": "Помощник не уложился во время ответа", "details": None}}}},
+})
 async def assistant_answer(request: Request, body: AnswerRequest = Body(openapi_examples={
     "auto": {"summary": "Автоматический выбор", "value": {"question": "Что такое звезда?", "mode": "auto", "locale": "ru"}},
     "term": {"summary": "Краткое определение", "value": {"question": "Что такое звезда?", "mode": "term", "locale": "ru"}},
@@ -258,12 +363,17 @@ async def assistant_answer(request: Request, body: AnswerRequest = Body(openapi_
     token = str(uuid.uuid4())
     limiter = request.app.state.rate_limiter
     try:
-        if not limiter.acquire_call(token):
+        if not await run_in_threadpool(limiter.acquire_call, token):
             return error(503, "assistant_overloaded", "Помощник перегружен", headers={"Retry-After": "10"})
         try:
-            result = await answer(body.question, body.mode, body.locale, body.context, request.app.state.deepseek)
+            result = await asyncio.wait_for(answer(body.question, body.mode, body.locale, body.context, request.app.state.deepseek), timeout=ASSISTANT_DEADLINE)
         finally:
-            limiter.release_call(token)
+            await run_in_threadpool(limiter.release_call, token)
+    except asyncio.TimeoutError:
+        return error(504, "assistant_timeout", "Помощник не уложился во время ответа")
+    except AssistantNotConfigured as exc:
+        # Ключ без баланса или отклонённый ключ: справочник работает, помощник честно выключен.
+        return error(503, "assistant_unavailable", str(exc), {"upstream_status": exc.status})
     except AssistantUnavailable as exc:
         return error(502, "deepseek_error", str(exc))
     except redis.RedisError:
