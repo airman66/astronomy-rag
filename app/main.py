@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import asyncio
+import mimetypes
 import os
 import uuid
 from contextlib import asynccontextmanager
@@ -20,6 +21,9 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 from app import storage, vector
 from app.assistant import AssistantNotConfigured, AssistantUnavailable, DeepSeekClient, answer
 from app.rate_limit import RedisLimiter
+from app.planets.routes import router as planets_router, catalog
+
+mimetypes.add_type("image/webp", ".webp")
 
 # Must stay below the gateway proxy_read_timeout (120 s) and the model slot lease (150 s).
 ASSISTANT_DEADLINE = float(os.getenv("ASSISTANT_DEADLINE", "100"))
@@ -233,10 +237,19 @@ async def lifespan(_app: FastAPI):
     # Rebuild a stale SQLite DB before serving and verify the vector index in the background.
     await run_in_threadpool(storage.ensure_database, True)
     vector.warm_up()
-    yield
+    catalog_task = asyncio.create_task(catalog.run(), name="nasa-catalog")
+    try:
+        yield
+    finally:
+        catalog_task.cancel()
+        try:
+            await catalog_task
+        except asyncio.CancelledError:
+            pass
 
 
-app = FastAPI(title="Astronomy Glossary and RAG", version="1.1.0", responses={422: {"model": ErrorResponse}}, lifespan=lifespan)
+app = FastAPI(title="Alcyone Astronomy API", version="1.1.0", responses={422: {"model": ErrorResponse}}, lifespan=lifespan)
+app.include_router(planets_router)
 origins = [origin.strip() for origin in os.getenv("CORS_ORIGINS", "").split(",") if origin.strip()]
 if origins:
     app.add_middleware(CORSMiddleware, allow_origins=origins, allow_methods=["GET", "POST"], allow_headers=["Content-Type"], allow_credentials=True)

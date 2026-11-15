@@ -18,12 +18,11 @@ services:
     depends_on:
       redis:
         condition: service_healthy
-      embeddings:
-        condition: service_healthy
     volumes:
       - ./data:/app/data
     restart: unless-stopped
   model-fetch:
+    profiles: ["embeddings"]
     image: ghcr.io/ggml-org/llama.cpp:server
     entrypoint: ["/bin/sh", "/scripts/fetch_embedding_model.sh"]
     volumes:
@@ -31,6 +30,7 @@ services:
       - ./scripts/fetch_embedding_model.sh:/scripts/fetch_embedding_model.sh:ro
     restart: "no"
   embeddings:
+    profiles: ["embeddings"]
     image: ghcr.io/ggml-org/llama.cpp:server
     depends_on:
       model-fetch:
