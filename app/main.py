@@ -1,4 +1,4 @@
-"""Read-only glossary API and DeepSeek assistant."""
+"""Read-only glossary API and model assistant."""
 from __future__ import annotations
 
 import asyncio
@@ -21,7 +21,7 @@ from app import storage, vector
 from app.assistant import AssistantNotConfigured, AssistantUnavailable, DeepSeekClient, answer
 from app.rate_limit import RedisLimiter
 
-# Must stay below the gateway proxy_read_timeout (120 s) and the DeepSeek slot lease (150 s).
+# Must stay below the gateway proxy_read_timeout (120 s) and the model slot lease (150 s).
 ASSISTANT_DEADLINE = float(os.getenv("ASSISTANT_DEADLINE", "100"))
 SEARCH_POOL = 200
 
@@ -126,7 +126,7 @@ class MediaDetail(BaseModel):
 
 
 class IllustrationInfo(BaseModel):
-    """Team illustration generated for the term; stored apart from Astro4Edu media."""
+    """Cover image for a term, stored apart from Astro4Edu media."""
 
     term_number: int
     url: str
@@ -138,6 +138,13 @@ class IllustrationInfo(BaseModel):
     kind: Literal["conceptual", "diagram"] = "conceptual"
     status: Literal["generated", "approved"]
     generator: str = ""
+    source_type: str = "generated"
+    file_page: str | None = None
+    article_url: str | None = None
+    author: str | None = None
+    license: str | None = None
+    license_url: str | None = None
+    modified: str | None = None
 
 
 class RecordDetail(BaseModel):
@@ -185,12 +192,26 @@ class AnswerSource(BaseModel):
     review_status: str
 
 
+class AnswerImage(BaseModel):
+    record_id: str
+    url: str
+    alt: str
+    caption: str
+    kind: Literal["illustration", "source_media"]
+    credit: str | None = None
+    credit_url: str | None = None
+    license: str | None = None
+    license_url: str | None = None
+    modified: str | None = None
+
+
 class AnswerResponse(BaseModel):
     mode: Literal["term", "article", "explain", "general"]
     grounding: Literal["knowledge_base", "model", "mixed"]
     answer: str
     primary_url: str | None
     sources: list[AnswerSource]
+    images: list[AnswerImage] = Field(default_factory=list)
     review_status: str | None
     diagnostics: dict[str, str]
 
@@ -261,7 +282,7 @@ async def request_limits(request: Request, call_next):
         if category == "assistant":
             return error(503, "rate_limit_unavailable", "Сервис ограничений временно недоступен", headers={"Retry-After": "10"})
         # Reading the glossary must not depend on Redis: without shared counters only the
-        # assistant (which spends DeepSeek calls) is closed; reads and media stay available.
+        # The assistant spends model calls; reads and media stay available.
         limiter_down_warning()
         retry = 0
     if retry:
@@ -347,8 +368,8 @@ def search(q: str = Query(min_length=1, max_length=200), locale: Literal["ru", "
 
 @app.post("/api/v1/assistant/answer", response_model=AnswerResponse, responses={
     429: {"model": ErrorResponse, "headers": RETRY_HEADER, "content": {"application/json": {"example": {"code": "rate_limited", "message": "Лимит запросов превышен", "details": None}}}},
-    503: {"model": ErrorResponse, "headers": RETRY_HEADER, "content": {"application/json": {"example": {"code": "assistant_unavailable", "message": "Ключ DeepSeek не настроен", "details": None}}}},
-    502: {"model": ErrorResponse, "content": {"application/json": {"example": {"code": "deepseek_error", "message": "Сбой запроса DeepSeek", "details": None}}}},
+    503: {"model": ErrorResponse, "headers": RETRY_HEADER, "content": {"application/json": {"example": {"code": "assistant_unavailable", "message": "Ключ LLM не настроен", "details": None}}}},
+    502: {"model": ErrorResponse, "content": {"application/json": {"example": {"code": "assistant_error", "message": "Сбой запроса LLM", "details": None}}}},
     504: {"model": ErrorResponse, "content": {"application/json": {"example": {"code": "assistant_timeout", "message": "Помощник не уложился во время ответа", "details": None}}}},
 })
 async def assistant_answer(request: Request, body: AnswerRequest = Body(openapi_examples={
@@ -358,8 +379,11 @@ async def assistant_answer(request: Request, body: AnswerRequest = Body(openapi_
     "explain": {"summary": "Составное объяснение", "value": {"question": "Чем звезда отличается от планеты?", "mode": "explain", "locale": "ru"}},
     "general": {"summary": "Общий ответ", "value": {"question": "Что приготовить на ужин?", "mode": "general", "locale": "ru"}},
 })):
-    if not os.getenv("DEEPSEEK_API_KEY"):
-        return error(503, "assistant_unavailable", "Ключ DeepSeek не настроен")
+    provider = os.getenv("ASSISTANT_PROVIDER", "deepseek").lower()
+    if provider not in ("deepseek", "runpod"):
+        return error(503, "assistant_unavailable", "Неизвестный провайдер LLM")
+    if not os.getenv("RUNPOD_API_KEY" if provider == "runpod" else "DEEPSEEK_API_KEY"):
+        return error(503, "assistant_unavailable", "Ключ LLM не настроен")
     token = str(uuid.uuid4())
     limiter = request.app.state.rate_limiter
     try:
@@ -372,10 +396,10 @@ async def assistant_answer(request: Request, body: AnswerRequest = Body(openapi_
     except asyncio.TimeoutError:
         return error(504, "assistant_timeout", "Помощник не уложился во время ответа")
     except AssistantNotConfigured as exc:
-        # Ключ без баланса или отклонённый ключ: справочник работает, помощник честно выключен.
+        # Ключ без баланса или отклонённый ключ: справочник работает, помощник выключен.
         return error(503, "assistant_unavailable", str(exc), {"upstream_status": exc.status})
     except AssistantUnavailable as exc:
-        return error(502, "deepseek_error", str(exc))
+        return error(502, "assistant_error", str(exc))
     except redis.RedisError:
         return error(503, "assistant_overloaded", "Помощник временно недоступен", headers={"Retry-After": "10"})
     return AnswerResponse.model_validate(result)

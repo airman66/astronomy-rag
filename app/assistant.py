@@ -1,4 +1,4 @@
-"""DeepSeek mode selection and grounded answer generation."""
+"""Model mode selection and grounded answer generation."""
 
 from __future__ import annotations
 
@@ -6,6 +6,7 @@ import asyncio
 import json
 import os
 import re
+from pathlib import Path
 from typing import Any
 
 import httpx
@@ -23,7 +24,7 @@ class AssistantUnavailable(Exception):
 
 
 class AssistantNotConfigured(AssistantUnavailable):
-    """DeepSeek rejected the account (no key, wrong key, no balance): not a transient failure."""
+    """The model provider rejected the account: not a transient failure."""
 
     def __init__(self, message: str, status: int) -> None:
         super().__init__(message)
@@ -32,24 +33,32 @@ class AssistantNotConfigured(AssistantUnavailable):
 
 class DeepSeekClient:
     async def complete(self, system: str, payload: dict[str, Any]) -> dict[str, Any]:
-        key = os.getenv("DEEPSEEK_API_KEY", "")
+        provider = os.getenv("ASSISTANT_PROVIDER", "deepseek").lower()
+        runpod = provider == "runpod"
+        key = os.getenv("RUNPOD_API_KEY" if runpod else "DEEPSEEK_API_KEY", "")
         if not key:
-            raise AssistantUnavailable("Ключ DeepSeek не настроен")
+            raise AssistantUnavailable("Ключ LLM не настроен")
+        endpoint_id = os.getenv("RUNPOD_ENDPOINT_ID", "b1dd8hy2hqo1nb") if runpod else ""
+        if runpod and not endpoint_id:
+            raise AssistantUnavailable("RunPod endpoint не настроен")
         request = {
-            "model": os.getenv("DEEPSEEK_MODEL", "deepseek-flash"),
+            "model": os.getenv("RUNPOD_MODEL", "glm-5.3") if runpod else os.getenv("DEEPSEEK_MODEL", "deepseek-flash"),
             "messages": [
                 {"role": "system", "content": system},
                 {"role": "user", "content": json.dumps(payload, ensure_ascii=False)},
             ],
             "response_format": {"type": "json_object"},
-            "thinking": {"type": "disabled"},
-            "max_tokens": 1800,
+            "max_tokens": 4096 if runpod else 1800,
             "stream": False,
         }
+        if runpod:
+            request.update({"temperature": 1.0, "top_p": 0.95, "reasoning_effort": "low"})
+        else:
+            request["thinking"] = {"type": "disabled"}
         try:
-            async with httpx.AsyncClient(timeout=httpx.Timeout(45.0, connect=10.0)) as client:
+            async with httpx.AsyncClient(timeout=httpx.Timeout(150.0 if runpod else 45.0, connect=10.0)) as client:
                 response = await client.post(
-                    "https://api.deepseek.com/chat/completions",
+                    f"https://api.runpod.ai/v2/{endpoint_id}/openai/v1/chat/completions" if runpod else "https://api.deepseek.com/chat/completions",
                     headers={"Authorization": f"Bearer {key}"},
                     json=request,
                 )
@@ -58,12 +67,52 @@ class DeepSeekClient:
         except httpx.HTTPStatusError as exc:
             status = exc.response.status_code
             if status == 402:
-                raise AssistantNotConfigured("На аккаунте DeepSeek закончился баланс", status) from exc
+                raise AssistantNotConfigured("На аккаунте провайдера LLM закончился баланс", status) from exc
             if status in (401, 403):
-                raise AssistantNotConfigured("DeepSeek отклонил ключ API", status) from exc
-            raise AssistantUnavailable(f"DeepSeek request failed: HTTP {status}") from exc
+                raise AssistantNotConfigured("Провайдер LLM отклонил ключ API", status) from exc
+            raise AssistantUnavailable(f"LLM request failed: HTTP {status}") from exc
         except (httpx.HTTPError, KeyError, ValueError, TypeError) as exc:
-            raise AssistantUnavailable(f"DeepSeek request failed: {type(exc).__name__}") from exc
+            raise AssistantUnavailable(f"LLM request failed: {type(exc).__name__}") from exc
+
+
+def image_for(record: dict, section: dict, locale: str) -> dict | None:
+    illustration = record.get("illustration")
+    if illustration and illustration.get("url"):
+        full_illustration = storage.get_illustration(record["source"]["term_number"])
+        filename = full_illustration.get("path", "") if full_illustration else ""
+        path = (storage.DATA / filename).resolve() if filename and not Path(filename).is_absolute() else Path(filename).resolve() if filename else None
+        if path and path.is_relative_to(storage.DATA.resolve()) and path.is_file():
+            source = (full_illustration or {}).get("source") or {}
+            return {
+                "url": illustration["url"],
+                "alt": illustration.get(f"alt_{locale}", ""),
+                "caption": illustration.get(f"caption_{locale}", ""),
+                "kind": "illustration",
+                "credit": source.get("author"),
+                "credit_url": source.get("file_page"),
+                "license": source.get("license"),
+                "license_url": source.get("license_url"),
+                "modified": source.get("modified"),
+            }
+    media_ids = set(section.get("media_ids", []))
+    media_items = record.get("media", [])
+    for media in sorted(media_items, key=lambda item: item["id"] not in media_ids):
+        filename = media.get("ru_path") if locale == "ru" and media.get("ru_path") else media.get("original_path")
+        if not filename:
+            continue
+        path = Path(filename).resolve()
+        if path.is_relative_to(storage.DATA.resolve()) and path.is_file() and path.suffix.lower() in (".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg"):
+            return {
+                "url": f"/api/v1/media/{media['id']}/file?locale={locale}",
+                "alt": media.get(f"alt_{locale}") or media.get(f"title_{locale}", ""),
+                "caption": media.get(f"short_caption_{locale}") or media.get(f"caption_{locale}", ""),
+                "kind": "source_media",
+                "credit": media.get("credit"),
+                "credit_url": media.get("credit_url"),
+                "license": media.get("license"),
+                "license_url": media.get("license_url"),
+            }
+    return None
 
 
 def candidates_for(question: str, locale: str) -> list[dict]:
@@ -96,6 +145,7 @@ def candidates_for(question: str, locale: str) -> list[dict]:
             "title": record["locales"][locale]["title"],
             "excerpt": blocks[primary["id"]]["body"][:1600],
             "kind": "article" if identifier.startswith("article:") else "term",
+            "image": image_for(record, primary, locale),
             "url": f"/api/v1/articles/{identifier}" if identifier.startswith("article:") else f"/api/v1/terms/{record['source']['term_number']}",
         }
     return list(unique.values())[:8]
@@ -104,7 +154,7 @@ def candidates_for(question: str, locale: str) -> list[dict]:
 def _decision(value: Any) -> tuple[str, list[str]]:
     """Validate the mode-selection JSON; json_object mode does not guarantee field types."""
     if not isinstance(value, dict):
-        raise AssistantUnavailable("DeepSeek returned an invalid decision")
+        raise AssistantUnavailable("Модель вернула некорректный выбор режима")
     mode = value.get("mode")
     identifiers = value.get("record_ids") or []
     if not isinstance(identifiers, list):
@@ -114,7 +164,7 @@ def _decision(value: Any) -> tuple[str, list[str]]:
 
 def _answer(value: Any) -> tuple[str, set[str]]:
     if not isinstance(value, dict) or not isinstance(value.get("answer"), str) or not value["answer"].strip():
-        raise AssistantUnavailable("DeepSeek returned an invalid answer")
+        raise AssistantUnavailable("Модель вернула некорректный ответ")
     used = value.get("used_record_ids") or []
     if not isinstance(used, list):
         used = []
@@ -162,6 +212,7 @@ async def answer(question: str, mode: str, locale: str, context: dict | None, cl
         "answer": text,
         "primary_url": sources[0]["url"] if sources else None,
         "sources": sources,
+        "images": [{"record_id": x["record_id"], **x["image"]} for x in selected if x["record_id"] in used and x.get("image")][:3],
         "review_status": "draft" if any(x["review_status"] == "draft" for x in sources) else ("reviewed" if sources else None),
-        "diagnostics": {"prompt_version": PROMPT_VERSION, "model": os.getenv("DEEPSEEK_MODEL", "deepseek-flash")},
+        "diagnostics": {"prompt_version": PROMPT_VERSION, "model": os.getenv("RUNPOD_MODEL", "glm-5.3") if os.getenv("ASSISTANT_PROVIDER", "deepseek").lower() == "runpod" else os.getenv("DEEPSEEK_MODEL", "deepseek-flash")},
     }

@@ -90,6 +90,7 @@ class ContractTests(unittest.TestCase):
             self.assertEqual(response.status_code, 200, response.text)
             self.assertEqual(response.json()["mode"], "term")
             self.assertEqual(response.json()["sources"][0]["record_id"], "term:1")
+            self.assertEqual(response.json()["images"][0]["url"], "/api/v1/media/media:example/file?locale=ru")
             general = self.client.post("/api/v1/assistant/answer", json={"question": "Вопрос вне базы", "mode": "general"})
             self.assertEqual(general.json()["grounding"], "model")
             self.assertEqual(general.json()["sources"], [])
@@ -102,6 +103,12 @@ class ContractTests(unittest.TestCase):
             candidate = assistant.candidates_for("Что такое звезда?", "ru")[0]
         self.assertEqual(candidate["section_id"], "definition")
         self.assertEqual(candidate["excerpt"], "Горячая звезда.")
+
+    def test_assistant_can_show_record_image_when_definition_has_no_media(self):
+        record = storage.get_term(1)
+        record["sections"][0]["media_ids"] = []
+        image = assistant.image_for(record, record["sections"][0], "ru")
+        self.assertEqual(image["url"], "/api/v1/media/media:example/file?locale=ru")
 
     def test_assistant_does_not_attach_unused_sources(self):
         class EmptyCitations:

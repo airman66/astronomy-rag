@@ -1,0 +1,769 @@
+{
+ "imported": 310,
+ "unresolved": [
+  {
+   "term_number": 2,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 3,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 4,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 19,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 20,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 21,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 22,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 30,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 31,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 32,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 35,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 38,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 41,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 44,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 45,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 47,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 49,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 54,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 60,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 70,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 71,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 75,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 79,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 80,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 81,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 83,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 84,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 88,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 95,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 98,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 100,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 101,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 105,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 107,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 109,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 112,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 114,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 115,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 117,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 118,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 122,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 123,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 124,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 137,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 139,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 142,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 146,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 147,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 148,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 149,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 152,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 158,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 162,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 169,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 176,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 178,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 184,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 185,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 187,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 190,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 191,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 193,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 198,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 200,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 201,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 202,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 207,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 208,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 209,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 216,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 220,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 221,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 225,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 230,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 233,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 235,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 236,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 238,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 241,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 242,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 245,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 248,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 249,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 250,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 255,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 257,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 258,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 260,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 268,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 269,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 274,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 276,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 281,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 295,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 296,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 303,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 306,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 307,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 308,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 309,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 312,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 314,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 315,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 316,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 320,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 323,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 326,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 327,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 336,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 344,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 346,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 350,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 353,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 355,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 356,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 358,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 360,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 361,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 369,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 370,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 371,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 376,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 381,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 385,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 388,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 389,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 393,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 394,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 395,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 396,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 400,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 401,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 402,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 408,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 409,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 411,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 412,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 413,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 414,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 415,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 418,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 419,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 423,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 425,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 430,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 431,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 435,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 436,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 437,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 441,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 444,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 447,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 451,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 454,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 455,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 457,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 461,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 465,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 468,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 473,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 475,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 476,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 480,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 482,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 487,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 490,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 498,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 502,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 506,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 507,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 508,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 510,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 513,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 516,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 519,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 520,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 521,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 522,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 523,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 524,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 525,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 527,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 528,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 530,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 532,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 533,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 534,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 535,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 536,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 537,
+   "reason": "no_suitable_source_media"
+  },
+  {
+   "term_number": 538,
+   "reason": "no_suitable_source_media"
+  }
+ ]
+}

@@ -1,0 +1,572 @@
+{
+ "imported": 341,
+ "unresolved": [
+  {
+   "term_number": 1,
+   "reason": "latin_text:star spectrum Wavelength"
+  },
+  {
+   "term_number": 6,
+   "reason": "latin_text:Zenith Observer iZon"
+  },
+  {
+   "term_number": 9,
+   "reason": "latin_text:Actual diameter Angular diameter minutes seconds degrees"
+  },
+  {
+   "term_number": 13,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 14,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 15,
+   "reason": "latin_text:Cybele apmag apmag"
+  },
+  {
+   "term_number": 18,
+   "reason": "latin_text:trojans"
+  },
+  {
+   "term_number": 19,
+   "reason": "latin_text:Themis"
+  },
+  {
+   "term_number": 22,
+   "reason": "latin_text:metanco"
+  },
+  {
+   "term_number": 24,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 26,
+   "reason": "latin_text:Mercury"
+  },
+  {
+   "term_number": 28,
+   "reason": "latin_text:SPECTRUM"
+  },
+  {
+   "term_number": 30,
+   "reason": "latin_text:facteur d’extinction longueur d’onde"
+  },
+  {
+   "term_number": 35,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 36,
+   "reason": "latin_text:Zenith Observer iZon"
+  },
+  {
+   "term_number": 37,
+   "reason": "latin_text:star spectrum Relative flux Wavelength"
+  },
+  {
+   "term_number": 42,
+   "reason": "latin_text:Spectral radiance Classical theory Wavelength"
+  },
+  {
+   "term_number": 45,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 47,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 50,
+   "reason": "latin_text:Celestial Pole First point Libra Nadir First point Aries place celestial sphere"
+  },
+  {
+   "term_number": 51,
+   "reason": "latin_text:NORTH Perpendicular orbit POLE Rotation Axis CELESTIAL EQUATOR SOUTH CELESTIAL POLE"
+  },
+  {
+   "term_number": 52,
+   "reason": "latin_text:NORTH Perpendicular orbit POLE Rotation Axis CELESTIAL EQUATOR SOUTH CELESTIAL POLE"
+  },
+  {
+   "term_number": 59,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 60,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 65,
+   "reason": "unsuitable_dimensions:61x53"
+  },
+  {
+   "term_number": 68,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 78,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 80,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 81,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 83,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 85,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 96,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 107,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 109,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 110,
+   "reason": "latin_text:star spectrum Relative flux Wavelength"
+  },
+  {
+   "term_number": 131,
+   "reason": "latin_text:Temperature change over past years Trend from"
+  },
+  {
+   "term_number": 137,
+   "reason": "latin_text:Greenhouse Effect Some sunlight that hits Earth reflected back into space, while"
+  },
+  {
+   "term_number": 139,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 143,
+   "reason": "latin_text:Spectral Class (Temperature) Supergiants Giants Luminosity Absolute Magnitude Laas White Dwarts Colour"
+  },
+  {
+   "term_number": 146,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 158,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 162,
+   "reason": "latin_text:Exosphere Thermosphere Altitude Ground-Based Instrumentation Electron Density"
+  },
+  {
+   "term_number": 172,
+   "reason": "latin_text:URSA LEO|MINOR MAJOR"
+  },
+  {
+   "term_number": 173,
+   "reason": "latin_text:CAPUT"
+  },
+  {
+   "term_number": 176,
+   "reason": "latin_text:Magnitude difference from arbitrary zero point light curve Penelope October Time (Julian"
+  },
+  {
+   "term_number": 182,
+   "reason": "latin_text:gibbous Midnight First quarter Third quarter"
+  },
+  {
+   "term_number": 186,
+   "reason": "latin_text:Spectral Class (Temperature) Supergiants Giants Luminosity Absolute Magnitude Laas White Dwarts Colour"
+  },
+  {
+   "term_number": 197,
+   "reason": "latin_text:KAZAKHSTAN"
+  },
+  {
+   "term_number": 198,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 204,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 217,
+   "reason": "latin_text:NORTH Perpendicular orbit POLE Rotation Axis CELESTIAL EQUATOR SOUTH CELESTIAL POLE"
+  },
+  {
+   "term_number": 225,
+   "reason": "latin_text:Planck"
+  },
+  {
+   "term_number": 226,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 228,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 229,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 233,
+   "reason": "latin_text:Orbital period (Earth years) Eris:67.9 Pluto:39.3 Neptune:30.1 Jupiter:5.20 Ceres:2.77 Earth:1.00 Venus:0.724 Mercury:0.386"
+  },
+  {
+   "term_number": 237,
+   "reason": "latin_text:Viewpoint Viewpoint Distant background Viewpoint Viewpoint"
+  },
+  {
+   "term_number": 241,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 242,
+   "reason": "latin_text:three generations matter interactions force carriers (fermions) (bosons)"
+  },
+  {
+   "term_number": 243,
+   "reason": "latin_text:Penumbra Antumbra"
+  },
+  {
+   "term_number": 247,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 249,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 257,
+   "reason": "latin_text:Hummocky mound material depression Rubbly material Rugged, heavily cratered material Datk, ridged"
+  },
+  {
+   "term_number": 260,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 271,
+   "reason": "latin_text:KOpoHa"
+  },
+  {
+   "term_number": 287,
+   "reason": "unsuitable_dimensions:86x49"
+  },
+  {
+   "term_number": 295,
+   "reason": "latin_text:Scale Universe Branches Science Hierarchy Sciences Parallel Universes? ethics, planetary science, visible"
+  },
+  {
+   "term_number": 299,
+   "reason": "latin_text:SERPENS"
+  },
+  {
+   "term_number": 300,
+   "reason": "latin_text:Winter Solstice"
+  },
+  {
+   "term_number": 302,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 304,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 307,
+   "reason": "latin_text:Solar Irradiance ACRIMI ACRIMI Year"
+  },
+  {
+   "term_number": 308,
+   "reason": "latin_text:ISES Solar Cycle Sunspot Number Progression ‘Observed data through Smoothed Values Monthly"
+  },
+  {
+   "term_number": 314,
+   "reason": "latin_text:Sola System true imagery, color size Eris —Quaoar Weywot —Haumea Namaka, —Pluto"
+  },
+  {
+   "term_number": 316,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 320,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 321,
+   "reason": "latin_text:Current orbital stations International Tiangong Space Station meters Past orbital stations Skylab"
+  },
+  {
+   "term_number": 322,
+   "reason": "latin_text:GAMMA ULTRAVIOLET VISIBLE MICROWAVE RADIO ATMOSPHERE"
+  },
+  {
+   "term_number": 334,
+   "reason": "latin_text:VERY MASSIVE STARS MASSIVE STARS STARS BROWN DWARFS GIANT PLANETS. TERRESTRIAL PLANETS,"
+  },
+  {
+   "term_number": 338,
+   "reason": "latin_text:Granule Sunspot Penumbra Umbra Solar wind Corona Photosphere Temperature minimum, Chromosphere features"
+  },
+  {
+   "term_number": 351,
+   "reason": "latin_text:RIES ERIDANUS"
+  },
+  {
+   "term_number": 353,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 354,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 355,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 362,
+   "reason": "latin_text:CHINA"
+  },
+  {
+   "term_number": 366,
+   "reason": "latin_text:Hamaxa"
+  },
+  {
+   "term_number": 371,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 372,
+   "reason": "latin_text:Penumbra Antumbra"
+  },
+  {
+   "term_number": 373,
+   "reason": "latin_text:Time Difference since Date (Years)"
+  },
+  {
+   "term_number": 385,
+   "reason": "latin_text:Mass Earth Mass Gravity Weight Mars Mass Gravity Weight"
+  },
+  {
+   "term_number": 387,
+   "reason": "latin_text:Opaqueness Wavelength"
+  },
+  {
+   "term_number": 389,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 394,
+   "reason": "latin_text:axis"
+  },
+  {
+   "term_number": 396,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 399,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 400,
+   "reason": "latin_text:Winter Solstice"
+  },
+  {
+   "term_number": 408,
+   "reason": "latin_text:HIJRI CALENDAR SAFAR SHAWWAL RABI' ALTA"
+  },
+  {
+   "term_number": 409,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 422,
+   "reason": "latin_text:ARCTIC OCEAN PACIFIC OCEAN Scale Miller Projection"
+  },
+  {
+   "term_number": 423,
+   "reason": "latin_text:years WIKIPEDIA"
+  },
+  {
+   "term_number": 424,
+   "reason": "latin_text:Beaufort Arcti¢ Ocean Scale Projection often defined area where warmest month July"
+  },
+  {
+   "term_number": 425,
+   "reason": "latin_text:CHANDRA RADIO CLOSE-UP"
+  },
+  {
+   "term_number": 426,
+   "reason": "latin_text:Photon ring Image disk’s side othe ‘rare fora Black hole shadow Doppler"
+  },
+  {
+   "term_number": 433,
+   "reason": "latin_text:KOpoHa"
+  },
+  {
+   "term_number": 437,
+   "reason": "latin_text:Extragalactic Distance Ladder Hubble Constant SNIa TullyFisher Novae Maser Local Group Cepheids"
+  },
+  {
+   "term_number": 438,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 439,
+   "reason": "latin_text:Earth: Uranus: Venus:"
+  },
+  {
+   "term_number": 440,
+   "reason": "latin_text:Main sequence Supergiants"
+  },
+  {
+   "term_number": 446,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 448,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 449,
+   "reason": "latin_text:Sola System true imagery, color size Eris —Quaoar Weywot —Haumea Namaka, —Pluto"
+  },
+  {
+   "term_number": 456,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 461,
+   "reason": "latin_text:into p-meson Invisible collides with proton Event’ World's first neutrino hydrogen bubble"
+  },
+  {
+   "term_number": 465,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 467,
+   "reason": "latin_text:MAJOR"
+  },
+  {
+   "term_number": 472,
+   "reason": "latin_text:Supershell Average"
+  },
+  {
+   "term_number": 473,
+   "reason": "unsuitable_dimensions:400x181"
+  },
+  {
+   "term_number": 474,
+   "reason": "latin_text:CAPRI- CORNUS \\TELESCOPIUM"
+  },
+  {
+   "term_number": 475,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 476,
+   "reason": "latin_text:Tully—Fisher GCLF Novae maser Local Group Cepheids Local Group Lyrae Cepheids light"
+  },
+  {
+   "term_number": 478,
+   "reason": "latin_text:neutrino solar interior— corona 2million"
+  },
+  {
+   "term_number": 484,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 485,
+   "reason": "unsuitable_dimensions:960x286"
+  },
+  {
+   "term_number": 488,
+   "reason": "latin_text:Beaufort Arcti¢ Ocean Scale Projection often defined area where warmest month July"
+  },
+  {
+   "term_number": 503,
+   "reason": "latin_text:Lato User"
+  },
+  {
+   "term_number": 508,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 509,
+   "reason": "latin_text:horizon"
+  },
+  {
+   "term_number": 510,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 518,
+   "reason": "latin_text:NORTH Perpendicular orbit POLE Rotation Axis CELESTIAL EQUATOR SOUTH CELESTIAL POLE"
+  },
+  {
+   "term_number": 522,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 523,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 524,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 527,
+   "reason": "latin_text:Luminance Angular Size Luminance Mercury Venus Effective Uniform-Disc Diameter"
+  },
+  {
+   "term_number": 528,
+   "reason": "semantic_mismatch"
+  },
+  {
+   "term_number": 532,
+   "reason": "latin_text:Beobachter"
+  }
+ ],
+ "no_match": [
+  61,
+  89,
+  142,
+  149,
+  168,
+  191,
+  208,
+  216,
+  291,
+  333,
+  332,
+  337,
+  346,
+  358,
+  413,
+  414,
+  436,
+  435,
+  444,
+  450,
+  457,
+  464,
+  479,
+  480,
+  481
+ ]
+}

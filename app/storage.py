@@ -16,7 +16,7 @@ from pathlib import Path
 
 DATA = Path(os.getenv("DATA_DIR", "data"))
 DB = DATA / "glossary.db"
-SCHEMA_VERSION = "3"
+SCHEMA_VERSION = "4"
 # Semantic neighbours below this cosine similarity are noise for a glossary of short texts.
 SEMANTIC_POOL = int(os.getenv("SEMANTIC_POOL", "40"))
 RECHECK_SECONDS = 30.0
@@ -202,6 +202,7 @@ def rebuild_database(current_fingerprint: str | None = None) -> None:
 
 
 def illustration_view(item: dict) -> dict:
+    source = item.get("source") or {}
     return {
         "term_number": int(item["term_number"]),
         "url": f"/api/v1/terms/{int(item['term_number'])}/illustration",
@@ -213,6 +214,13 @@ def illustration_view(item: dict) -> dict:
         "kind": item.get("kind", "conceptual"),
         "status": item.get("status"),
         "generator": item.get("generator", ""),
+        "source_type": item.get("source_type", "generated"),
+        "file_page": source.get("file_page"),
+        "article_url": source.get("article_url"),
+        "author": source.get("author"),
+        "license": source.get("license"),
+        "license_url": source.get("license_url"),
+        "modified": source.get("modified"),
     }
 
 

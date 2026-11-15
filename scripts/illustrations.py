@@ -44,7 +44,7 @@ MIN_SIDE = 768
 SCHEMA_VERSION = 1
 
 STYLE = (
-    "Единый стиль портала «Параллакс»: строгая научно-популярная иллюстрация в духе современного астрономического атласа. "
+    "Единый стиль портала «Алкиона»: строгая научно-популярная иллюстрация в духе современного астрономического атласа. "
     "Глубокий тёмно-синий фон #18233A, светлые тонкие линии #FBFBF9, приглушённые акценты: зелёный #2C7A4B, синий #2A78D6, "
     "оранжевый #EB6834, бирюзовый #1BAF7A; цвета звёзд — по их температуре. Матовая плоская заливка с мягкими градиентами, "
     "без свечения ради эффекта, без неонов и фиолетовых градиентов. Горизонтальный формат 4:3. Никакого текста, букв, цифр, "
@@ -129,6 +129,8 @@ def build_manifest() -> dict[str, Any]:
             "bytes": item.get("bytes"),
             "sha256": item.get("sha256"),
             "generator": item.get("generator", ""),
+            "source_type": item.get("source_type", "generated"),
+            "source": item.get("source"),
             "generated_at": item.get("generated_at"),
             "attempts": item.get("attempts", 0),
             "last_error": item.get("last_error"),
@@ -370,7 +372,7 @@ def export_batches(threads: int, size: int) -> None:
     print(f"batches: {len(batches)} files for {threads} threads in {out}", flush=True)
 
 
-def verify() -> int:
+def verify(complete: bool = False) -> int:
     manifest = load_manifest()
     records = {int(p.stem) for p in TERMS.glob("*.json")}
     problems: list[str] = []
@@ -403,6 +405,14 @@ def verify() -> int:
                 problems.append(f"term {item['term_number']}: {exc}")
             if not item.get("alt_ru"):
                 problems.append(f"term {item['term_number']}: missing alt_ru")
+            if item.get("source_type") in ("wikimedia", "astro4edu", "related"):
+                source = item.get("source") or {}
+                license_name = source.get("license", "").casefold()
+                public_domain = "public domain" in license_name or license_name.startswith("pd-") or license_name == "pd"
+                if not all(source.get(field) for field in ("file_page", "license")) or (not public_domain and not source.get("license_url")):
+                    problems.append(f"term {item['term_number']}: missing source attribution")
+        elif complete:
+            problems.append(f"term {item['term_number']}: no cover")
     orphans = [p.name for p in FILES.glob("*") if p.is_file() and p.resolve() not in referenced] if FILES.exists() else []
     if orphans:
         problems.append(f"files without manifest entry: {orphans[:10]}")
@@ -424,6 +434,7 @@ def main() -> int:
     parser.add_argument("--model", default=os.getenv("ILLUSTRATION_MODEL", "gpt-6-astra"))
     parser.add_argument("--max-attempts", type=int, default=3)
     parser.add_argument("--generator", default="ChatGPT (team account)")
+    parser.add_argument("--complete", action="store_true", help="require a ready cover for every term")
     args = parser.parse_args()
     if args.command == "manifest":
         build_manifest()
@@ -436,7 +447,7 @@ def main() -> int:
     elif args.command == "import":
         import_dir(args.dir, args.generator)
     elif args.command == "verify":
-        return verify()
+        return verify(args.complete)
     return 0
 
 

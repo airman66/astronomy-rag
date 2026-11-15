@@ -129,7 +129,7 @@ class FixTests(unittest.TestCase):
         self.assertEqual(response.status_code, 503)
         self.assertEqual(response.headers["Retry-After"], "10")
 
-    # B11: wrong JSON shapes from DeepSeek are a 502, not an unhandled 500.
+    # B11: wrong JSON shapes from an LLM are a 502, not an unhandled 500.
     def test_assistant_rejects_malformed_model_json(self):
         class Broken:
             async def complete(self, system, payload):
@@ -139,7 +139,7 @@ class FixTests(unittest.TestCase):
         with patch.dict(os.environ, {"DEEPSEEK_API_KEY": "unit-test"}):
             response = self.client.post("/api/v1/assistant/answer", json={"question": "Что такое чёрная дыра?"})
         self.assertEqual(response.status_code, 502, response.text)
-        self.assertEqual(response.json()["code"], "deepseek_error")
+        self.assertEqual(response.json()["code"], "assistant_error")
 
     def test_null_record_ids_fall_back_without_crash(self):
         class NullIds:

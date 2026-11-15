@@ -6,7 +6,7 @@
 
 ```sh
 cp .env.example .env
-# заполнить DEEPSEEK_API_KEY в .env; для импорта и переиндексации — RUNPOD_API_KEY
+# заполнить RUNPOD_API_KEY в .env для помощника GLM-5.3
 docker compose up --build -d
 curl http://localhost:8001/health
 curl http://localhost:8001/docs
@@ -18,7 +18,7 @@ curl http://localhost:8001/docs
 llama-server -m data/models/Qwen3-Embedding-8B-Q4_K_M.gguf --embedding --pooling last -ngl 99 -c 4096 --host 0.0.0.0 --port 8082
 ```
 
-Сервер на хосте в таком режиме доступен в локальной сети; ограничьте интерфейс или используйте только доверенную сеть. Без ключа DeepSeek чтение и поиск работают, ассистент возвращает `503 assistant_unavailable`.
+Сервер на хосте в таком режиме доступен в локальной сети; ограничьте интерфейс или используйте только доверенную сеть. Для помощника по умолчанию в `.env.example` выбран публичный endpoint RunPod GLM-5.3. Он оплачивается по токенам и не требует отдельного GPU endpoint. Без ключа LLM чтение и поиск работают, ассистент возвращает `503 assistant_unavailable`.
 
 ## Данные и индекс
 
@@ -64,10 +64,13 @@ python3 -m scripts.evaluate --answers 10
 python3 -m scripts.translation_audit all --workers 8        # полный проход: сбор, ревью, проверка, применение, отчёт
 python3 -m scripts.translation_audit report                 # пересобрать отчёт по каждому из 501 ID
 python3 -m scripts.illustrations manifest                   # манифест иллюстраций для всех терминов
-python3 -m scripts.illustrations batches --threads 4        # пакеты для ChatGPT в 4 потока
-python3 -m scripts.illustrations run --workers 1            # очередь генерации через Codex CLI
-python3 -m scripts.illustrations import --dir data/illustrations/inbox
-python3 -m scripts.illustrations verify                     # 501 привязка, файлы, хэши, размеры
+python3 -m scripts.wikimedia_covers discover --workers 2   # поиск свободных файлов Wikimedia по одному запросу
+python3 -m scripts.wikimedia_covers astro-fallback          # готовые медиа Astro4Edu как запасной источник
+python3 -m scripts.wikimedia_covers import --workers 2     # загрузка и OCR, без генерации
+python3 -m scripts.wikimedia_covers curated                # вручную подобранные файлы Commons для омонимов
+python3 -m scripts.wikimedia_covers related                # явные привязки к близким темам
+python3 -m scripts.illustrations verify --complete          # 501 файл, атрибуция, хэши и размеры
+python3 -m scripts.wikimedia_covers report                 # CSV и страница визуального просмотра по всем ID
 ```
 
-Ревью и очередь возобновляемы: готовые элементы не повторяются. Задание для ChatGPT — `data/illustrations/CHATGPT_TASK.md`.
+Результат поиска кэшируется в `data/illustrations/wikimedia_candidates.json`; прямые исключения и связи с близкими темами записаны по ID в `curated_wikimedia.json` и `related_fallbacks.json`. Отчёты первичного поиска — `wikimedia_report.json` и `astro_fallback_report.json`. Итоговое покрытие и атрибуция — `coverage.csv`, визуальный просмотр — `review.html`. Статус `approved` выставляется только после редакторской проверки.
