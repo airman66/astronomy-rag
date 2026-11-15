@@ -145,7 +145,7 @@ class FixTests(unittest.TestCase):
         class NullIds:
             async def complete(self, system, payload):
                 if "classify" in system:
-                    return {"mode": "term", "record_ids": None}
+                    return {"scope": "in_scope", "mode": "term", "record_ids": None}
                 return {"answer": "Общий ответ.", "used_record_ids": None}
 
         app.state.deepseek = NullIds()
@@ -170,11 +170,13 @@ class FixTests(unittest.TestCase):
     def test_general_mode_skips_retrieval(self):
         class General:
             async def complete(self, system, payload):
+                if "classify" in system:
+                    return {"scope": "in_scope", "mode": "general", "record_ids": []}
                 return {"answer": "Ответ.", "used_record_ids": []}
 
         app.state.deepseek = General()
         with patch.object(assistant, "candidates_for", side_effect=AssertionError("retrieval must not run")), patch.dict(os.environ, {"DEEPSEEK_API_KEY": "unit-test"}):
-            response = self.client.post("/api/v1/assistant/answer", json={"question": "Вопрос вне базы", "mode": "general"})
+            response = self.client.post("/api/v1/assistant/answer", json={"question": "Почему звёзды светят?", "mode": "general"})
         self.assertEqual(response.status_code, 200, response.text)
 
     # Team illustrations: served only when generated, with metadata in the record and list.

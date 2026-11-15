@@ -27,7 +27,8 @@ class FakeLimiter:
 class FakeDeepSeek:
     async def complete(self, system, payload):
         if "classify" in system:
-            return {"mode": "term", "record_ids": ["term:1"], "depth": "short", "reason": "definition"}
+            scope = "out_of_scope" if "борщ" in payload["question"].lower() else "in_scope"
+            return {"scope": scope, "mode": "term", "record_ids": ["term:1"], "reason": "definition"}
         return {"answer": "Звезда класса A — горячая звезда.", "used_record_ids": ["term:1"]}
 
 
@@ -91,7 +92,7 @@ class ContractTests(unittest.TestCase):
             self.assertEqual(response.json()["mode"], "term")
             self.assertEqual(response.json()["sources"][0]["record_id"], "term:1")
             self.assertEqual(response.json()["images"][0]["url"], "/api/v1/media/media:example/file?locale=ru")
-            general = self.client.post("/api/v1/assistant/answer", json={"question": "Вопрос вне базы", "mode": "general"})
+            general = self.client.post("/api/v1/assistant/answer", json={"question": "Почему у планет есть орбиты?", "mode": "general"})
             self.assertEqual(general.json()["grounding"], "model")
             self.assertEqual(general.json()["sources"], [])
         with patch.dict(os.environ, {"DEEPSEEK_API_KEY": ""}):
@@ -113,6 +114,8 @@ class ContractTests(unittest.TestCase):
     def test_assistant_does_not_attach_unused_sources(self):
         class EmptyCitations:
             async def complete(self, system, payload):
+                if "classify" in system:
+                    return {"scope": "in_scope", "mode": "term", "record_ids": ["term:1"]}
                 if "general model knowledge" in system:
                     return {"answer": "Ответ без ссылки.", "used_record_ids": []}
                 return {"answer": "Источник не использован.", "used_record_ids": []}
@@ -124,6 +127,27 @@ class ContractTests(unittest.TestCase):
         self.assertEqual(response.json()["mode"], "general")
         self.assertEqual(response.json()["grounding"], "model")
         self.assertEqual(response.json()["sources"], [])
+
+    def test_assistant_rejects_off_topic_in_every_mode(self):
+        class ScopeOnly:
+            async def complete(self, system, payload):
+                if "classify" not in system:
+                    raise AssertionError("Off-topic question must not reach answer generation")
+                return {"scope": "out_of_scope", "mode": "general", "record_ids": []}
+
+        app.state.deepseek = ScopeOnly()
+        with patch.dict(os.environ, {"DEEPSEEK_API_KEY": "unit-test"}):
+            for mode in ("auto", "term", "explain", "general"):
+                with self.subTest(mode=mode):
+                    response = self.client.post("/api/v1/assistant/answer", json={
+                        "question": "Как приготовить борщ?", "mode": mode,
+                        "context": {"planet": "Proxima Cen b"},
+                    })
+                    self.assertEqual(response.status_code, 200, response.text)
+                    self.assertEqual(response.json()["mode"], "out_of_scope")
+                    self.assertEqual(response.json()["grounding"], "policy")
+                    self.assertIn("астрономии", response.json()["answer"])
+                    self.assertEqual(response.json()["sources"], [])
 
     def test_rate_limit_shape(self):
         app.state.rate_limiter.retry = 7

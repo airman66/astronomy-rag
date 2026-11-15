@@ -210,8 +210,8 @@ class AnswerImage(BaseModel):
 
 
 class AnswerResponse(BaseModel):
-    mode: Literal["term", "article", "explain", "general"]
-    grounding: Literal["knowledge_base", "model", "mixed"]
+    mode: Literal["term", "article", "explain", "general", "out_of_scope"]
+    grounding: Literal["knowledge_base", "model", "mixed", "policy"]
     answer: str
     primary_url: str | None
     sources: list[AnswerSource]
@@ -390,7 +390,7 @@ async def assistant_answer(request: Request, body: AnswerRequest = Body(openapi_
     "term": {"summary": "Краткое определение", "value": {"question": "Что такое звезда?", "mode": "term", "locale": "ru"}},
     "article": {"summary": "Статья, если доступна", "value": {"question": "Расскажи подробно о звёздах", "mode": "article", "locale": "ru"}},
     "explain": {"summary": "Составное объяснение", "value": {"question": "Чем звезда отличается от планеты?", "mode": "explain", "locale": "ru"}},
-    "general": {"summary": "Общий ответ", "value": {"question": "Что приготовить на ужин?", "mode": "general", "locale": "ru"}},
+    "general": {"summary": "Общий ответ по астрономии без справочника", "value": {"question": "Почему планеты вращаются вокруг звёзд?", "mode": "general", "locale": "ru"}},
 })):
     provider = os.getenv("ASSISTANT_PROVIDER", "deepseek").lower()
     if provider not in ("deepseek", "runpod"):
