@@ -2,13 +2,13 @@ services:
   glossary-rag:
     build: .
     ports:
-      - "8001:8000"
+      - "127.0.0.1:8001:8000"
     environment:
       ASSISTANT_PROVIDER: ${ASSISTANT_PROVIDER:-deepseek}
       DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
       DEEPSEEK_MODEL: ${DEEPSEEK_MODEL:-deepseek-flash}
       RUNPOD_API_KEY: ${RUNPOD_API_KEY:-}
-      RUNPOD_ENDPOINT_ID: ${RUNPOD_ENDPOINT_ID:-b1dd8hy2hqo1nb}
+      RUNPOD_ENDPOINT_ID: ${RUNPOD_ENDPOINT_ID:-}
       RUNPOD_MODEL: ${RUNPOD_MODEL:-glm-5.3}
       CORS_ORIGINS: ${CORS_ORIGINS:-}
       REDIS_URL: redis://redis:6379/0

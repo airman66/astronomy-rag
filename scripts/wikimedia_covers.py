@@ -31,7 +31,7 @@ RELATED = DATA / "illustrations" / "related_fallbacks.json"
 CURATED = DATA / "illustrations" / "curated_wikimedia.json"
 ASTRO_CURATED = DATA / "illustrations" / "curated_astro.json"
 HEADERS = {
-    "User-Agent": "TulaHack2026Glossary/1.0 (educational astronomy portal; https://github.com/)"
+    "User-Agent": "AstronomyGlossaryRAG/1.0 (educational glossary; https://github.com/airman66/astro)"
 }
 IMAGE_SUFFIXES = (".jpg", ".jpeg", ".png", ".webp", ".svg")
 LICENSES = ("cc by", "cc-by", "cc0", "public domain", "pd-")

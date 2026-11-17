@@ -1,26 +1,32 @@
-> Рабочий запуск всего портала — `docker compose up --build -d` из корня. Сервис `api` теперь также обслуживает каталог NASA, рейтинг и HWC (`app/planets/`). Основной стек: web, api, redis. Локальные эмбеддинги включаются профилем `embeddings`. Контракт Planets — в корневом `docs/API.md`.
+# Астрономический справочник и RAG
 
-# Astro4Edu glossary RAG
+Самостоятельный FastAPI-сервис по [спецификации](SPEC.md): 501 термин Astro4Edu на английском и русском, исходные медиа, локализованные изображения, поиск FTS5 + FAISS и ответы LLM с проверяемыми ссылками на источники. Канонические записи лежат в `data/processed/`, исходные снимки — в `data/raw/`. Статусы редакторского ревью сохранены из исходного проекта.
 
-Самостоятельный двуязычный справочник и RAG API по утверждённой [спецификации](SPEC.md). Канонические записи лежат в `data/processed/`, исходные снимки — в `data/raw/`. Записи и изображения в API остаются черновиками до редакторского ревью.
+Выделен из [airman66/astro](https://github.com/airman66/astro) на коммите `f5a1d1c`. История терминов, переводов, индекса и API перенесена в корень репозитория; модуль каталога NASA исключён. Этот репозиторий не зависит от портала.
 
 ## Запуск
 
 ```sh
 cp .env.example .env
-# заполнить RUNPOD_API_KEY в .env для помощника GLM-5.3
+# заполнить DEEPSEEK_API_KEY для помощника; без ключа справочник и поиск работают
 docker compose up --build -d
 curl http://localhost:8001/health
 curl http://localhost:8001/docs
 ```
 
-При первом запуске Compose скачивает и проверяет SHA-256 официального `Qwen3-Embedding-8B-Q4_K_M.gguf` (4,68 ГБ) в игнорируемый `data/models/`. Сервис эмбеддингов на CPU прогревается при первом запросе. На macOS можно запустить `llama-server` с Metal на хосте и передать `EMBEDDING_URL=http://host.docker.internal:8082/v1/embeddings` в Compose:
+По умолчанию поиск лексический. Для гибридного поиска включите профиль `embeddings`: он скачивает и проверяет SHA-256 `Qwen3-Embedding-8B-Q4_K_M.gguf` (4,68 ГБ) в игнорируемый `data/models/` и запускает сервер эмбеддингов на CPU:
+
+```sh
+docker compose --profile embeddings up --build -d
+```
+
+На macOS можно вместо контейнера запустить `llama-server` с Metal и задать `EMBEDDING_URL=http://host.docker.internal:8082/v1/embeddings`:
 
 ```sh
 llama-server -m data/models/Qwen3-Embedding-8B-Q4_K_M.gguf --embedding --pooling last -ngl 99 -c 4096 --host 0.0.0.0 --port 8082
 ```
 
-Сервер на хосте в таком режиме доступен в локальной сети; ограничьте интерфейс или используйте только доверенную сеть. Для помощника по умолчанию в `.env.example` выбран публичный endpoint RunPod GLM-5.3. Он оплачивается по токенам и не требует отдельного GPU endpoint. Без ключа LLM чтение и поиск работают, ассистент возвращает `503 assistant_unavailable`.
+Для RunPod вместо DeepSeek задайте `ASSISTANT_PROVIDER=runpod`, `RUNPOD_API_KEY` и `RUNPOD_ENDPOINT_ID`. Без ключа LLM чтение и поиск работают, ассистент возвращает `503 assistant_unavailable`.
 
 ## Данные и индекс
 
@@ -52,13 +58,20 @@ python3 scripts/localize_timezone_svg.py data/raw/world_time_zones_map_source.sv
 
 ## Проверка
 
+Для локальных команд установите зависимости:
+
 ```sh
-python3 -m unittest discover -s tests -v
-python3 -m app.audit
-python3 -m scripts.evaluate --answers 10
+python3 -m venv .venv
+.venv/bin/pip install -r requirements-dev.txt
 ```
 
-Для последней команды нужны `DEEPSEEK_API_KEY` и запущенный сервер эмбеддингов. Результат 50 контрольных вопросов — `data/eval/report.json`; сравнение размеров чанков — `data/eval/chunk_config.json`. OpenAPI доступен в `/openapi.json`, Swagger UI — в `/docs`.
+```sh
+.venv/bin/python -m unittest discover -s tests -v
+.venv/bin/python -m app.audit
+.venv/bin/python -m scripts.illustrations verify --complete
+```
+
+Оригиналы медиа и модель исключены из Git. После нового клонирования оригиналы восстанавливаются командой `python3 -m app.importer --media-only --workers 4`; без них полный `app.audit` сообщает об отсутствующих файлах, а API продолжает выдавать записи и локализованные медиа. Результат 50 контрольных вопросов в `data/eval/report.json` относится к прежней версии промпта; новый промпт нужно оценивать отдельно через `python3 -m scripts.eval_scope` с ключом LLM. OpenAPI доступен в `/openapi.json`, Swagger UI — в `/docs`.
 
 ## Ревью переводов и иллюстрации
 
