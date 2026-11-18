@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "built_at": "2026-11-18T10:17:29.069082+00:00",
+  "built_at": "2026-11-18T13:09:59.182078+00:00",
   "model": "Qwen/Qwen3-Embedding-8B-GGUF",
   "model_revision": "69d0e58a13e463cd99a9b83e3f5fee7c10265fab",
   "model_file": "Qwen3-Embedding-8B-Q4_K_M.gguf",
@@ -9,19 +9,19 @@
   "pooling": "last",
   "query_instruction": "Retrieve relevant astronomy glossary definitions, explanations, and image captions for the user question.",
   "dimension": 4096,
-  "chunk_count": 1948,
+  "chunk_count": 1960,
   "chunk_config": {
     "chunk_version": "2",
     "budget_tokens": 400,
     "overlap": 0.1,
     "tokenizer_model": "Qwen/Qwen3-Embedding-8B",
-    "chunk_count": 1948,
-    "chunks_sha256": "a762942df0e7f23aed40756a34c6ea46f98b0799f8b2918622bab3a30ea5c207"
+    "chunk_count": 1960,
+    "chunks_sha256": "f538457c454e3a49fa5288627e90eb85735d36aae39bb2f5d0faacad86a6868a"
   },
-  "chunks_sha256": "a762942df0e7f23aed40756a34c6ea46f98b0799f8b2918622bab3a30ea5c207",
-  "index_sha256": "fd965bd8ffac0cf5ccadb941055f542887db37b203596a555a7f4671da4fa0cb",
-  "vector_map_sha256": "36bbb0205568513707eaff709f3a75bc9df26708a456a8d83d6d88332e653de0",
-  "embedding_cache_sha256": "e3c125f6ee731cd154ac53d1723e3c90228b4ca63c9aa4cf2ae9ef57d08bb9d6",
+  "chunks_sha256": "f538457c454e3a49fa5288627e90eb85735d36aae39bb2f5d0faacad86a6868a",
+  "index_sha256": "30ba3a70e062fcb08580e9cfbf86da3f2cad5a0ea127ce95787b5edd410a11eb",
+  "vector_map_sha256": "040765d604d0000c1025fca9870073f96d10f9213f9540a78d246016fc3a291e",
+  "embedding_cache_sha256": "3e5d6d7f6289f9006655f0fe732454d981c740ee9809c3420119ecd0ac768f1d",
   "normalization": "L2",
   "metric": "inner_product"
 }

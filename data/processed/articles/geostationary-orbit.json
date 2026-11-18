@@ -1,0 +1,108 @@
+{
+  "id": "article:geostationary-orbit",
+  "kind": "article",
+  "source": {
+    "type": "project_article",
+    "fact_checked_at": "2026-11-18",
+    "references": [
+      {
+        "title": "NASA Earth Observatory · Catalog of Earth Satellite Orbits",
+        "url": "https://science.nasa.gov/earth/earth-observatory/catalog-of-earth-satellite-orbits/"
+      },
+      {
+        "title": "ESA · Orbits",
+        "url": "https://www.esa.int/Applications/Telecommunications_Integrated_Applications/Orbits"
+      }
+    ]
+  },
+  "metadata": {
+    "related_term_numbers": [
+      232,
+      233,
+      293,
+      490
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Why geostationary satellites stay above the equator",
+      "aliases": [
+        "Geostationary orbit",
+        "Geostationary Earth orbit"
+      ],
+      "blocks": {
+        "orbit-conditions": {
+          "heading": "Orbit conditions",
+          "body": "A geostationary satellite travels eastward on a circular orbit in Earth’s equatorial plane. Its period matches one sidereal day, about 23 hours 56 minutes. These conditions make the satellite stay above the same point on the equator as Earth rotates. Its altitude above the equator is about 35,786 km."
+        },
+        "latitude": {
+          "heading": "Why it cannot be directly over Moscow",
+          "body": "A fixed point above Moscow, or any other nonzero latitude, traces a circle in a plane offset from Earth’s center as Earth rotates. The plane of a free orbit in Earth’s central gravitational field passes through the center. A geostationary satellite therefore stays over the equator. An observer in Moscow can see such a satellite in the southern sky when the satellite’s longitude is within view."
+        },
+        "geosynchronous": {
+          "heading": "Geosynchronous and geostationary orbits",
+          "body": "A geosynchronous satellite also completes one revolution per sidereal day. If the orbit is tilted, the point directly beneath the satellite moves north and south over the course of the day. An eccentric orbit can also produce east–west motion. Geostationary orbit is the circular, equatorial case of a prograde geosynchronous orbit."
+        }
+      }
+    },
+    "ru": {
+      "title": "Почему геостационарные спутники находятся над экватором",
+      "aliases": [
+        "Геостационарная орбита",
+        "Геостационарный спутник"
+      ],
+      "blocks": {
+        "orbit-conditions": {
+          "heading": "Условия геостационарной орбиты",
+          "body": "Геостационарный спутник движется на восток по круговой орбите в плоскости экватора Земли. Его период равен звёздным суткам, около 23 часов 56 минут. Спутник остаётся над одной и той же точкой экватора при вращении Земли. Высота над экватором составляет около 35 786 км."
+        },
+        "latitude": {
+          "heading": "Почему спутник не может висеть прямо над Москвой",
+          "body": "Неподвижная относительно Земли точка прямо над Москвой, как и над любой точкой на ненулевой широте, при вращении Земли описывает окружность в плоскости, смещённой от центра Земли. Плоскость свободной орбиты в центральном поле тяготения проходит через центр Земли. Поэтому геостационарный спутник остаётся над экватором. Из Москвы такой спутник можно увидеть в южной части неба, если он находится на подходящей долготе."
+        },
+        "geosynchronous": {
+          "heading": "Геосинхронная и геостационарная орбиты",
+          "body": "Геосинхронный спутник тоже совершает один оборот за звёздные сутки. При наклонной орбите точка под спутником в течение суток смещается к северу и югу. Эксцентриситет орбиты также может вызвать смещение на восток и запад. Геостационарная орбита — круговой экваториальный случай прямой геосинхронной орбиты."
+        }
+      }
+    }
+  },
+  "sections": [
+    {
+      "id": "orbit-conditions",
+      "type": "source_block",
+      "heading": "Orbit conditions",
+      "body": "A geostationary satellite travels eastward on a circular orbit in Earth’s equatorial plane. Its period matches one sidereal day, about 23 hours 56 minutes. These conditions make the satellite stay above the same point on the equator as Earth rotates. Its altitude above the equator is about 35,786 km.",
+      "heading_ru": "Условия геостационарной орбиты",
+      "body_ru": "Геостационарный спутник движется на восток по круговой орбите в плоскости экватора Земли. Его период равен звёздным суткам, около 23 часов 56 минут. Спутник остаётся над одной и той же точкой экватора при вращении Земли. Высота над экватором составляет около 35 786 км.",
+      "links": [],
+      "media_ids": []
+    },
+    {
+      "id": "latitude",
+      "type": "source_block",
+      "heading": "Why it cannot be directly over Moscow",
+      "body": "A fixed point above Moscow, or any other nonzero latitude, traces a circle in a plane offset from Earth’s center as Earth rotates. The plane of a free orbit in Earth’s central gravitational field passes through the center. A geostationary satellite therefore stays over the equator. An observer in Moscow can see such a satellite in the southern sky when the satellite’s longitude is within view.",
+      "heading_ru": "Почему спутник не может висеть прямо над Москвой",
+      "body_ru": "Неподвижная относительно Земли точка прямо над Москвой, как и над любой точкой на ненулевой широте, при вращении Земли описывает окружность в плоскости, смещённой от центра Земли. Плоскость свободной орбиты в центральном поле тяготения проходит через центр Земли. Поэтому геостационарный спутник остаётся над экватором. Из Москвы такой спутник можно увидеть в южной части неба, если он находится на подходящей долготе.",
+      "links": [],
+      "media_ids": []
+    },
+    {
+      "id": "geosynchronous",
+      "type": "source_block",
+      "heading": "Geosynchronous and geostationary orbits",
+      "body": "A geosynchronous satellite also completes one revolution per sidereal day. If the orbit is tilted, the point directly beneath the satellite moves north and south over the course of the day. An eccentric orbit can also produce east–west motion. Geostationary orbit is the circular, equatorial case of a prograde geosynchronous orbit.",
+      "heading_ru": "Геосинхронная и геостационарная орбиты",
+      "body_ru": "Геосинхронный спутник тоже совершает один оборот за звёздные сутки. При наклонной орбите точка под спутником в течение суток смещается к северу и югу. Эксцентриситет орбиты также может вызвать смещение на восток и запад. Геостационарная орбита — круговой экваториальный случай прямой геосинхронной орбиты.",
+      "links": [],
+      "media_ids": []
+    }
+  ],
+  "media": [],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Факты сверены с библиографией. Редакторское утверждение ожидается."
+  }
+}

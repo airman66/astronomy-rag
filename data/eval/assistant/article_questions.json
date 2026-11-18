@@ -1,0 +1,177 @@
+{
+  "schema_version": 2,
+  "questions": [
+    {
+      "id": "article-doppler-effect-en",
+      "question": "Use the article on the Doppler effect. Why do stars' spectral lines shift toward red or blue, and how does the shift let astronomers estimate radial velocity?",
+      "locale": "en",
+      "requested_mode": "article",
+      "expected_modes": [
+        "article"
+      ],
+      "evidence": [
+        [
+          "article:doppler-effect#wavelength-shift"
+        ],
+        [
+          "article:doppler-effect#radial-velocity"
+        ]
+      ],
+      "facts": [
+        {
+          "id": "wavelength-shift",
+          "patterns": [
+            "longer|redshift|red shift",
+            "shorter|blueshift|blue shift"
+          ],
+          "evidence": [
+            [
+              "article:doppler-effect#wavelength-shift"
+            ]
+          ]
+        },
+        {
+          "id": "radial-velocity",
+          "patterns": [
+            "velocity|speed",
+            "wavelength|Δλ"
+          ],
+          "evidence": [
+            [
+              "article:doppler-effect#radial-velocity"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "article-doppler-effect-ru",
+      "question": "По статье об эффекте Доплера объясни, почему спектральные линии звёзд смещаются в красную или синюю сторону и как по смещению оценивают лучевую скорость.",
+      "locale": "ru",
+      "requested_mode": "article",
+      "expected_modes": [
+        "article"
+      ],
+      "evidence": [
+        [
+          "article:doppler-effect#wavelength-shift"
+        ],
+        [
+          "article:doppler-effect#radial-velocity"
+        ]
+      ],
+      "facts": [
+        {
+          "id": "wavelength-shift",
+          "patterns": [
+            "красн|длин",
+            "син|коротк"
+          ],
+          "evidence": [
+            [
+              "article:doppler-effect#wavelength-shift"
+            ]
+          ]
+        },
+        {
+          "id": "radial-velocity",
+          "patterns": [
+            "скорост",
+            "длин|Δλ"
+          ],
+          "evidence": [
+            [
+              "article:doppler-effect#radial-velocity"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "article-geostationary-orbit-en",
+      "question": "Use the article on geostationary satellites to explain why the orbit is equatorial and why a satellite cannot stay directly above Moscow.",
+      "locale": "en",
+      "requested_mode": "article",
+      "expected_modes": [
+        "article"
+      ],
+      "evidence": [
+        [
+          "article:geostationary-orbit#orbit-conditions"
+        ],
+        [
+          "article:geostationary-orbit#latitude"
+        ]
+      ],
+      "facts": [
+        {
+          "id": "orbit-conditions",
+          "patterns": [
+            "equat",
+            "sidereal|23 hours|rotation"
+          ],
+          "evidence": [
+            [
+              "article:geostationary-orbit#orbit-conditions"
+            ]
+          ]
+        },
+        {
+          "id": "latitude",
+          "patterns": [
+            "Moscow|latitude",
+            "cent(er|re)|equat"
+          ],
+          "evidence": [
+            [
+              "article:geostationary-orbit#latitude"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "article-geostationary-orbit-ru",
+      "question": "По статье о геостационарной орбите объясни, почему спутник остаётся над экватором и почему он не может висеть прямо над Москвой.",
+      "locale": "ru",
+      "requested_mode": "article",
+      "expected_modes": [
+        "article"
+      ],
+      "evidence": [
+        [
+          "article:geostationary-orbit#orbit-conditions"
+        ],
+        [
+          "article:geostationary-orbit#latitude"
+        ]
+      ],
+      "facts": [
+        {
+          "id": "orbit-conditions",
+          "patterns": [
+            "экватор",
+            "зв[её]здн|23 часа|вращен"
+          ],
+          "evidence": [
+            [
+              "article:geostationary-orbit#orbit-conditions"
+            ]
+          ]
+        },
+        {
+          "id": "latitude",
+          "patterns": [
+            "москв|широт",
+            "центр|экватор"
+          ],
+          "evidence": [
+            [
+              "article:geostationary-orbit#latitude"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -679,26 +679,26 @@
     },
     {
       "id": "explain-no-article-ru",
-      "question": "Есть ли статья про эффект Доплера? Объясни по доступным материалам.",
+      "question": "Есть ли статья о годичном параллаксе? Если статьи нет, объясни по справочнику, почему видимое положение близкой звезды меняется за год.",
       "locale": "ru",
       "expected_modes": [
         "explain"
       ],
       "evidence": [
         [
-          "term:84#definition"
+          "term:10#definition"
         ]
       ],
       "facts": [
         {
-          "id": "doppler",
+          "id": "annual-parallax",
           "patterns": [
-            "длин[ауы] волн|частот",
-            "движен"
+            "видим|кажущ",
+            "положен|смещ"
           ],
           "evidence": [
             [
-              "term:84#definition"
+              "term:10#definition"
             ]
           ]
         }
@@ -706,26 +706,26 @@
     },
     {
       "id": "explain-no-article-en",
-      "question": "Is there an article on the Doppler effect? Explain using any available glossary material.",
+      "question": "Is there an article on annual parallax? If there is no article, use the glossary to explain why a nearby star's apparent position shifts over a year.",
       "locale": "en",
       "expected_modes": [
         "explain"
       ],
       "evidence": [
         [
-          "term:84#definition"
+          "term:10#definition"
         ]
       ],
       "facts": [
         {
-          "id": "doppler",
+          "id": "annual-parallax",
           "patterns": [
-            "wavelength|frequency",
-            "mov|motion"
+            "apparent|appear",
+            "position|shift"
           ],
           "evidence": [
             [
-              "term:84#definition"
+              "term:10#definition"
             ]
           ]
         }

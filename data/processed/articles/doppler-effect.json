@@ -1,0 +1,108 @@
+{
+  "id": "article:doppler-effect",
+  "kind": "article",
+  "source": {
+    "type": "project_article",
+    "fact_checked_at": "2026-11-18",
+    "references": [
+      {
+        "title": "NASA Webb · Spectroscopy 101: Beyond Temperature and Composition",
+        "url": "https://science.nasa.gov/mission/webb/science-overview/science-explainers/spectroscopy-101-beyond-temperature-and-composition/"
+      },
+      {
+        "title": "NASA Science · Universe glossary",
+        "url": "https://science.nasa.gov/universe/glossary/"
+      }
+    ]
+  },
+  "metadata": {
+    "related_term_numbers": [
+      84,
+      269,
+      431,
+      471
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "The Doppler effect in astronomy",
+      "aliases": [
+        "Doppler shift",
+        "stellar Doppler effect"
+      ],
+      "blocks": {
+        "wavelength-shift": {
+          "heading": "Why spectral lines move",
+          "body": "Compare a spectral line in the light from a star with the same line measured in a laboratory. If the star is receding, motion shifts the line to a longer wavelength, producing a redshift. If the star is approaching, the line shifts to a shorter wavelength, producing a blueshift. The measured shift depends on the component of relative velocity along the line of sight."
+        },
+        "radial-velocity": {
+          "heading": "Estimating radial velocity",
+          "body": "When the radial speed is much smaller than the speed of light, the fractional change in wavelength is approximately Δλ/λ₀ ≈ vᵣ/c. Here λ₀ is the rest wavelength, Δλ is the observed wavelength minus the rest wavelength, c is the speed of light, and vᵣ is positive for recession. In a system with a planet, the star’s radial velocity can vary periodically as the star orbits the system’s center of mass."
+        },
+        "other-redshifts": {
+          "heading": "When a redshift has a different cause",
+          "body": "A longer observed wavelength can also result from the expansion of space or from a difference in gravitational potential between source and observer. Identifying the cause matters before interpreting the shift as a radial velocity."
+        }
+      }
+    },
+    "ru": {
+      "title": "Эффект Доплера в астрономии",
+      "aliases": [
+        "Доплеровское смещение",
+        "Эффект Доплера в спектрах звёзд"
+      ],
+      "blocks": {
+        "wavelength-shift": {
+          "heading": "Почему смещаются спектральные линии",
+          "body": "Спектральную линию в свете звезды сравнивают с той же линией, измеренной в лаборатории. При удалении звезды движение смещает линию к большей длине волны. Это красное смещение. При приближении линия смещается к меньшей длине волны. Это синее смещение. Измеренное смещение зависит от составляющей относительной скорости вдоль луча зрения."
+        },
+        "radial-velocity": {
+          "heading": "Как оценивают лучевую скорость",
+          "body": "Когда лучевая скорость по модулю намного меньше скорости света, относительное изменение длины волны приближённо равно Δλ/λ₀ ≈ vᵣ/c. Здесь λ₀ — длина волны линии в покое, Δλ — разность наблюдаемой длины волны и длины волны в покое, c — скорость света, а vᵣ положительна при удалении. В системе с планетой лучевая скорость звезды может периодически меняться по мере её движения вокруг центра масс системы."
+        },
+        "other-redshifts": {
+          "heading": "Другие причины красного смещения",
+          "body": "Наблюдаемая длина волны также может увеличиться из-за расширения пространства или разности гравитационных потенциалов между источником и наблюдателем. Чтобы оценить лучевую скорость по смещению, сначала нужно установить его причину."
+        }
+      }
+    }
+  },
+  "sections": [
+    {
+      "id": "wavelength-shift",
+      "type": "source_block",
+      "heading": "Why spectral lines move",
+      "body": "Compare a spectral line in the light from a star with the same line measured in a laboratory. If the star is receding, motion shifts the line to a longer wavelength, producing a redshift. If the star is approaching, the line shifts to a shorter wavelength, producing a blueshift. The measured shift depends on the component of relative velocity along the line of sight.",
+      "heading_ru": "Почему смещаются спектральные линии",
+      "body_ru": "Спектральную линию в свете звезды сравнивают с той же линией, измеренной в лаборатории. При удалении звезды движение смещает линию к большей длине волны. Это красное смещение. При приближении линия смещается к меньшей длине волны. Это синее смещение. Измеренное смещение зависит от составляющей относительной скорости вдоль луча зрения.",
+      "links": [],
+      "media_ids": []
+    },
+    {
+      "id": "radial-velocity",
+      "type": "source_block",
+      "heading": "Estimating radial velocity",
+      "body": "When the radial speed is much smaller than the speed of light, the fractional change in wavelength is approximately Δλ/λ₀ ≈ vᵣ/c. Here λ₀ is the rest wavelength, Δλ is the observed wavelength minus the rest wavelength, c is the speed of light, and vᵣ is positive for recession. In a system with a planet, the star’s radial velocity can vary periodically as the star orbits the system’s center of mass.",
+      "heading_ru": "Как оценивают лучевую скорость",
+      "body_ru": "Когда лучевая скорость по модулю намного меньше скорости света, относительное изменение длины волны приближённо равно Δλ/λ₀ ≈ vᵣ/c. Здесь λ₀ — длина волны линии в покое, Δλ — разность наблюдаемой длины волны и длины волны в покое, c — скорость света, а vᵣ положительна при удалении. В системе с планетой лучевая скорость звезды может периодически меняться по мере её движения вокруг центра масс системы.",
+      "links": [],
+      "media_ids": []
+    },
+    {
+      "id": "other-redshifts",
+      "type": "source_block",
+      "heading": "When a redshift has a different cause",
+      "body": "A longer observed wavelength can also result from the expansion of space or from a difference in gravitational potential between source and observer. Identifying the cause matters before interpreting the shift as a radial velocity.",
+      "heading_ru": "Другие причины красного смещения",
+      "body_ru": "Наблюдаемая длина волны также может увеличиться из-за расширения пространства или разности гравитационных потенциалов между источником и наблюдателем. Чтобы оценить лучевую скорость по смещению, сначала нужно установить его причину.",
+      "links": [],
+      "media_ids": []
+    }
+  ],
+  "media": [],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Факты сверены с библиографией. Редакторское утверждение ожидается."
+  }
+}
