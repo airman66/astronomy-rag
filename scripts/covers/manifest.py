@@ -125,6 +125,8 @@ def verify(complete: bool = False) -> int:
     manifest = load_manifest(allow_missing=True)
     records = {int(p.stem) for p in TERMS.glob("*.json")}
     problems: list[str] = []
+    if complete and not records:
+        problems.append("no canonical terms found")
     numbers = [int(item["term_number"]) for item in manifest["items"]]
     if sorted(numbers) != sorted(records):
         missing = sorted(records - set(numbers))

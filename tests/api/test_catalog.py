@@ -18,6 +18,22 @@ class CatalogReadingTests(ApiCase):
         self.assertEqual(self.client.get("/api/v1/media/media:example/file").content, b"not-a-real-png")
         self.assertEqual(self.client.get("/api/v1/terms/999").json()["code"], "term_not_found")
 
+    def test_large_pages_return_empty_items(self):
+        page = 10**18
+        for route, total in (("terms", 1), ("articles", 0)):
+            with self.subTest(route=route):
+                response = self.client.get(f"/api/v1/{route}", params={"page": page})
+                self.assertEqual(response.status_code, 200)
+                self.assertEqual(response.json(), {"items": [], "total": total, "page": page, "page_size": 20})
+
+    def test_term_paths_reject_numbers_outside_sqlite_range(self):
+        for number in (-(2**63) - 1, 2**63):
+            for suffix in ("", "/illustration"):
+                with self.subTest(number=number, suffix=suffix):
+                    response = self.client.get(f"/api/v1/terms/{number}{suffix}")
+                    self.assertEqual(response.status_code, 422)
+                    self.assertEqual(response.json()["code"], "validation_error")
+
 
 class CatalogFilterTests(ApiCase):
     def setUp(self) -> None:

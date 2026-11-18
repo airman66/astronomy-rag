@@ -1,6 +1,6 @@
-from typing import Literal
+from typing import Annotated, Literal
 
-from fastapi import APIRouter, Query
+from fastapi import APIRouter, Path, Query
 from fastapi.responses import FileResponse
 
 from app.api.errors import error
@@ -11,6 +11,7 @@ from app.catalog import storage
 from app.catalog.media import local_file
 
 router = APIRouter(prefix="/terms")
+TermNumber = Annotated[int, Path(ge=-(2**63), le=2**63 - 1)]
 
 
 @router.get("", response_model=ListResponse, responses=LIMITS)
@@ -54,7 +55,7 @@ def term_facets(locale: Literal["ru", "en"] = "ru") -> FacetsResponse:
 @router.get(
     "/{term_number}", response_model=RecordDetail, responses={404: {"model": ErrorResponse}, **LIMITS}
 )
-def term_detail(term_number: int):
+def term_detail(term_number: TermNumber):
     record = storage.get_term(term_number)
     return RecordDetail.model_validate(record) if record else error(404, "term_not_found", "Термин не найден")
 
@@ -68,7 +69,7 @@ def term_detail(term_number: int):
         **LIMITS,
     },
 )
-def term_illustration(term_number: int):
+def term_illustration(term_number: TermNumber):
     """Файл обложки термина. Если обложка недоступна, возвращает 404 `illustration_not_found`."""
     item = storage.get_illustration(term_number)
     if not item:

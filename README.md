@@ -24,7 +24,7 @@ llama-server -m data/models/Qwen3-Embedding-8B-Q4_K_M.gguf --embedding --pooling
 
 Чтобы настроить ассистента, скопируйте `.env.example` в `.env` и заполните `DEEPSEEK_API_KEY`. Там же описаны дополнительные настройки Compose. `ASSISTANT_DEADLINE` задаётся в секундах и должен быть меньше 150 секунд, срока аренды слота Redis. В локальных командах `DATA_DIR` может указывать на отдельный каталог данных.
 
-API в контейнере работает с UID `10001`. При обычном bind mount на Linux этому UID нужен доступ на запись в `data/` для создания SQLite.
+API хранит SQLite в Docker volume `catalog-db`. При запуске без Compose база по умолчанию создаётся в `data/glossary.db`. Путь можно переопределить через `CATALOG_DB_PATH`.
 
 Для RunPod вместо DeepSeek задайте `ASSISTANT_PROVIDER=runpod`, `RUNPOD_API_KEY` и `RUNPOD_ENDPOINT_ID`. Без ключа LLM чтение и поиск работают, ассистент возвращает `503 assistant_unavailable`.
 
@@ -75,6 +75,12 @@ python3 scripts/localize_timezone_svg.py data/raw/world_time_zones_map_source.sv
 
 `requirements.txt` содержит зависимости сервиса и команд импорта и индексации. `requirements-media.txt` добавляет OCR. `requirements-dev.txt` включает оба набора и BasedPyright.
 
+После правок в `requirements.in` обновите фиксированные версии для Python 3.12:
+
+```sh
+uv pip compile --universal --python-version 3.12 --no-annotate --output-file requirements.txt requirements.in
+```
+
 Для локальных команд используйте Python 3.12.
 
 ```sh
@@ -101,7 +107,9 @@ python3.12 -m venv .venv
 .venv/bin/python -m unittest tests.api.test_limits -v
 ```
 
-Оригиналы медиа и модель исключены из Git. После нового клонирования оригиналы восстанавливаются командой `python3 -m app.importer --media-only --workers 4`; без них полный `app.audit` сообщает об отсутствующих файлах, а API продолжает выдавать записи и локализованные медиа. Результат 50 контрольных вопросов в `data/eval/assistant/report.json` относится к прежней версии промпта; новый промпт нужно оценивать отдельно через `python3 -m scripts.eval_scope` с ключом LLM. OpenAPI доступен в `/openapi.json`, Swagger UI — в `/docs`.
+GitHub Actions запускает тесты, BasedPyright, аудит данных и проверку Docker. На чистом клоне `app.audit --skip-original-media` проверяет записи и локализованные медиа. Для полного аудита загрузите оригиналы командой `python3 -m app.importer --media-only --workers 4`. OpenAPI доступен в `/openapi.json`, Swagger UI — в `/docs`.
+
+`python3 -m scripts.evaluate` прогоняет 50 контрольных вопросов через провайдера из `.env` и записывает версию промпта, модель и метрики в `data/eval/assistant/report.json`. Для гибридного поиска при прогоне с хоста укажите `EMBEDDING_URL` локального сервера эмбеддингов.
 
 ## Ревью переводов и иллюстрации
 

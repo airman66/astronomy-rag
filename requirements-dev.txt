@@ -1,3 +1,4 @@
 -r requirements.txt
 -r requirements-media.txt
-basedpyright>=1.40.2,<2
+basedpyright==1.40.2
+nodejs-wheel-binaries==24.19.0

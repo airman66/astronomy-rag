@@ -1,4 +1,4 @@
-"""Run the 50-question retrieval and DeepSeek mode regression set."""
+"""Run the 50-question retrieval and assistant mode regression set."""
 
 from __future__ import annotations
 
@@ -6,13 +6,14 @@ import argparse
 import asyncio
 import json
 from datetime import datetime, timezone
+from pathlib import Path
 
 from app.assistant.client import LLMClient
 from app.assistant.prompts import PROMPT_VERSION
 from app.assistant.retrieval import candidates_for
 from app.assistant.service import answer, select_context
 from app.catalog.search import search_with_mode
-from app.infra.config import LLMSettings, data_directory
+from app.infra.config import LLMSettings, data_directory, load_env
 from app.infra.files import existing_path, write_json
 
 DATA = data_directory()
@@ -52,13 +53,16 @@ async def main() -> None:
     parser.add_argument(
         "--retrieval-only",
         action="store_true",
-        help="Recall@5 and MRR without DeepSeek; writes data/eval/assistant/retrieval_report.json",
+        help="Recall@5 and MRR without an LLM; writes data/eval/assistant/retrieval_report.json",
     )
+    parser.add_argument("--output", type=Path, help="Write the report to this path")
     args = parser.parse_args()
+    load_env()
     questions = existing_path(EVALUATION / "questions.json", DATA / "eval" / "questions.json")
     rows = json.loads(questions.read_text(encoding="utf-8"))["questions"]
     assert len(rows) >= 50
     candidates = [candidates_for(row["question"], row["locale"]) for row in rows]
+    _, search_mode = search_with_mode(rows[0]["question"], rows[0]["locale"], 5)
     if args.retrieval_only:
         results = []
         for row, choice in zip(rows, candidates):
@@ -74,16 +78,15 @@ async def main() -> None:
                 }
             )
         with_gold = [row for row in results if row["expected"]]
-        _, mode = search_with_mode(rows[0]["question"], rows[0]["locale"], 5)
         report = {
             "timestamp": datetime.now(timezone.utc).isoformat(),
-            "search_mode": mode,
+            "search_mode": search_mode,
             "question_count": len(results),
             "retrieval_recall_at_5": sum(row["recall_at_5"] for row in with_gold) / len(with_gold),
             "retrieval_mrr": sum(row["mrr"] for row in with_gold) / len(with_gold),
             "results": results,
         }
-        write_json(EVALUATION / "retrieval_report.json", report)
+        write_json(args.output or EVALUATION / "retrieval_report.json", report)
         print(
             json.dumps({key: value for key, value in report.items() if key != "results"}, ensure_ascii=False)
         )
@@ -127,10 +130,13 @@ async def main() -> None:
         except Exception as exc:
             checked[index]["answer_error"] = type(exc).__name__
     with_gold = [row for row in checked if row["expected_record_ids"]]
+    settings = LLMSettings.from_env()
     report = {
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "prompt_version": PROMPT_VERSION,
-        "model": LLMSettings.from_env().model,
+        "provider": settings.provider,
+        "model": settings.model,
+        "search_mode": search_mode,
         "index_manifest": json.loads((DATA / "index" / "index-manifest.json").read_text()),
         "question_count": len(checked),
         "mode_accuracy": sum(row["mode_correct"] for row in checked) / len(checked),
@@ -140,7 +146,7 @@ async def main() -> None:
         "invalid_answer_source_count": sum(row.get("source_ids_valid") is False for row in checked),
         "results": checked,
     }
-    write_json(EVALUATION / "report.json", report)
+    write_json(args.output or EVALUATION / "report.json", report)
     print(
         json.dumps(
             {key: value for key, value in report.items() if key not in ("results", "index_manifest")},

@@ -8,7 +8,7 @@ WORKDIR /app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt \
     && useradd --create-home --uid 10001 appuser \
-    && install -d -o appuser -g appuser /app/data
+    && install -d -o appuser -g appuser /app/data /app/state
 
 COPY app ./app
 COPY scripts ./scripts

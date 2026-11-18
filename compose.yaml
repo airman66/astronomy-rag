@@ -19,11 +19,13 @@ services:
       SEMANTIC_POOL:
       EMBEDDING_URL: ${EMBEDDING_URL:-http://embeddings:8080/v1/embeddings}
       REDIS_URL: redis://redis:6379/0
+      CATALOG_DB_PATH: /app/state/glossary.db
     depends_on:
       redis:
         condition: service_healthy
     volumes:
       - ./data:/app/data
+      - catalog-db:/app/state
     restart: unless-stopped
   model-fetch:
     profiles: ["embeddings"]
@@ -66,3 +68,6 @@ services:
       interval: 5s
       timeout: 3s
       retries: 5
+
+volumes:
+  catalog-db:

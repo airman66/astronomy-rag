@@ -1,6 +1,7 @@
 """Validate source IDs, translation coverage, links, and local image hashes."""
 from __future__ import annotations
 
+import argparse
 import json
 from collections import Counter
 from pathlib import Path
@@ -13,11 +14,11 @@ from app.pipeline.translation_fields import fields
 DATA = data_directory()
 
 
-def check() -> dict:
+def check(*, skip_original_media: bool = False) -> dict:
     files = sorted((DATA / "processed" / "terms").glob("*.json"))
     records = [json.loads(path.read_text()) for path in files]
     ids = {record["source"]["term_number"] for record in records}
-    errors: list[str] = []
+    errors = [] if records else ["catalog: no canonical terms found"]
     media: dict[str, dict] = {}
     for record in records:
         number = record["source"]["term_number"]
@@ -53,7 +54,7 @@ def check() -> dict:
                     errors.append(f"media {item['id']}: inconsistent {field}")
     for identifier, item in media.items():
         for field, hash_field, label in (("original_path", "sha256", "original"), ("ru_path", "ru_sha256", "RU")):
-            if not item.get(field):
+            if (skip_original_media and field == "original_path") or not item.get(field):
                 continue
             path = local_file(DATA, item[field])
             if path is None or checksum(path) != item.get(hash_field):
@@ -62,7 +63,9 @@ def check() -> dict:
 
 
 def main() -> None:
-    report = check()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--skip-original-media", action="store_true", help="Check a fresh Git checkout without downloaded originals")
+    report = check(skip_original_media=parser.parse_args().skip_original_media)
     print(json.dumps({key: value for key, value in report.items() if key != "errors"}, ensure_ascii=False, indent=2))
     if report["errors"]:
         print("first errors:", *report["errors"][:30], sep="\n")

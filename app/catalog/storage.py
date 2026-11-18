@@ -10,6 +10,7 @@ import re
 import sqlite3
 import threading
 import time
+import uuid
 from contextlib import closing, contextmanager
 from functools import lru_cache
 from pathlib import Path
@@ -17,7 +18,7 @@ from pathlib import Path
 from app.infra.config import data_directory
 
 DATA = data_directory()
-DB = DATA / "glossary.db"
+DB = Path(os.getenv("CATALOG_DB_PATH") or DATA / "glossary.db")
 SCHEMA_VERSION = "4"
 RECHECK_SECONDS = 30.0
 _lock = threading.Lock()
@@ -71,8 +72,12 @@ def fingerprint() -> str:
 
 def _stored_fingerprint() -> str | None:
     try:
-        with closing(sqlite3.connect(DB)) as db:
-            row = db.execute("SELECT value FROM meta WHERE key='fingerprint'").fetchone()
+        with closing(sqlite3.connect(f"{DB.resolve().as_uri()}?mode=ro", uri=True)) as db:
+            row = db.execute(
+                "SELECT value FROM meta WHERE key='fingerprint' "
+                "AND EXISTS (SELECT 1 FROM meta WHERE key='schema_version' AND value=?)",
+                (SCHEMA_VERSION,),
+            ).fetchone()
         return row[0] if row else None
     except sqlite3.Error:
         return None
@@ -103,9 +108,15 @@ def ensure_database(force_check: bool = False) -> None:
     with _lock:
         if not force_check and DB.exists() and time.monotonic() - _checked.get(key, -RECHECK_SECONDS) < RECHECK_SECONDS:
             return
-        current = fingerprint()
-        if not DB.exists() or _stored_fingerprint() != current:
-            rebuild_database(current)
+        stored = _stored_fingerprint()
+        try:
+            current = fingerprint()
+            if stored != current:
+                rebuild_database(current)
+        except (OSError, ValueError, LookupError, TypeError, AttributeError, OverflowError, sqlite3.Error):
+            if stored is None:
+                raise
+            log.exception("Catalog rebuild failed, serving the previous database for %s seconds", RECHECK_SECONDS)
         _checked[key] = time.monotonic()
 
 
@@ -122,87 +133,89 @@ def _illustrations() -> dict[int, dict]:
 
 
 def rebuild_database(current_fingerprint: str | None = None) -> None:
-    DATA.mkdir(parents=True, exist_ok=True)
-    temporary = DB.with_name(f"{DB.name}.{os.getpid()}.{threading.get_ident()}.building")
-    if temporary.exists():
-        temporary.unlink()
-    db = sqlite3.connect(temporary)
-    illustrations = _illustrations()
+    DB.parent.mkdir(parents=True, exist_ok=True)
+    temporary = DB.with_name(f".{DB.name}.{uuid.uuid4().hex}.building")
     try:
-        db.executescript(
-            """
-            CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT NOT NULL);
-            CREATE TABLE terms (number INTEGER PRIMARY KEY, title_en TEXT NOT NULL,
-                title_ru TEXT NOT NULL, title_en_norm TEXT NOT NULL, title_ru_norm TEXT NOT NULL,
-                aliases_norm TEXT NOT NULL, categories TEXT NOT NULL, review_status TEXT NOT NULL,
-                payload TEXT NOT NULL);
-            CREATE TABLE articles (id TEXT PRIMARY KEY, title_en TEXT NOT NULL,
-                title_ru TEXT NOT NULL, title_en_norm TEXT NOT NULL, title_ru_norm TEXT NOT NULL,
-                review_status TEXT NOT NULL, payload TEXT NOT NULL);
-            CREATE TABLE media (id TEXT PRIMARY KEY, payload TEXT NOT NULL);
-            CREATE TABLE illustrations (term_number INTEGER PRIMARY KEY, payload TEXT NOT NULL);
-            CREATE VIRTUAL TABLE search_fts USING fts5(
-                record_id UNINDEXED, section_id UNINDEXED, locale UNINDEXED,
-                kind UNINDEXED, title UNINDEXED, body UNINDEXED, url UNINDEXED, review_status UNINDEXED,
-                title_norm, body_norm, title_stem, body_stem,
-                tokenize='unicode61 remove_diacritics 2');
-            """
+        with closing(sqlite3.connect(temporary)) as db:
+            _populate_database(db, current_fingerprint or fingerprint())
+        temporary.replace(DB)
+    finally:
+        temporary.unlink(missing_ok=True)
+    log.info("glossary database rebuilt")
+
+
+def _populate_database(db: sqlite3.Connection, current_fingerprint: str) -> None:
+    illustrations = _illustrations()
+    db.executescript(
+        """
+        CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT NOT NULL);
+        CREATE TABLE terms (number INTEGER PRIMARY KEY, title_en TEXT NOT NULL,
+            title_ru TEXT NOT NULL, title_en_norm TEXT NOT NULL, title_ru_norm TEXT NOT NULL,
+            aliases_norm TEXT NOT NULL, categories TEXT NOT NULL, review_status TEXT NOT NULL,
+            payload TEXT NOT NULL);
+        CREATE TABLE articles (id TEXT PRIMARY KEY, title_en TEXT NOT NULL,
+            title_ru TEXT NOT NULL, title_en_norm TEXT NOT NULL, title_ru_norm TEXT NOT NULL,
+            review_status TEXT NOT NULL, payload TEXT NOT NULL);
+        CREATE TABLE media (id TEXT PRIMARY KEY, payload TEXT NOT NULL);
+        CREATE TABLE illustrations (term_number INTEGER PRIMARY KEY, payload TEXT NOT NULL);
+        CREATE VIRTUAL TABLE search_fts USING fts5(
+            record_id UNINDEXED, section_id UNINDEXED, locale UNINDEXED,
+            kind UNINDEXED, title UNINDEXED, body UNINDEXED, url UNINDEXED, review_status UNINDEXED,
+            title_norm, body_norm, title_stem, body_stem,
+            tokenize='unicode61 remove_diacritics 2');
+        """
+    )
+
+    def index(record_id: str, section_id: str, locale: str, kind: str, title: str, body: str, url: str, status: str) -> None:
+        db.execute(
+            "INSERT INTO search_fts VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
+            (record_id, section_id, locale, kind, title, body, url, status, normalize(title), normalize(body), stems(title, locale), stems(body, locale)),
         )
 
-        def index(record_id: str, section_id: str, locale: str, kind: str, title: str, body: str, url: str, status: str) -> None:
-            db.execute(
-                "INSERT INTO search_fts VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
-                (record_id, section_id, locale, kind, title, body, url, status, normalize(title), normalize(body), stems(title, locale), stems(body, locale)),
-            )
-
-        seen_media: set[str] = set()
-        for path in sorted((DATA / "processed" / "terms").glob("*.json")):
-            record = json.loads(path.read_text(encoding="utf-8"))
-            number = int(record["source"]["term_number"])
-            en, ru = record["locales"]["en"], record["locales"]["ru"]
-            status = record["review"]["status"]
-            if number in illustrations:
-                record["illustration"] = illustration_view(illustrations[number])
-                db.execute("INSERT INTO illustrations VALUES (?,?)", (number, json.dumps(illustrations[number], ensure_ascii=False)))
-            aliases = " | ".join(en.get("aliases", []) + ru.get("aliases", []))
-            db.execute(
-                "INSERT INTO terms VALUES (?,?,?,?,?,?,?,?,?)",
-                (number, en["title"], ru["title"], normalize(en["title"]), normalize(ru["title"]), normalize(aliases), json.dumps(record["metadata"].get("categories", [])), status, json.dumps(record, ensure_ascii=False)),
-            )
-            url = f"/api/v1/terms/{number}"
-            for locale, loc in (("en", en), ("ru", ru)):
-                index(record["id"], "title", locale, "term", loc["title"], ", ".join(loc.get("aliases", [])), url, status)
-                for section in record["sections"]:
-                    block = loc.get("blocks", {}).get(section["id"], {})
-                    if block.get("body"):
-                        index(record["id"], section["id"], locale, "term", loc["title"], block["body"], url, status)
-            for item in record.get("media", []):
-                if item["id"] in seen_media:
-                    continue
-                seen_media.add(item["id"])
-                db.execute("INSERT INTO media VALUES (?,?)", (item["id"], json.dumps(item, ensure_ascii=False)))
-                for locale in ("en", "ru"):
-                    title = item.get(f"title_{locale}") or ""
-                    body = " ".join(filter(None, [item.get(f"short_caption_{locale}"), item.get(f"caption_{locale}"), item.get(f"alt_{locale}")]))
-                    if title or body:
-                        index(record["id"], item["id"], locale, item["kind"], title, body, f"/api/v1/media/{item['id']}", item["review"]["status"])
-        for path in sorted((DATA / "processed" / "articles").glob("*.json")):
-            record = json.loads(path.read_text(encoding="utf-8"))
-            en, ru = record["locales"]["en"], record["locales"]["ru"]
-            status = record["review"]["status"]
-            db.execute("INSERT INTO articles VALUES (?,?,?,?,?,?,?)", (record["id"], en["title"], ru["title"], normalize(en["title"]), normalize(ru["title"]), status, json.dumps(record, ensure_ascii=False)))
-            url = f"/api/v1/articles/{record['id']}"
-            for locale, loc in (("en", en), ("ru", ru)):
-                for section in record["sections"]:
-                    block = loc["blocks"].get(section["id"], {})
-                    index(record["id"], section["id"], locale, "article", loc["title"], block.get("body", ""), url, status)
-        db.execute("INSERT INTO meta VALUES ('fingerprint', ?)", (current_fingerprint or fingerprint(),))
-        db.execute("INSERT INTO meta VALUES ('schema_version', ?)", (SCHEMA_VERSION,))
-        db.commit()
-    finally:
-        db.close()
-    temporary.replace(DB)
-    log.info("glossary database rebuilt")
+    seen_media: set[str] = set()
+    for path in sorted((DATA / "processed" / "terms").glob("*.json")):
+        record = json.loads(path.read_text(encoding="utf-8"))
+        number = int(record["source"]["term_number"])
+        en, ru = record["locales"]["en"], record["locales"]["ru"]
+        status = record["review"]["status"]
+        if number in illustrations:
+            record["illustration"] = illustration_view(illustrations[number])
+            db.execute("INSERT INTO illustrations VALUES (?,?)", (number, json.dumps(illustrations[number], ensure_ascii=False)))
+        aliases = " | ".join(en.get("aliases", []) + ru.get("aliases", []))
+        db.execute(
+            "INSERT INTO terms VALUES (?,?,?,?,?,?,?,?,?)",
+            (number, en["title"], ru["title"], normalize(en["title"]), normalize(ru["title"]), normalize(aliases), json.dumps(record["metadata"].get("categories", [])), status, json.dumps(record, ensure_ascii=False)),
+        )
+        url = f"/api/v1/terms/{number}"
+        for locale, loc in (("en", en), ("ru", ru)):
+            index(record["id"], "title", locale, "term", loc["title"], ", ".join(loc.get("aliases", [])), url, status)
+            for section in record["sections"]:
+                block = loc.get("blocks", {}).get(section["id"], {})
+                if block.get("body"):
+                    index(record["id"], section["id"], locale, "term", loc["title"], block["body"], url, status)
+        for item in record.get("media", []):
+            if item["id"] in seen_media:
+                continue
+            seen_media.add(item["id"])
+            db.execute("INSERT INTO media VALUES (?,?)", (item["id"], json.dumps(item, ensure_ascii=False)))
+            for locale in ("en", "ru"):
+                title = item.get(f"title_{locale}") or ""
+                body = " ".join(filter(None, [item.get(f"short_caption_{locale}"), item.get(f"caption_{locale}"), item.get(f"alt_{locale}")]))
+                if title or body:
+                    index(record["id"], item["id"], locale, item["kind"], title, body, f"/api/v1/media/{item['id']}", item["review"]["status"])
+    for path in sorted((DATA / "processed" / "articles").glob("*.json")):
+        record = json.loads(path.read_text(encoding="utf-8"))
+        en, ru = record["locales"]["en"], record["locales"]["ru"]
+        status = record["review"]["status"]
+        db.execute("INSERT INTO articles VALUES (?,?,?,?,?,?,?)", (record["id"], en["title"], ru["title"], normalize(en["title"]), normalize(ru["title"]), status, json.dumps(record, ensure_ascii=False)))
+        url = f"/api/v1/articles/{record['id']}"
+        for locale, loc in (("en", en), ("ru", ru)):
+            for section in record["sections"]:
+                block = loc["blocks"].get(section["id"], {})
+                index(record["id"], section["id"], locale, "article", loc["title"], block.get("body", ""), url, status)
+    db.execute("INSERT INTO meta VALUES ('fingerprint', ?)", (current_fingerprint,))
+    db.execute("INSERT INTO meta VALUES ('schema_version', ?)", (SCHEMA_VERSION,))
+    db.commit()
 
 
 def illustration_view(item: dict) -> dict:
@@ -275,7 +288,10 @@ def list_records(kind: str, *, page: int, page_size: int, locale: str, query: st
     order = f"title_{locale}_norm, title_en_norm"
     with _read() as db:
         total = db.execute(f"SELECT COUNT(*) FROM {table}{where}", args).fetchone()[0]
-        rows = db.execute(f"SELECT * FROM {table}{where} ORDER BY {order} LIMIT ? OFFSET ?", [*args, page_size, (page - 1) * page_size]).fetchall()
+        offset = (page - 1) * page_size
+        if offset >= total:
+            return [], total
+        rows = db.execute(f"SELECT * FROM {table}{where} ORDER BY {order} LIMIT ? OFFSET ?", [*args, page_size, offset]).fetchall()
     result = []
     for row in rows:
         payload = json.loads(row["payload"])
