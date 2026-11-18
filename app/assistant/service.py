@@ -1,0 +1,197 @@
+"""Mode selection and grounded answer generation."""
+
+import asyncio
+import uuid
+from dataclasses import dataclass
+from typing import Any
+
+from fastapi.concurrency import run_in_threadpool
+
+from app.assistant.client import AssistantUnavailable, CompletionClient
+from app.assistant.prompts import (
+    ANSWER_PROMPT,
+    GENERAL_PROMPT,
+    OUT_OF_SCOPE,
+    PROMPT_VERSION,
+    SELECT_PROMPT,
+)
+from app.assistant.retrieval import candidates_for
+from app.infra.config import LLMSettings, assistant_deadline
+from app.infra.redis_limits import RedisLimiter
+
+
+class AssistantConfigurationError(Exception):
+    pass
+
+
+class AssistantOverloaded(Exception):
+    pass
+
+
+def _decision(value: Any) -> tuple[str, str, list[str]]:
+    """Validate the mode-selection JSON; json_object mode does not guarantee field types."""
+    if not isinstance(value, dict):
+        raise AssistantUnavailable("Модель вернула некорректный выбор режима")
+    scope = value.get("scope")
+    if scope not in ("in_scope", "out_of_scope"):
+        raise AssistantUnavailable("Модель вернула некорректную область вопроса")
+    mode = value.get("mode")
+    identifiers = value.get("record_ids") or []
+    if not isinstance(identifiers, list):
+        identifiers = []
+    return (
+        scope,
+        (mode if isinstance(mode, str) else "general"),
+        [x for x in identifiers if isinstance(x, str)],
+    )
+
+
+def _answer(value: Any) -> tuple[str, set[str]]:
+    if not isinstance(value, dict) or not isinstance(value.get("answer"), str) or not value["answer"].strip():
+        raise AssistantUnavailable("Модель вернула некорректный ответ")
+    used = value.get("used_record_ids") or []
+    if not isinstance(used, list):
+        used = []
+    return value["answer"], {x for x in used if isinstance(x, str)}
+
+
+def matched_context(candidate: dict) -> dict:
+    return {
+        **candidate,
+        "section_id": candidate.get("matched_section_id", candidate["section_id"]),
+        "excerpt": candidate.get("matched_excerpt", candidate["excerpt"]),
+        "image": candidate.get("matched_image", candidate.get("image")),
+    }
+
+
+@dataclass(frozen=True)
+class Selection:
+    mode: str
+    sources: list[dict]
+    suggested_mode: str
+    invalid_ids: list[str]
+
+
+async def select_context(
+    question: str,
+    mode: str,
+    locale: str,
+    context: dict | None,
+    candidates: list[dict],
+    client: CompletionClient,
+) -> Selection:
+    scope, suggested_mode, chosen = _decision(
+        await client.complete(
+            SELECT_PROMPT,
+            {
+                "question": question,
+                "locale": locale,
+                "context": context or {},
+                "candidates": candidates,
+            },
+        )
+    )
+    valid = {item["record_id"]: item for item in candidates}
+    invalid_ids = [identifier for identifier in chosen if identifier not in valid]
+    if scope == "out_of_scope":
+        return Selection("out_of_scope", [], suggested_mode, invalid_ids)
+    if mode == "auto":
+        mode = suggested_mode
+        selected = list({x: valid[x] for x in chosen if x in valid}.values())
+    else:
+        selected = candidates[:5]
+    if mode not in ("term", "article", "explain", "general"):
+        mode = "general"
+    if mode in ("term", "article"):
+        matching = next((item for item in selected if item["kind"] == mode), None)
+        if matching is None:
+            matching = next((item for item in candidates if item["kind"] == mode), None)
+        if matching is not None:
+            selected = [matching]
+        elif mode == "article":
+            mode = "explain" if candidates else "general"
+            selected = candidates[:5]
+        else:
+            mode = "general"
+    if mode == "explain":
+        selected = [matched_context(item) for item in (selected or candidates[:5])[:5]]
+        if not selected:
+            mode = "general"
+    elif mode == "article":
+        selected = [matched_context(selected[0])]
+    if mode == "general":
+        selected = []
+    return Selection(mode, selected, suggested_mode, invalid_ids)
+
+
+async def answer(
+    question: str, mode: str, locale: str, context: dict | None, client: CompletionClient
+) -> dict:
+    # Retrieval is synchronous (SQLite, embedding HTTP call): keep it off the event loop.
+    candidates = [] if mode == "general" else await asyncio.to_thread(candidates_for, question, locale)
+    selection = await select_context(question, mode, locale, context, candidates, client)
+    if selection.mode == "out_of_scope":
+        return {
+            "mode": "out_of_scope",
+            "grounding": "policy",
+            "answer": OUT_OF_SCOPE[locale],
+            "primary_url": None,
+            "sources": [],
+            "images": [],
+            "review_status": None,
+            "diagnostics": {"prompt_version": PROMPT_VERSION, "model": "scope_filter"},
+        }
+    mode, selected = selection.mode, selection.sources
+    payload = {
+        "question": question,
+        "locale": locale,
+        "mode": mode,
+        "context": context or {},
+        "sources": selected,
+    }
+    prompt = GENERAL_PROMPT if mode == "general" else ANSWER_PROMPT
+    text, used = _answer(await client.complete(prompt, payload))
+    used_sources = [item for item in selected if item["record_id"] in used]
+    if mode != "general" and not used_sources:
+        mode = "general"
+        text, _ = _answer(await client.complete(GENERAL_PROMPT, {**payload, "mode": mode, "sources": []}))
+    sources = [
+        {key: item[key] for key in ("record_id", "section_id", "url", "review_status")}
+        for item in used_sources
+    ]
+    return {
+        "mode": mode,
+        "grounding": "model" if mode == "general" else "knowledge_base",
+        "answer": text,
+        "primary_url": sources[0]["url"] if sources else None,
+        "sources": sources,
+        "images": [{"record_id": x["record_id"], **x["image"]} for x in used_sources if x.get("image")][:3],
+        "review_status": "draft"
+        if any(x["review_status"] == "draft" for x in sources)
+        else ("reviewed" if sources else None),
+        "diagnostics": {"prompt_version": PROMPT_VERSION, "model": LLMSettings.from_env().model},
+    }
+
+
+async def run_answer(
+    question: str,
+    mode: str,
+    locale: str,
+    context: dict | None,
+    client: CompletionClient,
+    limiter: RedisLimiter,
+) -> dict:
+    settings = LLMSettings.from_env()
+    if settings.provider not in ("deepseek", "runpod"):
+        raise AssistantConfigurationError("Неизвестный провайдер LLM")
+    if not settings.api_key:
+        raise AssistantConfigurationError("Ключ LLM не настроен")
+
+    deadline = assistant_deadline()
+    token = str(uuid.uuid4())
+    if not await run_in_threadpool(limiter.acquire_call, token):
+        raise AssistantOverloaded("Помощник перегружен")
+    try:
+        return await asyncio.wait_for(answer(question, mode, locale, context, client), timeout=deadline)
+    finally:
+        await run_in_threadpool(limiter.release_call, token)

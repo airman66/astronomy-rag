@@ -4,34 +4,39 @@ services:
     ports:
       - "127.0.0.1:8001:8000"
     environment:
-      ASSISTANT_PROVIDER: ${ASSISTANT_PROVIDER:-deepseek}
-      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
-      DEEPSEEK_MODEL: ${DEEPSEEK_MODEL:-deepseek-flash}
-      RUNPOD_API_KEY: ${RUNPOD_API_KEY:-}
-      RUNPOD_ENDPOINT_ID: ${RUNPOD_ENDPOINT_ID:-}
-      RUNPOD_MODEL: ${RUNPOD_MODEL:-glm-5.3}
-      CORS_ORIGINS: ${CORS_ORIGINS:-}
-      REDIS_URL: redis://redis:6379/0
-      TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}
-      SESSION_SECRET: ${SESSION_SECRET:-}
+      ASSISTANT_PROVIDER:
+      ASSISTANT_DEADLINE:
+      DEEPSEEK_API_KEY:
+      DEEPSEEK_MODEL:
+      RUNPOD_API_KEY:
+      RUNPOD_ENDPOINT_ID:
+      RUNPOD_MODEL:
+      CORS_ORIGINS:
+      TRUSTED_PROXIES:
+      SESSION_SECRET:
+      EMBEDDING_TIMEOUT:
+      SEMANTIC_MIN_SCORE:
+      SEMANTIC_POOL:
       EMBEDDING_URL: ${EMBEDDING_URL:-http://embeddings:8080/v1/embeddings}
+      REDIS_URL: redis://redis:6379/0
+      CATALOG_DB_PATH: /app/state/glossary.db
     depends_on:
       redis:
         condition: service_healthy
     volumes:
       - ./data:/app/data
+      - catalog-db:/app/state
     restart: unless-stopped
   model-fetch:
     profiles: ["embeddings"]
-    image: ghcr.io/ggml-org/llama.cpp:server
-    entrypoint: ["/bin/sh", "/scripts/fetch_embedding_model.sh"]
+    image: &llama-server ghcr.io/ggml-org/llama.cpp:server
+    entrypoint: ["/bin/sh", "/scripts/fetch_model.sh"]
     volumes:
       - ./data/models:/models
-      - ./scripts/fetch_embedding_model.sh:/scripts/fetch_embedding_model.sh:ro
-    restart: "no"
+      - ./scripts/index/fetch_model.sh:/scripts/fetch_model.sh:ro
   embeddings:
     profiles: ["embeddings"]
-    image: ghcr.io/ggml-org/llama.cpp:server
+    image: *llama-server
     depends_on:
       model-fetch:
         condition: service_completed_successfully
@@ -57,8 +62,12 @@ services:
   redis:
     image: redis:7-alpine
     command: ["redis-server", "--save", "", "--appendonly", "no"]
+    restart: unless-stopped
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 5s
       timeout: 3s
       retries: 5
+
+volumes:
+  catalog-db:

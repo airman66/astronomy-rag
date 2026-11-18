@@ -1,2 +1,4 @@
 -r requirements.txt
-httpx>=0.28,<1
+-r requirements-media.txt
+basedpyright==1.40.2
+nodejs-wheel-binaries==24.19.0

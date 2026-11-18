@@ -11920,7 +11920,7 @@
       "reviewer_notes": "Russian labels translated and manually corrected from 693 editable text objects in the same Wikimedia map vector; numeric offsets and shapes preserved. The vector includes newer daylight-saving details and some boundaries differ from the Astro4Edu PNG. Original PNG is preserved; compare both variants before publication.",
       "source_vector_path": "data/raw/world_time_zones_map_source.svg",
       "source_vector_url": "https://commons.wikimedia.org/wiki/File:World_Time_Zones_Map.svg",
-      "translation_manifest_path": "data/processed/image_labels/world_time_zones.json",
+      "translation_manifest_path": "data/media/localization/world_time_zones.json",
       "vector_text_labels_translated": 693,
       "revised_at": "2026-11-14T07:03:42.176924+00:00"
     },

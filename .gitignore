@@ -1,6 +1,9 @@
 .env
+.env.*
+!.env.example
 .venv/
 __pycache__/
+/.ruff_cache/
 *.py[cod]
 *.db
 *.sqlite*
@@ -9,4 +12,5 @@ data/models/
 data/media/original/
 data/raw/*.svg
 data/image_ocr.json
+data/media/localization/image_ocr.json
 data/processed/.translation-cache.json
