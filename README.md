@@ -84,6 +84,13 @@ python3 -m venv .venv
 .venv/bin/python -m scripts.illustrations verify --complete
 ```
 
+Тесты сгруппированы в `tests/api/`, `tests/assistant/`, `tests/catalog/` и `tests/pipeline/`. Из корня проекта можно запустить отдельную группу или файл.
+
+```sh
+.venv/bin/python -m unittest discover -s tests/assistant -t . -v
+.venv/bin/python -m unittest tests.api.test_limits -v
+```
+
 Оригиналы медиа и модель исключены из Git. После нового клонирования оригиналы восстанавливаются командой `python3 -m app.importer --media-only --workers 4`; без них полный `app.audit` сообщает об отсутствующих файлах, а API продолжает выдавать записи и локализованные медиа. Результат 50 контрольных вопросов в `data/eval/report.json` относится к прежней версии промпта; новый промпт нужно оценивать отдельно через `python3 -m scripts.eval_scope` с ключом LLM. OpenAPI доступен в `/openapi.json`, Swagger UI — в `/docs`.
 
 ## Ревью переводов и иллюстрации

@@ -1,15 +1,7 @@
-import unittest
-
-from fastapi.testclient import TestClient
-
-from app.main import app
+from tests.support.api import ApiCase
 
 
-class ApiSmokeTests(unittest.TestCase):
-    def setUp(self) -> None:
-        self.client = TestClient(app)
-        self.addCleanup(self.client.close)
-
+class ApiSmokeTests(ApiCase):
     def test_health(self) -> None:
         response = self.client.get("/health")
         self.assertEqual(response.status_code, 200)
