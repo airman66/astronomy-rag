@@ -1,8 +1,6 @@
 # Астрономический справочник и RAG
 
-Самостоятельный FastAPI-сервис по [спецификации](SPEC.md): 501 термин Astro4Edu на английском и русском, исходные медиа, локализованные изображения, поиск FTS5 + FAISS и ответы LLM с проверяемыми ссылками на источники. Канонические записи лежат в `data/processed/`, исходные снимки — в `data/raw/`. Статусы редакторского ревью сохранены из исходного проекта.
-
-Выделен из [airman66/astro](https://github.com/airman66/astro) на коммите `f5a1d1c`. История терминов, переводов, индекса и API перенесена в корень репозитория.
+Самостоятельный FastAPI-сервис по [спецификации](SPEC.md): 501 термин Astro4Edu на английском и русском, исходные медиа, локализованные изображения, поиск FTS5 + FAISS и ответы LLM с проверяемыми ссылками на источники. Канонические записи лежат в `data/processed/`, исходные снимки — в `data/raw/`. Статусы редакторского ревью хранятся в записях.
 
 ## Запуск
 
@@ -99,7 +97,7 @@ python3 -m scripts.translation_audit report                 # пересобра
 python3 -m scripts.illustrations manifest                   # манифест иллюстраций для всех терминов
 python3 -m scripts.wikimedia_covers discover --workers 2   # поиск свободных файлов Wikimedia по одному запросу
 python3 -m scripts.wikimedia_covers astro-fallback          # готовые медиа Astro4Edu как запасной источник
-python3 -m scripts.wikimedia_covers import --workers 2     # загрузка и OCR, без генерации
+python3 -m scripts.wikimedia_covers import --workers 2     # загрузка обложек и OCR
 python3 -m scripts.wikimedia_covers curated                # вручную подобранные файлы Commons для омонимов
 python3 -m scripts.wikimedia_covers related                # явные привязки к близким темам
 python3 -m scripts.illustrations verify --complete          # 501 файл, атрибуция, хэши и размеры

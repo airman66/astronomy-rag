@@ -1,33 +1,19 @@
 """Shared illustration manifest and file operations."""
 
 import json
-import shutil
 import struct
-import threading
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 from app.infra.config import ROOT, data_directory
-from app.infra.files import checksum
 from app.infra.files import write_json as write_json_atomic
 
 DATA = data_directory(ROOT / "data")
 TERMS = DATA / "processed" / "terms"
 MANIFEST = DATA / "illustrations" / "manifest.json"
 FILES = DATA / "media" / "illustrations"
-NL = "\n"
-LOCK = threading.Lock()
-MIN_SIDE = 768
 SCHEMA_VERSION = 1
-
-STYLE = (
-    "Единый стиль портала «Алкиона»: строгая научно-популярная иллюстрация в духе современного астрономического атласа. "
-    "Глубокий тёмно-синий фон #18233A, светлые тонкие линии #FBFBF9, приглушённые акценты: зелёный #2C7A4B, синий #2A78D6, "
-    "оранжевый #EB6834, бирюзовый #1BAF7A; цвета звёзд — по их температуре. Матовая плоская заливка с мягкими градиентами, "
-    "без свечения ради эффекта, без неонов и фиолетовых градиентов. Горизонтальный формат 4:3. Никакого текста, букв, цифр, "
-    "подписей, логотипов и водяных знаков на изображении. Не изображать фотореалистичный снимок телескопа, если это не концепт."
-)
 
 
 def now() -> str:
@@ -41,7 +27,7 @@ def write_json(path: Path, value: Any) -> None:
 def load_manifest() -> dict[str, Any]:
     if MANIFEST.exists():
         return json.loads(MANIFEST.read_text(encoding="utf-8"))
-    return {"schema_version": SCHEMA_VERSION, "style": STYLE, "items": []}
+    return {"schema_version": SCHEMA_VERSION, "items": []}
 
 
 def image_size(path: Path) -> tuple[str, int, int]:
@@ -77,52 +63,3 @@ def image_size(path: Path) -> tuple[str, int, int]:
             bits = int.from_bytes(data[21:25], "little")
             return "webp", (bits & 0x3FFF) + 1, ((bits >> 14) & 0x3FFF) + 1
     raise ValueError("unsupported image format")
-
-
-def accept_file(item: dict[str, Any], source: Path, generator: str) -> None:
-    kind, width, height = image_size(source)
-    if min(width, height) < MIN_SIDE:
-        raise ValueError(f"image too small: {width}×{height}, need at least {MIN_SIDE} px on the short side")
-    ratio = width / height
-    if not 0.5 <= ratio <= 2.0:
-        raise ValueError(f"unexpected aspect ratio {ratio:.2f}")
-    extension = {"png": ".png", "jpeg": ".jpg", "webp": ".webp"}[kind]
-    FILES.mkdir(parents=True, exist_ok=True)
-    target = FILES / f"{item['term_number']}{extension}"
-    for old in FILES.glob(f"{item['term_number']}.*"):
-        if old != target:
-            old.unlink()
-    shutil.copyfile(source, target)
-    digest = checksum(target)
-    item.update(
-        {
-            "status": "generated",
-            "path": target.relative_to(DATA).as_posix(),
-            "width": width,
-            "height": height,
-            "bytes": target.stat().st_size,
-            "sha256": digest,
-            "generator": generator,
-            "generated_at": now(),
-            "last_error": None,
-            "review": {
-                "status": "unreviewed",
-                "reviewer": None,
-                "notes": "Автоматически проверены формат, размер и хэш; содержание не проверено человеком.",
-            },
-        }
-    )
-    if not item.get("alt_ru"):
-        item["alt_ru"] = f"Иллюстрация к термину «{item['title_ru']}»"
-    if not item.get("alt_en"):
-        item["alt_en"] = f"Illustration for the term “{item['title_en']}”"
-
-
-def save_item(item: dict[str, Any]) -> None:
-    with LOCK:
-        manifest = load_manifest()
-        for index, current in enumerate(manifest["items"]):
-            if int(current["term_number"]) == int(item["term_number"]):
-                manifest["items"][index] = item
-        manifest["updated_at"] = now()
-        write_json(MANIFEST, manifest)

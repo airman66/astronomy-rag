@@ -15,7 +15,7 @@ from threading import Lock
 from scripts.illustration_files import DATA, MANIFEST, write_json
 
 CACHE = DATA / "illustrations" / "wikimedia_candidates.json"
-HEADERS = {"User-Agent": "AstronomyGlossaryRAG/1.0 (educational glossary; https://github.com/airman66/astro)"}
+HEADERS = {"User-Agent": "AstronomyGlossaryRAG/1.0 (educational glossary; https://github.com/airman66)"}
 IMAGE_SUFFIXES = (".jpg", ".jpeg", ".png", ".webp", ".svg")
 LICENSES = ("cc by", "cc-by", "cc0", "public domain", "pd-")
 RATE_LOCK = Lock()

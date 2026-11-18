@@ -1,6 +1,6 @@
 """Find and import individually licensed Wikimedia covers for glossary terms.
 
-Each request addresses one article or file. No paid image generation or batch API is used.
+Each Wikimedia request addresses one article or file.
 The candidate cache makes discovery and downloads resumable.
 """
 

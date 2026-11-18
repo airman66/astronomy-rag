@@ -67,7 +67,7 @@ def term_detail(term_number: int):
     },
 )
 def term_illustration(term_number: int):
-    """Файл иллюстрации команды; 404 `illustration_not_found`, пока она не сгенерирована и не проверена."""
+    """Файл обложки термина. Если обложка недоступна, возвращает 404 `illustration_not_found`."""
     item = storage.get_illustration(term_number)
     if not item:
         return error(404, "illustration_not_found", "Иллюстрация ещё не готова")
