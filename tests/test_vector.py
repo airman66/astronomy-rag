@@ -8,7 +8,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from app import vector
+from app import index_files, vector
 
 
 @unittest.skipUnless(importlib.util.find_spec("faiss"), "faiss-cpu is not installed")
@@ -70,6 +70,25 @@ class VectorContractTests(unittest.TestCase):
         (self.root / "models/small.gguf").write_bytes(b"changed")
         with self.assertRaisesRegex(ValueError, "model checksum"):
             vector.load()
+
+
+class VectorFailureCacheTests(unittest.TestCase):
+    def test_broken_index_is_not_reverified_on_every_request(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root / "index").mkdir()
+            (root / "index/index-manifest.json").write_text(json.dumps({"chunks_sha256": "x", "index_sha256": "x", "vector_map_sha256": "x"}))
+            (root / "index/chunks.jsonl").write_text("")
+            previous = vector.DATA, vector._loaded
+            vector.DATA, vector._loaded = root, None
+            try:
+                with patch.object(index_files, "checksum", wraps=index_files.checksum) as checksum:
+                    for _ in range(3):
+                        with self.assertRaises(Exception):
+                            vector.load()
+                self.assertEqual(checksum.call_count, 1, "a failed load is cached instead of re-hashing files")
+            finally:
+                vector.DATA, vector._loaded = previous
 
 
 if __name__ == "__main__":

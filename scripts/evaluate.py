@@ -6,25 +6,27 @@ import argparse
 import asyncio
 import json
 from datetime import datetime, timezone
-from pathlib import Path
 
-from app.assistant import DeepSeekClient, SELECT_PROMPT, PROMPT_VERSION, answer, candidates_for
-from app.storage import DATA
+from app.assistant import answer, select_context
+from app.assistant_prompts import PROMPT_VERSION
+from app.config import LLMSettings, data_directory
+from app.llm import LLMClient
+from app.retrieval import candidates_for
+from app.search import search_with_mode
+
+DATA = data_directory()
 
 
-async def evaluate_model(question: dict, candidates: list[dict], client: DeepSeekClient, semaphore: asyncio.Semaphore) -> dict:
+async def evaluate_model(question: dict, candidates: list[dict], client: LLMClient, semaphore: asyncio.Semaphore) -> dict:
     async with semaphore:
-        if not candidates:
-            decision = {"mode": "general", "record_ids": []}
-        else:
-            decision = await client.complete(SELECT_PROMPT, {"question": question["question"], "locale": question["locale"], "context": {}, "candidates": candidates})
-        selected = [rid for rid in decision.get("record_ids", []) if rid in {item["record_id"] for item in candidates}]
-        actual = decision.get("mode", "general")
-        if actual == "article" and not any(item["kind"] == "article" and item["record_id"] in selected for item in candidates):
-            actual = "explain" if selected else "general"
-        if actual in ("term", "explain") and not selected:
-            actual = "general"
-        return {"mode": actual, "selected_ids": selected, "raw_mode": decision.get("mode"), "invalid_selected_ids": [rid for rid in decision.get("record_ids", []) if rid not in {item["record_id"] for item in candidates}]}
+        selection = await select_context(question["question"], "auto", question["locale"], None, candidates, client)
+        return {
+            "mode": selection.mode,
+            "selected_ids": [item["record_id"] for item in selection.sources],
+            "raw_mode": selection.suggested_mode,
+            "invalid_selected_ids": selection.invalid_ids,
+        }
+
 
 
 async def main() -> None:
@@ -35,8 +37,6 @@ async def main() -> None:
     rows = json.loads((DATA / "eval" / "questions.json").read_text(encoding="utf-8"))["questions"]
     assert len(rows) >= 50
     if args.retrieval_only:
-        from app import storage
-
         results = []
         for row in rows:
             ids = [candidate["record_id"] for candidate in candidates_for(row["question"], row["locale"])]
@@ -44,7 +44,7 @@ async def main() -> None:
             ranks = [ids.index(item) + 1 for item in gold if item in ids]
             results.append({"id": row["id"], "question": row["question"], "expected": sorted(gold), "candidate_ids": ids, "recall_at_5": bool(gold and any(rank <= 5 for rank in ranks)), "mrr": (1 / min(ranks)) if ranks else 0})
         with_gold = [row for row in results if row["expected"]]
-        _, mode = storage.search_with_mode(rows[0]["question"], rows[0]["locale"], 5)
+        _, mode = search_with_mode(rows[0]["question"], rows[0]["locale"], 5)
         report = {"timestamp": datetime.now(timezone.utc).isoformat(), "search_mode": mode, "question_count": len(results),
                   "retrieval_recall_at_5": sum(row["recall_at_5"] for row in with_gold) / len(with_gold),
                   "retrieval_mrr": sum(row["mrr"] for row in with_gold) / len(with_gold), "results": results}
@@ -52,7 +52,7 @@ async def main() -> None:
         print(json.dumps({key: value for key, value in report.items() if key != "results"}, ensure_ascii=False))
         print("misses:", [(row["id"], row["expected"], row["candidate_ids"][:5]) for row in with_gold if not row["recall_at_5"]])
         return
-    client = DeepSeekClient()
+    client = LLMClient()
     semaphore = asyncio.Semaphore(4)
     candidates = [candidates_for(row["question"], row["locale"]) for row in rows]
     decisions = await asyncio.gather(*(evaluate_model(row, choice, client, semaphore) for row, choice in zip(rows, candidates)))
@@ -74,7 +74,7 @@ async def main() -> None:
     report = {
         "timestamp": datetime.now(timezone.utc).isoformat(),
         "prompt_version": PROMPT_VERSION,
-        "model": "deepseek-flash",
+        "model": LLMSettings.from_env().model,
         "index_manifest": json.loads((DATA / "index" / "index-manifest.json").read_text()),
         "question_count": len(checked),
         "mode_accuracy": sum(row["mode_correct"] for row in checked) / len(checked),

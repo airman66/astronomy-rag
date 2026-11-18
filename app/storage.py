@@ -14,11 +14,11 @@ from contextlib import closing, contextmanager
 from functools import lru_cache
 from pathlib import Path
 
-DATA = Path(os.getenv("DATA_DIR", "data"))
+from app.config import data_directory
+
+DATA = data_directory()
 DB = DATA / "glossary.db"
 SCHEMA_VERSION = "4"
-# Semantic neighbours below this cosine similarity are noise for a glossary of short texts.
-SEMANTIC_POOL = int(os.getenv("SEMANTIC_POOL", "40"))
 RECHECK_SECONDS = 30.0
 _lock = threading.Lock()
 _checked: dict[str, float] = {}
@@ -339,37 +339,6 @@ def lexical_search(query: str, locale: str, limit: int) -> list[dict]:
             (expression, locale, limit),
         ).fetchall()
     return [{"record_id": row["record_id"], "section_id": row["section_id"], "kind": row["kind"], "title": row["title"], "excerpt": row["body"][:400], "url": row["url"], "review_status": row["review_status"], "score": -row["score"]} for row in rows]
-
-
-_last_semantic_error = [0.0]
-
-
-def search_with_mode(query: str, locale: str, limit: int = 20) -> tuple[list[dict], str]:
-    """Hybrid FTS + vector search; falls back to FTS alone when embeddings are unavailable."""
-    lexical = lexical_search(query, locale, limit)
-    from app import vector
-
-    try:
-        semantic = vector.search(query, locale, min(limit, SEMANTIC_POOL))
-    except Exception as exc:  # embedding server/model/index problems must not break search
-        if time.monotonic() - _last_semantic_error[0] > 60:
-            log.warning("semantic search unavailable, using lexical results: %s: %s", type(exc).__name__, exc)
-            _last_semantic_error[0] = time.monotonic()
-        return lexical, "lexical"
-    if not vector.available():
-        return lexical, "lexical"
-    fused: dict[tuple[str, str], dict] = {}
-    for ranked in (lexical, semantic):
-        for rank, item in enumerate(ranked):
-            key = item["record_id"], item["section_id"]
-            if key not in fused:
-                fused[key] = {**item, "score": 0.0}
-            fused[key]["score"] += 1.0 / (60 + rank + 1)
-    return sorted(fused.values(), key=lambda row: row["score"], reverse=True)[:limit], "hybrid"
-
-
-def search(query: str, locale: str, limit: int = 20) -> list[dict]:
-    return search_with_mode(query, locale, limit)[0]
 
 
 if __name__ == "__main__":

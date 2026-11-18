@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import asyncio
 
-from app.assistant import DeepSeekClient, SELECT_PROMPT
-
+from app.assistant import select_context
+from app.llm import LLMClient
 
 IN_SCOPE = [
     "Что такое экзопланета?",
@@ -65,16 +65,15 @@ OUT_OF_SCOPE = [
 
 
 async def main() -> None:
-    client = DeepSeekClient()
+    client = LLMClient()
     semaphore = asyncio.Semaphore(3)
 
     async def check(question: str, expected: str) -> tuple[str, str, str]:
         async with semaphore:
             locale = "en" if question.isascii() else "ru"
-            result = await client.complete(SELECT_PROMPT, {
-                "question": question, "locale": locale, "context": {}, "candidates": [],
-            })
-            return question, expected, str(result.get("scope"))
+            selection = await select_context(question, "general", locale, None, [], client)
+            scope = "out_of_scope" if selection.mode == "out_of_scope" else "in_scope"
+            return question, expected, scope
 
     cases = [(question, "in_scope") for question in IN_SCOPE]
     cases += [(question, "out_of_scope") for question in OUT_OF_SCOPE]
