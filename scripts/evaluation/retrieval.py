@@ -34,6 +34,17 @@ def covers(groups: list, sources: list[dict]) -> bool:
     return all(any(matches_source(item, selector) for item in sources for selector in group) for group in groups)
 
 
+def evaluate_retrieval(case: dict) -> dict | None:
+    groups = [*case.get("evidence", []), *(group for fact in case.get("facts", []) for group in fact.get("evidence", []))]
+    if not groups:
+        return None
+    mode = case.get("requested_mode", "auto")
+    evidence = {} if mode == "general" else evidence_for(case["question"], case["locale"], prefer_article=mode == "article")
+    sources = [item.reference() for item in evidence.values()]
+    missing = [group for group in groups if not covers([group], sources)]
+    return {"id": case["id"], "evidence": sources, "missing_groups": missing, "all_expected": not missing}
+
+
 def evaluate_response(case: dict, result: dict, evidence: list[dict]) -> dict:
     mode = result["mode"]
     sources = result["sources"]
@@ -41,12 +52,19 @@ def evaluate_response(case: dict, result: dict, evidence: list[dict]) -> dict:
     linked = {index for block in blocks for index in block["source_indices"]}
     known = {(row["record_id"], row["section_id"], row.get("chunk_id")): row for row in evidence}
     expected_grounding = {"out_of_scope": "policy", "general": "model"}.get(mode, "knowledge_base")
-    if mode in ("general", "out_of_scope") or result["coverage"] == "insufficient":
+    if mode == "out_of_scope" or result["coverage"] == "insufficient":
+        source_shape = not (sources or result["primary_url"] or result["images"] or blocks)
+    elif mode == "general":
         source_shape = not (sources or result["primary_url"] or result["images"])
     else:
         source_shape = result["primary_url"] in {source["url"] for source in sources} and all(
             block["source_indices"] for block in blocks
         )
+        if mode == "article":
+            source_shape = source_shape and any(
+                source["record_id"].startswith("article:") and source["url"] == result["primary_url"]
+                for source in sources
+            )
     source_valid = (
         source_shape
         and linked == set(range(len(sources)))
@@ -87,17 +105,16 @@ def price(usage: dict, input_rate: float, output_rate: float, cached_rate: float
     incoming, outgoing = usage.get("prompt_tokens"), usage.get("completion_tokens")
     if not isinstance(incoming, int) or not isinstance(outgoing, int) or min(incoming, outgoing) < 0:
         return None
-    details = usage.get("prompt_tokens_details") or {}
-    cached = usage.get("prompt_cache_hit_tokens", details.get("cached_tokens", 0))
+    details = usage.get("prompt_tokens_details")
+    cached = usage.get("prompt_cache_hit_tokens", details.get("cached_tokens", 0) if isinstance(details, dict) else 0)
     if not isinstance(cached, int) or not 0 <= cached <= incoming or cached_rate is None:
         cached = 0
     return ((incoming - cached) * input_rate + cached * (cached_rate or 0) + outgoing * output_rate) / 1_000_000
 
 
-async def live_case(case: dict, http: httpx.AsyncClient, settings: LLMSettings, args: argparse.Namespace) -> dict:
+async def live_case(case: dict, client: LLMClient, args: argparse.Namespace) -> dict:
     started = time.perf_counter()
     trace: dict = {}
-    client = LLMClient(http, settings)
     row: dict[str, Any] = {"id": case["id"], "question": case["question"], "locale": case["locale"],
                            "expected_modes": case["expected_modes"], "passed": False}
     try:
@@ -113,10 +130,10 @@ async def live_case(case: dict, http: httpx.AsyncClient, settings: LLMSettings, 
     row["latency_ms"] = round((time.perf_counter() - started) * 1000, 3)
     row["retrieval_ms"] = trace.get("retrieval_ms")
     row["llm_ms"] = trace.get("llm_ms")
-    row["usage"] = client.usage
+    row["usage"] = trace.get("usage", {})
     row["evidence"] = trace.get("evidence", [])
     if args.input_usd is not None and args.output_usd is not None:
-        row["estimated_cost_usd"] = price(client.usage, args.input_usd, args.output_usd, args.cached_input_usd)
+        row["estimated_cost_usd"] = price(row["usage"], args.input_usd, args.output_usd, args.cached_input_usd)
     return row
 
 
@@ -152,6 +169,7 @@ async def main() -> None:
     parser.add_argument("--suite", type=Path, default=EVALUATION / "full_questions.json")
     parser.add_argument("--output", type=Path)
     parser.add_argument("--retrieval-only", action="store_true", help="Check evidence packing without LLM calls")
+    parser.add_argument("--check", action="store_true", help="Exit with an error if any selected case fails")
     parser.add_argument("--case", action="append", help="Run only these case IDs")
     parser.add_argument("--limit", type=int, help="Run the first N selected cases")
     parser.add_argument("--input-usd", type=float, help="USD per million uncached input tokens")
@@ -185,10 +203,8 @@ async def main() -> None:
     rows = []
     if args.retrieval_only:
         for case in cases:
-            groups = case.get("evidence", [])
-            if groups:
-                sources = [item.reference() for item in evidence_for(case["question"], case["locale"]).values()]
-                rows.append({"id": case["id"], "evidence": sources, "all_expected": covers(groups, sources)})
+            if (row := evaluate_retrieval(case)) is not None:
+                rows.append(row)
         report["metrics"] = {"cases": len(rows), "with_all_evidence": sum(row["all_expected"] for row in rows)}
     else:
         settings = LLMSettings.from_env()
@@ -198,9 +214,10 @@ async def main() -> None:
                       thinking=settings.thinking, reasoning_effort=settings.reasoning_effort or None,
                       pricing={"input": args.input_usd, "output": args.output_usd, "cached_input": args.cached_input_usd})
         async with httpx.AsyncClient() as http:
+            client = LLMClient(http, settings)
             for case in cases:
                 try:
-                    rows.append(await live_case(case, http, settings, args))
+                    rows.append(await live_case(case, client, args))
                 except AssistantNotConfigured as exc:
                     report["aborted"] = str(exc)
                     break
@@ -212,3 +229,11 @@ async def main() -> None:
     print(json.dumps(report["metrics"], ensure_ascii=False))
     if "aborted" in report:
         raise SystemExit(report["aborted"])
+    if args.check:
+        outcome = "all_expected" if args.retrieval_only else "passed"
+        failures = [row for row in rows if not row[outcome]]
+        for row in failures:
+            if args.retrieval_only:
+                print(row["id"], "missing", row["missing_groups"])
+        if not rows or failures:
+            raise SystemExit(f"Evaluation check failed. See {output}")

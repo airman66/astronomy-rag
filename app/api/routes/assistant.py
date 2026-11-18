@@ -9,11 +9,7 @@ from app.api.responses import RETRY_HEADER
 from app.api.schemas.assistant import AnswerRequest, AnswerResponse
 from app.api.schemas.common import ErrorResponse
 from app.assistant.client import AssistantNotConfigured, AssistantUnavailable
-from app.assistant.service import (
-    AssistantConfigurationError,
-    AssistantOverloaded,
-    run_answer,
-)
+from app.assistant.service import AssistantOverloaded, run_answer
 
 router = APIRouter()
 
@@ -108,15 +104,13 @@ async def assistant_answer(
             request.app.state.llm_client,
             request.app.state.rate_limiter,
         )
-    except AssistantConfigurationError as exc:
-        return error(503, "assistant_unavailable", str(exc))
     except AssistantOverloaded as exc:
         return error(503, "assistant_overloaded", str(exc), headers={"Retry-After": "10"})
     except asyncio.TimeoutError:
         return error(504, "assistant_timeout", "Помощник не уложился во время ответа")
     except AssistantNotConfigured as exc:
-        # Ключ без баланса или отклонённый ключ: справочник работает, помощник выключен.
-        return error(503, "assistant_unavailable", str(exc), {"upstream_status": exc.status})
+        details = {"upstream_status": exc.status} if exc.status is not None else None
+        return error(503, "assistant_unavailable", str(exc), details)
     except AssistantUnavailable as exc:
         return error(502, "assistant_error", str(exc))
     except redis.RedisError:

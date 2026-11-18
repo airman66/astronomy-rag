@@ -2,6 +2,7 @@
 
 import json
 from contextlib import nullcontext
+from dataclasses import dataclass, field
 from typing import Any, Protocol
 
 import httpx
@@ -9,18 +10,27 @@ import httpx
 from app.infra.config import LLMSettings
 
 
+@dataclass(frozen=True)
+class Completion:
+    data: Any
+    model: str
+    usage: dict[str, Any] = field(default_factory=dict)
+
+
 class CompletionClient(Protocol):
-    async def complete(self, system: str, payload: dict[str, Any]) -> Any: ...
+    async def complete(self, system: str, payload: dict[str, Any]) -> Completion: ...
 
 
 class AssistantUnavailable(Exception):
-    pass
+    def __init__(self, message: str, *, usage: dict[str, Any] | None = None) -> None:
+        super().__init__(message)
+        self.usage = usage or {}
 
 
 class AssistantNotConfigured(AssistantUnavailable):
-    """The model provider rejected the account."""
+    """Missing local configuration or a rejected provider account."""
 
-    def __init__(self, message: str, status: int) -> None:
+    def __init__(self, message: str, status: int | None = None) -> None:
         super().__init__(message)
         self.status = status
 
@@ -29,18 +39,22 @@ class LLMClient:
     def __init__(self, http: httpx.AsyncClient | None = None, settings: LLMSettings | None = None) -> None:
         self.http = http
         self.settings = settings
-        self.usage: dict = {}
-
-    async def complete(self, system: str, payload: dict[str, Any]) -> Any:
-        settings = self.settings or LLMSettings.from_env()
-        runpod = settings.provider == "runpod"
+    def configured_settings(self) -> LLMSettings:
+        try:
+            settings = self.settings or LLMSettings.from_env()
+        except ValueError as exc:
+            raise AssistantNotConfigured("Некорректный бюджет токенов помощника") from exc
         if settings.provider not in ("deepseek", "runpod"):
-            raise AssistantUnavailable("Неизвестный провайдер LLM")
+            raise AssistantNotConfigured("Неизвестный провайдер LLM")
         if not settings.api_key:
-            raise AssistantUnavailable("Ключ LLM не настроен")
-        if runpod and not settings.endpoint_id:
-            raise AssistantUnavailable("RunPod endpoint не настроен")
+            raise AssistantNotConfigured("Ключ LLM не настроен")
+        if settings.provider == "runpod" and not settings.endpoint_id:
+            raise AssistantNotConfigured("RunPod endpoint не настроен")
+        return settings
 
+    async def complete(self, system: str, payload: dict[str, Any]) -> Completion:
+        settings = self.configured_settings()
+        runpod = settings.provider == "runpod"
         model = settings.model.casefold()
         glm = runpod and "glm" in model
         qwen = runpod and "qwen" in model
@@ -66,7 +80,7 @@ class LLMClient:
             if runpod else "https://api.deepseek.com/chat/completions"
         )
         timeout = httpx.Timeout(90.0 if runpod else 35.0, connect=5.0)
-        self.usage = {}
+        usage: dict[str, Any] = {}
         try:
             connection = httpx.AsyncClient() if self.http is None else nullcontext(self.http)
             async with connection as http:
@@ -74,12 +88,15 @@ class LLMClient:
                                            json=request, timeout=timeout)
             response.raise_for_status()
             body = response.json()
-            usage = body.get("usage")
-            self.usage = usage if isinstance(usage, dict) else {}
+            reported_usage = body.get("usage")
+            if isinstance(reported_usage, dict):
+                usage = reported_usage
             choice = body["choices"][0]
             if choice.get("finish_reason") not in (None, "stop"):
-                raise AssistantUnavailable("Модель не завершила ответ в заданном бюджете")
-            return json.loads(choice["message"]["content"])
+                raise AssistantUnavailable("Модель не завершила ответ в заданном бюджете", usage=usage)
+            reported_model = body.get("model")
+            model = reported_model if isinstance(reported_model, str) and reported_model else settings.model
+            return Completion(json.loads(choice["message"]["content"]), model, usage)
         except httpx.HTTPStatusError as exc:
             status = exc.response.status_code
             if status == 402:
@@ -88,4 +105,4 @@ class LLMClient:
                 raise AssistantNotConfigured("Провайдер LLM отклонил ключ API", status) from exc
             raise AssistantUnavailable(f"LLM request failed: HTTP {status}") from exc
         except (httpx.HTTPError, AttributeError, KeyError, IndexError, ValueError, TypeError) as exc:
-            raise AssistantUnavailable(f"LLM request failed: {type(exc).__name__}") from exc
+            raise AssistantUnavailable(f"LLM request failed: {type(exc).__name__}", usage=usage) from exc

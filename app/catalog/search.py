@@ -31,11 +31,15 @@ def search_with_mode(query: str, locale: str, limit: int = 20) -> tuple[list[dic
         return lexical, "lexical"
     fused: dict[tuple[str, str], dict] = {}
     for ranked in (lexical, semantic):
-        for rank, item in enumerate(ranked):
+        seen: set[tuple[str, str]] = set()
+        for item in ranked:
             key = item["record_id"], item["section_id"]
+            if key in seen:
+                continue
+            seen.add(key)
             if key not in fused:
                 fused[key] = {**item, "score": 0.0}
             if "chunk_id" in item and "chunk_id" not in fused[key]:
                 fused[key].update(chunk_id=item["chunk_id"], evidence_text=item["evidence_text"])
-            fused[key]["score"] += 1.0 / (60 + rank + 1)
+            fused[key]["score"] += 1.0 / (60 + len(seen))
     return sorted(fused.values(), key=lambda row: row["score"], reverse=True)[:limit], "hybrid"

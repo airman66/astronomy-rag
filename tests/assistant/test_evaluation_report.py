@@ -2,9 +2,10 @@ import json
 import re
 import unittest
 from collections import Counter
+from unittest.mock import patch
 
 from app.infra.config import ROOT
-from scripts.evaluation.retrieval import evaluate_response, price, summarize
+from scripts.evaluation.retrieval import evaluate_response, evaluate_retrieval, price, summarize
 
 
 class AssistantEvaluationReportTests(unittest.TestCase):
@@ -58,3 +59,13 @@ class AssistantEvaluationReportTests(unittest.TestCase):
         summary = summarize(rows)
         self.assertEqual(summary["p95_ms"], 900)
         self.assertAlmostEqual(summary["estimated_usd_per_1000_valid"], 2.44)
+
+    def test_retrieval_checks_fact_only_sources_and_uses_explicit_mode(self):
+        case = {"id": "fact-only", "requested_mode": "article", "locale": "ru", "question": "Объясни",
+                "facts": [{"evidence": [["article:stellar-magnitudes#absolute"]]}]}
+        with patch("scripts.evaluation.retrieval.evidence_for", return_value={}) as retrieve:
+            result = evaluate_retrieval(case)
+        assert result is not None
+        self.assertFalse(result["all_expected"])
+        self.assertEqual(result["missing_groups"], [["article:stellar-magnitudes#absolute"]])
+        retrieve.assert_called_once_with("Объясни", "ru", prefer_article=True)

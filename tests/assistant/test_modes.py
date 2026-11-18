@@ -34,6 +34,14 @@ class AssistantModeTests(ApiCase):
             )
         self.assertEqual(response.status_code, 200, response.text)
 
+    def test_explicit_explain_does_not_relabel_model_term(self):
+        response = self.client.post(ANSWER_PATH, json={"question": "Что такое звезда?", "mode": "explain"})
+        self.assertEqual(response.status_code, 200, response.text)
+        result = response.json()
+        self.assertEqual(result["mode"], "explain")
+        self.assertEqual(result["coverage"], "insufficient")
+        self.assertEqual(result["sources"], [])
+
     def test_assistant_rejects_off_topic_in_every_mode(self):
         for mode in ("auto", "term", "article", "explain", "general"):
             with self.subTest(mode=mode):

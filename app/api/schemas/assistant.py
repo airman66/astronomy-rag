@@ -15,7 +15,7 @@ class AnswerSource(BaseModel):
     section_id: str
     url: str
     review_status: str
-    chunk_id: str | None = None
+    chunk_id: str | None = Field(default=None, description="ID целиком использованного индексного фрагмента")
 
 
 class AnswerImage(BaseModel):
@@ -33,7 +33,7 @@ class AnswerImage(BaseModel):
 
 class AnswerBlock(BaseModel):
     text: str
-    source_indices: list[int]
+    source_indices: list[int] = Field(description="Нулевые индексы источников в массиве sources")
 
 
 class AnswerResponse(BaseModel):
@@ -45,5 +45,7 @@ class AnswerResponse(BaseModel):
     images: list[AnswerImage] = Field(default_factory=list)
     review_status: str | None
     diagnostics: dict[str, str]
-    coverage: Literal["complete", "partial", "insufficient"] = "complete"
+    coverage: Literal["complete", "partial", "insufficient"] = Field(
+        default="complete", description="Полнота ответа в запрошенном режиме",
+    )
     blocks: list[AnswerBlock] = Field(default_factory=list)

@@ -1,10 +1,12 @@
 """Environment configuration shared by the service and data tools."""
 
+import math
 import os
 from dataclasses import dataclass, field
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
+CALL_LEASE_SECONDS = 150
 
 
 def data_directory(default: Path = Path("data")) -> Path:
@@ -16,7 +18,10 @@ def cors_origins() -> list[str]:
 
 
 def assistant_deadline() -> float:
-    return float(os.getenv("ASSISTANT_DEADLINE") or "100")
+    deadline = float(os.getenv("ASSISTANT_DEADLINE") or "100")
+    if not math.isfinite(deadline) or not 0 < deadline < CALL_LEASE_SECONDS:
+        raise ValueError(f"ASSISTANT_DEADLINE must be greater than 0 and less than {CALL_LEASE_SECONDS}")
+    return deadline
 
 
 @dataclass(frozen=True)

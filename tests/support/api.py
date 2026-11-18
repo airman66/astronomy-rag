@@ -7,6 +7,7 @@ from unittest.mock import patch
 import redis
 from fastapi.testclient import TestClient
 
+from app.assistant.client import Completion
 from app.main import create_app
 from tests.support.catalog import use_catalog
 
@@ -35,13 +36,15 @@ class FakeModel:
         evidence = payload["evidence"]
         requested = payload["requested_mode"]
         if "борщ" in payload["question"].lower():
-            return {"mode": "out_of_scope", "coverage": "complete", "definition_id": None, "blocks": []}
+            return Completion({"mode": "out_of_scope", "coverage": "complete", "definition_id": None, "blocks": []},
+                              "test-model")
         if requested == "general":
-            return {"mode": "general", "coverage": "complete", "definition_id": None,
-                    "blocks": [{"text": "Гравитация удерживает планету на орбите.", "evidence_ids": []}]}
+            return Completion({"mode": "general", "coverage": "complete", "definition_id": None,
+                               "blocks": [{"text": "Гравитация удерживает планету на орбите.", "evidence_ids": []}]},
+                              "test-model")
         definition = next((item["id"] for item in evidence if item["definition"]), None)
-        return {"mode": "term", "coverage": "complete", "definition_id": definition, "blocks": []}
-
+        return Completion({"mode": "term", "coverage": "complete", "definition_id": definition, "blocks": []},
+                          "test-model")
 
 
 class ApiCase(TestCase):

@@ -46,3 +46,31 @@ class AssistantRetrievalTests(unittest.TestCase):
         image = retrieval.image_for(record, record["sections"][0], "ru")
         assert image is not None
         self.assertEqual(image["url"], "/api/v1/media/media:example/file?locale=ru")
+
+    def test_reduced_fragment_does_not_claim_the_full_chunk(self):
+        record = storage.get_term(1)
+        assert record is not None
+        section = {"id": "spectra", "type": "source_block"}
+        canonical = "Первый абзац.\n\n" + ("Второй абзац. " * 160).strip()
+        record["sections"].append(section)
+        record["locales"]["ru"]["blocks"]["spectra"] = {"body": canonical}
+        hit = {"record_id": "term:1", "section_id": "spectra", "chunk_id": "long", "evidence_text": canonical}
+        with (
+            patch.object(retrieval, "search_with_mode", return_value=([hit], "hybrid")),
+            patch.object(storage, "get_term", return_value=record),
+        ):
+            fragments = retrieval.evidence_for("Спектр", "ru")
+        self.assertEqual(fragments["e2"].text, "Первый абзац.")
+        self.assertIsNone(fragments["e2"].chunk_id)
+
+    def test_caption_uses_its_media_without_falling_back_to_a_cover(self):
+        record = storage.get_term(1)
+        assert record is not None
+        record["illustration"] = {"url": "/api/v1/terms/1/illustration"}
+        section = {"id": "media:example", "type": "caption", "media_ids": ["media:example"]}
+        with patch.object(storage, "get_illustration", side_effect=AssertionError("caption uses source media")):
+            image = retrieval.image_for(record, section, "ru")
+        assert image is not None
+        self.assertEqual(image["url"], "/api/v1/media/media:example/file?locale=ru")
+        section["media_ids"] = ["media:missing"]
+        self.assertIsNone(retrieval.image_for(record, section, "ru"))

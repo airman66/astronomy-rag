@@ -11,7 +11,8 @@ from app.catalog.search import search_with_mode
 
 def image_for(record: dict, section: dict, locale: str) -> dict | None:
     illustration = record.get("illustration")
-    if illustration and illustration.get("url"):
+    caption = section["type"] == "caption"
+    if not caption and illustration and illustration.get("url"):
         full_illustration = storage.get_illustration(record["source"]["term_number"])
         filename = full_illustration.get("path", "") if full_illustration else ""
         path = local_file(storage.DATA, filename)
@@ -29,7 +30,7 @@ def image_for(record: dict, section: dict, locale: str) -> dict | None:
                 "modified": source.get("modified"),
             }
     media_ids = set(section.get("media_ids", []))
-    media_items = record.get("media", [])
+    media_items = [item for item in record.get("media", []) if not caption or item["id"] in media_ids]
     for media in sorted(media_items, key=lambda item: item["id"] not in media_ids):
         path = local_file(storage.DATA, localized_filename(media, locale))
         if path and path.suffix.lower() in IMAGE_SUFFIXES:
@@ -74,29 +75,30 @@ class Evidence:
         return {"record_id": self.record["id"], "section_id": self.section["id"], "chunk_id": self.chunk_id}
 
 
-def evidence_for(question: str, locale: str) -> dict[str, Evidence]:
+def evidence_for(question: str, locale: str, *, prefer_article: bool = False) -> dict[str, Evidence]:
     """Keep exact passages, diversify by record and reserve space for a matching article."""
     hits, _ = search_with_mode(question, locale, limit=80)
-    records: dict[str, dict] = {}
+    records: dict[str, tuple[dict, dict, dict[str, dict], dict[str, dict]]] = {}
     primary: dict[str, Evidence] = {}
     extras: dict[tuple[str, str, str], Evidence] = {}
     for hit in hits:
         record_id = hit["record_id"]
         if record_id not in records:
-            if len(records) >= 12 and not record_id.startswith("article:"):
+            is_term = record_id.startswith("term:")
+            if len(records) >= 12 and is_term:
                 continue
-            record = storage.get_term(int(record_id[5:])) if record_id.startswith("term:") else storage.get_article(record_id)
+            record = storage.get_term(int(record_id[5:])) if is_term else storage.get_article(record_id)
             if record is None:
                 continue
-            records[record_id] = record
-        record = records[record_id]
-        localized = record["locales"][locale]
-        sections = {section["id"]: section for section in record["sections"]}
-        if record_id not in primary:
+            localized = record["locales"][locale]
+            sections = {section["id"]: section for section in record["sections"]}
+            media = {item["id"]: item for item in record.get("media", [])}
+            records[record_id] = record, localized, sections, media
             definition = next((section for section in sections.values() if section["type"] == "definition"), None)
             if definition and (item := _section_evidence(record, localized, definition, {})):
                 primary[record_id] = item
 
+        record, localized, sections, media = records[record_id]
         section_id = hit["section_id"]
         section = sections.get(section_id)
         if section and section["type"] == "definition":
@@ -108,8 +110,7 @@ def evidence_for(question: str, locale: str) -> dict[str, Evidence]:
         if section and section["type"] != "media_collection":
             item = _section_evidence(record, localized, section, hit)
         else:
-            media = next((item for item in record.get("media", []) if item["id"] == section_id), None)
-            item = _caption_evidence(record, localized, media, locale, hit) if media else None
+            item = _caption_evidence(record, localized, media[section_id], locale, hit) if section_id in media else None
         if item:
             if record_id not in primary:
                 primary[record_id] = item
@@ -118,15 +119,18 @@ def evidence_for(question: str, locale: str) -> dict[str, Evidence]:
 
     ordered = list(primary.values())
     article = next((item for item in ordered if item.kind == "article"), None)
+    prioritize_article = prefer_article or ARTICLE_REQUEST.search(question) is not None
     lead = ordered[:4]
-    if article and article not in lead:
+    if article and prioritize_article:
+        lead = [article, *(item for item in ordered if item is not article)][:4]
+    elif article and article not in lead:
         lead = [*lead[:3], article]
     lead_ids = {item.record["id"] for item in lead}
     supporting = [item for item in extras.values() if item.record["id"] in lead_ids]
-    if article and ARTICLE_REQUEST.search(question):
+    if article and prioritize_article:
         supporting.sort(key=lambda item: item.record["id"] != article.record["id"])
     lead.extend(supporting[:EVIDENCE_LIMIT - len(lead)])
-    lead.extend(item for item in ordered if item not in lead)
+    lead.extend(item for item in ordered if item.record["id"] not in lead_ids)
     packed: dict[str, Evidence] = {}
     remaining = CONTEXT_LIMIT
     for item in lead:
@@ -141,7 +145,7 @@ def evidence_for(question: str, locale: str) -> dict[str, Evidence]:
 
 def _section_evidence(record: dict, localized: dict, section: dict, hit: dict) -> Evidence | None:
     block = localized["blocks"].get(section["id"], {})
-    canonical = block.get("body", "").strip()
+    canonical = (block.get("body") or "").strip()
     heading = block.get("heading") or section.get("heading") or ""
     if not canonical or (
         section["type"] != "definition" and any(marker in str(heading).casefold() for marker in NON_EVIDENCE_HEADINGS)
@@ -164,19 +168,29 @@ def _caption_evidence(record: dict, localized: dict, media: dict, locale: str, h
 
 
 def _evidence(record: dict, title: str, section: dict, canonical: str, kind: EvidenceKind, url: str,
-              hit: dict, *, heading: str, review_status: str | None = None) -> Evidence:
-    exact = hit.get("evidence_text")
-    matches = bool(exact and " ".join(exact.split()) in " ".join(canonical.split()))
-    fragment = exact if exact and matches else canonical
+              hit: dict, *, heading: str, review_status: str | None = None) -> Evidence | None:
+    exact = hit.get("evidence_text") or ""
+    is_definition = section["type"] == "definition"
+    normalized = " ".join(canonical.split())
+    indexed = " ".join(exact.split())
+    matches = bool(indexed and (indexed == normalized if is_definition else indexed in normalized))
+    fragment = exact if matches and not is_definition else canonical
+    chunk_id = hit.get("chunk_id") if matches else None
     if len(fragment) > FRAGMENT_LIMIT and section["type"] == "source_block":
-        paragraphs = fragment.split("\n\n")
-        fragment = paragraphs[0]
-        for paragraph in paragraphs[1:]:
-            if len(fragment) + len(paragraph) + 2 > FRAGMENT_LIMIT:
+        paragraphs = re.split(r"\n\s*\n", fragment)
+        kept: list[str] = []
+        size = 0
+        for paragraph in paragraphs:
+            size += len(paragraph) + (2 if kept else 0)
+            if size > FRAGMENT_LIMIT:
                 break
-            fragment += "\n\n" + paragraph
+            kept.append(paragraph)
+        if not kept:
+            return None
+        fragment = "\n\n".join(kept)
+        chunk_id = None
     return Evidence(
         record, section, kind, title, heading, text=fragment, url=url,
-        canonical_definition=canonical if section["type"] == "definition" else None,
-        review_status=review_status or record["review"]["status"], chunk_id=hit.get("chunk_id") if matches else None,
+        canonical_definition=canonical if is_definition else None,
+        review_status=review_status or record["review"]["status"], chunk_id=chunk_id,
     )
