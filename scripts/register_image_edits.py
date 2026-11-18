@@ -14,8 +14,8 @@ from PIL import Image
 if not __package__:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.config import ROOT, data_directory
-from app.fileio import checksum, write_json
+from app.infra.config import ROOT, data_directory
+from app.infra.files import checksum, write_json
 
 DATA = data_directory(ROOT / "data").resolve()
 

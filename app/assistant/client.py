@@ -5,7 +5,7 @@ from typing import Any, Protocol
 
 import httpx
 
-from app.config import LLMSettings
+from app.infra.config import LLMSettings
 
 
 class CompletionClient(Protocol):

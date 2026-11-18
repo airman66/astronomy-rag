@@ -8,12 +8,12 @@ from app.api.paths import ASSISTANT_ANSWER_PATH
 from app.api.responses import RETRY_HEADER
 from app.api.schemas.assistant import AnswerRequest, AnswerResponse
 from app.api.schemas.common import ErrorResponse
-from app.assistant_runtime import (
+from app.assistant.client import AssistantNotConfigured, AssistantUnavailable
+from app.assistant.service import (
     AssistantConfigurationError,
     AssistantOverloaded,
     run_answer,
 )
-from app.llm import AssistantNotConfigured, AssistantUnavailable
 
 router = APIRouter()
 

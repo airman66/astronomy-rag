@@ -3,7 +3,7 @@
 import json
 from pathlib import Path
 
-from app.fileio import checksum, write_bytes
+from app.infra.files import checksum, write_bytes
 
 MODEL = "Qwen/Qwen3-Embedding-8B-GGUF"
 MODEL_REVISION = "69d0e58a13e463cd99a9b83e3f5fee7c10265fab"

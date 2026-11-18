@@ -5,9 +5,9 @@ from __future__ import annotations
 import json
 import re
 
-from app.config import ROOT, data_directory
-from app.translation_fields import fields as translation_fields
-from app.translation_fields import set_path
+from app.infra.config import ROOT, data_directory
+from app.pipeline.translation_fields import fields as translation_fields
+from app.pipeline.translation_fields import set_path
 from scripts.translation_review.common import digest
 
 DATA = data_directory(ROOT / "data")

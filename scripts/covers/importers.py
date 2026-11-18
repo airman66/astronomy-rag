@@ -9,8 +9,8 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 
-from app.fileio import checksum
-from app.media_files import local_file
+from app.catalog.media import local_file
+from app.infra.files import checksum
 from scripts.covers.sources import (
     CACHE,
     download,

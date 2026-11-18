@@ -1,10 +1,8 @@
 """Rank search hits and prepare context for the astronomy assistant."""
 
-import re
-
-from app import storage
-from app.media_files import IMAGE_SUFFIXES, local_file, localized_filename
-from app.search import search_with_mode
+from app.catalog import storage
+from app.catalog.media import IMAGE_SUFFIXES, local_file, localized_filename
+from app.catalog.search import search_with_mode
 
 
 def image_for(record: dict, section: dict, locale: str) -> dict | None:
@@ -46,12 +44,10 @@ def image_for(record: dict, section: dict, locale: str) -> dict | None:
 
 def candidates_for(question: str, locale: str) -> list[dict]:
     results = search_with_mode(question, locale, limit=80)[0]
-    question_words = [word.replace("ё", "е") for word in re.findall(r"[^\W_]+", question.casefold())]
+    question_words = storage.normalized_words(question)
 
     def title_match_fraction(title: str) -> float:
-        words = [
-            word.replace("ё", "е") for word in re.findall(r"[^\W_]+", title.casefold()) if len(word) >= 4
-        ]
+        words = [word for word in storage.normalized_words(title) if len(word) >= 4]
         matched = sum(
             any(query.startswith(word[: max(4, len(word) - 2)]) for query in question_words) for word in words
         )
@@ -70,34 +66,18 @@ def candidates_for(question: str, locale: str) -> list[dict]:
         )
         if record is None:
             continue
-        blocks = record["locales"][locale].get("blocks", {})
-        primary = next(
-            (
-                section
-                for section in record["sections"]
-                if section["type"] == "definition" and blocks.get(section["id"], {}).get("body")
-            ),
-            None,
-        )
-        if primary is None:
-            primary = next(
-                (section for section in record["sections"] if blocks.get(section["id"], {}).get("body")), None
-            )
-        if primary is None:
+        localized = record["locales"][locale]
+        blocks = localized.get("blocks", {})
+        sections = [section for section in record["sections"] if blocks.get(section["id"], {}).get("body")]
+        if not sections:
             continue
-        matched = next(
-            (
-                section
-                for section in record["sections"]
-                if section["id"] == result["section_id"] and blocks.get(section["id"], {}).get("body")
-            ),
-            primary,
-        )
+        primary = next((section for section in sections if section["type"] == "definition"), sections[0])
+        matched = next((section for section in sections if section["id"] == result["section_id"]), primary)
         image = image_for(record, primary, locale)
         unique[identifier] = {
             **result,
             "section_id": primary["id"],
-            "title": record["locales"][locale]["title"],
+            "title": localized["title"],
             "excerpt": blocks[primary["id"]]["body"][:1600],
             "matched_section_id": matched["id"],
             "matched_excerpt": blocks[matched["id"]]["body"][:1600],

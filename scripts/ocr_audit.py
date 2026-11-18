@@ -14,8 +14,8 @@ from pytesseract import Output
 if not __package__:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.config import data_directory
-from app.fileio import write_json
+from app.infra.config import data_directory
+from app.infra.files import write_json
 
 
 def scan(path: Path) -> dict:

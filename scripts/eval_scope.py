@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import asyncio
 
-from app.assistant import select_context
-from app.llm import LLMClient
+from app.assistant.client import LLMClient
+from app.assistant.service import select_context
 
 IN_SCOPE = [
     "Что такое экзопланета?",

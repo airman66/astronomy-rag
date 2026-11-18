@@ -33,9 +33,10 @@ llama-server -m data/models/Qwen3-Embedding-8B-Q4_K_M.gguf --embedding --pooling
 ## Структура проекта
 
 - `app/main.py` собирает FastAPI. Маршруты и схемы находятся в `app/api/`, HTTP middleware — в `app/middleware/`.
-- `app/storage.py` отвечает за SQLite и FTS5, `app/search.py` объединяет лексические и векторные результаты, `app/vector.py` выполняет семантический поиск.
-- `app/assistant.py` выбирает режим и формирует ответ. Подбор контекста, промпты и клиент LLM находятся в `retrieval.py`, `assistant_prompts.py` и `llm.py`.
-- `app/importer.py` загружает снимки Astro4Edu. Нормализация и слияние с переводами находятся в `astro4edu_records.py`. Перевод и аудит используют общий обход полей из `translation_fields.py`.
+- `app/assistant/` содержит обработку вопросов, подбор источников, промпты и клиент LLM.
+- `app/catalog/` содержит SQLite, медиа, FTS5 и векторный поиск.
+- `app/pipeline/` содержит импорт Astro4Edu, перевод, аудит и чанкинг. Команды `python -m app.<команда>` запускают реализацию из пакетов.
+- `app/infra/` содержит настройки окружения, файловые операции и Redis-лимиты.
 - `scripts/translation_review/` содержит этапы ревью переводов. `scripts/covers/` содержит поиск, импорт и отчёт по обложкам. Для запуска используются команды ниже.
 
 ## Данные и индекс

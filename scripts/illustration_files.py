@@ -8,9 +8,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from app.config import ROOT, data_directory
-from app.fileio import checksum
-from app.fileio import write_json as write_json_atomic
+from app.infra.config import ROOT, data_directory
+from app.infra.files import checksum
+from app.infra.files import write_json as write_json_atomic
 
 DATA = data_directory(ROOT / "data")
 TERMS = DATA / "processed" / "terms"

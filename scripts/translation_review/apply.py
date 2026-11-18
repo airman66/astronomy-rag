@@ -5,9 +5,9 @@ import re
 from collections import defaultdict
 from typing import Any
 
-from app.fileio import write_json as write_json_atomic
-from app.translate import protected_tokens
-from app.translation_fields import TERM_LINK, get_path, set_path
+from app.infra.files import write_json as write_json_atomic
+from app.pipeline.translate import protected_tokens
+from app.pipeline.translation_fields import TERM_LINK, get_path, set_path
 from scripts.translation_review.common import (
     APPLIED,
     DATA,

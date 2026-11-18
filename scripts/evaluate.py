@@ -7,12 +7,12 @@ import asyncio
 import json
 from datetime import datetime, timezone
 
-from app.assistant import answer, select_context
-from app.assistant_prompts import PROMPT_VERSION
-from app.config import LLMSettings, data_directory
-from app.llm import LLMClient
-from app.retrieval import candidates_for
-from app.search import search_with_mode
+from app.assistant.client import LLMClient
+from app.assistant.prompts import PROMPT_VERSION
+from app.assistant.retrieval import candidates_for
+from app.assistant.service import answer, select_context
+from app.catalog.search import search_with_mode
+from app.infra.config import LLMSettings, data_directory
 
 DATA = data_directory()
 

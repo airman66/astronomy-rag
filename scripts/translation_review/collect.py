@@ -2,7 +2,7 @@
 
 from typing import Any
 
-from app.translation_fields import fields
+from app.pipeline.translation_fields import fields
 from scripts.translation_review.common import UNITS, digest, now, write_json
 
 

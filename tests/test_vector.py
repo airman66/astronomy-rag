@@ -8,7 +8,8 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from app import index_files, vector
+from app.catalog import index as index_files
+from app.catalog import vector
 
 
 @unittest.skipUnless(importlib.util.find_spec("faiss"), "faiss-cpu is not installed")

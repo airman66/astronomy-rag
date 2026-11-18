@@ -12,8 +12,8 @@ import threading
 import time
 from threading import Lock
 
-from app.config import data_directory
-from app.index_files import MANIFEST_NAME, load_index
+from app.catalog.index import MANIFEST_NAME, load_index
+from app.infra.config import data_directory
 
 DATA = data_directory()
 QUERY_TIMEOUT = float(os.getenv("EMBEDDING_TIMEOUT", "15"))

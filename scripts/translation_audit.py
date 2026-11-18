@@ -20,7 +20,7 @@ import json
 import os
 from pathlib import Path
 
-from app.config import load_env
+from app.infra.config import load_env
 from scripts.translation_review.apply import run_apply, sync_editorial
 from scripts.translation_review.collect import collect
 from scripts.translation_review.common import OUT, UNITS, load_records

@@ -7,7 +7,9 @@ from unittest.mock import patch
 
 from fastapi.testclient import TestClient
 
-from app import assistant, retrieval, storage, vector
+from app.assistant import retrieval
+from app.assistant import service as assistant
+from app.catalog import storage, vector
 from app.main import create_app
 
 

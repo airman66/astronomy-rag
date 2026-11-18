@@ -2,11 +2,11 @@ from typing import Literal
 
 from fastapi import APIRouter, Query
 
-from app import storage
 from app.api.errors import error
 from app.api.responses import LIMITS
 from app.api.schemas.catalog import ListResponse, RecordDetail
 from app.api.schemas.common import ErrorResponse
+from app.catalog import storage
 
 router = APIRouter(prefix="/articles")
 

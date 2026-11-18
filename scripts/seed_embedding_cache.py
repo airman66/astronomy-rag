@@ -19,7 +19,7 @@ import faiss
 if not __package__:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.index_files import read_manifest
+from app.catalog.index import read_manifest
 from scripts.embedding_cache import cache_path, read_cache, save_cache
 
 

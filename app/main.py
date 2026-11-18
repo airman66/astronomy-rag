@@ -7,16 +7,16 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.exceptions import HTTPException
 
-from app import storage, vector
 from app.api.errors import http_error, validation_error
 from app.api.paths import API_PREFIX
 from app.api.routes import articles, assistant, health, media, search, terms
 from app.api.schemas.common import ErrorResponse
-from app.config import cors_origins
-from app.llm import LLMClient
+from app.assistant.client import LLMClient
+from app.catalog import storage, vector
+from app.infra.config import cors_origins
+from app.infra.redis_limits import RedisLimiter
 from app.middleware.body_limit import AssistantBodyLimitMiddleware
 from app.middleware.request_limits import request_limits
-from app.rate_limit import RedisLimiter
 
 
 @asynccontextmanager

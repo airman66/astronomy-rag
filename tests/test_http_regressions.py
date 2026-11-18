@@ -15,8 +15,9 @@ from unittest.mock import patch
 import redis
 from fastapi.testclient import TestClient
 
-from app import assistant, storage, vector
-from app.llm import AssistantNotConfigured
+from app.assistant import service as assistant
+from app.assistant.client import AssistantNotConfigured
+from app.catalog import storage, vector
 from app.main import create_app
 from app.middleware.body_limit import AssistantBodyLimitMiddleware
 

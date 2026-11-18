@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from app import importer
+from app.pipeline import importer
 
 
 class ImporterRefreshTests(unittest.TestCase):

@@ -16,8 +16,7 @@ import requests
 if not __package__:
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.fileio import checksum, write_json
-from app.index_files import (
+from app.catalog.index import (
     MANIFEST_NAME,
     MODEL,
     MODEL_FILE,
@@ -26,6 +25,7 @@ from app.index_files import (
     model_checksum,
     read_chunks,
 )
+from app.infra.files import checksum, write_json
 from scripts.embedding_cache import cache_path, read_cache, save_cache
 
 

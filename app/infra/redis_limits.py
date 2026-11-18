@@ -7,7 +7,7 @@ import time
 
 import redis
 
-from app.config import redis_url
+from app.infra.config import redis_url
 
 _WINDOW = """
 local cooldown = redis.call('TTL', KEYS[2])

@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from app.translation_fields import fields, get_path
+from app.pipeline.translation_fields import fields, get_path
 from scripts.translation_review import apply
 from scripts.translation_review.common import (
     REVIEW_PROMPT_VERSION,

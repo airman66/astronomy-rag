@@ -15,7 +15,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import requests
 
-from app.config import ROOT, data_directory, load_env
+from app.infra.config import ROOT, data_directory, load_env
 from scripts.translation_review.common import digest
 
 DATA = data_directory(ROOT / "data")

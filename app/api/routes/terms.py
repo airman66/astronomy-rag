@@ -3,12 +3,12 @@ from typing import Literal
 from fastapi import APIRouter, Query
 from fastapi.responses import FileResponse
 
-from app import storage
 from app.api.errors import error
 from app.api.responses import IMAGE_TYPES, LIMITS
 from app.api.schemas.catalog import FacetsResponse, ListResponse, RecordDetail
 from app.api.schemas.common import ErrorResponse
-from app.media_files import local_file
+from app.catalog import storage
+from app.catalog.media import local_file
 
 router = APIRouter(prefix="/terms")
 

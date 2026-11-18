@@ -4,8 +4,8 @@ import json
 from collections import Counter, defaultdict
 from typing import Any
 
-from app.translate import protected_tokens
-from app.translation_fields import fields
+from app.pipeline.translate import protected_tokens
+from app.pipeline.translation_fields import fields
 from scripts.translation_review.common import (
     APPLIED,
     REPORT,

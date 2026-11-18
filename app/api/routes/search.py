@@ -4,7 +4,7 @@ from fastapi import APIRouter, Query
 
 from app.api.responses import LIMITS
 from app.api.schemas.search import SearchResponse
-from app.search import search_with_mode
+from app.catalog.search import search_with_mode
 
 router = APIRouter()
 SEARCH_POOL = 200

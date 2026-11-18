@@ -4,7 +4,7 @@ import logging
 import os
 import time
 
-from app import storage, vector
+from app.catalog import storage, vector
 
 SEMANTIC_POOL = int(os.getenv("SEMANTIC_POOL", "40"))
 log = logging.getLogger("glossary.search")
