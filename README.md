@@ -84,6 +84,12 @@ python3 -m venv .venv
 .venv/bin/python -m scripts.illustrations verify --complete
 ```
 
+Проверка типов использует Python 3.12 и режим `standard` в `pyrightconfig.json`. Та же конфигурация читается Pyright и BasedPyright.
+
+```sh
+.venv/bin/basedpyright
+```
+
 Тесты сгруппированы в `tests/api/`, `tests/assistant/`, `tests/catalog/` и `tests/pipeline/`. Из корня проекта можно запустить отдельную группу или файл.
 
 ```sh

@@ -130,7 +130,8 @@ def import_review(units: dict[str, dict[str, Any]], files: list[Path], model: st
         payload = json.loads(path.read_text(encoding="utf-8"))
         stamp = now()
         for item in payload.get("items", []):
-            unit = by_prefix.get(item.get("id")) if isinstance(item, dict) else None
+            identifier = item.get("id") if isinstance(item, dict) else None
+            unit = by_prefix.get(identifier) if isinstance(identifier, str) else None
             if unit is None:
                 skipped += 1
                 continue

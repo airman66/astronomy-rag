@@ -1,1 +1,3 @@
 -r requirements.txt
+-r requirements-media.txt
+basedpyright>=1.40.2,<2

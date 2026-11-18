@@ -145,8 +145,9 @@ def load_term_sources(number: int) -> TermSources | None:
             soup = BeautifulSoup(page_path.read_text(), "html.parser")
             page_kind = "diagram" if kind == "diagram" else "media"
             slugs = list(dict.fromkeys(
-                a["href"].rstrip("/").split("/")[-1]
-                for a in soup.select(f'a[href^="/resources/{page_kind}/"]')
+                href.rstrip("/").split("/")[-1]
+                for anchor in soup.select(f'a[href^="/resources/{page_kind}/"]')
+                if isinstance(href := anchor.get("href"), str)
             ))
             rows = []
             for slug in slugs:
@@ -306,8 +307,10 @@ def main() -> None:
     if args.ids is None:
         maximum, expected = discover_max_id()
         maximum = args.max_id or maximum
+        numbers = range(1, maximum + 1)
+    else:
+        numbers = args.ids
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
-        numbers = args.ids if args.ids is not None else range(1, maximum + 1)
         futures = {pool.submit(import_term, number): number for number in numbers}
         counts = {"imported": 0, "missing": 0, "failed": 0}
         for future in as_completed(futures):

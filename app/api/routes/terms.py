@@ -34,18 +34,20 @@ def terms(
         letter=letter,
         status=status,
     )
-    return ListResponse(items=items, total=total, page=page, page_size=page_size)
+    return ListResponse.model_validate({"items": items, "total": total, "page": page, "page_size": page_size})
 
 
 @router.get("/facets", response_model=FacetsResponse, responses=LIMITS)
 def term_facets(locale: Literal["ru", "en"] = "ru") -> FacetsResponse:
     """Первые буквы названий и категории с числом терминов — для алфавитного указателя и фильтров."""
     letters = storage.letters(locale)
-    return FacetsResponse(
-        locale=locale,
-        total=sum(item["count"] for item in letters),
-        letters=letters,
-        categories=storage.categories(locale),
+    return FacetsResponse.model_validate(
+        {
+            "locale": locale,
+            "total": sum(item["count"] for item in letters),
+            "letters": letters,
+            "categories": storage.categories(locale),
+        }
     )
 
 

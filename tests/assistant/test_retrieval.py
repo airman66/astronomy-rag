@@ -30,6 +30,7 @@ class AssistantRetrievalTests(unittest.TestCase):
 
     def test_assistant_keeps_matched_section_for_explanations(self):
         record = storage.get_term(1)
+        assert record is not None
         record["sections"].append(
             {
                 "id": "spectra",
@@ -82,6 +83,8 @@ class AssistantRetrievalTests(unittest.TestCase):
 
     def test_assistant_can_show_record_image_when_definition_has_no_media(self):
         record = storage.get_term(1)
+        assert record is not None
         record["sections"][0]["media_ids"] = []
         image = retrieval.image_for(record, record["sections"][0], "ru")
+        assert image is not None
         self.assertEqual(image["url"], "/api/v1/media/media:example/file?locale=ru")

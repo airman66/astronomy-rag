@@ -103,9 +103,9 @@ def page_sections(html: str, media: list[dict]) -> list[dict]:
             kind = "source_block"
             body = section.get_text(" ", strip=True)
         links = [
-            {"text": a.get_text(" ", strip=True), "url": urljoin(BASE, a.get("href", ""))}
-            for a in section.select("a[href]")
-            if a.get("href", "").startswith(("/resources/", "https://"))
+            {"text": anchor.get_text(" ", strip=True), "url": urljoin(BASE, href)}
+            for anchor in section.select("a[href]")
+            if isinstance(href := anchor.get("href"), str) and href.startswith(("/resources/", "https://"))
         ]
         media_ids = [
             media_by_url[urlparse(link["url"]).path.rstrip("/")]

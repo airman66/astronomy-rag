@@ -3,6 +3,7 @@
 import logging
 import os
 import time
+from typing import Literal
 
 from app.catalog import storage, vector
 
@@ -13,7 +14,7 @@ log = logging.getLogger("glossary.search")
 _last_semantic_error = float("-inf")
 
 
-def search_with_mode(query: str, locale: str, limit: int = 20) -> tuple[list[dict], str]:
+def search_with_mode(query: str, locale: str, limit: int = 20) -> tuple[list[dict], Literal["hybrid", "lexical"]]:
     """Hybrid FTS + vector search; falls back to FTS alone when embeddings are unavailable."""
     global _last_semantic_error
 

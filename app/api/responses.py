@@ -1,7 +1,9 @@
+from typing import Any
+
 from app.api.schemas.common import ErrorResponse
 
 RETRY_HEADER = {"Retry-After": {"description": "Секунды до повторной попытки", "schema": {"type": "integer"}}}
-LIMITS = {
+LIMITS: dict[int | str, dict[str, Any]] = {
     429: {"model": ErrorResponse, "description": "Лимит запросов превышен", "headers": RETRY_HEADER},
     503: {
         "model": ErrorResponse,

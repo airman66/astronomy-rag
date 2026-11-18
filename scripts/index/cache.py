@@ -4,6 +4,7 @@ import argparse
 import json
 import uuid
 from pathlib import Path
+from zipfile import ZIP_DEFLATED, ZipFile
 
 import faiss
 import numpy as np
@@ -25,8 +26,10 @@ def read_cache(path: Path) -> dict[str, np.ndarray]:
 def save_cache(path: Path, vectors: dict[str, np.ndarray]) -> None:
     temporary = path.with_name(f".{path.name}.{uuid.uuid4().hex}.tmp")
     try:
-        with temporary.open("wb") as target:
-            np.savez_compressed(target, **vectors)
+        with ZipFile(temporary, "w", compression=ZIP_DEFLATED) as archive:
+            for key, vector in vectors.items():
+                with archive.open(f"{key}.npy", "w", force_zip64=True) as entry:
+                    np.save(entry, vector, allow_pickle=False)
         temporary.replace(path)
     finally:
         temporary.unlink(missing_ok=True)

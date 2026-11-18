@@ -107,9 +107,10 @@ def search(query: str, locale: str, limit: int = 20, min_score: float | None = N
     url = os.getenv("EMBEDDING_URL", "http://127.0.0.1:8080/v1/embeddings")
     response = requests.post(url, json={"input": prompt, "model": manifest["model"], "encoding_format": "float"}, timeout=QUERY_TIMEOUT)
     response.raise_for_status()
-    vector = np.asarray([response.json()["data"][0]["embedding"]], dtype="float32")
-    if vector.shape[1] != index.d:
+    embedding = np.asarray(response.json()["data"][0]["embedding"], dtype="float32")
+    if embedding.shape != (index.d,):
         raise ValueError("Query embedding dimension differs from index")
+    vector = embedding.reshape(1, index.d)
     norm = float(np.linalg.norm(vector))
     if norm > 0:
         vector /= norm  # the index stores L2-normalised vectors: scores are cosine similarities

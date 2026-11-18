@@ -11,6 +11,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
 from threading import Lock
+from typing import Any
 
 from scripts.covers.manifest import DATA, load_manifest, write_json
 
@@ -181,10 +182,10 @@ def image_metadata(title: str, host: str = "commons.wikimedia.org") -> dict | No
 
 
 def candidate_titles(item: dict) -> list[tuple[str, str, int]]:
-    title_en, title_ru = (
-        TITLE_OVERRIDES.get(item["title_en"], item["title_en"]),
-        item["title_ru"],
-    )
+    title_en, title_ru = item["title_en"], item["title_ru"]
+    if not isinstance(title_en, str) or not isinstance(title_ru, str):
+        raise ValueError("Cover titles must be strings")
+    title_en = TITLE_OVERRIDES.get(title_en, title_en)
     clean_en = re.sub(r"\s*\([^)]*\)", "", title_en).strip()
     clean_ru = re.sub(r"\s*\([^)]*\)", "", title_ru).strip()
     found: list[tuple[str, str, int]] = []
@@ -257,7 +258,7 @@ def discover(item: dict) -> dict:
 
 def discover_all(workers: int) -> None:
     manifest = load_manifest()
-    existing = json.loads(CACHE.read_text()) if CACHE.exists() else {"items": {}}
+    existing: dict[str, Any] = json.loads(CACHE.read_text()) if CACHE.exists() else {"items": {}}
     items = existing["items"]
     queue = [
         item
