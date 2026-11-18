@@ -31,7 +31,7 @@ services:
     entrypoint: ["/bin/sh", "/scripts/fetch_embedding_model.sh"]
     volumes:
       - ./data/models:/models
-      - ./scripts/fetch_embedding_model.sh:/scripts/fetch_embedding_model.sh:ro
+      - ./scripts/index/fetch_model.sh:/scripts/fetch_embedding_model.sh:ro
     restart: "no"
   embeddings:
     profiles: ["embeddings"]

@@ -4,11 +4,11 @@ import csv
 import html
 import json
 
-from scripts.illustration_files import DATA, MANIFEST
+from scripts.covers.manifest import DATA, load_manifest
 
 
 def write_review() -> None:
-    manifest = json.loads(MANIFEST.read_text())
+    manifest = load_manifest()
     items = sorted(manifest["items"], key=lambda item: int(item["term_number"]))
     directory = DATA / "illustrations"
     with (directory / "coverage.csv").open("w", encoding="utf-8", newline="") as handle:

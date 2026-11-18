@@ -12,7 +12,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from threading import Lock
 
-from scripts.illustration_files import DATA, MANIFEST, write_json
+from scripts.covers.manifest import DATA, load_manifest, write_json
 
 CACHE = DATA / "illustrations" / "wikimedia_candidates.json"
 HEADERS = {"User-Agent": "AstronomyGlossaryRAG/1.0 (educational glossary; https://github.com/airman66)"}
@@ -256,7 +256,7 @@ def discover(item: dict) -> dict:
 
 
 def discover_all(workers: int) -> None:
-    manifest = json.loads(MANIFEST.read_text())
+    manifest = load_manifest()
     existing = json.loads(CACHE.read_text()) if CACHE.exists() else {"items": {}}
     items = existing["items"]
     queue = [

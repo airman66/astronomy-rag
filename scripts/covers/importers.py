@@ -1,7 +1,6 @@
 """Import and verify covers from Commons, Astro4Edu and related terms."""
 
 import json
-import re
 import shutil
 import subprocess
 import tempfile
@@ -11,6 +10,14 @@ from pathlib import Path
 
 from app.catalog.media import local_file
 from app.infra.files import checksum
+from scripts.covers.manifest import (
+    DATA,
+    FILES,
+    MANIFEST,
+    image_size,
+    load_manifest,
+    write_json,
+)
 from scripts.covers.sources import (
     CACHE,
     download,
@@ -18,7 +25,7 @@ from scripts.covers.sources import (
     image_metadata,
     normalized,
 )
-from scripts.illustration_files import DATA, FILES, MANIFEST, image_size, write_json
+from scripts.media.ocr import ocr_latin
 
 RELATED = DATA / "illustrations" / "related_fallbacks.json"
 CURATED = DATA / "illustrations" / "curated_wikimedia.json"
@@ -81,26 +88,53 @@ REJECTED_MATCHES = {
 }
 
 
-def ocr_latin(path: Path) -> str:
-    result = subprocess.run(
-        ["tesseract", str(path), "stdout", "-l", "eng+rus", "tsv"],
-        capture_output=True,
-        text=True,
-        timeout=25,
-        check=False,
-    )
-    words = []
-    for line in result.stdout.splitlines()[1:]:
-        fields = line.split("\t")
-        if len(fields) >= 12:
-            try:
-                confidence = float(fields[10])
-            except ValueError:
-                continue
-            word = fields[11].strip()
-            if confidence >= 60 and re.search(r"[A-Za-z]{4,}", word):
-                words.append(word)
-    return " ".join(words[:12])
+def make_cover(source: str, target: Path) -> tuple[int, int]:
+    """Convert and check a source image before replacing the published cover."""
+    target.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(dir=target.parent) as directory:
+        converted = Path(directory) / "cover.webp"
+        subprocess.run(
+            [
+                "magick",
+                source,
+                "-auto-orient",
+                "-resize",
+                "960x960>",
+                "-strip",
+                "-quality",
+                "84",
+                str(converted),
+            ],
+            check=True,
+            capture_output=True,
+            timeout=40,
+        )
+        _, width, height = image_size(converted)
+        if min(width, height) < 240 or not 0.35 <= width / height <= 3:
+            raise ValueError(f"unsuitable_dimensions:{width}x{height}")
+        latin = ocr_latin(converted)
+        if latin:
+            raise ValueError(f"latin_text:{latin}")
+        publish_cover(converted, target)
+    return width, height
+
+
+def publish_cover(prepared: Path, target: Path) -> None:
+    prepared.replace(target)
+    for old in target.parent.glob(f"{target.stem}.*"):
+        if old != target:
+            old.unlink()
+
+
+def file_metadata(target: Path, width: int, height: int) -> dict:
+    return {
+        "status": "generated",
+        "path": target.relative_to(DATA).as_posix(),
+        "width": width,
+        "height": height,
+        "bytes": target.stat().st_size,
+        "sha256": checksum(target),
+    }
 
 
 def import_one(item: dict, candidate: dict, *, curated: bool = False) -> tuple[int, str]:
@@ -122,42 +156,10 @@ def import_one(item: dict, candidate: dict, *, curated: bool = False) -> tuple[i
         with tempfile.TemporaryDirectory() as directory:
             raw = Path(directory) / "raw"
             download(metadata["download_url"], raw)
-            converted = Path(directory) / "cover.webp"
-            subprocess.run(
-                [
-                    "magick",
-                    str(raw),
-                    "-auto-orient",
-                    "-resize",
-                    "960x960>",
-                    "-strip",
-                    "-quality",
-                    "84",
-                    str(converted),
-                ],
-                check=True,
-                capture_output=True,
-                timeout=40,
-            )
-            _, width, height = image_size(converted)
-            if min(width, height) < 240 or not 0.35 <= width / height <= 3:
-                return number, f"unsuitable_dimensions:{width}x{height}"
-            latin = ocr_latin(converted)
-            if latin:
-                return number, f"latin_text:{latin}"
-            FILES.mkdir(parents=True, exist_ok=True)
-            converted.replace(target)
-            for old in FILES.glob(f"{number}.*"):
-                if old != target:
-                    old.unlink()
+            width, height = make_cover(str(raw), target)
         item.update(
             {
-                "status": "generated",
-                "path": target.relative_to(DATA).as_posix(),
-                "width": width,
-                "height": height,
-                "bytes": target.stat().st_size,
-                "sha256": checksum(target),
+                **file_metadata(target, width, height),
                 "generator": "Wikimedia Commons",
                 "source_type": "wikimedia",
                 "source": {
@@ -183,7 +185,7 @@ def import_one(item: dict, candidate: dict, *, curated: bool = False) -> tuple[i
 
 
 def import_all(workers: int) -> None:
-    manifest = json.loads(MANIFEST.read_text())
+    manifest = load_manifest()
     candidates = json.loads(CACHE.read_text())["items"]
     pending = [
         item for item in manifest["items"] if candidates.get(str(item["term_number"]), {}).get("metadata")
@@ -208,7 +210,7 @@ def import_all(workers: int) -> None:
 
 def import_astro(*, curated: bool = False) -> None:
     """Use already licensed, locally stored source media where Wikimedia has no usable cover."""
-    manifest = json.loads(MANIFEST.read_text())
+    manifest = load_manifest()
     overrides = json.loads(ASTRO_CURATED.read_text()) if curated else {}
     results = []
     for item in manifest["items"]:
@@ -247,35 +249,8 @@ def import_astro(*, curated: bool = False) -> None:
                 if path is None or not path.is_relative_to((DATA / "media").resolve()):
                     continue
                 try:
-                    with tempfile.TemporaryDirectory() as directory:
-                        converted = Path(directory) / "cover.webp"
-                        subprocess.run(
-                            [
-                                "magick",
-                                f"{path}[0]",
-                                "-auto-orient",
-                                "-resize",
-                                "960x960>",
-                                "-strip",
-                                "-quality",
-                                "84",
-                                str(converted),
-                            ],
-                            check=True,
-                            capture_output=True,
-                            timeout=40,
-                        )
-                        _, width, height = image_size(converted)
-                        if min(width, height) < 240 or not 0.35 <= width / height <= 3:
-                            continue
-                        if ocr_latin(converted):
-                            continue
-                        FILES.mkdir(parents=True, exist_ok=True)
-                        target = FILES / f"{number}.webp"
-                        converted.replace(target)
-                        for old in FILES.glob(f"{number}.*"):
-                            if old != target:
-                                old.unlink()
+                    target = FILES / f"{number}.webp"
+                    width, height = make_cover(f"{path}[0]", target)
                     selected = (media, field, target, width, height)
                     break
                 except (subprocess.CalledProcessError, TimeoutError, ValueError):
@@ -288,12 +263,7 @@ def import_astro(*, curated: bool = False) -> None:
         media, field, target, width, height = selected
         item.update(
             {
-                "status": "generated",
-                "path": target.relative_to(DATA).as_posix(),
-                "width": width,
-                "height": height,
-                "bytes": target.stat().st_size,
-                "sha256": checksum(target),
+                **file_metadata(target, width, height),
                 "generator": "Astro4Edu source media",
                 "source_type": "astro4edu",
                 "source": {
@@ -341,7 +311,7 @@ def import_astro(*, curated: bool = False) -> None:
 def import_related() -> None:
     """Apply explicit, reviewable links to an image of a related glossary concept."""
     mapping = json.loads(RELATED.read_text(encoding="utf-8"))
-    manifest = json.loads(MANIFEST.read_text())
+    manifest = load_manifest()
     by_number = {int(item["term_number"]): item for item in manifest["items"]}
     imported = []
     skipped = []
@@ -359,19 +329,14 @@ def import_related() -> None:
             continue
         FILES.mkdir(parents=True, exist_ok=True)
         target = FILES / f"{number}.webp"
-        shutil.copyfile(donor_path, target)
-        for old in FILES.glob(f"{number}.*"):
-            if old != target:
-                old.unlink()
-        _, width, height = image_size(target)
+        with tempfile.TemporaryDirectory(dir=target.parent) as directory:
+            prepared = Path(directory) / target.name
+            shutil.copyfile(donor_path, prepared)
+            _, width, height = image_size(prepared)
+            publish_cover(prepared, target)
         item.update(
             {
-                "status": "generated",
-                "path": target.relative_to(DATA).as_posix(),
-                "width": width,
-                "height": height,
-                "bytes": target.stat().st_size,
-                "sha256": checksum(target),
+                **file_metadata(target, width, height),
                 "generator": "Licensed related image",
                 "source_type": "related",
                 "source": {
@@ -399,7 +364,7 @@ def import_related() -> None:
 def import_curated() -> None:
     """Import manually selected Commons files for ambiguous or missing matches."""
     mapping = json.loads(CURATED.read_text(encoding="utf-8"))
-    manifest = json.loads(MANIFEST.read_text())
+    manifest = load_manifest()
     by_number = {int(item["term_number"]): item for item in manifest["items"]}
     results = []
     for raw_number, file_title in mapping.items():
