@@ -3,6 +3,7 @@ import unittest
 
 from app.middleware.body_limit import AssistantBodyLimitMiddleware
 from tests.support.api import ANSWER_PATH, ApiCase
+from tests.support.catalog import seed_star
 
 
 class RequestLimitTests(ApiCase):
@@ -14,8 +15,11 @@ class RequestLimitTests(ApiCase):
         self.assertEqual(response.json()["code"], "rate_limited")
 
     def test_reads_work_without_redis_but_assistant_is_closed(self):
+        seed_star(self.root)
         self.limiter.fail = True
-        self.assertEqual(self.client.get("/api/v1/terms").status_code, 200)
+        listing = self.client.get("/api/v1/terms")
+        self.assertEqual(listing.status_code, 200)
+        self.assertEqual(listing.json()["total"], 1)
         response = self.client.post(ANSWER_PATH, json={"question": "Что такое звезда?"})
         self.assertEqual(response.status_code, 503)
         self.assertEqual(response.headers["Retry-After"], "10")

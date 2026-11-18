@@ -75,7 +75,8 @@ def _stored_fingerprint() -> str | None:
         with closing(sqlite3.connect(f"{DB.resolve().as_uri()}?mode=ro", uri=True)) as db:
             row = db.execute(
                 "SELECT value FROM meta WHERE key='fingerprint' "
-                "AND EXISTS (SELECT 1 FROM meta WHERE key='schema_version' AND value=?)",
+                "AND EXISTS (SELECT 1 FROM meta WHERE key='schema_version' AND value=?) "
+                "AND EXISTS (SELECT 1 FROM terms)",
                 (SCHEMA_VERSION,),
             ).fetchone()
         return row[0] if row else None
@@ -145,6 +146,10 @@ def rebuild_database(current_fingerprint: str | None = None) -> None:
 
 
 def _populate_database(db: sqlite3.Connection, current_fingerprint: str) -> None:
+    term_paths = sorted((DATA / "processed" / "terms").glob("*.json"))
+    if not term_paths:
+        raise ValueError("No canonical term records")
+
     illustrations = _illustrations()
     db.executescript(
         """
@@ -173,7 +178,7 @@ def _populate_database(db: sqlite3.Connection, current_fingerprint: str) -> None
         )
 
     seen_media: set[str] = set()
-    for path in sorted((DATA / "processed" / "terms").glob("*.json")):
+    for path in term_paths:
         record = json.loads(path.read_text(encoding="utf-8"))
         number = int(record["source"]["term_number"])
         en, ru = record["locales"]["en"], record["locales"]["ru"]
