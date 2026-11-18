@@ -3,12 +3,19 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import pytesseract
 from PIL import Image
 from pytesseract import Output
+
+if not __package__:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from app.config import data_directory
+from app.fileio import write_json
 
 
 def scan(path: Path) -> dict:
@@ -31,10 +38,11 @@ def main():
     parser.add_argument("--kind", choices=("diagram", "media", "all"), default="all")
     parser.add_argument("--workers", type=int, default=4)
     args = parser.parse_args()
-    paths = sorted(Path("data/media/original").glob("*"))
+    data = data_directory()
+    paths = sorted(p for p in (data / "media/original").glob("*") if p.is_file())
     if args.kind != "all":
         paths = [path for path in paths if path.name.startswith(args.kind + "_")]
-    existing_file = Path("data/image_ocr.json")
+    existing_file = data / "image_ocr.json"
     existing = {row["path"]: row for row in json.loads(existing_file.read_text())} if existing_file.exists() else {}
     pending = [path for path in paths if str(path) not in existing]
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
@@ -42,9 +50,9 @@ def main():
             row = future.result()
             existing[row["path"]] = row
             if len(existing) % 20 == 0:
-                existing_file.write_text(json.dumps(list(existing.values()), ensure_ascii=False, indent=2) + "\n")
+                write_json(existing_file, list(existing.values()))
                 print(f"audited {len(existing)}", flush=True)
-    existing_file.write_text(json.dumps(list(existing.values()), ensure_ascii=False, indent=2) + "\n")
+    write_json(existing_file, list(existing.values()))
     print(f"audited={len(paths)} with_text={sum(bool(existing[str(path)]['words']) for path in paths)}")
 
 

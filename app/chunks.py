@@ -6,12 +6,14 @@ import argparse
 import hashlib
 import json
 import re
-from pathlib import Path
 from functools import lru_cache
 
 from tokenizers import Tokenizer
 
-from app.storage import DATA
+from app.config import data_directory
+from app.fileio import write_bytes, write_json
+
+DATA = data_directory()
 
 CHUNK_VERSION = "2"
 TOKENIZER_MODEL = "Qwen/Qwen3-Embedding-8B"
@@ -114,11 +116,9 @@ def write_chunks(budget: int = 400, overlap: float = 0.1) -> dict:
     destination = DATA / "index" / "chunks.jsonl"
     destination.parent.mkdir(parents=True, exist_ok=True)
     content = "".join(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n" for row in chunks).encode()
-    temporary = destination.with_suffix(".tmp")
-    temporary.write_bytes(content)
-    temporary.replace(destination)
+    write_bytes(destination, content)
     manifest = {"chunk_version": CHUNK_VERSION, "budget_tokens": budget, "overlap": overlap, "tokenizer_model": TOKENIZER_MODEL, "chunk_count": len(chunks), "chunks_sha256": hashlib.sha256(content).hexdigest()}
-    (DATA / "index" / "chunk-manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n")
+    write_json(DATA / "index" / "chunk-manifest.json", manifest)
     return manifest
 
 

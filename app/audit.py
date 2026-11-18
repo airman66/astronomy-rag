@@ -1,12 +1,16 @@
 """Validate source IDs, translation coverage, links, and local image hashes."""
 from __future__ import annotations
 
-import hashlib
 import json
 from collections import Counter
 from pathlib import Path
 
-from app.storage import DATA
+from app.config import data_directory
+from app.fileio import checksum
+from app.media_files import local_file
+from app.translation_fields import fields
+
+DATA = data_directory()
 
 
 def check() -> dict:
@@ -34,37 +38,26 @@ def check() -> dict:
             errors.append(f"term {number}: aliases untranslated")
         if len(record["metadata"].get("categories", [])) != len(record["metadata"].get("categories_ru", [])):
             errors.append(f"term {number}: categories untranslated")
-        for block_id, block in en["blocks"].items():
-            for field in ("heading", "body"):
-                if block.get(field) and not ru["blocks"].get(block_id, {}).get(field):
-                    errors.append(f"term {number}: untranslated {block_id}/{field}")
+        media_ids = {item["id"] for item in record["media"]}
         for section in record["sections"]:
             for identifier in section["media_ids"]:
-                if identifier not in {item["id"] for item in record["media"]}:
+                if identifier not in media_ids:
                     errors.append(f"term {number}: broken media {identifier}")
-            for field in ("heading", "body"):
-                if section.get(field) and not section.get(field + "_ru"):
-                    errors.append(f"term {number}: untranslated section {section['id']}/{field}")
-            for link in section["links"]:
-                if link.get("text") and not link.get("text_ru"):
-                    errors.append(f"term {number}: untranslated link {link['url']}")
+        for field in fields(record):
+            if field["kind"] not in ("title", "alias", "category") and not field["ru"]:
+                errors.append(f"term {number}: untranslated {field['ru_path']}")
         for item in record["media"]:
             old = media.setdefault(item["id"], item)
             for field in ("title_ru", "caption_ru", "short_caption_ru", "alt_ru"):
                 if old.get(field) and item.get(field) and old[field] != item[field]:
                     errors.append(f"media {item['id']}: inconsistent {field}")
-            for field in ("title", "short_caption", "caption", "alt"):
-                if item.get(field + "_en") and not item.get(field + "_ru"):
-                    errors.append(f"media {item['id']}: untranslated {field}")
     for identifier, item in media.items():
-        if item.get("original_path"):
-            path = Path(item.get("original_path") or "")
-            if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != item.get("sha256"):
-                errors.append(f"media {identifier}: missing/changed original image")
-        if item.get("ru_path"):
-            path = Path(item["ru_path"])
-            if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != item.get("ru_sha256"):
-                errors.append(f"media {identifier}: missing/changed RU image")
+        for field, hash_field, label in (("original_path", "sha256", "original"), ("ru_path", "ru_sha256", "RU")):
+            if not item.get(field):
+                continue
+            path = local_file(DATA, item[field])
+            if path is None or checksum(path) != item.get(hash_field):
+                errors.append(f"media {identifier}: missing/changed {label} image")
     return {"records": len(records), "unique_ids": len(ids), "unique_media": len(media), "image_files": sum(bool(item.get("original_path")) for item in media.values()), "translated_titles": sum(bool(record["locales"]["ru"]["title"]) for record in records), "errors": errors, "error_counts": dict(Counter(error.split(":")[-1].strip() for error in errors))}
 
 

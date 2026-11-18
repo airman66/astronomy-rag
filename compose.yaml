@@ -4,6 +4,7 @@ services:
     ports:
       - "127.0.0.1:8001:8000"
     environment:
+      ASSISTANT_DEADLINE: ${ASSISTANT_DEADLINE:-100}
       ASSISTANT_PROVIDER: ${ASSISTANT_PROVIDER:-deepseek}
       DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
       DEEPSEEK_MODEL: ${DEEPSEEK_MODEL:-deepseek-flash}
@@ -14,6 +15,9 @@ services:
       REDIS_URL: redis://redis:6379/0
       TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}
       SESSION_SECRET: ${SESSION_SECRET:-}
+      EMBEDDING_TIMEOUT: ${EMBEDDING_TIMEOUT:-15}
+      SEMANTIC_MIN_SCORE: ${SEMANTIC_MIN_SCORE:-0.55}
+      SEMANTIC_POOL: ${SEMANTIC_POOL:-40}
       EMBEDDING_URL: ${EMBEDDING_URL:-http://embeddings:8080/v1/embeddings}
     depends_on:
       redis:

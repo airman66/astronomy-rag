@@ -14,9 +14,13 @@ from typing import Any
 
 import requests
 
-ROOT = Path(__file__).resolve().parents[1]
-TERMS = ROOT / "data/processed/terms"
-TRANSLATION_CACHE = ROOT / "data/processed/.translation-cache.json"
+from app.config import ROOT, data_directory, load_env
+from app.fileio import write_json
+from app.translation_fields import fields
+
+DATA = data_directory(ROOT / "data")
+TERMS = DATA / "processed/terms"
+TRANSLATION_CACHE = DATA / "processed/.translation-cache.json"
 MODEL = "deepseek-flash"
 API_URL = "https://api.deepseek.com/chat/completions"
 NUMBER_RE = re.compile(r"(?<!\d)\d+(?:[.,]\d+)*(?!\d)")
@@ -37,54 +41,19 @@ def protected_tokens(text: str) -> list[str]:
     return [f"N:{value}" for value in numbers] + [f"U:{value}" for value in units]
 
 
-def load_env() -> None:
-    """Load local .env without printing secrets; existing environment wins."""
-    env_path = ROOT / ".env"
-    if not env_path.exists():
-        return
-    for line in env_path.read_text().splitlines():
-        line = line.strip()
-        if not line or line.startswith("#") or "=" not in line:
-            continue
-        key, value = line.split("=", 1)
-        os.environ.setdefault(key.strip(), value.strip().strip("\"'"))
-
-
 def string_slots(record: dict[str, Any]) -> list[tuple[str, str, str]]:
-    """Return (source path, English string, destination path) for translatable text."""
-    slots: list[tuple[str, str, str]] = []
-
-    def pair(en: Any, ru: Any, ep: str, rp: str) -> None:
-        if isinstance(en, str) and en.strip():
-            if isinstance(ru, str) and ru.strip():
-                return
-            slots.append((ep, en, rp))
-        elif isinstance(en, list) and isinstance(ru, list):
-            for index, value in enumerate(en):
-                target = ru[index] if index < len(ru) else ""
-                pair(value, target, f"{ep}/{index}", f"{rp}/{index}")
-
-    en = record.get("locales", {}).get("en", {})
-    ru = record.get("locales", {}).get("ru", {})
-    pair(en.get("title"), ru.get("title"), "/locales/en/title", "/locales/ru/title")
-    pair(en.get("aliases", []), ru.get("aliases", []), "/locales/en/aliases", "/locales/ru/aliases")
-    for block_id, block in en.get("blocks", {}).items():
-        target = ru.get("blocks", {}).get(block_id, {})
-        for field in ("heading", "body"):
-            pair(block.get(field), target.get(field), f"/locales/en/blocks/{block_id}/{field}", f"/locales/ru/blocks/{block_id}/{field}")
-    for i, section in enumerate(record.get("sections", [])):
-        for field in ("heading", "body"):
-            pair(section.get(field), section.get(f"{field}_ru"), f"/sections/{i}/{field}", f"/sections/{i}/{field}_ru")
-        for j, link in enumerate(section.get("links", [])):
-            pair(link.get("text"), link.get("text_ru"), f"/sections/{i}/links/{j}/text", f"/sections/{i}/links/{j}/text_ru")
-    for i, media in enumerate(record.get("media", [])):
-        if media.get("review", {}).get("status") == "reviewed":
+    """Return missing Russian translations in the order used for batch requests."""
+    slots = []
+    categories = []
+    for field in fields(record):
+        if field["ru"].strip() or field.get("media_reviewed"):
             continue
-        for field in ("title", "short_caption", "caption", "alt"):
-            pair(media.get(f"{field}_en"), media.get(f"{field}_ru"), f"/media/{i}/{field}_en", f"/media/{i}/{field}_ru")
-    categories = record.get("metadata", {}).get("categories", [])
-    pair(categories, record.get("metadata", {}).get("categories_ru", []), "/metadata/categories", "/metadata/categories_ru")
-    return slots
+        slot = field["en_path"], field["en"], field["ru_path"]
+        if field["kind"] == "category":
+            categories.append(slot)
+        else:
+            slots.append(slot)
+    return slots + categories
 
 
 def validate_parity(record: dict[str, Any], *, complete: bool = False) -> None:
@@ -129,6 +98,7 @@ def translate_batch(items: list[dict[str, str]], key: str) -> dict[str, str]:
             unique.setdefault(text, f"u{len(unique)}")
     if not unique:
         return resolved
+    source_by_id = {identifier: text for text, identifier in unique.items()}
     request_items = []
     markers: dict[str, dict[str, str]] = {}
     for source, identifier in unique.items():
@@ -171,7 +141,7 @@ def translate_batch(items: list[dict[str, str]], key: str) -> dict[str, str]:
                 for marker, original in expected.items():
                     value = value.replace(marker, original)
                 result[identifier] = value
-                source = next(text for text, source_id in unique.items() if source_id == identifier)
+                source = source_by_id[identifier]
                 before = protected_tokens(source)
                 after = protected_tokens(value)
                 if before != after:
@@ -179,9 +149,7 @@ def translate_batch(items: list[dict[str, str]], key: str) -> dict[str, str]:
             with CACHE_LOCK:
                 for source, identifier in unique.items():
                     CACHE[source] = result[identifier]
-                temp = TRANSLATION_CACHE.with_suffix(".json.tmp")
-                temp.write_text(json.dumps(CACHE, ensure_ascii=False, indent=2) + "\n")
-                temp.replace(TRANSLATION_CACHE)
+                write_json(TRANSLATION_CACHE, CACHE)
             for item in items:
                 resolved[item["id"]] = CACHE[item["text"]]
             return resolved
@@ -189,37 +157,6 @@ def translate_batch(items: list[dict[str, str]], key: str) -> dict[str, str]:
             last = exc
             time.sleep(min(2 ** attempt, 16))
     raise RuntimeError(f"Batch failed after retries: {last}")
-
-
-def write_record(path: Path, record: dict[str, Any]) -> None:
-    temp = path.with_suffix(".json.tmp")
-    temp.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n")
-    temp.replace(path)
-
-
-def process_file(path: Path, key: str, batch_size: int) -> tuple[int, int, int]:
-    record = json.loads(path.read_text())
-    if record.get("review", {}).get("status") == "reviewed":
-        return 0, 0, 0
-    validate_parity(record)
-    slots = string_slots(record)
-    translated = failed = 0
-    for start in range(0, len(slots), batch_size):
-        batch = slots[start:start + batch_size]
-        req = [{"id": str(i), "text": text} for i, (_, text, _) in enumerate(batch)]
-        try:
-            result = translate_batch(req, key)
-        except Exception as exc:
-            failed += len(batch)
-            print(f"{path.name}: package {start // batch_size + 1}: {exc}", flush=True)
-            continue
-        for i, (_, _, target) in enumerate(batch):
-            set_path(record, target, result[str(i)])
-            translated += 1
-        write_record(path, record)
-    remaining = len(string_slots(record))
-    validate_parity(record, complete=remaining == 0)
-    return translated, remaining, failed
 
 
 def main() -> None:
@@ -268,7 +205,7 @@ def main() -> None:
     # Persist every cache-assisted update before making network calls.
     for path, record in records.items():
         if record.get("review", {}).get("status") != "reviewed":
-            write_record(path, record)
+            write_json(path, record)
     unique_texts = list(pending)
     packages: list[tuple[int, list[str]]] = [
         (start // args.batch_size + 1, unique_texts[start:start + args.batch_size])
@@ -300,7 +237,7 @@ def main() -> None:
                     touched.add(path)
                     total[0] += 1
             for path in touched:
-                write_record(path, records[path])
+                write_json(path, records[path])
             print(f"packages={completed}/{len(packages)} translated={total[0]} errors={total[2]}", flush=True)
     for path, record in records.items():
         if record.get("review", {}).get("status") == "reviewed":

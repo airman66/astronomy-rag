@@ -10,12 +10,14 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import requests
 
-from app.translate import ROOT, load_env
-from scripts.review_translations import batches, digest
+from app.config import ROOT, data_directory, load_env
+from scripts.review_translations import batches
+from scripts.translation_review.common import digest
 
-SOURCE = ROOT / "data/processed/.translation-cache.json"
-REVIEW = ROOT / "data/eval/translation_review.json"
-RESULT = ROOT / "data/eval/translation_resolutions.json"
+DATA = data_directory(ROOT / "data")
+SOURCE = DATA / "processed/.translation-cache.json"
+REVIEW = DATA / "eval/translation_review.json"
+RESULT = DATA / "eval/translation_resolutions.json"
 PROMPT = (
     "You are independently verifying alleged EN→RU translation defects. Evaluate EACH item "
     "against its OWN English source and Russian translation; findings from adjacent items must "
