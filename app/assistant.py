@@ -144,13 +144,17 @@ def candidates_for(question: str, locale: str) -> list[dict]:
             primary = next((section for section in record["sections"] if blocks.get(section["id"], {}).get("body")), None)
         if primary is None:
             continue
+        matched = next((section for section in record["sections"] if section["id"] == result["section_id"] and blocks.get(section["id"], {}).get("body")), primary)
         unique[identifier] = {
             **result,
             "section_id": primary["id"],
             "title": record["locales"][locale]["title"],
             "excerpt": blocks[primary["id"]]["body"][:1600],
+            "matched_section_id": matched["id"],
+            "matched_excerpt": blocks[matched["id"]]["body"][:1600],
             "kind": "article" if identifier.startswith("article:") else "term",
             "image": image_for(record, primary, locale),
+            "matched_image": image_for(record, matched, locale),
             "url": f"/api/v1/articles/{identifier}" if identifier.startswith("article:") else f"/api/v1/terms/{record['source']['term_number']}",
         }
     return list(unique.values())[:8]
@@ -179,6 +183,15 @@ def _answer(value: Any) -> tuple[str, set[str]]:
     return value["answer"], {x for x in used if isinstance(x, str)}
 
 
+def matched_context(candidate: dict) -> dict:
+    return {
+        **candidate,
+        "section_id": candidate.get("matched_section_id", candidate["section_id"]),
+        "excerpt": candidate.get("matched_excerpt", candidate["excerpt"]),
+        "image": candidate.get("matched_image", candidate.get("image")),
+    }
+
+
 async def answer(question: str, mode: str, locale: str, context: dict | None, client: DeepSeekClient) -> dict:
     # Retrieval is synchronous (SQLite, embedding HTTP call): keep it off the event loop.
     candidates = [] if mode == "general" else await asyncio.to_thread(candidates_for, question, locale)
@@ -192,23 +205,30 @@ async def answer(question: str, mode: str, locale: str, context: dict | None, cl
         }
     if mode == "auto":
         mode = suggested_mode
-        selected = [valid[x] for x in chosen if x in valid]
+        selected = list({x: valid[x] for x in chosen if x in valid}.values())
     else:
-        selected = candidates[:1] if mode in ("term", "article") else candidates[:5]
+        selected = candidates[:5]
     if mode not in ("term", "article", "explain", "general"):
         mode = "general"
-    if mode == "article" and not any(x["kind"] == "article" for x in selected):
-        mode = "explain" if selected else "general"
-    if mode in ("term", "explain") and not selected:
-        mode = "general"
+    if mode in ("term", "article"):
+        matching = next((item for item in selected if item["kind"] == mode), None)
+        if matching is None:
+            matching = next((item for item in candidates if item["kind"] == mode), None)
+        if matching is not None:
+            selected = [matching]
+        elif mode == "article":
+            mode = "explain" if candidates else "general"
+            selected = candidates[:5]
+        else:
+            mode = "general"
+    if mode == "explain":
+        selected = [matched_context(item) for item in (selected or candidates[:5])[:5]]
+        if not selected:
+            mode = "general"
+    elif mode == "article":
+        selected = [matched_context(selected[0])]
     if mode == "general":
         selected = []
-    else:
-        selected = [x for x in selected if x["record_id"] in valid]
-        if mode == "term":
-            selected = [x for x in selected if x["record_id"].startswith("term:")][:1]
-            if not selected:
-                mode = "general"
     prompt = GENERAL_PROMPT if mode == "general" else ANSWER_PROMPT
     text, used = _answer(await client.complete(prompt, {"question": question, "locale": locale, "mode": mode, "context": context or {}, "sources": selected}))
     sources = [

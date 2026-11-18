@@ -1,5 +1,6 @@
 """Regression tests for the backend review findings (search, storage, assistant, limits, illustrations)."""
 
+import asyncio
 import hashlib
 import json
 import os
@@ -16,7 +17,7 @@ from fastapi.testclient import TestClient
 
 from app import assistant, storage, vector
 from app.assistant import AssistantNotConfigured
-from app.main import app
+from app.main import AssistantBodyLimitMiddleware, app
 
 
 class Limiter:
@@ -208,6 +209,48 @@ class FixTests(unittest.TestCase):
         self.assertIn("image/png", media["200"]["content"])
         self.assertIn("429", schema["paths"]["/api/v1/search"]["get"]["responses"])
         self.assertIn("mode", schema["components"]["schemas"]["SearchResponse"]["properties"])
+
+    def test_assistant_body_limit_checks_header_and_actual_body(self):
+        path = "/api/v1/assistant/answer"
+        invalid = self.client.post(path, content=b"{}", headers={"Content-Length": "invalid"})
+        self.assertEqual((invalid.status_code, invalid.json()["code"]), (400, "invalid_content_length"))
+        oversized_header = self.client.post(path, content=b"{}", headers={"Content-Length": "16385"})
+        self.assertEqual((oversized_header.status_code, oversized_header.json()["code"]), (413, "body_too_large"))
+        understated = self.client.post(path, content=b"x" * 16385, headers={"Content-Length": "1"})
+        self.assertEqual((understated.status_code, understated.json()["code"]), (413, "body_too_large"))
+        schema = self.client.get("/openapi.json").json()
+        responses = schema["paths"][path]["post"]["responses"]
+        self.assertIn("400", responses)
+        self.assertIn("413", responses)
+
+    def test_assistant_body_without_length_is_bounded_and_replayed(self):
+        scope = {"type": "http", "path": "/api/v1/assistant/answer", "headers": []}
+        observed = []
+
+        async def endpoint(_scope, receive, send):
+            observed.append((await receive())["body"])
+            await send({"type": "http.response.start", "status": 200, "headers": []})
+            await send({"type": "http.response.body", "body": b"ok"})
+
+        async def run(parts):
+            messages = iter({"type": "http.request", "body": part, "more_body": i < len(parts) - 1} for i, part in enumerate(parts))
+            sent = []
+
+            async def receive():
+                return next(messages)
+
+            async def send(message):
+                sent.append(message)
+
+            await AssistantBodyLimitMiddleware(endpoint)(scope, receive, send)
+            return sent
+
+        accepted = asyncio.run(run([b"abc", b"def"]))
+        self.assertEqual(observed, [b"abcdef"])
+        self.assertEqual(accepted[0]["status"], 200)
+        rejected = asyncio.run(run([b"a" * 16000, b"b" * 385]))
+        self.assertEqual(rejected[0]["status"], 413)
+        self.assertEqual(observed, [b"abcdef"])
 
 
 class VectorFailureCacheTests(unittest.TestCase):

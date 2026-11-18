@@ -105,6 +105,37 @@ class ContractTests(unittest.TestCase):
         self.assertEqual(candidate["section_id"], "definition")
         self.assertEqual(candidate["excerpt"], "Горячая звезда.")
 
+    def test_assistant_keeps_matched_section_for_explanations(self):
+        record = storage.get_term(1)
+        record["sections"].append({"id": "spectra", "type": "source_block", "heading": "Spectra", "body": "Blue light.", "media_ids": [], "links": []})
+        record["locales"]["ru"]["blocks"]["spectra"] = {"heading": "Спектр", "body": "Голубой свет определяется температурой."}
+        match = {"record_id": "term:1", "section_id": "spectra", "kind": "term", "title": "Звезда класса A", "excerpt": "Голубой свет", "url": "/api/v1/terms/1", "review_status": "draft", "score": 1.0}
+        with patch.object(storage, "search", return_value=[match]), patch.object(storage, "get_term", return_value=record):
+            candidate = assistant.candidates_for("Почему голубой свет?", "ru")[0]
+        self.assertEqual(candidate["section_id"], "definition")
+        self.assertEqual(candidate["matched_section_id"], "spectra")
+        self.assertIn("температурой", assistant.matched_context(candidate)["excerpt"])
+
+    def test_article_mode_selects_article_below_term(self):
+        term = {"record_id": "term:1", "section_id": "definition", "kind": "term", "title": "Звезда", "excerpt": "Определение", "url": "/api/v1/terms/1", "review_status": "draft", "score": 1, "image": None}
+        article = {"record_id": "article:stars", "section_id": "intro", "kind": "article", "title": "Звёзды", "excerpt": "Введение", "matched_section_id": "details", "matched_excerpt": "Подробный раздел", "url": "/api/v1/articles/article:stars", "review_status": "reviewed", "score": 0.9, "image": None}
+
+        class ArticleClient:
+            async def complete(self, system, payload):
+                if "classify" in system:
+                    return {"scope": "in_scope", "mode": "term", "record_ids": ["term:1"]}
+                self.sources = payload["sources"]
+                return {"answer": "Подробный ответ.", "used_record_ids": ["article:stars"]}
+
+        client = ArticleClient()
+        app.state.deepseek = client
+        with patch.object(assistant, "candidates_for", return_value=[term, article]), patch.dict(os.environ, {"DEEPSEEK_API_KEY": "unit-test"}):
+            response = self.client.post("/api/v1/assistant/answer", json={"question": "Расскажи подробно о звёздах", "mode": "article"})
+        self.assertEqual(response.status_code, 200, response.text)
+        self.assertEqual(response.json()["mode"], "article")
+        self.assertEqual(response.json()["sources"][0]["section_id"], "details")
+        self.assertEqual(client.sources[0]["excerpt"], "Подробный раздел")
+
     def test_assistant_can_show_record_image_when_definition_has_no_media(self):
         record = storage.get_term(1)
         record["sections"][0]["media_ids"] = []

@@ -5,8 +5,10 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import time
+import uuid
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
@@ -32,9 +34,12 @@ def digest(content: bytes) -> str:
 
 def write_bytes(path: Path, content: bytes) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_suffix(path.suffix + ".tmp")
-    temporary.write_bytes(content)
-    temporary.replace(path)
+    temporary = path.with_name(f"{path.name}.{uuid.uuid4().hex}.tmp")
+    try:
+        temporary.write_bytes(content)
+        temporary.replace(path)
+    finally:
+        temporary.unlink(missing_ok=True)
 
 
 def write_json(path: Path, value: object) -> None:
@@ -61,12 +66,64 @@ def fetch(url: str, *, binary: bool = False) -> bytes:
     raise RuntimeError(f"Failed to fetch {url}: {last_error}")
 
 
+def current_snapshot(path: Path) -> Path:
+    pointer = path.with_suffix(path.suffix + ".current")
+    if not pointer.exists():
+        return path
+    name = pointer.read_text(encoding="utf-8").strip()
+    if not name or Path(name).name != name or name == ".." or not (name == path.name or (name.startswith(f"{path.stem}.") and name.endswith(path.suffix))):
+        raise ValueError(f"Invalid raw snapshot pointer: {pointer}")
+    return path.with_name(name)
+
+
+def write_immutable(target: Path, content: bytes) -> None:
+    target.parent.mkdir(parents=True, exist_ok=True)
+    if target.exists():
+        if target.read_bytes() != content:
+            raise ValueError(f"Immutable file differs: {target}")
+    else:
+        temporary = target.with_name(f"{target.name}.{uuid.uuid4().hex}.tmp")
+        try:
+            temporary.write_bytes(content)
+            try:
+                os.link(temporary, target)
+            except FileExistsError:
+                if target.read_bytes() != content:
+                    raise ValueError(f"Immutable file differs: {target}")
+        finally:
+            temporary.unlink(missing_ok=True)
+
+
+def save_snapshot(path: Path, content: bytes) -> Path:
+    """Keep the first snapshot and all changed versions immutable."""
+    current = current_snapshot(path)
+    if current.exists() and current.read_bytes() == content:
+        return current
+    target = path if not path.exists() or path.read_bytes() == content else path.with_name(f"{path.stem}.{digest(content)}{path.suffix}")
+    write_immutable(target, content)
+    pointer = path.with_suffix(path.suffix + ".current")
+    if target != path or pointer.exists():
+        write_bytes(pointer, f"{target.name}\n".encode())
+    return target
+
+
+def raw_bytes(path: Path, url: str) -> bytes:
+    current = current_snapshot(path)
+    if current.exists() and not REFRESH:
+        return current.read_bytes()
+    content = fetch(url, binary=True)
+    save_snapshot(path, content)
+    return content
+
+
 def raw_json(path: Path, url: str) -> dict:
-    if path.exists() and not REFRESH:
-        return json.loads(path.read_text())
+    current = current_snapshot(path)
+    if current.exists() and not REFRESH:
+        return json.loads(current.read_bytes())
     content = fetch(url)
-    write_bytes(path, content)
-    return json.loads(content)
+    value = json.loads(content)
+    save_snapshot(path, content)
+    return value
 
 
 def media_id(item: dict, kind: str) -> str:
@@ -184,9 +241,10 @@ def import_term(number: int) -> tuple[int, str]:
     term = rows[0]
     page_url = term.get("url") or f"{BASE}/resources/glossary/term/{number}/"
     page_path = DATA / "raw" / "pages" / f"{number}.html"
-    if REFRESH or not page_path.exists():
-        write_bytes(page_path, fetch(page_url, binary=True))
+    raw_bytes(page_path, page_url)
+    page_path = current_snapshot(page_path)
     media_rows = []
+    media_paths = []
     for endpoint, kind in (("multimedia", "media"), ("diagrams", "diagram")):
         media_path = DATA / "raw" / endpoint / f"{number}.json"
         try:
@@ -211,13 +269,20 @@ def import_term(number: int) -> tuple[int, str]:
                 )
                 rows.extend(single.get("results", []))
             media_envelope = {"count": len(rows), "next": None, "results": rows, "source": "page_slugs"}
-            write_json(media_path, media_envelope)
+            save_snapshot(media_path, (json.dumps(media_envelope, ensure_ascii=False, indent=2) + "\n").encode())
         if media_envelope.get("next"):
             raise ValueError(f"Media pagination needed for term {number}: {endpoint}")
+        media_paths.append(current_snapshot(media_path))
         media_rows.extend(normalize_media(row, kind) for row in media_envelope.get("results", []))
     media_rows = list({row["id"]: row for row in media_rows}.values())
     sections = page_sections(page_path.read_text(), media_rows)
-    source_hash = digest(raw.read_bytes() + page_path.read_bytes())
+    raw_paths = [current_snapshot(raw), page_path, *media_paths]
+    source_digest = hashlib.sha256()
+    for path in raw_paths:
+        content = path.read_bytes()
+        source_digest.update(len(content).to_bytes(8, "big"))
+        source_digest.update(content)
+    source_hash = source_digest.hexdigest()
     processed_path = DATA / "processed" / "terms" / f"{number}.json"
     prior = json.loads(processed_path.read_text()) if processed_path.exists() else {}
     old_sections = {section["id"]: section for section in prior.get("sections", [])}
@@ -238,7 +303,7 @@ def import_term(number: int) -> tuple[int, str]:
             if previous.get(field) == section.get(field):
                 if field + "_ru" in previous:
                     section[field + "_ru"] = previous[field + "_ru"]
-            elif previous and section.get(field):
+            elif previous:
                 source_changed = True
                 keep_stale(f"/sections/{index}/{field}_ru", previous.get(field), previous.get(field + "_ru"))
         old_links = {(link.get("url"), link.get("text")): link for link in previous.get("links", [])}
@@ -248,23 +313,46 @@ def import_term(number: int) -> tuple[int, str]:
             old_link = old_links.get((link["url"], link["text"]), {})
             if "text_ru" in old_link:
                 link["text_ru"] = old_link["text_ru"]
+        new_links = {(link["url"], link["text"]) for link in section["links"]}
+        for old_index, link in enumerate(previous.get("links", [])):
+            if (link.get("url"), link.get("text")) not in new_links:
+                keep_stale(f"/sections/{index}/links/{old_index}/text_ru", link.get("text"), link.get("text_ru"))
+    for old_id in old_sections.keys() - {section["id"] for section in sections}:
+        source_changed = True
+        old = old_sections[old_id]
+        old_index = prior["sections"].index(old)
+        for field in ("heading", "body"):
+            keep_stale(f"/sections/{old_index}/{field}_ru", old.get(field), old.get(f"{field}_ru"))
+            old_block = prior.get("locales", {}).get("ru", {}).get("blocks", {}).get(old_id, {})
+            keep_stale(f"/locales/ru/blocks/{old_id}/{field}", old.get(field), old_block.get(field))
+        for link_index, link in enumerate(old.get("links", [])):
+            keep_stale(f"/sections/{old_index}/links/{link_index}/text_ru", link.get("text"), link.get("text_ru"))
     old_media = {m["id"]: m for m in prior.get("media", [])}
+    if prior and {m["id"] for m in media_rows} != set(old_media):
+        source_changed = True
+    for old_id in old_media.keys() - {m["id"] for m in media_rows}:
+        old = old_media[old_id]
+        old_index = prior["media"].index(old)
+        for field in ("title", "short_caption", "caption", "alt"):
+            keep_stale(f"/media/{old_index}/{field}_ru", old.get(f"{field}_en"), old.get(f"{field}_ru"))
     for media_index, row in enumerate(media_rows):
         previous = old_media.get(row["id"], {})
-        media_changed = False
+        source_file_changed = bool(previous and row.get("source_url") != previous.get("source_url"))
+        media_changed = source_file_changed
+        if source_file_changed:
+            source_changed = True
         for field in ("title", "short_caption", "caption", "alt"):
             if row.get(field + "_en") == previous.get(field + "_en"):
                 row[field + "_ru"] = previous.get(field + "_ru", row[field + "_ru"])
-            elif previous and row.get(field + "_en"):
+            elif previous:
                 source_changed = media_changed = True
                 keep_stale(f"/media/{media_index}/{field}_ru", previous.get(field + "_en"), previous.get(field + "_ru"))
-        for field in ("ru_path", "ru_sha256"):
-            if field in previous:
-                row[field] = previous[field]
+        if not source_file_changed:
+            for field in ("ru_path", "ru_sha256", "original_path", "sha256", "size"):
+                if field in previous:
+                    row[field] = previous[field]
         # A reviewed caption whose source changed must return to the translation queue.
         row["review"] = row["review"] if media_changed else previous.get("review", row["review"])
-        for field in ("original_path", "sha256", "size"):
-            row[field] = previous.get(field, row[field])
     old_ru = prior.get("locales", {}).get("ru", {})
     blocks_en = {s["id"]: {"heading": s["heading"], "body": s["body"]} for s in sections}
     old_en_blocks = prior.get("locales", {}).get("en", {}).get("blocks", {})
@@ -286,8 +374,14 @@ def import_term(number: int) -> tuple[int, str]:
         source_changed = True
     if old_en.get("aliases") != (term.get("alternate_terms") or []) and old_en:
         source_changed = True
+        for index, value in enumerate(old_en.get("aliases", [])):
+            translation = old_ru.get("aliases", [])
+            keep_stale(f"/locales/ru/aliases/{index}", value, translation[index] if index < len(translation) else None)
     if old_metadata.get("categories") != term.get("categories", []) and old_metadata:
         source_changed = True
+        for index, value in enumerate(old_metadata.get("categories", [])):
+            translation = old_metadata.get("categories_ru", [])
+            keep_stale(f"/metadata/categories_ru/{index}", value, translation[index] if index < len(translation) else None)
     record = {
         "id": f"term:{number}",
         "kind": "term_page",
@@ -297,8 +391,9 @@ def import_term(number: int) -> tuple[int, str]:
             "url": page_url,
             "api_url": f"{API}/glossary-terms/?language=en&term-number={number}",
             "language": "en",
-            "fetched_at": prior.get("source", {}).get("fetched_at") or now(),
+            "fetched_at": now() if REFRESH else prior.get("source", {}).get("fetched_at") or now(),
             "sha256": source_hash,
+            "raw_snapshots": [path.as_posix() for path in raw_paths],
         },
         "metadata": {
             "approval_level": term.get("term_approval_level"),
@@ -335,53 +430,68 @@ def import_term(number: int) -> tuple[int, str]:
     return number, "imported"
 
 
-def download_media(workers: int = 8) -> tuple[int, int]:
+def download_media(workers: int = 8, refresh: bool = False, preferred_ids: set[int] | None = None) -> tuple[int, int]:
     files = sorted((DATA / "processed" / "terms").glob("*.json"))
     entries: dict[str, dict] = {}
     for path in files:
         record = json.loads(path.read_text())
         for item in record["media"]:
-            entries[item["id"]] = item
+            if item["id"] not in entries or preferred_ids is None or record.get("source", {}).get("term_number") in preferred_ids:
+                entries[item["id"]] = item
     downloaded = 0
     failed = 0
-    def one(entry: tuple[str, dict]) -> tuple[str, bool, str | None]:
+    changed_media: set[str] = set()
+
+    def one(entry: tuple[str, dict]) -> tuple[str, bool, str | None, bool]:
         identifier, item = entry
         url = item.get("source_url")
         if not url:
-            return identifier, False, None
+            return identifier, False, None, False
         matches = re.findall(r"\.(png|jpe?g|webp|gif|svg|tiff?)(?:/|$)", urlparse(url).path, re.I)
         # Animated GIFs are typed "vid" by the source API but are still image files to mirror.
         if item.get("file_type") not in (None, "img") and not matches:
-            return identifier, False, None
+            return identifier, False, None, False
         extension = "." + matches[-1].lower() if matches else ".bin"
-        path = DATA / "media" / "original" / f"{identifier.replace(':', '_')}{extension}"
+        base_path = DATA / "media" / "original" / f"{identifier.replace(':', '_')}{extension}"
+        recorded_path = Path(item["original_path"]) if item.get("original_path") else None
         # The recorded checksum is authoritative: a restored file must match it, otherwise the
         # source changed since import and the file is reported instead of silently accepted.
         expected = item.get("sha256")
         try:
-            created = False
-            if not path.exists():
-                content = fetch(url, binary=True)
-                actual = digest(content)
-                if expected and actual != expected:
-                    return identifier, False, f"checksum mismatch: source changed since import (recorded {expected[:12]}, downloaded {actual[:12]}); file not stored"
-                write_bytes(path, content)
-                created = True
+            if recorded_path and recorded_path.exists() and expected and digest(recorded_path.read_bytes()) != expected:
+                return identifier, False, f"local file differs from recorded checksum {expected[:12]}", False
+            if recorded_path and recorded_path.exists() and not refresh:
+                item["size"] = recorded_path.stat().st_size
+                return identifier, False, None, False
+            content = fetch(url, binary=True)
+            actual = digest(content)
+            if expected and actual != expected and not refresh:
+                return identifier, False, f"checksum mismatch: source changed since import (recorded {expected[:12]}, downloaded {actual[:12]}); file not stored", False
+            if recorded_path and recorded_path.exists() and digest(recorded_path.read_bytes()) == actual:
+                path = recorded_path
+            elif base_path.exists() and digest(base_path.read_bytes()) == actual:
+                path = base_path
             else:
-                actual = digest(path.read_bytes())
-                if expected and actual != expected:
-                    return identifier, False, f"local file differs from recorded checksum {expected[:12]}"
+                path = base_path if not base_path.exists() else base_path.with_name(f"{base_path.stem}.{actual}{extension}")
+                write_immutable(path, content)
+            content_changed = bool(expected and actual != expected)
             item["original_path"] = path.as_posix()
-            item["sha256"] = expected or actual
+            item["sha256"] = actual
             item["size"] = path.stat().st_size
-            return identifier, created, None
+            if content_changed:
+                item["ru_path"] = None
+                item["ru_sha256"] = None
+                item["review"] = {"status": "draft", "reviewer": None, "notes": "Source image changed; localization requires review"}
+            return identifier, path != recorded_path, None, content_changed
         except Exception as exc:
-            return identifier, False, str(exc)
+            return identifier, False, str(exc), False
     with ThreadPoolExecutor(max_workers=workers) as pool:
         for future in as_completed([pool.submit(one, entry) for entry in entries.items()]):
-            identifier, created, problem = future.result()
+            identifier, created, problem, content_changed = future.result()
             downloaded += int(created)
             failed += int(problem is not None)
+            if content_changed:
+                changed_media.add(identifier)
             if problem:
                 print(f"media {identifier}: {problem}", flush=True)
             if (downloaded + failed) % 25 == 0 and (downloaded or failed):
@@ -391,10 +501,18 @@ def download_media(workers: int = 8) -> tuple[int, int]:
         changed = False
         for item in record["media"]:
             source = entries[item["id"]]
-            for field in ("original_path", "sha256", "size"):
+            if item.get("source_url") != source.get("source_url"):
+                item["source_url"] = source.get("source_url")
+                item["review"] = {"status": "draft", "reviewer": None, "notes": "Source image changed; localization requires review"}
+                record["review"] = {"status": "draft", "reviewer": None, "notes": "Source image changed; localization requires review"}
+                changed = True
+            for field in ("original_path", "sha256", "size", "ru_path", "ru_sha256", "review"):
                 if item.get(field) != source.get(field):
                     item[field] = source.get(field)
                     changed = True
+        if any(item["id"] in changed_media for item in record["media"]):
+            record["review"] = {"status": "draft", "reviewer": None, "notes": "Source image changed; localization requires review"}
+            changed = True
         if changed:
             write_json(path, record)
     return downloaded, failed
@@ -432,7 +550,10 @@ def main() -> None:
     global REFRESH
     REFRESH = args.refresh
     if args.media_only:
-        print("media summary", download_media(args.workers), flush=True)
+        media_summary = download_media(args.workers, refresh=args.refresh, preferred_ids=set(args.ids) if args.ids is not None else None)
+        print("media summary", media_summary, flush=True)
+        if media_summary[1]:
+            raise SystemExit(1)
         return
     expected = None
     if args.ids is None:
@@ -456,8 +577,11 @@ def main() -> None:
     if expected is not None and counts["imported"] != expected:
         print(f"API count mismatch: imported {counts['imported']} of {expected}", flush=True)
         raise SystemExit(1)
-    if args.download_media:
-        print("media summary", download_media(args.workers), flush=True)
+    if args.download_media or args.refresh:
+        media_summary = download_media(args.workers, refresh=args.refresh, preferred_ids=set(args.ids) if args.ids is not None else None)
+        print("media summary", media_summary, flush=True)
+        if media_summary[1]:
+            raise SystemExit(1)
     if counts["failed"]:
         raise SystemExit(1)
 
