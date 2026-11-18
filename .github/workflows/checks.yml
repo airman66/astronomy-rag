@@ -31,13 +31,8 @@ jobs:
           .venv/bin/python -m scripts.illustrations verify --complete
       - name: Start Docker on a clean checkout
         run: docker compose up --build -d --wait --wait-timeout 90
-      - name: Check HTTP endpoints
-        run: |
-          base=http://127.0.0.1:8001
-          curl -fsS "$base/health"
-          curl -fsS "$base/docs" > /dev/null
-          curl -fsS "$base/openapi.json" > /dev/null
-          curl -fsS "$base/api/v1/terms" | python -c 'import json, sys; assert json.load(sys.stdin)["total"] == 501'
+      - name: Check HTTP endpoints, WebP, and Redis rate limiting
+        run: .venv/bin/python -m scripts.smoke_http http://127.0.0.1:8001 --search-mode lexical
       - name: Docker logs
         if: failure()
         run: docker compose logs --tail 100

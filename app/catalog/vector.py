@@ -126,7 +126,7 @@ def search(query: str, locale: str, limit: int = 20, min_score: float | None = N
         section_id = chunk["section_id"]
         if chunk.get("media_id") and chunk.get("source_record_id"):
             record_id, section_id = chunk["source_record_id"], chunk["media_id"]
-        result.append({"record_id": record_id, "section_id": section_id, "kind": chunk["kind"], "title": chunk["title"], "excerpt": chunk["text"][:400], "url": chunk["url"], "review_status": chunk["review_status"], "score": float(score)})
+        result.append({"record_id": record_id, "section_id": section_id, "kind": chunk["kind"], "title": chunk["title"], "excerpt": chunk["text"][:400], "chunk_id": chunk["id"], "evidence_text": chunk["text"], "url": chunk["url"], "review_status": chunk["review_status"], "score": float(score)})
         if len(result) >= limit:
             break
     return result

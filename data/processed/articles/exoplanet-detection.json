@@ -1,0 +1,104 @@
+{
+  "id": "article:exoplanet-detection",
+  "kind": "article",
+  "source": {
+    "type": "project_article",
+    "fact_checked_at": "2026-11-18",
+    "references": [
+      {
+        "title": "NASA Science · How We Find and Characterize",
+        "url": "https://science.nasa.gov/exoplanets/how-we-find-and-characterize/"
+      },
+      {
+        "title": "NASA Science · What's a transit?",
+        "url": "https://science.nasa.gov/exoplanets/whats-a-transit/"
+      }
+    ]
+  },
+  "metadata": {
+    "related_term_numbers": [
+      106,
+      367,
+      538,
+      269,
+      537,
+      84
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "How astronomers detect exoplanets",
+      "aliases": [],
+      "blocks": {
+        "transit": {
+          "heading": "Transit photometry",
+          "body": "If the orbital plane is nearly edge-on from Earth, a planet can cross the visible disk of its star and temporarily reduce the measured brightness. Regularly repeated dips reveal the orbital period. For a small opaque planet and a uniformly bright stellar disk, the fractional depth is approximately (planet radius / stellar radius)². Inferring the planet's radius therefore also requires the star's radius."
+        },
+        "radial-velocity": {
+          "heading": "Radial velocity",
+          "body": "A star and planet both orbit their common center of mass. As the star moves toward and away from us, its spectral lines shift periodically through the Doppler effect. This measures the line-of-sight motion. With orbital and stellar information, the method typically constrains a minimum planet mass; a transit can supply the orbital inclination and help determine the mass."
+        },
+        "limitations": {
+          "heading": "Geometry and false positives",
+          "body": "A system can contain a planet without showing transits, because the orbit may not cross the stellar disk from our viewpoint. An eclipsing binary can imitate a transit, and stellar activity can affect radial velocities. Combining observations increases confidence. Radius and mass together also give mean density, which constrains possible compositions."
+        }
+      }
+    },
+    "ru": {
+      "title": "Как астрономы находят экзопланеты",
+      "aliases": [],
+      "blocks": {
+        "transit": {
+          "heading": "Транзитная фотометрия",
+          "body": "Когда орбита видна почти с ребра, планета может пройти по видимому диску звезды и временно уменьшить её наблюдаемую яркость. Интервал между регулярными транзитами показывает орбитальный период. Для небольшой непрозрачной планеты и равномерно яркого диска звезды относительная глубина падения блеска приблизительно равна квадрату отношения радиусов планеты и звезды. Чтобы получить радиус планеты, нужен радиус звезды."
+        },
+        "radial-velocity": {
+          "heading": "Метод лучевых скоростей",
+          "body": "Звезда и планета обращаются вокруг общего центра масс. Когда звезда попеременно приближается к наблюдателю и удаляется от него, её спектральные линии периодически смещаются из-за эффекта Доплера. Это измерение движения вдоль луча зрения. С учётом параметров звезды и орбиты метод обычно даёт минимальную массу планеты. Транзит позволяет уточнить наклон орбиты и массу."
+        },
+        "limitations": {
+          "heading": "Геометрия и ложные сигналы",
+          "body": "Планета может существовать и без видимых транзитов: с нашей точки зрения её орбита может не пересекать диск звезды. Затменная двойная звезда способна имитировать транзит, а активность звезды влияет на измерения лучевой скорости. Совместные наблюдения повышают уверенность. Зная радиус и массу, можно вычислить среднюю плотность и ограничить возможный состав."
+        }
+      }
+    }
+  },
+  "sections": [
+    {
+      "id": "transit",
+      "type": "source_block",
+      "heading": "Transit photometry",
+      "body": "If the orbital plane is nearly edge-on from Earth, a planet can cross the visible disk of its star and temporarily reduce the measured brightness. Regularly repeated dips reveal the orbital period. For a small opaque planet and a uniformly bright stellar disk, the fractional depth is approximately (planet radius / stellar radius)². Inferring the planet's radius therefore also requires the star's radius.",
+      "heading_ru": "Транзитная фотометрия",
+      "body_ru": "Когда орбита видна почти с ребра, планета может пройти по видимому диску звезды и временно уменьшить её наблюдаемую яркость. Интервал между регулярными транзитами показывает орбитальный период. Для небольшой непрозрачной планеты и равномерно яркого диска звезды относительная глубина падения блеска приблизительно равна квадрату отношения радиусов планеты и звезды. Чтобы получить радиус планеты, нужен радиус звезды.",
+      "links": [],
+      "media_ids": []
+    },
+    {
+      "id": "radial-velocity",
+      "type": "source_block",
+      "heading": "Radial velocity",
+      "body": "A star and planet both orbit their common center of mass. As the star moves toward and away from us, its spectral lines shift periodically through the Doppler effect. This measures the line-of-sight motion. With orbital and stellar information, the method typically constrains a minimum planet mass; a transit can supply the orbital inclination and help determine the mass.",
+      "heading_ru": "Метод лучевых скоростей",
+      "body_ru": "Звезда и планета обращаются вокруг общего центра масс. Когда звезда попеременно приближается к наблюдателю и удаляется от него, её спектральные линии периодически смещаются из-за эффекта Доплера. Это измерение движения вдоль луча зрения. С учётом параметров звезды и орбиты метод обычно даёт минимальную массу планеты. Транзит позволяет уточнить наклон орбиты и массу.",
+      "links": [],
+      "media_ids": []
+    },
+    {
+      "id": "limitations",
+      "type": "source_block",
+      "heading": "Geometry and false positives",
+      "body": "A system can contain a planet without showing transits, because the orbit may not cross the stellar disk from our viewpoint. An eclipsing binary can imitate a transit, and stellar activity can affect radial velocities. Combining observations increases confidence. Radius and mass together also give mean density, which constrains possible compositions.",
+      "heading_ru": "Геометрия и ложные сигналы",
+      "body_ru": "Планета может существовать и без видимых транзитов: с нашей точки зрения её орбита может не пересекать диск звезды. Затменная двойная звезда способна имитировать транзит, а активность звезды влияет на измерения лучевой скорости. Совместные наблюдения повышают уверенность. Зная радиус и массу, можно вычислить среднюю плотность и ограничить возможный состав.",
+      "links": [],
+      "media_ids": []
+    }
+  ],
+  "media": [],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Факты сверены с библиографией. Редакторское утверждение ожидается."
+  }
+}

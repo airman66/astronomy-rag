@@ -32,10 +32,16 @@ class FakeLimiter:
 
 class FakeModel:
     async def complete(self, system, payload):
-        if "classify" in system:
-            scope = "out_of_scope" if "борщ" in payload["question"].lower() else "in_scope"
-            return {"scope": scope, "mode": "term", "record_ids": ["term:1"], "reason": "definition"}
-        return {"answer": "Звезда класса A — горячая звезда.", "used_record_ids": ["term:1"]}
+        evidence = payload["evidence"]
+        requested = payload["requested_mode"]
+        if "борщ" in payload["question"].lower():
+            return {"mode": "out_of_scope", "coverage": "complete", "definition_id": None, "blocks": []}
+        if requested == "general":
+            return {"mode": "general", "coverage": "complete", "definition_id": None,
+                    "blocks": [{"text": "Гравитация удерживает планету на орбите.", "evidence_ids": []}]}
+        definition = next((item["id"] for item in evidence if item["definition"]), None)
+        return {"mode": "term", "coverage": "complete", "definition_id": definition, "blocks": []}
+
 
 
 class ApiCase(TestCase):

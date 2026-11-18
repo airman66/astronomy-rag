@@ -109,7 +109,26 @@ python3.12 -m venv .venv
 
 GitHub Actions запускает тесты, BasedPyright, аудит данных и проверку Docker. На чистом клоне `app.audit --skip-original-media` проверяет записи и локализованные медиа. Для полного аудита загрузите оригиналы командой `python3 -m app.importer --media-only --workers 4`. OpenAPI доступен в `/openapi.json`, Swagger UI — в `/docs`.
 
-`python3 -m scripts.evaluate` прогоняет 50 контрольных вопросов через провайдера из `.env` и записывает версию промпта, модель и метрики в `data/eval/assistant/report.json`. Для гибридного поиска при прогоне с хоста укажите `EMBEDDING_URL` локального сервера эмбеддингов.
+### Оценка помощника
+
+`python3 -m scripts.evaluate --retrieval-only --output /tmp/rag-retrieval.json` проверяет, попали ли нужные разделы в реальный набор доказательств. Для гибридного прогона с хоста укажите `EMBEDDING_URL` локального сервера эмбеддингов. Основной eval — 50 полных запросов (25 RU, 25 EN), включая статьи, неполный ответ, отсутствие статьи и границы темы. Исторический отчёт лежит в `data/eval/assistant/report.json`.
+
+Боевой прогон использует провайдера из окружения, а `--case` и `--limit` ограничивают число оплачиваемых вызовов. Записывайте отчёты кандидатов в разные файлы. При заданных тарифах eval считает оценку затрат всех завершённых кейсов на 1 000 прошедших рубрику. При отсутствии usage итоговая оценка затрат остаётся пустой. Проверки фактов по текстовым признакам требуют ручной сверки научной полноты на ответах из отчёта.
+
+```sh
+python3 -m scripts.evaluate --help
+ASSISTANT_PROVIDER=runpod python3 -m scripts.evaluate --case partial-en --case explain-no-article-ru --output /tmp/rag-glm-pilot.json
+ASSISTANT_PROVIDER=runpod RUNPOD_ENDPOINT_ID=qwen3-32b-awq \
+  RUNPOD_MODEL=Qwen/Qwen3-32B-AWQ RUNPOD_THINKING=disabled \
+  python3 -m scripts.evaluate --case partial-en --case explain-no-article-ru --output /tmp/rag-qwen-pilot.json
+```
+
+Для следующего этапа берите одинаковые диагностические кейсы `article-exoplanet-detection-en`, `explain-no-article-ru`, `general-1-ru`, `partial-en` и `scope-2-en`, затем расширьте до всех 50. Перед сравнением thinking в Qwen подтвердите поддержку параметра на Public Endpoint коротким вызовом. Снимите базу с thinking выключенным, затем включите его на сложных кейсах. Кандидата выбирайте по доле валидных ответов, критическим фактическим ошибкам, p95 и цене. При отсутствии URL/ключа для сторонней модели контракт адаптера проверяется HTTP-подменой, а тёплая/холодная задержка требует реального endpoint.
+
+
+Если компактная модель проходит проверку фактов и ссылок, следующий кандидат — Qwen3‑4B‑Instruct‑2507 либо Qwen3.5‑4B на одном GPU RunPod. Сравнивайте thinking на причинных и составных вопросах при одинаковом пределе выходных токенов. Засчитывайте только завершённые и валидные ответы. Для включения reasoning ориентируйтесь на прирост полноты без критических ошибок и измеренный прирост p95.
+
+`python3 -m scripts.smoke_http http://127.0.0.1:8001 --search-mode lexical` проверяет контейнерный запуск без LLM-ключей и с настоящим Redis. При запуске с эмбеддингами укажите `--search-mode hybrid`.
 
 ## Ревью переводов и иллюстрации
 

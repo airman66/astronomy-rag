@@ -1,6 +1,7 @@
 import mimetypes
 from contextlib import asynccontextmanager
 
+import httpx
 from fastapi import FastAPI
 from fastapi.concurrency import run_in_threadpool
 from fastapi.exceptions import RequestValidationError
@@ -20,10 +21,19 @@ from app.middleware.request_limits import request_limits
 
 
 @asynccontextmanager
-async def lifespan(_app: FastAPI):
+async def lifespan(application: FastAPI):
     await run_in_threadpool(storage.ensure_database, True)
     vector.warm_up()
-    yield
+    client = application.state.llm_client
+    if isinstance(client, LLMClient) and client.http is None:
+        async with httpx.AsyncClient() as http:
+            client.http = http
+            try:
+                yield
+            finally:
+                client.http = None
+    else:
+        yield
 
 
 def create_app(*, rate_limiter=None, llm_client=None) -> FastAPI:

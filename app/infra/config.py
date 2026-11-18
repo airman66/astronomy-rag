@@ -25,18 +25,27 @@ class LLMSettings:
     model: str
     api_key: str = field(repr=False)
     endpoint_id: str = ""
+    max_tokens: int = 0
+    thinking: str = "default"
+    reasoning_effort: str = ""
 
     @classmethod
     def from_env(cls) -> "LLMSettings":
         provider = (os.getenv("ASSISTANT_PROVIDER") or "deepseek").lower()
+        max_tokens = int(os.getenv("ASSISTANT_MAX_OUTPUT_TOKENS") or "0")
+        if max_tokens and not 256 <= max_tokens <= 4096:
+            raise ValueError("ASSISTANT_MAX_OUTPUT_TOKENS must be 256–4096 or 0")
         if provider == "runpod":
             return cls(
                 provider,
                 os.getenv("RUNPOD_MODEL") or "glm-5.3",
                 os.getenv("RUNPOD_API_KEY", ""),
                 os.getenv("RUNPOD_ENDPOINT_ID", ""),
+                max_tokens=max_tokens,
+                thinking=os.getenv("RUNPOD_THINKING") or "default",
+                reasoning_effort=os.getenv("RUNPOD_REASONING_EFFORT") or "",
             )
-        return cls(provider, os.getenv("DEEPSEEK_MODEL") or "deepseek-flash", os.getenv("DEEPSEEK_API_KEY", ""))
+        return cls(provider, os.getenv("DEEPSEEK_MODEL") or "deepseek-flash", os.getenv("DEEPSEEK_API_KEY", ""), max_tokens=max_tokens)
 
 
 def redis_url() -> str:

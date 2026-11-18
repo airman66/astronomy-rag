@@ -1,0 +1,107 @@
+{
+  "id": "article:dark-matter-and-energy",
+  "kind": "article",
+  "source": {
+    "type": "project_article",
+    "fact_checked_at": "2026-11-18",
+    "references": [
+      {
+        "title": "NASA Science · Universe Glossary",
+        "url": "https://science.nasa.gov/universe/glossary/"
+      },
+      {
+        "title": "IAU Astro4Edu · Dark Energy",
+        "url": "https://www.astro4edu.org/resources/glossary/term/75/"
+      },
+      {
+        "title": "IAU Astro4Edu · Dark Matter",
+        "url": "https://www.astro4edu.org/resources/glossary/term/76/"
+      }
+    ]
+  },
+  "metadata": {
+    "related_term_numbers": [
+      75,
+      76,
+      134,
+      349,
+      471
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Dark matter and dark energy",
+      "aliases": [],
+      "blocks": {
+        "matter": {
+          "heading": "Dark matter and structure",
+          "body": "Dark matter is inferred from the gravitational effects of mass that luminous matter alone cannot explain. Examples are the rotation of galaxies and gravitational lensing by galaxy clusters. In the standard cosmological model, dark matter helps build galaxies and other structures. These observations constrain where the extra gravitating mass lies, but do not establish its particle identity."
+        },
+        "energy": {
+          "heading": "Dark energy and expansion",
+          "body": "Dark energy is the name for the component used to describe the accelerated expansion of the universe. Distance measurements of Type Ia supernovae were central to the discovery of that acceleration. In the simplest standard model the component is described by a cosmological constant. Whether that description captures its physical nature remains open."
+        },
+        "comparison": {
+          "heading": "How to tell them apart",
+          "body": "The two names refer to different roles in cosmology. Dark matter supplies extra gravitating mass and tends to cluster. Dark energy, as represented in the standard model, accounts for acceleration on cosmological scales. Galaxy rotation and lensing probe the mass distribution, while the distance–redshift relation probes the expansion history."
+        }
+      }
+    },
+    "ru": {
+      "title": "Тёмная материя и тёмная энергия",
+      "aliases": [],
+      "blocks": {
+        "matter": {
+          "heading": "Тёмная материя и структуры",
+          "body": "О тёмной материи судят по гравитационным эффектам, которых нельзя объяснить только светящимся веществом. Примеры — вращение галактик и гравитационное линзирование скоплениями галактик. В стандартной космологической модели тёмная материя участвует в формировании галактик и других структур. Эти наблюдения помогают определить распределение дополнительной массы, но не устанавливают, из каких частиц она состоит."
+        },
+        "energy": {
+          "heading": "Тёмная энергия и расширение",
+          "body": "Тёмной энергией называют компонент, которым описывают ускоренное расширение Вселенной. Ключевую роль в открытии ускорения сыграли измерения расстояний до сверхновых типа Ia. В простейшем варианте стандартной модели этот компонент описывает космологическая постоянная. Его физическая природа остаётся открытым вопросом."
+        },
+        "comparison": {
+          "heading": "Как различать эти понятия",
+          "body": "Эти понятия обозначают разные роли в космологии. Тёмная материя даёт дополнительную гравитирующую массу и образует скопления. Тёмная энергия в стандартной модели объясняет ускорение расширения в космологических масштабах. Вращение галактик и линзирование помогают исследовать распределение массы, а связь расстояния с красным смещением — историю расширения."
+        }
+      }
+    }
+  },
+  "sections": [
+    {
+      "id": "matter",
+      "type": "source_block",
+      "heading": "Dark matter and structure",
+      "body": "Dark matter is inferred from the gravitational effects of mass that luminous matter alone cannot explain. Examples are the rotation of galaxies and gravitational lensing by galaxy clusters. In the standard cosmological model, dark matter helps build galaxies and other structures. These observations constrain where the extra gravitating mass lies, but do not establish its particle identity.",
+      "heading_ru": "Тёмная материя и структуры",
+      "body_ru": "О тёмной материи судят по гравитационным эффектам, которых нельзя объяснить только светящимся веществом. Примеры — вращение галактик и гравитационное линзирование скоплениями галактик. В стандартной космологической модели тёмная материя участвует в формировании галактик и других структур. Эти наблюдения помогают определить распределение дополнительной массы, но не устанавливают, из каких частиц она состоит.",
+      "links": [],
+      "media_ids": []
+    },
+    {
+      "id": "energy",
+      "type": "source_block",
+      "heading": "Dark energy and expansion",
+      "body": "Dark energy is the name for the component used to describe the accelerated expansion of the universe. Distance measurements of Type Ia supernovae were central to the discovery of that acceleration. In the simplest standard model the component is described by a cosmological constant. Whether that description captures its physical nature remains open.",
+      "heading_ru": "Тёмная энергия и расширение",
+      "body_ru": "Тёмной энергией называют компонент, которым описывают ускоренное расширение Вселенной. Ключевую роль в открытии ускорения сыграли измерения расстояний до сверхновых типа Ia. В простейшем варианте стандартной модели этот компонент описывает космологическая постоянная. Его физическая природа остаётся открытым вопросом.",
+      "links": [],
+      "media_ids": []
+    },
+    {
+      "id": "comparison",
+      "type": "source_block",
+      "heading": "How to tell them apart",
+      "body": "The two names refer to different roles in cosmology. Dark matter supplies extra gravitating mass and tends to cluster. Dark energy, as represented in the standard model, accounts for acceleration on cosmological scales. Galaxy rotation and lensing probe the mass distribution, while the distance–redshift relation probes the expansion history.",
+      "heading_ru": "Как различать эти понятия",
+      "body_ru": "Эти понятия обозначают разные роли в космологии. Тёмная материя даёт дополнительную гравитирующую массу и образует скопления. Тёмная энергия в стандартной модели объясняет ускорение расширения в космологических масштабах. Вращение галактик и линзирование помогают исследовать распределение массы, а связь расстояния с красным смещением — историю расширения.",
+      "links": [],
+      "media_ids": []
+    }
+  ],
+  "media": [],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Факты сверены с библиографией. Редакторское утверждение ожидается."
+  }
+}

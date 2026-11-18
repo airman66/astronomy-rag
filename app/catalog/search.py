@@ -35,5 +35,7 @@ def search_with_mode(query: str, locale: str, limit: int = 20) -> tuple[list[dic
             key = item["record_id"], item["section_id"]
             if key not in fused:
                 fused[key] = {**item, "score": 0.0}
+            if "chunk_id" in item and "chunk_id" not in fused[key]:
+                fused[key].update(chunk_id=item["chunk_id"], evidence_text=item["evidence_text"])
             fused[key]["score"] += 1.0 / (60 + rank + 1)
     return sorted(fused.values(), key=lambda row: row["score"], reverse=True)[:limit], "hybrid"

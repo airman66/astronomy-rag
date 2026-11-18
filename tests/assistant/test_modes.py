@@ -15,6 +15,7 @@ class AssistantModeTests(ApiCase):
         self.assertEqual(response.status_code, 200, response.text)
         result = response.json()
         self.assertEqual(result["mode"], "term")
+        self.assertEqual(result["answer"], "Горячая звезда.")
         self.assertEqual(result["sources"][0]["record_id"], "term:1")
         self.assertEqual(result["images"][0]["url"], "/api/v1/media/media:example/file?locale=ru")
 
@@ -27,28 +28,14 @@ class AssistantModeTests(ApiCase):
         self.assertEqual(result["sources"], [])
 
     def test_general_mode_skips_retrieval(self):
-        class General:
-            async def complete(self, system, payload):
-                if "classify" in system:
-                    return {"scope": "in_scope", "mode": "general", "record_ids": []}
-                return {"answer": "Ответ.", "used_record_ids": []}
-
-        self.app.state.llm_client = General()
-        with patch.object(assistant, "candidates_for", side_effect=AssertionError("retrieval must not run")):
+        with patch.object(assistant, "evidence_for", side_effect=AssertionError("retrieval must not run")):
             response = self.client.post(
                 ANSWER_PATH, json={"question": "Почему звёзды светят?", "mode": "general"}
             )
         self.assertEqual(response.status_code, 200, response.text)
 
     def test_assistant_rejects_off_topic_in_every_mode(self):
-        class ScopeOnly:
-            async def complete(self, system, payload):
-                if "classify" not in system:
-                    raise AssertionError("Off-topic question must not reach answer generation")
-                return {"scope": "out_of_scope", "mode": "general", "record_ids": []}
-
-        self.app.state.llm_client = ScopeOnly()
-        for mode in ("auto", "term", "explain", "general"):
+        for mode in ("auto", "term", "article", "explain", "general"):
             with self.subTest(mode=mode):
                 response = self.client.post(
                     ANSWER_PATH,

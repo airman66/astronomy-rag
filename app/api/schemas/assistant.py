@@ -15,6 +15,7 @@ class AnswerSource(BaseModel):
     section_id: str
     url: str
     review_status: str
+    chunk_id: str | None = None
 
 
 class AnswerImage(BaseModel):
@@ -30,6 +31,11 @@ class AnswerImage(BaseModel):
     modified: str | None = None
 
 
+class AnswerBlock(BaseModel):
+    text: str
+    source_indices: list[int]
+
+
 class AnswerResponse(BaseModel):
     mode: Literal["term", "article", "explain", "general", "out_of_scope"]
     grounding: Literal["knowledge_base", "model", "mixed", "policy"]
@@ -39,3 +45,5 @@ class AnswerResponse(BaseModel):
     images: list[AnswerImage] = Field(default_factory=list)
     review_status: str | None
     diagnostics: dict[str, str]
+    coverage: Literal["complete", "partial", "insufficient"] = "complete"
+    blocks: list[AnswerBlock] = Field(default_factory=list)
