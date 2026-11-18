@@ -1,5 +1,9 @@
 """Rank search hits and prepare context for the astronomy assistant."""
 
+import re
+from dataclasses import dataclass
+from typing import Literal
+
 from app.catalog import storage
 from app.catalog.media import IMAGE_SUFFIXES, local_file, localized_filename
 from app.catalog.search import search_with_mode
@@ -7,7 +11,8 @@ from app.catalog.search import search_with_mode
 
 def image_for(record: dict, section: dict, locale: str) -> dict | None:
     illustration = record.get("illustration")
-    if illustration and illustration.get("url"):
+    caption = section["type"] == "caption"
+    if not caption and illustration and illustration.get("url"):
         full_illustration = storage.get_illustration(record["source"]["term_number"])
         filename = full_illustration.get("path", "") if full_illustration else ""
         path = local_file(storage.DATA, filename)
@@ -25,7 +30,7 @@ def image_for(record: dict, section: dict, locale: str) -> dict | None:
                 "modified": source.get("modified"),
             }
     media_ids = set(section.get("media_ids", []))
-    media_items = record.get("media", [])
+    media_items = [item for item in record.get("media", []) if not caption or item["id"] in media_ids]
     for media in sorted(media_items, key=lambda item: item["id"] not in media_ids):
         path = local_file(storage.DATA, localized_filename(media, locale))
         if path and path.suffix.lower() in IMAGE_SUFFIXES:
@@ -42,52 +47,150 @@ def image_for(record: dict, section: dict, locale: str) -> dict | None:
     return None
 
 
-def candidates_for(question: str, locale: str) -> list[dict]:
-    results = search_with_mode(question, locale, limit=80)[0]
-    question_words = storage.normalized_words(question)
+EVIDENCE_LIMIT = 6
+FRAGMENT_LIMIT = 1800
+CONTEXT_LIMIT = 8500
+ARTICLE_REQUEST = re.compile(r"\b(?:articles?|стать\w*)\b", re.IGNORECASE)
+NON_EVIDENCE_HEADINGS = (
+    "activit", "related media", "related diagram", "external link", "further reading",
+    "активност", "учебн", "образовательн", "связанн", "ссылк", "дополнительное чтение",
+)
+EvidenceKind = Literal["term", "article", "caption"]
 
-    def title_match_fraction(title: str) -> float:
-        words = [word for word in storage.normalized_words(title) if len(word) >= 4]
-        matched = sum(
-            any(query.startswith(word[: max(4, len(word) - 2)]) for query in question_words) for word in words
-        )
-        return matched / len(words) if words else 0.0
 
-    results.sort(key=lambda row: row["score"] + 0.08 * title_match_fraction(row["title"]), reverse=True)
-    unique: dict[str, dict] = {}
-    for result in results:
-        identifier = result["record_id"]
-        if identifier in unique:
+@dataclass(frozen=True)
+class Evidence:
+    record: dict
+    section: dict
+    kind: EvidenceKind
+    title: str
+    heading: str
+    text: str
+    canonical_definition: str | None
+    url: str
+    review_status: str
+    chunk_id: str | None
+
+    def reference(self) -> dict[str, str | None]:
+        return {"record_id": self.record["id"], "section_id": self.section["id"], "chunk_id": self.chunk_id}
+
+
+def evidence_for(question: str, locale: str, *, prefer_article: bool = False) -> dict[str, Evidence]:
+    """Keep exact passages, diversify by record and reserve space for a matching article."""
+    hits, _ = search_with_mode(question, locale, limit=80)
+    records: dict[str, tuple[dict, dict, dict[str, dict], dict[str, dict]]] = {}
+    primary: dict[str, Evidence] = {}
+    extras: dict[tuple[str, str, str], Evidence] = {}
+    for hit in hits:
+        record_id = hit["record_id"]
+        if record_id not in records:
+            is_term = record_id.startswith("term:")
+            if len(records) >= 12 and is_term:
+                continue
+            record = storage.get_term(int(record_id[5:])) if is_term else storage.get_article(record_id)
+            if record is None:
+                continue
+            localized = record["locales"][locale]
+            sections = {section["id"]: section for section in record["sections"]}
+            media = {item["id"]: item for item in record.get("media", [])}
+            records[record_id] = record, localized, sections, media
+            definition = next((section for section in sections.values() if section["type"] == "definition"), None)
+            if definition and (item := _section_evidence(record, localized, definition, {})):
+                primary[record_id] = item
+
+        record, localized, sections, media = records[record_id]
+        section_id = hit["section_id"]
+        section = sections.get(section_id)
+        if section and section["type"] == "definition":
+            if record_id in primary and not primary[record_id].chunk_id and hit.get("chunk_id"):
+                item = _section_evidence(record, localized, section, hit)
+                if item and item.chunk_id:
+                    primary[record_id] = item
             continue
-        record = (
-            storage.get_term(int(identifier.split(":", 1)[1]))
-            if identifier.startswith("term:")
-            else storage.get_article(identifier)
-        )
-        if record is None:
-            continue
-        localized = record["locales"][locale]
-        blocks = localized.get("blocks", {})
-        sections = [section for section in record["sections"] if blocks.get(section["id"], {}).get("body")]
-        if not sections:
-            continue
-        primary = next((section for section in sections if section["type"] == "definition"), sections[0])
-        matched = next((section for section in sections if section["id"] == result["section_id"]), primary)
-        image = image_for(record, primary, locale)
-        unique[identifier] = {
-            **result,
-            "section_id": primary["id"],
-            "title": localized["title"],
-            "excerpt": blocks[primary["id"]]["body"][:1600],
-            "matched_section_id": matched["id"],
-            "matched_excerpt": blocks[matched["id"]]["body"][:1600],
-            "kind": "article" if identifier.startswith("article:") else "term",
-            "image": image,
-            "matched_image": image if matched is primary else image_for(record, matched, locale),
-            "url": f"/api/v1/articles/{identifier}"
-            if identifier.startswith("article:")
-            else f"/api/v1/terms/{record['source']['term_number']}",
-        }
-        if len(unique) == 8:
+        if section and section["type"] != "media_collection":
+            item = _section_evidence(record, localized, section, hit)
+        else:
+            item = _caption_evidence(record, localized, media[section_id], locale, hit) if section_id in media else None
+        if item:
+            if record_id not in primary:
+                primary[record_id] = item
+            else:
+                extras.setdefault((record_id, item.section["id"], item.text), item)
+
+    ordered = list(primary.values())
+    article = next((item for item in ordered if item.kind == "article"), None)
+    prioritize_article = prefer_article or ARTICLE_REQUEST.search(question) is not None
+    lead = ordered[:4]
+    if article and prioritize_article:
+        lead = [article, *(item for item in ordered if item is not article)][:4]
+    elif article and article not in lead:
+        lead = [*lead[:3], article]
+    lead_ids = {item.record["id"] for item in lead}
+    supporting = [item for item in extras.values() if item.record["id"] in lead_ids]
+    if article and prioritize_article:
+        supporting.sort(key=lambda item: item.record["id"] != article.record["id"])
+    lead.extend(supporting[:EVIDENCE_LIMIT - len(lead)])
+    lead.extend(item for item in ordered if item.record["id"] not in lead_ids)
+    packed: dict[str, Evidence] = {}
+    remaining = CONTEXT_LIMIT
+    for item in lead:
+        size = len(item.text) + len(item.title) + len(item.heading)
+        if size <= remaining:
+            packed[f"e{len(packed) + 1}"] = item
+            remaining -= size
+        if len(packed) == EVIDENCE_LIMIT:
             break
-    return list(unique.values())
+    return packed
+
+
+def _section_evidence(record: dict, localized: dict, section: dict, hit: dict) -> Evidence | None:
+    block = localized["blocks"].get(section["id"], {})
+    canonical = (block.get("body") or "").strip()
+    heading = block.get("heading") or section.get("heading") or ""
+    if not canonical or (
+        section["type"] != "definition" and any(marker in str(heading).casefold() for marker in NON_EVIDENCE_HEADINGS)
+    ):
+        return None
+    kind = "article" if record["id"].startswith("article:") else "term"
+    url = f"/api/v1/articles/{record['id']}" if kind == "article" else f"/api/v1/terms/{record['source']['term_number']}"
+    return _evidence(record, localized["title"], section, canonical, kind, url, hit, heading=heading)
+
+
+def _caption_evidence(record: dict, localized: dict, media: dict, locale: str, hit: dict) -> Evidence | None:
+    canonical = next((media[f"{field}_{locale}"] for field in ("caption", "short_caption", "alt")
+                      if media.get(f"{field}_{locale}")), "")
+    if not canonical.strip():
+        return None
+    section = {"id": media["id"], "type": "caption", "media_ids": [media["id"]]}
+    return _evidence(record, localized["title"], section, canonical, "caption",
+                     f"/api/v1/media/{media['id']}", hit, heading=media.get(f"title_{locale}") or "",
+                     review_status=media["review"]["status"])
+
+
+def _evidence(record: dict, title: str, section: dict, canonical: str, kind: EvidenceKind, url: str,
+              hit: dict, *, heading: str, review_status: str | None = None) -> Evidence | None:
+    exact = hit.get("evidence_text") or ""
+    is_definition = section["type"] == "definition"
+    normalized = " ".join(canonical.split())
+    indexed = " ".join(exact.split())
+    matches = bool(indexed and (indexed == normalized if is_definition else indexed in normalized))
+    fragment = exact if matches and not is_definition else canonical
+    chunk_id = hit.get("chunk_id") if matches else None
+    if len(fragment) > FRAGMENT_LIMIT and section["type"] == "source_block":
+        paragraphs = re.split(r"\n\s*\n", fragment)
+        kept: list[str] = []
+        size = 0
+        for paragraph in paragraphs:
+            size += len(paragraph) + (2 if kept else 0)
+            if size > FRAGMENT_LIMIT:
+                break
+            kept.append(paragraph)
+        if not kept:
+            return None
+        fragment = "\n\n".join(kept)
+        chunk_id = None
+    return Evidence(
+        record, section, kind, title, heading, text=fragment, url=url,
+        canonical_definition=canonical if is_definition else None,
+        review_status=review_status or record["review"]["status"], chunk_id=chunk_id,
+    )

@@ -1,0 +1,106 @@
+{
+  "id": "article:stellar-magnitudes",
+  "kind": "article",
+  "source": {
+    "type": "project_article",
+    "fact_checked_at": "2026-11-18",
+    "references": [
+      {
+        "title": "IAU Astro4Edu · Absolute Magnitude",
+        "url": "https://www.astro4edu.org/resources/glossary/term/2/"
+      },
+      {
+        "title": "IAU Astro4Edu · Apparent Magnitude",
+        "url": "https://www.astro4edu.org/resources/glossary/term/15/"
+      },
+      {
+        "title": "IAU Astro4Edu · Magnitude",
+        "url": "https://www.astro4edu.org/resources/glossary/term/185/"
+      }
+    ]
+  },
+  "metadata": {
+    "related_term_numbers": [
+      2,
+      15,
+      185,
+      180
+    ]
+  },
+  "locales": {
+    "en": {
+      "title": "Apparent and absolute stellar magnitude",
+      "aliases": [],
+      "blocks": {
+        "apparent": {
+          "heading": "The apparent magnitude",
+          "body": "Apparent magnitude describes how bright a star appears in a specified wavelength band at the observer's location. It depends on the light arriving at the detector, so both distance and extinction by intervening material matter. Smaller magnitudes correspond to brighter objects. A difference of five magnitudes corresponds to a factor of 100 in received flux in the same band."
+        },
+        "absolute": {
+          "heading": "The ten-parsec reference",
+          "body": "A star's absolute magnitude is the apparent magnitude it would have at a distance of 10 parsecs if there were no extinction along the line of sight. Comparing absolute magnitudes in the same band removes the effect of unequal distances. Absolute magnitude in a given band is different from total luminosity across all wavelengths."
+        },
+        "example": {
+          "heading": "Distance example",
+          "body": "For a star at distance d in parsecs, with extinction neglected, the distance modulus is m − M = 5 log₁₀(d / 10), where m is apparent and M is absolute magnitude in the same band. At 100 parsecs a star with M = 2 has m = 7. It appears 100 times fainter than the same star would at 10 parsecs."
+        }
+      }
+    },
+    "ru": {
+      "title": "Видимая и абсолютная звёздные величины",
+      "aliases": [],
+      "blocks": {
+        "apparent": {
+          "heading": "Видимая звёздная величина",
+          "body": "Видимая звёздная величина описывает, насколько яркой кажется звезда наблюдателю в заданном диапазоне длин волн. Она зависит от потока, дошедшего до наблюдателя, поэтому на неё влияют расстояние и поглощение света по пути. Меньшая звёздная величина соответствует более яркому объекту. Разница в пять величин соответствует стократной разнице потоков в одном диапазоне."
+        },
+        "absolute": {
+          "heading": "Опорное расстояние 10 парсек",
+          "body": "Абсолютная звёздная величина звезды равна её видимой величине на условном расстоянии 10 парсек при отсутствии поглощения вдоль луча зрения. Сравнение абсолютных величин в одном диапазоне исключает влияние разных расстояний. Абсолютная величина в отдельном диапазоне отличается от полной светимости по всем длинам волн."
+        },
+        "example": {
+          "heading": "Пример с расстоянием",
+          "body": "Для звезды на расстоянии d в парсеках, если пренебречь поглощением, модуль расстояния равен m − M = 5 log₁₀(d / 10), где m и M — видимая и абсолютная величины в одном диапазоне. На расстоянии 100 парсек звезда с M = 2 имеет m = 7. Поток от неё в 100 раз меньше, чем на расстоянии 10 парсек."
+        }
+      }
+    }
+  },
+  "sections": [
+    {
+      "id": "apparent",
+      "type": "source_block",
+      "heading": "The apparent magnitude",
+      "body": "Apparent magnitude describes how bright a star appears in a specified wavelength band at the observer's location. It depends on the light arriving at the detector, so both distance and extinction by intervening material matter. Smaller magnitudes correspond to brighter objects. A difference of five magnitudes corresponds to a factor of 100 in received flux in the same band.",
+      "heading_ru": "Видимая звёздная величина",
+      "body_ru": "Видимая звёздная величина описывает, насколько яркой кажется звезда наблюдателю в заданном диапазоне длин волн. Она зависит от потока, дошедшего до наблюдателя, поэтому на неё влияют расстояние и поглощение света по пути. Меньшая звёздная величина соответствует более яркому объекту. Разница в пять величин соответствует стократной разнице потоков в одном диапазоне.",
+      "links": [],
+      "media_ids": []
+    },
+    {
+      "id": "absolute",
+      "type": "source_block",
+      "heading": "The ten-parsec reference",
+      "body": "A star's absolute magnitude is the apparent magnitude it would have at a distance of 10 parsecs if there were no extinction along the line of sight. Comparing absolute magnitudes in the same band removes the effect of unequal distances. Absolute magnitude in a given band is different from total luminosity across all wavelengths.",
+      "heading_ru": "Опорное расстояние 10 парсек",
+      "body_ru": "Абсолютная звёздная величина звезды равна её видимой величине на условном расстоянии 10 парсек при отсутствии поглощения вдоль луча зрения. Сравнение абсолютных величин в одном диапазоне исключает влияние разных расстояний. Абсолютная величина в отдельном диапазоне отличается от полной светимости по всем длинам волн.",
+      "links": [],
+      "media_ids": []
+    },
+    {
+      "id": "example",
+      "type": "source_block",
+      "heading": "Distance example",
+      "body": "For a star at distance d in parsecs, with extinction neglected, the distance modulus is m − M = 5 log₁₀(d / 10), where m is apparent and M is absolute magnitude in the same band. At 100 parsecs a star with M = 2 has m = 7. It appears 100 times fainter than the same star would at 10 parsecs.",
+      "heading_ru": "Пример с расстоянием",
+      "body_ru": "Для звезды на расстоянии d в парсеках, если пренебречь поглощением, модуль расстояния равен m − M = 5 log₁₀(d / 10), где m и M — видимая и абсолютная величины в одном диапазоне. На расстоянии 100 парсек звезда с M = 2 имеет m = 7. Поток от неё в 100 раз меньше, чем на расстоянии 10 парсек.",
+      "links": [],
+      "media_ids": []
+    }
+  ],
+  "media": [],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Факты сверены с библиографией. Редакторское утверждение ожидается."
+  }
+}

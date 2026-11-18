@@ -7,6 +7,7 @@ from unittest.mock import patch
 import redis
 from fastapi.testclient import TestClient
 
+from app.assistant.client import Completion
 from app.main import create_app
 from tests.support.catalog import use_catalog
 
@@ -32,10 +33,18 @@ class FakeLimiter:
 
 class FakeModel:
     async def complete(self, system, payload):
-        if "classify" in system:
-            scope = "out_of_scope" if "борщ" in payload["question"].lower() else "in_scope"
-            return {"scope": scope, "mode": "term", "record_ids": ["term:1"], "reason": "definition"}
-        return {"answer": "Звезда класса A — горячая звезда.", "used_record_ids": ["term:1"]}
+        evidence = payload["evidence"]
+        requested = payload["requested_mode"]
+        if "борщ" in payload["question"].lower():
+            return Completion({"mode": "out_of_scope", "coverage": "complete", "definition_id": None, "blocks": []},
+                              "test-model")
+        if requested == "general":
+            return Completion({"mode": "general", "coverage": "complete", "definition_id": None,
+                               "blocks": [{"text": "Гравитация удерживает планету на орбите.", "evidence_ids": []}]},
+                              "test-model")
+        definition = next((item["id"] for item in evidence if item["definition"]), None)
+        return Completion({"mode": "term", "coverage": "complete", "definition_id": definition, "blocks": []},
+                          "test-model")
 
 
 class ApiCase(TestCase):

@@ -29,18 +29,21 @@ jobs:
           .venv/bin/basedpyright
           .venv/bin/python -m app.audit --skip-original-media
           .venv/bin/python -m scripts.illustrations verify --complete
+          .venv/bin/python -m scripts.evaluate --retrieval-only --check --output /tmp/rag-retrieval.json
       - name: Start Docker on a clean checkout
         run: docker compose up --build -d --wait --wait-timeout 90
-      - name: Check HTTP endpoints
+      - name: Check HTTP endpoints, WebP, and Redis rate limiting
         run: |
-          base=http://127.0.0.1:8001
-          curl -fsS "$base/health"
-          curl -fsS "$base/docs" > /dev/null
-          curl -fsS "$base/openapi.json" > /dev/null
-          curl -fsS "$base/api/v1/terms" | python -c 'import json, sys; assert json.load(sys.stdin)["total"] == 501'
+          docker compose run -d --no-deps --name astronomy-rag-smoke-peer -p 127.0.0.1:8002:8000 -e CATALOG_DB_PATH=/tmp/glossary.db glossary-rag
+          curl -fsS --retry 15 --retry-all-errors --retry-delay 1 --max-time 2 http://127.0.0.1:8002/health
+          .venv/bin/python -m scripts.smoke_http http://127.0.0.1:8001 --peer http://127.0.0.1:8002 --search-mode lexical
       - name: Docker logs
         if: failure()
         run: docker compose logs --tail 100
       - name: Stop Docker
         if: always()
-        run: docker compose down -v
+        run: |
+          if docker container inspect astronomy-rag-smoke-peer >/dev/null 2>&1; then
+            docker rm -f astronomy-rag-smoke-peer
+          fi
+          docker compose down -v

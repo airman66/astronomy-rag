@@ -6,11 +6,30 @@ import unittest
 from unittest.mock import Mock, patch
 
 from app.catalog import index as index_files
-from app.catalog import vector
+from app.catalog import search, vector
 from tests.catalog.fixtures import seed_vector_index
 from tests.support.catalog import temporary_dir, use_vector_root
 
 requires_faiss = unittest.skipUnless(importlib.util.find_spec("faiss"), "faiss-cpu is not installed")
+
+
+class RankFusionTests(unittest.TestCase):
+    def test_multiple_vector_chunks_do_not_outvote_an_agreement_between_searches(self):
+        agreed = {"record_id": "term:1", "section_id": "definition"}
+        repeated = {"record_id": "article:other", "section_id": "overview"}
+        semantic = [
+            {**repeated, "chunk_id": "first", "evidence_text": "First passage"},
+            {**repeated, "chunk_id": "second", "evidence_text": "Second passage"},
+            {**agreed, "chunk_id": "agreed", "evidence_text": "Definition"},
+        ]
+        with (
+            patch.object(search.storage, "lexical_search", return_value=[agreed]),
+            patch.object(vector, "search", return_value=semantic),
+            patch.object(vector, "available", return_value=True),
+        ):
+            results, mode = search.search_with_mode("definition", "en")
+        self.assertEqual(mode, "hybrid")
+        self.assertEqual([row["chunk_id"] for row in results], ["agreed", "first"])
 
 
 @requires_faiss

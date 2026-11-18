@@ -5,7 +5,8 @@ from __future__ import annotations
 import asyncio
 
 from app.assistant.client import LLMClient
-from app.assistant.service import select_context
+from app.assistant.service import answer
+from app.infra.config import load_env
 
 IN_SCOPE = [
     "Что такое экзопланета?",
@@ -65,14 +66,15 @@ OUT_OF_SCOPE = [
 
 
 async def main() -> None:
+    load_env()
     client = LLMClient()
     semaphore = asyncio.Semaphore(3)
 
     async def check(question: str, expected: str) -> tuple[str, str, str]:
         async with semaphore:
             locale = "en" if question.isascii() else "ru"
-            selection = await select_context(question, "general", locale, None, [], client)
-            scope = "out_of_scope" if selection.mode == "out_of_scope" else "in_scope"
+            result = await answer(question, "general", locale, None, client)
+            scope = "out_of_scope" if result["mode"] == "out_of_scope" else "in_scope"
             return question, expected, scope
 
     cases = [(question, "in_scope") for question in IN_SCOPE]

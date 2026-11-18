@@ -7,7 +7,7 @@ import time
 
 import redis
 
-from app.infra.config import redis_url
+from app.infra.config import CALL_LEASE_SECONDS, redis_url
 
 _WINDOW = """
 local cooldown = redis.call('TTL', KEYS[2])
@@ -41,10 +41,6 @@ if count > tonumber(ARGV[1]) then
 end
 return 0
 """
-
-# Lease of a DeepSeek slot; must outlive the assistant deadline (config.assistant_deadline).
-CALL_LEASE_SECONDS = 150
-
 
 class RedisLimiter:
     def __init__(self, url: str | None = None) -> None:

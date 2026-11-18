@@ -19,7 +19,7 @@ from app.infra.config import data_directory
 
 DATA = data_directory()
 DB = Path(os.getenv("CATALOG_DB_PATH") or DATA / "glossary.db")
-SCHEMA_VERSION = "4"
+SCHEMA_VERSION = "5"
 RECHECK_SECONDS = 30.0
 _lock = threading.Lock()
 _checked: dict[str, float] = {}
@@ -171,10 +171,11 @@ def _populate_database(db: sqlite3.Connection, current_fingerprint: str) -> None
         """
     )
 
-    def index(record_id: str, section_id: str, locale: str, kind: str, title: str, body: str, url: str, status: str) -> None:
+    def index(record_id: str, section_id: str, locale: str, kind: str, title: str, body: str, url: str, status: str, heading: str = "") -> None:
+        searchable_title = f"{title} {heading}" if heading else title
         db.execute(
             "INSERT INTO search_fts VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
-            (record_id, section_id, locale, kind, title, body, url, status, normalize(title), normalize(body), stems(title, locale), stems(body, locale)),
+            (record_id, section_id, locale, kind, title, body, url, status, normalize(searchable_title), normalize(body), stems(searchable_title, locale), stems(body, locale)),
         )
 
     seen_media: set[str] = set()
@@ -217,7 +218,7 @@ def _populate_database(db: sqlite3.Connection, current_fingerprint: str) -> None
         for locale, loc in (("en", en), ("ru", ru)):
             for section in record["sections"]:
                 block = loc["blocks"].get(section["id"], {})
-                index(record["id"], section["id"], locale, "article", loc["title"], block.get("body", ""), url, status)
+                index(record["id"], section["id"], locale, "article", loc["title"], block.get("body", ""), url, status, block.get("heading", ""))
     db.execute("INSERT INTO meta VALUES ('fingerprint', ?)", (current_fingerprint,))
     db.execute("INSERT INTO meta VALUES ('schema_version', ?)", (SCHEMA_VERSION,))
     db.commit()
