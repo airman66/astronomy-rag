@@ -5,11 +5,9 @@
 ## Запуск
 
 ```sh
-cp .env.example .env
-# заполнить DEEPSEEK_API_KEY для помощника; без ключа справочник и поиск работают
 docker compose up --build -d
-curl http://localhost:8001/health
-curl http://localhost:8001/docs
+curl http://127.0.0.1:8001/health
+curl http://127.0.0.1:8001/docs
 ```
 
 По умолчанию поиск лексический. Для гибридного поиска включите профиль `embeddings`: он скачивает и проверяет SHA-256 `Qwen3-Embedding-8B-Q4_K_M.gguf` (4,68 ГБ) в игнорируемый `data/models/` и запускает сервер эмбеддингов на CPU:
@@ -24,7 +22,9 @@ docker compose --profile embeddings up --build -d
 llama-server -m data/models/Qwen3-Embedding-8B-Q4_K_M.gguf --embedding --pooling last -ngl 99 -c 4096 --host 0.0.0.0 --port 8082
 ```
 
-Настройки Compose приведены в `.env.example`. `ASSISTANT_DEADLINE` задаётся в секундах и должен быть меньше 150 секунд, срока аренды слота Redis. В локальных командах `DATA_DIR` может указывать на отдельный каталог данных.
+Чтобы настроить ассистента, скопируйте `.env.example` в `.env` и заполните `DEEPSEEK_API_KEY`. Там же описаны дополнительные настройки Compose. `ASSISTANT_DEADLINE` задаётся в секундах и должен быть меньше 150 секунд, срока аренды слота Redis. В локальных командах `DATA_DIR` может указывать на отдельный каталог данных.
+
+API в контейнере работает с UID `10001`. При обычном bind mount на Linux этому UID нужен доступ на запись в `data/` для создания SQLite.
 
 Для RunPod вместо DeepSeek задайте `ASSISTANT_PROVIDER=runpod`, `RUNPOD_API_KEY` и `RUNPOD_ENDPOINT_ID`. Без ключа LLM чтение и поиск работают, ассистент возвращает `503 assistant_unavailable`.
 
@@ -73,10 +73,12 @@ python3 scripts/localize_timezone_svg.py data/raw/world_time_zones_map_source.sv
 
 ## Проверка
 
-Для локальных команд установите зависимости:
+`requirements.txt` содержит зависимости сервиса и команд импорта и индексации. `requirements-media.txt` добавляет OCR. `requirements-dev.txt` включает оба набора и BasedPyright.
+
+Для локальных команд используйте Python 3.12.
 
 ```sh
-python3 -m venv .venv
+python3.12 -m venv .venv
 .venv/bin/pip install -r requirements-dev.txt
 ```
 

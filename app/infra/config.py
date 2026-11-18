@@ -16,7 +16,7 @@ def cors_origins() -> list[str]:
 
 
 def assistant_deadline() -> float:
-    return float(os.getenv("ASSISTANT_DEADLINE", "100"))
+    return float(os.getenv("ASSISTANT_DEADLINE") or "100")
 
 
 @dataclass(frozen=True)
@@ -28,15 +28,15 @@ class LLMSettings:
 
     @classmethod
     def from_env(cls) -> "LLMSettings":
-        provider = os.getenv("ASSISTANT_PROVIDER", "deepseek").lower()
+        provider = (os.getenv("ASSISTANT_PROVIDER") or "deepseek").lower()
         if provider == "runpod":
             return cls(
                 provider,
-                os.getenv("RUNPOD_MODEL", "glm-5.3"),
+                os.getenv("RUNPOD_MODEL") or "glm-5.3",
                 os.getenv("RUNPOD_API_KEY", ""),
                 os.getenv("RUNPOD_ENDPOINT_ID", ""),
             )
-        return cls(provider, os.getenv("DEEPSEEK_MODEL", "deepseek-flash"), os.getenv("DEEPSEEK_API_KEY", ""))
+        return cls(provider, os.getenv("DEEPSEEK_MODEL") or "deepseek-flash", os.getenv("DEEPSEEK_API_KEY", ""))
 
 
 def redis_url() -> str:

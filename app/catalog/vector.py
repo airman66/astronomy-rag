@@ -16,10 +16,10 @@ from app.catalog.index import MANIFEST_NAME, load_index
 from app.infra.config import data_directory
 
 DATA = data_directory()
-QUERY_TIMEOUT = float(os.getenv("EMBEDDING_TIMEOUT", "15"))
+QUERY_TIMEOUT = float(os.getenv("EMBEDDING_TIMEOUT") or "15")
 # Cosine similarity below which a neighbour is not a match. Calibrated on Qwen3-Embedding-8B: relevant
 # Russian hits 0.58–0.83, off-topic queries up to 0.46, nonsense up to 0.54 (scripts/calibrate, 2026-11-14).
-MIN_SCORE = float(os.getenv("SEMANTIC_MIN_SCORE", "0.55"))
+MIN_SCORE = float(os.getenv("SEMANTIC_MIN_SCORE") or "0.55")
 RETRY_AFTER_FAILURE = 60.0
 _lock = Lock()
 _loaded = None

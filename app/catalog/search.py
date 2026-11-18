@@ -7,7 +7,7 @@ from typing import Literal
 
 from app.catalog import storage, vector
 
-SEMANTIC_POOL = int(os.getenv("SEMANTIC_POOL", "40"))
+SEMANTIC_POOL = int(os.getenv("SEMANTIC_POOL") or "40")
 log = logging.getLogger("glossary.search")
 
 
