@@ -19,6 +19,7 @@ from scripts.translation_review.common import (
     VERIFY_VERSIONS,
     digest,
     latest,
+    legacy_translation_input,
     now,
     read_jsonl,
     write_json,
@@ -102,13 +103,12 @@ def previous_edits() -> tuple[set[str], set[str], set[str]]:
         )
     replaced_digests: set[str] = set()
     replaced_texts: set[str] = set()
-    eval_dir = DATA / "eval"
-    resolutions = eval_dir / "translation_resolutions.json"
+    resolutions = legacy_translation_input(DATA, "translation_resolutions.json")
     if resolutions.exists():
         for identifier, row in json.loads(resolutions.read_text(encoding="utf-8")).get("results", {}).items():
             if row.get("valid") and row.get("corrected_ru"):
                 replaced_digests.add(identifier)
-    patches = eval_dir / "numeric_patches.json"
+    patches = legacy_translation_input(DATA, "numeric_patches.json")
     if patches.exists():
         for row in json.loads(patches.read_text(encoding="utf-8")):
             if row.get("valid") and row.get("old") and row.get("old") != row.get("new"):

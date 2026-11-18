@@ -14,14 +14,21 @@ from pathlib import Path
 from typing import Any
 
 from app.infra.config import ROOT, data_directory
-from app.infra.files import checksum
+from app.infra.files import checksum, existing_path
 from app.infra.files import write_json as write_json_atomic
 
 DATA = data_directory(ROOT / "data")
 TERMS = DATA / "processed" / "terms"
-MANIFEST = DATA / "illustrations" / "manifest.json"
+DIRECTORY = DATA / "illustrations"
+MANIFEST = DIRECTORY / "manifest.json"
+SELECTION = DIRECTORY / "selection"
+REPORTS = DIRECTORY / "reports"
 FILES = DATA / "media" / "illustrations"
 SCHEMA_VERSION = 1
+
+
+def selection_input(filename: str) -> Path:
+    return existing_path(SELECTION / filename, DIRECTORY / filename)
 
 
 def now() -> str:

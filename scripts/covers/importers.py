@@ -14,8 +14,10 @@ from scripts.covers.manifest import (
     DATA,
     FILES,
     MANIFEST,
+    REPORTS,
     image_size,
     load_manifest,
+    selection_input,
     write_json,
 )
 from scripts.covers.sources import (
@@ -27,9 +29,6 @@ from scripts.covers.sources import (
 )
 from scripts.media.ocr import ocr_latin
 
-RELATED = DATA / "illustrations" / "related_fallbacks.json"
-CURATED = DATA / "illustrations" / "curated_wikimedia.json"
-ASTRO_CURATED = DATA / "illustrations" / "curated_astro.json"
 REJECTED_MATCHES = {
     13,
     14,
@@ -186,7 +185,7 @@ def import_one(item: dict, candidate: dict, *, curated: bool = False) -> tuple[i
 
 def import_all(workers: int) -> None:
     manifest = load_manifest()
-    candidates = json.loads(CACHE.read_text())["items"]
+    candidates = json.loads(selection_input(CACHE.name).read_text(encoding="utf-8"))["items"]
     pending = [
         item for item in manifest["items"] if candidates.get(str(item["term_number"]), {}).get("metadata")
     ]
@@ -204,14 +203,16 @@ def import_all(workers: int) -> None:
         ],
         "no_match": [int(k) for k, v in candidates.items() if not v.get("metadata")],
     }
-    write_json(DATA / "illustrations" / "wikimedia_report.json", report)
+    write_json(REPORTS / "wikimedia_report.json", report)
     print(json.dumps(report, ensure_ascii=False))
 
 
 def import_astro(*, curated: bool = False) -> None:
     """Use already licensed, locally stored source media where Wikimedia has no usable cover."""
     manifest = load_manifest()
-    overrides = json.loads(ASTRO_CURATED.read_text()) if curated else {}
+    overrides = (
+        json.loads(selection_input("curated_astro.json").read_text(encoding="utf-8")) if curated else {}
+    )
     results = []
     for item in manifest["items"]:
         number = int(item["term_number"])
@@ -291,7 +292,7 @@ def import_astro(*, curated: bool = False) -> None:
     manifest["updated_at"] = datetime.now(timezone.utc).isoformat()
     write_json(MANIFEST, manifest)
     write_json(
-        DATA / "illustrations" / ("astro_curated_report.json" if curated else "astro_fallback_report.json"),
+        REPORTS / ("astro_curated_report.json" if curated else "astro_fallback_report.json"),
         {
             "imported": sum(i.get("source_type") == "astro4edu" for i in manifest["items"]),
             "unresolved": results,
@@ -310,7 +311,7 @@ def import_astro(*, curated: bool = False) -> None:
 
 def import_related() -> None:
     """Apply explicit, reviewable links to an image of a related glossary concept."""
-    mapping = json.loads(RELATED.read_text(encoding="utf-8"))
+    mapping = json.loads(selection_input("related_fallbacks.json").read_text(encoding="utf-8"))
     manifest = load_manifest()
     by_number = {int(item["term_number"]): item for item in manifest["items"]}
     imported = []
@@ -363,7 +364,7 @@ def import_related() -> None:
 
 def import_curated() -> None:
     """Import manually selected Commons files for ambiguous or missing matches."""
-    mapping = json.loads(CURATED.read_text(encoding="utf-8"))
+    mapping = json.loads(selection_input("curated_wikimedia.json").read_text(encoding="utf-8"))
     manifest = load_manifest()
     by_number = {int(item["term_number"]): item for item in manifest["items"]}
     results = []

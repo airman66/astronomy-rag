@@ -4,12 +4,12 @@ import json
 
 import requests
 
-from scripts.translation_review.common import DATA
+from scripts.translation_review.common import DATA, legacy_translation_path
 
 CACHE = DATA / "processed/.translation-cache.json"
-REVIEW_REPORT = DATA / "eval/translation_review.json"
-RESOLUTIONS = DATA / "eval/translation_resolutions.json"
-DECISIONS = DATA / "eval/translation_applied.json"
+REVIEW_REPORT = legacy_translation_path(DATA, "translation_review.json")
+RESOLUTIONS = legacy_translation_path(DATA, "translation_resolutions.json")
+DECISIONS = legacy_translation_path(DATA, "translation_applied.json")
 
 
 def batches(rows: list[dict], max_chars: int) -> list[list[dict]]:

@@ -3,14 +3,17 @@
 import csv
 import html
 import json
+from os.path import relpath
+from pathlib import Path
 
-from scripts.covers.manifest import DATA, load_manifest
+from scripts.covers.manifest import DATA, REPORTS, load_manifest
 
 
 def write_review() -> None:
     manifest = load_manifest()
     items = sorted(manifest["items"], key=lambda item: int(item["term_number"]))
-    directory = DATA / "illustrations"
+    directory = REPORTS
+    directory.mkdir(parents=True, exist_ok=True)
     with (directory / "coverage.csv").open("w", encoding="utf-8", newline="") as handle:
         writer = csv.writer(handle)
         writer.writerow(
@@ -45,7 +48,8 @@ def write_review() -> None:
     for item in items:
         source = item.get("source") or {}
         if item.get("path") and item["status"] in ("generated", "approved"):
-            picture = f'<img src="../{html.escape(item["path"], quote=True)}" alt="" loading="lazy">'
+            source_path = Path(relpath(DATA / item["path"], directory)).as_posix()
+            picture = f'<img src="{html.escape(source_path, quote=True)}" alt="" loading="lazy">'
         else:
             picture = '<div class="empty">Нет обложки</div>'
         file_page = source.get("file_page") or ""

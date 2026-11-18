@@ -41,6 +41,8 @@ llama-server -m data/models/Qwen3-Embedding-8B-Q4_K_M.gguf --embedding --pooling
 
 ## Данные и индекс
 
+[Карта каталога `data/`](data/README.md) объясняет, где находятся источники, канонические записи, медиа, отчёты и локальные артефакты.
+
 ```sh
 python3 -m app.importer --download-media
 python3 -m app.translate
@@ -61,10 +63,10 @@ python -m scripts.build_index data/index --model-file data/models/Qwen3-Embeddin
 
 Скрипт сохраняет FAISS `IndexFlatIP`, таблицу ID, кэш векторов по хэшу текста и манифест с хэшами модели/файлов. Публикуйте артефакты после проверки хэшей. Сервис сверяет их перед загрузкой. Для запросов подаётся инструкция Qwen `Instruct: ...\nQuery: ...`, для документов — исходный текст чанка. Pod для онлайн запросов не нужен.
 
-Карта часовых поясов локализована из [векторного исходника Wikimedia Commons](https://commons.wikimedia.org/wiki/File:World_Time_Zones_Map.svg): 693 текстовые метки, словарь `data/processed/image_labels/world_time_zones.json`. Исходный SVG не входит в репозиторий; для повторной сборки сохраните его как `data/raw/world_time_zones_map_source.svg` и установите `rsvg-convert`:
+Карта часовых поясов локализована из [векторного исходника Wikimedia Commons](https://commons.wikimedia.org/wiki/File:World_Time_Zones_Map.svg): 693 текстовые метки, словарь `data/media/localization/world_time_zones.json`. Исходный SVG лежит в `data/raw/world_time_zones_map_source.svg`. Для повторной сборки установите `rsvg-convert` и выполните команду.
 
 ```sh
-python3 scripts/localize_timezone_svg.py data/raw/world_time_zones_map_source.svg data/processed/image_labels/world_time_zones.json data/media/ru/media_jh312430Ry7.png
+python3 scripts/localize_timezone_svg.py data/raw/world_time_zones_map_source.svg data/media/localization/world_time_zones.json data/media/ru/media_jh312430Ry7.png
 ```
 
 Оригинальный PNG Astro4Edu сохранён отдельно. Вектор обновлялся независимо от него и содержит дополнительные сведения о переходе на летнее время; различия зафиксированы в `data/image_edits.json`.
@@ -97,7 +99,7 @@ python3 -m venv .venv
 .venv/bin/python -m unittest tests.api.test_limits -v
 ```
 
-Оригиналы медиа и модель исключены из Git. После нового клонирования оригиналы восстанавливаются командой `python3 -m app.importer --media-only --workers 4`; без них полный `app.audit` сообщает об отсутствующих файлах, а API продолжает выдавать записи и локализованные медиа. Результат 50 контрольных вопросов в `data/eval/report.json` относится к прежней версии промпта; новый промпт нужно оценивать отдельно через `python3 -m scripts.eval_scope` с ключом LLM. OpenAPI доступен в `/openapi.json`, Swagger UI — в `/docs`.
+Оригиналы медиа и модель исключены из Git. После нового клонирования оригиналы восстанавливаются командой `python3 -m app.importer --media-only --workers 4`; без них полный `app.audit` сообщает об отсутствующих файлах, а API продолжает выдавать записи и локализованные медиа. Результат 50 контрольных вопросов в `data/eval/assistant/report.json` относится к прежней версии промпта; новый промпт нужно оценивать отдельно через `python3 -m scripts.eval_scope` с ключом LLM. OpenAPI доступен в `/openapi.json`, Swagger UI — в `/docs`.
 
 ## Ревью переводов и иллюстрации
 
@@ -119,4 +121,4 @@ python3 -m scripts.illustrations verify --complete          # 501 файл, ат
 python3 -m scripts.wikimedia_covers report                 # CSV и страница визуального просмотра по всем ID
 ```
 
-Результат поиска кэшируется в `data/illustrations/wikimedia_candidates.json`; прямые исключения и связи с близкими темами записаны по ID в `curated_wikimedia.json` и `related_fallbacks.json`. Отчёты первичного поиска — `wikimedia_report.json` и `astro_fallback_report.json`. Итоговое покрытие и атрибуция — `coverage.csv`, визуальный просмотр — `review.html`. Статус `approved` выставляется только после редакторской проверки.
+Кэш кандидатов Wikimedia, ручной отбор и связанные замены находятся в `data/illustrations/selection/`. Отчёты импорта, `coverage.csv` и `review.html` для визуального просмотра находятся в `data/illustrations/reports/`. Статус `approved` выставляется только после редакторской проверки.

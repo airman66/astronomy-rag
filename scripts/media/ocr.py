@@ -10,7 +10,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from app.infra.config import data_directory
-from app.infra.files import write_json
+from app.infra.files import existing_path, write_json
 
 
 def scan(path: Path) -> dict:
@@ -80,17 +80,16 @@ def main() -> None:
     paths = sorted(p for p in (data / "media/original").glob("*") if p.is_file())
     if args.kind != "all":
         paths = [path for path in paths if path.name.startswith(args.kind + "_")]
-    existing_file = data / "image_ocr.json"
-    existing = (
-        {row["path"]: row for row in json.loads(existing_file.read_text())} if existing_file.exists() else {}
-    )
+    report = data / "media" / "localization" / "image_ocr.json"
+    previous = existing_path(report, data / "image_ocr.json")
+    existing = {row["path"]: row for row in json.loads(previous.read_text())} if previous.exists() else {}
     pending = [path for path in paths if str(path) not in existing]
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
         for future in as_completed([pool.submit(scan, path) for path in pending]):
             row = future.result()
             existing[row["path"]] = row
             if len(existing) % 20 == 0:
-                write_json(existing_file, list(existing.values()))
+                write_json(report, list(existing.values()))
                 print(f"audited {len(existing)}", flush=True)
-    write_json(existing_file, list(existing.values()))
+    write_json(report, list(existing.values()))
     print(f"audited={len(paths)} with_text={sum(bool(existing[str(path)]['words']) for path in paths)}")

@@ -14,6 +14,25 @@ from scripts.translation_review.common import (
 
 
 class TranslationAuditApplyTests(unittest.TestCase):
+    def test_previous_edits_survive_the_legacy_reports_move(self):
+        data = Path(self.enterContext(tempfile.TemporaryDirectory()))
+        eval_dir = data / "eval"
+        legacy = eval_dir / "translation_legacy"
+        legacy.mkdir(parents=True)
+        resolutions = eval_dir / "translation_resolutions.json"
+        numeric = eval_dir / "numeric_patches.json"
+        resolutions.write_text(
+            json.dumps({"results": {"original-pair": {"valid": True, "corrected_ru": "Текст"}}})
+        )
+        numeric.write_text(json.dumps([{"valid": True, "old": "100", "new": "10"}]))
+
+        expected = (set(), {"original-pair"}, {"100"})
+        with patch.multiple(apply, DATA=data, EDITORIAL=eval_dir / "editorial_sync.json"):
+            self.assertEqual(apply.previous_edits(), expected)
+            resolutions.rename(legacy / resolutions.name)
+            numeric.rename(legacy / numeric.name)
+            self.assertEqual(apply.previous_edits(), expected)
+
     def test_requires_verification_and_preserves_earlier_edits(self):
         with tempfile.TemporaryDirectory() as directory:
             data = Path(directory)

@@ -6,6 +6,13 @@ import uuid
 from pathlib import Path
 
 
+def existing_path(path: Path, legacy: Path) -> Path:
+    """Prefer a file in the current layout, with a fallback for older data directories."""
+    if not path.exists() and legacy.is_file():
+        return legacy
+    return path
+
+
 def write_bytes(path: Path, content: bytes) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_name(f".{path.name}.{uuid.uuid4().hex}.tmp")

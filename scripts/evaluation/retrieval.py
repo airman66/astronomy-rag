@@ -13,9 +13,10 @@ from app.assistant.retrieval import candidates_for
 from app.assistant.service import answer, select_context
 from app.catalog.search import search_with_mode
 from app.infra.config import LLMSettings, data_directory
-from app.infra.files import write_json
+from app.infra.files import existing_path, write_json
 
 DATA = data_directory()
+EVALUATION = DATA / "eval" / "assistant"
 
 
 def score_candidates(candidates: list[dict], expected: list[str]) -> tuple[list[str], bool, float]:
@@ -51,10 +52,11 @@ async def main() -> None:
     parser.add_argument(
         "--retrieval-only",
         action="store_true",
-        help="Recall@5 and MRR without DeepSeek; writes data/eval/retrieval_report.json",
+        help="Recall@5 and MRR without DeepSeek; writes data/eval/assistant/retrieval_report.json",
     )
     args = parser.parse_args()
-    rows = json.loads((DATA / "eval" / "questions.json").read_text(encoding="utf-8"))["questions"]
+    questions = existing_path(EVALUATION / "questions.json", DATA / "eval" / "questions.json")
+    rows = json.loads(questions.read_text(encoding="utf-8"))["questions"]
     assert len(rows) >= 50
     candidates = [candidates_for(row["question"], row["locale"]) for row in rows]
     if args.retrieval_only:
@@ -81,7 +83,7 @@ async def main() -> None:
             "retrieval_mrr": sum(row["mrr"] for row in with_gold) / len(with_gold),
             "results": results,
         }
-        write_json(DATA / "eval" / "retrieval_report.json", report)
+        write_json(EVALUATION / "retrieval_report.json", report)
         print(
             json.dumps({key: value for key, value in report.items() if key != "results"}, ensure_ascii=False)
         )
@@ -138,7 +140,7 @@ async def main() -> None:
         "invalid_answer_source_count": sum(row.get("source_ids_valid") is False for row in checked),
         "results": checked,
     }
-    write_json(DATA / "eval" / "report.json", report)
+    write_json(EVALUATION / "report.json", report)
     print(
         json.dumps(
             {key: value for key, value in report.items() if key not in ("results", "index_manifest")},

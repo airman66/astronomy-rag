@@ -13,9 +13,14 @@ from pathlib import Path
 from threading import Lock
 from typing import Any
 
-from scripts.covers.manifest import DATA, load_manifest, write_json
+from scripts.covers.manifest import (
+    SELECTION,
+    load_manifest,
+    selection_input,
+    write_json,
+)
 
-CACHE = DATA / "illustrations" / "wikimedia_candidates.json"
+CACHE = SELECTION / "wikimedia_candidates.json"
 HEADERS = {"User-Agent": "AstronomyGlossaryRAG/1.0 (educational glossary; https://github.com/airman66)"}
 IMAGE_SUFFIXES = (".jpg", ".jpeg", ".png", ".webp", ".svg")
 LICENSES = ("cc by", "cc-by", "cc0", "public domain", "pd-")
@@ -258,7 +263,10 @@ def discover(item: dict) -> dict:
 
 def discover_all(workers: int) -> None:
     manifest = load_manifest()
-    existing: dict[str, Any] = json.loads(CACHE.read_text()) if CACHE.exists() else {"items": {}}
+    cached = selection_input(CACHE.name)
+    existing: dict[str, Any] = (
+        json.loads(cached.read_text(encoding="utf-8")) if cached.exists() else {"items": {}}
+    )
     items = existing["items"]
     queue = [
         item

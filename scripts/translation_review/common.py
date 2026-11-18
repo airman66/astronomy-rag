@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Any
 
 from app.infra.config import ROOT, data_directory
+from app.infra.files import existing_path
 from app.infra.files import write_json as write_json_atomic
 
 DATA = data_directory(ROOT / "data")
@@ -50,6 +51,14 @@ ISSUE_TYPES = {
 VERDICTS = {"ok", "fix", "source_error", "uncertain"}
 LOCK = threading.Lock()
 NL = "\n"
+
+
+def legacy_translation_path(data: Path, filename: str) -> Path:
+    return data / "eval" / "translation_legacy" / filename
+
+
+def legacy_translation_input(data: Path, filename: str) -> Path:
+    return existing_path(legacy_translation_path(data, filename), data / "eval" / filename)
 
 
 def now() -> str:

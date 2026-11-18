@@ -12,7 +12,7 @@ import requests
 
 from app.infra.config import load_env
 from app.infra.files import write_json
-from scripts.translation_review.common import digest
+from scripts.translation_review.common import DATA, digest, legacy_translation_input
 from scripts.translation_review.legacy.common import (
     CACHE,
     RESOLUTIONS,
@@ -65,11 +65,12 @@ def main() -> None:
         raise SystemExit("DEEPSEEK_API_KEY missing")
     cache = json.loads(CACHE.read_text())
     lookup = {digest(en, ru): (en, ru) for en, ru in cache.items()}
-    issues = json.loads(REVIEW_REPORT.read_text())["issues"]
+    issues = json.loads(legacy_translation_input(DATA, REVIEW_REPORT.name).read_text())["issues"]
     findings: dict[str, list[dict]] = {}
     for issue in issues:
         findings.setdefault(issue["id"], []).append(issue)
-    previous = json.loads(RESOLUTIONS.read_text()) if RESOLUTIONS.exists() else {"results": {}}
+    previous_path = legacy_translation_input(DATA, RESOLUTIONS.name)
+    previous = json.loads(previous_path.read_text()) if previous_path.exists() else {"results": {}}
     rows = [
         {
             "id": identifier,

@@ -16,7 +16,7 @@ import requests
 
 from app.infra.config import load_env
 from app.infra.files import write_json
-from scripts.translation_review.common import digest
+from scripts.translation_review.common import DATA, digest, legacy_translation_input
 from scripts.translation_review.legacy.common import (
     CACHE,
     REVIEW_REPORT,
@@ -68,7 +68,8 @@ def main() -> None:
         raise SystemExit("DEEPSEEK_API_KEY missing")
     translations = json.loads(CACHE.read_text())
     rows = [{"id": digest(en, ru), "en": en, "ru": ru} for en, ru in translations.items()]
-    report = json.loads(REVIEW_REPORT.read_text()) if REVIEW_REPORT.exists() else {"pairs": {}, "issues": []}
+    previous = legacy_translation_input(DATA, REVIEW_REPORT.name)
+    report = json.loads(previous.read_text()) if previous.exists() else {"pairs": {}, "issues": []}
     pending = [row for row in rows if row["id"] not in report["pairs"]]
     packages = batches(pending, args.max_chars)
     print(f"all={len(rows)} pending={len(pending)} batches={len(packages)}", flush=True)

@@ -8,7 +8,12 @@ import re
 from app.infra.files import write_json
 from app.pipeline.translation_fields import fields as translation_fields
 from app.pipeline.translation_fields import set_path
-from scripts.translation_review.common import TERMS, digest
+from scripts.translation_review.common import (
+    DATA,
+    TERMS,
+    digest,
+    legacy_translation_input,
+)
 from scripts.translation_review.legacy.common import CACHE, DECISIONS, RESOLUTIONS
 
 NUMBERS = re.compile(r"(?<!\d)\d+(?:[.,]\d+)*(?!\d)")
@@ -21,7 +26,7 @@ def numeric_sequence(value: str) -> list[str]:
 
 def main() -> None:
     cache = json.loads(CACHE.read_text())
-    resolutions = json.loads(RESOLUTIONS.read_text())["results"]
+    resolutions = json.loads(legacy_translation_input(DATA, RESOLUTIONS.name).read_text())["results"]
     selected: dict[str, tuple[str, str]] = {}
     rejected: list[dict] = []
     for source, current in cache.items():
