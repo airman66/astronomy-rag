@@ -77,7 +77,34 @@ class Evidence:
         return {"record_id": self.record["id"], "section_id": self.section["id"], "chunk_id": self.chunk_id}
 
 
-def evidence_for(question: str, locale: str, *, prefer_article: bool = False) -> dict[str, Evidence]:
+def _page_evidence(record_id: str, locale: str) -> tuple[dict, Evidence] | None:
+    """Resolve a user-supplied page hint against the local catalogue only."""
+    record: dict | None
+    if record_id.startswith("term:") and record_id[5:].isdigit():
+        number = int(record_id[5:])
+        if number > 2**63 - 1:
+            return None
+        record = storage.get_term(number)
+    elif record_id.startswith("article:") and len(record_id) <= 180 and re.fullmatch(
+        r"article:[A-Za-z0-9_.:-]+", record_id,
+    ):
+        record = storage.get_article(record_id)
+    else:
+        return None
+    if record is None or locale not in record.get("locales", {}):
+        return None
+    localized = record["locales"][locale]
+    ordered = sorted(record["sections"], key=lambda section: section["type"] != "definition")
+    for section in ordered:
+        if item := _section_evidence(record, localized, section, {}):
+            return record, item
+    return None
+
+
+def evidence_for(
+    question: str, locale: str, *, prefer_article: bool = False,
+    context_record_id: str | None = None,
+) -> dict[str, Evidence]:
     """Keep exact passages, diversify by record and reserve space for a matching article."""
     hits, _ = search_with_mode(question, locale, limit=80)
     records: dict[str, tuple[dict, dict, dict[str, dict], dict[str, dict]]] = {}
@@ -120,6 +147,21 @@ def evidence_for(question: str, locale: str, *, prefer_article: bool = False) ->
                 extras.setdefault((record_id, item.section["id"], item.text), item)
 
     ordered = list(primary.values())
+    if context_record_id:
+        # Page-relative questions (e.g. "explain this") often have no useful
+        # lexical keywords. Keep one actual section from the open page in view.
+        pinned = next((item for item in ordered if item.record["id"] == context_record_id), None)
+        if pinned is not None:
+            ordered.remove(pinned)
+        elif page := _page_evidence(context_record_id, locale):
+            record, pinned = page
+            records[context_record_id] = (
+                record, record["locales"][locale],
+                {section["id"]: section for section in record["sections"]},
+                {item["id"]: item for item in record.get("media", [])},
+            )
+        if pinned is not None:
+            ordered.insert(0, pinned)
     if match := DEFINITION_REQUEST.search(question):
         requested = " ".join(storage.normalized_words(question[match.end():]))
         definition = next((item for item in ordered if item.canonical_definition and item.title
