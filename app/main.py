@@ -1,4 +1,6 @@
+import logging
 import mimetypes
+import time
 from contextlib import asynccontextmanager
 
 import httpx
@@ -22,7 +24,16 @@ from app.middleware.request_limits import request_limits
 
 @asynccontextmanager
 async def lifespan(application: FastAPI):
+    # A fresh checkout has no SQLite database; building the FTS5 catalogue
+    # can dominate startup time, especially for a second smoke-test container.
+    cold_start = not storage.DB.exists()
+    catalog_started = time.perf_counter()
     await run_in_threadpool(storage.ensure_database, True)
+    logging.getLogger("uvicorn.error").info(
+        "Catalogue %s completed in %.2f seconds",
+        "initial build" if cold_start else "check/rebuild",
+        time.perf_counter() - catalog_started,
+    )
     vector.warm_up()
     client = application.state.llm_client
     if isinstance(client, LLMClient) and client.http is None:
