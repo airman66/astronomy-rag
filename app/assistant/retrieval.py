@@ -80,7 +80,7 @@ class Evidence:
 def _page_evidence(record_id: str, locale: str) -> tuple[dict, Evidence] | None:
     """Resolve a user-supplied page hint against the local catalogue only."""
     record: dict | None
-    if record_id.startswith("term:") and record_id[5:].isdigit():
+    if record_id.startswith("term:") and len(record_id) <= 24 and record_id[5:].isdigit():
         number = int(record_id[5:])
         if number > 2**63 - 1:
             return None

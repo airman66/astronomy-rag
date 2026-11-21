@@ -7,23 +7,29 @@ from fastapi import Request
 
 
 def client_ip(request: Request) -> str:
+    """Use the nearest untrusted hop; do not trust an attacker-supplied XFF prefix."""
     peer = request.client.host if request.client else "unknown"
-    trusted = os.getenv("TRUSTED_PROXIES", "").split(",")
     try:
-        allowed = any(
-            ipaddress.ip_address(peer) in ipaddress.ip_network(value.strip(), strict=False)
-            for value in trusted
-            if value.strip()
-        )
+        peer_ip = ipaddress.ip_address(peer)
+        networks = [
+            ipaddress.ip_network(value.strip(), strict=False)
+            for value in os.getenv("TRUSTED_PROXIES", "").split(",") if value.strip()
+        ]
     except ValueError:
-        allowed = False
-    if allowed:
-        candidate = request.headers.get("x-forwarded-for", "").split(",")[0].strip()
+        return peer
+    if not any(peer_ip in network for network in networks):
+        return str(peer_ip)
+    forwarded = request.headers.get("x-forwarded-for", "")
+    if not forwarded:
+        return str(peer_ip)
+    for hop in reversed(forwarded.split(",")):
         try:
-            return str(ipaddress.ip_address(candidate))
+            candidate = ipaddress.ip_address(hop.strip())
         except ValueError:
-            pass
-    return peer
+            return str(peer_ip)  # malformed forwarded chain: fail closed
+        if not any(candidate in network for network in networks):
+            return str(candidate)
+    return str(peer_ip)
 
 
 def client_identity(request: Request) -> tuple[str, str]:
