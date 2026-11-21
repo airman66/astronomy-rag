@@ -1,3 +1,4 @@
+import json
 import unittest
 from unittest.mock import patch
 
@@ -26,3 +27,16 @@ class DataAuditTests(unittest.TestCase):
             without_original = "media media:example: missing/changed original image"
             self.assertIn(without_original, audit.check()["errors"])
             self.assertNotIn(without_original, audit.check(skip_original_media=True)["errors"])
+
+    def test_source_url_must_end_with_exact_term_number(self):
+        root = use_catalog(self)
+        seed_star(root)
+        path = root / "processed/terms/1.json"
+        record = json.loads(path.read_text())
+        record["source"]["url"] = "https://astro4edu.org/resources/glossary/term/21/"
+        path.write_text(json.dumps(record))
+
+        with patch.object(audit, "DATA", root):
+            errors = audit.check(skip_original_media=True)["errors"]
+
+        self.assertIn("term 1: source ID mismatch", errors)
