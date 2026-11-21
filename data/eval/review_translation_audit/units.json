@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-21T10:37:19+00:00",
+ "generated_at": "2026-11-21T12:36:54+00:00",
  "records": 43,
  "occurrences": 4344,
  "units": {
@@ -11460,10 +11460,10 @@
     ]
    ]
   },
-  "9347123d55063563f002cf9ca5e31f0ab16a31275a328f4ee33deb991bd9074c": {
-   "id": "9347123d55063563f002cf9ca5e31f0ab16a31275a328f4ee33deb991bd9074c",
-   "en": "A slender rod projects beside a window and casts a shadow onto a blue wall with two columns of white markings.",
-   "ru": "Рядом с окном выступает тонкий стержень. Его тень падает на синюю стену с двумя рядами белых отметок.",
+  "e5a4c46bca2fdc5373fa60e9e1c98b145f588657f5b805271fccb29364aa1344": {
+   "id": "e5a4c46bca2fdc5373fa60e9e1c98b145f588657f5b805271fccb29364aa1344",
+   "en": "Tor Arne Holm’s wall analemma. A disk with a small hole projects an image of the Sun onto a south-facing blue wall. The pale date labels mark its positions at noon through the year.",
+   "ru": "Настенная аналемма Тор Арне Хольма. Диск с маленьким отверстием проецирует изображение Солнца на синюю стену, обращённую к югу. Светлыми метками с датами отмечены положения солнечного пятна в полдень в течение года.",
    "kinds": [
     "media_alt"
    ],
@@ -29656,10 +29656,10 @@
     ]
    ]
   },
-  "7f48df1146fd487082e5125c0f2d4b9c288f3321af264225bc65b9c857cd0605": {
-   "id": "7f48df1146fd487082e5125c0f2d4b9c288f3321af264225bc65b9c857cd0605",
-   "en": "Starry Starry Night exhibit. Visitors connect fluorescent tubes on a dark wall with rubber bands to draw constellations. The visible constellation plaques include Orion, Taurus and Scorpius.",
-   "ru": "Экспонат «Звёздная, звёздная ночь». Посетители соединяют светящиеся трубки на тёмной стене резинками и получают рисунки созвездий. Среди подписанных созвездий видны Орион, Телец и Скорпион.",
+  "670e06e0a499edf2a509353cb9213b2a497ad6edbc916007023f3a1d0a38c89f": {
+   "id": "670e06e0a499edf2a509353cb9213b2a497ad6edbc916007023f3a1d0a38c89f",
+   "en": "The “Starry Starry Night” exhibit. Visitors connect illuminated pins on a dark wall with rubber bands to trace constellations. Visible labels include Orion, Taurus, Scorpius and Crux.",
+   "ru": "Экспонат «Звёздная, звёздная ночь». Посетители соединяют светящиеся точки на тёмной стене резинками и получают рисунки созвездий. Среди подписанных созвездий видны Орион, Телец, Скорпион и Южный Крест.",
    "kinds": [
     "media_alt"
    ],
@@ -35865,10 +35865,10 @@
     ]
    ]
   },
-  "15874c60741d2229695d7bbd8e5f4c42b5c44a889e7d5e8d041205526cd191ec": {
-   "id": "15874c60741d2229695d7bbd8e5f4c42b5c44a889e7d5e8d041205526cd191ec",
-   "en": "Three views of a globe with a small circular direction-finding device. Among the German place names are Greenland, Iceland, Norway, Sweden, Finland, and Russia.",
-   "ru": "Три фотографии глобуса с круглым приспособлением для ориентирования. На карте по-немецки подписаны Гренландия, Исландия, Норвегия, Швеция, Финляндия и Россия.",
+  "a388e9f5eef6bf7cc2e35d4ff5f3bdd71512fcce9c4e6272a9dae27f7cddc231": {
+   "id": "a388e9f5eef6bf7cc2e35d4ff5f3bdd71512fcce9c4e6272a9dae27f7cddc231",
+   "en": "Three views of a globe with a small circular shadow board. The central view shows Greenland, the Arctic Circle and Denmark. Other visible place names include Iceland, Norway, Sweden, Finland and Russia.",
+   "ru": "Три фотографии глобуса с круглым прибором для ориентирования по тени. На центральной фотографии подписаны Гренландия, Северный полярный круг и Дания. Среди других видимых названий — Исландия, Норвегия, Швеция, Финляндия и Россия.",
    "kinds": [
     "media_alt"
    ],
@@ -38701,10 +38701,10 @@
     ]
    ]
   },
-  "be8a50717b9f4b563781d1ebe686d4de02714f3acc97cd130570fb69ae92b08c": {
-   "id": "be8a50717b9f4b563781d1ebe686d4de02714f3acc97cd130570fb69ae92b08c",
-   "en": "The activity “Measuring an exoplanet”. The collage combines images of planets, a sphere marked with a question mark and three light curves showing a dip during a transit.",
-   "ru": "Задание «Измеряем параметры экзопланеты». В коллаже показаны планеты, сфера со знаком вопроса и три кривые блеска с падением яркости при транзите.",
+  "9c252c103c2e4a4a902fc1307a42fd41d6dcbb10cae2a828f565525d6f57b760": {
+   "id": "9c252c103c2e4a4a902fc1307a42fd41d6dcbb10cae2a828f565525d6f57b760",
+   "en": "The activity “Measuring an exoplanet”. Above are artists’ impressions of exoplanets and a sphere marked with a question mark. Below are three photographs of the same WASP-10b light curve. The vertical axis shows brightness in electrons. The worksheet’s horizontal axis shows time in hours.",
+   "ru": "Задание «Измеряем параметры экзопланеты». Вверху — художественные изображения экзопланет и сфера со знаком вопроса. Внизу — три фотографии одной и той же кривой блеска WASP-10b. По вертикали отложена яркость в электронах, по горизонтали на рабочем листе — время в часах.",
    "kinds": [
     "media_alt"
    ],

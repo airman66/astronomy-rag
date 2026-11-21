@@ -1130,7 +1130,7 @@
       },
       "source_alt_en": "Thumbnail for  Age that crater!",
       "ru_path": "data/media/ru/oae-review-figure-b5da85cb.png",
-      "ru_sha256": "08b62e6003cb26073465f8dab1c27018172a4f6dfed9e3bf7551dcf8f75e1c3c"
+      "ru_sha256": "fc967a148d824ae673b8a499494673a317f790bd4ff35ab724f275156747b6af"
     },
     {
       "id": "media:oae-inline-defb1b552533b807ac4f",
@@ -1141,8 +1141,8 @@
       "original_path": "media/original/review-topics/oae-inline-defb1b552533b807ac4f.jpg",
       "sha256": "010a1cf3c1a15dc856d806df7eb439da773700b171f59c9832192d5942cbc88b",
       "size": 96347,
-      "alt_en": "Three views of a globe with a small circular direction-finding device. Among the German place names are Greenland, Iceland, Norway, Sweden, Finland, and Russia.",
-      "alt_ru": "Три фотографии глобуса с круглым приспособлением для ориентирования. На карте по-немецки подписаны Гренландия, Исландия, Норвегия, Швеция, Финляндия и Россия.",
+      "alt_en": "Three views of a globe with a small circular shadow board. The central view shows Greenland, the Arctic Circle and Denmark. Other visible place names include Iceland, Norway, Sweden, Finland and Russia.",
+      "alt_ru": "Три фотографии глобуса с круглым прибором для ориентирования по тени. На центральной фотографии подписаны Гренландия, Северный полярный круг и Дания. Среди других видимых названий — Исландия, Норвегия, Швеция, Финляндия и Россия.",
       "title_en": "",
       "title_ru": "",
       "caption_en": "",
@@ -1153,7 +1153,9 @@
         "status": "draft",
         "reviewer": null
       },
-      "source_alt_en": "Thumbnail for  Navigate like a Viking – Use the Sun, not your phone!"
+      "source_alt_en": "Thumbnail for  Navigate like a Viking – Use the Sun, not your phone!",
+      "ru_path": "data/media/ru/oae-review-figure-010a1cf3.png",
+      "ru_sha256": "68405406f625a8ff41a203c119034456eb7dc0a621779f00298ceab5753ab645"
     }
   ],
   "review": {

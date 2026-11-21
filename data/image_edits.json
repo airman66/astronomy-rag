@@ -18432,7 +18432,7 @@
       ],
       "status": "edited",
       "edited_at": "2026-11-21T02:13:33.108633+00:00",
-      "reviewer_notes": "Переведены заголовок, четыре подписи к снимкам и подпись к стрелке. Мелкие надписи внутри снимков и обозначения на самих макетах ещё требуют проверки."
+      "reviewer_notes": "Переведены заголовок, четыре подписи к снимкам и подпись к стрелке. Мелкие заголовки на скриншотах и обозначения на макетах неразборчивы. Коллаж из сборника семинара OAE побайтно совпадает с фотографией в обзоре. Официальная программа подтверждает тему. Для точной расшифровки нужны слайды именно этого семинара."
     },
     {
       "media_id": "media:oae-pdf-nakedeyeastronomy_mini_review-428d5990a3cee9149969",
@@ -20265,22 +20265,24 @@
       "source_url": "https://www.astro4edu.org/media/documents/TeachingwithAstronomyExhibits_mini_review.pdf#page=22",
       "original_path": "media/original/review-pdf/c4768a16d3938cf8df740406f9ed3849a706c4ce2a123a35699eaea961ddf8cd.png",
       "ru_path": "data/media/ru/oae-review-figure-c4768a16.png",
-      "ru_sha256": "87c69b94cd193c8781865cf4f806bf4ad9da7de6101ca45b8076367a1ca02ffd",
+      "ru_sha256": "4cb6396e7accb9b428ad5e5cf59122a2ba48b5fa7dc9a91f610edd46379b6e46",
       "source_labels": [
         "STARRY STARRY NIGHT",
         "ORION",
         "TAURUS",
-        "SCORPIO"
+        "SCORPIO",
+        "CRUX"
       ],
       "ru_labels": [
         "ЗВЁЗДНАЯ, ЗВЁЗДНАЯ НОЧЬ",
         "ОРИОН",
         "ТЕЛЕЦ",
-        "СКОРПИОН"
+        "СКОРПИОН",
+        "ЮЖНЫЙ КРЕСТ"
       ],
       "status": "edited",
-      "edited_at": "2026-11-21T07:37:53.859784+00:00",
-      "reviewer_notes": "ChatGPT ImageGen использован для заголовка и трёх разборчивых названий созвездий. Оригинальные расположение светящихся точек, соединения и остальная фотография сохранены попиксельно. Мелкий текст неразличим в доступном оригинале."
+      "edited_at": "2026-11-21T11:59:41.886690+00:00",
+      "reviewer_notes": "Переведены название экспоната и четыре подписи созвездий, включая Южный Крест. Положение огней и линий сохранено. Верхний левый значок и инструкция на табличке слишком размыты для точной расшифровки. Изображение в сборнике материалов OAE имеет то же разрешение 635 × 357."
     },
     {
       "media_id": "media:oae-inline-e3971383630b43b20fa7",
@@ -20371,16 +20373,28 @@
       "source_url": "https://www.astro4edu.org/media/astroedu/images/microscopic-molecular-footballs_en_large_news_thumbnail_pIyfqoe.jpg",
       "original_path": "media/original/review-topics/oae-inline-4481f9a889c4d038311f.jpg",
       "ru_path": "data/media/ru/oae-review-figure-d9b047b0.png",
-      "ru_sha256": "a128eab6388d8deea281957e13d4de0b4006a7235895edf5887f162fbb2cd1e8",
+      "ru_sha256": "1d80169d1e9134d6c0770b0322e137a6b111d384d3cdd995425f9d9d8dfd6d97",
       "source_labels": [
-        "cut out"
+        "cut out",
+        "…football",
+        "…marked “cut out.”",
+        "…overlap. When you glue them,",
+        "…ball is complete. You should end up with 20",
+        "…carbon atoms in total.",
+        "…what the images on the faces mean."
       ],
       "ru_labels": [
-        "вырезать"
+        "вырезать",
+        "…мяч",
+        "…с надписью «вырезать».",
+        "…наложились. Когда склеите их,",
+        "…мяч. Должно получиться 20",
+        "…атомов углерода.",
+        "…картинки на гранях."
       ],
       "status": "edited",
-      "edited_at": "2026-11-21T08:17:02.291110+00:00",
-      "reviewer_notes": "Семь команд на гранях заменены русским текстом из правки ChatGPT ImageGen. За пределами масок фотография, включая изображения на гранях и геометрию развёртки, совпадает с оригиналом попиксельно. Обрезанная инструкция вверху снимка сохранена в оригинале и переведена в alt по полному рабочему листу astroEDU."
+      "edited_at": "2026-11-21T10:50:03.502332+00:00",
+      "reviewer_notes": "На гранях переведены семь надписей «вырезать». Видимые фрагменты инструкции переведены по полному рабочему листу astroEDU. Многоточия отмечают обрезанные краем кадра начала строк. Полная инструкция приведена в alt. Геометрия развёртки, ножницы и изображения на гранях сохранены."
     },
     {
       "media_id": "media:oae-pdf-citizenscience_mini_review-cfc1a9991bb8ddc41a62",
@@ -20411,7 +20425,7 @@
       "source_url": "https://www.astro4edu.org/media/documents/TeachingwithAstronomyExhibits_mini_review.pdf#page=14",
       "original_path": "media/original/review-pdf/f3508d4683691f36e7cd117e8b86645b7304d60aebe3bea930895bf185cffc75.jpeg",
       "ru_path": "data/media/ru/oae-review-figure-f3508d46.png",
-      "ru_sha256": "4bf8180013db238e141ac02616840531fad0bfc7e5190ad37e28455dcec18e38",
+      "ru_sha256": "24969e961b3b9bea96a7799bda6ae17fa9f9cf801710bc10378947b5c6c31250",
       "source_labels": [
         "SUN – MOON CLOCK",
         "December",
@@ -20425,7 +20439,20 @@
         "August",
         "September",
         "October",
-        "November"
+        "November",
+        "ಡಿಸೆಂಬರ್",
+        "ಜನವರಿ",
+        "ಫೆಬ್ರವರಿ",
+        "ಮಾರ್ಚ್",
+        "ಏಪ್ರಿಲ್",
+        "ಮೇ",
+        "ಜೂನ್",
+        "ಜುಲೈ",
+        "ಆಗಸ್ಟ್",
+        "ಸೆಪ್ಟೆಂಬರ್",
+        "ಅಕ್ಟೋಬರ್",
+        "ನವೆಂಬರ್",
+        "ಸೂರ್ಯ–ಚಂದ್ರ ಗಡಿಯಾರ"
       ],
       "ru_labels": [
         "ЧАСЫ СОЛНЦА И ЛУНЫ",
@@ -20440,11 +20467,24 @@
         "Август",
         "Сентябрь",
         "Октябрь",
-        "Ноябрь"
+        "Ноябрь",
+        "Декабрь",
+        "Январь",
+        "Февраль",
+        "Март",
+        "Апрель",
+        "Май",
+        "Июнь",
+        "Июль",
+        "Август",
+        "Сентябрь",
+        "Октябрь",
+        "Ноябрь",
+        "ЧАСЫ СОЛНЦА И ЛУНЫ"
       ],
       "status": "edited",
-      "edited_at": "2026-11-21T08:54:10.592757+00:00",
-      "reviewer_notes": "Название прибора и 12 английских названий месяцев локализованы в областях надписей с помощью ChatGPT ImageGen. Каждое русское название размещено на месте соответствующего английского. Стрелки, цифровые отметки, риски и обозначения рядом с месяцами сохранены. Текст на другом языке остаётся в оригинале, мелкие пояснения на центральной табличке неразличимы в доступном фото."
+      "edited_at": "2026-11-21T12:20:46.213975+00:00",
+      "reviewer_notes": "Переведены оба комплекта названий месяцев и название экспоната на английском и каннада. Порядок месяцев проверен по соседним датам. Центральные абзацы слишком размыты для точной расшифровки. В сборнике мастерской OAE опубликован тот же снимок, побайтно совпадающий с исходником обзора."
     },
     {
       "media_id": "media:oae-pdf-studentcompetitions_mini_review-cf8d1fd0e2e31cc179a9",
@@ -20454,22 +20494,30 @@
       "source_url": "https://www.astro4edu.org/media/documents/StudentCompetitions_mini_review.pdf#page=19",
       "original_path": "media/original/review-pdf/cf8d1fd0e2e31cc179a949e01c167cb9a8f119d2e35b541d17d4e541d3b20a2b.png",
       "ru_path": "data/media/ru/oae-review-figure-cf8d1fd0.png",
-      "ru_sha256": "fe9d51de93ba907dee57c2b7231a3ab26ae86d34204d6f5c46ff924717ddc513",
+      "ru_sha256": "f22687c21b32e144262d74229af100b12cb49584c8f0743c1cdb87fb00a0314e",
       "source_labels": [
         "Pale Bleu Dot 1990–2020",
         "Katara Astronomy Olympiad for Schools 2020",
         "Qatar – Al-Shahaniyah – 14 Feb 2020",
-        "QATAR 3RD NATIONAL ASTRONOMY OLYMPIAD 2018"
+        "QATAR 3RD NATIONAL ASTRONOMY OLYMPIAD 2018",
+        "TAURUS",
+        "CANIS",
+        "CANIS MAJOR",
+        "WINTER HEXAGON"
       ],
       "ru_labels": [
         "Бледно-голубая точка, 1990–2020",
         "Школьная астрономическая олимпиада Katara, 2020",
         "Катар, Эш-Шахания, 14 февраля 2020 года",
-        "3-я национальная олимпиада Катара по астрономии, 2018"
+        "3-я национальная олимпиада Катара по астрономии, 2018",
+        "ТЕЛЕЦ",
+        "БОЛЬШОЙ ПЁС",
+        "БОЛЬШОЙ ПЁС",
+        "ЗИМНИЙ ШЕСТИУГОЛЬНИК"
       ],
       "status": "edited",
-      "edited_at": "2026-11-21T08:54:10.603560+00:00",
-      "reviewer_notes": "Локализованы подписи в левом верхнем кадре и на нижней афише. Фотографии и лица участников, художественные детали, арабская подпись и оформление сохранены. Названия на плакатах и одежде переведены в описании и тексте страницы, в фото они сохранены."
+      "edited_at": "2026-11-21T10:50:03.502332+00:00",
+      "reviewer_notes": "Переведены заголовки мероприятий и видимые названия на плакатах и футболках. На плакате Большого Пса видна только часть названия CANIS, полное название подтверждает подпись CANIS MAJOR на футболке. Арабское название на нижней афише сохранено рядом с русским переводом того же названия. Лица, точки и линии созвездий сохранены."
     },
     {
       "media_id": "media:oae-review-online-formats-for-astronomy-education",
@@ -20544,7 +20592,7 @@
       "source_url": "https://www.astro4edu.org/media/documents/AstronomyEducationwithAuthenticData_mini_review.pdf#page=18",
       "original_path": "media/original/review-pdf/f1de14e09e3f2815c85a9e2b1fc0b4d17b7e6c551ed58c458e6504491dd313ad.jpeg",
       "ru_path": "data/media/ru/oae-review-figure-f1de14e0.png",
-      "ru_sha256": "06a54602b9f9e24befa34b9f121968128bb3dec56742a82149cec328594857dc",
+      "ru_sha256": "5780415b577dd64e5a85e39db4da47fe5c22273ce66315645ec11d0d135505a7",
       "source_labels": [
         "Current Table Properties",
         "Label:",
@@ -20552,7 +20600,17 @@
         "Name:",
         "Sky Plot",
         "Plane Plot",
-        "Window · Layers · Subsets · Plot · Export · Help"
+        "Window · Layers · Subsets · Plot · Export · Help",
+        "File · Views · Graphics · Joins · Windows · VO · Interop · Help",
+        "Frame",
+        "Legend",
+        "Axes",
+        "Position · Subsets · Form",
+        "Forms",
+        "Mark",
+        "SkyVector",
+        "degree",
+        "Histogram Plot"
       ],
       "ru_labels": [
         "Свойства текущей таблицы",
@@ -20561,11 +20619,21 @@
         "Имя:",
         "Карта неба",
         "Точечный график",
-        "Окно · Слои · Подвыборки · График · Экспорт · Справка"
+        "Окно · Слои · Подвыборки · График · Экспорт · Справка",
+        "Файл · Вид · Графика · Объединение · Окна · VO · Обмен · Справка",
+        "Область",
+        "Легенда",
+        "Оси",
+        "Положение · Подвыборки · Форма",
+        "Формы",
+        "Метки",
+        "Векторы на небе",
+        "градусы",
+        "Гистограмма"
       ],
       "status": "edited",
-      "edited_at": "2026-11-21T10:37:18.782942+00:00",
-      "reviewer_notes": "Переведены названия окон и видимые команды графиков. Идентификаторы каталогов, формулы, числовые шкалы и точки сохранены."
+      "edited_at": "2026-11-21T11:59:41.886690+00:00",
+      "reviewer_notes": "Дополнительно локализованы основное меню, вкладки и элементы управления графиками. Идентификаторы столбцов и каталогов, числовые шкалы, единицы и точки измерений сохранены. Часть фоновых элементов заслонена другими окнами."
     },
     {
       "media_id": "media:oae-pdf-teachingmethods_mini_review-15f6b80da8f90e355492",
@@ -20623,16 +20691,38 @@
       "source_url": "https://www.astro4edu.org/media/oae_review_files/illustration_images/authentic_data_news_image.png",
       "original_path": "media/original/oae-review-astronomy-education-with-authentic-data.png",
       "ru_path": "data/media/ru/oae-review-figure-459e2212.png",
-      "ru_sha256": "31005b13f94e06952967f184602ca9ed43f94ef1a9f78d10e623d774863ec81c",
+      "ru_sha256": "cf1f9d4407b3ca0f06d480f60258c539d49739cdc056f9b466e379023504eb1c",
       "source_labels": [
-        "Plane Plot"
+        "Plane Plot",
+        "Frame",
+        "Legend",
+        "Axes",
+        "Position",
+        "Subsets",
+        "Form",
+        "Mode",
+        "Colour Style",
+        "Shape",
+        "Size",
+        "Forms"
       ],
       "ru_labels": [
-        "Точечный график"
+        "Точечный график",
+        "Область",
+        "Легенда",
+        "Оси",
+        "Положение",
+        "Подвыборки",
+        "Форма",
+        "Режим",
+        "Стиль",
+        "Форма",
+        "Размер",
+        "Формы"
       ],
       "status": "edited",
-      "edited_at": "2026-11-21T10:37:18.790913+00:00",
-      "reviewer_notes": "Заголовок окна переведён. Обозначения координат, шкалы и данные сохранены. Часть мелких элементов интерфейса неразборчива в исходнике 350 × 175."
+      "edited_at": "2026-11-21T12:20:46.213975+00:00",
+      "reviewer_notes": "Локализованы читаемые вкладки и элементы настройки графиков. Обозначения координат, шкалы, значки и наборы данных сохранены. Отдельные строки статуса и обрезанная правая часть заголовка неразборчивы в оригинале 350 × 175."
     },
     {
       "media_id": "media:oae-inline-7e3581df764c03b3ff86",
@@ -20642,16 +20732,28 @@
       "source_url": "https://www.astro4edu.org/media/astroedu/images/age-that-crater_en_large_news_thumbnail_7du4Au2.jpg",
       "original_path": "media/original/review-topics/oae-inline-7e3581df764c03b3ff86.jpg",
       "ru_path": "data/media/ru/oae-review-figure-b5da85cb.png",
-      "ru_sha256": "08b62e6003cb26073465f8dab1c27018172a4f6dfed9e3bf7551dcf8f75e1c3c",
+      "ru_sha256": "fc967a148d824ae673b8a499494673a317f790bd4ff35ab724f275156747b6af",
       "source_labels": [
-        "The Moon"
+        "The Moon",
+        "Earth’s Moon",
+        "Iaepetus",
+        "moon of Saturn",
+        "Planets have Craters too!",
+        "Mercury",
+        "Earth"
       ],
       "ru_labels": [
-        "Луна"
+        "Луна",
+        "Луна",
+        "Япет",
+        "спутник Сатурна",
+        "На планетах тоже есть кратеры!",
+        "Меркурий",
+        "Земля"
       ],
       "status": "edited",
-      "edited_at": "2026-11-21T10:37:18.792158+00:00",
-      "reviewer_notes": "Переведены читаемые заголовки двух листов. Мелкий текст других раздаточных материалов неразборчив."
+      "edited_at": "2026-11-21T12:27:49.530820+00:00",
+      "reviewer_notes": "Переведены подписи двух карт Луны и шесть заголовков листа о кратерах. Заголовки сверены по крупному снимку автора и листу с той же компоновкой снимков кратеров. Фотография и лист сохранены в data/raw/reviews/references/astroedu-age-that-crater-classroom.jpg и data/raw/reviews/references/astroedu-age-that-crater-determination.pdf. Мелкий текст на соседнем листе и под снимками на фотографии размыт."
     },
     {
       "media_id": "media:oae-inline-3a22b0ee9e299de64cf0",
@@ -20671,6 +20773,98 @@
       "status": "edited",
       "edited_at": "2026-11-21T10:37:18.793468+00:00",
       "reviewer_notes": "Переведено читаемое меню SalsaJ. Обозначение звезды, положения маркеров и точки на графике сохранены."
+    },
+    {
+      "media_id": "media:oae-inline-defb1b552533b807ac4f",
+      "record_ids": [
+        "article:oae-review-earth-as-a-planet"
+      ],
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/navigate-like-a-viking-use-the-sun-not-your-phone_en_large_news_thumbnai_nhk89J3.jpg",
+      "original_path": "media/original/review-topics/oae-inline-defb1b552533b807ac4f.jpg",
+      "ru_path": "data/media/ru/oae-review-figure-010a1cf3.png",
+      "source_labels": [
+        "GRÖNLAND",
+        "NORDPOLARKREIS",
+        "DÄNEMARK",
+        "Barents-See",
+        "Finnland",
+        "Schweden",
+        "Estland",
+        "Lettland",
+        "Litauen",
+        "Polen",
+        "Weissrussland",
+        "Ukraine",
+        "Mold.",
+        "Rumänien",
+        "Bulgarien",
+        "Europ. Nordmeer",
+        "Nordsee",
+        "Irland",
+        "Niederl…",
+        "Deutschland",
+        "Frankreich",
+        "Portugal",
+        "Spanien",
+        "Neufundland",
+        "Ostsee",
+        "Schwar… Meer",
+        "Shetland-In."
+      ],
+      "ru_labels": [
+        "ГРЕНЛАНДИЯ",
+        "СЕВЕРНЫЙ ПОЛЯРНЫЙ КРУГ",
+        "ДАНИЯ",
+        "Баренцево море",
+        "Финляндия",
+        "Швеция",
+        "Эстония",
+        "Латвия",
+        "Литва",
+        "Польша",
+        "Беларусь",
+        "Украина",
+        "Молдова",
+        "Румыния",
+        "Болгария",
+        "Норвежское море",
+        "Северное море",
+        "Ирландия",
+        "Нидерланды",
+        "Германия",
+        "Франция",
+        "Португалия",
+        "Испания",
+        "Ньюфаундленд",
+        "Балтийское море",
+        "Чёрное море",
+        "Шетландские острова"
+      ],
+      "status": "edited",
+      "ru_sha256": "68405406f625a8ff41a203c119034456eb7dc0a621779f00298ceab5753ab645",
+      "edited_at": "2026-11-21T12:06:12.351932+00:00",
+      "reviewer_notes": "На трёх фотографиях глобуса переведены 27 географических подписей, включая Гренландию, Северный полярный круг, Норвежское море и Шетландские острова. Исходный кадр сверён с более широкой фотографией автора на astroEDU. Прибор, тени и картографическая сетка сохранены. Часть мелких названий городов и дублирующихся подписей на соседних снимках остаётся в оригинале."
+    },
+    {
+      "media_id": "media:oae-inline-510f570e6a82400452cd",
+      "record_ids": [
+        "article:oae-review-exoplanets"
+      ],
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/measuring-an-exoplanet_en_large_news_thumbnail_p3qy6i1.jpg",
+      "original_path": "media/original/review-topics/oae-inline-510f570e6a82400452cd.jpg",
+      "ru_path": "data/media/ru/oae-review-figure-d12df8ba.png",
+      "ru_sha256": "623c0b9d3ae4522b5e11c14e49e36255c2503f0b32cc42f2b7432b52b3684559",
+      "source_labels": [
+        "Φωτεινότητα (e⁻)",
+        "Brightness (e⁻)"
+      ],
+      "ru_labels": [
+        "Яркость (e⁻)",
+        "Яркость (e⁻)"
+      ],
+      "status": "edited",
+      "edited_at": "2026-11-21T12:11:56.247149+00:00",
+      "reviewer_notes": "Переведены три печатные греческие подписи оси и две рукописные английские подписи. Текст сверён по крупному кадру автора и англоязычному рабочему листу. Снимки источников сохранены в data/raw/reviews/references/astroedu-measuring-exoplanet-collage.jpg и data/raw/reviews/references/astroedu-measuring-exoplanet-lightcurve.pdf. Название горизонтальной оси обрезано на коллаже и переведено в alt по рабочему листу. Размер миниатюры, числовые шкалы, точки измерений и их погрешности сохранены."
     }
   ]
 }

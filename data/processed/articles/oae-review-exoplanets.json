@@ -901,7 +901,7 @@
       },
       "source_alt_en": "Thumbnail for  Microscopic Molecular Footballs",
       "ru_path": "data/media/ru/oae-review-figure-d9b047b0.png",
-      "ru_sha256": "a128eab6388d8deea281957e13d4de0b4006a7235895edf5887f162fbb2cd1e8"
+      "ru_sha256": "1d80169d1e9134d6c0770b0322e137a6b111d384d3cdd995425f9d9d8dfd6d97"
     },
     {
       "id": "media:oae-inline-d58851649e9636ac3b98",
@@ -1000,8 +1000,8 @@
       "original_path": "media/original/review-topics/oae-inline-510f570e6a82400452cd.jpg",
       "sha256": "d12df8ba13a2768db21d6d8c1c2087552d67f4a005193bfc196bb67f3811c65a",
       "size": 52467,
-      "alt_en": "The activity “Measuring an exoplanet”. The collage combines images of planets, a sphere marked with a question mark and three light curves showing a dip during a transit.",
-      "alt_ru": "Задание «Измеряем параметры экзопланеты». В коллаже показаны планеты, сфера со знаком вопроса и три кривые блеска с падением яркости при транзите.",
+      "alt_en": "The activity “Measuring an exoplanet”. Above are artists’ impressions of exoplanets and a sphere marked with a question mark. Below are three photographs of the same WASP-10b light curve. The vertical axis shows brightness in electrons. The worksheet’s horizontal axis shows time in hours.",
+      "alt_ru": "Задание «Измеряем параметры экзопланеты». Вверху — художественные изображения экзопланет и сфера со знаком вопроса. Внизу — три фотографии одной и той же кривой блеска WASP-10b. По вертикали отложена яркость в электронах, по горизонтали на рабочем листе — время в часах.",
       "title_en": "",
       "title_ru": "",
       "caption_en": "",
@@ -1012,7 +1012,9 @@
         "status": "draft",
         "reviewer": null
       },
-      "source_alt_en": "Thumbnail for  Measuring an exoplanet"
+      "source_alt_en": "Thumbnail for  Measuring an exoplanet",
+      "ru_path": "data/media/ru/oae-review-figure-d12df8ba.png",
+      "ru_sha256": "623c0b9d3ae4522b5e11c14e49e36255c2503f0b32cc42f2b7432b52b3684559"
     },
     {
       "id": "media:oae-inline-e3971383630b43b20fa7",

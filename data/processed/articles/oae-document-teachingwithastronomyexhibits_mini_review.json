@@ -1497,7 +1497,7 @@
       "alt_ru": "Часы Солнца и Луны. На внешней шкале отмечены месяцы и дни. Красная отметка показывает положение Солнца, светлый шар — положение Луны. Часы также показывают фазу Луны.",
       "source_alt_en": "Sun–Moon Clock. An external dial marks months and days. The yellow Sun and white Moon markers show their positions and the Moon phase.",
       "ru_path": "data/media/ru/oae-review-figure-f3508d46.png",
-      "ru_sha256": "4bf8180013db238e141ac02616840531fad0bfc7e5190ad37e28455dcec18e38"
+      "ru_sha256": "24969e961b3b9bea96a7799bda6ae17fa9f9cf801710bc10378947b5c6c31250"
     },
     {
       "id": "media:oae-pdf-teachingwithastronomyexhibits_mini_review-7b78e8a15121cf0da627",
@@ -1710,11 +1710,11 @@
         "status": "draft",
         "reviewer": null
       },
-      "alt_en": "Starry Starry Night exhibit. Visitors connect fluorescent tubes on a dark wall with rubber bands to draw constellations. The visible constellation plaques include Orion, Taurus and Scorpius.",
-      "alt_ru": "Экспонат «Звёздная, звёздная ночь». Посетители соединяют светящиеся трубки на тёмной стене резинками и получают рисунки созвездий. Среди подписанных созвездий видны Орион, Телец и Скорпион.",
+      "alt_en": "The “Starry Starry Night” exhibit. Visitors connect illuminated pins on a dark wall with rubber bands to trace constellations. Visible labels include Orion, Taurus, Scorpius and Crux.",
+      "alt_ru": "Экспонат «Звёздная, звёздная ночь». Посетители соединяют светящиеся точки на тёмной стене резинками и получают рисунки созвездий. Среди подписанных созвездий видны Орион, Телец, Скорпион и Южный Крест.",
       "source_alt_en": "Starry Starry Night exhibit. Fluorescent tubes on a dark wall are connected with rubber bands.",
       "ru_path": "data/media/ru/oae-review-figure-c4768a16.png",
-      "ru_sha256": "87c69b94cd193c8781865cf4f806bf4ad9da7de6101ca45b8076367a1ca02ffd"
+      "ru_sha256": "4cb6396e7accb9b428ad5e5cf59122a2ba48b5fa7dc9a91f610edd46379b6e46"
     },
     {
       "id": "media:oae-pdf-teachingwithastronomyexhibits_mini_review-18f46679b819d52d93e9",

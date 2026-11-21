@@ -1631,7 +1631,7 @@
       "alt_ru": "TOPCAT с данными Gaia DR2 о скоплении NGC 1960. В четырёх окнах показаны положения звёзд на небе, собственные движения, гистограмма расстояний по параллаксу и диаграмма «цвет — звёздная величина».",
       "source_alt_en": "TOPCAT with Gaia DR2 data for NGC 1960. The displays show sky positions, proper motions, a histogram of distances estimated from parallax, and a colour–magnitude plot.",
       "ru_path": "data/media/ru/oae-review-figure-f1de14e0.png",
-      "ru_sha256": "06a54602b9f9e24befa34b9f121968128bb3dec56742a82149cec328594857dc"
+      "ru_sha256": "5780415b577dd64e5a85e39db4da47fe5c22273ce66315645ec11d0d135505a7"
     },
     {
       "id": "media:oae-pdf-astronomyeducationwithauthenticdata_mini_review-5d1e7f4e25c0e242fff9",
