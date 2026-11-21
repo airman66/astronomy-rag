@@ -140,27 +140,31 @@ def glossary_media(data: Path) -> dict[str, dict]:
 def review_media(
     data: Path, sections: list[dict], pool: ThreadPoolExecutor, glossary: dict
 ) -> list[dict]:
-    paths = list(
-        dict.fromkeys(
-            path
-            for section in sections
-            for link in section["links"]
-            if RESOURCE.fullmatch(path := urlsplit(link["url"]).path.rstrip("/"))
-        )
-    )
+    paths: list[str] = []
+    seen_paths: set[str] = set()
+    for section in sections:
+        for link in section["links"]:
+            path = urlsplit(link["url"]).path.rstrip("/")
+            if RESOURCE.fullmatch(path) and path not in seen_paths:
+                seen_paths.add(path)
+                paths.append(path)
     if not paths:
         return []
+
     media = dict(
         zip(paths, pool.map(lambda path: media_record(data, path, glossary), paths))
     )
     for section in sections:
-        section["media_ids"] = list(
-            dict.fromkeys(
-                media[path]["id"]
-                for link in section["links"]
-                if (path := urlsplit(link["url"]).path.rstrip("/")) in media
-            )
-        )
+        media_ids: list[str] = []
+        seen_ids: set[str] = set()
+        for link in section["links"]:
+            path = urlsplit(link["url"]).path.rstrip("/")
+            if path in media:
+                identifier = media[path]["id"]
+                if identifier not in seen_ids:
+                    seen_ids.add(identifier)
+                    media_ids.append(identifier)
+        section["media_ids"] = media_ids
     return list(media.values())
 
 
