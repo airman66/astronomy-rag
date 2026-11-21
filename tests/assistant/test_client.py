@@ -40,3 +40,37 @@ class CompletionTransportTests(unittest.IsolatedAsyncioTestCase):
             with self.assertRaises(AssistantUnavailable) as raised:
                 await LLMClient(http, settings).complete("system", {})
         self.assertEqual(raised.exception.usage["completion_tokens"], 1536)
+
+    async def test_deepseek_request_disables_thinking(self):
+        def handle(request: httpx.Request) -> httpx.Response:
+            self.assertEqual(str(request.url), "https://api.deepseek.com/chat/completions")
+            payload = json.loads(request.content)
+            self.assertEqual(payload["thinking"], {"type": "disabled"})
+            self.assertEqual(payload["max_tokens"], 768)
+            self.assertNotIn("chat_template_kwargs", payload)
+            return httpx.Response(200, json={
+                "model": "deepseek-test",
+                "choices": [{"finish_reason": "stop", "message": {"content": "{}"}}],
+            })
+
+        settings = LLMSettings("deepseek", "deepseek-flash", "test")
+        async with httpx.AsyncClient(transport=httpx.MockTransport(handle)) as http:
+            completion = await LLMClient(http, settings).complete("system", {})
+        self.assertEqual(completion.model, "deepseek-test")
+        self.assertEqual(completion.usage, {})
+
+    async def test_glm_uses_its_own_generation_defaults(self):
+        def handle(request: httpx.Request) -> httpx.Response:
+            payload = json.loads(request.content)
+            self.assertEqual(payload["max_tokens"], 1536)
+            self.assertEqual(payload["reasoning_effort"], "low")
+            self.assertEqual(payload["temperature"], 1.0)
+            self.assertEqual(payload["top_p"], 0.95)
+            return httpx.Response(200, json={
+                "choices": [{"finish_reason": "stop", "message": {"content": "{}"}}],
+            })
+
+        settings = LLMSettings("runpod", "glm-5.3", "test", "test-endpoint")
+        async with httpx.AsyncClient(transport=httpx.MockTransport(handle)) as http:
+            completion = await LLMClient(http, settings).complete("system", {})
+        self.assertEqual(completion.model, "glm-5.3")
