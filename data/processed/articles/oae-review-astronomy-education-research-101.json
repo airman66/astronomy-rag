@@ -1,0 +1,280 @@
+{
+  "id": "article:oae-review-astronomy-education-research-101",
+  "kind": "article",
+  "source": {
+    "type": "oae_review_topic",
+    "url": "https://www.astro4edu.org/oae-reviews/astronomy-education-research-101",
+    "imported_at": "2026-11-18T16:43:53.043102+00:00",
+    "sha256": "1af7dab77e3d37d55a196a0d67920cf4e74944f68033db9d9b7c89d13629b499"
+  },
+  "metadata": {
+    "term_numbers": [],
+    "document_ids": [
+      "article:oae-document-astronomyeducationresearch101_mini_review"
+    ],
+    "categories_ru": []
+  },
+  "sections": [
+    {
+      "id": "about",
+      "type": "article_body",
+      "heading": "About",
+      "body": "Astronomy Education Research (AER) as a discipline-based researched field is rich, layered and multi-dimensional, drawing on a range of fields and subfields, which includes but is not limited to education, cognitive science, psychometrics, astronomy (and its cognate disciplines) for content knowledge, and various others. The AER 101 review is aimed at providing an overview of some key aspects of AER, each of these can be unpacked and explored in much more depth. Given this aim, the resources include an overview of Quantitative Methods in Astronomy Education Research, Qualitative Methods in Astronomy Education Research using projects to highlight the characteristics of qualitative research, complexities involved when conducting research with schools and teachers, the three types of teachers based on their engagement (learners, vacationers, and prisoners), the importance of ethics when conducting research, and how researchers need to make this their top priority (cardinal principle), and the avenues for publishing when it comes to AER.",
+      "heading_ru": "О теме",
+      "body_ru": "Исследование астрономического образования (AER) изучает преподавание и изучение конкретной научной дисциплины. Оно опирается на педагогику, когнитивные науки, психометрику, предметные знания астрономии и смежных дисциплин и другие области.\n\nОбзор AER 101 знакомит с основами этой работы. В подборке — количественные методы и примеры качественных исследований, трудности при работе со школами и учителями, три типа участия учителей («ученики», «отдыхающие» и «пленники»), этика как главный принцип исследовательской работы и варианты публикации результатов. Каждый из этих вопросов можно изучать глубже.",
+      "links": [],
+      "media_ids": [
+        "media:oae-review-astronomy-education-research-101"
+      ]
+    },
+    {
+      "id": "initial_document",
+      "type": "related_resources",
+      "heading": "Mini-review document",
+      "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 5.98 MB) f .",
+      "heading_ru": "Мини-обзор",
+      "body_ru": "Этой теме посвятили секцию третьего семинара Шоу и МАС по астрономическому образованию. По материалам секции подготовили мини-обзор (PDF, 5,98 МБ).",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/sessions/astronomy-education-research-101/",
+          "text": "session",
+          "text_ru": "Секция семинара"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/schedule/",
+          "text": "3rd Shaw-IAU Workshop",
+          "text_ru": "Третий семинар Шоу и МАС"
+        },
+        {
+          "url": "https://www.astro4edu.org/media/documents/AstronomyEducationResearch101_mini_review.pdf",
+          "text": "mini-review ( PDF file 5.98 MB)",
+          "text_ru": "Мини-обзор в PDF"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations",
+      "type": "related_resources",
+      "heading": "Talks",
+      "body": "",
+      "heading_ru": "Доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/55/",
+          "text": "Human ethics in astronomy education research",
+          "text_ru": "Этика исследований астрономического образования с участием людей"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/109/",
+          "text": "Learners, Vacationers, and Prisoners: Conducting Astronomy Education Research in PreK-12 Settings",
+          "text_ru": "«Ученики», «отдыхающие» и «пленники». Исследование астрономического образования от дошкольных групп до 12-го класса"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/56/",
+          "text": "Publishing Astronomy Education & Research",
+          "text_ru": "Как публиковать исследования и материалы по астрономическому образованию"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/57/",
+          "text": "Qualitative Research Methods in Astronomy Education Research",
+          "text_ru": "Качественные методы исследования астрономического образования"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/110/",
+          "text": "Quantitative Research Methods in Astronomy Education Research",
+          "text_ru": "Количественные методы исследования астрономического образования"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/181/",
+          "text": "Why Astronomy Education Research is Important and How Its Results Help in Formal Astronomy Education",
+          "text_ru": "Зачем изучать астрономическое образование и как результаты помогают преподавать астрономию"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/498/",
+          "text": "How to write a successful Astronomy Education Research abstract",
+          "text_ru": "Как подготовить аннотацию исследования астрономического образования"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-4",
+      "type": "related_resources",
+      "heading": "Poster Presentations",
+      "body": "",
+      "heading_ru": "Постеры",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/33/",
+          "text": "Astronomy alternative conceptions in pre-service science teachers",
+          "text_ru": "Альтернативные представления об астрономии у будущих учителей естественных наук"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/32/",
+          "text": "Importance and particularities of Astronomy Education: what the Research says",
+          "text_ru": "Зачем преподавать астрономию и чем она отличается от других наук. Что показывают исследования"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/35/",
+          "text": "Justifications for Teaching Astronomy in Basic Education: a look at research carried out in Brazil",
+          "text_ru": "Зачем преподавать астрономию в школе. Обзор исследований из Бразилии"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/34/",
+          "text": "Statement of Astronomy Education in Chile",
+          "text_ru": "Состояние астрономического образования в Чили"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-5",
+      "type": "related_resources",
+      "heading": "Seminars",
+      "body": "",
+      "heading_ru": "Семинары",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/seminars/aer-aer-literacy-why-what-how/",
+          "text": "AER & AER literacy - why, what & how?",
+          "text_ru": "Исследование астрономического образования и навыки работы с ним. Зачем, что и как изучать"
+        },
+        {
+          "url": "https://www.astro4edu.org/seminars/building-international-research-on-young-peoples-relationships-with-science-technology-st-lessons-from-roses/",
+          "text": "Building International Research on Young People’s Relationships with Science & Technology (S&T): Lessons from ROSES",
+          "text_ru": "Как проводить международные исследования отношения молодёжи к науке и технике. Опыт ROSES"
+        },
+        {
+          "url": "https://www.astro4edu.org/seminars/designing-and-validating-survey-instruments/",
+          "text": "Designing and Validating Survey Instruments",
+          "text_ru": "Разработка и проверка опросников"
+        },
+        {
+          "url": "https://www.astro4edu.org/seminars/large-scale-assessment-comparative-research-quantitative-methods/",
+          "text": "Large-Scale Assessment Comparative Research & Quantitative Methods",
+          "text_ru": "Масштабные сравнительные исследования в образовании и количественные методы"
+        },
+        {
+          "url": "https://www.astro4edu.org/seminars/linguistic-cultural-considerations/",
+          "text": "Linguistic & cultural considerations",
+          "text_ru": "Языковые и культурные особенности"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-6",
+      "type": "related_resources",
+      "heading": "Documents",
+      "body": "",
+      "heading_ru": "Документы",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/document/U269V6764Y7/",
+          "text": "Astronomy Education Research 101: Mini-Review",
+          "text_ru": "Основы исследования астрономического образования. Мини-обзор"
+        }
+      ],
+      "media_ids": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Astronomy Education Research 101",
+      "blocks": {
+        "about": {
+          "heading": "About",
+          "body": "Astronomy Education Research (AER) as a discipline-based researched field is rich, layered and multi-dimensional, drawing on a range of fields and subfields, which includes but is not limited to education, cognitive science, psychometrics, astronomy (and its cognate disciplines) for content knowledge, and various others. The AER 101 review is aimed at providing an overview of some key aspects of AER, each of these can be unpacked and explored in much more depth. Given this aim, the resources include an overview of Quantitative Methods in Astronomy Education Research, Qualitative Methods in Astronomy Education Research using projects to highlight the characteristics of qualitative research, complexities involved when conducting research with schools and teachers, the three types of teachers based on their engagement (learners, vacationers, and prisoners), the importance of ethics when conducting research, and how researchers need to make this their top priority (cardinal principle), and the avenues for publishing when it comes to AER."
+        },
+        "initial_document": {
+          "heading": "Mini-review document",
+          "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 5.98 MB) f ."
+        },
+        "presentations": {
+          "heading": "Talks",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Poster Presentations",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Seminars",
+          "body": ""
+        },
+        "presentations-6": {
+          "heading": "Documents",
+          "body": ""
+        }
+      }
+    },
+    "ru": {
+      "title": "Введение в исследования астрономического образования (AER 101)",
+      "blocks": {
+        "about": {
+          "heading": "О теме",
+          "body": "Исследование астрономического образования (AER) изучает преподавание и изучение конкретной научной дисциплины. Оно опирается на педагогику, когнитивные науки, психометрику, предметные знания астрономии и смежных дисциплин и другие области.\n\nОбзор AER 101 знакомит с основами этой работы. В подборке — количественные методы и примеры качественных исследований, трудности при работе со школами и учителями, три типа участия учителей («ученики», «отдыхающие» и «пленники»), этика как главный принцип исследовательской работы и варианты публикации результатов. Каждый из этих вопросов можно изучать глубже."
+        },
+        "initial_document": {
+          "heading": "Мини-обзор",
+          "body": "Этой теме посвятили секцию третьего семинара Шоу и МАС по астрономическому образованию. По материалам секции подготовили мини-обзор (PDF, 5,98 МБ)."
+        },
+        "presentations": {
+          "heading": "Доклады",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Постеры",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Семинары",
+          "body": ""
+        },
+        "presentations-6": {
+          "heading": "Документы",
+          "body": ""
+        }
+      },
+      "aliases": []
+    }
+  },
+  "media": [
+    {
+      "id": "media:oae-review-astronomy-education-research-101",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/oae_review_files/illustration_images/PhysicsEducation-icon_news_image.png",
+      "record_url": "https://www.astro4edu.org/oae-reviews/astronomy-education-research-101",
+      "original_path": "media/original/oae-review-astronomy-education-research-101.png",
+      "sha256": "0f095884de532d8e02361123e1cbe74aaad1d06c1f3210cba99a90119f2ee291",
+      "size": 35565,
+      "alt_en": "What are you trying to measure? What should students be learning? How are you going to measure it? What are students learning? What instructional approaches improve student learning? What variables are you going to change?",
+      "alt_ru": "Что вы хотите измерить? Чему должны научиться ученики? Как вы это измерите? Чему учатся ученики? Какие методы помогают ученикам учиться лучше? Какие переменные вы измените?",
+      "credit": "Tshiamiso Makwela",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "ru_path": "data/media/ru/oae-aer-review-cover.png",
+      "ru_sha256": "6649d24ae80dd27a11d6dbfacada81c065c5bf71303cf62790e00cb7c55954d0",
+      "source_alt_en": "Illustration image for Astronomy Education Research 101"
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Машинный перевод. Редакторское утверждение ожидается."
+  }
+}

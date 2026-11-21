@@ -1,0 +1,1075 @@
+{
+  "id": "article:oae-document-prompts_for_jedi",
+  "kind": "article",
+  "source": {
+    "type": "oae_review_document",
+    "url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+    "imported_at": "2026-11-18T16:44:30.434368+00:00",
+    "sha256": "3a322be4d00df7fd6ff8a5104a46e039c75c86acc9f0c5df4306227690ee2526",
+    "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+    "authors": "Samantha Brown-Sevilla, Silvia Casu, Stefano Sandrelli, Gloria Tirabassi, Rachele Toniolo, Stefania Varano",
+    "pdf_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf",
+    "pdf_path": "raw/reviews/Prompts_for_JEDI.pdf"
+  },
+  "metadata": {
+    "topic_ids": [
+      "article:oae-review-equity-diversity-and-inclusion-in-education"
+    ],
+    "page_count": 12,
+    "ocr_pages": []
+  },
+  "sections": [
+    {
+      "id": "page-1",
+      "type": "article_body",
+      "heading": "Page 1",
+      "body": "OAE JEDI Working Group\n\nPrompts for JEDI in education Justice, Equity, Diversity, and Inclusion\n\nPublications of the IAU Office of Astronomy for Education",
+      "heading_ru": "Страница 1",
+      "body_ru": "Рабочая группа JEDI при OAE\n\nВопросы о справедливости, равных возможностях, разнообразии и инклюзии в образовании\n\nИздания Офиса астрономии для образования Международного астрономического союза",
+      "links": [],
+      "media_ids": [
+        "media:oae-pdf-prompts_for_jedi-cover",
+        "media:oae-pdf-prompts_for_jedi-a73fb7c961af46d6a76d",
+        "media:oae-pdf-prompts_for_jedi-55314434c78ed0338f25",
+        "media:oae-pdf-prompts_for_jedi-23edee435d0be7d1ac5b",
+        "media:oae-pdf-prompts_for_jedi-c5a0caf1d48189da6c8b",
+        "media:oae-pdf-prompts_for_jedi-76e97aba3b3e27124455",
+        "media:oae-pdf-prompts_for_jedi-97c1ae95a53c0c16229d",
+        "media:oae-pdf-prompts_for_jedi-69319fea3fc9e9e2241c",
+        "media:oae-pdf-prompts_for_jedi-13b0a3de7f6647c24d21",
+        "media:oae-pdf-prompts_for_jedi-db3a2056d45d8b45bfdd",
+        "media:oae-pdf-prompts_for_jedi-205237af2dc11a853e3e",
+        "media:oae-pdf-prompts_for_jedi-a9f665c7987b086878fd",
+        "media:oae-pdf-prompts_for_jedi-aea6f9e599eaaa00009c",
+        "media:oae-pdf-prompts_for_jedi-7364f920765131e5a9a7",
+        "media:oae-pdf-prompts_for_jedi-1bb1d778ed9e4c2e0a75",
+        "media:oae-pdf-prompts_for_jedi-78ab8239eb7d313c7381",
+        "media:oae-pdf-prompts_for_jedi-4c342b794022835bbed9",
+        "media:oae-pdf-prompts_for_jedi-a86fc953b7b40c4fd90c",
+        "media:oae-pdf-prompts_for_jedi-23c47344fd13c4aeb01c",
+        "media:oae-pdf-prompts_for_jedi-15ce59603eb2f16ad177",
+        "media:oae-pdf-prompts_for_jedi-058177a18643248d5444",
+        "media:oae-pdf-prompts_for_jedi-3c62b8d4a7bfc8491396",
+        "media:oae-pdf-prompts_for_jedi-5b2d716d07d37acbd349",
+        "media:oae-pdf-prompts_for_jedi-4bc200fe04bdcda5c18d",
+        "media:oae-pdf-prompts_for_jedi-65a35a84887a25acec53",
+        "media:oae-pdf-prompts_for_jedi-10a60f73640e06348aa2",
+        "media:oae-pdf-prompts_for_jedi-6a7a8616a3d58ca48989",
+        "media:oae-pdf-prompts_for_jedi-9953b0fbe805429dd98a",
+        "media:oae-pdf-prompts_for_jedi-a076aeadb4dff4fd4479"
+      ]
+    },
+    {
+      "id": "page-2",
+      "type": "article_body",
+      "heading": "Page 2",
+      "body": "Compiled by: JEDI WG Samantha Brown Sevilla, Silvia Casu, Stefano Sandrelli, Gloria Tirabassi, Rachele Toniolo, Stefania Varano. The IAU Oﬃce of Astronomy for Education (OAE) Justice, Equity, Diversity, and Inclusion (JEDI) working group supports awareness within the design of educational resources and environments as welcoming and accessible as possible, within the framework of Universal Design for Learning. The IAU OAE is hosted at Haus der Astronomie (HdA), managed by the Max Planck Institute for Astronomy. The OAE’s mission is to support and coordinate astronomy education by astronomy researchers and educators, aimed at primary or secondary schools worldwide. HdA’s hosting the OAE was made possible through the support of the German foundations Klaus Tschira Stiftung and Carl-Zeiss-Stiftung.",
+      "heading_ru": "Страница 2",
+      "body_ru": "Составители — рабочая группа JEDI: Саманта Браун-Севилья, Сильвия Казу, Стефано Сандрелли, Глория Тирабасси, Ракеле Тоньоло, Стефания Варано.\n\nРабочая группа по справедливости, равным возможностям, разнообразию и инклюзии (JEDI) при Офисе астрономии для образования Международного астрономического союза (OAE) обращает внимание разработчиков учебных ресурсов на то, как сделать материалы и образовательную среду доступными и открытыми для всех. Группа опирается на принципы универсального дизайна обучения.\n\nOAE работает на базе Дома астрономии (Haus der Astronomie, HdA), которым управляет Институт астрономии Общества Макса Планка. Миссия OAE — поддерживать и координировать работу исследователей и педагогов, которые занимаются астрономическим образованием в начальных и средних школах по всему миру. Разместить OAE в Доме астрономии помогли немецкие фонды Klaus Tschira Stiftung и Carl-Zeiss-Stiftung.",
+      "links": [],
+      "media_ids": []
+    },
+    {
+      "id": "page-3",
+      "type": "article_body",
+      "heading": "Page 3",
+      "body": "Prompts for JEDI (Justice, Equity, Diversity, and Inclusion) Thought starters for designing accessible and welcoming educational activities Justice, equity, diversity, and inclusion (JEDI) have become central ideals across a growing number of institutional, professional, and public contexts. The effort to translate these principles into concrete good practices has expanded considerably in recent years, spanning work environments, community engagement, and, more recently, educational settings. In education, this commitment takes on particular significance: creating welcoming and accessible learning environments requires action at multiple levels simultaneously. Despite the growing consensus on the importance of these goals, their implementation remains uneven and context-dependent. This document aims to offer a structured overview of some of the key challenges involved, organised around two complementary dimensions: the main areas of JEDI to consider, and the specific aspects that practitioners and institutions should actively account for when designing inclusive educational practices. To this end, this document proposes a series of guiding questions organised by theme, that educators and activity designers can use as a practical list of items to consider when planning learning experiences from a JEDI perspective. The prompts proposed below are not abstract recommendations, but draw directly from the experiences of the community of educators and practitioners. They stem from the thematic analysis of the 2025 Teacher Training Program (TTP) proposals, conducted by the OAE JEDI Working Group. The analysis looked at applicants’ responses to the equity, accessibility, and inclusion questions included in the 2025 TTP applications, identifying recurring considerations that applicants had already reflected on within their own contexts. These considerations were then grouped according to the underlying needs they addressed — whether related to disability, or to cultural, social, and economic factors. Finally, each identified need was translated into a possible key question, designed to help other practitioners recognise similar needs and reflect on how to address them in their own activities. Useful resources for the design of inclusive activities have already been developed, such as the CAST Universal Design for Learning Guidelines. This document aims to complement such frameworks by offering a practical approach — providing concrete examples of how to address different situations when aiming for justice, equity, diversity and inclusion in Astronomy education. The Appendix presents the full thematic analysis of the responses to equity, accessibility and inclusion questions in the 2025 TTP applications, which served as the basis for this work.",
+      "heading_ru": "Страница 3",
+      "body_ru": "Вопросы для работы над справедливостью, равными возможностями, разнообразием и инклюзией (JEDI)\nС чего начать разработку доступных и открытых для всех учебных занятий\n\nСправедливость, равные возможности, разнообразие и инклюзия (JEDI) стали важными принципами для всё большего числа организаций, профессиональных сообществ и общественных инициатив. В последние годы эти принципы всё чаще воплощают в конкретных практиках на рабочих местах, в работе с местными сообществами и, с недавних пор, в образовании. Для образования это особенно важно. Чтобы учебная среда была доступной и открытой для всех, нужны одновременные изменения на нескольких уровнях. Значение этих целей признают всё шире, но их реализация остаётся неравномерной и зависит от условий.\n\nВ документе разбираются основные трудности с двух взаимодополняющих сторон: какие направления JEDI нужно учитывать и что конкретно следует предусмотреть педагогам и учреждениям при разработке инклюзивных практик. Для этого предлагаются тематические вопросы, которыми педагоги и разработчики занятий могут пользоваться как рабочим списком при их планировании.\n\nВопросы основаны на опыте педагогов и специалистов. Рабочая группа OAE по JEDI провела тематический анализ заявок на программу подготовки учителей (TTP) 2025 года. Она изучила ответы о равных возможностях, доступности и инклюзии и выявила повторяющиеся соображения, на которые заявители уже обратили внимание в своих условиях.\n\nЭти соображения распределили по потребностям, на которые они отвечали. Часть потребностей связана с инвалидностью, другие — с культурными, социальными и экономическими обстоятельствами. Для каждой потребности составили вопрос, который поможет другим специалистам распознать похожую ситуацию и подумать, как учесть её в своей работе.\n\nДля разработки инклюзивных занятий уже существуют полезные ресурсы, в том числе рекомендации CAST по универсальному дизайну обучения. Этот документ дополняет их конкретными примерами того, как добиваться справедливости, равных возможностей, разнообразия и инклюзии при обучении астрономии. В приложении приведён полный анализ ответов о равных возможностях, доступности и инклюзии из заявок TTP 2025 года, на котором основана работа.",
+      "links": [
+        {
+          "url": "https://udlguidelines.cast.org/static/udlg3-graphicorganizer-digital-nonumbers-a11y.pdf",
+          "text": "https://udlguidelines.cast.org/static/udlg3-graphicorganizer-digital-nonumbers-a11y.pdf",
+          "text_ru": "https://udlguidelines.cast.org/static/udlg3-graphicorganizer-digital-nonumbers-a11y.pdf"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "page-4",
+      "type": "article_body",
+      "heading": "Page 4",
+      "body": "CULTURAL DIVERSITY POSSIBLE KEY QUESTION\n\nPROMPTS\n\nWhat can help to make people from diverse cultural backgrounds feel welcome?\n\n●​ Include role models and stories that represent several cultures and religions. ●​ Make materials and sources available in multiple languages.\n\nCOGNITIVE DIVERSITY POSSIBLE KEY QUESTION\n\nPROMPTS\n\nWhat can help people with different cognitive needs and learning preferences feel welcome?\n\n●​ Co-design with experts and caregivers. ●​ Include clear step-by-step guides for activities. ●​ Provide hands-on experimentation. ●​ If needed, seek personalised pedagogical advice. ●​ Create an online support network. ●​ Provide online versions of lectures and materials. ●​ Try to keep activities open ended (i.e. allow sub-objectives, still satisfactory). Note: some needs cannot be addressed through activity design alone.\n\nGENDER IDENTITIES POSSIBLE KEY QUESTION\n\nPROMPTS\n\nWhat can help make people with diverse gender identities feel welcome and represented?\n\n●​ Include role models of people with diverse gender identities. ●​ When possible, involve facilitators who themselves represent diverse gender identities. ●​ Use gender neutral language in the activities.",
+      "heading_ru": "Страница 4",
+      "body_ru": "Культурное разнообразие\n\nВопрос для обсуждения. Что поможет людям из разных культур почувствовать, что им здесь рады?\n\n• Приводите примеры людей и истории, представляющие разные культуры и религии.\n• Предоставляйте материалы и источники на нескольких языках.\n\nКогнитивное разнообразие\n\nВопрос для обсуждения. Что поможет людям с разными когнитивными потребностями и предпочтениями в обучении почувствовать, что им здесь рады?\n\n• Разрабатывайте занятия вместе со специалистами и теми, кто осуществляет уход и поддержку.\n• Давайте понятные пошаговые инструкции.\n• Предлагайте практические опыты.\n• При необходимости обращайтесь за индивидуальными педагогическими рекомендациями.\n• Создайте сеть поддержки в интернете.\n• Предоставьте онлайн-версии лекций и материалов.\n• Оставляйте задания открытыми. Допускайте разные промежуточные цели, если участник при этом получает осмысленный результат.\n\nНекоторые потребности выходят за рамки того, что можно учесть при проектировании одного занятия.\n\nГендерная идентичность\n\nВопрос для обсуждения. Как сделать так, чтобы участники с разной гендерной идентичностью чувствовали, что им рады и что они представлены в учебных материалах?\n\n• Показывайте примеры людей с разной гендерной идентичностью.\n• По возможности привлекайте к проведению занятий ведущих с разной гендерной идентичностью.\n• Используйте гендерно-нейтральные формулировки.",
+      "links": [],
+      "media_ids": [
+        "media:oae-pdf-prompts_for_jedi-b239898de88a5f3e7686",
+        "media:oae-pdf-prompts_for_jedi-53cba6d82924da5ac9de",
+        "media:oae-pdf-prompts_for_jedi-ff37369f2bac0e91958b"
+      ]
+    },
+    {
+      "id": "page-5",
+      "type": "article_body",
+      "heading": "Page 5",
+      "body": "SENSORY NEEDS POSSIBLE KEY QUESTION\n\nPROMPTS\n\nWhat can help people with different sensory needs feel welcome?\n\n●​ Make key concepts accessible through different sensory channels (e.g. touch, vision, hearing). ●​ When working with deaf sign language users, use sign language interpreters, competent in scientific contents.\n\nINVISIBLE CHALLENGES These are general considerations proposed by the JEDI WG that can help create accessible and welcoming learning environments, thus easing difficulties that may not be clearly recognisable at first glance.\n\nACCESSIBLE POSSIBLE KEY QUESTION\n\nPROMPTS\n\nWhat might be considered when creating an accessible learning environment?\n\n●​ Use plain language (short sentences, common words). ●​ Print materials using large fonts and high contrast. ●​ Use alternative text, captions, and files compatible with screen readers. ●​ Organise content into small, accessible learning units.\n\nWELCOMING POSSIBLE KEY QUESTION\n\nPROMPTS\n\nWhat can help create a welcoming and motivating learning environment?\n\n●​ Start from questions and interests that participants can relate to and share with others. ●​ Embed new ideas in familiar ideas and contexts. ●​ Participate in the learning process (be a co-learner, don’t be afraid of not knowing.",
+      "heading_ru": "Страница 5",
+      "body_ru": "Сенсорные потребности\n\nВопрос для обсуждения. Как сделать занятия открытыми для людей с разными сенсорными потребностями?\n\n• Представляйте ключевые понятия так, чтобы их можно было воспринять разными способами, например на ощупь, на слух или зрительно.\n• При работе с глухими участниками, которые пользуются жестовым языком, приглашайте переводчиков жестового языка, знакомых с научной тематикой.\n\nНезаметные трудности\n\nРабочая группа JEDI предлагает общие принципы, которые помогают сделать учебную среду доступной и открытой для всех, в том числе для людей с трудностями, которые не сразу заметны.\n\nДоступность\n\nВопрос для обсуждения. Что стоит учесть при создании доступной учебной среды?\n\n• Пишите простым языком. Используйте короткие предложения и общеупотребительные слова.\n• Печатайте материалы крупным шрифтом с высоким контрастом.\n• Добавляйте альтернативные описания и подписи. Выбирайте форматы файлов, которые поддерживают программы экранного доступа.\n• Делите материал на небольшие доступные учебные блоки.\n\nАтмосфера на занятии\n\nВопрос для обсуждения. Как сделать учебную среду доброжелательной и мотивирующей?\n\n• Начните с вопросов и интересов, близких участникам и подходящих для общего обсуждения.\n• Связывайте новые идеи со знакомыми идеями и ситуациями.\n• Учитесь вместе с участниками и спокойно относитесь к тому, что сами можете чего-то не знать.",
+      "links": [],
+      "media_ids": [
+        "media:oae-pdf-prompts_for_jedi-64d62af2e1f3bab169af",
+        "media:oae-pdf-prompts_for_jedi-f6f6dbd6c014bf0a7705",
+        "media:oae-pdf-prompts_for_jedi-8fdc14d105ef5ba97dc5"
+      ]
+    },
+    {
+      "id": "page-6",
+      "type": "article_body",
+      "heading": "Page 6",
+      "body": "APPENDIX Here we report the results of the thematic analysis of the responses to equity, accessibility and inclusion questions in the 2025 TTP applications. For each question, the underlying needs and practices found in the responses have been grouped in a common theme, in order to be easily referred to a common challenge foreseen or encountered by the proponent designers. EQUITY question 3 reports all identified practices organised in chronological order and then reported as prompts in the main table. Each prompt refers to a corresponding grouping theme identified through the analysis in other questions.\n\nEQUITY Question 1 Which group(s) are underrepresented in the educational community that form your participant pool? GROUPING THEME\n\nNEEDS IN THE RESPONSES\n\nGEOGRAPHY\n\nGeographical difficulties/diversity (rural, remote, further areas) Transport difficulties Limited opportunities to participate in scientific initiatives\n\nSOCIO-ECONOMIC\n\nOvercrowded classrooms High school dropout rate different socioeconomic contexts low income households Under-resourced areas Underserved areas schools with limited funding and infrastructures Lacking/limited access to lab equipment (war) Limited access to astronomy resources No access to interactive experiences Lacking/limited access to (quality) astronomy education rural and Indigenous communities Public school teachers",
+      "heading_ru": "Страница 6",
+      "body_ru": "Приложение\n\nЗдесь приведены результаты тематического анализа ответов на вопросы о равных возможностях, доступности и инклюзии в заявках на программу подготовки учителей (TTP) 2025 года. Потребности и меры, упомянутые в ответах на каждый вопрос, объединены в группы по трудностям, которые заявители предвидели или уже встречали. В ответах на третий вопрос о равных возможностях меры перечислены в порядке их применения. Затем они вошли в основную таблицу в виде подсказок. Каждой подсказке соответствует тема, выявленная при анализе остальных вопросов.\n\nРавные возможности. Вопрос 1\n\nКакие группы недостаточно представлены в образовательном сообществе, из которого вы набираете участников?\n\nГеография\n\n• Географические препятствия и разнообразие мест проживания: сельские, удалённые и труднодоступные районы.\n• Трудности с транспортом.\n• Ограниченные возможности участвовать в научных инициативах.\n\nСоциально-экономические условия\n\n• Переполненные классы и высокая доля учащихся, которые бросают школу.\n• Разные социально-экономические условия и семьи с низким доходом.\n• Районы, где мало ресурсов или услуг.\n• Школы с ограниченным финансированием и инфраструктурой.\n• Отсутствие или ограниченный доступ к лабораторному оборудованию, в том числе из-за войны.\n• Ограниченный доступ к астрономическим материалам и отсутствие интерактивных занятий.\n• Отсутствие или ограниченный доступ к качественному астрономическому образованию.\n• Сельские сообщества и сообщества коренных народов.\n• Учителя государственных школ.",
+      "links": [],
+      "media_ids": [
+        "media:oae-pdf-prompts_for_jedi-6e220b1e08a2e9ee0563"
+      ]
+    },
+    {
+      "id": "page-7",
+      "type": "article_body",
+      "heading": "Page 7",
+      "body": "CULTURE\n\nLack of cultural integration Immigrant children Children of different cultural backgrounds First or second generation migrants Valuable (and diverse) cultural perspectives and knowledge to enrich the collective learning process Teachers close with the community who apply astronomy in local life Teachers who speak a different language\n\nPROFESSIONALISATION\n\nLacking astronomy knowledge Limited/lacking astronomy teacher training Limited/lacking (continuous) professional development First generation educators (?)\n\nWOMEN IN STEM\n\nWomen in STEM (gender inclusivity) Gender discrepancy in enrollment Teachers are mostly men due to insecurity for women Discouragement from pursuing science and engineering Balanced and inclusive participant pool\n\nDISABILITIES\n\nPeople with sensory disabilities. Teachers with disabilities (blind, visually impaired) Teachers from special schools for the blind Lack of professionalisation for handling disabilities Lacking accessible resources\n\nEQUITY QUESTION 2 How will you encourage/ recruit members of underrepresented group(s) to participate in the workshop? GROUPING THEME\n\nPRACTICES IN THE RESPONSES\n\nRECRUITING/\n\nDistributed calls (governmental institutions, social media,",
+      "heading_ru": "Страница 7",
+      "body_ru": "Культурные условия\n\n• Недостаточная интеграция людей из разных культур.\n• Дети иммигрантов, дети из разных культур и мигранты первого или второго поколения.\n• Ценные и разнообразные культурные знания и взгляды, которыми можно обогатить совместное обучение.\n• Учителя, тесно связанные с местным сообществом и использующие астрономию в его жизни.\n• Учителя, говорящие на другом языке.\n\nПрофессиональная подготовка\n\n• Недостаток знаний по астрономии.\n• Отсутствие или ограниченные возможности подготовки учителей астрономии.\n• Отсутствие или ограниченные возможности непрерывного повышения квалификации.\n• Педагоги в первом поколении. В исходной таблице эта формулировка отмечена вопросительным знаком.\n\nЖенщины в STEM\n\n• Участие женщин в STEM и гендерная инклюзия.\n• Гендерный дисбаланс при наборе.\n• Преобладание мужчин среди учителей из-за небезопасной среды для женщин.\n• Препятствия, мешающие выбрать науку или инженерное дело.\n• Сбалансированный и инклюзивный состав участников.\n\nИнвалидность\n\n• Люди с нарушениями зрения, слуха и другими сенсорными нарушениями.\n• Учителя с инвалидностью, в том числе незрячие и слабовидящие.\n• Учителя специальных школ для незрячих.\n• Недостаток профессиональной подготовки для работы с людьми с инвалидностью.\n• Недостаток доступных материалов.\n\nРавные возможности. Вопрос 2\n\nКак вы будете приглашать и побуждать представителей недостаточно представленных групп принять участие в семинаре? Перечень мер из ответов начинается на следующей странице.",
+      "links": [],
+      "media_ids": [
+        "media:oae-pdf-prompts_for_jedi-3f4f2fb0492de04b22b3",
+        "media:oae-pdf-prompts_for_jedi-ccb52b3520a92adc1f1b"
+      ]
+    },
+    {
+      "id": "page-8",
+      "type": "article_body",
+      "heading": "Page 8",
+      "body": "ADVERTISING\n\nlocal media, astronomy groups) Collaboration with rural school networks Outreach for advertisement (visits) Advertising through teacher networks Advertising through NAECs (social) networks Contacting former students from universities for education Multilingual promo of rural success stories Advertising through local Education/Science departments National platform for TTP programs School visits to directly invite teachers\n\nENCOURAGING\n\nPresenting unique opportunities Participation certificates Showcasing program benefits Make teachers familiarise with the facilitators Places reserved for teachers from public schools Attention to gender balance (50% female) Half seats for country-level STEM teachers with no prior astro training Relatable role models Invitation of female speakers Transparent call Inclusive representations Inclusive language Local NGOs for underrepresented groups Mailing lists of teachers national association for deaf and visually impaired people to contact their affiliates Good reputation of the program No fees Local offices of astronomy for development Schools with low representation in past astronomy events Prioritisation of schools with no astronomy clubs or equipment Opportunity to present their results to a larger audience (from Question 3)",
+      "heading_ru": "Страница 8",
+      "body_ru": "Набор и информирование\n\n• Распространять приглашения через государственные учреждения, социальные сети, местные СМИ и астрономические объединения.\n• Сотрудничать с сетями сельских школ.\n• Выезжать на места, чтобы рассказать о программе.\n• Распространять объявления через учительские сообщества и сети национальных координаторов астрономического образования (NAEC), в том числе в социальных сетях.\n• Связываться с выпускниками педагогических вузов.\n• На разных языках рассказывать об удачных примерах из сельской местности.\n• Распространять объявления через местные ведомства образования и науки.\n• Использовать общенациональную площадку программ подготовки учителей (TTP).\n• Посещать школы, чтобы лично приглашать учителей.\n\nКак поощрить участие\n\n• Показать, какие возможности открывает программа, и объяснить её преимущества.\n• Выдавать сертификаты участия.\n• Познакомить учителей с ведущими занятий.\n• Зарезервировать места для учителей государственных школ.\n• Следить за гендерным балансом. В одном из ответов — 50% мест для женщин.\n• Отдать половину мест учителям STEM в стране, которые раньше не проходили подготовку по астрономии.\n• Приводить примеры людей, с которыми участники могут себя соотнести, и приглашать женщин выступать.\n• Сделать набор прозрачным.\n• Следить за инклюзивностью примеров, изображений и языка.\n• Обращаться к местным НКО, работающим с недостаточно представленными группами.\n• Связываться с учителями по рассылкам, а с участниками национальной ассоциации глухих и людей с нарушениями зрения — через саму ассоциацию.\n• Поддерживать хорошую репутацию программы и проводить её без платы за участие.\n• Привлекать местные офисы астрономии для развития.\n• Приглашать школы, слабо представленные на прошлых астрономических мероприятиях.\n• Отдавать приоритет школам без астрономических кружков или оборудования.\n• Дать участникам возможность представить результаты более широкой аудитории. Эта мера также упоминается в ответе на вопрос 3.",
+      "links": [],
+      "media_ids": [
+        "media:oae-pdf-prompts_for_jedi-36b1914f8fb4ca5bff49"
+      ]
+    },
+    {
+      "id": "page-9",
+      "type": "article_body",
+      "heading": "Page 9",
+      "body": "SUPPORT\n\nTravel support\n\n(also in Question 3)\n\nMeals Help (funding) for accommodation Stipends for travel/accommodation Offer childcare\n\nEASING PARTICIPATION\n\nConvenient times for school and family duties\n\n(also in Question 3)\n\nPrinted/digital materials Free/low cost kits Venue accessible in wheel chairs Online participation\n\nEQUITY Question 3 What support will be offered to underrepresented group(s)? PRACTICES IN THE RESPONSES BEFORE THE EVENT\n\nTravel organisation\n\n(repeated from SUPPORT\n\nMeals organisation\n\nin Question 2, except new\n\nHelp (funding) for accommodation\n\nentries in italic)\n\nStipends for travel/accommodation Invitation letters to get travel support by the government Foresee a recognition of achievements\n\nDURING THE EVENT\n\nCommunity of practice\n\n(repeated from SUPPORT\n\nStep-by-step guides for activities\n\nand EASING\n\nMentorship\n\nPARTICIPATION in\n\nConvenient times for school and family duties\n\nQuestion 2, except new\n\nflexible schedules\n\nentries in italic)\n\nPrinted/digital materials Free/low cost kits Venue accessible in wheel chairs Personalised pedagogical advice",
+      "heading_ru": "Страница 9",
+      "body_ru": "Поддержка, также в ответах на вопрос 3\n\n• Помощь с проездом и питание.\n• Помощь с размещением, в том числе финансовая.\n• Выплаты на проезд и проживание.\n• Организация присмотра за детьми.\n\nУсловия участия, также в ответах на вопрос 3\n\n• Удобное расписание с учётом работы в школе и семейных обязанностей.\n• Печатные и цифровые материалы.\n• Бесплатные или недорогие наборы для занятий.\n• Помещение, доступное для людей, передвигающихся на креслах-колясках.\n• Возможность участвовать онлайн.\n\nРавные возможности. Вопрос 3\n\nКакую поддержку получат недостаточно представленные группы?\n\nДо мероприятия\n\n• Организовать проезд и питание.\n• Помочь с проживанием, в том числе финансово.\n• Выдать выплаты на проезд и размещение.\n• Выдать письма-приглашения, с которыми можно обратиться за оплатой поездки в государственные органы.\n• Предусмотреть признание достижений участников.\n\nВо время мероприятия\n\n• Организовать профессиональное сообщество для обмена опытом.\n• Предложить пошаговые инструкции и наставничество.\n• Выбрать время с учётом работы в школе и семейных обязанностей. Дать возможность гибко составлять расписание.\n• Предоставить печатные или цифровые материалы и бесплатные или недорогие наборы.\n• Обеспечить доступность площадки для людей, передвигающихся на креслах-колясках.\n• При необходимости давать индивидуальные педагогические рекомендации.\n\nЧасть мер повторяет ответы на вопрос 2. Новые меры выделены курсивом в исходной таблице.",
+      "links": [],
+      "media_ids": [
+        "media:oae-pdf-prompts_for_jedi-528eb8709f09e6758d63",
+        "media:oae-pdf-prompts_for_jedi-b81e198eeda91916ea76"
+      ]
+    },
+    {
+      "id": "page-10",
+      "type": "article_body",
+      "heading": "Page 10",
+      "body": "Lectures also available online Online support network Female facilitators Translation into native language Adaptation to their cultural contexts 3D printers Sign language interpreters Blind people to teach facilitators to accompany BVI people Special transportation for teachers with disabilities Help from volunteers for transportation Lodging costs covered for selected participants Childcare (or some economical support) Multisensory activities Adapted materials Connectivity (internet) Social media groups Inclusive and motivating learning environment AFTER THE EVENT\n\nPost workshop access to telescope Post workshop mentoring sessions\n\nACCESSIBILITY What measures will you be undertaking to make your workshop accessible to people with different kinds of dis/abilities? GROUPING THEME\n\nNEEDS AND PRACTICES IN THE RESPONSES\n\nDISABILITIES CATEGORIES\n\nMobility disabilities Visual impairments/blindness Hearing impairments/deafness Cognitive disabilities Learning disabilities ADHD",
+      "heading_ru": "Страница 10",
+      "body_ru": "Во время мероприятия (продолжение)\n\n• Предоставлять записи или онлайн-версии лекций.\n• Создать сеть поддержки в интернете и группы в социальных сетях.\n• Приглашать женщин вести занятия.\n• Переводить материалы на родные языки участников и адаптировать к их культурному контексту.\n• Использовать 3D-принтеры.\n• Привлекать переводчиков жестового языка.\n• Приглашать незрячих людей обучать ведущих сопровождению незрячих и слабовидящих участников.\n• Организовать специальный транспорт для учителей с инвалидностью и помощь добровольцев с поездками.\n• Покрывать расходы на проживание отдельных участников.\n• Предусмотреть присмотр за детьми или финансовую помощь с ним.\n• Предлагать занятия, задействующие разные органы чувств, и адаптированные материалы.\n• Обеспечить подключение к интернету.\n• Создавать инклюзивную учебную среду, поддерживающую мотивацию.\n\nПосле мероприятия\n\n• Оставить участникам доступ к телескопу после семинара.\n• Продолжить наставничество после семинара.\n\nДоступность\n\nКакие меры вы примете, чтобы семинар был доступен для людей с разными возможностями и потребностями?\n\nВ ответах упомянуты нарушения опорно-двигательного аппарата, нарушения зрения и слепота, нарушения слуха и глухота, когнитивные нарушения, трудности обучения и синдром дефицита внимания и гиперактивности (СДВГ). Перечень продолжается на следующей странице.",
+      "links": [],
+      "media_ids": [
+        "media:oae-pdf-prompts_for_jedi-f3555d1a87e2c65286d4",
+        "media:oae-pdf-prompts_for_jedi-30c98bdece9434e2cc56"
+      ]
+    },
+    {
+      "id": "page-11",
+      "type": "article_body",
+      "heading": "Page 11",
+      "body": "Obesity PHYSICAL AND\n\nWheelchair accessible/accessibility\n\nSTRUCTURAL\n\nGround floor\n\nACCESSIBILITY\n\nRamps Elevators Accessible seating Accessible restrooms Mobility challenges\n\nNEEDS IDENTIFICATION\n\nRegistration form inquiry\n\nAND ASSESSMENT\n\nSpecial need identification/assessment Special needs sharing in advance Electronic form questions\n\nCOMMUNICATION AND\n\nSign language interpreter\n\nLANGUAGE SUPPORT\n\nLocal language interpreters Hearing impaired assistance\n\nMATERIALS\n\nLarge prints/fonts High contrast Braille Tactile models Digital formats Screen reader compatible Audio materials/recordings Universal design principles Clear language\n\nDIGITAL/TECHNO\n\nSubtitles/close captions\n\nSUPPORT\n\nOnline/virtual support Live captions Streaming Digital resources Adaptive telescope controls\n\nPERSONALISED SUPPORT\n\nOne-on-one assistance Individual support Support volunteers",
+      "heading_ru": "Страница 11",
+      "body_ru": "Дополнительное обстоятельство, указанное в ответах, — ожирение.\n\nФизическая доступность помещений\n\n• Доступ для людей, передвигающихся на креслах-колясках.\n• Помещения на первом этаже, пандусы и лифты.\n• Доступные места для сидения и уборные.\n• Учёт трудностей передвижения.\n\nВыявление и оценка потребностей\n\n• Вопросы при регистрации и в электронной анкете.\n• Выявление и оценка индивидуальных потребностей.\n• Возможность сообщить о них заранее.\n\nОбщение и языковая поддержка\n\n• Переводчики жестового языка и переводчики местных языков.\n• Помощь участникам с нарушениями слуха.\n\nМатериалы\n\n• Крупный шрифт и высокая контрастность.\n• Шрифт Брайля и тактильные модели.\n• Цифровые файлы, совместимые с программами экранного доступа.\n• Аудиоматериалы и записи.\n• Принципы универсального дизайна и понятный язык.\n\nЦифровая и техническая поддержка\n\n• Обычные и скрытые субтитры, в том числе для прямых эфиров.\n• Поддержка онлайн и трансляции.\n• Цифровые ресурсы.\n• Адаптированные средства управления телескопом.\n\nИндивидуальная поддержка\n\n• Помощь один на один и индивидуальное сопровождение.\n• Помощь добровольцев.",
+      "links": [],
+      "media_ids": [
+        "media:oae-pdf-prompts_for_jedi-957b1070d8b7f8591000"
+      ]
+    },
+    {
+      "id": "page-12",
+      "type": "article_body",
+      "heading": "Page 12",
+      "body": "Tutorial support Special needs accomodation METHODOLOGIES\n\nFlexible participation methods Adaptable activities hands-on activities adaptation Visual aids Audio descriptions Verbal explanations Inclusive engagement Learning disabilities adaptation",
+      "heading_ru": "Страница 12",
+      "body_ru": "Индивидуальная поддержка (продолжение)\n\n• Учебная помощь и консультации.\n• Адаптация условий к индивидуальным потребностям.\n\nМетодика занятий\n\n• Гибкие способы участия.\n• Возможность адаптировать задания, в том числе практические.\n• Наглядные пособия, аудиоописания и устные объяснения.\n• Вовлечение всех участников.\n• Адаптация для участников с трудностями обучения.",
+      "links": [],
+      "media_ids": [
+        "media:oae-pdf-prompts_for_jedi-e53cda363c292103dce0"
+      ]
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Prompts for JEDI in Education",
+      "blocks": {
+        "page-1": {
+          "heading": "Page 1",
+          "body": "OAE JEDI Working Group\n\nPrompts for JEDI in education Justice, Equity, Diversity, and Inclusion\n\nPublications of the IAU Office of Astronomy for Education"
+        },
+        "page-2": {
+          "heading": "Page 2",
+          "body": "Compiled by: JEDI WG Samantha Brown Sevilla, Silvia Casu, Stefano Sandrelli, Gloria Tirabassi, Rachele Toniolo, Stefania Varano. The IAU Oﬃce of Astronomy for Education (OAE) Justice, Equity, Diversity, and Inclusion (JEDI) working group supports awareness within the design of educational resources and environments as welcoming and accessible as possible, within the framework of Universal Design for Learning. The IAU OAE is hosted at Haus der Astronomie (HdA), managed by the Max Planck Institute for Astronomy. The OAE’s mission is to support and coordinate astronomy education by astronomy researchers and educators, aimed at primary or secondary schools worldwide. HdA’s hosting the OAE was made possible through the support of the German foundations Klaus Tschira Stiftung and Carl-Zeiss-Stiftung."
+        },
+        "page-3": {
+          "heading": "Page 3",
+          "body": "Prompts for JEDI (Justice, Equity, Diversity, and Inclusion) Thought starters for designing accessible and welcoming educational activities Justice, equity, diversity, and inclusion (JEDI) have become central ideals across a growing number of institutional, professional, and public contexts. The effort to translate these principles into concrete good practices has expanded considerably in recent years, spanning work environments, community engagement, and, more recently, educational settings. In education, this commitment takes on particular significance: creating welcoming and accessible learning environments requires action at multiple levels simultaneously. Despite the growing consensus on the importance of these goals, their implementation remains uneven and context-dependent. This document aims to offer a structured overview of some of the key challenges involved, organised around two complementary dimensions: the main areas of JEDI to consider, and the specific aspects that practitioners and institutions should actively account for when designing inclusive educational practices. To this end, this document proposes a series of guiding questions organised by theme, that educators and activity designers can use as a practical list of items to consider when planning learning experiences from a JEDI perspective. The prompts proposed below are not abstract recommendations, but draw directly from the experiences of the community of educators and practitioners. They stem from the thematic analysis of the 2025 Teacher Training Program (TTP) proposals, conducted by the OAE JEDI Working Group. The analysis looked at applicants’ responses to the equity, accessibility, and inclusion questions included in the 2025 TTP applications, identifying recurring considerations that applicants had already reflected on within their own contexts. These considerations were then grouped according to the underlying needs they addressed — whether related to disability, or to cultural, social, and economic factors. Finally, each identified need was translated into a possible key question, designed to help other practitioners recognise similar needs and reflect on how to address them in their own activities. Useful resources for the design of inclusive activities have already been developed, such as the CAST Universal Design for Learning Guidelines. This document aims to complement such frameworks by offering a practical approach — providing concrete examples of how to address different situations when aiming for justice, equity, diversity and inclusion in Astronomy education. The Appendix presents the full thematic analysis of the responses to equity, accessibility and inclusion questions in the 2025 TTP applications, which served as the basis for this work."
+        },
+        "page-4": {
+          "heading": "Page 4",
+          "body": "CULTURAL DIVERSITY POSSIBLE KEY QUESTION\n\nPROMPTS\n\nWhat can help to make people from diverse cultural backgrounds feel welcome?\n\n●​ Include role models and stories that represent several cultures and religions. ●​ Make materials and sources available in multiple languages.\n\nCOGNITIVE DIVERSITY POSSIBLE KEY QUESTION\n\nPROMPTS\n\nWhat can help people with different cognitive needs and learning preferences feel welcome?\n\n●​ Co-design with experts and caregivers. ●​ Include clear step-by-step guides for activities. ●​ Provide hands-on experimentation. ●​ If needed, seek personalised pedagogical advice. ●​ Create an online support network. ●​ Provide online versions of lectures and materials. ●​ Try to keep activities open ended (i.e. allow sub-objectives, still satisfactory). Note: some needs cannot be addressed through activity design alone.\n\nGENDER IDENTITIES POSSIBLE KEY QUESTION\n\nPROMPTS\n\nWhat can help make people with diverse gender identities feel welcome and represented?\n\n●​ Include role models of people with diverse gender identities. ●​ When possible, involve facilitators who themselves represent diverse gender identities. ●​ Use gender neutral language in the activities."
+        },
+        "page-5": {
+          "heading": "Page 5",
+          "body": "SENSORY NEEDS POSSIBLE KEY QUESTION\n\nPROMPTS\n\nWhat can help people with different sensory needs feel welcome?\n\n●​ Make key concepts accessible through different sensory channels (e.g. touch, vision, hearing). ●​ When working with deaf sign language users, use sign language interpreters, competent in scientific contents.\n\nINVISIBLE CHALLENGES These are general considerations proposed by the JEDI WG that can help create accessible and welcoming learning environments, thus easing difficulties that may not be clearly recognisable at first glance.\n\nACCESSIBLE POSSIBLE KEY QUESTION\n\nPROMPTS\n\nWhat might be considered when creating an accessible learning environment?\n\n●​ Use plain language (short sentences, common words). ●​ Print materials using large fonts and high contrast. ●​ Use alternative text, captions, and files compatible with screen readers. ●​ Organise content into small, accessible learning units.\n\nWELCOMING POSSIBLE KEY QUESTION\n\nPROMPTS\n\nWhat can help create a welcoming and motivating learning environment?\n\n●​ Start from questions and interests that participants can relate to and share with others. ●​ Embed new ideas in familiar ideas and contexts. ●​ Participate in the learning process (be a co-learner, don’t be afraid of not knowing."
+        },
+        "page-6": {
+          "heading": "Page 6",
+          "body": "APPENDIX Here we report the results of the thematic analysis of the responses to equity, accessibility and inclusion questions in the 2025 TTP applications. For each question, the underlying needs and practices found in the responses have been grouped in a common theme, in order to be easily referred to a common challenge foreseen or encountered by the proponent designers. EQUITY question 3 reports all identified practices organised in chronological order and then reported as prompts in the main table. Each prompt refers to a corresponding grouping theme identified through the analysis in other questions.\n\nEQUITY Question 1 Which group(s) are underrepresented in the educational community that form your participant pool? GROUPING THEME\n\nNEEDS IN THE RESPONSES\n\nGEOGRAPHY\n\nGeographical difficulties/diversity (rural, remote, further areas) Transport difficulties Limited opportunities to participate in scientific initiatives\n\nSOCIO-ECONOMIC\n\nOvercrowded classrooms High school dropout rate different socioeconomic contexts low income households Under-resourced areas Underserved areas schools with limited funding and infrastructures Lacking/limited access to lab equipment (war) Limited access to astronomy resources No access to interactive experiences Lacking/limited access to (quality) astronomy education rural and Indigenous communities Public school teachers"
+        },
+        "page-7": {
+          "heading": "Page 7",
+          "body": "CULTURE\n\nLack of cultural integration Immigrant children Children of different cultural backgrounds First or second generation migrants Valuable (and diverse) cultural perspectives and knowledge to enrich the collective learning process Teachers close with the community who apply astronomy in local life Teachers who speak a different language\n\nPROFESSIONALISATION\n\nLacking astronomy knowledge Limited/lacking astronomy teacher training Limited/lacking (continuous) professional development First generation educators (?)\n\nWOMEN IN STEM\n\nWomen in STEM (gender inclusivity) Gender discrepancy in enrollment Teachers are mostly men due to insecurity for women Discouragement from pursuing science and engineering Balanced and inclusive participant pool\n\nDISABILITIES\n\nPeople with sensory disabilities. Teachers with disabilities (blind, visually impaired) Teachers from special schools for the blind Lack of professionalisation for handling disabilities Lacking accessible resources\n\nEQUITY QUESTION 2 How will you encourage/ recruit members of underrepresented group(s) to participate in the workshop? GROUPING THEME\n\nPRACTICES IN THE RESPONSES\n\nRECRUITING/\n\nDistributed calls (governmental institutions, social media,"
+        },
+        "page-8": {
+          "heading": "Page 8",
+          "body": "ADVERTISING\n\nlocal media, astronomy groups) Collaboration with rural school networks Outreach for advertisement (visits) Advertising through teacher networks Advertising through NAECs (social) networks Contacting former students from universities for education Multilingual promo of rural success stories Advertising through local Education/Science departments National platform for TTP programs School visits to directly invite teachers\n\nENCOURAGING\n\nPresenting unique opportunities Participation certificates Showcasing program benefits Make teachers familiarise with the facilitators Places reserved for teachers from public schools Attention to gender balance (50% female) Half seats for country-level STEM teachers with no prior astro training Relatable role models Invitation of female speakers Transparent call Inclusive representations Inclusive language Local NGOs for underrepresented groups Mailing lists of teachers national association for deaf and visually impaired people to contact their affiliates Good reputation of the program No fees Local offices of astronomy for development Schools with low representation in past astronomy events Prioritisation of schools with no astronomy clubs or equipment Opportunity to present their results to a larger audience (from Question 3)"
+        },
+        "page-9": {
+          "heading": "Page 9",
+          "body": "SUPPORT\n\nTravel support\n\n(also in Question 3)\n\nMeals Help (funding) for accommodation Stipends for travel/accommodation Offer childcare\n\nEASING PARTICIPATION\n\nConvenient times for school and family duties\n\n(also in Question 3)\n\nPrinted/digital materials Free/low cost kits Venue accessible in wheel chairs Online participation\n\nEQUITY Question 3 What support will be offered to underrepresented group(s)? PRACTICES IN THE RESPONSES BEFORE THE EVENT\n\nTravel organisation\n\n(repeated from SUPPORT\n\nMeals organisation\n\nin Question 2, except new\n\nHelp (funding) for accommodation\n\nentries in italic)\n\nStipends for travel/accommodation Invitation letters to get travel support by the government Foresee a recognition of achievements\n\nDURING THE EVENT\n\nCommunity of practice\n\n(repeated from SUPPORT\n\nStep-by-step guides for activities\n\nand EASING\n\nMentorship\n\nPARTICIPATION in\n\nConvenient times for school and family duties\n\nQuestion 2, except new\n\nflexible schedules\n\nentries in italic)\n\nPrinted/digital materials Free/low cost kits Venue accessible in wheel chairs Personalised pedagogical advice"
+        },
+        "page-10": {
+          "heading": "Page 10",
+          "body": "Lectures also available online Online support network Female facilitators Translation into native language Adaptation to their cultural contexts 3D printers Sign language interpreters Blind people to teach facilitators to accompany BVI people Special transportation for teachers with disabilities Help from volunteers for transportation Lodging costs covered for selected participants Childcare (or some economical support) Multisensory activities Adapted materials Connectivity (internet) Social media groups Inclusive and motivating learning environment AFTER THE EVENT\n\nPost workshop access to telescope Post workshop mentoring sessions\n\nACCESSIBILITY What measures will you be undertaking to make your workshop accessible to people with different kinds of dis/abilities? GROUPING THEME\n\nNEEDS AND PRACTICES IN THE RESPONSES\n\nDISABILITIES CATEGORIES\n\nMobility disabilities Visual impairments/blindness Hearing impairments/deafness Cognitive disabilities Learning disabilities ADHD"
+        },
+        "page-11": {
+          "heading": "Page 11",
+          "body": "Obesity PHYSICAL AND\n\nWheelchair accessible/accessibility\n\nSTRUCTURAL\n\nGround floor\n\nACCESSIBILITY\n\nRamps Elevators Accessible seating Accessible restrooms Mobility challenges\n\nNEEDS IDENTIFICATION\n\nRegistration form inquiry\n\nAND ASSESSMENT\n\nSpecial need identification/assessment Special needs sharing in advance Electronic form questions\n\nCOMMUNICATION AND\n\nSign language interpreter\n\nLANGUAGE SUPPORT\n\nLocal language interpreters Hearing impaired assistance\n\nMATERIALS\n\nLarge prints/fonts High contrast Braille Tactile models Digital formats Screen reader compatible Audio materials/recordings Universal design principles Clear language\n\nDIGITAL/TECHNO\n\nSubtitles/close captions\n\nSUPPORT\n\nOnline/virtual support Live captions Streaming Digital resources Adaptive telescope controls\n\nPERSONALISED SUPPORT\n\nOne-on-one assistance Individual support Support volunteers"
+        },
+        "page-12": {
+          "heading": "Page 12",
+          "body": "Tutorial support Special needs accomodation METHODOLOGIES\n\nFlexible participation methods Adaptable activities hands-on activities adaptation Visual aids Audio descriptions Verbal explanations Inclusive engagement Learning disabilities adaptation"
+        }
+      }
+    },
+    "ru": {
+      "title": "Вопросы о справедливости, равных возможностях, разнообразии и инклюзии в образовании",
+      "blocks": {
+        "page-1": {
+          "heading": "Страница 1",
+          "body": "Рабочая группа JEDI при OAE\n\nВопросы о справедливости, равных возможностях, разнообразии и инклюзии в образовании\n\nИздания Офиса астрономии для образования Международного астрономического союза"
+        },
+        "page-2": {
+          "heading": "Страница 2",
+          "body": "Составители — рабочая группа JEDI: Саманта Браун-Севилья, Сильвия Казу, Стефано Сандрелли, Глория Тирабасси, Ракеле Тоньоло, Стефания Варано.\n\nРабочая группа по справедливости, равным возможностям, разнообразию и инклюзии (JEDI) при Офисе астрономии для образования Международного астрономического союза (OAE) обращает внимание разработчиков учебных ресурсов на то, как сделать материалы и образовательную среду доступными и открытыми для всех. Группа опирается на принципы универсального дизайна обучения.\n\nOAE работает на базе Дома астрономии (Haus der Astronomie, HdA), которым управляет Институт астрономии Общества Макса Планка. Миссия OAE — поддерживать и координировать работу исследователей и педагогов, которые занимаются астрономическим образованием в начальных и средних школах по всему миру. Разместить OAE в Доме астрономии помогли немецкие фонды Klaus Tschira Stiftung и Carl-Zeiss-Stiftung."
+        },
+        "page-3": {
+          "heading": "Страница 3",
+          "body": "Вопросы для работы над справедливостью, равными возможностями, разнообразием и инклюзией (JEDI)\nС чего начать разработку доступных и открытых для всех учебных занятий\n\nСправедливость, равные возможности, разнообразие и инклюзия (JEDI) стали важными принципами для всё большего числа организаций, профессиональных сообществ и общественных инициатив. В последние годы эти принципы всё чаще воплощают в конкретных практиках на рабочих местах, в работе с местными сообществами и, с недавних пор, в образовании. Для образования это особенно важно. Чтобы учебная среда была доступной и открытой для всех, нужны одновременные изменения на нескольких уровнях. Значение этих целей признают всё шире, но их реализация остаётся неравномерной и зависит от условий.\n\nВ документе разбираются основные трудности с двух взаимодополняющих сторон: какие направления JEDI нужно учитывать и что конкретно следует предусмотреть педагогам и учреждениям при разработке инклюзивных практик. Для этого предлагаются тематические вопросы, которыми педагоги и разработчики занятий могут пользоваться как рабочим списком при их планировании.\n\nВопросы основаны на опыте педагогов и специалистов. Рабочая группа OAE по JEDI провела тематический анализ заявок на программу подготовки учителей (TTP) 2025 года. Она изучила ответы о равных возможностях, доступности и инклюзии и выявила повторяющиеся соображения, на которые заявители уже обратили внимание в своих условиях.\n\nЭти соображения распределили по потребностям, на которые они отвечали. Часть потребностей связана с инвалидностью, другие — с культурными, социальными и экономическими обстоятельствами. Для каждой потребности составили вопрос, который поможет другим специалистам распознать похожую ситуацию и подумать, как учесть её в своей работе.\n\nДля разработки инклюзивных занятий уже существуют полезные ресурсы, в том числе рекомендации CAST по универсальному дизайну обучения. Этот документ дополняет их конкретными примерами того, как добиваться справедливости, равных возможностей, разнообразия и инклюзии при обучении астрономии. В приложении приведён полный анализ ответов о равных возможностях, доступности и инклюзии из заявок TTP 2025 года, на котором основана работа."
+        },
+        "page-4": {
+          "heading": "Страница 4",
+          "body": "Культурное разнообразие\n\nВопрос для обсуждения. Что поможет людям из разных культур почувствовать, что им здесь рады?\n\n• Приводите примеры людей и истории, представляющие разные культуры и религии.\n• Предоставляйте материалы и источники на нескольких языках.\n\nКогнитивное разнообразие\n\nВопрос для обсуждения. Что поможет людям с разными когнитивными потребностями и предпочтениями в обучении почувствовать, что им здесь рады?\n\n• Разрабатывайте занятия вместе со специалистами и теми, кто осуществляет уход и поддержку.\n• Давайте понятные пошаговые инструкции.\n• Предлагайте практические опыты.\n• При необходимости обращайтесь за индивидуальными педагогическими рекомендациями.\n• Создайте сеть поддержки в интернете.\n• Предоставьте онлайн-версии лекций и материалов.\n• Оставляйте задания открытыми. Допускайте разные промежуточные цели, если участник при этом получает осмысленный результат.\n\nНекоторые потребности выходят за рамки того, что можно учесть при проектировании одного занятия.\n\nГендерная идентичность\n\nВопрос для обсуждения. Как сделать так, чтобы участники с разной гендерной идентичностью чувствовали, что им рады и что они представлены в учебных материалах?\n\n• Показывайте примеры людей с разной гендерной идентичностью.\n• По возможности привлекайте к проведению занятий ведущих с разной гендерной идентичностью.\n• Используйте гендерно-нейтральные формулировки."
+        },
+        "page-5": {
+          "heading": "Страница 5",
+          "body": "Сенсорные потребности\n\nВопрос для обсуждения. Как сделать занятия открытыми для людей с разными сенсорными потребностями?\n\n• Представляйте ключевые понятия так, чтобы их можно было воспринять разными способами, например на ощупь, на слух или зрительно.\n• При работе с глухими участниками, которые пользуются жестовым языком, приглашайте переводчиков жестового языка, знакомых с научной тематикой.\n\nНезаметные трудности\n\nРабочая группа JEDI предлагает общие принципы, которые помогают сделать учебную среду доступной и открытой для всех, в том числе для людей с трудностями, которые не сразу заметны.\n\nДоступность\n\nВопрос для обсуждения. Что стоит учесть при создании доступной учебной среды?\n\n• Пишите простым языком. Используйте короткие предложения и общеупотребительные слова.\n• Печатайте материалы крупным шрифтом с высоким контрастом.\n• Добавляйте альтернативные описания и подписи. Выбирайте форматы файлов, которые поддерживают программы экранного доступа.\n• Делите материал на небольшие доступные учебные блоки.\n\nАтмосфера на занятии\n\nВопрос для обсуждения. Как сделать учебную среду доброжелательной и мотивирующей?\n\n• Начните с вопросов и интересов, близких участникам и подходящих для общего обсуждения.\n• Связывайте новые идеи со знакомыми идеями и ситуациями.\n• Учитесь вместе с участниками и спокойно относитесь к тому, что сами можете чего-то не знать."
+        },
+        "page-6": {
+          "heading": "Страница 6",
+          "body": "Приложение\n\nЗдесь приведены результаты тематического анализа ответов на вопросы о равных возможностях, доступности и инклюзии в заявках на программу подготовки учителей (TTP) 2025 года. Потребности и меры, упомянутые в ответах на каждый вопрос, объединены в группы по трудностям, которые заявители предвидели или уже встречали. В ответах на третий вопрос о равных возможностях меры перечислены в порядке их применения. Затем они вошли в основную таблицу в виде подсказок. Каждой подсказке соответствует тема, выявленная при анализе остальных вопросов.\n\nРавные возможности. Вопрос 1\n\nКакие группы недостаточно представлены в образовательном сообществе, из которого вы набираете участников?\n\nГеография\n\n• Географические препятствия и разнообразие мест проживания: сельские, удалённые и труднодоступные районы.\n• Трудности с транспортом.\n• Ограниченные возможности участвовать в научных инициативах.\n\nСоциально-экономические условия\n\n• Переполненные классы и высокая доля учащихся, которые бросают школу.\n• Разные социально-экономические условия и семьи с низким доходом.\n• Районы, где мало ресурсов или услуг.\n• Школы с ограниченным финансированием и инфраструктурой.\n• Отсутствие или ограниченный доступ к лабораторному оборудованию, в том числе из-за войны.\n• Ограниченный доступ к астрономическим материалам и отсутствие интерактивных занятий.\n• Отсутствие или ограниченный доступ к качественному астрономическому образованию.\n• Сельские сообщества и сообщества коренных народов.\n• Учителя государственных школ."
+        },
+        "page-7": {
+          "heading": "Страница 7",
+          "body": "Культурные условия\n\n• Недостаточная интеграция людей из разных культур.\n• Дети иммигрантов, дети из разных культур и мигранты первого или второго поколения.\n• Ценные и разнообразные культурные знания и взгляды, которыми можно обогатить совместное обучение.\n• Учителя, тесно связанные с местным сообществом и использующие астрономию в его жизни.\n• Учителя, говорящие на другом языке.\n\nПрофессиональная подготовка\n\n• Недостаток знаний по астрономии.\n• Отсутствие или ограниченные возможности подготовки учителей астрономии.\n• Отсутствие или ограниченные возможности непрерывного повышения квалификации.\n• Педагоги в первом поколении. В исходной таблице эта формулировка отмечена вопросительным знаком.\n\nЖенщины в STEM\n\n• Участие женщин в STEM и гендерная инклюзия.\n• Гендерный дисбаланс при наборе.\n• Преобладание мужчин среди учителей из-за небезопасной среды для женщин.\n• Препятствия, мешающие выбрать науку или инженерное дело.\n• Сбалансированный и инклюзивный состав участников.\n\nИнвалидность\n\n• Люди с нарушениями зрения, слуха и другими сенсорными нарушениями.\n• Учителя с инвалидностью, в том числе незрячие и слабовидящие.\n• Учителя специальных школ для незрячих.\n• Недостаток профессиональной подготовки для работы с людьми с инвалидностью.\n• Недостаток доступных материалов.\n\nРавные возможности. Вопрос 2\n\nКак вы будете приглашать и побуждать представителей недостаточно представленных групп принять участие в семинаре? Перечень мер из ответов начинается на следующей странице."
+        },
+        "page-8": {
+          "heading": "Страница 8",
+          "body": "Набор и информирование\n\n• Распространять приглашения через государственные учреждения, социальные сети, местные СМИ и астрономические объединения.\n• Сотрудничать с сетями сельских школ.\n• Выезжать на места, чтобы рассказать о программе.\n• Распространять объявления через учительские сообщества и сети национальных координаторов астрономического образования (NAEC), в том числе в социальных сетях.\n• Связываться с выпускниками педагогических вузов.\n• На разных языках рассказывать об удачных примерах из сельской местности.\n• Распространять объявления через местные ведомства образования и науки.\n• Использовать общенациональную площадку программ подготовки учителей (TTP).\n• Посещать школы, чтобы лично приглашать учителей.\n\nКак поощрить участие\n\n• Показать, какие возможности открывает программа, и объяснить её преимущества.\n• Выдавать сертификаты участия.\n• Познакомить учителей с ведущими занятий.\n• Зарезервировать места для учителей государственных школ.\n• Следить за гендерным балансом. В одном из ответов — 50% мест для женщин.\n• Отдать половину мест учителям STEM в стране, которые раньше не проходили подготовку по астрономии.\n• Приводить примеры людей, с которыми участники могут себя соотнести, и приглашать женщин выступать.\n• Сделать набор прозрачным.\n• Следить за инклюзивностью примеров, изображений и языка.\n• Обращаться к местным НКО, работающим с недостаточно представленными группами.\n• Связываться с учителями по рассылкам, а с участниками национальной ассоциации глухих и людей с нарушениями зрения — через саму ассоциацию.\n• Поддерживать хорошую репутацию программы и проводить её без платы за участие.\n• Привлекать местные офисы астрономии для развития.\n• Приглашать школы, слабо представленные на прошлых астрономических мероприятиях.\n• Отдавать приоритет школам без астрономических кружков или оборудования.\n• Дать участникам возможность представить результаты более широкой аудитории. Эта мера также упоминается в ответе на вопрос 3."
+        },
+        "page-9": {
+          "heading": "Страница 9",
+          "body": "Поддержка, также в ответах на вопрос 3\n\n• Помощь с проездом и питание.\n• Помощь с размещением, в том числе финансовая.\n• Выплаты на проезд и проживание.\n• Организация присмотра за детьми.\n\nУсловия участия, также в ответах на вопрос 3\n\n• Удобное расписание с учётом работы в школе и семейных обязанностей.\n• Печатные и цифровые материалы.\n• Бесплатные или недорогие наборы для занятий.\n• Помещение, доступное для людей, передвигающихся на креслах-колясках.\n• Возможность участвовать онлайн.\n\nРавные возможности. Вопрос 3\n\nКакую поддержку получат недостаточно представленные группы?\n\nДо мероприятия\n\n• Организовать проезд и питание.\n• Помочь с проживанием, в том числе финансово.\n• Выдать выплаты на проезд и размещение.\n• Выдать письма-приглашения, с которыми можно обратиться за оплатой поездки в государственные органы.\n• Предусмотреть признание достижений участников.\n\nВо время мероприятия\n\n• Организовать профессиональное сообщество для обмена опытом.\n• Предложить пошаговые инструкции и наставничество.\n• Выбрать время с учётом работы в школе и семейных обязанностей. Дать возможность гибко составлять расписание.\n• Предоставить печатные или цифровые материалы и бесплатные или недорогие наборы.\n• Обеспечить доступность площадки для людей, передвигающихся на креслах-колясках.\n• При необходимости давать индивидуальные педагогические рекомендации.\n\nЧасть мер повторяет ответы на вопрос 2. Новые меры выделены курсивом в исходной таблице."
+        },
+        "page-10": {
+          "heading": "Страница 10",
+          "body": "Во время мероприятия (продолжение)\n\n• Предоставлять записи или онлайн-версии лекций.\n• Создать сеть поддержки в интернете и группы в социальных сетях.\n• Приглашать женщин вести занятия.\n• Переводить материалы на родные языки участников и адаптировать к их культурному контексту.\n• Использовать 3D-принтеры.\n• Привлекать переводчиков жестового языка.\n• Приглашать незрячих людей обучать ведущих сопровождению незрячих и слабовидящих участников.\n• Организовать специальный транспорт для учителей с инвалидностью и помощь добровольцев с поездками.\n• Покрывать расходы на проживание отдельных участников.\n• Предусмотреть присмотр за детьми или финансовую помощь с ним.\n• Предлагать занятия, задействующие разные органы чувств, и адаптированные материалы.\n• Обеспечить подключение к интернету.\n• Создавать инклюзивную учебную среду, поддерживающую мотивацию.\n\nПосле мероприятия\n\n• Оставить участникам доступ к телескопу после семинара.\n• Продолжить наставничество после семинара.\n\nДоступность\n\nКакие меры вы примете, чтобы семинар был доступен для людей с разными возможностями и потребностями?\n\nВ ответах упомянуты нарушения опорно-двигательного аппарата, нарушения зрения и слепота, нарушения слуха и глухота, когнитивные нарушения, трудности обучения и синдром дефицита внимания и гиперактивности (СДВГ). Перечень продолжается на следующей странице."
+        },
+        "page-11": {
+          "heading": "Страница 11",
+          "body": "Дополнительное обстоятельство, указанное в ответах, — ожирение.\n\nФизическая доступность помещений\n\n• Доступ для людей, передвигающихся на креслах-колясках.\n• Помещения на первом этаже, пандусы и лифты.\n• Доступные места для сидения и уборные.\n• Учёт трудностей передвижения.\n\nВыявление и оценка потребностей\n\n• Вопросы при регистрации и в электронной анкете.\n• Выявление и оценка индивидуальных потребностей.\n• Возможность сообщить о них заранее.\n\nОбщение и языковая поддержка\n\n• Переводчики жестового языка и переводчики местных языков.\n• Помощь участникам с нарушениями слуха.\n\nМатериалы\n\n• Крупный шрифт и высокая контрастность.\n• Шрифт Брайля и тактильные модели.\n• Цифровые файлы, совместимые с программами экранного доступа.\n• Аудиоматериалы и записи.\n• Принципы универсального дизайна и понятный язык.\n\nЦифровая и техническая поддержка\n\n• Обычные и скрытые субтитры, в том числе для прямых эфиров.\n• Поддержка онлайн и трансляции.\n• Цифровые ресурсы.\n• Адаптированные средства управления телескопом.\n\nИндивидуальная поддержка\n\n• Помощь один на один и индивидуальное сопровождение.\n• Помощь добровольцев."
+        },
+        "page-12": {
+          "heading": "Страница 12",
+          "body": "Индивидуальная поддержка (продолжение)\n\n• Учебная помощь и консультации.\n• Адаптация условий к индивидуальным потребностям.\n\nМетодика занятий\n\n• Гибкие способы участия.\n• Возможность адаптировать задания, в том числе практические.\n• Наглядные пособия, аудиоописания и устные объяснения.\n• Вовлечение всех участников.\n• Адаптация для участников с трудностями обучения."
+        }
+      }
+    }
+  },
+  "media": [
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-cover",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/cover-prompts_for_jedi.png",
+      "ru_path": "data/media/ru/oae-cover-prompts_for_jedi.png",
+      "sha256": "e946b4d677aec2ec98122d39dfe4e3bdbb78131cad128d62c6815d7ac133f5f2",
+      "ru_sha256": "b285fe96ba59392b58abd419ea66b6351b5400f16dc0d27751b40e249f55bbb5",
+      "size": 355226,
+      "alt_en": "OAE JEDI Working Group. Prompts for JEDI in education. Justice, Equity, Diversity, and Inclusion. Publications of the IAU Office of Astronomy for Education.",
+      "alt_ru": "Рабочая группа JEDI Управления астрономического образования. «Вопросы и подсказки JEDI для образования». Справедливость, равные возможности, разнообразие и инклюзия. Издания Управления астрономического образования МАС.",
+      "title_en": "",
+      "title_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "credit": "IAU Office of Astronomy for Education",
+      "credit_url": null,
+      "license": null,
+      "license_url": null,
+      "source_language": "en",
+      "component_ids": [
+        "media:oae-pdf-prompts_for_jedi-a73fb7c961af46d6a76d",
+        "media:oae-pdf-prompts_for_jedi-55314434c78ed0338f25",
+        "media:oae-pdf-prompts_for_jedi-23edee435d0be7d1ac5b",
+        "media:oae-pdf-prompts_for_jedi-c5a0caf1d48189da6c8b",
+        "media:oae-pdf-prompts_for_jedi-76e97aba3b3e27124455",
+        "media:oae-pdf-prompts_for_jedi-97c1ae95a53c0c16229d",
+        "media:oae-pdf-prompts_for_jedi-69319fea3fc9e9e2241c",
+        "media:oae-pdf-prompts_for_jedi-13b0a3de7f6647c24d21",
+        "media:oae-pdf-prompts_for_jedi-db3a2056d45d8b45bfdd",
+        "media:oae-pdf-prompts_for_jedi-205237af2dc11a853e3e",
+        "media:oae-pdf-prompts_for_jedi-a9f665c7987b086878fd",
+        "media:oae-pdf-prompts_for_jedi-aea6f9e599eaaa00009c",
+        "media:oae-pdf-prompts_for_jedi-7364f920765131e5a9a7",
+        "media:oae-pdf-prompts_for_jedi-1bb1d778ed9e4c2e0a75",
+        "media:oae-pdf-prompts_for_jedi-78ab8239eb7d313c7381",
+        "media:oae-pdf-prompts_for_jedi-4c342b794022835bbed9",
+        "media:oae-pdf-prompts_for_jedi-a86fc953b7b40c4fd90c",
+        "media:oae-pdf-prompts_for_jedi-23c47344fd13c4aeb01c",
+        "media:oae-pdf-prompts_for_jedi-15ce59603eb2f16ad177",
+        "media:oae-pdf-prompts_for_jedi-058177a18643248d5444",
+        "media:oae-pdf-prompts_for_jedi-3c62b8d4a7bfc8491396",
+        "media:oae-pdf-prompts_for_jedi-5b2d716d07d37acbd349",
+        "media:oae-pdf-prompts_for_jedi-4bc200fe04bdcda5c18d",
+        "media:oae-pdf-prompts_for_jedi-65a35a84887a25acec53",
+        "media:oae-pdf-prompts_for_jedi-10a60f73640e06348aa2",
+        "media:oae-pdf-prompts_for_jedi-6a7a8616a3d58ca48989",
+        "media:oae-pdf-prompts_for_jedi-9953b0fbe805429dd98a",
+        "media:oae-pdf-prompts_for_jedi-a076aeadb4dff4fd4479"
+      ],
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "Publications of the IAU Office of Astronomy for Education. OAE JEDI Working Group. Prompts for JEDI. in education. Justice, Equity, Diversity,. and Inclusion."
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-a73fb7c961af46d6a76d",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/a73fb7c961af46d6a76d232a8102d7274f81fb767954b6453b7b3436adf211d6.png",
+      "sha256": "a73fb7c961af46d6a76d232a8102d7274f81fb767954b6453b7b3436adf211d6",
+      "size": 1059,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-55314434c78ed0338f25",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/55314434c78ed0338f25cd8dbc6c9cf7e5420ad21fd58785a28a6e0118bc1fdf.png",
+      "sha256": "55314434c78ed0338f25cd8dbc6c9cf7e5420ad21fd58785a28a6e0118bc1fdf",
+      "size": 2239,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-23edee435d0be7d1ac5b",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/23edee435d0be7d1ac5b2fcb8ca078424896e71086cf1c85f30719f090c74048.png",
+      "sha256": "23edee435d0be7d1ac5b2fcb8ca078424896e71086cf1c85f30719f090c74048",
+      "size": 1059,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-c5a0caf1d48189da6c8b",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/c5a0caf1d48189da6c8b0116421c18956fbf8ab1a32b73827ba02cb60ba14d24.png",
+      "sha256": "c5a0caf1d48189da6c8b0116421c18956fbf8ab1a32b73827ba02cb60ba14d24",
+      "size": 1250,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-76e97aba3b3e27124455",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/76e97aba3b3e27124455bb4f7b9c966e53b1085064f3cd0672d1043dc56a7cea.png",
+      "sha256": "76e97aba3b3e27124455bb4f7b9c966e53b1085064f3cd0672d1043dc56a7cea",
+      "size": 721,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-97c1ae95a53c0c16229d",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/97c1ae95a53c0c16229d8cbf2ce83f968b610d61f2d15f1f2b2892fa25fe98d1.png",
+      "sha256": "97c1ae95a53c0c16229d8cbf2ce83f968b610d61f2d15f1f2b2892fa25fe98d1",
+      "size": 4633,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-69319fea3fc9e9e2241c",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/69319fea3fc9e9e2241c4c455634114fc544697ce1f50f3b1f80abc5e096889c.jpeg",
+      "sha256": "69319fea3fc9e9e2241c4c455634114fc544697ce1f50f3b1f80abc5e096889c",
+      "size": 699,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-13b0a3de7f6647c24d21",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/13b0a3de7f6647c24d21ffe69018949b677ebbf7e0ab4321ebdb1cd937476af1.png",
+      "sha256": "13b0a3de7f6647c24d21ffe69018949b677ebbf7e0ab4321ebdb1cd937476af1",
+      "size": 108,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-db3a2056d45d8b45bfdd",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/db3a2056d45d8b45bfdd01e028be24bc29e054d83cb3042bf4c3fbf3c36964f8.png",
+      "sha256": "db3a2056d45d8b45bfdd01e028be24bc29e054d83cb3042bf4c3fbf3c36964f8",
+      "size": 92458,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-205237af2dc11a853e3e",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/205237af2dc11a853e3e99601878ace6d2875ba7e65e6ad3d4b095d69006c3dc.jpeg",
+      "sha256": "205237af2dc11a853e3e99601878ace6d2875ba7e65e6ad3d4b095d69006c3dc",
+      "size": 699,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-a9f665c7987b086878fd",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/a9f665c7987b086878fd449c8af91869c34b5b4c64cb61e5c8dd5f22119b6dbc.jpeg",
+      "sha256": "a9f665c7987b086878fd449c8af91869c34b5b4c64cb61e5c8dd5f22119b6dbc",
+      "size": 699,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-aea6f9e599eaaa00009c",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/aea6f9e599eaaa00009c290ef1f26d57d57cd35cd07010b8b3cf8a82e80fb4f6.png",
+      "sha256": "aea6f9e599eaaa00009c290ef1f26d57d57cd35cd07010b8b3cf8a82e80fb4f6",
+      "size": 219,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-7364f920765131e5a9a7",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/7364f920765131e5a9a792e8a4a5913812b1aabe8b9e0ddae005375fd6e84b79.png",
+      "sha256": "7364f920765131e5a9a792e8a4a5913812b1aabe8b9e0ddae005375fd6e84b79",
+      "size": 4409,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-1bb1d778ed9e4c2e0a75",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/1bb1d778ed9e4c2e0a75155fba4fabdc96499941f64d3425bb4629dd25f7fb5c.jpeg",
+      "sha256": "1bb1d778ed9e4c2e0a75155fba4fabdc96499941f64d3425bb4629dd25f7fb5c",
+      "size": 699,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-78ab8239eb7d313c7381",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/78ab8239eb7d313c7381c434e99e6c150980d74673ca11eb1764404a5b521d7c.png",
+      "sha256": "78ab8239eb7d313c7381c434e99e6c150980d74673ca11eb1764404a5b521d7c",
+      "size": 484,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-4c342b794022835bbed9",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/4c342b794022835bbed9d633e3d0ecc3ca2948152a57938b8465bc734b6b7d04.png",
+      "sha256": "4c342b794022835bbed9d633e3d0ecc3ca2948152a57938b8465bc734b6b7d04",
+      "size": 90763,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-a86fc953b7b40c4fd90c",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/a86fc953b7b40c4fd90c83b249f8f2ff3c1343e3c9f52a968c67e5b82eb8f244.jpeg",
+      "sha256": "a86fc953b7b40c4fd90c83b249f8f2ff3c1343e3c9f52a968c67e5b82eb8f244",
+      "size": 699,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-23c47344fd13c4aeb01c",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/23c47344fd13c4aeb01c964258364550bbbf6508677cab5652d8e7d32056dcfd.png",
+      "sha256": "23c47344fd13c4aeb01c964258364550bbbf6508677cab5652d8e7d32056dcfd",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-15ce59603eb2f16ad177",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/15ce59603eb2f16ad177d27fe1bc28754a91f0154b60ed4850d3796995406f3a.jpeg",
+      "sha256": "15ce59603eb2f16ad177d27fe1bc28754a91f0154b60ed4850d3796995406f3a",
+      "size": 699,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-058177a18643248d5444",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/058177a18643248d544446f22df6b3daa93e3ec3697d42b624bcc5d5398f2ea2.png",
+      "sha256": "058177a18643248d544446f22df6b3daa93e3ec3697d42b624bcc5d5398f2ea2",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-3c62b8d4a7bfc8491396",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/3c62b8d4a7bfc8491396e3903335897523267472faf57826f28d1937118f87c9.jpeg",
+      "sha256": "3c62b8d4a7bfc8491396e3903335897523267472faf57826f28d1937118f87c9",
+      "size": 699,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-5b2d716d07d37acbd349",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/5b2d716d07d37acbd349bdcee8eff85296b3bee699603ce30352f23221537601.png",
+      "sha256": "5b2d716d07d37acbd349bdcee8eff85296b3bee699603ce30352f23221537601",
+      "size": 52508,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-4bc200fe04bdcda5c18d",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/4bc200fe04bdcda5c18d3e028cf4b00c5baa26b5ef636379af3063f3f3047727.jpeg",
+      "sha256": "4bc200fe04bdcda5c18d3e028cf4b00c5baa26b5ef636379af3063f3f3047727",
+      "size": 700,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-65a35a84887a25acec53",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/65a35a84887a25acec53927f667d08809ba73b34ca92952af98fc26e1fa77f1e.jpeg",
+      "sha256": "65a35a84887a25acec53927f667d08809ba73b34ca92952af98fc26e1fa77f1e",
+      "size": 700,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-10a60f73640e06348aa2",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/10a60f73640e06348aa2dfad6c1f2a390b59cac49ce66bc312025030c1a0609a.jpeg",
+      "sha256": "10a60f73640e06348aa2dfad6c1f2a390b59cac49ce66bc312025030c1a0609a",
+      "size": 700,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-6a7a8616a3d58ca48989",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/6a7a8616a3d58ca4898939470eb09e6b5838b60693ab9ae86667f18929bd8ecc.jpeg",
+      "sha256": "6a7a8616a3d58ca4898939470eb09e6b5838b60693ab9ae86667f18929bd8ecc",
+      "size": 47760,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-9953b0fbe805429dd98a",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/9953b0fbe805429dd98ae69443e19dd16b4437941ca692cebea27e0e7cc6cf1c.png",
+      "sha256": "9953b0fbe805429dd98ae69443e19dd16b4437941ca692cebea27e0e7cc6cf1c",
+      "size": 246,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-a076aeadb4dff4fd4479",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/a076aeadb4dff4fd44798fb6dcfd71d8067f918585cd5446eec5d62b31621646.png",
+      "sha256": "a076aeadb4dff4fd44798fb6dcfd71d8067f918585cd5446eec5d62b31621646",
+      "size": 326491,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-b239898de88a5f3e7686",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=4",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/b239898de88a5f3e7686b7e279703e93845c050fc05a48b28e744824a4edaa8b.png",
+      "sha256": "b239898de88a5f3e7686b7e279703e93845c050fc05a48b28e744824a4edaa8b",
+      "size": 39652,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "A discussion question and practical prompts for inclusive astronomy education.",
+      "alt_ru": "Культурное разнообразие. Что поможет людям из разных культур почувствовать, что им здесь рады?",
+      "ru_path": "data/media/ru/oae-jedi-cultural-diversity.png",
+      "ru_sha256": "9fc9cef3ee60f3bb9549579056ca2ed6caf73823949343253c5864018028227d"
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-53cba6d82924da5ac9de",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=4",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/53cba6d82924da5ac9defc7d49dcd94656b314ec7eeb70da232d3d852f930c1a.png",
+      "sha256": "53cba6d82924da5ac9defc7d49dcd94656b314ec7eeb70da232d3d852f930c1a",
+      "size": 78885,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "A discussion question and practical prompts for inclusive astronomy education.",
+      "alt_ru": "Когнитивное разнообразие. Что поможет людям с разными особенностями мышления и предпочтениями в обучении почувствовать, что им здесь рады?",
+      "ru_path": "data/media/ru/oae-jedi-cognitive-diversity.png",
+      "ru_sha256": "71cafe3a45e1db7fdf719f0c9d71e994130eead857f8b8a153856707576cfedc"
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-ff37369f2bac0e91958b",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=4",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/ff37369f2bac0e91958b8374ee38576900d0ed6ffe6f57e84ead6d35be8728bd.png",
+      "sha256": "ff37369f2bac0e91958b8374ee38576900d0ed6ffe6f57e84ead6d35be8728bd",
+      "size": 48046,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "A discussion question and practical prompts for inclusive astronomy education.",
+      "alt_ru": "Гендерная идентичность. Как сделать так, чтобы участники с разной гендерной идентичностью чувствовали, что им рады и что они представлены в учебных материалах?",
+      "ru_path": "data/media/ru/oae-jedi-gender-identities.png",
+      "ru_sha256": "b2e2ae8c80b8369f8eb0f2473b17df5a367807cb369ce027873384e268d524a3"
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-64d62af2e1f3bab169af",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=5",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/64d62af2e1f3bab169af76f2561c73d193c4cfb88f2617d686389a3f94e20f29.png",
+      "sha256": "64d62af2e1f3bab169af76f2561c73d193c4cfb88f2617d686389a3f94e20f29",
+      "size": 45677,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "A discussion question and practical prompts for inclusive astronomy education.",
+      "alt_ru": "Сенсорные потребности. Как сделать занятия доступными и комфортными для людей с разными сенсорными потребностями?",
+      "ru_path": "data/media/ru/oae-jedi-sensory-needs.png",
+      "ru_sha256": "877f67f388fea8c466d99ba2e6c1adb7332eaec38f4491bb82d2e1c9d9d41a81"
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-f6f6dbd6c014bf0a7705",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=5",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/f6f6dbd6c014bf0a77051ef1b8e5201a4cff1d0ddbe23cd280cba6b9ebb40045.png",
+      "sha256": "f6f6dbd6c014bf0a77051ef1b8e5201a4cff1d0ddbe23cd280cba6b9ebb40045",
+      "size": 54767,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "A discussion question and practical prompts for inclusive astronomy education.",
+      "alt_ru": "Доступность. Что стоит учесть при создании доступной учебной среды?",
+      "ru_path": "data/media/ru/oae-jedi-accessible-environment.png",
+      "ru_sha256": "98ddda39fb62dc4d6bd93848ebb643f21735f68adbf8949c7ed71af823aed913"
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-8fdc14d105ef5ba97dc5",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=5",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/8fdc14d105ef5ba97dc59febf4ba7fdb34937912d9727e61145426907153fbbd.png",
+      "sha256": "8fdc14d105ef5ba97dc59febf4ba7fdb34937912d9727e61145426907153fbbd",
+      "size": 50059,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "A discussion question and practical prompts for inclusive astronomy education.",
+      "alt_ru": "Атмосфера на занятии. Как сделать учебную среду доброжелательной и мотивирующей?",
+      "ru_path": "data/media/ru/oae-jedi-learning-environment.png",
+      "ru_sha256": "a8e5fc75f63ff0a2e74100867b81bb2cdbf77779a3789eee19a13cd18b71dcc7"
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-6e220b1e08a2e9ee0563",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=6",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/6e220b1e08a2e9ee0563778907ed44f9026481b0fa38e15cbb3771a2b67dd22e.png",
+      "sha256": "6e220b1e08a2e9ee0563778907ed44f9026481b0fa38e15cbb3771a2b67dd22e",
+      "size": 103597,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "Thematic analysis of responses about equity and accessibility. Geography. Socio-economic.",
+      "alt_ru": "Равные возможности. Вопрос 1. Какие группы недостаточно представлены среди потенциальных участников? География. Социально-экономические условия.",
+      "ru_path": "data/media/ru/oae-jedi-appendix-6-1.png",
+      "ru_sha256": "253c3bd4deaa4a8fe1c26c952ff4b8a9bfdbfa045e6c675429107533fff7e5b6"
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-3f4f2fb0492de04b22b3",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=7",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/3f4f2fb0492de04b22b328f5f90fe7c5397ce47e9ab88cac8bf35a2fe64e3a5a.png",
+      "sha256": "3f4f2fb0492de04b22b328f5f90fe7c5397ce47e9ab88cac8bf35a2fe64e3a5a",
+      "size": 126520,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "Thematic analysis of responses about equity and accessibility. Culture. Professionalisation. Women in STEM. Disabilities.",
+      "alt_ru": "Равные возможности. Продолжение вопроса 1. Культура, профессиональная подготовка, женщины в STEM и люди с инвалидностью.",
+      "ru_path": "data/media/ru/oae-jedi-appendix-7-1.png",
+      "ru_sha256": "e43326c981cd00cae632b8571c5f5a1a94d8c8e26d106fd56d02df1fdc69486c"
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-ccb52b3520a92adc1f1b",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=7",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/ccb52b3520a92adc1f1bef6f441610744d0749ec7a7a68bc2aad222928e5c2ee.png",
+      "sha256": "ccb52b3520a92adc1f1bef6f441610744d0749ec7a7a68bc2aad222928e5c2ee",
+      "size": 30766,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "Thematic analysis of responses about equity and accessibility. Recruiting and advertising.",
+      "alt_ru": "Равные возможности. Вопрос 2. Как приглашать представителей недостаточно представленных групп на семинар? Набор и информирование.",
+      "ru_path": "data/media/ru/oae-jedi-appendix-7-2.png",
+      "ru_sha256": "02be22c93b021b9a6b7c68a98aba5a8d7e365c584df9d891e7b66be65283b082"
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-36b1914f8fb4ca5bff49",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=8",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/36b1914f8fb4ca5bff4954bc0b3c79dc698d1b28d35ac9c984611cccf18aa81e.png",
+      "sha256": "36b1914f8fb4ca5bff4954bc0b3c79dc698d1b28d35ac9c984611cccf18aa81e",
+      "size": 173724,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "Thematic analysis of responses about equity and accessibility. Advertising. Encouraging.",
+      "alt_ru": "Равные возможности. Продолжение вопроса 2. Набор и информирование участников, способы поощрить участие.",
+      "ru_path": "data/media/ru/oae-jedi-appendix-8-1.png",
+      "ru_sha256": "256b08ca8412891b1b26cf49b18f9fcbf79dc0f3b15bd35f785e055038bf302a"
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-528eb8709f09e6758d63",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=9",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/528eb8709f09e6758d632c5beaefdadc6bdc4572edc48892a13287d92d6db3bf.png",
+      "sha256": "528eb8709f09e6758d632c5beaefdadc6bdc4572edc48892a13287d92d6db3bf",
+      "size": 49808,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "Thematic analysis of responses about equity and accessibility. Support. Easing participation.",
+      "alt_ru": "Равные возможности. Продолжение вопроса 2. Поддержка и меры, упрощающие участие. Обе темы также рассматриваются в вопросе 3.",
+      "ru_path": "data/media/ru/oae-jedi-appendix-9-1.png",
+      "ru_sha256": "bc2d804b53fa671820caa48053ff9e9bb5d2b0a3c0a61ec45acd3ab6e3a67fab"
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-b81e198eeda91916ea76",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=9",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/b81e198eeda91916ea7645da72e26527f3ff07e118fc620466440684acd89cb7.png",
+      "sha256": "b81e198eeda91916ea7645da72e26527f3ff07e118fc620466440684acd89cb7",
+      "size": 106466,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "Thematic analysis of responses about equity and accessibility. Before the event. During the event.",
+      "alt_ru": "Равные возможности. Вопрос 3. Как поддержать недостаточно представленные группы? Таблица перечисляет меры до и во время мероприятия. Меры из вопроса 2 повторены, новые выделены курсивом.",
+      "ru_path": "data/media/ru/oae-jedi-appendix-9-2.png",
+      "ru_sha256": "99babe2445f52ed867a69fab5aa491fafaced4d75f616826e931c6b24f2dc7c4"
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-f3555d1a87e2c65286d4",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=10",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/f3555d1a87e2c65286d47afa9128a0f1b7a6b5edf4d7db0d3ce0a49bb00e6447.png",
+      "sha256": "f3555d1a87e2c65286d47afa9128a0f1b7a6b5edf4d7db0d3ce0a49bb00e6447",
+      "size": 100822,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "Thematic analysis of responses about equity and accessibility. During the event. After the event.",
+      "alt_ru": "Равные возможности. Продолжение вопроса 3. Меры поддержки во время мероприятия и после него.",
+      "ru_path": "data/media/ru/oae-jedi-appendix-10-1.png",
+      "ru_sha256": "886b8a7693b4a566aa4a3c7d57a5684a7b41d7970227aff2c8647dfcb50a7dc1"
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-30c98bdece9434e2cc56",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=10",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/30c98bdece9434e2cc568f33115f11abf6650a1c52464b316fe8f2bdff9e4066.png",
+      "sha256": "30c98bdece9434e2cc568f33115f11abf6650a1c52464b316fe8f2bdff9e4066",
+      "size": 48736,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "Thematic analysis of responses about equity and accessibility. Disabilities categories.",
+      "alt_ru": "Доступность. Какие меры помогут сделать семинар доступным? Категории нарушений.",
+      "ru_path": "data/media/ru/oae-jedi-appendix-10-2.png",
+      "ru_sha256": "b98e45efda775b062c82e6ffba8ed9b8ebd76f75fceb973f121632cf3f3816cf"
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-957b1070d8b7f8591000",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=11",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/957b1070d8b7f85910007421dc0b6bc6cb92e02547cbaa256cda69a9e56fecef.png",
+      "sha256": "957b1070d8b7f85910007421dc0b6bc6cb92e02547cbaa256cda69a9e56fecef",
+      "size": 144998,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "Thematic analysis of responses about equity and accessibility. Disabilities categories. Physical and structural accessibility. Needs identification and assessment. Communication and language support. Materials. Digital and technical support. Personalised support.",
+      "alt_ru": "Доступность. Продолжение таблицы. Категории нарушений, доступность помещений, выявление и оценка потребностей, общение и языковая поддержка, материалы, цифровая и техническая поддержка, индивидуальная помощь.",
+      "ru_path": "data/media/ru/oae-jedi-appendix-11-1.png",
+      "ru_sha256": "e3e6e64aaaa8d3cd98796cc980a41cc22b5bb4b09a3133117db510f31cb216c6"
+    },
+    {
+      "id": "media:oae-pdf-prompts_for_jedi-e53cda363c292103dce0",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/Prompts_for_JEDI.pdf#page=12",
+      "record_url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+      "original_path": "media/original/review-pdf/e53cda363c292103dce0e8662e825368812651ebc635a80b19204880e8374548.png",
+      "sha256": "e53cda363c292103dce0e8662e825368812651ebc635a80b19204880e8374548",
+      "size": 40681,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "Thematic analysis of responses about equity and accessibility. Personalised support. Methodologies.",
+      "alt_ru": "Доступность. Продолжение таблицы об индивидуальной поддержке и способах проведения занятий.",
+      "ru_path": "data/media/ru/oae-jedi-appendix-12-1.png",
+      "ru_sha256": "115efa66b4a14fe45d18479848283222f6f3312ae29456bd0ebca0fb00a93b8c"
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Машинный перевод. Редакторское утверждение ожидается."
+  }
+}

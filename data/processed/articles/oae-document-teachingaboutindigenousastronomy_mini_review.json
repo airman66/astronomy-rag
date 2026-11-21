@@ -1,0 +1,1409 @@
+{
+  "id": "article:oae-document-teachingaboutindigenousastronomy_mini_review",
+  "kind": "article",
+  "source": {
+    "type": "oae_review_document",
+    "url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+    "imported_at": "2026-11-18T16:44:30.595112+00:00",
+    "sha256": "9e90e38f117e24c39a23c3f1de996c886e19d2275270b15a897b9afd23f8de80",
+    "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+    "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+    "authors": "Sivuyile Manxoyi, Duane Hamacher, Alejandro Martin Lopez, Javier Mejuto, Tamazawa Harufumi, Asmita Bhandare",
+    "pdf_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf",
+    "pdf_path": "raw/reviews/TeachingaboutIndigenousAstronomy_mini_review.pdf"
+  },
+  "metadata": {
+    "topic_ids": [
+      "article:oae-review-teaching-about-indigenous-astronomy"
+    ],
+    "page_count": 13,
+    "ocr_pages": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "sections": [
+    {
+      "id": "page-1",
+      "type": "article_body",
+      "heading": "Page 1",
+      "body": "OAE Mini-Review\n\nTeaching about Indigenous Astronomy\n\nPublications of the IAU Office of Astronomy for Education",
+      "heading_ru": "Страница 1",
+      "body_ru": "Мини-обзор OAE\n\nКак преподавать астрономию коренных народов\n\nИздания Офиса астрономии для образования Международного астрономического союза",
+      "links": [],
+      "media_ids": [
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-cover",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-daa4f3b939d6a5d50788",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-dc03fc3121750665e938",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-e83ee8af005b3d78db77",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-33d8af68c9a4714cafc4",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-6986400f2baa4c8f46bb",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-97c1ae95a53c0c16229d",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-69319fea3fc9e9e2241c",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-13b0a3de7f6647c24d21",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-db3a2056d45d8b45bfdd",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-205237af2dc11a853e3e",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-a9f665c7987b086878fd",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-aea6f9e599eaaa00009c",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-7364f920765131e5a9a7",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-1bb1d778ed9e4c2e0a75",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-78ab8239eb7d313c7381",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-4c342b794022835bbed9",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-a86fc953b7b40c4fd90c",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-23c47344fd13c4aeb01c",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-15ce59603eb2f16ad177",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-058177a18643248d5444",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-3c62b8d4a7bfc8491396",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-5b2d716d07d37acbd349",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-4bc200fe04bdcda5c18d",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-65a35a84887a25acec53",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-10a60f73640e06348aa2",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-6a7a8616a3d58ca48989",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-fc304fe81648bc7c9b09"
+      ]
+    },
+    {
+      "id": "page-2",
+      "type": "article_body",
+      "heading": "Page 2",
+      "body": "The following is a collection of summaries originally published in the proceedings of the 3rd Shaw-IAU workshop on Astronomy for Education held 12 - 15 October, 2021 as a virtual event. The workshop was organised by the [AU Office of Astronomy for Education. More details can be found on: https: //astro4edu. org/shaw-iau/3rd-s haw-iau-workshop/.\n\nSession Organiser: Sivuyile Manxoyi.\n\nAuthors: Alejandro Martin Lopez, Javier Mejuto, Duane Hamacher, and Harufumi Tamazawa.\n\nCompiled & Edited by: Asmita Bhandare (Project lead), Giuliana Giobbi, Colm Larkin, Rebecca Sanderson, Eduardo Penteado, Niall Deacon,\n\nGwen Sanderson, and Anna Sippel.\n\nThe IAU Office of Astronomy for Education (OAE) is hosted at Haus der Astronomie (HdA), managed by the Max Planck Institute for Astronomy. The OAE’s mission is to support and coordinate astronomy education by astronomy researchers and educators, aimed at primary or secondary schools worldwide. HdA’s hosting the OAE was made possible through the support of the German foundations Klaus Tschira Stiftung and Carl-Zeiss-Stiftung. The Shaw-IAU Workshops on Astronomy for Education are funded by the Shaw Prize Foundation.\n\nThe OAE is supported by a growing network of OAE Centers and OAE Nodes, collaborating to lead global projects developed within the network. The OAE Centers and Nodes are: the OAE Center China-Nanjing, hosted by the Beijing Planetarium (BJP); the OAE Center Cyprus, hosted by Cyprus Space Exploration Organization (CSEO); the OAE Center Egypt, hosted by the National Research Institute of Astronomy and Geophysics (NRIAG); the OAE Center India, hosted by the Inter-University Centre for Astronomy and Astrophysics (IUCAA); the OAE Center Italy, hosted by the National Institute for Astrophysics (INAF); the OAE Node Republic of Korea, hosted by the Korean Astronomical Society (KAS); OAE Node France at CY Cergy Paris University hosted by CY Cergy Paris University; and the OAE Node Nepal, hosted by the Nepal Astronomical Society (NASO).",
+      "heading_ru": "Страница 2",
+      "body_ru": "Здесь собраны краткие изложения докладов, впервые опубликованные в трудах 3-го семинара Шоу и МАС по астрономическому образованию. Семинар прошёл онлайн с 12 по 15 октября 2021 года. Его организовал Офис астрономии для образования Международного астрономического союза. Подробнее об этом семинаре — https://astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/.\n\nОрганизатор секции — Sivuyile Manxoyi.\n\nАвторы — Alejandro Martin Lopez, Javier Mejuto, Duane Hamacher и Harufumi Tamazawa.\n\nСоставление и редактура — Asmita Bhandare (руководитель проекта), Giuliana Giobbi, Colm Larkin, Rebecca Sanderson, Eduardo Penteado, Niall Deacon, Gwen Sanderson и Anna Sippel.\n\nОфис астрономии для образования МАС (OAE) работает на базе Дома астрономии (Haus der Astronomie, HdA), которым управляет Институт астрономии Общества Макса Планка. Офис помогает астрономам и педагогам преподавать астрономию в начальных и средних школах по всему миру и координирует их работу. Разместить OAE в Доме астрономии помогли немецкие фонды Klaus Tschira Stiftung и Carl-Zeiss-Stiftung. Семинары Шоу и МАС по астрономическому образованию финансирует Фонд премии Шоу.\n\nOAE поддерживает растущая сеть центров и узлов, которые совместно ведут международные проекты. Центр OAE в Нанкине (Китай) работает на базе Пекинского планетария (BJP), центр на Кипре — Кипрской организации космических исследований (CSEO), центр в Египте — Национального исследовательского института астрономии и геофизики (NRIAG), центр в Индии — Межуниверситетского центра астрономии и астрофизики (IUCAA), центр в Италии — Национального института астрофизики (INAF). Узел OAE в Республике Корея работает на базе Корейского астрономического общества (KAS), узел во Франции — Университета CY Cergy Paris, узел в Непале — Непальского астрономического общества (NASO).",
+      "links": [
+        {
+          "url": "https://astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/",
+          "text": "https://astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/",
+          "text_ru": "https://astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "page-3",
+      "type": "article_body",
+      "heading": "Page 3",
+      "body": "———e _ Teaching about Indigenous Astronomy\n\nSession organiser: Sivuyile Manxoyi, South African Astronomical Observatory, South Africa\n\nSESSION\n\nAstronomy is the most ancient discipline of science and one of its unique features is its multicul- tural roots. This stems from the fact that every person in the world has a profound relationship with the sky and the stars. This session explored the relationship between astronomy, culture and society; appraised the value, relevance and significance of indigenous astronomy. This pre- dates western academic astronomy by thousands of years. This session concludes by revisiting challenges experienced in the teaching of indigenous astronomy and appropriate pedagogical approaches were shared.\n\nSome of the challenges noted are the absence of indigenous astronomy content in school cur- ricula in many countries, inaccurate representation, constant description of this knowledge and practices as irrational and absence of training and support for teachers. Reflexivity, recognition of epistemological diversity and willingness to engage in intercultural dialogues are imperative for the successful teaching of indigenous knowledge.\n\nAppreciating multiple facets of different astronomies allows us to better understand how human ideas and models of the sky are generated. The teaching of indigenous astronomy presents us with an excellent opportunity to rehumanize science and society.",
+      "heading_ru": "Страница 3",
+      "body_ru": "Как преподавать астрономию коренных народов\n\nОрганизатор секции — Сивуйиле Манксойи, Южноафриканская астрономическая обсерватория, ЮАР.\n\nО секции\n\nАстрономия — древнейшая научная дисциплина. Одна из её особенностей в том, что она возникла во множестве культур. У людей повсюду есть глубокая связь с небом и звёздами. На секции обсуждались отношения между астрономией, культурой и обществом, а также ценность, актуальность и значение астрономии коренных народов. Она возникла за тысячи лет до западной академической астрономии. В конце участники вернулись к трудностям её преподавания и поделились подходящими педагогическими методами.\n\nСреди названных трудностей — отсутствие астрономии коренных народов в школьных программах многих стран, неточное представление этих знаний, привычка объявлять их и соответствующие практики иррациональными, а также недостаток подготовки и поддержки учителей. Чтобы успешно преподавать знания коренных народов, важно осмысливать собственную позицию, признавать разные способы познания и быть готовыми к межкультурному диалогу.\n\nЗнакомство с разными астрономическими традициями позволяет лучше понять, как люди создают представления и модели неба. Преподавание астрономии коренных народов даёт возможность вернуть человеческое измерение науке и обществу.",
+      "links": [],
+      "media_ids": [
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-ae1ced75f06d9a4735db",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-6e78c00982f0ff6dabd1",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-49b963842462e930277d",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-e4ec42e4be37772a1ed5",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-d93faed0b22b55649684"
+      ]
+    },
+    {
+      "id": "page-4",
+      "type": "article_body",
+      "heading": "Page 4",
+      "body": "TALK CONTRIBUTIONS\n\nAstronomies, Cultures and Education\n\nSpeaker: Alejandro Martin Lopez, CONICET, Secci6n Etnologia, Instituto de Ciencias Antropoldgicas, Universidad de Buenos Aires, Argentina\n\nSome people talk about \"astronomy\" (the academic Western one) and \"cultural astronomies\" (the astronomies of \"particular\" cultures). This is a profound misunderstanding of the legacy of three decades of cultural astronomy studies. In this presentation we aim to discuss this confusion and to point out the contributions of cultural astronomy studies in thinking about astronomical education from an intercultural perspective. The sky and their phenomena have been an area of great interest for many cultures throughout the planet over time. In \"Western culture\", since the Copernican revolution, astronomy has become a model for all science. Due to the colonial expansion of the Western society their academic astronomy is taught today in the most diverse places on Earth. However, cultural astronomy has shown us that every astronomy is the result of a history and a society. \"Western academic astronomy\" is not \"the\" astronomy, and it is grounded - like all the others - on a series of implicit cultural assumptions. A truly inclusive and decolonial scientific education for our present and future world, supposes the possibility for the students and teachers of a critical appropriation of \"Western academic astronomy\", and the chance of putting it in dialogue with the astronomical knowledge systems of their own societies.\n\nTalk link: https: //youtu.be/qn8a_mzAeCM\n\nSome people talk about \"astronomy\" (the academic Western one) and \"cultural astronomies\" (the astronomies of \"particular\" cultures). This is a profound misunderstanding of the legacy of three decades of studies in cultural astronomy. Cultural astronomy is an interdisciplinary academic field, not an adjective to identify some kind of \"strange\" astronomy.\n\nCultural astronomy is the study of all astronomical systems as social facts; not a search for fragments of \"our\" astronomy in distant cultures. This interdisciplinary field includes as some of their sub-fields: ethnoastronomy, archaeoastronomy, and a social history of Astronomy. In this presentation we aim to point out the contributions of cultural astronomy, especially ethno astronomy, in thinking of astronomical education from an intercultural perspective, transforming it from the point of view of cultural astronomy.\n\nEthnoastronomy is a perspective, a way of approaching ethnographically, ethnologically and",
+      "heading_ru": "Страница 4",
+      "body_ru": "Доклады\n\nАстрономические традиции, культуры и образование\n\nДокладчик — Алехандро Мартин Лопес, CONICET, секция этнологии Института антропологических наук Университета Буэнос-Айреса, Аргентина.\n\nИногда западную академическую астрономию называют просто «астрономией», а астрономические традиции отдельных культур — «культурными астрономиями». За этим стоит глубокое непонимание результатов трёх десятилетий исследований в области культурной астрономии. В докладе мы разберём эту путаницу и покажем, как эти исследования помогают взглянуть на астрономическое образование с межкультурной точки зрения. Небо и его явления во все времена интересовали множество культур по всему миру. После Коперниканской революции астрономия стала образцом для других наук в западной культуре. В результате колониальной экспансии западных обществ их академическую астрономию сегодня преподают в самых разных частях Земли. Культурная астрономия показала, что каждая астрономическая традиция возникает в конкретном обществе и имеет свою историю. Западная академическая астрономия — одна из таких традиций. Как и другие, она опирается на ряд неявных культурных предпосылок. По-настоящему инклюзивное деколониальное научное образование даёт учащимся и учителям возможность критически осваивать западную академическую астрономию и сопоставлять её с системами астрономических знаний их собственных обществ.\n\nЗапись доклада доступна по ссылке на странице.\n\nПротивопоставление «астрономии» и «культурных астрономий» мешает увидеть вклад трёх десятилетий исследований. Культурная астрономия — междисциплинарная научная область, в которой астрономические системы рассматривают в их общественном контексте. Её задача шире поиска аналогов западной астрономии в других культурах. Среди её направлений — этноастрономия, археоастрономия и социальная история астрономии. В докладе мы покажем, как культурная астрономия, особенно этноастрономия, помогает переосмыслить астрономическое образование с позиции межкультурного взаимодействия.\n\nЭтноастрономия предлагает собственный взгляд на предмет, опираясь на этнографические и этнологические методы. Далее этот подход поясняется подробнее.",
+      "links": [
+        {
+          "url": "https://youtu.be/qn8a_mzAeCM",
+          "text": "https://youtu.be/qn8a_mzAeCM",
+          "text_ru": "https://youtu.be/qn8a_mzAeCM"
+        }
+      ],
+      "media_ids": [
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-8acfb4d523d137f4fa5a",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-69bbbdf15d76d489e5d9",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-65ae7bdc27e443987dee"
+      ]
+    },
+    {
+      "id": "page-5",
+      "type": "article_body",
+      "heading": "Page 5",
+      "body": "anthropologically the knowledge and practices about the sky of any contemporary social unit (such as an ethnic group, a social class, a family, a professional group, or an institution; both \"Western\" as \"non-Western\"), understanding them as an integral part of their social and cultural life. It seeks to place that knowledge and practices in their regional and global context, as well as in their historical development. It is interested in generally shared and largely implicit knowledges and practices (logics of practice, lebenswelt, worldviews/cosmovisions) and also, those more explicitly formulated and frequently associated with specialists (cosmologies, ontolo- gies); understanding all of them as articulated, but always unfinished and under construction. Among the notes that characterize the ethno astronomical view, we can mention: a) the interest focused on giving an account of the perspective of the group studied; b) the question about the meaning of practices, discourses and their complex links; c) the holistic intention (any aspect of social life must be seen in connection with the whole); d) the centrality of the direct presence of the researcher and his / her interpersonal links with the members of the group studied; e) the \"estrangement\", as an effort to denature one’s own common sense and that of the group studied; f) \"reflexivity\" or conscious analysis about our own position and influence in the con- struction of knowledge; g) a dominantly inductive character that includes comparison, models and general theories; h) the application of many combined techniques (such as interviews - especially informal - archives, life stories, elicitations, network analysis, images, videos, audios, surveys, statistical data, etc.) but articulated with participant observation; i) commitment, involvement and reciprocity with the studied community and local circumstances.\n\nFrom ethnoastronomy we can learn that astronomical knowledge - as all human knowledge - is a socio-cultural construction, an important part of our adaptation to the world we inhabit: a physical, biological, but also social environment. Our world is a universe full of meanings, schemes of perception and metaphors in which we are introduced by other members of our society, essentially by primary socialization, imitation, and day-to-day life. The experience of the senses limits the possibilities of any human world view, but not to the point of generating a single compatible option. Also the social character of this knowledge and the need to legitimize that knowledge and comply with accepted truth regimes imposes limits on the possible world views in a given society at a given time, but they are not absolute either and they do not unequivocally determine only one possibility. From these socially shared ideas, or world views, grows the explicit systems of knowledge about the world that we call cosmologies. World views and cosmologies are poles of a continuum. Every system of ideas and practices about the sky has a constitutively unfinished and changing character, and is connected to general ideas about body, person, space, time, causality, etc. Also, knowledge systems are always involved in the general social field, with varying degrees of autonomy with respect to it and this implies that they are strongly traversed by power and social institutions.\n\nThe sky and their phenomena have been an area of great interest for many cultures throughout the planet over time. In \"Western culture\", since the Copernican revolution, astronomy has become a model for all science. Due to the colonial expansion of the Western society, their academic astronomy is taught today in the most diverse places on Earth. However, cultural astronomy has shown us that every astronomy is the result of a history and a society. \"Western academic astronomy\" is not \"the\" astronomy, and it is grounded - like all the others - on a series of implicit cultural assumptions. A truly inclusive and decolonized scientific education for our present and future world, supposes the possibility for the students and teachers of a critical appropriation of \"Western academic astronomy\", and the chance of putting it in dialogue with the astronomical knowledge systems of their own societies.",
+      "heading_ru": "Страница 5",
+      "body_ru": "Этноастрономия изучает с антропологических позиций знания о небе и связанные с ним практики любой современной социальной общности. Это может быть этническая группа, социальный класс, семья, профессиональная группа или учреждение, как в западных, так и в незападных обществах. Эти знания и практики рассматриваются как часть социальной и культурной жизни общности, в региональном и глобальном контексте и в историческом развитии.\n\nЭтноастрономию интересуют общие, во многом неявные знания и практики: логика повседневной деятельности, жизненный мир, мировоззрение и картина мира. Она изучает и более явно сформулированные системы, часто связанные со специалистами, например космологии и онтологии. Все они связаны между собой, при этом продолжают формироваться и меняться.\n\nХарактерные черты этноастрономического подхода:\n\nа) стремление понять точку зрения изучаемой группы;\nб) внимание к смыслу практик и высказываний и к сложным связям между ними;\nв) целостный подход, при котором любое явление общественной жизни рассматривают в связи с целым;\nг) непосредственное присутствие исследователя и личные отношения с участниками изучаемой группы;\nд) остранение, то есть стремление перестать воспринимать как само собой разумеющееся собственный здравый смысл и здравый смысл изучаемой группы;\nе) рефлексивность, или осознанный анализ собственной позиции и влияния на формирование знания;\nж) преимущественно индуктивный подход, включающий сравнение, модели и общие теории;\nз) сочетание разных методов, например интервью (особенно неформальных), работы с архивами, биографическими рассказами, выявления представлений, анализа сетей, изображений, видео, аудио, опросов и статистики, с включённым наблюдением;\nи) вовлечённость, ответственность и взаимность в отношениях с изучаемым сообществом с учётом местных условий.\n\nЭтноастрономия показывает, что астрономическое знание, как и любое человеческое знание, формируется в обществе и культуре. Оно помогает приспособиться к миру, в котором мы живём: к физической, биологической и социальной среде. Наш мир наполнен смыслами, способами восприятия и метафорами, с которыми нас знакомят окружающие, прежде всего в ходе первичной социализации, через подражание и повседневную жизнь. Опыт органов чувств ограничивает возможные картины мира, но оставляет больше одного варианта. Социальная природа знания, необходимость обосновывать его и соответствовать принятым в обществе критериям истинности тоже ограничивают возможные представления о мире в определённом месте и времени. Эти ограничения оставляют пространство для разных картин мира.\n\nИз общих представлений, или мировоззрений, вырастают явно сформулированные системы знаний о мире — космологии. Мировоззрения и космологии расположены на разных полюсах одного континуума. Любые представления о небе и связанные с ними практики продолжают меняться и связаны с более общими представлениями о теле, личности, пространстве, времени и причинности. Системы знания всегда включены в общественную жизнь и обладают разной степенью самостоятельности по отношению к ней. На них сильно влияют отношения власти и общественные институты.\n\nВо все времена и в разных частях света небо и его явления вызывали большой интерес. В западной культуре со времён Коперника астрономия стала образцом для науки в целом. Из-за колониальной экспансии западная академическая астрономия сегодня преподаётся в самых разных уголках Земли. Культурная астрономия показала, что каждая астрономическая традиция связана с историей и обществом. Западная академическая астрономия — одна из таких традиций и, как и другие, опирается на ряд неявных культурных предпосылок. Инклюзивное и деколонизированное научное образование предполагает, что ученики и педагоги могут критически осваивать западную академическую астрономию и сопоставлять её с астрономическими знаниями своих сообществ.",
+      "links": [],
+      "media_ids": []
+    },
+    {
+      "id": "page-6",
+      "type": "article_body",
+      "heading": "Page 6",
+      "body": "Cultural astronomy has an enormous potential to collaborate in a radical improvement of astronomical education. A deeper understanding of the astronomies of other cultures, which does not relegate diversity to a distant past, would be crucial to improve the teaching of astronomy in the world. But a huge amount of material about the astronomy of different cultures used in the teaching and popularization of astronomy, has no methodological rigor. Also, astronomies of other cultures are usually used in an \"anecdotal\" manner, as a kind of curious introduction to the strange things that were \"thought\" before the arrival of Western science. Hopefully, there are professionals in cultural astronomy and professional associations: Sociedad Interamericana de Astronomia en la Cultura (SIAC), Société Européenne pour |’Astronomie Dans la Culture (SEAC), International Society for Archaeoastronomy and Astronomy in Culture (ISAAC). They can help us to address the different ways of knowing the sky in greater depth, understanding its structure, allowing us to appreciate the way in which the ideas and models with which humans seek to know the world are generated. Also, they can help us to understand the logics, metaphors, interests and observations in which the Western Academic Astronomy rests, making it easier for educators to design strategies to approach the teaching of this kind of astronomy in diverse cultural contexts, and for the people to critically appropriate of Western Academic Astronomy. Also, we can learn a much wider variety of models, metaphors and approaches to the sky that can also be useful for Western Academic Astronomy.\n\nCentral and Mesoamerican skies: More than 4000 years of Astronomy\n\nSpeaker: Javier Mejuto, Archaeoastronomy and Cultural Astronomy Department, Space Sciences Faculty, National Autonomous University of Honduras (UNAH), Honduras\n\nThe archaeological record of the Meso and Central American peoples allows us to recognize, without a doubt, a methodical and continuous knowledge of the celestial space. Beyond this, indigenous peoples have perpetuated and are custodians of that knowledge in its most varied cultural expressions. This valuable astronomical knowledge brought to the classroom not only allows us to expand our knowledge of the universe and the human being, but also allows us to educate in a transversal way using ancestral astronomical knowledge to deconstruct ethnocentric discourses that support epistemological hegemonies, bringing the student closer to an explanation of the complex reality of our world.\n\nTalk link: https: //youtu.be/qYmm87 cOUHY\n\nThe archaeological record of the Meso and Central American peoples allows us to recognize, without a doubt, a methodical and continuous knowledge of celestial space. The first thing",
+      "heading_ru": "Страница 6",
+      "body_ru": "Культурная астрономия может существенно улучшить преподавание астрономии. Для этого нужно глубже понимать астрономические традиции разных культур и видеть их разнообразие и в прошлом, и сегодня. Многие учебные и популярные материалы о знании неба в разных культурах готовятся без строгой методики. Астрономические традиции часто приводят как курьёзный пример того, во что люди якобы верили до появления западной науки.\n\nУ культурной астрономии есть свои специалисты и профессиональные организации, в том числе Межамериканское общество астрономии в культуре (SIAC), Европейское общество астрономии в культуре (SEAC) и Международное общество археоастрономии и астрономии в культуре (ISAAC). Они помогают изучать разные способы познания неба, видеть их внутреннее устройство и понимать, как люди создают идеи и модели мира. Они также помогают понять логику, метафоры, интересы и наблюдения, на которых основана западная академическая астрономия. Педагоги благодаря этому могут выбирать методы преподавания с учётом культурной среды, а учащиеся — критически осваивать материал. Разнообразие моделей, метафор и способов изучать небо обогащает и саму западную академическую астрономию.\n\nНебо Центральной Америки и Месоамерики. Более 4000 лет астрономии\n\nДокладчик — Хавьер Мехуто, кафедра археоастрономии и культурной астрономии факультета космических наук, Национальный автономный университет Гондураса (UNAH).\n\nАрхеологические свидетельства показывают, что народы Месоамерики и Центральной Америки систематически изучали небо на протяжении длительного времени. Коренные народы сохранили эти знания и продолжают хранить их в разнообразных культурных формах. Такие материалы помогают учащимся больше узнать о Вселенной и человеке. Знания предков можно использовать в разных учебных дисциплинах, чтобы разбирать этноцентричные представления, в которых один способ познания принимается за единственно допустимый. Это помогает понять сложность мира, в котором мы живём.\n\nЗапись доклада доступна по ссылке на странице.\n\nАрхеологические свидетельства ясно показывают, что народы Месоамерики и Центральной Америки систематически изучали небо. Далее автор объясняет, как эти знания связаны с другими областями жизни.",
+      "links": [
+        {
+          "url": "https://youtu.be/qYmm87cOUHY",
+          "text": "https://youtu.be/qYmm87cOUHY",
+          "text_ru": "https://youtu.be/qYmm87cOUHY"
+        }
+      ],
+      "media_ids": [
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-a52f725b99cdbd1a34fb",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-68c1f5ca040d384cec4d"
+      ]
+    },
+    {
+      "id": "page-7",
+      "type": "article_body",
+      "heading": "Page 7",
+      "body": "that we must take into consideration is that astronomical knowledge in other cultural contexts includes not only celestial space but also agriculture, weather forecasting, worldview, among others. That is, we must bear in mind that it is a knowledge system and not isolated knowledge.\n\nIn the Mesoamerican cultural context we can identify three types of structures for observing the sky, either directly or indirectly. The first type is the hemispherical, similar to the observatories of contemporary western astronomy. An example we have in the Caracol of Chichén Itza, Mexico, from which specific moments in the apparent movement of Venus were observed. The second type is the horizontal observatory where the shadows of vertical elements, such as stelae, are used to know the time of year along with other ritual aspects. An example of this can be found in the Plaza de las Estelas de Copan Ruinas, in Honduras. Finally, the vertical observatories, used to know the days when the sun passes through the zenith (Aveni, 1981). Astronomical events typical of the intertropical zone and that in the case of the first passage of the sun through the zenith coincides with the beginning of the rainy season with the obvious agricultural implications for Mesoamerican communities. Examples of this type of observatories are in Xochicalco and the P structure in Monte Alban, both in Mexico.\n\nWe can also identify, through iconography, which celestial objects were mainly observed. The personification of the solar god K’inich Ajaw appears profusely in a variety of archaeological sites but perhaps the most profuse is in Kohunlich with its stuccoed masks (Velasquéz, 1995) or the Mayapan paintings located in the same country. This god also appears in the company of the moon goddess on the celestial bench of the Honduran site of Copan Ruinas. As we might expect, both the sun and the moon are the most represented celestial bodies but not the only ones, among them, the next in frequency of appearance in the archaeological record is the anthropomorphization of Venus. Although there are also many records on various supports, the paintings and representations in Cacaxtla are of relevance throughout the cultural area. Assumed as an omen of misfortune whose light was pernicious, it was related to the Haab civil calendar of 365 days through its synodic cycle and to the eclipses, well known in Mesoamerica. Of this we have written sources such as the so-called eclipse table of the Dresden Codex or the solar eclipse of 1531 that appears in the colonial section of the Telleriano-Remensis Codex (Cédice Telleriano-Remensis, 1964).\n\nAlthough it is only a brief brushstroke of the enormous knowledge of the celestial space that was developed in the Mesoamerican cultural region, we cannot ignore that it is not a petrified and forgotten knowledge but that it is still alive through the indigenous peoples that currently inhabit the region. This valuable astronomical knowledge brought to the classroom not only allows us to expand our knowledge of the universe and the human being, but also allows us to educate in a transversal way using ancestral astronomical knowledge to deconstruct ethnocentric discourses that support epistemological hegemonies, bringing the student closer to an explanation of the complex reality of our world.\n\nDespite all this clear astronomical knowledge accumulated for more than 4000 years, we do not see it at all reflected in the curricula of the history of Astronomy subjects or in the associated degrees (as it happens with other cultural regions worldwide). This gives an idea of an unique course in the history of celestial space knowledge together with an evolutionary idea of it. Nothing could be further from reality. Astronomy, as a science, is a cultural product that has meaning and validity within the culture that has developed it, as is the case in past and contemporary cultures. With this we must motivate students to appreciate epistemological",
+      "heading_ru": "Страница 7",
+      "body_ru": "Астрономические знания в других культурах связаны не только с небом, но и с земледелием, предсказанием погоды, мировоззрением и другими областями жизни. Они образуют единую систему.\n\nВ Месоамерике выделяют три типа сооружений для прямых или косвенных наблюдений неба. Первый — полусферические обсерватории, похожие на современные западные обсерватории. Пример — Караколь в Чичен-Ице, Мексика. Оттуда наблюдали отдельные моменты видимого движения Венеры. Второй — горизонтальные обсерватории. По теням от вертикальных сооружений, например стел, определяли время года и сроки обрядов. Пример — Площадь стел в Копане, Гондурас. Третий — вертикальные обсерватории. С их помощью определяли дни прохождения Солнца через зенит (Aveni, 1981). Такие явления характерны для межтропических широт. Первое в году прохождение Солнца через зенит совпадало с началом сезона дождей и было важно для земледелия. Примеры — Сочикалько и сооружение P в Монте-Альбане, оба в Мексике.\n\nПо изображениям можно судить о том, какие небесные тела чаще всего наблюдали. Изображения солнечного бога Кинич-Ахау встречаются во многих археологических памятниках, например на лепных масках Кохунлича (Velázquez, 1995) и рисунках Майяпана в Мексике. В Копане этого бога можно увидеть вместе с богиней Луны на так называемой небесной скамье. Чаще всего изображали Солнце и Луну. Следом по частоте идут антропоморфные изображения Венеры. Среди многочисленных памятников региона выделяются росписи и изображения в Какаштле. Венеру считали предвестницей несчастий, а её свет — вредоносным. Её синодический цикл связывали с гражданским календарём хааб из 365 дней и с затмениями, хорошо известными в Месоамерике. Об этом говорят письменные источники: таблица затмений Дрезденского кодекса и запись о солнечном затмении 1531 года в колониальной части кодекса Теллериано-Ременсис (издание 1964 года).\n\nЭто лишь малая часть знаний о небе, накопленных в Месоамерике. Их сохраняют коренные народы, живущие в регионе сегодня. Эти знания позволяют больше узнать о Вселенной и человеке. Их можно включать в разные дисциплины, чтобы разбирать этноцентричные представления, в которых одни способы познания вытесняют другие. Это помогает учащимся увидеть сложность мира.\n\nБолее чем за 4000 лет в регионе накопили обширные астрономические знания. Они почти не представлены в программах курсов и специальностей по истории астрономии. Так же обстоит дело со многими другими регионами мира. Из-за этого возникает ошибочное представление, что познание неба шло везде по одному пути. Астрономическая наука — часть культуры, и её значение раскрывается в обществе, где она сложилась. Это относится и к древним, и к современным культурам. Поэтому важно учить ценить разнообразие способов познания.",
+      "links": [],
+      "media_ids": []
+    },
+    {
+      "id": "page-8",
+      "type": "article_body",
+      "heading": "Page 8",
+      "body": "diversity both in the past and in the present and its value for the present and the future of humankind. Expanding our understanding of other knowledge systems is not only important from an academic and pedagogical point of view, but it is an education in values that makes us stop looking only upwards, without a cultural or social context, to dream a future for all among the stars.\n\nReferences:\n\ne Aveni, A. and Hartung, H., (1981). \"The Observation of the Sun at the Time of Passage through the Zenith in Mesoamerica\", Journal for the History of Astronomy Supplement,12.\n\ne Cédice Telleriano-Remensis (1964) en \"Antigtiedades de México\", based on Lord Kingsbor- ough compilations.\n\ne Velazquez Morlet, Adriana (1995), \"Cosmogonia y vida cotidiana en Kohunlich\", Arque- ologia Mexicana 14, pp. 32-36.",
+      "heading_ru": "Страница 8",
+      "body_ru": "Разнообразие способов познания ценно и в прошлом, и сегодня, и для будущего человечества. Изучение других систем знаний важно для науки и преподавания. Оно также помогает воспитывать уважение к чужому опыту, видеть общественный и культурный контекст наблюдений неба и представлять будущее среди звёзд, в котором есть место всем.\n\nИсточники\n\n• Aveni, A. и Hartung, H. (1981). Наблюдения Солнца при прохождении через зенит в Месоамерике. Journal for the History of Astronomy Supplement, 12.\n• Кодекс Теллериано-Ременсис (1964), в издании Antigüedades de México на основе собрания лорда Кингсборо.\n• Velázquez Morlet, Adriana (1995). Космогония и повседневная жизнь в Кохунличе. Arqueología Mexicana, № 14, с. 32–36.",
+      "links": [],
+      "media_ids": []
+    },
+    {
+      "id": "page-9",
+      "type": "article_body",
+      "heading": "Page 9",
+      "body": "Astronomy Education at the Crossroads of Science and Indigenous Knowledge\n\nSpeaker: Duane Hamacher, School of Physics, University of Melbourne, Australia\n\nThe Knowledge Systems and cultural traditions of First Peoples around the globe contain layers of complex scientific knowledge derived from detailed observation, experimentation, collected wisdom and deduction through a priori and a posteriori systems of knowledge, which is passed down to successive generations through oral tradition. By learning from the teachings of Indigenous Elders, we can understand a great deal about the development of scientific information and how that can be used for a variety of applications. As Elders teach, everything in the sky is reflected on the land, a concept promoted by Annette Lee in the Lakota First Nation as Kapemni. As science educators, we also need to consider ways of assisting First Peoples who can approach scientific research and education through the lens of Etuaptmumk, \"Two Eyed Seeing\" - what Mi’kmaw elder Albert Marshall explains is seeing with one eye through the Indigenous world and the other through the Western academic world. This occurs at what Torres Strait Islander educationalist Martin Nakata calls the Cultural Interface. These theoretical frameworks provide a foundation for teaching Indigneous astronomy and science, and support the next generation of Indigneous scientists. This talk will focus on these frameworks and show examples from around the world about how Indigenous cultures developed scientific knowledge about the machinations of the cosmos and their relationships to events on the Earth.\n\nTalk link: https: //youtu.be/bsvEmuQorA0",
+      "heading_ru": "Страница 9",
+      "body_ru": "Астрономическое образование на стыке науки и знаний коренных народов\n\nДокладчик — Дуэйн Хамакер, Школа физики Мельбурнского университета, Австралия.\n\nКультурные традиции и системы знаний коренных народов всего мира содержат разные пласты сложного научного знания. Оно складывалось из внимательных наблюдений, опытов, накопленного опыта и умозаключений, основанных на априорном знании и на результатах наблюдений. Это знание передаётся из поколения в поколение устно. Из рассказов старейшин можно многое узнать о том, как формируется научное знание и как его применяют. Старейшины учат, что всё происходящее в небе отражается на земле. Аннетт Ли рассказывает об этом принципе народа лакота под названием Kapemni.\n\nПреподавателям естественных наук стоит подумать, как поддержать коренные народы, использующие в исследованиях и образовании подход Etuaptmumk — «видеть двумя глазами». Старейшина народа микмак Альберт Маршалл объясняет, что одним глазом мы смотрим на мир с позиции коренных народов, а другим — с позиции западной академической традиции. Педагог Мартин Наката, представитель народов островов Торресова пролива, называет эту область соприкосновения культур культурным интерфейсом. Эти подходы дают теоретическую основу для преподавания астрономии и науки коренных народов и помогают поддержать новое поколение исследователей из этих сообществ. В докладе они рассмотрены на примерах из разных частей мира. Они показывают, как коренные народы изучали явления космоса и их связь с событиями на Земле.\n\nЗапись доклада доступна по ссылке на странице.",
+      "links": [
+        {
+          "url": "https://youtu.be/bsvEmuQorA0",
+          "text": "https://youtu.be/bsvEmuQorA0",
+          "text_ru": "https://youtu.be/bsvEmuQorA0"
+        }
+      ],
+      "media_ids": [
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-f1dc510916bd94f16e3d",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-9d20b0dc60e25d28fdc9"
+      ]
+    },
+    {
+      "id": "page-10",
+      "type": "article_body",
+      "heading": "Page 10",
+      "body": "Teaching Material of History of Astronomy Using Digital Archives in Japan\n\nSpeaker: Harufumi Tamazawa, Kyoto University, Kyoto City University of Arts, Tokyo, Japan\n\nDigital archives make us learn the history of astronomy more effectively. Understanding the transition of the view of the universe is important in learning astronomy, but there are few teaching materials or workshops prepared compared to those who learn knowledge of astronomy. It is useful to touch on historical documents about astronomy. The promotion of digital archives in recent years provides this opportunity. In a class on the history of astronomy at the university, using digital archives, students searched for a diagram of the solar system drawn in historical documents about astronomy in Japan and conducted a task to consider how it differs from the real solar system. Using digital archives may make students understand how the heliocentric theory has flowed into Japan and the transition of the view of the universe deeper than simple lecture.\n\nTalk link: https: //youtu. be/7EvkJ4pP8we\n\nWhen considering the relationship between education and history in astronomy, it is necessary to consider how to incorporate historical content as a teaching material in astronomy. In the case of archaeoastronomy, site, heritage, land/skyscape are research contents. In the ethno astronomical approach, records and memos of habits, narratives, movements such as songs and dances are research material. What does it take to convert these research content into educational content? Archive is useful to change research material to educational material.\n\nNOJIRI Hoei (#FEBZ) (1885-1977) and KITAO Koichi (KE Vi—) (1953-) are pioneers of folklore studies of astronomy in Japan. They have asked people and collected star names in each region. Kitao has collected not only words but also folk songs about astronomy in Japan (for example , Kitao 2021). In some cases, however, the interview survey was not conducted on the premise that the archive will be released, so some material about research is not able to be used. In the field of paleoastronomy research, researchers use document archives to search for useful documents to detect astronomical events in history. For example, in Hayakawa et al. 2017, archive of Japanese historical documents in order to know how large the space weather event in 1770 was. There are two types of approaches to change research material to educational material about indigenous astronomy. In the case of Ethnoastronomy or Folklore studies of Astronomy, archiving of research material (recording data, memo, and so on) itself is education. On the contrary, in the case of the history of astronomy or paleoastronomy, archiving research material and using archives is also education.\n\nHow about the relation between archive and lecture? History of astronomy is usually taught\n\n10",
+      "heading_ru": "Страница 10",
+      "body_ru": "Учебные материалы по истории астрономии на основе цифровых архивов Японии\n\nДокладчик: Harufumi Tamazawa, Киотский университет и Киотский городской университет искусств, Токио, Япония (место указано как в оригинале).\n\nЦифровые архивы помогают изучать историю астрономии. Чтобы понять астрономию, важно знать, как менялись представления о Вселенной, однако учебных материалов и семинаров на эту тему сравнительно мало. Полезно знакомиться с историческими документами по астрономии. Благодаря развитию цифровых архивов это стало доступнее. На университетском курсе истории астрономии студенты искали в японских исторических документах схему Солнечной системы и разбирали её отличия от современного представления. Цифровые архивы могут лучше, чем одна лекция, показать, как в Японию пришла гелиоцентрическая теория и как менялась картина мира.\n\nЗапись доклада: https://youtu.be/7EvkJ4pP8we\n\nПри обсуждении связи истории и преподавания астрономии нужно подумать, как использовать исторические материалы в занятиях. В археоастрономии исследуют памятники, культурное наследие, земной и небесный ландшафт. В этноастрономии исследовательским материалом служат записи обычаев, рассказы, песни и танцы. Превратить эти материалы в учебные помогает архив.\n\nNojiri Hōei (1885–1977) и Kitao Kōichi (род. в 1953 году) — пионеры изучения астрономического фольклора в Японии. Они опрашивали жителей разных областей и собирали местные названия звёзд. Китао собирал также народные песни об астрономии (см., например, Kitao, 2021). Некоторые опросы проводились без расчёта на публикацию архива, поэтому часть исследовательских материалов использовать нельзя. В палеоастрономии исследователи ищут в документальных архивах сведения о прошлых астрономических событиях. Так, Хаякава и соавторы (2017) использовали японские исторические документы, чтобы оценить масштаб события космической погоды 1770 года.\n\nЕсть два подхода к использованию исследовательских материалов при изучении астрономических знаний коренных народов. В этноастрономии и в исследованиях астрономического фольклора сама архивация материалов, включая записи и заметки, может стать частью обучения. В истории астрономии и в палеоастрономии учебное значение имеют как сбор материалов, так и работа с готовыми архивами.\n\nКак архив связан с лекциями? Историю астрономии обычно преподают на занятиях в аудитории. Продолжение на следующей странице.",
+      "links": [
+        {
+          "url": "https://youtu.be/7EvkJ4pP8wc",
+          "text": "https://youtu.be/7EvkJ4pP8wc",
+          "text_ru": "https://youtu.be/7EvkJ4pP8wc"
+        }
+      ],
+      "media_ids": [
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-1eb7883915d803dcb8dd",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-e9a5e01228b1df15d83f"
+      ]
+    },
+    {
+      "id": "page-11",
+      "type": "article_body",
+      "heading": "Page 11",
+      "body": "in \"classroom type lectures\". What are the teaching materials of the history of astronomy? After Covid 19 pandemic, lectures in university were changed to online, therefore lecturers should make online versions of teaching materials of the history of astronomy . What is the teaching material about the history of astronomy, especially the transition of the view of the universe? Examining papers on astronomy materials that include historical content reveals that they can be divided into three types; Reproduction of historical observation methods (including calculations), remake (creation of past observation instruments), and reuse (observation and consideration by visiting and using the real thing (Astronomical heritage, old telescope). To make material about the transition of the view of the universe, however, we should make another type because we should approach cultural Astronomy and Input science Studies, philosophy of science.\n\nThe author conducted the following tasks in a class on the history of astronomy as a test case. Students search \"“F-K (e[ ff\" (Heitengi-zukai) written by Zenbei Iwahashi (telescope craft worker with lens), using \"Japan search\", portarsite about japanese archives, and look at the figure, point out the points that are different from the current way of thinking of the solar system, and ask them to think about what causes them. Many students do not explain that it is a simple geocentric diagram, but they explain that the moon, the sun, Mars, Jupiter, and Saturn are rotating around the earth, and Venus and Mercury are rotating around the sun. About 10% of the students made comparisons with Tycho Brahe and others. There was a tendency for the amount of description to be larger than other lesson contents. It is presumed that many students were interested in the task.\n\nTo make teaching material of indigeneous astronomy, an archive of research material is important. Researchers should make a methodology of archiving research material of ethnoastronomy or folklore studies of astronomy(rule, ethics, privacy, skill, and so on). Using of archiving, and related studies (History of science, Science studies, and so on) is also important to make teaching material about ingigeneous astronomy.\n\nReferences:\n\ne Hayakawa, H., et al. (2018). The Astrophysical Journal, 862(1), 15.\n\ne Kitao, K. (2021) Publications of the Japanese Society for Education and Popularization of Astronomy, 33, 5, pp.21-33 (in Japanese)\n\n11",
+      "heading_ru": "Страница 11",
+      "body_ru": "После пандемии COVID-19 университетские лекции перешли в онлайн. Преподавателям понадобились цифровые версии материалов по истории астрономии. Какие материалы помогают понять, как менялись представления о Вселенной?\n\nПубликации об исторических материалах для занятий по астрономии позволяют выделить три подхода: воспроизвести исторический метод наблюдения вместе с расчётами, создать копию старого прибора или провести наблюдения и обсуждение с подлинным предметом, например во время посещения астрономического памятника или работы со старинным телескопом. Чтобы показать, как менялась картина Вселенной, нужен ещё один подход, который учитывает культурную астрономию, науковедение и философию науки.\n\nВ качестве примера автор дал студентам на курсе истории астрономии задание найти «Хэйтэнги дзукай» (Heitengi-zukai), работу мастера оптических телескопов Ивахаси Дзэмбэя, на портале японских архивов Japan Search. Студенты рассматривали рисунок, отмечали отличия от нынешних представлений о Солнечной системе и пытались объяснить эти отличия. Многие не ограничились тем, что назвали схему геоцентрической. Они указали, что Луна, Солнце, Марс, Юпитер и Сатурн обращаются вокруг Земли, а Венера и Меркурий — вокруг Солнца. Около 10% студентов провели сравнение с Тихо Браге и другими авторами. Ответы получались подробнее, чем по другим темам курса, что, предположительно, говорит об интересе студентов к заданию.\n\nДля подготовки материалов об астрономических знаниях коренных народов важно архивировать результаты исследований. Нужна методика хранения этноастрономических и фольклорных материалов, которая учитывает правила, этику, конфиденциальность и необходимые навыки. Работа с архивами и результаты смежных дисциплин, в частности истории науки и науковедения, тоже важны при разработке таких материалов.\n\nЛитература\n\n• Hayakawa, H., и соавт. (2018). The Astrophysical Journal, 862(1), 15.\n• Kitao, K. (2021). Publications of the Japanese Society for Education and Popularization of Astronomy, 33, 5, с. 21–33 (на японском языке).",
+      "links": [],
+      "media_ids": []
+    },
+    {
+      "id": "page-12",
+      "type": "article_body",
+      "heading": "Page 12",
+      "body": "DISCUSSION SUMMARY\n\nThe questions and discussion focused on the availability of material for teaching indigenous astronomy and readiness and preparedness of teachers to teach indigenous astronomy. So far, there is a growing movement of developing materials in the USA, Canada, Australia, and South Africa. However, the development and circulation of best practices in materials develop- ment for indigenous knowledge are needed as well as collaborations across the countries and continents.\n\nFurthermore, some universities have begun including indigenous knowledge teaching in their education and science education courses and training programs. There are organisations dedi- cated to development and support of indigenous astronomy such ISAAC (International Society for Archeoastronomy and Astronomy in Culture) and host conferences annually.\n\nAll the speakers, without exception, emphasized that all knowledge is socially constructed including astronomical knowledge. Therefore, astronomy has to be viewed as a cultural product, even though every culture has its own version of astronomical knowledge. Western academic astronomy is one of the many versions of astronomical knowledge. Its dominance can be ascribed to colonial past and current western cultural imperialism. It is critical and imperative to acknowledge, recognize and respect astronomical knowledge of other cultures, Indigenous cultures in particular.\n\nThere were questions and an elaboration by Martin Alejandro Lopez on intercultural approach to the teaching of astronomy. He pointed out that it is empowering for learners to learn about how other astronomers of other cultures handle and understand the sky and the stars. Recognizing that cultures influence each other and have many commonalities may assist in addressing issues of domination, disrespect and powers. He argued that recognition of indigenous practices may assist and contribute to the decolonization of knowledge and science.",
+      "heading_ru": "Страница 12",
+      "body_ru": "Итоги обсуждения\n\nУчастники спрашивали о доступности материалов для преподавания астрономии коренных народов, а также о том, готовы ли учителя и достаточно ли они подготовлены, чтобы её преподавать. В США, Канаде, Австралии и ЮАР разрабатывают всё больше таких материалов. Нужно обмениваться удачными подходами к разработке материалов о знаниях коренных народов и налаживать сотрудничество между странами и континентами.\n\nНекоторые университеты начали включать преподавание знаний коренных народов в образовательные программы, курсы по естественным наукам и программы подготовки педагогов. Астрономию коренных народов поддерживают профильные организации, например Международное общество археоастрономии и астрономии в культуре (ISAAC), которое проводит ежегодные конференции.\n\nВсе докладчики подчеркнули, что знания, в том числе астрономические, формируются в обществе. Астрономию следует рассматривать как часть культуры. В каждой культуре складываются собственные знания о небе. Западная академическая астрономия — одна из этих традиций. Её доминирующее положение авторы связывают с колониальным прошлым и современным культурным империализмом западных стран. Поэтому так важно признавать и уважать астрономические знания других культур, в особенности коренных народов.\n\nВ ответ на вопросы Алехандро Мартин Лопес подробнее рассказал о межкультурном преподавании астрономии. По его словам, учащиеся получают больше возможностей осмыслить материал, когда узнают, как представители других культур наблюдают и объясняют небо и звёзды. Культуры влияют друг на друга и во многом сходны. Осознание этого может помочь преодолевать неуважение, господство и неравенство во власти. Признание практик коренных народов может содействовать деколонизации знания и науки.",
+      "links": [],
+      "media_ids": [
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-1c3235a57092fb771f91"
+      ]
+    },
+    {
+      "id": "page-13",
+      "type": "article_body",
+      "heading": "Page 13",
+      "body": "http://astro4edu.org @astro4edu",
+      "heading_ru": "Страница 13",
+      "body_ru": "http://astro4edu.org @astro4edu",
+      "links": [],
+      "media_ids": [
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-116962379f276f82de9a",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-c7be67db3a23c1750a12",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-8b237217afba4b9b6f98",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-f46eb8ed0742632cb3df",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-b87f50a9881b00ffca47",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-8f2afe72ea99dfc678db",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-ea94a6c646ec43b0d837",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-a4c414601c471c7a72ee",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-91e149c0f6e500c447d0",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-aa85bc4c504970c1ec0d",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-4075d3495ea21852c1ab",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-6a3c7c8b665cf3967597",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-b0efec6ebd3102eb201a",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-bdc304ac39c73cd7dcca",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-27fd49ef1a2d4ae05b34",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-2ef13b1d6b0bc4fa0c0c",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-25243cd175d21c24ee82",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-3c62b8d4a7bfc8491396",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-70ae942da2c9dbbcb3a2",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-4d8ee199040aa09ea7e2",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-058177a18643248d5444",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-5471f59c4a15e136655b",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-7a33fb7331394ac32e12",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-a9b9a0b2f0cdac5f40b2",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-de5d7e5fc50b6502bb1e",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-22c1293e8c029397b525",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-0baf27d8ed1f858551aa"
+      ]
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Teaching about Indigenous Astronomy: Mini-Review",
+      "blocks": {
+        "page-1": {
+          "heading": "Page 1",
+          "body": "OAE Mini-Review\n\nTeaching about Indigenous Astronomy\n\nPublications of the IAU Office of Astronomy for Education"
+        },
+        "page-2": {
+          "heading": "Page 2",
+          "body": "The following is a collection of summaries originally published in the proceedings of the 3rd Shaw-IAU workshop on Astronomy for Education held 12 - 15 October, 2021 as a virtual event. The workshop was organised by the [AU Office of Astronomy for Education. More details can be found on: https: //astro4edu. org/shaw-iau/3rd-s haw-iau-workshop/.\n\nSession Organiser: Sivuyile Manxoyi.\n\nAuthors: Alejandro Martin Lopez, Javier Mejuto, Duane Hamacher, and Harufumi Tamazawa.\n\nCompiled & Edited by: Asmita Bhandare (Project lead), Giuliana Giobbi, Colm Larkin, Rebecca Sanderson, Eduardo Penteado, Niall Deacon,\n\nGwen Sanderson, and Anna Sippel.\n\nThe IAU Office of Astronomy for Education (OAE) is hosted at Haus der Astronomie (HdA), managed by the Max Planck Institute for Astronomy. The OAE’s mission is to support and coordinate astronomy education by astronomy researchers and educators, aimed at primary or secondary schools worldwide. HdA’s hosting the OAE was made possible through the support of the German foundations Klaus Tschira Stiftung and Carl-Zeiss-Stiftung. The Shaw-IAU Workshops on Astronomy for Education are funded by the Shaw Prize Foundation.\n\nThe OAE is supported by a growing network of OAE Centers and OAE Nodes, collaborating to lead global projects developed within the network. The OAE Centers and Nodes are: the OAE Center China-Nanjing, hosted by the Beijing Planetarium (BJP); the OAE Center Cyprus, hosted by Cyprus Space Exploration Organization (CSEO); the OAE Center Egypt, hosted by the National Research Institute of Astronomy and Geophysics (NRIAG); the OAE Center India, hosted by the Inter-University Centre for Astronomy and Astrophysics (IUCAA); the OAE Center Italy, hosted by the National Institute for Astrophysics (INAF); the OAE Node Republic of Korea, hosted by the Korean Astronomical Society (KAS); OAE Node France at CY Cergy Paris University hosted by CY Cergy Paris University; and the OAE Node Nepal, hosted by the Nepal Astronomical Society (NASO)."
+        },
+        "page-3": {
+          "heading": "Page 3",
+          "body": "———e _ Teaching about Indigenous Astronomy\n\nSession organiser: Sivuyile Manxoyi, South African Astronomical Observatory, South Africa\n\nSESSION\n\nAstronomy is the most ancient discipline of science and one of its unique features is its multicul- tural roots. This stems from the fact that every person in the world has a profound relationship with the sky and the stars. This session explored the relationship between astronomy, culture and society; appraised the value, relevance and significance of indigenous astronomy. This pre- dates western academic astronomy by thousands of years. This session concludes by revisiting challenges experienced in the teaching of indigenous astronomy and appropriate pedagogical approaches were shared.\n\nSome of the challenges noted are the absence of indigenous astronomy content in school cur- ricula in many countries, inaccurate representation, constant description of this knowledge and practices as irrational and absence of training and support for teachers. Reflexivity, recognition of epistemological diversity and willingness to engage in intercultural dialogues are imperative for the successful teaching of indigenous knowledge.\n\nAppreciating multiple facets of different astronomies allows us to better understand how human ideas and models of the sky are generated. The teaching of indigenous astronomy presents us with an excellent opportunity to rehumanize science and society."
+        },
+        "page-4": {
+          "heading": "Page 4",
+          "body": "TALK CONTRIBUTIONS\n\nAstronomies, Cultures and Education\n\nSpeaker: Alejandro Martin Lopez, CONICET, Secci6n Etnologia, Instituto de Ciencias Antropoldgicas, Universidad de Buenos Aires, Argentina\n\nSome people talk about \"astronomy\" (the academic Western one) and \"cultural astronomies\" (the astronomies of \"particular\" cultures). This is a profound misunderstanding of the legacy of three decades of cultural astronomy studies. In this presentation we aim to discuss this confusion and to point out the contributions of cultural astronomy studies in thinking about astronomical education from an intercultural perspective. The sky and their phenomena have been an area of great interest for many cultures throughout the planet over time. In \"Western culture\", since the Copernican revolution, astronomy has become a model for all science. Due to the colonial expansion of the Western society their academic astronomy is taught today in the most diverse places on Earth. However, cultural astronomy has shown us that every astronomy is the result of a history and a society. \"Western academic astronomy\" is not \"the\" astronomy, and it is grounded - like all the others - on a series of implicit cultural assumptions. A truly inclusive and decolonial scientific education for our present and future world, supposes the possibility for the students and teachers of a critical appropriation of \"Western academic astronomy\", and the chance of putting it in dialogue with the astronomical knowledge systems of their own societies.\n\nTalk link: https: //youtu.be/qn8a_mzAeCM\n\nSome people talk about \"astronomy\" (the academic Western one) and \"cultural astronomies\" (the astronomies of \"particular\" cultures). This is a profound misunderstanding of the legacy of three decades of studies in cultural astronomy. Cultural astronomy is an interdisciplinary academic field, not an adjective to identify some kind of \"strange\" astronomy.\n\nCultural astronomy is the study of all astronomical systems as social facts; not a search for fragments of \"our\" astronomy in distant cultures. This interdisciplinary field includes as some of their sub-fields: ethnoastronomy, archaeoastronomy, and a social history of Astronomy. In this presentation we aim to point out the contributions of cultural astronomy, especially ethno astronomy, in thinking of astronomical education from an intercultural perspective, transforming it from the point of view of cultural astronomy.\n\nEthnoastronomy is a perspective, a way of approaching ethnographically, ethnologically and"
+        },
+        "page-5": {
+          "heading": "Page 5",
+          "body": "anthropologically the knowledge and practices about the sky of any contemporary social unit (such as an ethnic group, a social class, a family, a professional group, or an institution; both \"Western\" as \"non-Western\"), understanding them as an integral part of their social and cultural life. It seeks to place that knowledge and practices in their regional and global context, as well as in their historical development. It is interested in generally shared and largely implicit knowledges and practices (logics of practice, lebenswelt, worldviews/cosmovisions) and also, those more explicitly formulated and frequently associated with specialists (cosmologies, ontolo- gies); understanding all of them as articulated, but always unfinished and under construction. Among the notes that characterize the ethno astronomical view, we can mention: a) the interest focused on giving an account of the perspective of the group studied; b) the question about the meaning of practices, discourses and their complex links; c) the holistic intention (any aspect of social life must be seen in connection with the whole); d) the centrality of the direct presence of the researcher and his / her interpersonal links with the members of the group studied; e) the \"estrangement\", as an effort to denature one’s own common sense and that of the group studied; f) \"reflexivity\" or conscious analysis about our own position and influence in the con- struction of knowledge; g) a dominantly inductive character that includes comparison, models and general theories; h) the application of many combined techniques (such as interviews - especially informal - archives, life stories, elicitations, network analysis, images, videos, audios, surveys, statistical data, etc.) but articulated with participant observation; i) commitment, involvement and reciprocity with the studied community and local circumstances.\n\nFrom ethnoastronomy we can learn that astronomical knowledge - as all human knowledge - is a socio-cultural construction, an important part of our adaptation to the world we inhabit: a physical, biological, but also social environment. Our world is a universe full of meanings, schemes of perception and metaphors in which we are introduced by other members of our society, essentially by primary socialization, imitation, and day-to-day life. The experience of the senses limits the possibilities of any human world view, but not to the point of generating a single compatible option. Also the social character of this knowledge and the need to legitimize that knowledge and comply with accepted truth regimes imposes limits on the possible world views in a given society at a given time, but they are not absolute either and they do not unequivocally determine only one possibility. From these socially shared ideas, or world views, grows the explicit systems of knowledge about the world that we call cosmologies. World views and cosmologies are poles of a continuum. Every system of ideas and practices about the sky has a constitutively unfinished and changing character, and is connected to general ideas about body, person, space, time, causality, etc. Also, knowledge systems are always involved in the general social field, with varying degrees of autonomy with respect to it and this implies that they are strongly traversed by power and social institutions.\n\nThe sky and their phenomena have been an area of great interest for many cultures throughout the planet over time. In \"Western culture\", since the Copernican revolution, astronomy has become a model for all science. Due to the colonial expansion of the Western society, their academic astronomy is taught today in the most diverse places on Earth. However, cultural astronomy has shown us that every astronomy is the result of a history and a society. \"Western academic astronomy\" is not \"the\" astronomy, and it is grounded - like all the others - on a series of implicit cultural assumptions. A truly inclusive and decolonized scientific education for our present and future world, supposes the possibility for the students and teachers of a critical appropriation of \"Western academic astronomy\", and the chance of putting it in dialogue with the astronomical knowledge systems of their own societies."
+        },
+        "page-6": {
+          "heading": "Page 6",
+          "body": "Cultural astronomy has an enormous potential to collaborate in a radical improvement of astronomical education. A deeper understanding of the astronomies of other cultures, which does not relegate diversity to a distant past, would be crucial to improve the teaching of astronomy in the world. But a huge amount of material about the astronomy of different cultures used in the teaching and popularization of astronomy, has no methodological rigor. Also, astronomies of other cultures are usually used in an \"anecdotal\" manner, as a kind of curious introduction to the strange things that were \"thought\" before the arrival of Western science. Hopefully, there are professionals in cultural astronomy and professional associations: Sociedad Interamericana de Astronomia en la Cultura (SIAC), Société Européenne pour |’Astronomie Dans la Culture (SEAC), International Society for Archaeoastronomy and Astronomy in Culture (ISAAC). They can help us to address the different ways of knowing the sky in greater depth, understanding its structure, allowing us to appreciate the way in which the ideas and models with which humans seek to know the world are generated. Also, they can help us to understand the logics, metaphors, interests and observations in which the Western Academic Astronomy rests, making it easier for educators to design strategies to approach the teaching of this kind of astronomy in diverse cultural contexts, and for the people to critically appropriate of Western Academic Astronomy. Also, we can learn a much wider variety of models, metaphors and approaches to the sky that can also be useful for Western Academic Astronomy.\n\nCentral and Mesoamerican skies: More than 4000 years of Astronomy\n\nSpeaker: Javier Mejuto, Archaeoastronomy and Cultural Astronomy Department, Space Sciences Faculty, National Autonomous University of Honduras (UNAH), Honduras\n\nThe archaeological record of the Meso and Central American peoples allows us to recognize, without a doubt, a methodical and continuous knowledge of the celestial space. Beyond this, indigenous peoples have perpetuated and are custodians of that knowledge in its most varied cultural expressions. This valuable astronomical knowledge brought to the classroom not only allows us to expand our knowledge of the universe and the human being, but also allows us to educate in a transversal way using ancestral astronomical knowledge to deconstruct ethnocentric discourses that support epistemological hegemonies, bringing the student closer to an explanation of the complex reality of our world.\n\nTalk link: https: //youtu.be/qYmm87 cOUHY\n\nThe archaeological record of the Meso and Central American peoples allows us to recognize, without a doubt, a methodical and continuous knowledge of celestial space. The first thing"
+        },
+        "page-7": {
+          "heading": "Page 7",
+          "body": "that we must take into consideration is that astronomical knowledge in other cultural contexts includes not only celestial space but also agriculture, weather forecasting, worldview, among others. That is, we must bear in mind that it is a knowledge system and not isolated knowledge.\n\nIn the Mesoamerican cultural context we can identify three types of structures for observing the sky, either directly or indirectly. The first type is the hemispherical, similar to the observatories of contemporary western astronomy. An example we have in the Caracol of Chichén Itza, Mexico, from which specific moments in the apparent movement of Venus were observed. The second type is the horizontal observatory where the shadows of vertical elements, such as stelae, are used to know the time of year along with other ritual aspects. An example of this can be found in the Plaza de las Estelas de Copan Ruinas, in Honduras. Finally, the vertical observatories, used to know the days when the sun passes through the zenith (Aveni, 1981). Astronomical events typical of the intertropical zone and that in the case of the first passage of the sun through the zenith coincides with the beginning of the rainy season with the obvious agricultural implications for Mesoamerican communities. Examples of this type of observatories are in Xochicalco and the P structure in Monte Alban, both in Mexico.\n\nWe can also identify, through iconography, which celestial objects were mainly observed. The personification of the solar god K’inich Ajaw appears profusely in a variety of archaeological sites but perhaps the most profuse is in Kohunlich with its stuccoed masks (Velasquéz, 1995) or the Mayapan paintings located in the same country. This god also appears in the company of the moon goddess on the celestial bench of the Honduran site of Copan Ruinas. As we might expect, both the sun and the moon are the most represented celestial bodies but not the only ones, among them, the next in frequency of appearance in the archaeological record is the anthropomorphization of Venus. Although there are also many records on various supports, the paintings and representations in Cacaxtla are of relevance throughout the cultural area. Assumed as an omen of misfortune whose light was pernicious, it was related to the Haab civil calendar of 365 days through its synodic cycle and to the eclipses, well known in Mesoamerica. Of this we have written sources such as the so-called eclipse table of the Dresden Codex or the solar eclipse of 1531 that appears in the colonial section of the Telleriano-Remensis Codex (Cédice Telleriano-Remensis, 1964).\n\nAlthough it is only a brief brushstroke of the enormous knowledge of the celestial space that was developed in the Mesoamerican cultural region, we cannot ignore that it is not a petrified and forgotten knowledge but that it is still alive through the indigenous peoples that currently inhabit the region. This valuable astronomical knowledge brought to the classroom not only allows us to expand our knowledge of the universe and the human being, but also allows us to educate in a transversal way using ancestral astronomical knowledge to deconstruct ethnocentric discourses that support epistemological hegemonies, bringing the student closer to an explanation of the complex reality of our world.\n\nDespite all this clear astronomical knowledge accumulated for more than 4000 years, we do not see it at all reflected in the curricula of the history of Astronomy subjects or in the associated degrees (as it happens with other cultural regions worldwide). This gives an idea of an unique course in the history of celestial space knowledge together with an evolutionary idea of it. Nothing could be further from reality. Astronomy, as a science, is a cultural product that has meaning and validity within the culture that has developed it, as is the case in past and contemporary cultures. With this we must motivate students to appreciate epistemological"
+        },
+        "page-8": {
+          "heading": "Page 8",
+          "body": "diversity both in the past and in the present and its value for the present and the future of humankind. Expanding our understanding of other knowledge systems is not only important from an academic and pedagogical point of view, but it is an education in values that makes us stop looking only upwards, without a cultural or social context, to dream a future for all among the stars.\n\nReferences:\n\ne Aveni, A. and Hartung, H., (1981). \"The Observation of the Sun at the Time of Passage through the Zenith in Mesoamerica\", Journal for the History of Astronomy Supplement,12.\n\ne Cédice Telleriano-Remensis (1964) en \"Antigtiedades de México\", based on Lord Kingsbor- ough compilations.\n\ne Velazquez Morlet, Adriana (1995), \"Cosmogonia y vida cotidiana en Kohunlich\", Arque- ologia Mexicana 14, pp. 32-36."
+        },
+        "page-9": {
+          "heading": "Page 9",
+          "body": "Astronomy Education at the Crossroads of Science and Indigenous Knowledge\n\nSpeaker: Duane Hamacher, School of Physics, University of Melbourne, Australia\n\nThe Knowledge Systems and cultural traditions of First Peoples around the globe contain layers of complex scientific knowledge derived from detailed observation, experimentation, collected wisdom and deduction through a priori and a posteriori systems of knowledge, which is passed down to successive generations through oral tradition. By learning from the teachings of Indigenous Elders, we can understand a great deal about the development of scientific information and how that can be used for a variety of applications. As Elders teach, everything in the sky is reflected on the land, a concept promoted by Annette Lee in the Lakota First Nation as Kapemni. As science educators, we also need to consider ways of assisting First Peoples who can approach scientific research and education through the lens of Etuaptmumk, \"Two Eyed Seeing\" - what Mi’kmaw elder Albert Marshall explains is seeing with one eye through the Indigenous world and the other through the Western academic world. This occurs at what Torres Strait Islander educationalist Martin Nakata calls the Cultural Interface. These theoretical frameworks provide a foundation for teaching Indigneous astronomy and science, and support the next generation of Indigneous scientists. This talk will focus on these frameworks and show examples from around the world about how Indigenous cultures developed scientific knowledge about the machinations of the cosmos and their relationships to events on the Earth.\n\nTalk link: https: //youtu.be/bsvEmuQorA0"
+        },
+        "page-10": {
+          "heading": "Page 10",
+          "body": "Teaching Material of History of Astronomy Using Digital Archives in Japan\n\nSpeaker: Harufumi Tamazawa, Kyoto University, Kyoto City University of Arts, Tokyo, Japan\n\nDigital archives make us learn the history of astronomy more effectively. Understanding the transition of the view of the universe is important in learning astronomy, but there are few teaching materials or workshops prepared compared to those who learn knowledge of astronomy. It is useful to touch on historical documents about astronomy. The promotion of digital archives in recent years provides this opportunity. In a class on the history of astronomy at the university, using digital archives, students searched for a diagram of the solar system drawn in historical documents about astronomy in Japan and conducted a task to consider how it differs from the real solar system. Using digital archives may make students understand how the heliocentric theory has flowed into Japan and the transition of the view of the universe deeper than simple lecture.\n\nTalk link: https: //youtu. be/7EvkJ4pP8we\n\nWhen considering the relationship between education and history in astronomy, it is necessary to consider how to incorporate historical content as a teaching material in astronomy. In the case of archaeoastronomy, site, heritage, land/skyscape are research contents. In the ethno astronomical approach, records and memos of habits, narratives, movements such as songs and dances are research material. What does it take to convert these research content into educational content? Archive is useful to change research material to educational material.\n\nNOJIRI Hoei (#FEBZ) (1885-1977) and KITAO Koichi (KE Vi—) (1953-) are pioneers of folklore studies of astronomy in Japan. They have asked people and collected star names in each region. Kitao has collected not only words but also folk songs about astronomy in Japan (for example , Kitao 2021). In some cases, however, the interview survey was not conducted on the premise that the archive will be released, so some material about research is not able to be used. In the field of paleoastronomy research, researchers use document archives to search for useful documents to detect astronomical events in history. For example, in Hayakawa et al. 2017, archive of Japanese historical documents in order to know how large the space weather event in 1770 was. There are two types of approaches to change research material to educational material about indigenous astronomy. In the case of Ethnoastronomy or Folklore studies of Astronomy, archiving of research material (recording data, memo, and so on) itself is education. On the contrary, in the case of the history of astronomy or paleoastronomy, archiving research material and using archives is also education.\n\nHow about the relation between archive and lecture? History of astronomy is usually taught\n\n10"
+        },
+        "page-11": {
+          "heading": "Page 11",
+          "body": "in \"classroom type lectures\". What are the teaching materials of the history of astronomy? After Covid 19 pandemic, lectures in university were changed to online, therefore lecturers should make online versions of teaching materials of the history of astronomy . What is the teaching material about the history of astronomy, especially the transition of the view of the universe? Examining papers on astronomy materials that include historical content reveals that they can be divided into three types; Reproduction of historical observation methods (including calculations), remake (creation of past observation instruments), and reuse (observation and consideration by visiting and using the real thing (Astronomical heritage, old telescope). To make material about the transition of the view of the universe, however, we should make another type because we should approach cultural Astronomy and Input science Studies, philosophy of science.\n\nThe author conducted the following tasks in a class on the history of astronomy as a test case. Students search \"“F-K (e[ ff\" (Heitengi-zukai) written by Zenbei Iwahashi (telescope craft worker with lens), using \"Japan search\", portarsite about japanese archives, and look at the figure, point out the points that are different from the current way of thinking of the solar system, and ask them to think about what causes them. Many students do not explain that it is a simple geocentric diagram, but they explain that the moon, the sun, Mars, Jupiter, and Saturn are rotating around the earth, and Venus and Mercury are rotating around the sun. About 10% of the students made comparisons with Tycho Brahe and others. There was a tendency for the amount of description to be larger than other lesson contents. It is presumed that many students were interested in the task.\n\nTo make teaching material of indigeneous astronomy, an archive of research material is important. Researchers should make a methodology of archiving research material of ethnoastronomy or folklore studies of astronomy(rule, ethics, privacy, skill, and so on). Using of archiving, and related studies (History of science, Science studies, and so on) is also important to make teaching material about ingigeneous astronomy.\n\nReferences:\n\ne Hayakawa, H., et al. (2018). The Astrophysical Journal, 862(1), 15.\n\ne Kitao, K. (2021) Publications of the Japanese Society for Education and Popularization of Astronomy, 33, 5, pp.21-33 (in Japanese)\n\n11"
+        },
+        "page-12": {
+          "heading": "Page 12",
+          "body": "DISCUSSION SUMMARY\n\nThe questions and discussion focused on the availability of material for teaching indigenous astronomy and readiness and preparedness of teachers to teach indigenous astronomy. So far, there is a growing movement of developing materials in the USA, Canada, Australia, and South Africa. However, the development and circulation of best practices in materials develop- ment for indigenous knowledge are needed as well as collaborations across the countries and continents.\n\nFurthermore, some universities have begun including indigenous knowledge teaching in their education and science education courses and training programs. There are organisations dedi- cated to development and support of indigenous astronomy such ISAAC (International Society for Archeoastronomy and Astronomy in Culture) and host conferences annually.\n\nAll the speakers, without exception, emphasized that all knowledge is socially constructed including astronomical knowledge. Therefore, astronomy has to be viewed as a cultural product, even though every culture has its own version of astronomical knowledge. Western academic astronomy is one of the many versions of astronomical knowledge. Its dominance can be ascribed to colonial past and current western cultural imperialism. It is critical and imperative to acknowledge, recognize and respect astronomical knowledge of other cultures, Indigenous cultures in particular.\n\nThere were questions and an elaboration by Martin Alejandro Lopez on intercultural approach to the teaching of astronomy. He pointed out that it is empowering for learners to learn about how other astronomers of other cultures handle and understand the sky and the stars. Recognizing that cultures influence each other and have many commonalities may assist in addressing issues of domination, disrespect and powers. He argued that recognition of indigenous practices may assist and contribute to the decolonization of knowledge and science."
+        },
+        "page-13": {
+          "heading": "Page 13",
+          "body": "http://astro4edu.org @astro4edu"
+        }
+      }
+    },
+    "ru": {
+      "title": "Как преподавать астрономию коренных народов. Мини-обзор",
+      "blocks": {
+        "page-1": {
+          "heading": "Страница 1",
+          "body": "Мини-обзор OAE\n\nКак преподавать астрономию коренных народов\n\nИздания Офиса астрономии для образования Международного астрономического союза"
+        },
+        "page-2": {
+          "heading": "Страница 2",
+          "body": "Здесь собраны краткие изложения докладов, впервые опубликованные в трудах 3-го семинара Шоу и МАС по астрономическому образованию. Семинар прошёл онлайн с 12 по 15 октября 2021 года. Его организовал Офис астрономии для образования Международного астрономического союза. Подробнее об этом семинаре — https://astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/.\n\nОрганизатор секции — Sivuyile Manxoyi.\n\nАвторы — Alejandro Martin Lopez, Javier Mejuto, Duane Hamacher и Harufumi Tamazawa.\n\nСоставление и редактура — Asmita Bhandare (руководитель проекта), Giuliana Giobbi, Colm Larkin, Rebecca Sanderson, Eduardo Penteado, Niall Deacon, Gwen Sanderson и Anna Sippel.\n\nОфис астрономии для образования МАС (OAE) работает на базе Дома астрономии (Haus der Astronomie, HdA), которым управляет Институт астрономии Общества Макса Планка. Офис помогает астрономам и педагогам преподавать астрономию в начальных и средних школах по всему миру и координирует их работу. Разместить OAE в Доме астрономии помогли немецкие фонды Klaus Tschira Stiftung и Carl-Zeiss-Stiftung. Семинары Шоу и МАС по астрономическому образованию финансирует Фонд премии Шоу.\n\nOAE поддерживает растущая сеть центров и узлов, которые совместно ведут международные проекты. Центр OAE в Нанкине (Китай) работает на базе Пекинского планетария (BJP), центр на Кипре — Кипрской организации космических исследований (CSEO), центр в Египте — Национального исследовательского института астрономии и геофизики (NRIAG), центр в Индии — Межуниверситетского центра астрономии и астрофизики (IUCAA), центр в Италии — Национального института астрофизики (INAF). Узел OAE в Республике Корея работает на базе Корейского астрономического общества (KAS), узел во Франции — Университета CY Cergy Paris, узел в Непале — Непальского астрономического общества (NASO)."
+        },
+        "page-3": {
+          "heading": "Страница 3",
+          "body": "Как преподавать астрономию коренных народов\n\nОрганизатор секции — Сивуйиле Манксойи, Южноафриканская астрономическая обсерватория, ЮАР.\n\nО секции\n\nАстрономия — древнейшая научная дисциплина. Одна из её особенностей в том, что она возникла во множестве культур. У людей повсюду есть глубокая связь с небом и звёздами. На секции обсуждались отношения между астрономией, культурой и обществом, а также ценность, актуальность и значение астрономии коренных народов. Она возникла за тысячи лет до западной академической астрономии. В конце участники вернулись к трудностям её преподавания и поделились подходящими педагогическими методами.\n\nСреди названных трудностей — отсутствие астрономии коренных народов в школьных программах многих стран, неточное представление этих знаний, привычка объявлять их и соответствующие практики иррациональными, а также недостаток подготовки и поддержки учителей. Чтобы успешно преподавать знания коренных народов, важно осмысливать собственную позицию, признавать разные способы познания и быть готовыми к межкультурному диалогу.\n\nЗнакомство с разными астрономическими традициями позволяет лучше понять, как люди создают представления и модели неба. Преподавание астрономии коренных народов даёт возможность вернуть человеческое измерение науке и обществу."
+        },
+        "page-4": {
+          "heading": "Страница 4",
+          "body": "Доклады\n\nАстрономические традиции, культуры и образование\n\nДокладчик — Алехандро Мартин Лопес, CONICET, секция этнологии Института антропологических наук Университета Буэнос-Айреса, Аргентина.\n\nИногда западную академическую астрономию называют просто «астрономией», а астрономические традиции отдельных культур — «культурными астрономиями». За этим стоит глубокое непонимание результатов трёх десятилетий исследований в области культурной астрономии. В докладе мы разберём эту путаницу и покажем, как эти исследования помогают взглянуть на астрономическое образование с межкультурной точки зрения. Небо и его явления во все времена интересовали множество культур по всему миру. После Коперниканской революции астрономия стала образцом для других наук в западной культуре. В результате колониальной экспансии западных обществ их академическую астрономию сегодня преподают в самых разных частях Земли. Культурная астрономия показала, что каждая астрономическая традиция возникает в конкретном обществе и имеет свою историю. Западная академическая астрономия — одна из таких традиций. Как и другие, она опирается на ряд неявных культурных предпосылок. По-настоящему инклюзивное деколониальное научное образование даёт учащимся и учителям возможность критически осваивать западную академическую астрономию и сопоставлять её с системами астрономических знаний их собственных обществ.\n\nЗапись доклада доступна по ссылке на странице.\n\nПротивопоставление «астрономии» и «культурных астрономий» мешает увидеть вклад трёх десятилетий исследований. Культурная астрономия — междисциплинарная научная область, в которой астрономические системы рассматривают в их общественном контексте. Её задача шире поиска аналогов западной астрономии в других культурах. Среди её направлений — этноастрономия, археоастрономия и социальная история астрономии. В докладе мы покажем, как культурная астрономия, особенно этноастрономия, помогает переосмыслить астрономическое образование с позиции межкультурного взаимодействия.\n\nЭтноастрономия предлагает собственный взгляд на предмет, опираясь на этнографические и этнологические методы. Далее этот подход поясняется подробнее."
+        },
+        "page-5": {
+          "heading": "Страница 5",
+          "body": "Этноастрономия изучает с антропологических позиций знания о небе и связанные с ним практики любой современной социальной общности. Это может быть этническая группа, социальный класс, семья, профессиональная группа или учреждение, как в западных, так и в незападных обществах. Эти знания и практики рассматриваются как часть социальной и культурной жизни общности, в региональном и глобальном контексте и в историческом развитии.\n\nЭтноастрономию интересуют общие, во многом неявные знания и практики: логика повседневной деятельности, жизненный мир, мировоззрение и картина мира. Она изучает и более явно сформулированные системы, часто связанные со специалистами, например космологии и онтологии. Все они связаны между собой, при этом продолжают формироваться и меняться.\n\nХарактерные черты этноастрономического подхода:\n\nа) стремление понять точку зрения изучаемой группы;\nб) внимание к смыслу практик и высказываний и к сложным связям между ними;\nв) целостный подход, при котором любое явление общественной жизни рассматривают в связи с целым;\nг) непосредственное присутствие исследователя и личные отношения с участниками изучаемой группы;\nд) остранение, то есть стремление перестать воспринимать как само собой разумеющееся собственный здравый смысл и здравый смысл изучаемой группы;\nе) рефлексивность, или осознанный анализ собственной позиции и влияния на формирование знания;\nж) преимущественно индуктивный подход, включающий сравнение, модели и общие теории;\nз) сочетание разных методов, например интервью (особенно неформальных), работы с архивами, биографическими рассказами, выявления представлений, анализа сетей, изображений, видео, аудио, опросов и статистики, с включённым наблюдением;\nи) вовлечённость, ответственность и взаимность в отношениях с изучаемым сообществом с учётом местных условий.\n\nЭтноастрономия показывает, что астрономическое знание, как и любое человеческое знание, формируется в обществе и культуре. Оно помогает приспособиться к миру, в котором мы живём: к физической, биологической и социальной среде. Наш мир наполнен смыслами, способами восприятия и метафорами, с которыми нас знакомят окружающие, прежде всего в ходе первичной социализации, через подражание и повседневную жизнь. Опыт органов чувств ограничивает возможные картины мира, но оставляет больше одного варианта. Социальная природа знания, необходимость обосновывать его и соответствовать принятым в обществе критериям истинности тоже ограничивают возможные представления о мире в определённом месте и времени. Эти ограничения оставляют пространство для разных картин мира.\n\nИз общих представлений, или мировоззрений, вырастают явно сформулированные системы знаний о мире — космологии. Мировоззрения и космологии расположены на разных полюсах одного континуума. Любые представления о небе и связанные с ними практики продолжают меняться и связаны с более общими представлениями о теле, личности, пространстве, времени и причинности. Системы знания всегда включены в общественную жизнь и обладают разной степенью самостоятельности по отношению к ней. На них сильно влияют отношения власти и общественные институты.\n\nВо все времена и в разных частях света небо и его явления вызывали большой интерес. В западной культуре со времён Коперника астрономия стала образцом для науки в целом. Из-за колониальной экспансии западная академическая астрономия сегодня преподаётся в самых разных уголках Земли. Культурная астрономия показала, что каждая астрономическая традиция связана с историей и обществом. Западная академическая астрономия — одна из таких традиций и, как и другие, опирается на ряд неявных культурных предпосылок. Инклюзивное и деколонизированное научное образование предполагает, что ученики и педагоги могут критически осваивать западную академическую астрономию и сопоставлять её с астрономическими знаниями своих сообществ."
+        },
+        "page-6": {
+          "heading": "Страница 6",
+          "body": "Культурная астрономия может существенно улучшить преподавание астрономии. Для этого нужно глубже понимать астрономические традиции разных культур и видеть их разнообразие и в прошлом, и сегодня. Многие учебные и популярные материалы о знании неба в разных культурах готовятся без строгой методики. Астрономические традиции часто приводят как курьёзный пример того, во что люди якобы верили до появления западной науки.\n\nУ культурной астрономии есть свои специалисты и профессиональные организации, в том числе Межамериканское общество астрономии в культуре (SIAC), Европейское общество астрономии в культуре (SEAC) и Международное общество археоастрономии и астрономии в культуре (ISAAC). Они помогают изучать разные способы познания неба, видеть их внутреннее устройство и понимать, как люди создают идеи и модели мира. Они также помогают понять логику, метафоры, интересы и наблюдения, на которых основана западная академическая астрономия. Педагоги благодаря этому могут выбирать методы преподавания с учётом культурной среды, а учащиеся — критически осваивать материал. Разнообразие моделей, метафор и способов изучать небо обогащает и саму западную академическую астрономию.\n\nНебо Центральной Америки и Месоамерики. Более 4000 лет астрономии\n\nДокладчик — Хавьер Мехуто, кафедра археоастрономии и культурной астрономии факультета космических наук, Национальный автономный университет Гондураса (UNAH).\n\nАрхеологические свидетельства показывают, что народы Месоамерики и Центральной Америки систематически изучали небо на протяжении длительного времени. Коренные народы сохранили эти знания и продолжают хранить их в разнообразных культурных формах. Такие материалы помогают учащимся больше узнать о Вселенной и человеке. Знания предков можно использовать в разных учебных дисциплинах, чтобы разбирать этноцентричные представления, в которых один способ познания принимается за единственно допустимый. Это помогает понять сложность мира, в котором мы живём.\n\nЗапись доклада доступна по ссылке на странице.\n\nАрхеологические свидетельства ясно показывают, что народы Месоамерики и Центральной Америки систематически изучали небо. Далее автор объясняет, как эти знания связаны с другими областями жизни."
+        },
+        "page-7": {
+          "heading": "Страница 7",
+          "body": "Астрономические знания в других культурах связаны не только с небом, но и с земледелием, предсказанием погоды, мировоззрением и другими областями жизни. Они образуют единую систему.\n\nВ Месоамерике выделяют три типа сооружений для прямых или косвенных наблюдений неба. Первый — полусферические обсерватории, похожие на современные западные обсерватории. Пример — Караколь в Чичен-Ице, Мексика. Оттуда наблюдали отдельные моменты видимого движения Венеры. Второй — горизонтальные обсерватории. По теням от вертикальных сооружений, например стел, определяли время года и сроки обрядов. Пример — Площадь стел в Копане, Гондурас. Третий — вертикальные обсерватории. С их помощью определяли дни прохождения Солнца через зенит (Aveni, 1981). Такие явления характерны для межтропических широт. Первое в году прохождение Солнца через зенит совпадало с началом сезона дождей и было важно для земледелия. Примеры — Сочикалько и сооружение P в Монте-Альбане, оба в Мексике.\n\nПо изображениям можно судить о том, какие небесные тела чаще всего наблюдали. Изображения солнечного бога Кинич-Ахау встречаются во многих археологических памятниках, например на лепных масках Кохунлича (Velázquez, 1995) и рисунках Майяпана в Мексике. В Копане этого бога можно увидеть вместе с богиней Луны на так называемой небесной скамье. Чаще всего изображали Солнце и Луну. Следом по частоте идут антропоморфные изображения Венеры. Среди многочисленных памятников региона выделяются росписи и изображения в Какаштле. Венеру считали предвестницей несчастий, а её свет — вредоносным. Её синодический цикл связывали с гражданским календарём хааб из 365 дней и с затмениями, хорошо известными в Месоамерике. Об этом говорят письменные источники: таблица затмений Дрезденского кодекса и запись о солнечном затмении 1531 года в колониальной части кодекса Теллериано-Ременсис (издание 1964 года).\n\nЭто лишь малая часть знаний о небе, накопленных в Месоамерике. Их сохраняют коренные народы, живущие в регионе сегодня. Эти знания позволяют больше узнать о Вселенной и человеке. Их можно включать в разные дисциплины, чтобы разбирать этноцентричные представления, в которых одни способы познания вытесняют другие. Это помогает учащимся увидеть сложность мира.\n\nБолее чем за 4000 лет в регионе накопили обширные астрономические знания. Они почти не представлены в программах курсов и специальностей по истории астрономии. Так же обстоит дело со многими другими регионами мира. Из-за этого возникает ошибочное представление, что познание неба шло везде по одному пути. Астрономическая наука — часть культуры, и её значение раскрывается в обществе, где она сложилась. Это относится и к древним, и к современным культурам. Поэтому важно учить ценить разнообразие способов познания."
+        },
+        "page-8": {
+          "heading": "Страница 8",
+          "body": "Разнообразие способов познания ценно и в прошлом, и сегодня, и для будущего человечества. Изучение других систем знаний важно для науки и преподавания. Оно также помогает воспитывать уважение к чужому опыту, видеть общественный и культурный контекст наблюдений неба и представлять будущее среди звёзд, в котором есть место всем.\n\nИсточники\n\n• Aveni, A. и Hartung, H. (1981). Наблюдения Солнца при прохождении через зенит в Месоамерике. Journal for the History of Astronomy Supplement, 12.\n• Кодекс Теллериано-Ременсис (1964), в издании Antigüedades de México на основе собрания лорда Кингсборо.\n• Velázquez Morlet, Adriana (1995). Космогония и повседневная жизнь в Кохунличе. Arqueología Mexicana, № 14, с. 32–36."
+        },
+        "page-9": {
+          "heading": "Страница 9",
+          "body": "Астрономическое образование на стыке науки и знаний коренных народов\n\nДокладчик — Дуэйн Хамакер, Школа физики Мельбурнского университета, Австралия.\n\nКультурные традиции и системы знаний коренных народов всего мира содержат разные пласты сложного научного знания. Оно складывалось из внимательных наблюдений, опытов, накопленного опыта и умозаключений, основанных на априорном знании и на результатах наблюдений. Это знание передаётся из поколения в поколение устно. Из рассказов старейшин можно многое узнать о том, как формируется научное знание и как его применяют. Старейшины учат, что всё происходящее в небе отражается на земле. Аннетт Ли рассказывает об этом принципе народа лакота под названием Kapemni.\n\nПреподавателям естественных наук стоит подумать, как поддержать коренные народы, использующие в исследованиях и образовании подход Etuaptmumk — «видеть двумя глазами». Старейшина народа микмак Альберт Маршалл объясняет, что одним глазом мы смотрим на мир с позиции коренных народов, а другим — с позиции западной академической традиции. Педагог Мартин Наката, представитель народов островов Торресова пролива, называет эту область соприкосновения культур культурным интерфейсом. Эти подходы дают теоретическую основу для преподавания астрономии и науки коренных народов и помогают поддержать новое поколение исследователей из этих сообществ. В докладе они рассмотрены на примерах из разных частей мира. Они показывают, как коренные народы изучали явления космоса и их связь с событиями на Земле.\n\nЗапись доклада доступна по ссылке на странице."
+        },
+        "page-10": {
+          "heading": "Страница 10",
+          "body": "Учебные материалы по истории астрономии на основе цифровых архивов Японии\n\nДокладчик: Harufumi Tamazawa, Киотский университет и Киотский городской университет искусств, Токио, Япония (место указано как в оригинале).\n\nЦифровые архивы помогают изучать историю астрономии. Чтобы понять астрономию, важно знать, как менялись представления о Вселенной, однако учебных материалов и семинаров на эту тему сравнительно мало. Полезно знакомиться с историческими документами по астрономии. Благодаря развитию цифровых архивов это стало доступнее. На университетском курсе истории астрономии студенты искали в японских исторических документах схему Солнечной системы и разбирали её отличия от современного представления. Цифровые архивы могут лучше, чем одна лекция, показать, как в Японию пришла гелиоцентрическая теория и как менялась картина мира.\n\nЗапись доклада: https://youtu.be/7EvkJ4pP8we\n\nПри обсуждении связи истории и преподавания астрономии нужно подумать, как использовать исторические материалы в занятиях. В археоастрономии исследуют памятники, культурное наследие, земной и небесный ландшафт. В этноастрономии исследовательским материалом служат записи обычаев, рассказы, песни и танцы. Превратить эти материалы в учебные помогает архив.\n\nNojiri Hōei (1885–1977) и Kitao Kōichi (род. в 1953 году) — пионеры изучения астрономического фольклора в Японии. Они опрашивали жителей разных областей и собирали местные названия звёзд. Китао собирал также народные песни об астрономии (см., например, Kitao, 2021). Некоторые опросы проводились без расчёта на публикацию архива, поэтому часть исследовательских материалов использовать нельзя. В палеоастрономии исследователи ищут в документальных архивах сведения о прошлых астрономических событиях. Так, Хаякава и соавторы (2017) использовали японские исторические документы, чтобы оценить масштаб события космической погоды 1770 года.\n\nЕсть два подхода к использованию исследовательских материалов при изучении астрономических знаний коренных народов. В этноастрономии и в исследованиях астрономического фольклора сама архивация материалов, включая записи и заметки, может стать частью обучения. В истории астрономии и в палеоастрономии учебное значение имеют как сбор материалов, так и работа с готовыми архивами.\n\nКак архив связан с лекциями? Историю астрономии обычно преподают на занятиях в аудитории. Продолжение на следующей странице."
+        },
+        "page-11": {
+          "heading": "Страница 11",
+          "body": "После пандемии COVID-19 университетские лекции перешли в онлайн. Преподавателям понадобились цифровые версии материалов по истории астрономии. Какие материалы помогают понять, как менялись представления о Вселенной?\n\nПубликации об исторических материалах для занятий по астрономии позволяют выделить три подхода: воспроизвести исторический метод наблюдения вместе с расчётами, создать копию старого прибора или провести наблюдения и обсуждение с подлинным предметом, например во время посещения астрономического памятника или работы со старинным телескопом. Чтобы показать, как менялась картина Вселенной, нужен ещё один подход, который учитывает культурную астрономию, науковедение и философию науки.\n\nВ качестве примера автор дал студентам на курсе истории астрономии задание найти «Хэйтэнги дзукай» (Heitengi-zukai), работу мастера оптических телескопов Ивахаси Дзэмбэя, на портале японских архивов Japan Search. Студенты рассматривали рисунок, отмечали отличия от нынешних представлений о Солнечной системе и пытались объяснить эти отличия. Многие не ограничились тем, что назвали схему геоцентрической. Они указали, что Луна, Солнце, Марс, Юпитер и Сатурн обращаются вокруг Земли, а Венера и Меркурий — вокруг Солнца. Около 10% студентов провели сравнение с Тихо Браге и другими авторами. Ответы получались подробнее, чем по другим темам курса, что, предположительно, говорит об интересе студентов к заданию.\n\nДля подготовки материалов об астрономических знаниях коренных народов важно архивировать результаты исследований. Нужна методика хранения этноастрономических и фольклорных материалов, которая учитывает правила, этику, конфиденциальность и необходимые навыки. Работа с архивами и результаты смежных дисциплин, в частности истории науки и науковедения, тоже важны при разработке таких материалов.\n\nЛитература\n\n• Hayakawa, H., и соавт. (2018). The Astrophysical Journal, 862(1), 15.\n• Kitao, K. (2021). Publications of the Japanese Society for Education and Popularization of Astronomy, 33, 5, с. 21–33 (на японском языке)."
+        },
+        "page-12": {
+          "heading": "Страница 12",
+          "body": "Итоги обсуждения\n\nУчастники спрашивали о доступности материалов для преподавания астрономии коренных народов, а также о том, готовы ли учителя и достаточно ли они подготовлены, чтобы её преподавать. В США, Канаде, Австралии и ЮАР разрабатывают всё больше таких материалов. Нужно обмениваться удачными подходами к разработке материалов о знаниях коренных народов и налаживать сотрудничество между странами и континентами.\n\nНекоторые университеты начали включать преподавание знаний коренных народов в образовательные программы, курсы по естественным наукам и программы подготовки педагогов. Астрономию коренных народов поддерживают профильные организации, например Международное общество археоастрономии и астрономии в культуре (ISAAC), которое проводит ежегодные конференции.\n\nВсе докладчики подчеркнули, что знания, в том числе астрономические, формируются в обществе. Астрономию следует рассматривать как часть культуры. В каждой культуре складываются собственные знания о небе. Западная академическая астрономия — одна из этих традиций. Её доминирующее положение авторы связывают с колониальным прошлым и современным культурным империализмом западных стран. Поэтому так важно признавать и уважать астрономические знания других культур, в особенности коренных народов.\n\nВ ответ на вопросы Алехандро Мартин Лопес подробнее рассказал о межкультурном преподавании астрономии. По его словам, учащиеся получают больше возможностей осмыслить материал, когда узнают, как представители других культур наблюдают и объясняют небо и звёзды. Культуры влияют друг на друга и во многом сходны. Осознание этого может помочь преодолевать неуважение, господство и неравенство во власти. Признание практик коренных народов может содействовать деколонизации знания и науки."
+        },
+        "page-13": {
+          "heading": "Страница 13",
+          "body": "http://astro4edu.org @astro4edu"
+        }
+      }
+    }
+  },
+  "media": [
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-cover",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/cover-teachingaboutindigenousastronomy_mini_review.png",
+      "ru_path": "data/media/ru/oae-cover-teachingaboutindigenousastronomy_mini_review.png",
+      "sha256": "a54f394383f8ebd9fdaa1d466a777c9f5ddd883b491e6da74fe5117438d7dbd3",
+      "ru_sha256": "6b9e4ed6a3fc5c16ec91eacca7e430ccb18d08ade9d580365a0e8772dc470c08",
+      "size": 635372,
+      "alt_en": "OAE Mini-Review. Teaching about Indigenous Astronomy. Publications of the IAU Office of Astronomy for Education.",
+      "alt_ru": "Мини-обзор OAE. Как преподавать астрономию коренных народов. Издания Управления астрономического образования МАС.",
+      "title_en": "",
+      "title_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "credit": "IAU Office of Astronomy for Education",
+      "credit_url": null,
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "source_language": "en",
+      "component_ids": [
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-daa4f3b939d6a5d50788",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-dc03fc3121750665e938",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-e83ee8af005b3d78db77",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-33d8af68c9a4714cafc4",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-6986400f2baa4c8f46bb",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-97c1ae95a53c0c16229d",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-69319fea3fc9e9e2241c",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-13b0a3de7f6647c24d21",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-db3a2056d45d8b45bfdd",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-205237af2dc11a853e3e",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-a9f665c7987b086878fd",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-aea6f9e599eaaa00009c",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-7364f920765131e5a9a7",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-1bb1d778ed9e4c2e0a75",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-78ab8239eb7d313c7381",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-4c342b794022835bbed9",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-a86fc953b7b40c4fd90c",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-23c47344fd13c4aeb01c",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-15ce59603eb2f16ad177",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-058177a18643248d5444",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-3c62b8d4a7bfc8491396",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-5b2d716d07d37acbd349",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-4bc200fe04bdcda5c18d",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-65a35a84887a25acec53",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-10a60f73640e06348aa2",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-6a7a8616a3d58ca48989",
+        "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-fc304fe81648bc7c9b09"
+      ],
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-daa4f3b939d6a5d50788",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/daa4f3b939d6a5d507880c6c0a674db98f26df709a1f3f2213f5f51fd33eb09d.png",
+      "sha256": "daa4f3b939d6a5d507880c6c0a674db98f26df709a1f3f2213f5f51fd33eb09d",
+      "size": 1065,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-dc03fc3121750665e938",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/dc03fc3121750665e93874a65f67050f9dc3f7e378405ab60a71ae15b2514cd9.png",
+      "sha256": "dc03fc3121750665e93874a65f67050f9dc3f7e378405ab60a71ae15b2514cd9",
+      "size": 2186,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-e83ee8af005b3d78db77",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/e83ee8af005b3d78db7733875984009ee01c70b56418a7816a1900bed8522668.png",
+      "sha256": "e83ee8af005b3d78db7733875984009ee01c70b56418a7816a1900bed8522668",
+      "size": 1045,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-33d8af68c9a4714cafc4",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/33d8af68c9a4714cafc41635fea11f47f0fc93af9fb9ebfef85d0f57054af2fd.png",
+      "sha256": "33d8af68c9a4714cafc41635fea11f47f0fc93af9fb9ebfef85d0f57054af2fd",
+      "size": 1266,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-6986400f2baa4c8f46bb",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/6986400f2baa4c8f46bbf388be2064171a188cd649ed600e756deeb1ff9ee8b8.png",
+      "sha256": "6986400f2baa4c8f46bbf388be2064171a188cd649ed600e756deeb1ff9ee8b8",
+      "size": 720,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-97c1ae95a53c0c16229d",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/97c1ae95a53c0c16229d8cbf2ce83f968b610d61f2d15f1f2b2892fa25fe98d1.png",
+      "sha256": "97c1ae95a53c0c16229d8cbf2ce83f968b610d61f2d15f1f2b2892fa25fe98d1",
+      "size": 4633,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-69319fea3fc9e9e2241c",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/69319fea3fc9e9e2241c4c455634114fc544697ce1f50f3b1f80abc5e096889c.jpeg",
+      "sha256": "69319fea3fc9e9e2241c4c455634114fc544697ce1f50f3b1f80abc5e096889c",
+      "size": 699,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-13b0a3de7f6647c24d21",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/13b0a3de7f6647c24d21ffe69018949b677ebbf7e0ab4321ebdb1cd937476af1.png",
+      "sha256": "13b0a3de7f6647c24d21ffe69018949b677ebbf7e0ab4321ebdb1cd937476af1",
+      "size": 108,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-db3a2056d45d8b45bfdd",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/db3a2056d45d8b45bfdd01e028be24bc29e054d83cb3042bf4c3fbf3c36964f8.png",
+      "sha256": "db3a2056d45d8b45bfdd01e028be24bc29e054d83cb3042bf4c3fbf3c36964f8",
+      "size": 92458,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-205237af2dc11a853e3e",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/205237af2dc11a853e3e99601878ace6d2875ba7e65e6ad3d4b095d69006c3dc.jpeg",
+      "sha256": "205237af2dc11a853e3e99601878ace6d2875ba7e65e6ad3d4b095d69006c3dc",
+      "size": 699,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-a9f665c7987b086878fd",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/a9f665c7987b086878fd449c8af91869c34b5b4c64cb61e5c8dd5f22119b6dbc.jpeg",
+      "sha256": "a9f665c7987b086878fd449c8af91869c34b5b4c64cb61e5c8dd5f22119b6dbc",
+      "size": 699,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-aea6f9e599eaaa00009c",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/aea6f9e599eaaa00009c290ef1f26d57d57cd35cd07010b8b3cf8a82e80fb4f6.png",
+      "sha256": "aea6f9e599eaaa00009c290ef1f26d57d57cd35cd07010b8b3cf8a82e80fb4f6",
+      "size": 219,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-7364f920765131e5a9a7",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/7364f920765131e5a9a792e8a4a5913812b1aabe8b9e0ddae005375fd6e84b79.png",
+      "sha256": "7364f920765131e5a9a792e8a4a5913812b1aabe8b9e0ddae005375fd6e84b79",
+      "size": 4409,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-1bb1d778ed9e4c2e0a75",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/1bb1d778ed9e4c2e0a75155fba4fabdc96499941f64d3425bb4629dd25f7fb5c.jpeg",
+      "sha256": "1bb1d778ed9e4c2e0a75155fba4fabdc96499941f64d3425bb4629dd25f7fb5c",
+      "size": 699,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-78ab8239eb7d313c7381",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/78ab8239eb7d313c7381c434e99e6c150980d74673ca11eb1764404a5b521d7c.png",
+      "sha256": "78ab8239eb7d313c7381c434e99e6c150980d74673ca11eb1764404a5b521d7c",
+      "size": 484,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-4c342b794022835bbed9",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/4c342b794022835bbed9d633e3d0ecc3ca2948152a57938b8465bc734b6b7d04.png",
+      "sha256": "4c342b794022835bbed9d633e3d0ecc3ca2948152a57938b8465bc734b6b7d04",
+      "size": 90763,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-a86fc953b7b40c4fd90c",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/a86fc953b7b40c4fd90c83b249f8f2ff3c1343e3c9f52a968c67e5b82eb8f244.jpeg",
+      "sha256": "a86fc953b7b40c4fd90c83b249f8f2ff3c1343e3c9f52a968c67e5b82eb8f244",
+      "size": 699,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-23c47344fd13c4aeb01c",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/23c47344fd13c4aeb01c964258364550bbbf6508677cab5652d8e7d32056dcfd.png",
+      "sha256": "23c47344fd13c4aeb01c964258364550bbbf6508677cab5652d8e7d32056dcfd",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-15ce59603eb2f16ad177",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/15ce59603eb2f16ad177d27fe1bc28754a91f0154b60ed4850d3796995406f3a.jpeg",
+      "sha256": "15ce59603eb2f16ad177d27fe1bc28754a91f0154b60ed4850d3796995406f3a",
+      "size": 699,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-058177a18643248d5444",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/058177a18643248d544446f22df6b3daa93e3ec3697d42b624bcc5d5398f2ea2.png",
+      "sha256": "058177a18643248d544446f22df6b3daa93e3ec3697d42b624bcc5d5398f2ea2",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-3c62b8d4a7bfc8491396",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/3c62b8d4a7bfc8491396e3903335897523267472faf57826f28d1937118f87c9.jpeg",
+      "sha256": "3c62b8d4a7bfc8491396e3903335897523267472faf57826f28d1937118f87c9",
+      "size": 699,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-5b2d716d07d37acbd349",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/5b2d716d07d37acbd349bdcee8eff85296b3bee699603ce30352f23221537601.png",
+      "sha256": "5b2d716d07d37acbd349bdcee8eff85296b3bee699603ce30352f23221537601",
+      "size": 52508,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-4bc200fe04bdcda5c18d",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/4bc200fe04bdcda5c18d3e028cf4b00c5baa26b5ef636379af3063f3f3047727.jpeg",
+      "sha256": "4bc200fe04bdcda5c18d3e028cf4b00c5baa26b5ef636379af3063f3f3047727",
+      "size": 700,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-65a35a84887a25acec53",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/65a35a84887a25acec53927f667d08809ba73b34ca92952af98fc26e1fa77f1e.jpeg",
+      "sha256": "65a35a84887a25acec53927f667d08809ba73b34ca92952af98fc26e1fa77f1e",
+      "size": 700,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-10a60f73640e06348aa2",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/10a60f73640e06348aa2dfad6c1f2a390b59cac49ce66bc312025030c1a0609a.jpeg",
+      "sha256": "10a60f73640e06348aa2dfad6c1f2a390b59cac49ce66bc312025030c1a0609a",
+      "size": 700,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-6a7a8616a3d58ca48989",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/6a7a8616a3d58ca4898939470eb09e6b5838b60693ab9ae86667f18929bd8ecc.jpeg",
+      "sha256": "6a7a8616a3d58ca4898939470eb09e6b5838b60693ab9ae86667f18929bd8ecc",
+      "size": 47760,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-fc304fe81648bc7c9b09",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/fc304fe81648bc7c9b09c6c2203c2d89b723797857758c66c5853f4c2f5c5250.png",
+      "sha256": "fc304fe81648bc7c9b09c6c2203c2d89b723797857758c66c5853f4c2f5c5250",
+      "size": 362,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-ae1ced75f06d9a4735db",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=3",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/ae1ced75f06d9a4735db7fcfa8a0db4d80a2adfbe11aa90445d7b02208abfbeb.jpeg",
+      "sha256": "ae1ced75f06d9a4735db7fcfa8a0db4d80a2adfbe11aa90445d7b02208abfbeb",
+      "size": 44530,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-6e78c00982f0ff6dabd1",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=3",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/6e78c00982f0ff6dabd18f3a1de19bff443e9d95c2ac7a0d145c1c199cf6be2c.png",
+      "sha256": "6e78c00982f0ff6dabd18f3a1de19bff443e9d95c2ac7a0d145c1c199cf6be2c",
+      "size": 729,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-49b963842462e930277d",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=3",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/49b963842462e930277d8217584dc27d310a580896f562dfaf1a3c77f16941c7.png",
+      "sha256": "49b963842462e930277d8217584dc27d310a580896f562dfaf1a3c77f16941c7",
+      "size": 257,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-e4ec42e4be37772a1ed5",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=3",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/e4ec42e4be37772a1ed516bf33e34d675830d7244dc9ce1a8415ed741255bc9c.png",
+      "sha256": "e4ec42e4be37772a1ed516bf33e34d675830d7244dc9ce1a8415ed741255bc9c",
+      "size": 6045,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "Session overview",
+      "alt_ru": "Обзор сессии",
+      "ru_path": "data/media/ru/oae-review-figure-ed01ea9.png",
+      "ru_sha256": "9351d50bf8dc8c237c4a24ad21c4c330e517e39996da2995a5e08dd356bd924a"
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-d93faed0b22b55649684",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=3",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/d93faed0b22b55649684c341a2b57a257328f7898d2d2f91d99dc7ed2b43a030.png",
+      "sha256": "d93faed0b22b55649684c341a2b57a257328f7898d2d2f91d99dc7ed2b43a030",
+      "size": 12412,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-8acfb4d523d137f4fa5a",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=4",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/8acfb4d523d137f4fa5ad0b82b428ca9ec7be6a61cbea66edb643b2e95f7712a.jpeg",
+      "sha256": "8acfb4d523d137f4fa5ad0b82b428ca9ec7be6a61cbea66edb643b2e95f7712a",
+      "size": 357097,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-69bbbdf15d76d489e5d9",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=4",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/69bbbdf15d76d489e5d96775cea40d83bf57a1d9f97a2368a4491a45974e3ec3.png",
+      "sha256": "69bbbdf15d76d489e5d96775cea40d83bf57a1d9f97a2368a4491a45974e3ec3",
+      "size": 5348,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-65ae7bdc27e443987dee",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=4",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/65ae7bdc27e443987dee0e15a4bb998871b54cab1dd0562db7e38b94b93d6843.png",
+      "sha256": "65ae7bdc27e443987dee0e15a4bb998871b54cab1dd0562db7e38b94b93d6843",
+      "size": 6559,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "Talk contributions",
+      "alt_ru": "Устные доклады",
+      "ru_path": "data/media/ru/oae-review-figure-65ae7bd.png",
+      "ru_sha256": "fa21656e732df9b178f2d2b777dd78cbaa371cbf743d0daac2efcef27e4a0ad3"
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-a52f725b99cdbd1a34fb",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=6",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/a52f725b99cdbd1a34fb15c3a521557bd5476affa5a32673980358b4e078ea30.jpeg",
+      "sha256": "a52f725b99cdbd1a34fb15c3a521557bd5476affa5a32673980358b4e078ea30",
+      "size": 25544,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-68c1f5ca040d384cec4d",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=6",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/68c1f5ca040d384cec4d994872ab8e0617415765f05406d8bcd06cca88fdd453.png",
+      "sha256": "68c1f5ca040d384cec4d994872ab8e0617415765f05406d8bcd06cca88fdd453",
+      "size": 5351,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-f1dc510916bd94f16e3d",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=9",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/f1dc510916bd94f16e3d76a017b559797970149abb95cbf24ce8e9d2455eeb76.jpeg",
+      "sha256": "f1dc510916bd94f16e3d76a017b559797970149abb95cbf24ce8e9d2455eeb76",
+      "size": 727234,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-9d20b0dc60e25d28fdc9",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=9",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/9d20b0dc60e25d28fdc9af3e4098305cc4658bc23c4750adea9a60ee4bf6b2ff.png",
+      "sha256": "9d20b0dc60e25d28fdc9af3e4098305cc4658bc23c4750adea9a60ee4bf6b2ff",
+      "size": 5319,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-1eb7883915d803dcb8dd",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=10",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/1eb7883915d803dcb8ddac461cdc7b3da46a388302413f6c619116f26913a0ee.jpeg",
+      "sha256": "1eb7883915d803dcb8ddac461cdc7b3da46a388302413f6c619116f26913a0ee",
+      "size": 218396,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-e9a5e01228b1df15d83f",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=10",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/e9a5e01228b1df15d83f507cd11d59ed680dce031c6d599e5f68aa15a8dc7e07.png",
+      "sha256": "e9a5e01228b1df15d83f507cd11d59ed680dce031c6d599e5f68aa15a8dc7e07",
+      "size": 5351,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-1c3235a57092fb771f91",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=12",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/1c3235a57092fb771f91c15754adb9da17957134d67ce4f22795c300494d2b75.png",
+      "sha256": "1c3235a57092fb771f91c15754adb9da17957134d67ce4f22795c300494d2b75",
+      "size": 6402,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "Discussion summary",
+      "alt_ru": "Итоги обсуждения",
+      "ru_path": "data/media/ru/oae-review-figure-1c3235a.png",
+      "ru_sha256": "be7a24a7fab73aee13c62f082f5d86db812e738526777ff27714f7e580265276"
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-116962379f276f82de9a",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/116962379f276f82de9ad0e396cb7177df61114cd8d998e3d107ef7efa43d395.png",
+      "sha256": "116962379f276f82de9ad0e396cb7177df61114cd8d998e3d107ef7efa43d395",
+      "size": 1054,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-c7be67db3a23c1750a12",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/c7be67db3a23c1750a12b84a024c6294aabfc4759d9a61794c1ea5df8e92ca27.png",
+      "sha256": "c7be67db3a23c1750a12b84a024c6294aabfc4759d9a61794c1ea5df8e92ca27",
+      "size": 2183,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-8b237217afba4b9b6f98",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/8b237217afba4b9b6f98b860b70584ae6f0b7cd84d0bff264dd506f2c3f4f95e.png",
+      "sha256": "8b237217afba4b9b6f98b860b70584ae6f0b7cd84d0bff264dd506f2c3f4f95e",
+      "size": 1041,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-f46eb8ed0742632cb3df",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/f46eb8ed0742632cb3df8a40fa1ccb0a8155f950d4fb9a48e7fc7ed40ac87705.png",
+      "sha256": "f46eb8ed0742632cb3df8a40fa1ccb0a8155f950d4fb9a48e7fc7ed40ac87705",
+      "size": 1221,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-b87f50a9881b00ffca47",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/b87f50a9881b00ffca47343c775c8035d604f92ce1dbb50523140db12d971f87.png",
+      "sha256": "b87f50a9881b00ffca47343c775c8035d604f92ce1dbb50523140db12d971f87",
+      "size": 868,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-8f2afe72ea99dfc678db",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/8f2afe72ea99dfc678dbbe9490a5947bd9af111e365af5fa55343c7b1b36ab89.png",
+      "sha256": "8f2afe72ea99dfc678dbbe9490a5947bd9af111e365af5fa55343c7b1b36ab89",
+      "size": 4453,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-ea94a6c646ec43b0d837",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/ea94a6c646ec43b0d8379ffce863aae05ed0c1dfe761391e921f7c45f0aa551c.png",
+      "sha256": "ea94a6c646ec43b0d8379ffce863aae05ed0c1dfe761391e921f7c45f0aa551c",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-a4c414601c471c7a72ee",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/a4c414601c471c7a72eef9594ab321e5fca12c619ec3d1b084947fb1c3ceec84.png",
+      "sha256": "a4c414601c471c7a72eef9594ab321e5fca12c619ec3d1b084947fb1c3ceec84",
+      "size": 4229,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-91e149c0f6e500c447d0",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/91e149c0f6e500c447d0a663d8866499c715fd0f8c65c7b2d4a731aa450cc335.png",
+      "sha256": "91e149c0f6e500c447d0a663d8866499c715fd0f8c65c7b2d4a731aa450cc335",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-aa85bc4c504970c1ec0d",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/aa85bc4c504970c1ec0df62bdf8b1d4f7e810a86a86514451c29bfcc34314f51.png",
+      "sha256": "aa85bc4c504970c1ec0df62bdf8b1d4f7e810a86a86514451c29bfcc34314f51",
+      "size": 113,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-4075d3495ea21852c1ab",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/4075d3495ea21852c1ab080fe3560a8d8c520755197f2cf1e1494675b32a312f.png",
+      "sha256": "4075d3495ea21852c1ab080fe3560a8d8c520755197f2cf1e1494675b32a312f",
+      "size": 4532,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-6a3c7c8b665cf3967597",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/6a3c7c8b665cf396759795d732d9138c1214c54ee74d9a19bb723e1bd146360c.png",
+      "sha256": "6a3c7c8b665cf396759795d732d9138c1214c54ee74d9a19bb723e1bd146360c",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-b0efec6ebd3102eb201a",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/b0efec6ebd3102eb201a54940bb142c205bb85756d6dd018c9d07d98ad8875be.png",
+      "sha256": "b0efec6ebd3102eb201a54940bb142c205bb85756d6dd018c9d07d98ad8875be",
+      "size": 4236,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-bdc304ac39c73cd7dcca",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/bdc304ac39c73cd7dcca44f4266c42dbae552b2b4b70cfdd9e4cb3145e088f00.png",
+      "sha256": "bdc304ac39c73cd7dcca44f4266c42dbae552b2b4b70cfdd9e4cb3145e088f00",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-27fd49ef1a2d4ae05b34",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/27fd49ef1a2d4ae05b346a50fb35c49b2e0d01c8f3a76752875d15e8257f202a.png",
+      "sha256": "27fd49ef1a2d4ae05b346a50fb35c49b2e0d01c8f3a76752875d15e8257f202a",
+      "size": 217,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-2ef13b1d6b0bc4fa0c0c",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/2ef13b1d6b0bc4fa0c0c2619d84c912a54831d40cee2a3260e620073bb315ced.png",
+      "sha256": "2ef13b1d6b0bc4fa0c0c2619d84c912a54831d40cee2a3260e620073bb315ced",
+      "size": 90724,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-25243cd175d21c24ee82",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/25243cd175d21c24ee820d681f197cbb1c31034f8e311723ac44b3fe330f0761.png",
+      "sha256": "25243cd175d21c24ee820d681f197cbb1c31034f8e311723ac44b3fe330f0761",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-70ae942da2c9dbbcb3a2",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/70ae942da2c9dbbcb3a204376905763cd0ce75c33e35cf0fa11f17e9c32472cb.png",
+      "sha256": "70ae942da2c9dbbcb3a204376905763cd0ce75c33e35cf0fa11f17e9c32472cb",
+      "size": 94,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-4d8ee199040aa09ea7e2",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/4d8ee199040aa09ea7e2e138548f88e598c732ccd6df2f0e59c4fc25f6bcf920.png",
+      "sha256": "4d8ee199040aa09ea7e2e138548f88e598c732ccd6df2f0e59c4fc25f6bcf920",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-5471f59c4a15e136655b",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/5471f59c4a15e136655b789f44db818c43cc4a6ba31f16aad2894aceee5b7d48.png",
+      "sha256": "5471f59c4a15e136655b789f44db818c43cc4a6ba31f16aad2894aceee5b7d48",
+      "size": 52451,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-7a33fb7331394ac32e12",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/7a33fb7331394ac32e125ce63e1d4554d8eccce860575fbc87861d56190ec074.png",
+      "sha256": "7a33fb7331394ac32e125ce63e1d4554d8eccce860575fbc87861d56190ec074",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-a9b9a0b2f0cdac5f40b2",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/a9b9a0b2f0cdac5f40b24f109f2b4a9a03dfee26f69514f0d8a899cd22f27877.png",
+      "sha256": "a9b9a0b2f0cdac5f40b24f109f2b4a9a03dfee26f69514f0d8a899cd22f27877",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-de5d7e5fc50b6502bb1e",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/de5d7e5fc50b6502bb1e0368702bb0c969a1cbdc28ba1d1cf69267c829dc2fd5.png",
+      "sha256": "de5d7e5fc50b6502bb1e0368702bb0c969a1cbdc28ba1d1cf69267c829dc2fd5",
+      "size": 145132,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-22c1293e8c029397b525",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/22c1293e8c029397b525c47aef8c3a45e5e41bab6425d182a29457f548f34522.png",
+      "sha256": "22c1293e8c029397b525c47aef8c3a45e5e41bab6425d182a29457f548f34522",
+      "size": 479,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-teachingaboutindigenousastronomy_mini_review-0baf27d8ed1f858551aa",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+      "original_path": "media/original/review-pdf/0baf27d8ed1f858551aa394a86f3de479ae6190c1f27534cec9dab98ceb4d359.png",
+      "sha256": "0baf27d8ed1f858551aa394a86f3de479ae6190c1f27534cec9dab98ceb4d359",
+      "size": 1928,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Машинный перевод. Редакторское утверждение ожидается."
+  }
+}

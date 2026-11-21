@@ -36,9 +36,11 @@ class AssistantNotConfigured(AssistantUnavailable):
 
 
 class LLMClient:
-    def __init__(self, http: httpx.AsyncClient | None = None, settings: LLMSettings | None = None) -> None:
+    def __init__(self, http: httpx.AsyncClient | None = None, settings: LLMSettings | None = None,
+                 read_timeout: float | None = None) -> None:
         self.http = http
         self.settings = settings
+        self.read_timeout = read_timeout
     def configured_settings(self) -> LLMSettings:
         try:
             settings = self.settings or LLMSettings.from_env()
@@ -57,7 +59,6 @@ class LLMClient:
         runpod = settings.provider == "runpod"
         model = settings.model.casefold()
         glm = runpod and "glm" in model
-        qwen = runpod and "qwen" in model
         request: dict[str, Any] = {
             "model": settings.model,
             "messages": [
@@ -70,7 +71,7 @@ class LLMClient:
         }
         if glm:
             request.update(temperature=1.0, top_p=0.95, reasoning_effort=settings.reasoning_effort or "low")
-        if qwen and settings.thinking != "default":
+        if runpod and settings.thinking != "default":
             request["chat_template_kwargs"] = {"enable_thinking": settings.thinking == "enabled"}
         if not runpod:
             request["thinking"] = {"type": "disabled"}
@@ -79,7 +80,7 @@ class LLMClient:
             f"https://api.runpod.ai/v2/{settings.endpoint_id}/openai/v1/chat/completions"
             if runpod else "https://api.deepseek.com/chat/completions"
         )
-        timeout = httpx.Timeout(90.0 if runpod else 35.0, connect=5.0)
+        timeout = httpx.Timeout(self.read_timeout or (90.0 if runpod else 35.0), connect=5.0)
         usage: dict[str, Any] = {}
         try:
             connection = httpx.AsyncClient() if self.http is None else nullcontext(self.http)

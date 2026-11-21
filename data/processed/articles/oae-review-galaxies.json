@@ -1,0 +1,1059 @@
+{
+  "id": "article:oae-review-galaxies",
+  "kind": "article",
+  "source": {
+    "type": "oae_review_topic",
+    "url": "https://www.astro4edu.org/oae-reviews/galaxies",
+    "imported_at": "2026-11-18T16:43:53.202378+00:00",
+    "sha256": "fa1e56dad6685004002e9a9854ba8f80c077eb76f15f12a3917f082b72dd4af8"
+  },
+  "metadata": {
+    "term_numbers": [
+      5,
+      8,
+      58,
+      82,
+      84,
+      86,
+      99,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      132,
+      148,
+      164,
+      194,
+      199,
+      211,
+      268,
+      330,
+      336,
+      348,
+      349,
+      413,
+      414,
+      415,
+      425,
+      426,
+      431,
+      443,
+      450,
+      452,
+      454,
+      466,
+      471,
+      499,
+      500,
+      501,
+      517,
+      526
+    ],
+    "document_ids": [],
+    "categories_ru": []
+  },
+  "sections": [
+    {
+      "id": "about",
+      "type": "article_body",
+      "heading": "About",
+      "body": "Galaxies are one of the most important kinds of cosmic \"ecosystem:\" large systems of stars, dust, and gas, which each appear to sit within a large halo of dark matter (which does not interact with light directly). Cosmic history after the hot Big Bang phase (in which the universe was filled by dense, hot plasma) is largely a history of how dark matter forms large, ellipsoidal halos, in which gas within those halos forms stars, and in which the resulting galaxies merge with each other to form larger galaxies within larger halos. We ourselve live in a spiral galaxy, the Milky Way galaxy, where most stars are concentrated in a flat disk. Other types of galaxy are shaped like giant ellipsoids, or have irregular shapes. Most galaxies have a supermassive black hole in the center. Learning about galaxies is an important piece of the puzzle that is astronomy literacy.",
+      "heading_ru": "О теме",
+      "body_ru": "Галактики — один из основных типов космических «экосистем». Это крупные системы из звёзд, пыли и газа. По-видимому, каждая из них находится внутри обширного гало тёмной материи, которая напрямую не взаимодействует со светом.\n\nИстория Вселенной после горячей стадии Большого взрыва, когда её заполняла плотная горячая плазма, во многом представляет собой историю формирования этих структур. Тёмная материя образует крупные гало эллипсоидальной формы. Из газа внутри гало рождаются звёзды, а возникающие галактики сливаются и образуют более крупные галактики в более обширных гало.\n\nМы живём в Млечном Пути — спиральной галактике, где большинство звёзд сосредоточено в плоском диске. Галактики других типов могут иметь форму гигантского эллипсоида или вовсе неправильную форму. В центре большинства галактик находится сверхмассивная чёрная дыра. Знания о галактиках — важная часть астрономической грамотности.",
+      "links": [],
+      "media_ids": [
+        "media:oae-review-galaxies"
+      ]
+    },
+    {
+      "id": "presentations",
+      "type": "related_resources",
+      "heading": "Talks",
+      "body": "",
+      "heading_ru": "Доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/434/",
+          "text": "Discovering the Milky Way",
+          "text_ru": "Открывая Млечный Путь"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/471/",
+          "text": "Euclid – The Dark Universe Detective",
+          "text_ru": "«Евклид» исследует тёмную сторону Вселенной"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/436/",
+          "text": "How Gaia is revolutionising the understanding of our Milky Way Galaxy",
+          "text_ru": "Как Gaia меняет наше представление о Млечном Пути"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/433/",
+          "text": "Seeing the Unseeable at the Heart of Galaxies",
+          "text_ru": "Как увидеть невидимое в центрах галактик"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/474/",
+          "text": "The Cosmos in its Infancy",
+          "text_ru": "Вселенная в младенчестве"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/421/",
+          "text": "The Latest from Galaxy Zoo",
+          "text_ru": "Последние новости проекта Galaxy Zoo"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/473/",
+          "text": "The Milky Way as the Cosmic Classroom",
+          "text_ru": "Млечный Путь как космический класс"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/439/",
+          "text": "Universe(s) in a box: simulating galaxies to connect theory and observations",
+          "text_ru": "Вселенная в компьютере. Как моделирование галактик связывает теорию и наблюдения"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/472/",
+          "text": "Where Dark Bends Light: The Enchantments of Gravitational Lensing",
+          "text_ru": "Как тёмная материя искривляет свет. Удивительные эффекты гравитационного линзирования"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/495/",
+          "text": "Workshop: Galaxy History",
+          "text_ru": "Семинар по истории галактик"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/496/",
+          "text": "Workshop: Milky Way",
+          "text_ru": "Семинар о Млечном Пути"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-3",
+      "type": "related_resources",
+      "heading": "Poster Presentations",
+      "body": "",
+      "heading_ru": "Стендовые доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/237/",
+          "text": "Exploring Galactic Ecosystem -- the Transformative Wellsprings of Stars, Planets, and Life",
+          "text_ru": "Галактическая экосистема и условия возникновения звёзд, планет и жизни"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/236/",
+          "text": "Exploring galaxy morphology through AI and playful learning",
+          "text_ru": "Изучение форм галактик с помощью ИИ и игровых заданий"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-4",
+      "type": "media_collection",
+      "heading": "Selected Images",
+      "body": "",
+      "heading_ru": "Избранные изображения",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/media/pF94LW61Kf20/",
+          "text": "The bright streak of a meteor is reflected in a body of water. The Large Magellenic Cloud is in the top left as a fuzzy line",
+          "text_ru": "Яркий след метеора отражается в воде. В левом верхнем углу видна размытая полоска Большого Магелланова Облака"
+        },
+        {
+          "url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+          "text": "Creative Commons Attribution 4.0 International (CC BY 4.0) icons",
+          "text_ru": "Значки лицензии Creative Commons «С указанием авторства» (CC BY 4.0, международная версия)"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/od80iA38G732/",
+          "text": "The curve of the Milky Way bisected on the left by a huge dark arch. Below appear two bright, diffuse patches.",
+          "text_ru": "Дугу Млечного Пути слева пересекает широкая тёмная арка. Ниже видны два ярких размытых пятна"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/er1X815jl17/",
+          "text": "The bright, diffuse Milky Way, interrupted by mottled dark patches, arches over a wintry landscape.",
+          "text_ru": "Светлая полоса Млечного Пути с тёмными пятнами дугой тянется над зимним пейзажем"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/zb49sa63nw14/",
+          "text": "Hubble image of the \"happy face\" galaxy cluster with bright galaxies forming eyes and arcs due to gravitational lensing.",
+          "text_ru": "На снимке телескопа «Хаббл» две яркие галактики напоминают глаза, а дуги гравитационной линзы образуют улыбку"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/OK9eF951y19/",
+          "text": "A fuzzy round galaxy with a bright core has a patchy jet that appear white or blue extending to the upper right",
+          "text_ru": "У округлой галактики с ярким ядром вверх и вправо тянется неоднородная бело-голубая струя"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/eE6pB15Z932/",
+          "text": "The bright core of this galaxy is surrounded by a much fainter disk. This faint disk has thin dark rings.",
+          "text_ru": "Яркое ядро галактики окружено гораздо более тусклым диском с тонкими тёмными кольцами"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/na533d1nJ18/",
+          "text": "A large yellow oval galaxy sits in a field of many smaller galaxies. This large galaxy is brightest in its core",
+          "text_ru": "Среди множества небольших галактик выделяется крупная жёлтая овальная галактика с ярким центром"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/aG91RF977M99/",
+          "text": "NGC 5264 appears as a light, fuzzy, ragged oval on a dark background. Some single stars are visible amongst its diffuse glow",
+          "text_ru": "На тёмном фоне галактика NGC 5264 выглядит как размытое светлое пятно с неровными краями. В его свечении различимы отдельные звёзды"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/uF7sh13rR67/",
+          "text": "Andromeda is a bright disk, with dark spiral lines in it, tilted up at the west end. Two small bright blobs lie left & right",
+          "text_ru": "Галактика Андромеды выглядит как яркий диск с тёмными спиральными полосами, приподнятый с западной стороны. Слева и справа видны два небольших светлых пятна"
+        },
+        {
+          "url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+          "text": "Creative Commons Attribution 2.0 Generic icons",
+          "text_ru": "Значки лицензии Creative Commons «С указанием авторства» (CC BY 2.0, универсальная версия)"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/U9906953ai58/",
+          "text": "This galaxy has a large bulge surrounded by a ring of dust creating an image similar to the mexican hat with the same name",
+          "text_ru": "Крупное центральное утолщение галактики и окружающее его пылевое кольцо напоминают мексиканскую шляпу сомбреро"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/images/?page=1&category=galaxies",
+          "text": "Browse all images for this topic",
+          "text_ru": "Все изображения по теме"
+        }
+      ],
+      "media_ids": [
+        "media:pF94LW61Kf20",
+        "media:od80iA38G732",
+        "media:er1X815jl17",
+        "media:zb49sa63nw14",
+        "media:OK9eF951y19",
+        "media:eE6pB15Z932",
+        "media:na533d1nJ18",
+        "media:aG91RF977M99",
+        "media:uF7sh13rR67",
+        "media:U9906953ai58"
+      ]
+    },
+    {
+      "id": "activities",
+      "type": "media_collection",
+      "heading": "Activities",
+      "body": "",
+      "heading_ru": "Практические занятия",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "http://astroedu.iau.org/en/activities/3d-universe-the-milky-way-and-friends/",
+          "text": "Thumbnail for 3D Universe: the Milky Way and friends",
+          "text_ru": "Миниатюра задания «Вселенная в 3D. Млечный Путь и его соседи»"
+        },
+        {
+          "url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+          "text": "Creative Commons Attribution 4.0 International (CC BY 4.0) icons",
+          "text_ru": "Значки лицензии Creative Commons «С указанием авторства» (CC BY 4.0, международная версия)"
+        },
+        {
+          "url": "http://astroedu.iau.org/en/activities/create-your-own-astro-music/",
+          "text": "Thumbnail for Create Your Own Astro-Music",
+          "text_ru": "Миниатюра задания «Создай свою астромузыку»"
+        },
+        {
+          "url": "http://astroedu.iau.org/en/activities/coma-cluster-of-galaxies/",
+          "text": "Thumbnail for Coma Cluster of Galaxies",
+          "text_ru": "Миниатюра задания «Скопление галактик в Волосах Вероники»"
+        }
+      ],
+      "media_ids": [
+        "media:oae-inline-5fa105570e2608de50a8",
+        "media:oae-inline-225e5b4b27fdbe1307d1",
+        "media:oae-inline-78951139b3c1467b1ba9"
+      ]
+    },
+    {
+      "id": "videos",
+      "type": "media_collection",
+      "heading": "Videos",
+      "body": "",
+      "heading_ru": "Видеозаписи",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/media/bf95nw54t034/",
+          "text": "Over a cluster of small telescope domes the Milky Way juts upward from the horizon. Two fuzzy blobs are on the right",
+          "text_ru": "Млечный Путь поднимается от горизонта над несколькими куполами небольших телескопов. Справа видны два размытых пятна"
+        },
+        {
+          "url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+          "text": "Creative Commons Attribution 4.0 International (CC BY 4.0) icons",
+          "text_ru": "Значки лицензии Creative Commons «С указанием авторства» (CC BY 4.0, международная версия)"
+        }
+      ],
+      "media_ids": [
+        "media:bf95nw54t034"
+      ]
+    },
+    {
+      "id": "glossary_terms",
+      "type": "related_resources",
+      "heading": "Linked Glossary Terms",
+      "body": "",
+      "heading_ru": "Термины по теме",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/425/",
+          "text": "Accretion",
+          "text_ru": "Аккреция"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/426/",
+          "text": "Accretion Disk",
+          "text_ru": "Аккреционный диск"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/5/",
+          "text": "Active Galactic Nucleus",
+          "text_ru": "Активное ядро галактики"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/8/",
+          "text": "Andromeda Galaxy",
+          "text_ru": "Галактика Андромеды"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/431/",
+          "text": "Blueshift",
+          "text_ru": "Синее смещение"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/58/",
+          "text": "Cluster of Galaxies",
+          "text_ru": "Скопление галактик"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/82/",
+          "text": "Disk Galaxy",
+          "text_ru": "Дисковая галактика"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/84/",
+          "text": "Doppler Effect",
+          "text_ru": "Эффект Доплера"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/86/",
+          "text": "Dwarf Galaxy",
+          "text_ru": "Карликовая галактика"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/99/",
+          "text": "Elliptical Galaxy",
+          "text_ru": "Эллиптическая галактика"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/443/",
+          "text": "Galactic Bar",
+          "text_ru": "Галактическая перемычка"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/115/",
+          "text": "Galactic Bulge",
+          "text_ru": "Балдж галактики"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/116/",
+          "text": "Galactic Center",
+          "text_ru": "Галактический центр"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/117/",
+          "text": "Galactic Disk",
+          "text_ru": "Галактический диск"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/118/",
+          "text": "Galactic Halo",
+          "text_ru": "Галактическое гало"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/119/",
+          "text": "Galaxy",
+          "text_ru": "Галактика"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/120/",
+          "text": "Galaxy Cluster",
+          "text_ru": "Скопление галактик"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/132/",
+          "text": "Globular Cluster",
+          "text_ru": "Шаровое звёздное скопление"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/148/",
+          "text": "Hubble Diagram",
+          "text_ru": "Диаграмма Хаббла"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/413/",
+          "text": "Hubble Parameter",
+          "text_ru": "Параметр Хаббла"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/414/",
+          "text": "Hubble–Lemaître Law",
+          "text_ru": "Закон Хаббла — Леметра"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/450/",
+          "text": "Interstellar Medium",
+          "text_ru": "Межзвёздная среда"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/164/",
+          "text": "Irregular Galaxy",
+          "text_ru": "Неправильная галактика"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/499/",
+          "text": "Large Magellanic Cloud (LMC)",
+          "text_ru": "Большое Магелланово Облако (БМО)"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/452/",
+          "text": "Lenticular Galaxy",
+          "text_ru": "Линзовидная галактика"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/454/",
+          "text": "Magellanic Clouds",
+          "text_ru": "Магеллановы Облака"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/194/",
+          "text": "Messier Object",
+          "text_ru": "Объект каталога Мессье"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/199/",
+          "text": "Milky Way",
+          "text_ru": "Млечный Путь"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/517/",
+          "text": "Molecular Cloud",
+          "text_ru": "Молекулярное облако"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/211/",
+          "text": "Nebula",
+          "text_ru": "Туманность"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/466/",
+          "text": "Open Cluster",
+          "text_ru": "Рассеянное звёздное скопление"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/268/",
+          "text": "Quasar",
+          "text_ru": "Квазар"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/471/",
+          "text": "Redshift",
+          "text_ru": "Красное смещение"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/500/",
+          "text": "Small Magellanic Cloud (SMC)",
+          "text_ru": "Малое Магелланово Облако (ММО)"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/415/",
+          "text": "Spiral Arm",
+          "text_ru": "Спиральный рукав"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/330/",
+          "text": "Spiral Galaxy",
+          "text_ru": "Спиральная галактика"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/336/",
+          "text": "Stellar Population",
+          "text_ru": "Звёздное население"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/348/",
+          "text": "Supermassive Black Hole",
+          "text_ru": "Сверхмассивная чёрная дыра"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/349/",
+          "text": "Supernova",
+          "text_ru": "Сверхновая"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/526/",
+          "text": "Supernova Remnant",
+          "text_ru": "Остаток сверхновой"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/501/",
+          "text": "Tidal Force",
+          "text_ru": "Приливная сила"
+        }
+      ],
+      "media_ids": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Galaxies",
+      "blocks": {
+        "about": {
+          "heading": "About",
+          "body": "Galaxies are one of the most important kinds of cosmic \"ecosystem:\" large systems of stars, dust, and gas, which each appear to sit within a large halo of dark matter (which does not interact with light directly). Cosmic history after the hot Big Bang phase (in which the universe was filled by dense, hot plasma) is largely a history of how dark matter forms large, ellipsoidal halos, in which gas within those halos forms stars, and in which the resulting galaxies merge with each other to form larger galaxies within larger halos. We ourselve live in a spiral galaxy, the Milky Way galaxy, where most stars are concentrated in a flat disk. Other types of galaxy are shaped like giant ellipsoids, or have irregular shapes. Most galaxies have a supermassive black hole in the center. Learning about galaxies is an important piece of the puzzle that is astronomy literacy."
+        },
+        "presentations": {
+          "heading": "Talks",
+          "body": ""
+        },
+        "presentations-3": {
+          "heading": "Poster Presentations",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Selected Images",
+          "body": ""
+        },
+        "activities": {
+          "heading": "Activities",
+          "body": ""
+        },
+        "videos": {
+          "heading": "Videos",
+          "body": ""
+        },
+        "glossary_terms": {
+          "heading": "Linked Glossary Terms",
+          "body": ""
+        }
+      }
+    },
+    "ru": {
+      "title": "Галактики",
+      "blocks": {
+        "about": {
+          "heading": "О теме",
+          "body": "Галактики — один из основных типов космических «экосистем». Это крупные системы из звёзд, пыли и газа. По-видимому, каждая из них находится внутри обширного гало тёмной материи, которая напрямую не взаимодействует со светом.\n\nИстория Вселенной после горячей стадии Большого взрыва, когда её заполняла плотная горячая плазма, во многом представляет собой историю формирования этих структур. Тёмная материя образует крупные гало эллипсоидальной формы. Из газа внутри гало рождаются звёзды, а возникающие галактики сливаются и образуют более крупные галактики в более обширных гало.\n\nМы живём в Млечном Пути — спиральной галактике, где большинство звёзд сосредоточено в плоском диске. Галактики других типов могут иметь форму гигантского эллипсоида или вовсе неправильную форму. В центре большинства галактик находится сверхмассивная чёрная дыра. Знания о галактиках — важная часть астрономической грамотности."
+        },
+        "presentations": {
+          "heading": "Доклады",
+          "body": ""
+        },
+        "presentations-3": {
+          "heading": "Стендовые доклады",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Избранные изображения",
+          "body": ""
+        },
+        "activities": {
+          "heading": "Практические занятия",
+          "body": ""
+        },
+        "videos": {
+          "heading": "Видеозаписи",
+          "body": ""
+        },
+        "glossary_terms": {
+          "heading": "Термины по теме",
+          "body": ""
+        }
+      },
+      "aliases": []
+    }
+  },
+  "media": [
+    {
+      "id": "media:oae-review-galaxies",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/oae_review_files/illustration_images/a-visible-light-image-of-the-andromeda-galaxy_news_image.jpg",
+      "record_url": "https://www.astro4edu.org/oae-reviews/galaxies",
+      "original_path": "media/original/oae-review-galaxies.jpg",
+      "sha256": "cd6afa051ff65d406d90c928fb1f7ff9714e119540540bd1456af25b9fe79b24",
+      "size": 11847,
+      "alt_en": "Illustration image for Galaxies",
+      "alt_ru": "Галактика Андромеды в видимом свете",
+      "credit": null,
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:pF94LW61Kf20",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/record/7425545/files/Honourable%20mention%20in%20the%202022%20IAU%20OAE%20Astrophotography%20Contest%2C%20category%20Still%20images%20of%20celestial%20patterns%3A%20Between%20two%20skies%2C%20by%20Fabrizion%20Melandri.JPG",
+      "record_url": "https://astro4edu.org/resources/media/pF94LW61Kf20/",
+      "original_path": "data/media/original/media_pF94LW61Kf20.jpg",
+      "ru_path": null,
+      "sha256": "18174c5fc3107eaabed1e44b45fe4fab2c50692eee27160c00715fe8b5e44ff5",
+      "size": 1816907,
+      "title_en": "",
+      "title_ru": "",
+      "short_caption_en": "Between Two Skies",
+      "short_caption_ru": "Между двумя небесами",
+      "caption_en": "Honourable mention in the 2022 IAU OAE Astrophotography Contest, category Still images of celestial patterns.\r\n\r\n \r\n\r\nTaken from Narrabri, Australia, in April 2014, this photograph shows a meteor next to the Large Magellanic Cloud and the reflection of all this in the water.\r\n\r\nThe Magellanic Clouds are named after the Portuguese explorer Ferdinand Magellan, who made the first maps of the southern part of South America in the early 16th century but did not survive his expedition voyage. His shipmates called the two nebulae after him, and it was only in the 20th century that astronomy research discovered that they are in fact dwarf galaxies accompanying our own.\r\n\r\nIn the 18th century, the French mathematician J-N. Lacaille, who lived in South Africa for some years in order to draw maps of the sky and the land, invented some new constellations. He measured the positions of some faint stars and listed them in his star catalogue, but did not try to overlay beautiful drawings of real-world objects on the star patterns, so he could name them however he wanted. He was based in the trade station that is now the city of Cape Town and, from this bay, Table Mountain is visible. Lacaille learned from the navigators that they used the clouds around this mountain to predict whether or not the wind would blow in the correct direction and allow for sailing. Normally, there is a huge white cloud at the top of Table Mountain, so Lacaille considered the larger one of the two dwarf galaxies not a “Magellanic Cloud”, but the cloud at Table Mountain. Consequently, he invented the constellation “Mensa”, Table Mountain, in the small area of faint stars directly attached to this dwarf galaxy.",
+      "caption_ru": "Почётное упоминание конкурса астрофотографии Управления астрономического образования МАС 2022 года в категории «Фотографии узоров звёздного неба».\n\nНа снимке, сделанном в апреле 2014 года в Наррабри, Австралия, виден метеор рядом с Большим Магеллановым Облаком. Оба объекта отражаются в воде.\n\nМагеллановы Облака названы в честь португальского мореплавателя Фернана Магеллана. В начале XVI века он составил первые карты южной части Южной Америки, но погиб во время экспедиции. Его спутники назвали две туманности в его честь. Лишь в XX веке астрономы установили, что это карликовые галактики — спутники Млечного Пути.\n\nВ XVIII веке французский математик Никола Луи де Лакайль прожил несколько лет на юге Африки, составляя карты неба и местности. Он выделил несколько новых созвездий. Лакайль измерил координаты нескольких тусклых звёзд и внёс их в свой каталог. Он не подгонял узоры из звёзд под очертания реальных предметов, поэтому мог свободно выбирать названия. Лакайль работал на торговой станции, на месте которой сейчас находится Кейптаун. Из бухты видна Столовая гора. От моряков он узнал, что по облакам над горой они предсказывали направление ветра и решали, можно ли выходить в море. Вершину Столовой горы часто накрывает огромное белое облако. Более крупная из двух карликовых галактик напоминала Лакайлю именно это облако. Поэтому небольшую группу тусклых звёзд рядом с ней он выделил в созвездие Столовой Горы (Mensa).",
+      "alt_en": "The bright streak of a meteor is reflected in a body of water. The Large Magellenic Cloud is in the top left as a fuzzy line",
+      "alt_ru": "Яркий след метеора отражается в воде. В левом верхнем углу видна размытая полоска Большого Магелланова Облака.",
+      "credit": "Fabrizio Melandri/IAU OAE",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        66,
+        302,
+        499,
+        500
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:od80iA38G732",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/record/7425274/files/Winner%20in%20the%202022%20IAU%20OAE%20Astrophotography%20Contest%2C%20category%20Still%20images%20of%20celestial%20patterns%3A%20The%20Milky%20Way%20over%20Anglers%20Reach%2C%20by%20Lucy%20Yunxi%20Hu.jpg",
+      "record_url": "https://astro4edu.org/resources/media/od80iA38G732/",
+      "original_path": "data/media/original/media_od80iA38G732.jpg",
+      "ru_path": null,
+      "sha256": "e27a93068cac7f02c66998e0a835f29bb183b7e6894d5d4241b98068c8a9aa7c",
+      "size": 9388399,
+      "title_en": "",
+      "title_ru": "",
+      "short_caption_en": "The Milky Way Over Anglers Reach",
+      "short_caption_ru": "Млечный Путь над Англерс-Рич",
+      "caption_en": "Winner in the 2022 IAU OAE Astrophotography Contest, category Still images of celestial patterns.\r\n\r\n \r\n\r\nThe Milky Way and several astronomical objects are seen in this image taken from the southern hemisphere, in Anglers Reach, Australia, in April 2022.\r\n\r\nOn the bottom-left side we can identify the constellation Scorpius with its brightest star, Antares, the reddish spot just above the arc. Some prominent but small southern constellations can also be seen: the dominating bright stars in the middle-left of the image in the Milky Way are the four bright stars of Crux (the Southern Cross) and to its left the two pointer stars, alpha and beta Centauri. Crux points towards the southern celestial pole, which is not marked by a bright star, and The pointer stars point towards Crux, distinguishing it from the asterism of the False Cross in the constellation Argo.\r\n\r\nCrux features on the national flags of Australia, Brazil, Papua New Guinea, Samoa and New Zealand. As Crux lies in the brightest parts of the Milky Way, the dark cloud of the famous Coalsack Nebula is prominent next to the bright stars. It forms one of the dark constellations in South American, South African and Australian indigenous cultures. The huge Australian dark constellation of the Emu is almost completely above the horizon in this image, stretching from its head in the Coal Sack to the horizon.\r\n\r\nIn Greek antiquity, the stars of Crux also belonged to the constellation Centaurus, a hybrid creature with a human torso and head attached to a horse body with four legs. The Greek centaur represents Chiron, the wise teacher of all Greek heroes. Its brightest star is Rigil Kentaurus (Alpha Centauri), the front hoof of the centaur. Just below it, we find the small constellation Triangulum Australe. The triple star system of Alpha Centauri is our Sun’s nearest stellar neighbour.\r\n\r\nAlong the Milky Way in the middle-right of the picture we find the huge constellation Argo, the Ship. The smaller ancient constellation Argo was extended by Dutch navigators around 1600, and the number of stars in this constellation was then so big that the 18th-century French mathematician Lacaille needed to introduce subtitles for Argo in his star catalogue. In doing so, he invented the constellations Puppis, Carina and Vela. In Carina, the Keel of the ship, this reddish photograph clearly displays the Carina Nebula.\r\n\r\nAt the right edge of the image we can spot the brightest star in the night sky, Sirius, while the second brightest star, Canopus, the rudder of Argo, the Ship, dominates the area under the arch of the Milky Way.\r\n\r\nAlso below the Milky Way arc, we can see the Large Magellanic Cloud and the Small Magellanic Cloud, which are small satellite galaxies of our own Galaxy.",
+      "caption_ru": "Победитель конкурса астрофотографии Управления астрономического образования МАС 2022 года в категории «Фотографии узоров звёздного неба».\n\nМлечный Путь и несколько других астрономических объектов на снимке из Южного полушария. Фотография сделана в апреле 2022 года в Англерс-Рич, Австралия.\n\nВнизу слева видно созвездие Скорпиона с его ярчайшей звездой Антаресом — красноватой точкой над дугой. Видны и несколько небольших, но заметных южных созвездий. Четыре яркие звезды на полосе Млечного Пути левее центра образуют Южный Крест. Слева от него находятся α и β Центавра. Длинная ось Креста указывает в сторону южного полюса мира, возле которого нет яркой звезды. α и β Центавра помогают найти Южный Крест и отличить его от астеризма Ложный Крест, расположенного в области бывшего созвездия Корабль Арго.\n\nЮжный Крест изображён на флагах Австралии, Бразилии, Папуа — Новой Гвинеи, Самоа и Новой Зеландии. Он находится на ярком участке Млечного Пути, поэтому рядом со звёздами заметна тёмная туманность Угольный Мешок. Это облако входит в тёмные созвездия коренных народов Южной Америки, юга Африки и Австралии. Огромное тёмное созвездие Эму, известное коренным народам Австралии, на снимке почти целиком над горизонтом. Его голова находится в Угольном Мешке, а остальная фигура тянется до горизонта.\n\nВ античной Греции звёзды Южного Креста относили к созвездию Центавра. У этого мифического существа человеческие голова и торс соединяются с телом лошади. Греки отождествляли его с Хироном, мудрым наставником героев. Ярчайшая звезда созвездия, Ригиль Кентаурус (α Центавра), обозначает переднее копыто кентавра. Чуть ниже неё находится небольшое созвездие Южный Треугольник. Тройная звёздная система α Центавра — ближайшая к Солнцу.\n\nНа полосе Млечного Пути правее центра видна область бывшего обширного созвездия Корабль Арго. Античное созвездие занимало меньшую область. Около 1600 года голландские мореплаватели расширили его, и звёзд в нём стало так много, что в XVIII веке Лакайль ввёл для него отдельные рубрики в своём звёздном каталоге. Так появились Корма, Киль и Паруса. В Киле на снимке хорошо заметна красноватая туманность Киля.\n\nУ правого края кадра виден Сириус, ярчайшая звезда ночного неба. Канопус — вторая по яркости звезда и руль Корабля Арго — выделяется под дугой Млечного Пути.\n\nПод дугой Млечного Пути также видны Большое и Малое Магеллановы Облака — небольшие галактики-спутники нашей Галактики.",
+      "alt_en": "The curve of the Milky Way bisected on the left by a huge dark arch. Below appear two bright, diffuse patches.",
+      "alt_ru": "Дугу Млечного Пути слева пересекает широкая тёмная арка. Ниже видны два ярких размытых пятна.",
+      "credit": "Lucy Yunxi Hu/IAU OAE",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        59,
+        85,
+        199,
+        299,
+        318,
+        438,
+        472,
+        499,
+        500,
+        504
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:er1X815jl17",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/record/7425158/files/Winner%20in%20the%202022%20IAU%20OAE%20Astrophotography%20Contest%2C%20category%20Still%20images%20of%20celestial%20patterns%3A%20Winter%20Milky%20way%2C%20by%20Giorgia%20Hofer.jpg",
+      "record_url": "https://astro4edu.org/resources/media/er1X815jl17/",
+      "original_path": "data/media/original/media_er1X815jl17.jpg",
+      "ru_path": null,
+      "sha256": "1ab2f104c0f90e30b137ef4526666885f4367fc11689d137bb6ab97f8251428e",
+      "size": 1177376,
+      "title_en": "",
+      "title_ru": "",
+      "short_caption_en": "Winter Milky Way",
+      "short_caption_ru": "Млечный Путь зимой",
+      "caption_en": "Winner in the 2022 IAU OAE Astrophotography Contest, category Still images of celestial patterns.\r\n\r\n \r\n\r\nTaken near Lake Misurina in the Veneto region of Italy in February 2019, this image shows a clear and starry sky over a winter landscape.\r\n\r\nWe can see part of the Milky Way arc. From the left side, towards the south-east, we see Sirius, \"The Burner\" in Greek, the brightest star in the night sky. It is part of the constellation Canis Major, The Great Dog, one of the dogs of Orion, the great hunter, in Greek mythology. Orion’s other dog, Canis Minor, the Small Dog, is represented by the bright star Procyon and its fainter neighbours. The Greek star name means “The One [rising] before The Dog” and the star is seen at the top left side of the image just above the arc of the Galaxy. Orion lies to the right of Canis Major. We can spot its characteristic “belt”, an asterism composed of three bright stars aligned in a straight line. \r\n\r\nAbove the treetops to the right of Orion, the open star clusters of the Hyades and the Pleiades in the constellation Taurus, the Bull, are visible. According to ancient lore, these two clusters form a Celestial Gate directly next to the intersection of the great circles of the ecliptic and the Milky Way. In Greco-Roman mythology, Taurus is associated with the god Zeus who is said to have used a bull to seduce the Phoenician princess Europa.\r\n\r\nAbove the constellation Taurus, we can see a bright star just above the arc of the Galaxy. This is Capella, the brightest star of the constellation Auriga, The Charioteer. This is one of the 88 modern constellations and is associated with the Greek hero Erichthonius of Athens. Hindu astronomy considers Capella as the heart of Brahma, one of the three major gods. The indigenous people of Bororo in Brazil have a constellation representing a cayman, comprising some of the stars of Auriga and some stars from neighbouring constellations.\r\n\r\nTo the right of Taurus, we find the modern constellation Perseus with the bright double star cluster h+chi Perseii, which represents the metal of Perseus’s sabre in Greek mythology. Perseus is the hero who was sent out to prove himself, and happened to rescue Andromeda from the sea monster Cetus as the Roman poet Ovid wrote. We can also see the constellation Cassiopeia, associated with the queen and mother of Andromeda in Greek mythology. It is composed of five bright stars in the shape of a W, which was considered the asterism of The Key by the Greeks according to the poet Aratus. The recognisable shape is also associated with other mythologies: for instance, it represents the princess Sharmishtha in Hindu astronomy, a bat in Thailand, and a camel in native Arabic astronomy.\r\n\r\nIn the gap between the trees, the Andromeda Galaxy is visible.",
+      "caption_ru": "Победитель конкурса астрофотографии Управления астрономического образования МАС 2022 года в категории «Фотографии узоров звёздного неба».\n\nНа снимке, сделанном в феврале 2019 года возле озера Мизурина в итальянской области Венето, видно ясное звёздное небо над зимним пейзажем.\n\nВ кадр вошла часть дуги Млечного Пути. Слева, на юго-востоке, виден Сириус — ярчайшая звезда ночного неба. Её название по-гречески означает «пламенеющий». Сириус находится в созвездии Большого Пса, одной из двух собак охотника Ориона в греческой мифологии. Другую собаку, Малого Пса, обозначают яркий Процион и более тусклые звёзды рядом с ним. Название Процион означает «восходящий раньше Пса». Звезда видна слева вверху над дугой Млечного Пути. Правее Большого Пса находится Орион. Его легко узнать по Поясу — трём ярким звёздам, выстроившимся в линию.\n\nНад верхушками деревьев справа от Ориона видны Гиады и Плеяды — рассеянные звёздные скопления в созвездии Тельца. Согласно древнему преданию, они образуют Небесные Врата рядом с пересечением больших кругов эклиптики и Млечного Пути. В греко-римской мифологии Тельца связывают с Зевсом, который в облике быка завладел вниманием финикийской царевны Европы.\n\nВыше Тельца, над дугой Млечного Пути, видна Капелла — ярчайшая звезда Возничего. Это одно из 88 современных созвездий. Греки связывали его с афинским героем Эрихтонием. В индийской традиции Капеллу считают сердцем Брахмы, одного из трёх главных богов. У народа бороро в Бразилии часть звёзд Возничего и соседних созвездий образует фигуру каймана.\n\nПравее Тельца находится созвездие Персея с ярким двойным скоплением h и χ Персея, которое в греческой мифологии изображает металл меча Персея. Герой отправился в путь, чтобы проявить себя, и спас Андромеду от морского чудовища Кита, о чём писал римский поэт Овидий. На снимке видна и Кассиопея, названная в честь мифической царицы, матери Андромеды. Пять её ярких звёзд образуют букву W. По словам греческого поэта Арата, греки видели в этой фигуре ключ. В других традициях фигура тоже получила свои названия. В Индии она изображает царевну Шармиштху, в Таиланде — летучую мышь, а в арабской традиции — верблюда.\n\nВ просвете между деревьями видна галактика Андромеды.",
+      "alt_en": "The bright, diffuse Milky Way, interrupted by mottled dark patches, arches over a wintry landscape.",
+      "alt_ru": "Светлая полоса Млечного Пути с тёмными пятнами дугой тянется над зимним пейзажем.",
+      "credit": "Giorgia Hofer/IAU OAE",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        8,
+        199,
+        351,
+        469
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:zb49sa63nw14",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://astro4edu.org/media/multimedia/the-happy-face-of-gravitational-lensing.png",
+      "record_url": "https://astro4edu.org/resources/media/zb49sa63nw14/",
+      "original_path": "data/media/original/media_zb49sa63nw14.png",
+      "ru_path": null,
+      "sha256": "87c5bc8710566384559f7efdb5d0bc6068450e15305c762d0165452754b38d64",
+      "size": 1532923,
+      "title_en": "The Happy Face of Gravitational Lensing",
+      "title_ru": "Улыбка гравитационной линзы",
+      "short_caption_en": "The Happy Face of Gravitational Lensing",
+      "short_caption_ru": "Улыбка гравитационной линзы",
+      "caption_en": "Captured by the NASA/ESA Hubble Space Telescope, this image showcases the galaxy cluster SDSS J1038+4849, affectionately dubbed the \"happy face\" cluster due to its striking resemblance to a smiling face. The two bright galaxies at the center resemble orange eyes, while the arcs surrounding them form the illusion of a smile. These arcs are actually a result of strong gravitational lensing, a phenomenon where the cluster's immense gravitational pull distorts and magnifies light from background objects. This particular case of gravitational lensing has produced an Einstein Ring, a ring-like structure formed by the precise alignment of the source, lens, and observer. By studying these gravitational lenses, astronomers gain insights into the properties of massive galaxies, allowing for a deeper understanding of the early Universe.",
+      "caption_ru": "На снимке космического телескопа НАСА и ЕКА «Хаббл» показано скопление галактик SDSS J1038+4849. Его прозвали «улыбкой» из-за сходства с улыбающимся лицом. Две яркие галактики в центре похожи на оранжевые глаза, а окружающие их дуги напоминают улыбку. Дуги возникают при сильном гравитационном линзировании. Массивное скопление отклоняет свет объектов, находящихся за ним, и меняет форму и видимую яркость их изображений. В этом случае получилось кольцо Эйнштейна. Такая кольцеобразная структура возникает, когда источник света, линза и наблюдатель выстраиваются почти на одной прямой. Изучая гравитационные линзы, астрономы узнают больше о свойствах массивных галактик и о ранней Вселенной.",
+      "alt_en": "Hubble image of the \"happy face\" galaxy cluster with bright galaxies forming eyes and arcs due to gravitational lensing.",
+      "alt_ru": "На снимке телескопа «Хаббл» две яркие галактики напоминают глаза, а дуги гравитационной линзы образуют улыбку.",
+      "credit": "NASA/ESA",
+      "credit_url": "https://commons.wikimedia.org/wiki/File:HST-Smiling-GalaxyClusterSDSS-J1038%2B4849-20150210.jpg",
+      "license": "PD",
+      "license_url": null,
+      "term_numbers": [
+        134
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:OK9eF951y19",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://astro4edu.org/media/multimedia/jet-ejected-from-the-active-galaxy-m87.png",
+      "record_url": "https://astro4edu.org/resources/media/OK9eF951y19/",
+      "original_path": "data/media/original/media_OK9eF951y19.png",
+      "ru_path": null,
+      "sha256": "0bdce3ac3f4eee54c948656eef2355c052cb3bddb86f4b7eb06a20d1143546d7",
+      "size": 7695733,
+      "title_en": "Jet Ejected from the Active Galaxy M87",
+      "title_ru": "Струя из активной галактики M87",
+      "short_caption_en": "Jet Ejected from the Active Galaxy M87",
+      "short_caption_ru": "Струя из активной галактики M87",
+      "caption_en": "A 3000-light-year-long jet streaming from the core of galaxy M87, as captured by the Hubble Space Telescope. The center of this image shows the core of the elliptical galaxy M87 (in the constellation Virgo) which hosts an active galactic nucleus (AGN). \r\n\r\nAn AGN is a very luminous region around a supermassive black hole. It is powered by matter falling towards the black hole and forming a hot accretion disk. Many galaxies host a supermassive black hole, but not all of them are accreting enough matter to appear as an AGN.\r\n\r\nThe strong gravity of the supermassive black hole in the heart of M87 has caused a huge jet of charges particles to be flung out from the accretion disk. This extends far out into the galaxy itself, beyond the core region. Here we see the jet as a whitish-blue line which gets wider the further it goes from the core. The light emission we see here is caused by the energetic electrons in the jet interacting with magnetic fields.",
+      "caption_ru": "На снимке телескопа «Хаббл» из центра галактики M87 вырывается струя, протянувшаяся примерно на 3000 световых лет. В центре кадра находится ядро эллиптической галактики M87 в созвездии Девы. В нём расположен активное ядро галактики (АЯГ).\n\nАктивное ядро галактики — очень яркая область вокруг сверхмассивной чёрной дыры. Энергию для её излучения даёт вещество, которое падает к чёрной дыре и образует горячий аккреционный диск. Сверхмассивные чёрные дыры есть во многих галактиках, но для возникновения активного ядра важно, чтобы к чёрной дыре поступало достаточно вещества.\n\nИз области аккреционного диска вокруг сверхмассивной чёрной дыры в центре M87 выбрасывается мощная струя заряженных частиц. Она далеко выходит за пределы ядра и тянется через галактику. На снимке струя выглядит как бело-голубая полоса, которая расширяется по мере удаления от ядра. Мы видим свет, который испускают быстрые электроны, движущиеся в магнитных полях.",
+      "alt_en": "A fuzzy round galaxy with a bright core has a patchy jet that appear white or blue extending to the upper right",
+      "alt_ru": "У округлой галактики с ярким ядром вверх и вправо тянется неоднородная бело-голубая струя.",
+      "credit": "NASA, ESA, A. Lessing (Stanford University), E. Baltz (Stanford University), M. Shara (AMNH), J. DePasquale (STScI)",
+      "credit_url": "https://esahubble.org/images/heic2411b/",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        5,
+        99,
+        426,
+        486
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:eE6pB15Z932",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://astro4edu.org/media/multimedia/galaxy-ngc-2787.png",
+      "record_url": "https://astro4edu.org/resources/media/eE6pB15Z932/",
+      "original_path": "data/media/original/media_eE6pB15Z932.png",
+      "ru_path": null,
+      "sha256": "215f02bb9c202f7b35b313b18c98429b8ba4d05baa5777d3d5e4566bb6c8e817",
+      "size": 1911232,
+      "title_en": "The Lenticular Galaxy NGC 2787",
+      "title_ru": "Линзовидная галактика NGC 2787",
+      "short_caption_en": "The Lenticular Galaxy NGC 2787",
+      "short_caption_ru": "Линзовидная галактика NGC 2787",
+      "caption_en": "The lenticular galaxy NGC 2787. This galaxy is a disk galaxy but lacks the large, dominant spiral arm structure seen in the disks of spiral galaxies. Its core is very bright compared to the core of a spiral galaxy. Thin rings of dust can be seen in the galaxy's disk.",
+      "caption_ru": "Линзовидная галактика NGC 2787 относится к дисковым галактикам. В её диске отсутствуют крупные, хорошо заметные рукава, характерные для спиральных галактик. Ядро у неё очень яркое по сравнению с ядром спиральной галактики. В диске различимы тонкие пылевые кольца.",
+      "alt_en": "The bright core of this galaxy is surrounded by a much fainter disk. This faint disk has thin dark rings.",
+      "alt_ru": "Яркое ядро галактики окружено гораздо более тусклым диском с тонкими тёмными кольцами.",
+      "credit": "NASA/ESA and The Hubble Heritage Team",
+      "credit_url": "https://esahubble.org/images/opo0207a/",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        82,
+        119,
+        452
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:na533d1nJ18",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://astro4edu.org/media/multimedia/168785main_image_feature_755_ys_cropped.jpg",
+      "record_url": "https://astro4edu.org/resources/media/na533d1nJ18/",
+      "original_path": "data/media/original/media_na533d1nJ18.jpg",
+      "ru_path": null,
+      "sha256": "5d8768120b32be5ed91dade7c345ac7c0912a250584cd112585f2ac120c20cf3",
+      "size": 108454,
+      "title_en": "The giant elliptical galaxy ESO 325-G004",
+      "title_ru": "Гигантская эллиптическая галактика ESO 325-G004",
+      "short_caption_en": "The giant elliptical galaxy ESO 325-G004",
+      "short_caption_ru": "Гигантская эллиптическая галактика ESO 325-G004",
+      "caption_en": "The giant elliptical galaxy ESO 325-G004 sits in the Abell S0740 galaxy cluster. This huge galaxy has a mass of approximately a hundred billion solar masses. ESO 325-G004 is brightest in its core with its brightness decreasing further from its center. This galaxy has no visible spiral structure or dust lanes. ESO 325-G004 and many of the smaller galaxies around it are members of the galaxy cluster Abell S0740.",
+      "caption_ru": "Гигантская эллиптическая галактика ESO 325-G004 находится в скоплении галактик Abell S0740. Её масса примерно в сто миллиардов раз превышает массу Солнца. Ярче всего светится ядро. По мере удаления от центра яркость падает. У галактики нет заметных спиральных рукавов или пылевых полос. Многие из окружающих её небольших галактик тоже входят в скопление Abell S0740.",
+      "alt_en": "A large yellow oval galaxy sits in a field of many smaller galaxies. This large galaxy is brightest in its core",
+      "alt_ru": "Среди множества небольших галактик выделяется крупная жёлтая овальная галактика с ярким центром.",
+      "credit": "Cropped from the original by NASA, ESA, and The Hubble Heritage Team (STScI/AURA); J. Blakeslee (Washington State University)",
+      "credit_url": "https://www.nasa.gov/image-article/detailing-big-picture/",
+      "license": "PD",
+      "license_url": null,
+      "term_numbers": [
+        99,
+        120
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:aG91RF977M99",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://astro4edu.org/media/multimedia/ngc-5264-an-irregular-island.png",
+      "record_url": "https://astro4edu.org/resources/media/aG91RF977M99/",
+      "original_path": "data/media/original/media_aG91RF977M99.png",
+      "ru_path": null,
+      "sha256": "85b043f64bc69715e85cfb4cce20b414880c6174731d9053c903f06a3422b573",
+      "size": 28870303,
+      "title_en": "NGC 5264 - An irregular island",
+      "title_ru": "NGC 5264. Галактика неправильной формы",
+      "short_caption_en": "NGC 5264 - An irregular island",
+      "short_caption_ru": "NGC 5264. Галактика неправильной формы",
+      "caption_en": "The dwarf irregular galaxy NGC 5264 is located 15 million light years away. It is only about 11,000 light years across, much smaller than our Milky Way, and consists of approximately a billion stars. It lacks the spiral structure of our home Galaxy. The small blue patches in NGC 5264 mark groups of young hot blue stars. This suggests that stars formation in this galaxy is still on-going.",
+      "caption_ru": "Карликовая неправильная галактика NGC 5264 находится на расстоянии 15 миллионов световых лет. Её поперечник — всего около 11 000 световых лет, гораздо меньше Млечного Пути. В галактике примерно миллиард звёзд. У неё нет спиральной структуры, характерной для Млечного Пути. Небольшие голубые пятна обозначают группы молодых горячих голубых звёзд. Это указывает на то, что в галактике продолжается звездообразование.",
+      "alt_en": "NGC 5264 appears as a light, fuzzy, ragged oval on a dark background. Some single stars are visible amongst its diffuse glow",
+      "alt_ru": "На тёмном фоне галактика NGC 5264 выглядит как размытое светлое пятно с неровными краями. В его свечении различимы отдельные звёзды.",
+      "credit": "ESA/Hubble and NASA",
+      "credit_url": "https://commons.wikimedia.org/wiki/File:NGC_5264_-_Potw1634a.tif",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        86,
+        164
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:uF7sh13rR67",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://astro4edu.org/media/multimedia/a-visible-light-image-of-the-andromeda-galaxy.jpg",
+      "record_url": "https://astro4edu.org/resources/media/uF7sh13rR67/",
+      "original_path": "data/media/original/media_uF7sh13rR67.jpg",
+      "ru_path": null,
+      "sha256": "591ab055ba2342793f2387905923431f29dac60cf47ea061c0c9375328dcf51b",
+      "size": 1096385,
+      "title_en": "A visible light image of the Andromeda Galaxy",
+      "title_ru": "Галактика Андромеды в видимом свете",
+      "short_caption_en": "A visible light image of the Andromeda Galaxy",
+      "short_caption_ru": "Галактика Андромеды в видимом свете",
+      "caption_en": "The Andromeda Galaxy viewed in visible light. Like our Milky Way, Andromeda is a barred spiral galaxy. Here we can see its bright core and spiral disk. The glow from the stars in the disk is interrupted by lanes of dust that form part of its spiral structure.\r\n\r\nAndromeda is the largest galaxy in the Local Group of galaxies that includes the Milky Way.\r\n\r\nTo the left of the core and just above the disk we see the dwarf galaxy M32 and to the right and below the disk we see the dwarf galaxy M110. These are both satellite galaxies of the Andromeda Galaxy.",
+      "caption_ru": "Галактика Андромеды на снимке в видимом свете. Как и Млечный Путь, Андромеда — спиральная галактика с перемычкой. На снимке видны её яркое ядро и спиральный диск. Тёмные полосы пыли заслоняют свет звёзд диска и подчёркивают его спиральную структуру.\n\nАндромеда — крупнейшая из галактик Местной группы, в которую входит Млечный Путь.\n\nСлева от ядра, чуть выше диска, находится карликовая галактика M32, а справа под диском — карликовая галактика M110. Обе они — спутники галактики Андромеды.",
+      "alt_en": "Andromeda is a bright disk, with dark spiral lines in it, tilted up at the west end. Two small bright blobs lie left & right",
+      "alt_ru": "Галактика Андромеды выглядит как яркий диск с тёмными спиральными полосами, приподнятый с западной стороны. Слева и справа видны два небольших светлых пятна.",
+      "credit": "Torben Hansen",
+      "credit_url": "https://commons.wikimedia.org/wiki/File:M31_09-01-2011_(cropped).jpg",
+      "license": "CC-BY-2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/deed.en",
+      "term_numbers": [
+        8,
+        82,
+        86,
+        194,
+        330,
+        443
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:U9906953ai58",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://astro4edu.org/media/multimedia/eso0007a.jpg",
+      "record_url": "https://astro4edu.org/resources/media/U9906953ai58/",
+      "original_path": "data/media/original/media_U9906953ai58.jpg",
+      "ru_path": null,
+      "sha256": "abab8ca3a1006025c82c034deb71afd8deb29cfc60bb7588c9c5f76c115a30db",
+      "size": 4934498,
+      "title_en": "Sombrero galaxy",
+      "title_ru": "Галактика Сомбреро",
+      "short_caption_en": "Sombrero galaxy",
+      "short_caption_ru": "Галактика Сомбреро",
+      "caption_en": "This prominent galaxy M 104 is often called the Sombrero galaxy due to its resemblance to the Mexican hat. This look is created by the thin disk oriented nearly edge-on, which appears illuminated by the dominant bulge. Both, the disk and bulge contain stars, but the stars in the bulge tend to be older, while the disk also harbors large amounts of dust and gas creating shadows. M 104 is located in the constellation Virgo approximately 50 light-years away. While some of the dots visible in the picture are foreground stars and others background galaxies, the majority are actually globular clusters, dense massive clusters of stars, associated with the Sombrero Galaxy.",
+      "caption_ru": "Хорошо заметную галактику M104 называют галактикой Сомбреро из-за сходства с мексиканской шляпой. Так она выглядит благодаря тонкому диску, видимому почти с ребра на фоне яркого и крупного центрального утолщения — балджа. И диск, и балдж содержат звёзды, причём в балдже они обычно старше. В диске также много газа и пыли, которые образуют тёмные полосы. M104 находится в созвездии Девы, примерно в 50 миллионах световых лет от Земли. Некоторые точки на снимке — звёзды переднего плана или далёкие фоновые галактики. Большинство же составляют шаровые звёздные скопления Сомбреро — массивные и плотные группы звёзд.",
+      "alt_en": "This galaxy has a large bulge surrounded by a ring of dust creating an image similar to the mexican hat with the same name",
+      "alt_ru": "Крупное центральное утолщение галактики и окружающее его пылевое кольцо напоминают мексиканскую шляпу сомбреро.",
+      "credit": "ESO/P. Barthel",
+      "credit_url": "https://www.eso.org/public/images/eso0007a/",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        82,
+        119
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:bf95nw54t034",
+      "kind": "media",
+      "file_type": "vid",
+      "source_url": "https://zenodo.org/record/7425682/files/Honourable%20mention%20in%20the%202022%20IAU%20OAE%20Astrophotography%20Contest%2C%20category%20Time%20lapses%20of%20celestial%20patterns%3A%20Chilean%20Nights%2C%20by%20Robert%20Barsa.mp4",
+      "record_url": "https://astro4edu.org/resources/media/bf95nw54t034/",
+      "original_path": null,
+      "ru_path": null,
+      "sha256": null,
+      "size": null,
+      "title_en": "",
+      "title_ru": "",
+      "short_caption_en": "Chilean Nights",
+      "short_caption_ru": "Чилийские ночи",
+      "caption_en": "Honourable mention in the 2022 IAU OAE Astrophotography Contest, category Time lapses of celestial patterns.\r\n\r\n \r\n\r\nShot in December 2020, this time-lapse shows the sky from San Pedro de Atacama, Chile, in the southern hemisphere.\r\n\r\nRight in the first frame we can see our home galaxy, the Milky Way, as well as both the Large and Small Magellanic clouds, two satellite galaxies orbiting the Milky Way. In the bottom of the image the bright stars Rigil Kentaurus and Hadar (also known as Alpha and Beta Centauri) are visible, both in the constellation Centaurus. Just above, we can also see the small constellation Crux, visible from the northern tropical circles southwards. It is important for navigation purposes because its longer axis indicates the direction of the celestial south pole. The bright whitish star in the top of the image and to the right of the Galaxy is Canopus, one of the brightest stars in the night sky, located in the constellation Carina. Canopus is the second brightest star in the sky, while Rigil Kentaurus is the third brightest.\r\n\r\nIn some of the next frames, Orion, the great hunter, appears clearly with its bright stars and its characteristic asterism, the belt, composed of three aligned bright stars. Since this video was taken from the southern hemisphere, the Greek hero from the northern hemisphere seems to be performing a headstand.\r\n\r\nWe can also see the planets Jupiter and Saturn in a close conjunction, even finding themselves in the significant beam of Zodiacal light setting down below the horizon. There are also a few meteors blinking in some of the frames, one of them with a long-lasting and developing trail. The very bright object rising from behind the volcanoes of the Andes, creating spectacular shadows and crepuscular rays, is the Moon. In the last frame we see the Moon next to Saturn and Jupiter.",
+      "caption_ru": "Почётное упоминание конкурса астрофотографии Управления астрономического образования МАС 2022 года в категории «Ускоренная съёмка узоров звёздного неба».\n\nНа ускоренной записи, сделанной в декабре 2020 года в Сан-Педро-де-Атакаме, Чили, видно небо Южного полушария.\n\nУже на первом кадре видны наша Галактика, Млечный Путь, и два её спутника — Большое и Малое Магеллановы Облака. Внизу кадра заметны яркие звёзды Ригиль Кентаурус и Хадар, или α и β Центавра. Обе находятся в созвездии Центавра. Чуть выше виден небольшой Южный Крест, который можно наблюдать от северных тропических широт и дальше к югу. Созвездие важно для навигации, потому что его длинная ось указывает в сторону южного полюса мира. Белая звезда вверху, правее полосы Млечного Пути, — Канопус из созвездия Киля. Он занимает второе место среди звёзд ночного неба по видимой яркости. Третье место занимает α Центавра.\n\nНа следующих кадрах хорошо виден Орион, великий охотник. Его легко узнать по ярким звёздам и характерному Поясу из трёх звёзд, выстроившихся в линию. Съёмка сделана в Южном полушарии, поэтому фигура Ориона кажется перевёрнутой.\n\nВидны и Юпитер с Сатурном в тесном соединении. Они находятся в яркой полосе зодиакального света, которая опускается к горизонту. На некоторых кадрах вспыхивают метеоры. Один оставляет долгий след, который меняется со временем. Из-за вулканов Анд поднимается яркая Луна, отбрасывая выразительные тени и создавая сумеречные лучи. На последнем кадре она видна рядом с Сатурном и Юпитером.",
+      "alt_en": "Over a cluster of small telescope domes the Milky Way juts upward from the horizon. Two fuzzy blobs are on the right",
+      "alt_ru": "Млечный Путь поднимается от горизонта над несколькими куполами небольших телескопов. Справа видны два размытых пятна.",
+      "credit": "Robert Barsa/IAU OAE",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        25,
+        66,
+        199,
+        467,
+        499,
+        500,
+        504
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-inline-5fa105570e2608de50a8",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/3d-universe-the-milky-way-and-friends_en_large_news_thumbnail_nP2CEQa.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/3d-universe-the-milky-way-and-friends/",
+      "original_path": "media/original/review-topics/oae-inline-5fa105570e2608de50a8.jpg",
+      "sha256": "856f8f35812f0f722369859d0529020709b1ef967afcf3d18d708f9bb1117df5",
+      "size": 73327,
+      "alt_en": "Thumbnail for  3D Universe: the Milky Way and friends",
+      "alt_ru": "Миниатюра задания «Вселенная в 3D. Млечный Путь и его соседи»",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-inline-225e5b4b27fdbe1307d1",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/create-your-own-astro-music_en_large_news_thumbnail_1Ee6tn8.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/create-your-own-astro-music/",
+      "original_path": "media/original/review-topics/oae-inline-225e5b4b27fdbe1307d1.jpg",
+      "sha256": "5abe0b706d2d26ee8c8f6d7ae498c91f7aa7b77270660c9a8ab28b44855248c5",
+      "size": 35082,
+      "alt_en": "Thumbnail for  Create Your Own Astro-Music",
+      "alt_ru": "Миниатюра задания «Создай свою астромузыку»",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-inline-78951139b3c1467b1ba9",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/coma-cluster-of-galaxies_en_large_news_thumbnail_DU9pNbQ.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/coma-cluster-of-galaxies/",
+      "original_path": "media/original/review-topics/oae-inline-78951139b3c1467b1ba9.jpg",
+      "sha256": "86bd05ffaca20fecc8e8c054cebc61143eeba549553085d08149b2822404d14b",
+      "size": 19703,
+      "alt_en": "Thumbnail for  Coma Cluster of Galaxies",
+      "alt_ru": "Миниатюра задания «Скопление галактик в Волосах Вероники»",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Машинный перевод. Редакторское утверждение ожидается."
+  }
+}

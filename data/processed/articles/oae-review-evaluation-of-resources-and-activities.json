@@ -1,0 +1,280 @@
+{
+  "id": "article:oae-review-evaluation-of-resources-and-activities",
+  "kind": "article",
+  "source": {
+    "type": "oae_review_topic",
+    "url": "https://www.astro4edu.org/oae-reviews/evaluation-of-resources-and-activities",
+    "imported_at": "2026-11-18T16:43:53.163404+00:00",
+    "sha256": "e87b72f733104aec722b5a13ebdf8417c34d153dc4bb5466d379d373fe2f6854"
+  },
+  "metadata": {
+    "term_numbers": [],
+    "document_ids": [
+      "article:oae-document-oae_evaluation_toolkit_standard",
+      "article:oae-document-oae_evaluation_framework__toolkit_v4",
+      "article:oae-document-oaereview-evaluation-2025",
+      "article:oae-document-evaluationofresourcesandactivities_mini_review",
+      "article:oae-document-oae_evaluation_framework__toolkit_v4",
+      "article:oae-document-oae_evaluation_toolkit_standard",
+      "article:oae-document-oae_response_to_the_2023_5th_shaw-iau_workshop_feedback"
+    ],
+    "categories_ru": []
+  },
+  "sections": [
+    {
+      "id": "about",
+      "type": "article_body",
+      "heading": "About",
+      "body": "Evaluation is a very important topic when talking about education. Evaluation is a continuous process that critically examines a program; it can improve program design and implementation, assess its achievements and improve upon its effectiveness. It helps teachers and learners to improve teaching and learning processes. Evaluation helps us to make evidence-based decisions. There are different types of evaluation, depending on evaluation purposes. There are evaluation activities that you conduct before you start your work and as you are planning (Front-end evaluation), while a project is in development (Formative evaluation), and at the conclusion of the program implementation (Summative or Impact evaluation). There are different types of data one can collect to perform evaluation: quantitative data (numbers such as simple counts or percentage) and qualitative data (more descriptive in nature). Therefore, there are different types of methods and tools one can use to collect and analyse data, to understand what is happening and why: graphs, closed-ended surveys, checklists, rubrics but also interviews, focus groups, open-ended surveys and more interactive data collection methods. Moreover, mixed methods can be used in order to have a more holistic view. This collection aims to give a general and basic overview of types, methods and tools commonly used in evaluation, together with a list of open resources, to help teachers but also scientists and educators to plan the best assessment of their work.\n\nPrior to the full OAE review on evaluation we have released a toolkit to help you build evaluation into your astronomy education activities plus a special toolkit for our NAECs and Centers and Nodes .",
+      "heading_ru": "О теме",
+      "body_ru": "Оценка — неотъемлемая часть образования. Это непрерывный процесс, в ходе которого критически анализируют программу: как она устроена и как её проводят, каких результатов удалось достичь и как повысить её эффективность. Оценка помогает педагогам и учащимся улучшать преподавание и обучение и принимать решения на основе данных.\n\nВид оценки выбирают в зависимости от цели. Предварительную оценку проводят до начала работы, в том числе при планировании. Формирующую оценку проводят по мере разработки и реализации проекта. Итоговую оценку или оценку воздействия проводят по завершении программы. Для оценки можно собирать количественные данные, например число участников или долю в процентах, и качественные данные, которые носят описательный характер.\n\nЧтобы понять, что происходит и почему, данные собирают и анализируют разными способами: строят графики, используют анкеты с закрытыми вопросами, контрольные списки и шкалы с критериями, проводят интервью и фокус-группы, задают открытые вопросы в анкетах и применяют другие интерактивные методы. Сочетание количественных и качественных методов помогает увидеть более полную картину. В подборке представлен общий обзор распространённых видов, методов и инструментов оценки, а также список открытых ресурсов. Это поможет педагогам, учёным и просветителям подобрать способы оценки своей работы.\n\nДо выпуска полного обзора OAE подготовил набор инструментов, который поможет включить оценку в занятия по астрономии, и отдельный набор для национальных координаторов астрономического образования (NAEC), центров и узлов OAE.",
+      "links": [
+        {
+          "url": "https://astro4edu.org/resources/document/z084b222zA98/",
+          "text": "toolkit",
+          "text_ru": "Набор инструментов для оценки"
+        },
+        {
+          "url": "https://astro4edu.org/resources/document/ze360A9Zl65/",
+          "text": "special toolkit for our NAECs and Centers and Nodes",
+          "text_ru": "Набор инструментов для национальных координаторов, центров и узлов OAE"
+        }
+      ],
+      "media_ids": [
+        "media:oae-review-evaluation-of-resources-and-activities"
+      ]
+    },
+    {
+      "id": "panel",
+      "type": "media_collection",
+      "heading": "Review Panel",
+      "body": "Sophie Bartlett\n\nCardiff University\n\nBartlettS2 at cardiff.ac.uk\n\nBrief biography: Sophie is an educational researcher based in the School of Social Sciences at Cardiff University in the UK. Sophie employs both quantitative and qualitative methods in her research to explore how individuals’ learning experiences influence their attitudes, aspirations, and sense of empowerment.\n\nSophie completed a Bachelor’s degree in Astronomy before going on to earn a PhD in Astronomy and Physics Education. Her thesis explored how astronomy can be used as a point of engagement for the secondary/high school physics curriculum, and yielded an evaluation framework and series of recommendations for teachers and practitioners.\n\nAt the OAE, Sophie is working on producing a review of evaluation practices and a toolkit to aid astronomy education practitioners in evaluating the impact of their initiatives. The review will account for the myriad of variables and circumstances under which astronomy education is carried out across the NAEC network, so that practitioners can best understand the impact of their work and directions to take in the future.",
+      "heading_ru": "Об авторе обзора",
+      "body_ru": "Софи Бартлетт\n\nКардиффский университет\n\nBartlettS2 [собака] cardiff.ac.uk\n\nКраткая биография. Софи исследует образование в Школе социальных наук Кардиффского университета (Великобритания). Она использует количественные и качественные методы, чтобы изучать, как опыт обучения влияет на установки людей, их стремления и ощущение, что они могут влиять на собственную жизнь.\n\nСофи получила степень бакалавра по астрономии, а затем степень PhD в области преподавания астрономии и физики. В диссертации она исследовала, как с помощью астрономии заинтересовать учащихся средней и старшей школы физикой. По результатам работы она разработала схему оценки и рекомендации для учителей и специалистов по образованию.\n\nВ OAE Софи готовит обзор методов оценки и набор инструментов, чтобы специалисты по астрономическому образованию могли оценивать влияние своих инициатив. В обзоре будут учтены разнообразные условия, в которых ведётся работа в сети национальных координаторов, чтобы специалисты могли точнее понять её результаты и определить дальнейшие шаги.",
+      "links": [],
+      "media_ids": [
+        "media:oae-inline-f2d6ff3e52afbe6ed357"
+      ]
+    },
+    {
+      "id": "document",
+      "type": "related_resources",
+      "heading": "Review document",
+      "body": "OAE Review: Evaluation ( PDF file 461.93 kB Attribution 4.0 International (CC BY 4.0) )",
+      "heading_ru": "Обзор OAE",
+      "body_ru": "Обзор OAE «Оценка» (PDF, 461,93 КБ). Лицензия CC BY 4.0.",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/media/documents/OAEReview-Evaluation-2025.pdf",
+          "text": "OAE Review: Evaluation",
+          "text_ru": "Обзор OAE «Оценка»"
+        },
+        {
+          "url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+          "text": "Attribution 4.0 International (CC BY 4.0)",
+          "text_ru": "Creative Commons «С указанием авторства» 4.0 Всемирная (CC BY 4.0)"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations",
+      "type": "related_resources",
+      "heading": "Talks",
+      "body": "",
+      "heading_ru": "Доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/118/",
+          "text": "An Introduction to Evaluation for Astronomy Education Programs",
+          "text_ru": "Введение в оценку программ астрономического образования"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/142/",
+          "text": "Assessing students in the 21st century",
+          "text_ru": "Оценивание учащихся в XXI веке"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/119/",
+          "text": "Evaluation Basics: Planning for Improvement and Measuring Impact",
+          "text_ru": "Основы оценки: как планировать улучшения и измерять влияние"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/121/",
+          "text": "How did that happen? Mixed-method evaluation of astronomy resources.",
+          "text_ru": "Как это произошло? Оценка материалов по астрономии с помощью смешанных методов"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/120/",
+          "text": "The Europlanet Evaluation Toolkit",
+          "text_ru": "Набор инструментов Europlanet для оценки"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-5",
+      "type": "related_resources",
+      "heading": "Poster Presentations",
+      "body": "",
+      "heading_ru": "Стендовые доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/165/",
+          "text": "Is our solar system representative of the exoplanetary systems discovered? An activity and assessment instrument based on current exoplanet transit data",
+          "text_ru": "Типична ли Солнечная система среди известных планетных систем? Задание и инструмент оценки на основе актуальных данных о транзитах экзопланет"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-6",
+      "type": "related_resources",
+      "heading": "Documents",
+      "body": "",
+      "heading_ru": "Документы",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/document/nj57lu978D3/",
+          "text": "Evaluation of Resources and Activities: Mini-Review",
+          "text_ru": "Оценка учебных материалов и занятий. Мини-обзор"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/document/ze360A9Zl65/",
+          "text": "Evaluation Framework and Toolkit For OAE NAECs, Centers and Nodes",
+          "text_ru": "Система оценки и набор инструментов для национальных координаторов, центров и узлов OAE"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/document/z084b222zA98/",
+          "text": "OAE Evaluation Framework & Toolkit: Astronomy Education Practices",
+          "text_ru": "Система оценки и набор инструментов OAE для астрономического образования"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/document/vM57bT16it44/",
+          "text": "OAE Response to Attendee Feedback on the 2023 5th Shaw-IAU Workshop on Astronomy for Education",
+          "text_ru": "Ответ OAE на отзывы участников 5-го семинара Шоу и МАС по астрономическому образованию (2023)"
+        }
+      ],
+      "media_ids": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Evaluation of resources and activities",
+      "blocks": {
+        "about": {
+          "heading": "About",
+          "body": "Evaluation is a very important topic when talking about education. Evaluation is a continuous process that critically examines a program; it can improve program design and implementation, assess its achievements and improve upon its effectiveness. It helps teachers and learners to improve teaching and learning processes. Evaluation helps us to make evidence-based decisions. There are different types of evaluation, depending on evaluation purposes. There are evaluation activities that you conduct before you start your work and as you are planning (Front-end evaluation), while a project is in development (Formative evaluation), and at the conclusion of the program implementation (Summative or Impact evaluation). There are different types of data one can collect to perform evaluation: quantitative data (numbers such as simple counts or percentage) and qualitative data (more descriptive in nature). Therefore, there are different types of methods and tools one can use to collect and analyse data, to understand what is happening and why: graphs, closed-ended surveys, checklists, rubrics but also interviews, focus groups, open-ended surveys and more interactive data collection methods. Moreover, mixed methods can be used in order to have a more holistic view. This collection aims to give a general and basic overview of types, methods and tools commonly used in evaluation, together with a list of open resources, to help teachers but also scientists and educators to plan the best assessment of their work.\n\nPrior to the full OAE review on evaluation we have released a toolkit to help you build evaluation into your astronomy education activities plus a special toolkit for our NAECs and Centers and Nodes ."
+        },
+        "panel": {
+          "heading": "Review Panel",
+          "body": "Sophie Bartlett\n\nCardiff University\n\nBartlettS2 at cardiff.ac.uk\n\nBrief biography: Sophie is an educational researcher based in the School of Social Sciences at Cardiff University in the UK. Sophie employs both quantitative and qualitative methods in her research to explore how individuals’ learning experiences influence their attitudes, aspirations, and sense of empowerment.\n\nSophie completed a Bachelor’s degree in Astronomy before going on to earn a PhD in Astronomy and Physics Education. Her thesis explored how astronomy can be used as a point of engagement for the secondary/high school physics curriculum, and yielded an evaluation framework and series of recommendations for teachers and practitioners.\n\nAt the OAE, Sophie is working on producing a review of evaluation practices and a toolkit to aid astronomy education practitioners in evaluating the impact of their initiatives. The review will account for the myriad of variables and circumstances under which astronomy education is carried out across the NAEC network, so that practitioners can best understand the impact of their work and directions to take in the future."
+        },
+        "document": {
+          "heading": "Review document",
+          "body": "OAE Review: Evaluation ( PDF file 461.93 kB Attribution 4.0 International (CC BY 4.0) )"
+        },
+        "presentations": {
+          "heading": "Talks",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Poster Presentations",
+          "body": ""
+        },
+        "presentations-6": {
+          "heading": "Documents",
+          "body": ""
+        }
+      }
+    },
+    "ru": {
+      "title": "Оценка учебных материалов и занятий",
+      "blocks": {
+        "about": {
+          "heading": "О теме",
+          "body": "Оценка — неотъемлемая часть образования. Это непрерывный процесс, в ходе которого критически анализируют программу: как она устроена и как её проводят, каких результатов удалось достичь и как повысить её эффективность. Оценка помогает педагогам и учащимся улучшать преподавание и обучение и принимать решения на основе данных.\n\nВид оценки выбирают в зависимости от цели. Предварительную оценку проводят до начала работы, в том числе при планировании. Формирующую оценку проводят по мере разработки и реализации проекта. Итоговую оценку или оценку воздействия проводят по завершении программы. Для оценки можно собирать количественные данные, например число участников или долю в процентах, и качественные данные, которые носят описательный характер.\n\nЧтобы понять, что происходит и почему, данные собирают и анализируют разными способами: строят графики, используют анкеты с закрытыми вопросами, контрольные списки и шкалы с критериями, проводят интервью и фокус-группы, задают открытые вопросы в анкетах и применяют другие интерактивные методы. Сочетание количественных и качественных методов помогает увидеть более полную картину. В подборке представлен общий обзор распространённых видов, методов и инструментов оценки, а также список открытых ресурсов. Это поможет педагогам, учёным и просветителям подобрать способы оценки своей работы.\n\nДо выпуска полного обзора OAE подготовил набор инструментов, который поможет включить оценку в занятия по астрономии, и отдельный набор для национальных координаторов астрономического образования (NAEC), центров и узлов OAE."
+        },
+        "panel": {
+          "heading": "Об авторе обзора",
+          "body": "Софи Бартлетт\n\nКардиффский университет\n\nBartlettS2 [собака] cardiff.ac.uk\n\nКраткая биография. Софи исследует образование в Школе социальных наук Кардиффского университета (Великобритания). Она использует количественные и качественные методы, чтобы изучать, как опыт обучения влияет на установки людей, их стремления и ощущение, что они могут влиять на собственную жизнь.\n\nСофи получила степень бакалавра по астрономии, а затем степень PhD в области преподавания астрономии и физики. В диссертации она исследовала, как с помощью астрономии заинтересовать учащихся средней и старшей школы физикой. По результатам работы она разработала схему оценки и рекомендации для учителей и специалистов по образованию.\n\nВ OAE Софи готовит обзор методов оценки и набор инструментов, чтобы специалисты по астрономическому образованию могли оценивать влияние своих инициатив. В обзоре будут учтены разнообразные условия, в которых ведётся работа в сети национальных координаторов, чтобы специалисты могли точнее понять её результаты и определить дальнейшие шаги."
+        },
+        "document": {
+          "heading": "Обзор OAE",
+          "body": "Обзор OAE «Оценка» (PDF, 461,93 КБ). Лицензия CC BY 4.0."
+        },
+        "presentations": {
+          "heading": "Доклады",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Стендовые доклады",
+          "body": ""
+        },
+        "presentations-6": {
+          "heading": "Документы",
+          "body": ""
+        }
+      },
+      "aliases": []
+    }
+  },
+  "media": [
+    {
+      "id": "media:oae-review-evaluation-of-resources-and-activities",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/oae_review_files/illustration_images/evaluation_news_image.png",
+      "record_url": "https://www.astro4edu.org/oae-reviews/evaluation-of-resources-and-activities",
+      "original_path": "media/original/oae-review-evaluation-of-resources-and-activities.png",
+      "sha256": "728a672e6c8a811c23b421098c250721332b4a3c08165abc6b2ccd5716096206",
+      "size": 45617,
+      "alt_en": "Assess. Innovative assessment for the 21st century. Teaching methodologies. Focus on students’ skills: academic, cognitive, emotional, social. Formative and informative. Promotes self-regulated learning, deep learning, cognitive, social and emotional development, self-esteem and confidence. Allows teachers to adjust and improve their teaching practice.",
+      "alt_ru": "Оценивание. Новые подходы к оцениванию в XXI веке. Методы преподавания. Навыки учащихся: учебные, познавательные, эмоциональные, социальные. Формирующая и информативная оценка. Способствует самостоятельному управлению обучением, глубокому усвоению материала, познавательному, социальному и эмоциональному развитию, росту самооценки и уверенности в себе. Позволяет педагогам корректировать и улучшать преподавание.",
+      "credit": "Priscila Doran",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "Illustration image for Evaluation of resources and activities",
+      "ru_path": "data/media/ru/oae-evaluation-overview-cover.png",
+      "ru_sha256": "b6dbece1759d13838a97065365414b66fd51388a613220ea5eb5b79e04a809fb"
+    },
+    {
+      "id": "media:oae-inline-f2d6ff3e52afbe6ed357",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/headshots/scaled/Sophie_Bartlett_scaled_IBsLaCE.jpg",
+      "record_url": "https://www.astro4edu.org/oae-reviews/evaluation-of-resources-and-activities",
+      "original_path": "media/original/review-topics/oae-inline-f2d6ff3e52afbe6ed357.jpg",
+      "sha256": "3357b7dbbf5525e3e501210daba12eaaac1af2aba7f1a78d12d86f4dfea697f3",
+      "size": 322945,
+      "alt_en": "Sophie Bartlett",
+      "alt_ru": "Софи Бартлетт",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Машинный перевод. Редакторское утверждение ожидается."
+  }
+}

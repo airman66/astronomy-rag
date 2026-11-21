@@ -1,0 +1,268 @@
+{
+  "id": "article:oae-review-astronomy-across-disciplines-and-borders",
+  "kind": "article",
+  "source": {
+    "type": "oae_review_topic",
+    "url": "https://www.astro4edu.org/oae-reviews/astronomy-across-disciplines-and-borders",
+    "imported_at": "2026-11-18T16:43:53.029357+00:00",
+    "sha256": "efc20cb041c2e401959e19df549b99717d9a7f131af3b467d86a59ea7f682db8"
+  },
+  "metadata": {
+    "term_numbers": [],
+    "document_ids": [
+      "article:oae-document-astronomyacrossdisciplinesandborders_mini_review"
+    ],
+    "categories_ru": []
+  },
+  "sections": [
+    {
+      "id": "about",
+      "type": "article_body",
+      "heading": "About",
+      "body": "The resources listed under the review topic \"Astronomy across disciplines and borders\" address the central point of how astronomy, and science in general, relates to other basic activities of the human mind. This reflects the peculiarity of astronomy itself: every primitive culture, every society, whatever it is, wherever it is, developed a relationship of some kind with the day and night sky. Astronomy is \"a necessary monster\" (to quote the famous Argentinian writer Jorge Luis Borges), so we find it in every distinct place and time. In fact, Astronomy is a basic human activity, like the art of sharing stories and information (\"storytelling\" is not a technique as it is - sadly - often regarded: it is a fundamental and pristine form of knowledge). The collection herein explores fruitful methods to create connections between astronomy and both art and other STEM disciplines: what are the best ways to promote a deep, creative and fruitful dialogue between astrophysicists and artists? How can we start from Big Ideas in Astronomy to draw a network of interactions among STEM disciplines? Can astronomy give a relevant contribution to promote critical thinking as a basic competence in a democratic and innovative society? What is the role of storytelling in this process? A deep and honest dialogue and a mutual respect between professionals, cultures, point of views is the first step to get a good result.",
+      "heading_ru": "О теме",
+      "body_ru": "Материалы обзора посвящены тому, как астрономия и наука в целом связаны с другими основными занятиями человека. Ранние культуры и более поздние общества вырабатывали своё отношение к дневному и ночному небу. Астрономия — «необходимое чудовище», если воспользоваться выражением аргентинского писателя Хорхе Луиса Борхеса. Поэтому она встречается в разных местах и эпохах.\n\nИзучать небо и рассказывать истории — давние способы познавать мир. Как наладить содержательный творческий разговор между астрофизиками и художниками? Как на основе ключевых идей астрономии показать связи между естественными науками, технологиями, инженерным делом и математикой? Как астрономия может развивать критическое мышление, важное для демократического общества? Какую роль в этом играют истории?\n\nСборник предлагает способы связывать астрономию с искусством и другими дисциплинами. Первый шаг — открытый разговор и уважение к специалистам, культурам и разным точкам зрения.",
+      "links": [],
+      "media_ids": [
+        "media:oae-review-astronomy-across-disciplines-and-borders"
+      ]
+    },
+    {
+      "id": "initial_document",
+      "type": "related_resources",
+      "heading": "Mini-review document",
+      "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 9.99 MB) f .",
+      "heading_ru": "Мини-обзор",
+      "body_ru": "Этой теме посвятили секцию третьего семинара Шоу и МАС по астрономическому образованию. По материалам секции подготовили мини-обзор (PDF, 9,99 МБ).",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/sessions/astronomy-across-disciplines/",
+          "text": "session",
+          "text_ru": "Секция семинара"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/schedule/",
+          "text": "3rd Shaw-IAU Workshop",
+          "text_ru": "Третий семинар Шоу и МАС"
+        },
+        {
+          "url": "https://www.astro4edu.org/media/documents/AstronomyAcrossDisciplinesandBorders_mini_review.pdf",
+          "text": "mini-review ( PDF file 9.99 MB)",
+          "text_ru": "Мини-обзор в PDF"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations",
+      "type": "related_resources",
+      "heading": "Talks",
+      "body": "",
+      "heading_ru": "Доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/39/",
+          "text": "AstroBilgi Astronomy Teacher Training Workshops in Turkey",
+          "text_ru": "Семинары AstroBilgi по подготовке учителей астрономии в Турции"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/46/",
+          "text": "Astronomical education research papers in Japan: the never-changing and the ever-changing, and the challenge of returning the research results to teachers",
+          "text_ru": "Исследования астрономического образования в Японии. Что меняется, что остаётся прежним и как передавать результаты учителям"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/44/",
+          "text": "Astronomy Education as the 'Academic Ether' in Bolivia",
+          "text_ru": "Астрономическое образование как «академический эфир» в Боливии"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/45/",
+          "text": "Astronomy in the land of avocados",
+          "text_ru": "Астрономия в стране авокадо"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/37/",
+          "text": "Bridging the gap between different learning cultures",
+          "text_ru": "Как преодолеть разрыв между разными культурами обучения"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/38/",
+          "text": "Creating awareness and promoting Astronomy education in Ethiopia",
+          "text_ru": "Как знакомят с астрономией и развивают астрономическое образование в Эфиопии"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/43/",
+          "text": "Storytelling to create a positive learning environment",
+          "text_ru": "Как истории помогают создать доброжелательную атмосферу на занятиях"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/40/",
+          "text": "The Importance of Local Digital Dome Content in South Africa",
+          "text_ru": "Зачем Южной Африке собственные цифровые программы для планетариев"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/53/",
+          "text": "Art-Science Collaborations at MIT: Case Studies",
+          "text_ru": "Искусство и наука в MIT. Примеры сотрудничества"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/52/",
+          "text": "Collaborations and Collisions in Science and Art",
+          "text_ru": "Как наука и искусство встречаются и работают вместе"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/51/",
+          "text": "Interdisciplinary links between the curriculum and the Big Ideas in Astronomy: a case study in Chile",
+          "text_ru": "Связь школьной программы с ключевыми идеями астрономии. Исследование на примере Чили"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/50/",
+          "text": "Teaching critical thinking skills with astronomy",
+          "text_ru": "Как развивать критическое мышление на занятиях по астрономии"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-4",
+      "type": "related_resources",
+      "heading": "Poster Presentations",
+      "body": "",
+      "heading_ru": "Постеры",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/31/",
+          "text": "Bringing the Sun at the school",
+          "text_ru": "Солнце в школе"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/23/",
+          "text": "Integrating Earth & Space Science Education in our Schools",
+          "text_ru": "Как объединить преподавание наук о Земле и космосе в школе"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/26/",
+          "text": "Providing education through Astronomy Clubs",
+          "text_ru": "Астрономические клубы как образовательные площадки"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/25/",
+          "text": "Raising the interest and reaching out with interdisciplinary astronomy",
+          "text_ru": "Как заинтересовать широкую аудиторию междисциплинарной астрономией"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/29/",
+          "text": "Teacher workshop for the design of Astronomy Interdisciplinary school lessons",
+          "text_ru": "Семинар для учителей по разработке межпредметных занятий по астрономии"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/24/",
+          "text": "Teaching the History and Philosophy of Astronomy",
+          "text_ru": "Как преподавать историю и философию астрономии"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-5",
+      "type": "related_resources",
+      "heading": "Documents",
+      "body": "",
+      "heading_ru": "Документы",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/document/M660Hu97kH37/",
+          "text": "Astronomy across disciplines and borders: Mini-Review",
+          "text_ru": "Астрономия на стыке дисциплин и культур. Мини-обзор"
+        }
+      ],
+      "media_ids": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Astronomy across disciplines and borders",
+      "blocks": {
+        "about": {
+          "heading": "About",
+          "body": "The resources listed under the review topic \"Astronomy across disciplines and borders\" address the central point of how astronomy, and science in general, relates to other basic activities of the human mind. This reflects the peculiarity of astronomy itself: every primitive culture, every society, whatever it is, wherever it is, developed a relationship of some kind with the day and night sky. Astronomy is \"a necessary monster\" (to quote the famous Argentinian writer Jorge Luis Borges), so we find it in every distinct place and time. In fact, Astronomy is a basic human activity, like the art of sharing stories and information (\"storytelling\" is not a technique as it is - sadly - often regarded: it is a fundamental and pristine form of knowledge). The collection herein explores fruitful methods to create connections between astronomy and both art and other STEM disciplines: what are the best ways to promote a deep, creative and fruitful dialogue between astrophysicists and artists? How can we start from Big Ideas in Astronomy to draw a network of interactions among STEM disciplines? Can astronomy give a relevant contribution to promote critical thinking as a basic competence in a democratic and innovative society? What is the role of storytelling in this process? A deep and honest dialogue and a mutual respect between professionals, cultures, point of views is the first step to get a good result."
+        },
+        "initial_document": {
+          "heading": "Mini-review document",
+          "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 9.99 MB) f ."
+        },
+        "presentations": {
+          "heading": "Talks",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Poster Presentations",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Documents",
+          "body": ""
+        }
+      }
+    },
+    "ru": {
+      "title": "Астрономия на стыке дисциплин и культур",
+      "blocks": {
+        "about": {
+          "heading": "О теме",
+          "body": "Материалы обзора посвящены тому, как астрономия и наука в целом связаны с другими основными занятиями человека. Ранние культуры и более поздние общества вырабатывали своё отношение к дневному и ночному небу. Астрономия — «необходимое чудовище», если воспользоваться выражением аргентинского писателя Хорхе Луиса Борхеса. Поэтому она встречается в разных местах и эпохах.\n\nИзучать небо и рассказывать истории — давние способы познавать мир. Как наладить содержательный творческий разговор между астрофизиками и художниками? Как на основе ключевых идей астрономии показать связи между естественными науками, технологиями, инженерным делом и математикой? Как астрономия может развивать критическое мышление, важное для демократического общества? Какую роль в этом играют истории?\n\nСборник предлагает способы связывать астрономию с искусством и другими дисциплинами. Первый шаг — открытый разговор и уважение к специалистам, культурам и разным точкам зрения."
+        },
+        "initial_document": {
+          "heading": "Мини-обзор",
+          "body": "Этой теме посвятили секцию третьего семинара Шоу и МАС по астрономическому образованию. По материалам секции подготовили мини-обзор (PDF, 9,99 МБ)."
+        },
+        "presentations": {
+          "heading": "Доклады",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Постеры",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Документы",
+          "body": ""
+        }
+      },
+      "aliases": []
+    }
+  },
+  "media": [
+    {
+      "id": "media:oae-review-astronomy-across-disciplines-and-borders",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/oae_review_files/illustration_images/astronomy_across_disciplines_news_image.png",
+      "record_url": "https://www.astro4edu.org/oae-reviews/astronomy-across-disciplines-and-borders",
+      "original_path": "media/original/oae-review-astronomy-across-disciplines-and-borders.png",
+      "sha256": "952a398ce9381449a6b4a17df43e4aebc6b180ab17a76de726eb01a76c77afa4",
+      "size": 139898,
+      "alt_en": "Illustration image for Astronomy across disciplines and borders",
+      "alt_ru": "Дети и взрослая участница на астрономическом занятии. Один ребёнок в очках виртуальной реальности, на заднем плане изображение звёздного неба.",
+      "credit": "Jacqueline Bondell",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Машинный перевод. Редакторское утверждение ожидается."
+  }
+}

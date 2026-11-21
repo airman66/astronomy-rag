@@ -10,6 +10,7 @@ from scripts.translation_review.common import (
     APPLIED,
     REPORT,
     REVIEW,
+    REVIEW_CORPUS,
     REVIEW_MODEL,
     REVIEW_PROMPT_VERSION,
     REVIEW_VERSIONS,
@@ -19,6 +20,9 @@ from scripts.translation_review.common import (
     VERIFY_PROMPT_VERSION,
     VERIFY_VERSIONS,
     latest,
+    manual_definition_edits,
+    manual_media_edits,
+    manual_page_edits,
     now,
     read_jsonl,
     write_json,
@@ -37,6 +41,29 @@ def run_report(records: dict[str, dict[str, Any]], units_payload: dict[str, Any]
             applied_by_field[key] = (
                 {**row, "old": applied_by_field[key]["old"]} if key in applied_by_field else row
             )
+    for record_id, path, current, definition in manual_definition_edits(records):
+        key = (record_id, path)
+        applied_by_field[key] = {
+            "old": applied_by_field.get(key, {}).get("old", definition["previous_ru"]),
+            "new": current,
+            "source": "manual_review",
+            "types": definition["types"],
+            "verification": "compared_to_primary_source" if definition["sources"] else "compared_to_original",
+        }
+    manual = {
+        (record_id, path): current
+        for edits in (manual_media_edits(records), manual_page_edits(records))
+        for record_id, path, current in edits
+    }
+    for key, current in manual.items():
+        prior = applied_by_field.get(key)
+        if prior and prior["new"] != current:
+            applied_by_field[key] = {
+                **prior,
+                "new": current,
+                "source": "manual_review",
+                "verification": "compared_to_original",
+            }
     disputed_by_field = defaultdict(list)
     for row in runs[-1]["disputed"] if runs else []:
         if row["unit"] in units:
@@ -58,12 +85,15 @@ def run_report(records: dict[str, dict[str, Any]], units_payload: dict[str, Any]
         for field in fields(record):
             key = (record_id, field["ru_path"])
             unit = unit_of_field.get(key)
-            if unit is None:  # field text changed after collect: report it as not covered
+            if unit is None or unit["en"] != field["en"] or unit["ru"] != field["ru"]:
                 checked.append([field["ru_path"], None, "not_covered"])
                 totals["not_covered"] += 1
                 continue
             review = reviews.get(unit["id"])
             verdict = review["verdict"] if review else "pending"
+            if key in manual:
+                review = None
+                verdict = "manual_ok"
             checked.append([field["ru_path"], unit["id"][:16], verdict])
             totals[f"verdict_{verdict}"] += 1
             if review and review["issues"]:
@@ -171,7 +201,13 @@ def run_report(records: dict[str, dict[str, Any]], units_payload: dict[str, Any]
     report = {
         "schema_version": 1,
         "generated_at": now(),
-        "method": "Автоматическое ревью: рецензент-модель проверяет каждое поле в контексте термина, каждое предложенное исправление независимо проверяет другая модель, затем детерминированные проверки. Не является подтверждением человеком; статусы review записей не меняются.",
+        "method": (
+            "В отчёте учтены ручная сверка, вердикты прежних автоматических проверок и "
+            "детерминированные проверки. Ручная сверка подтверждается контрольными суммами "
+            "пары EN/RU и отмечается как manual_ok. Статусы review записей не меняются."
+            if REVIEW_CORPUS else
+            "Автоматическое ревью: рецензент-модель проверяет каждое поле в контексте записи, каждое предложенное исправление независимо проверяет другая модель, затем детерминированные проверки. Не является подтверждением человеком; статусы review записей не меняются."
+        ),
         "models": {"review": REVIEW_MODEL, "verify": VERIFY_MODEL},
         "models_used": {
             "review_units_by_model": dict(review_models),
@@ -200,12 +236,12 @@ def write_summary(report: dict[str, Any]) -> None:
         for item in record["fixed"]:
             types.update(item["types"])
     lines = [
-        "# Ревью переводов глоссария",
+        "# Ревью переводов OAE Reviews" if REVIEW_CORPUS else "# Ревью переводов глоссария",
         "",
         report["method"],
         "",
-        f"- Записей: {totals['records']}; проверено полей: {totals['fields']}; уникальных пар EN/RU: {totals['review_units']}.",
-        f"- Вердикты по полям: ok {totals.get('verdict_ok', 0)}, исправить {totals.get('verdict_fix', 0)}, ошибка оригинала {totals.get('verdict_source_error', 0)}, спорно {totals.get('verdict_uncertain', 0)}, не проверено {totals.get('verdict_pending', 0) + totals.get('not_covered', 0)}.",
+        f"- Учтено {totals['records']} записей, {totals['fields']} полей и {totals['review_units']} уникальных пар EN/RU.",
+        f"- Вердикты по полям: сверено вручную {totals.get('verdict_manual_ok', 0)}, ok {totals.get('verdict_ok', 0)}, исправить {totals.get('verdict_fix', 0)}, ошибка оригинала {totals.get('verdict_source_error', 0)}, спорно {totals.get('verdict_uncertain', 0)}, не проверено {totals.get('verdict_pending', 0) + totals.get('not_covered', 0)}.",
         f"- Исправлено полей: {totals['fixed']}, из них без независимой проверки (решение заказчика, второй проход рецензента): {totals.get('fixed_without_verification', 0)}; спорных мест: {totals['disputed']}; замечаний к английскому оригиналу: {totals['source_errors']}.",
         "- Типы исправлений: " + ", ".join(f"{name} {count}" for name, count in types.most_common()) + ".",
         "",
@@ -230,4 +266,4 @@ def write_summary(report: dict[str, Any]) -> None:
                 continue  # the same English text is stored in several fields of one record
             seen.add(item["note"])
             lines.append(f"- `{record_id}` `{item['path']}`: {item['note']}")
-    SUMMARY.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
+    SUMMARY.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8", newline="\n")

@@ -1,6 +1,8 @@
 """Run model reviews and independent verification over pending units."""
 
+import asyncio
 import json
+import os
 import time
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -8,6 +10,8 @@ from typing import Any
 
 import requests
 
+from app.assistant.client import LLMClient
+from app.infra.config import LLMSettings
 from scripts.translation_review.collect import definition
 from scripts.translation_review.common import (
     ISSUE_TYPES,
@@ -28,6 +32,29 @@ from scripts.translation_review.common import (
 from scripts.translation_review.prompts import REVIEW_SYSTEM, VERIFY_SYSTEM
 
 API_URL = "https://api.deepseek.com/chat/completions"
+
+
+def complete(system: str, payload: dict, model: str, key: str, backend: str, max_tokens: int) -> dict:
+    if backend == "runpod":
+        settings = LLMSettings(
+            "runpod", model, os.environ["RUNPOD_API_KEY"], os.environ["RUNPOD_ENDPOINT_ID"],
+            max_tokens=max_tokens, thinking="disabled", reasoning_effort="none",
+        )
+        return asyncio.run(LLMClient(settings=settings, read_timeout=300).complete(system, payload)).data
+    if backend == "ollama":
+        response = requests.post(
+            "http://127.0.0.1:11434/api/chat",
+            json={
+                "model": model, "format": "json", "stream": False, "think": False,
+                "messages": [{"role": "system", "content": system},
+                             {"role": "user", "content": json.dumps(payload, ensure_ascii=False)}],
+                "options": {"num_predict": max_tokens, "num_ctx": 16384, "temperature": 0},
+            },
+            timeout=300,
+        )
+        response.raise_for_status()
+        return json.loads(response.json()["message"]["content"])
+    return deepseek(system, payload, model, key, max_tokens)
 
 
 def deepseek(system: str, payload: Any, model: str, key: str, max_tokens: int = 16000) -> dict[str, Any]:
@@ -59,7 +86,7 @@ def review_batches(
     for unit in units.values():
         if unit["id"] not in done:
             groups[unit["context_record"]].append(unit)
-    order = sorted(groups, key=lambda rid: int(rid.split(":")[1]))
+    order = sorted(groups, key=lambda rid: (0, int(rid[5:])) if rid.startswith("term:") else (1, rid))
     batches: list[list[dict[str, Any]]] = []
     current: list[dict[str, Any]] = []
     size = 0
@@ -154,7 +181,8 @@ def run_review(
         last: Exception | None = None
         for attempt in range(4):
             try:
-                result = deepseek(REVIEW_SYSTEM, review_payload(batch, records), REVIEW_MODEL, key)
+                result = complete(REVIEW_SYSTEM, review_payload(batch, records), REVIEW_MODEL, key,
+                                  os.getenv("AUDIT_REVIEW_BACKEND", "deepseek"), 16000)
                 rows = validate_review(result, batch)
                 stamp = now()
                 append_jsonl(
@@ -236,7 +264,8 @@ def run_verify(
         last: Exception | None = None
         for attempt in range(4):
             try:
-                result = deepseek(VERIFY_SYSTEM, payload, VERIFY_MODEL, key, max_tokens=12000)
+                result = complete(VERIFY_SYSTEM, payload, VERIFY_MODEL, key,
+                                  os.getenv("AUDIT_VERIFY_BACKEND", "deepseek"), 12000)
                 results = result.get("results")
                 if not isinstance(results, list):
                     raise ValueError("results is not a list")

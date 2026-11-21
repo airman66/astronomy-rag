@@ -1,0 +1,309 @@
+{
+  "id": "article:oae-review-equity-diversity-and-inclusion-in-education",
+  "kind": "article",
+  "source": {
+    "type": "oae_review_topic",
+    "url": "https://www.astro4edu.org/oae-reviews/equity-diversity-and-inclusion-in-education",
+    "imported_at": "2026-11-18T16:43:53.129501+00:00",
+    "sha256": "92b883fde9c882357895a0245eef73335f5f5210e9d32e90358341d89e81d608"
+  },
+  "metadata": {
+    "term_numbers": [],
+    "document_ids": [
+      "article:oae-document-prompts_for_jedi",
+      "article:oae-document-equitydiversityandinclusionineducation_mini_review"
+    ],
+    "categories_ru": []
+  },
+  "sections": [
+    {
+      "id": "about",
+      "type": "article_body",
+      "heading": "About",
+      "body": "The main aim of the resources is to encourage diversity awareness and to support designing processes that aspire at granting everyone the opportunity and free choice to access scientific culture. Astronomy, thanks to its universality, charm and fascinating power, can be a means to add something to this framework, and foster everybody's self-esteem and self-confidence with regards to science, but also life in general. Astronomy has a special appeal that helps the teachers and astronomers to translate it in something understandable for everyone, it can help foster equity between the different countries and different cultures via international collaborations, it is effective in reminding everybody that they have the right to be part of the game, bringing their own cultural, social and historical narratives on the table, and the philosophical aspect of past, present, future, who we are, why we are here can also play a big part in the self- and diversity awareness process.\n\nThe OAE's Justice, Equity, Diversity and Inclusion (JEDI) Working Group has produced a list of a guiding questions organised by theme, that educators and activity designers can use as a practical list of items to consider when planning learning experiences from a JEDI perspective.",
+      "heading_ru": "О теме",
+      "body_ru": "Эта подборка помогает лучше понимать многообразие и разрабатывать занятия, которые дают каждому возможность свободно решать, хочет ли он приобщиться к научной культуре, и получить к ней доступ. Благодаря универсальности и притягательности астрономия даёт для этого много возможностей. Она помогает укрепить самооценку и уверенность в себе, в науке и в повседневной жизни. Интерес к астрономии облегчает учителям и астрономам задачу объяснять её доступно. Международные проекты помогают добиваться равенства возможностей между странами и культурами. Астрономия напоминает, что каждый вправе участвовать и привнести собственный культурный, социальный и исторический опыт. Вопросы о прошлом, настоящем и будущем, о том, кто мы и почему мы здесь, также помогают людям лучше понять себя и многообразие окружающих.\n\nРабочая группа OAE по справедливости, равенству возможностей, многообразию и инклюзии (JEDI) подготовила вопросы по нескольким темам. Педагоги и разработчики занятий могут сверяться с ними, чтобы учитывать принципы JEDI при планировании обучения.",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+          "text": "list of a guiding questions",
+          "text_ru": "Вопросы для планирования занятий"
+        }
+      ],
+      "media_ids": [
+        "media:oae-review-equity-diversity-and-inclusion-in-education"
+      ]
+    },
+    {
+      "id": "initial_document",
+      "type": "related_resources",
+      "heading": "Highlighted Documents",
+      "body": "",
+      "heading_ru": "Рекомендуемые материалы",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+          "text": "Prompts for JEDI in Education",
+          "text_ru": "Вопросы о справедливости, равенстве возможностей, многообразии и инклюзии в образовании"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "initial_document-3",
+      "type": "related_resources",
+      "heading": "Mini-review document",
+      "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 6.47 MB) f .",
+      "heading_ru": "Мини-обзор",
+      "body_ru": "Этой теме была посвящена секция 3-го семинара Шоу и МАС. По её материалам подготовили мини-обзор (PDF, 6,47 МБ).",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/sessions/equity-diversity-and-inclusion-in-education/",
+          "text": "session",
+          "text_ru": "Секция"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/schedule/",
+          "text": "3rd Shaw-IAU Workshop",
+          "text_ru": "3-й семинар Шоу и МАС"
+        },
+        {
+          "url": "https://www.astro4edu.org/media/documents/EquityDiversityandInclusioninEducation_mini_review.pdf",
+          "text": "mini-review ( PDF file 6.47 MB)",
+          "text_ru": "Мини-обзор (PDF, 6,47 МБ)"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations",
+      "type": "related_resources",
+      "heading": "Talks",
+      "body": "",
+      "heading_ru": "Доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/30/",
+          "text": "Astronomy and inclusion with Astronomy with all senses project",
+          "text_ru": "Астрономия и инклюзия. Проект «Астрономия для всех органов чувств»"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/29/",
+          "text": "Astronomy: Why so exclusive?",
+          "text_ru": "Астрономия. Почему она доступна так немногим?"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/27/",
+          "text": "Equity, Diversity and Inclusion in Astronomy Education",
+          "text_ru": "Равенство возможностей, многообразие и инклюзия в астрономическом образовании"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/28/",
+          "text": "Impact of Racial Inequalities on African Development",
+          "text_ru": "Влияние расового неравенства на развитие Африки"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/127/",
+          "text": "Astronomy and Inclusive Education through project based learning",
+          "text_ru": "Астрономия и инклюзивное образование через проектное обучение"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/129/",
+          "text": "Interculturality and ethnic-racial relations in Astronomy education and communication",
+          "text_ru": "Межкультурность и этнорасовые отношения в астрономическом образовании и популяризации"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/128/",
+          "text": "Supporting Neurodiverse Learners for Research Experiences in Astronomy",
+          "text_ru": "Как поддержать нейроотличных учащихся в астрономических исследованиях"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/132/",
+          "text": "Understanding inclusion and diversity in Planetariums and Observatories to be ready for Schools",
+          "text_ru": "Инклюзия и многообразие в планетариях и обсерваториях. Как подготовиться к приёму школьников"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/130/",
+          "text": "Universal Design of Learning in Astronomy Education",
+          "text_ru": "Универсальный дизайн обучения в астрономическом образовании"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/459/",
+          "text": "Musical Filters: A Multi-sensory Approach to Teaching the Electromagnetic Spectrum",
+          "text_ru": "Музыкальные фильтры. Изучаем электромагнитный спектр с помощью разных органов чувств"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/456/",
+          "text": "Radio helps the Video star: reimaging astronomy education in local language radio.",
+          "text_ru": "Радио спешит на помощь видео. Преподавание астрономии на радио на местных языках"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/443/",
+          "text": "Cosmic Explorers: Empowering Girls through Astronomy",
+          "text_ru": "Исследовательницы космоса. Как астрономия расширяет возможности девочек"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-5",
+      "type": "related_resources",
+      "heading": "Poster Presentations",
+      "body": "",
+      "heading_ru": "Стендовые доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/19/",
+          "text": "Astronomy Education Research: towards teaching for diversity and inclusivity in South Africa",
+          "text_ru": "Исследования астрономического образования. Как учитывать многообразие и поддерживать инклюзию в ЮАР"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/5/",
+          "text": "Diversity, equity and inclusion in Southern Brazil",
+          "text_ru": "Многообразие, равенство возможностей и инклюзия на юге Бразилии"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/12/",
+          "text": "The Working Group of Gender Equity (WGGE) in India",
+          "text_ru": "Рабочая группа по гендерному равенству (WGGE) в Индии"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/50/",
+          "text": "Cazadoras de Estrellas. Astronomy with a gender perspective",
+          "text_ru": "«Охотницы за звёздами». Астрономия с учётом гендерных вопросов"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/48/",
+          "text": "Teaching Astronomy with Culturally Responsive Citizen Science Curricula",
+          "text_ru": "Преподавание астрономии через гражданскую науку с учётом культурного опыта студентов"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/46/",
+          "text": "The past, present and future of Earth and Space Education, and implication for Equity",
+          "text_ru": "Прошлое, настоящее и будущее преподавания наук о Земле и космосе. Что это значит для равенства возможностей"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/47/",
+          "text": "The Urgency and Contribution of the Planetarium in the Development of Astronomy in Rural Areas",
+          "text_ru": "Зачем сельским районам планетарии и как они помогают развивать астрономию"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-6",
+      "type": "related_resources",
+      "heading": "Documents",
+      "body": "",
+      "heading_ru": "Документы",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/document/ST66FU59T131/",
+          "text": "Equity, Diversity and Inclusion in Education: Mini-Review",
+          "text_ru": "Равенство возможностей, многообразие и инклюзия в образовании. Мини-обзор"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/document/oB99ww9M479/",
+          "text": "Prompts for JEDI in Education",
+          "text_ru": "Вопросы о справедливости, равенстве возможностей, многообразии и инклюзии в образовании"
+        }
+      ],
+      "media_ids": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Equity, Diversity and Inclusion in Education",
+      "blocks": {
+        "about": {
+          "heading": "About",
+          "body": "The main aim of the resources is to encourage diversity awareness and to support designing processes that aspire at granting everyone the opportunity and free choice to access scientific culture. Astronomy, thanks to its universality, charm and fascinating power, can be a means to add something to this framework, and foster everybody's self-esteem and self-confidence with regards to science, but also life in general. Astronomy has a special appeal that helps the teachers and astronomers to translate it in something understandable for everyone, it can help foster equity between the different countries and different cultures via international collaborations, it is effective in reminding everybody that they have the right to be part of the game, bringing their own cultural, social and historical narratives on the table, and the philosophical aspect of past, present, future, who we are, why we are here can also play a big part in the self- and diversity awareness process.\n\nThe OAE's Justice, Equity, Diversity and Inclusion (JEDI) Working Group has produced a list of a guiding questions organised by theme, that educators and activity designers can use as a practical list of items to consider when planning learning experiences from a JEDI perspective."
+        },
+        "initial_document": {
+          "heading": "Highlighted Documents",
+          "body": ""
+        },
+        "initial_document-3": {
+          "heading": "Mini-review document",
+          "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 6.47 MB) f ."
+        },
+        "presentations": {
+          "heading": "Talks",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Poster Presentations",
+          "body": ""
+        },
+        "presentations-6": {
+          "heading": "Documents",
+          "body": ""
+        }
+      }
+    },
+    "ru": {
+      "title": "Равенство возможностей, многообразие и инклюзия в образовании",
+      "blocks": {
+        "about": {
+          "heading": "О теме",
+          "body": "Эта подборка помогает лучше понимать многообразие и разрабатывать занятия, которые дают каждому возможность свободно решать, хочет ли он приобщиться к научной культуре, и получить к ней доступ. Благодаря универсальности и притягательности астрономия даёт для этого много возможностей. Она помогает укрепить самооценку и уверенность в себе, в науке и в повседневной жизни. Интерес к астрономии облегчает учителям и астрономам задачу объяснять её доступно. Международные проекты помогают добиваться равенства возможностей между странами и культурами. Астрономия напоминает, что каждый вправе участвовать и привнести собственный культурный, социальный и исторический опыт. Вопросы о прошлом, настоящем и будущем, о том, кто мы и почему мы здесь, также помогают людям лучше понять себя и многообразие окружающих.\n\nРабочая группа OAE по справедливости, равенству возможностей, многообразию и инклюзии (JEDI) подготовила вопросы по нескольким темам. Педагоги и разработчики занятий могут сверяться с ними, чтобы учитывать принципы JEDI при планировании обучения."
+        },
+        "initial_document": {
+          "heading": "Рекомендуемые материалы",
+          "body": ""
+        },
+        "initial_document-3": {
+          "heading": "Мини-обзор",
+          "body": "Этой теме была посвящена секция 3-го семинара Шоу и МАС. По её материалам подготовили мини-обзор (PDF, 6,47 МБ)."
+        },
+        "presentations": {
+          "heading": "Доклады",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Стендовые доклады",
+          "body": ""
+        },
+        "presentations-6": {
+          "heading": "Документы",
+          "body": ""
+        }
+      },
+      "aliases": []
+    }
+  },
+  "media": [
+    {
+      "id": "media:oae-review-equity-diversity-and-inclusion-in-education",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/oae_review_files/illustration_images/equity_diversity_inclusion_news_image.png",
+      "record_url": "https://www.astro4edu.org/oae-reviews/equity-diversity-and-inclusion-in-education",
+      "original_path": "media/original/oae-review-equity-diversity-and-inclusion-in-education.png",
+      "sha256": "2f6be2582ad98c41e5ccf3ae4211135eaa1971e12a84ac26074b3fbb5f7d591b",
+      "size": 137047,
+      "alt_en": "Illustration image for Equity, Diversity and Inclusion in Education",
+      "alt_ru": "Дети и взрослый рассматривают небольшую модель Земли, которую держат в руках.",
+      "credit": "Angela Patricia Pérez Henao",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Машинный перевод. Редакторское утверждение ожидается."
+  }
+}

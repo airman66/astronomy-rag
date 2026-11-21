@@ -3,7 +3,7 @@
 from typing import Any
 
 from app.pipeline.translation_fields import fields
-from scripts.translation_review.common import UNITS, digest, now, write_json
+from scripts.translation_review.common import UNITS, digest, now, terms_by_number, write_json
 
 
 def definition(record: dict[str, Any], locale: str) -> str:
@@ -15,7 +15,7 @@ def definition(record: dict[str, Any], locale: str) -> str:
 
 
 def collect(records: dict[str, dict[str, Any]]) -> dict[str, Any]:
-    by_number = {record["source"]["term_number"]: record for record in records.values()}
+    by_number = terms_by_number(records)
     units: dict[str, dict[str, Any]] = {}
     occurrences = 0
     for record_id, record in records.items():
@@ -24,7 +24,8 @@ def collect(records: dict[str, dict[str, Any]]) -> dict[str, Any]:
             unit_id = digest(field["en"], field["ru"])
             unit = units.get(unit_id)
             if unit is None:
-                target = by_number.get(field.get("target_term")) if field.get("target_term") else None
+                number = field.get("target_term")
+                target = by_number.get(number) if isinstance(number, int) else None
                 unit = units[unit_id] = {
                     "id": unit_id,
                     "en": field["en"],

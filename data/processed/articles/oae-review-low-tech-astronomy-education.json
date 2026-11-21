@@ -1,0 +1,229 @@
+{
+  "id": "article:oae-review-low-tech-astronomy-education",
+  "kind": "article",
+  "source": {
+    "type": "oae_review_topic",
+    "url": "https://www.astro4edu.org/oae-reviews/low-tech-astronomy-education",
+    "imported_at": "2026-11-18T16:43:53.225346+00:00",
+    "sha256": "2d931d5eeba4f4c1bdf2abde5fa546c418c973bbd2be83dd1b477ea43ebc9dac"
+  },
+  "metadata": {
+    "term_numbers": [],
+    "document_ids": [
+      "article:oae-document-low-techastronomyeducation_mini_review"
+    ],
+    "categories_ru": []
+  },
+  "sections": [
+    {
+      "id": "about",
+      "type": "article_body",
+      "heading": "About",
+      "body": "The general opinion suggests that poor technology is equivalent to poor education. Low-Tech seems simple at the first approach but helps to introduce very difficult concepts. Low-Tech promotes motivation for students and teachers, practical demonstrations, and models and analogies in teaching. Low-Tech helps to get a deep understanding in the process of learning through the hands-on approach. It promotes that students feel as the protagonist of their learning process. Low-Tech promotes the highest comprehension of the students and is useful in all the countries: with different degrees of technological advancements. Low-Tech can be used with both young and experienced teachers. This collection includes several examples of Low-Tech methodology within and outside of classrooms and the philosophy of different projects.",
+      "heading_ru": "О теме",
+      "body_ru": "Простое оборудование часто считают признаком низкого качества образования. Между тем с его помощью можно объяснять сложные понятия. Такой подход увлекает школьников и учителей. Он опирается на наглядные опыты, модели и аналогии. Когда учащиеся сами собирают модели и проводят опыты, они глубже понимают материал и активнее участвуют в собственном обучении. Подход применим в странах с разным уровнем технологического развития и подходит начинающим и опытным педагогам. В подборке собраны примеры использования простого оборудования на уроках и за пределами школы, а также идеи, лежащие в основе разных проектов.",
+      "links": [],
+      "media_ids": [
+        "media:oae-review-low-tech-astronomy-education"
+      ]
+    },
+    {
+      "id": "presentations",
+      "type": "related_resources",
+      "heading": "Talks",
+      "body": "",
+      "heading_ru": "Доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/34/",
+          "text": "Astronomy Education in a Low-Tech Environment",
+          "text_ru": "Преподавание астрономии с простым оборудованием"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/32/",
+          "text": "Overcoming the Challenges of Astronomy Education in low-tech Environment: The Nigerian Story",
+          "text_ru": "Как преподавать астрономию при нехватке оборудования. Опыт Нигерии"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/33/",
+          "text": "The Education System in our Country and its Condition",
+          "text_ru": "Система образования в нашей стране и её состояние"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/35/",
+          "text": "The Nairobi Planetarium: A model for a sustainable, low cost, natural dome",
+          "text_ru": "Планетарий в Найроби. Как построить недорогой, экологичный купол из природных материалов"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/79/",
+          "text": "Development of Student's Planetarium for the teaching of Astronomy",
+          "text_ru": "Создание школьного планетария для преподавания астрономии"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/81/",
+          "text": "IAU-NASE Workshop in Korea",
+          "text_ru": "Семинар МАС и NASE в Корее"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/80/",
+          "text": "Inexpensive/cheap/low-cost Astronomy and quality: between prejudices and reality",
+          "text_ru": "Недорогие средства и качественное преподавание астрономии. Предубеждения и реальность"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/83/",
+          "text": "The Low-Tech and High-Quality correlation in Astronomy Education.",
+          "text_ru": "Как простое оборудование помогает качественно преподавать астрономию"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/82/",
+          "text": "Understanding Space Travel",
+          "text_ru": "Как устроены космические полёты"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/84/",
+          "text": "Universe observing using locally constructed Instruments: A case of Young Astronomer's Briefcase",
+          "text_ru": "Наблюдения Вселенной с помощью самодельных приборов. «Чемодан юного астронома»"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/425/",
+          "text": "Simple astronomy teaching using local context and hands-on methods in Tanzanian schools.",
+          "text_ru": "Как преподавать астрономию в школах Танзании на местных примерах и практических занятиях"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/430/",
+          "text": "Manayantra: Using a traditional astronomy instrument as a teaching aid",
+          "text_ru": "Манаянтра. Традиционный астрономический прибор как учебное пособие"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-3",
+      "type": "related_resources",
+      "heading": "Poster Presentations",
+      "body": "",
+      "heading_ru": "Стендовые доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/54/",
+          "text": "Bringing Astronomy to the students and teachers using “AppStronomy”",
+          "text_ru": "AppStronomy. Астрономия для учащихся и учителей"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/55/",
+          "text": "Development of a solar demonstrator projected in the class room modified from the NASE demonstrator",
+          "text_ru": "Разработка проекционной установки для демонстрации Солнца в классе на основе модели NASE"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/57/",
+          "text": "Impression of Astronomy in Persian culture and history inspired by poems of Khayam and Attar",
+          "text_ru": "Астрономия в персидской культуре и истории. Взгляд через поэзию Хайяма и Аттара"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/53/",
+          "text": "Lessons learnt from e-Amanar online teacher training though WhatsApp for Sahrawi Refugee teachers",
+          "text_ru": "Уроки e-Amanar. Дистанционная подготовка учителей из среды сахарских беженцев через WhatsApp"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/79/",
+          "text": "Sky Exploration Festival, a different experience for students",
+          "text_ru": "Фестиваль наблюдений неба. Новый опыт для школьников"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-4",
+      "type": "related_resources",
+      "heading": "Documents",
+      "body": "",
+      "heading_ru": "Документы",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/document/i614xA53sd49/",
+          "text": "Low-Tech Astronomy Education: Mini-Review",
+          "text_ru": "Преподавание астрономии с простым оборудованием. Мини-обзор"
+        }
+      ],
+      "media_ids": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Low-Tech Astronomy Education",
+      "blocks": {
+        "about": {
+          "heading": "About",
+          "body": "The general opinion suggests that poor technology is equivalent to poor education. Low-Tech seems simple at the first approach but helps to introduce very difficult concepts. Low-Tech promotes motivation for students and teachers, practical demonstrations, and models and analogies in teaching. Low-Tech helps to get a deep understanding in the process of learning through the hands-on approach. It promotes that students feel as the protagonist of their learning process. Low-Tech promotes the highest comprehension of the students and is useful in all the countries: with different degrees of technological advancements. Low-Tech can be used with both young and experienced teachers. This collection includes several examples of Low-Tech methodology within and outside of classrooms and the philosophy of different projects."
+        },
+        "presentations": {
+          "heading": "Talks",
+          "body": ""
+        },
+        "presentations-3": {
+          "heading": "Poster Presentations",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Documents",
+          "body": ""
+        }
+      }
+    },
+    "ru": {
+      "title": "Преподавание астрономии с простым оборудованием",
+      "blocks": {
+        "about": {
+          "heading": "О теме",
+          "body": "Простое оборудование часто считают признаком низкого качества образования. Между тем с его помощью можно объяснять сложные понятия. Такой подход увлекает школьников и учителей. Он опирается на наглядные опыты, модели и аналогии. Когда учащиеся сами собирают модели и проводят опыты, они глубже понимают материал и активнее участвуют в собственном обучении. Подход применим в странах с разным уровнем технологического развития и подходит начинающим и опытным педагогам. В подборке собраны примеры использования простого оборудования на уроках и за пределами школы, а также идеи, лежащие в основе разных проектов."
+        },
+        "presentations": {
+          "heading": "Доклады",
+          "body": ""
+        },
+        "presentations-3": {
+          "heading": "Стендовые доклады",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Документы",
+          "body": ""
+        }
+      },
+      "aliases": []
+    }
+  },
+  "media": [
+    {
+      "id": "media:oae-review-low-tech-astronomy-education",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/oae_review_files/illustration_images/low-tech_news_image.png",
+      "record_url": "https://www.astro4edu.org/oae-reviews/low-tech-astronomy-education",
+      "original_path": "media/original/oae-review-low-tech-astronomy-education.png",
+      "sha256": "182adc8987ee6e1bce426681749b82a12a00f5557114f92349c9c02fe1e4b9c0",
+      "size": 116966,
+      "alt_en": "Illustration image for Low-Tech Astronomy Education",
+      "alt_ru": "На столе лежат доступные материалы и приборы для занятия: часы, линейки, скотч, проволока, батарейка и портативный радиоприёмник.",
+      "credit": "Beatriz Garcia",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Машинный перевод. Редакторское утверждение ожидается."
+  }
+}

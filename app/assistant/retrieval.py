@@ -51,6 +51,8 @@ EVIDENCE_LIMIT = 6
 FRAGMENT_LIMIT = 1800
 CONTEXT_LIMIT = 8500
 ARTICLE_REQUEST = re.compile(r"\b(?:articles?|стать\w*)\b", re.IGNORECASE)
+ARTICLE_PASSAGES_REQUEST = re.compile(r"\b(?:по статье|из статьи|use (?:the |an? )?article|from (?:the |an? )?article)\b", re.IGNORECASE)
+DEFINITION_REQUEST = re.compile(r"\b(?:define(?:\s+(?:an?|the))?|дай(?:те)?\s+определение)\s+", re.IGNORECASE)
 NON_EVIDENCE_HEADINGS = (
     "activit", "related media", "related diagram", "external link", "further reading",
     "активност", "учебн", "образовательн", "связанн", "ссылк", "дополнительное чтение",
@@ -118,15 +120,37 @@ def evidence_for(question: str, locale: str, *, prefer_article: bool = False) ->
                 extras.setdefault((record_id, item.section["id"], item.text), item)
 
     ordered = list(primary.values())
+    if match := DEFINITION_REQUEST.search(question):
+        requested = " ".join(storage.normalized_words(question[match.end():]))
+        definition = next((item for item in ordered if item.canonical_definition and item.title
+                           and (requested + " ").startswith(" ".join(storage.normalized_words(item.title)) + " ")), None)
+        if definition:
+            ordered.remove(definition)
+            ordered.insert(0, definition)
     article = next((item for item in ordered if item.kind == "article"), None)
     prioritize_article = prefer_article or ARTICLE_REQUEST.search(question) is not None
     lead = ordered[:4]
-    if article and prioritize_article:
+    if article and (prefer_article or ARTICLE_PASSAGES_REQUEST.search(question)):
+        record, localized, sections, _ = records[article.record["id"]]
+        direct = [article]
+        seen = {article.section["id"]}
+        for hit in storage.lexical_search(question, locale, 6, record_id=record["id"]):
+            section = sections.get(hit["section_id"])
+            if not section or section["id"] in seen:
+                continue
+            if item := _section_evidence(record, localized, section, hit):
+                direct.append(item)
+                seen.add(section["id"])
+            if len(direct) == 3:
+                break
+        lead = [*direct, *(item for item in ordered if item is not article)][:4]
+    elif article and prioritize_article:
         lead = [article, *(item for item in ordered if item is not article)][:4]
     elif article and article not in lead:
         lead = [*lead[:3], article]
     lead_ids = {item.record["id"] for item in lead}
-    supporting = [item for item in extras.values() if item.record["id"] in lead_ids]
+    lead_passages = {(item.record["id"], item.section["id"], item.text) for item in lead}
+    supporting = [item for key, item in extras.items() if item.record["id"] in lead_ids and key not in lead_passages]
     if article and prioritize_article:
         supporting.sort(key=lambda item: item.record["id"] != article.record["id"])
     lead.extend(supporting[:EVIDENCE_LIMIT - len(lead)])

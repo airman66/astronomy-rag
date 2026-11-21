@@ -19,7 +19,7 @@ from app.infra.config import data_directory
 
 DATA = data_directory()
 DB = Path(os.getenv("CATALOG_DB_PATH") or DATA / "glossary.db")
-SCHEMA_VERSION = "5"
+SCHEMA_VERSION = "7"
 RECHECK_SECONDS = 30.0
 _lock = threading.Lock()
 _checked: dict[str, float] = {}
@@ -179,6 +179,19 @@ def _populate_database(db: sqlite3.Connection, current_fingerprint: str) -> None
         )
 
     seen_media: set[str] = set()
+
+    def index_media(record: dict) -> None:
+        for item in record.get("media", []):
+            if item["id"] in seen_media:
+                continue
+            seen_media.add(item["id"])
+            db.execute("INSERT INTO media VALUES (?,?)", (item["id"], json.dumps(item, ensure_ascii=False)))
+            for locale in ("en", "ru"):
+                title = item.get(f"title_{locale}") or ""
+                body = " ".join(filter(None, [item.get(f"short_caption_{locale}"), item.get(f"caption_{locale}"), item.get(f"alt_{locale}")]))
+                if title or body:
+                    index(record["id"], item["id"], locale, item["kind"], title, body, f"/api/v1/media/{item['id']}", item["review"]["status"])
+
     for path in term_paths:
         record = json.loads(path.read_text(encoding="utf-8"))
         number = int(record["source"]["term_number"])
@@ -199,16 +212,7 @@ def _populate_database(db: sqlite3.Connection, current_fingerprint: str) -> None
                 block = loc.get("blocks", {}).get(section["id"], {})
                 if block.get("body"):
                     index(record["id"], section["id"], locale, "term", loc["title"], block["body"], url, status)
-        for item in record.get("media", []):
-            if item["id"] in seen_media:
-                continue
-            seen_media.add(item["id"])
-            db.execute("INSERT INTO media VALUES (?,?)", (item["id"], json.dumps(item, ensure_ascii=False)))
-            for locale in ("en", "ru"):
-                title = item.get(f"title_{locale}") or ""
-                body = " ".join(filter(None, [item.get(f"short_caption_{locale}"), item.get(f"caption_{locale}"), item.get(f"alt_{locale}")]))
-                if title or body:
-                    index(record["id"], item["id"], locale, item["kind"], title, body, f"/api/v1/media/{item['id']}", item["review"]["status"])
+        index_media(record)
     for path in sorted((DATA / "processed" / "articles").glob("*.json")):
         record = json.loads(path.read_text(encoding="utf-8"))
         en, ru = record["locales"]["en"], record["locales"]["ru"]
@@ -218,7 +222,9 @@ def _populate_database(db: sqlite3.Connection, current_fingerprint: str) -> None
         for locale, loc in (("en", en), ("ru", ru)):
             for section in record["sections"]:
                 block = loc["blocks"].get(section["id"], {})
-                index(record["id"], section["id"], locale, "article", loc["title"], block.get("body", ""), url, status, block.get("heading", ""))
+                if block.get("body"):
+                    index(record["id"], section["id"], locale, "article", loc["title"], block["body"], url, status, block.get("heading", ""))
+        index_media(record)
     db.execute("INSERT INTO meta VALUES ('fingerprint', ?)", (current_fingerprint,))
     db.execute("INSERT INTO meta VALUES ('schema_version', ?)", (SCHEMA_VERSION,))
     db.commit()
@@ -353,13 +359,17 @@ def _expression(query: str, locale: str) -> str | None:
     return " OR ".join(parts)
 
 
-def lexical_search(query: str, locale: str, limit: int) -> list[dict]:
+def lexical_search(query: str, locale: str, limit: int, *, record_id: str | None = None) -> list[dict]:
     expression = _expression(query, locale)
     if not expression:
         return []
+    record_filter = " AND record_id=?" if record_id is not None else ""
+    params = (expression, locale, record_id, limit) if record_id is not None else (expression, locale, limit)
     with _read() as db:
         rows = db.execute(
-            "SELECT record_id,section_id,locale,kind,title,body,url,review_status,bm25(search_fts, 0,0,0,0,0,0,0,0, 8,1,6,0.8) AS score FROM search_fts WHERE search_fts MATCH ? AND locale=? ORDER BY score LIMIT ?",
-            (expression, locale, limit),
+            "SELECT record_id,section_id,locale,kind,title,body,url,review_status,"
+            "bm25(search_fts, 0,0,0,0,0,0,0,0, 8,1,6,0.8) AS score FROM search_fts "
+            f"WHERE search_fts MATCH ? AND locale=?{record_filter} ORDER BY score LIMIT ?",
+            params,
         ).fetchall()
     return [{"record_id": row["record_id"], "section_id": row["section_id"], "kind": row["kind"], "title": row["title"], "excerpt": row["body"][:400], "url": row["url"], "review_status": row["review_status"], "score": -row["score"]} for row in rows]

@@ -53,6 +53,7 @@ def build(root: Path, model_file: Path, embedding_url: str, batch_size: int) -> 
         if key not in cache:
             missing_by_hash.setdefault(key, row)
     missing = list(missing_by_hash.values())
+    checkpoint = 0
     for start in range(0, len(missing), batch_size):
         batch = missing[start : start + batch_size]
         response = requests.post(
@@ -67,6 +68,9 @@ def build(root: Path, model_file: Path, embedding_url: str, batch_size: int) -> 
         vectors = [item["embedding"] for item in encoded]
         for row, vector in zip(batch, vectors):
             cache[row["content_hash"]] = np.asarray(vector, dtype="float32")
+        if start + len(batch) - checkpoint >= 128:
+            save_cache(cache_file, cache)
+            checkpoint = start + len(batch)
         print(f"embedded {min(start + len(batch), len(missing))}/{len(missing)}", flush=True)
     matrix = np.stack([cache[key] for key in keys]).astype("float32")
     faiss.normalize_L2(matrix)

@@ -1,0 +1,174 @@
+{
+  "id": "article:oae-review-teaching-about-indigenous-astronomy",
+  "kind": "article",
+  "source": {
+    "type": "oae_review_topic",
+    "url": "https://www.astro4edu.org/oae-reviews/teaching-about-indigenous-astronomy",
+    "imported_at": "2026-11-18T16:43:53.300544+00:00",
+    "sha256": "b1ae2a436cc4f0dd9395ad06ede9af15fa99d2eb4eab1014cd6300a4971f1f78"
+  },
+  "metadata": {
+    "term_numbers": [],
+    "document_ids": [
+      "article:oae-document-teachingaboutindigenousastronomy_mini_review"
+    ],
+    "categories_ru": []
+  },
+  "sections": [
+    {
+      "id": "about",
+      "type": "article_body",
+      "heading": "About",
+      "body": "Astronomy is the most ancient discipline of science and one of its unique features is its multicultural roots. This stems from the fact that every person in the world has a profound relationship with the sky and the stars. This session explored the relationship between astronomy, culture and society; appraised the value, relevance and significance of indigenous astronomy. This predates western academic astronomy by thousands of years. This session concludes by revisiting challenges experienced in the teaching of indigenous astronomy and appropriate pedagogical approaches were shared. Some of the challenges noted are the absence of indigenous astronomy content in school curricula in many countries, inaccurate representation, constant description of this knowledge and practices as irrational and absence of training and support for teachers. Reflexivity, recognition of epistemological diversity and willingness to engage in intercultural dialogues are imperative for the successful teaching of indigenous knowledge. Appreciating multiple facets of different astronomies allows us to better understand how human ideas and models of the sky are generated. The teaching of indigenous astronomy presents us with an excellent opportunity to rehumanize science and society",
+      "heading_ru": "О теме",
+      "body_ru": "Астрономия — одна из древнейших областей науки. Она выросла из традиций разных культур, поскольку у людей во всём мире есть тесная связь с небом и звёздами. На секции мы обсудили отношения между астрономией, культурой и обществом, а также значение астрономических знаний коренных народов. Такие знания появились за тысячелетия до западной академической астрономии.\n\nВ завершение мы разобрали трудности преподавания и обменялись педагогическими подходами. Во многих странах астрономии коренных народов нет в школьных программах. Эти знания и практики порой передают неточно или объявляют иррациональными. Учителям часто не хватает подготовки и поддержки. Чтобы знакомить учащихся с этими традициями, важно осмыслять собственные установки, признавать разнообразие способов познания и быть готовыми к межкультурному диалогу.\n\nЗнакомство с астрономическими традициями разных культур помогает понять, как люди выстраивают свои представления и модели неба. Преподавание астрономии коренных народов даёт возможность показать человеческую сторону науки и лучше увидеть её связь с обществом.",
+      "links": [],
+      "media_ids": [
+        "media:oae-review-teaching-about-indigenous-astronomy"
+      ]
+    },
+    {
+      "id": "initial_document",
+      "type": "related_resources",
+      "heading": "Mini-review document",
+      "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 2.57 MB) f .",
+      "heading_ru": "Мини-обзор",
+      "body_ru": "Этой теме была посвящена секция 3-го семинара Шоу и МАС. По её материалам подготовили мини-обзор (PDF, 2,57 МБ).",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/sessions/teaching-about-indigenous-astronomy/",
+          "text": "session",
+          "text_ru": "Секция"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/schedule/",
+          "text": "3rd Shaw-IAU Workshop",
+          "text_ru": "3-й семинар Шоу и МАС"
+        },
+        {
+          "url": "https://www.astro4edu.org/media/documents/TeachingaboutIndigenousAstronomy_mini_review.pdf",
+          "text": "mini-review ( PDF file 2.57 MB)",
+          "text_ru": "Мини-обзор (PDF, 2,57 МБ)"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations",
+      "type": "related_resources",
+      "heading": "Talks",
+      "body": "",
+      "heading_ru": "Доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/145/",
+          "text": "Astronomies, cultures and education",
+          "text_ru": "Астрономия разных народов, культура и образование"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/143/",
+          "text": "Central and Mesomerian skies: More than 4000 years of astronomy",
+          "text_ru": "Небо Центральной Америки и Мезоамерики. Более 4000 лет астрономических наблюдений"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/144/",
+          "text": "Teaching Material of History of Astronomy Using Digital Archives in Japan",
+          "text_ru": "Учебные материалы по истории астрономии на основе цифровых архивов Японии"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-4",
+      "type": "related_resources",
+      "heading": "Documents",
+      "body": "",
+      "heading_ru": "Документы",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/document/u111w659ae27/",
+          "text": "Teaching about Indigenous Astronomy: Mini-Review",
+          "text_ru": "Как преподавать астрономию коренных народов. Мини-обзор"
+        }
+      ],
+      "media_ids": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Teaching about indigenous astronomy",
+      "blocks": {
+        "about": {
+          "heading": "About",
+          "body": "Astronomy is the most ancient discipline of science and one of its unique features is its multicultural roots. This stems from the fact that every person in the world has a profound relationship with the sky and the stars. This session explored the relationship between astronomy, culture and society; appraised the value, relevance and significance of indigenous astronomy. This predates western academic astronomy by thousands of years. This session concludes by revisiting challenges experienced in the teaching of indigenous astronomy and appropriate pedagogical approaches were shared. Some of the challenges noted are the absence of indigenous astronomy content in school curricula in many countries, inaccurate representation, constant description of this knowledge and practices as irrational and absence of training and support for teachers. Reflexivity, recognition of epistemological diversity and willingness to engage in intercultural dialogues are imperative for the successful teaching of indigenous knowledge. Appreciating multiple facets of different astronomies allows us to better understand how human ideas and models of the sky are generated. The teaching of indigenous astronomy presents us with an excellent opportunity to rehumanize science and society"
+        },
+        "initial_document": {
+          "heading": "Mini-review document",
+          "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 2.57 MB) f ."
+        },
+        "presentations": {
+          "heading": "Talks",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Documents",
+          "body": ""
+        }
+      }
+    },
+    "ru": {
+      "title": "Как преподавать астрономию коренных народов",
+      "blocks": {
+        "about": {
+          "heading": "О теме",
+          "body": "Астрономия — одна из древнейших областей науки. Она выросла из традиций разных культур, поскольку у людей во всём мире есть тесная связь с небом и звёздами. На секции мы обсудили отношения между астрономией, культурой и обществом, а также значение астрономических знаний коренных народов. Такие знания появились за тысячелетия до западной академической астрономии.\n\nВ завершение мы разобрали трудности преподавания и обменялись педагогическими подходами. Во многих странах астрономии коренных народов нет в школьных программах. Эти знания и практики порой передают неточно или объявляют иррациональными. Учителям часто не хватает подготовки и поддержки. Чтобы знакомить учащихся с этими традициями, важно осмыслять собственные установки, признавать разнообразие способов познания и быть готовыми к межкультурному диалогу.\n\nЗнакомство с астрономическими традициями разных культур помогает понять, как люди выстраивают свои представления и модели неба. Преподавание астрономии коренных народов даёт возможность показать человеческую сторону науки и лучше увидеть её связь с обществом."
+        },
+        "initial_document": {
+          "heading": "Мини-обзор",
+          "body": "Этой теме была посвящена секция 3-го семинара Шоу и МАС. По её материалам подготовили мини-обзор (PDF, 2,57 МБ)."
+        },
+        "presentations": {
+          "heading": "Доклады",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Документы",
+          "body": ""
+        }
+      },
+      "aliases": []
+    }
+  },
+  "media": [
+    {
+      "id": "media:oae-review-teaching-about-indigenous-astronomy",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/oae_review_files/illustration_images/emu_crop_news_image.jpg",
+      "record_url": "https://www.astro4edu.org/oae-reviews/teaching-about-indigenous-astronomy",
+      "original_path": "media/original/oae-review-teaching-about-indigenous-astronomy.jpg",
+      "sha256": "18ace200b5618518a311d4eb6af6f09a20e0ad4b6c756869244b7f738e1b28cd",
+      "size": 9095,
+      "alt_en": "Illustration image for Teaching about indigenous astronomy",
+      "alt_ru": "Полоса Млечного Пути над тёмным силуэтом дерева.",
+      "credit": "Amirreza Kamkar/IAU OAE - available under - CC-BY-4.0",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Машинный перевод. Редакторское утверждение ожидается."
+  }
+}

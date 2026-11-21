@@ -1,0 +1,175 @@
+{
+  "id": "article:oae-review-astronomy-education-resources",
+  "kind": "article",
+  "source": {
+    "type": "oae_review_topic",
+    "url": "https://www.astro4edu.org/oae-reviews/astronomy-education-resources",
+    "imported_at": "2026-11-18T16:43:53.049802+00:00",
+    "sha256": "9b70957e4853dfb5d84a1e1a1aa3e0028f01966b09878d13549dde8152a13599"
+  },
+  "metadata": {
+    "term_numbers": [],
+    "document_ids": [],
+    "categories_ru": []
+  },
+  "sections": [
+    {
+      "id": "about",
+      "type": "article_body",
+      "heading": "About",
+      "body": "Finding high-quality, suitable resources is a big plus for astronomy education activities. Below, we list a number of talks from the Shaw-IAU Workshops on Astronomy for Education that address this topic. In addition, feel free to browse or search the educational resources the OAE has created or collected.",
+      "heading_ru": "О теме",
+      "body_ru": "Качественные материалы, подобранные под задачу, помогают проводить занятия по астрономии. Ниже собраны доклады об этом с семинаров Шоу и МАС по астрономическому образованию. Вы можете также просмотреть материалы, которые OAE разработал или собрал, и воспользоваться поиском по ним.",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/category",
+          "text": "browse",
+          "text_ru": "Просмотреть материалы"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/search",
+          "text": "search",
+          "text_ru": "Найти материалы"
+        }
+      ],
+      "media_ids": [
+        "media:oae-review-astronomy-education-resources"
+      ]
+    },
+    {
+      "id": "presentations",
+      "type": "related_resources",
+      "heading": "Talks",
+      "body": "",
+      "heading_ru": "Доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/42/",
+          "text": "Astronomy and Space Science: On top of Children’s interest",
+          "text_ru": "Астрономия и космические науки в числе главных интересов детей"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/17/",
+          "text": "astroEDU: an astronomy activity repository. Developments over 2020",
+          "text_ru": "astroEDU, собрание занятий по астрономии. Итоги 2020 года"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/16/",
+          "text": "Big Ideas in Astronomy",
+          "text_ru": "Ключевые идеи астрономии"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/18/",
+          "text": "Considerations on the importance of building a national astronomical glossary: the Japanese case study",
+          "text_ru": "Зачем нужен национальный астрономический глоссарий. Опыт Японии"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/19/",
+          "text": "The making of the Universe in the Box",
+          "text_ru": "Как создавали «Вселенную в коробке»"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/137/",
+          "text": "astroEDU",
+          "text_ru": "astroEDU"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/136/",
+          "text": "introduction to astroEDU",
+          "text_ru": "Знакомство с astroEDU"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/455/",
+          "text": "3o4cosas: A JavaScript-Based Simulation Platform for Astronomy, Astrophysics, and Cosmology",
+          "text_ru": "3o4cosas. Симуляции по астрономии, астрофизике и космологии на JavaScript"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/457/",
+          "text": "AstroSandbox: learning astronomy through courses, competitions, and clubs",
+          "text_ru": "AstroSandbox: изучаем астрономию на курсах, в конкурсах и кружках"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/434/",
+          "text": "Discovering the Milky Way",
+          "text_ru": "Знакомство с Млечным Путём"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/446/",
+          "text": "Exoplanets in the classroom by using hands-on activities",
+          "text_ru": "Изучение экзопланет на практических занятиях"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/432/",
+          "text": "Euclid mission goes to school!",
+          "text_ru": "Миссия Euclid приходит в школу"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/430/",
+          "text": "Manayantra: Using a traditional astronomy instrument as a teaching aid",
+          "text_ru": "Манаянтра. Традиционный астрономический прибор как учебное пособие"
+        }
+      ],
+      "media_ids": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Astronomy Education Resources",
+      "blocks": {
+        "about": {
+          "heading": "About",
+          "body": "Finding high-quality, suitable resources is a big plus for astronomy education activities. Below, we list a number of talks from the Shaw-IAU Workshops on Astronomy for Education that address this topic. In addition, feel free to browse or search the educational resources the OAE has created or collected."
+        },
+        "presentations": {
+          "heading": "Talks",
+          "body": ""
+        }
+      }
+    },
+    "ru": {
+      "title": "Материалы для астрономического образования",
+      "blocks": {
+        "about": {
+          "heading": "О теме",
+          "body": "Качественные материалы, подобранные под задачу, помогают проводить занятия по астрономии. Ниже собраны доклады об этом с семинаров Шоу и МАС по астрономическому образованию. Вы можете также просмотреть материалы, которые OAE разработал или собрал, и воспользоваться поиском по ним."
+        },
+        "presentations": {
+          "heading": "Доклады",
+          "body": ""
+        }
+      },
+      "aliases": []
+    }
+  },
+  "media": [
+    {
+      "id": "media:oae-review-astronomy-education-resources",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/oae_review_files/illustration_images/teaser_resources_news_image.jpg",
+      "record_url": "https://www.astro4edu.org/oae-reviews/astronomy-education-resources",
+      "original_path": "media/original/oae-review-astronomy-education-resources.jpg",
+      "sha256": "232626343eb23538d74251ee23c41008f9a8ba17901df4f6236fae5d5f79990f",
+      "size": 11805,
+      "alt_en": "Illustration image for Astronomy Education Resources",
+      "alt_ru": "Слева силуэт человека на фоне синего пейзажа, справа условные модели планет и астрономических приборов.",
+      "credit": null,
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Машинный перевод. Редакторское утверждение ожидается."
+  }
+}

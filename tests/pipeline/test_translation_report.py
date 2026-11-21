@@ -6,10 +6,13 @@ import unittest
 from app.pipeline.translation_fields import fields, get_path
 from scripts.translation_review.common import (
     REPORT,
+    REVIEW_CORPUS,
     load_records,
+    manual_media_edits,
+    manual_page_edits,
 )
 
-VERDICTS = {"ok", "fix", "source_error", "uncertain", "pending", "not_covered"}
+VERDICTS = {"ok", "manual_ok", "fix", "source_error", "uncertain", "pending", "not_covered"}
 
 
 @unittest.skipUnless(REPORT.exists(), "отчёт ревью переводов ещё не построен")
@@ -21,7 +24,8 @@ class TranslationAuditReportTests(unittest.TestCase):
 
     def test_every_record_is_reported(self):
         self.assertEqual(set(self.report["records"]), set(self.records))
-        self.assertEqual(len(self.records), 501)
+        if not REVIEW_CORPUS:
+            self.assertEqual(len(self.records), 501)
 
     def test_every_translatable_field_has_a_verdict(self):
         for record_id, record in self.records.items():
@@ -39,6 +43,23 @@ class TranslationAuditReportTests(unittest.TestCase):
                 self.assertEqual(get_path(record, fix["path"]), fix["new"], f"{record_id} {fix['path']}")
 
     def test_automatic_review_does_not_claim_human_confirmation(self):
-        self.assertIn("Не является подтверждением человеком", self.report["method"])
+        if not REVIEW_CORPUS:
+            self.assertIn("Не является подтверждением человеком", self.report["method"])
         for record_id, entry in self.report["records"].items():
             self.assertEqual(entry["review_status"], self.records[record_id]["review"]["status"])
+
+    @unittest.skipUnless(REVIEW_CORPUS, "ручная сверка OAE Reviews хранится в отдельном отчёте")
+    def test_manual_verdicts_match_reviewed_source_and_translation(self):
+        manual = {
+            (record_id, path)
+            for edits in (manual_media_edits(self.records), manual_page_edits(self.records))
+            for record_id, path, _ in edits
+        }
+        reported = {
+            (record_id, path)
+            for record_id, entry in self.report["records"].items()
+            for path, _, verdict in entry["fields_checked"]
+            if verdict == "manual_ok"
+        }
+        self.assertTrue(manual)
+        self.assertEqual(reported, manual)

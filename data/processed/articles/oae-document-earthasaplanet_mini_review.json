@@ -1,0 +1,1586 @@
+{
+  "id": "article:oae-document-earthasaplanet_mini_review",
+  "kind": "article",
+  "source": {
+    "type": "oae_review_document",
+    "url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+    "imported_at": "2026-11-18T16:44:30.429432+00:00",
+    "sha256": "85c173a1fe83decf6f4cb1e6655c76beb02b4f93ea3ad713d90f8d11c2ac51d5",
+    "pdf_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+    "pdf_path": "raw/reviews/EarthasaPlanet_mini_review.pdf",
+    "authors": "Mike Simmons, George Miley, Jeffrey Bennett, William H. Waller, and Hassan Baghbani"
+  },
+  "metadata": {
+    "topic_ids": [
+      "article:oae-review-earth-as-a-planet"
+    ],
+    "page_count": 15,
+    "ocr_pages": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "sections": [
+    {
+      "id": "page-1",
+      "type": "article_body",
+      "heading": "Page 1",
+      "body": "OAE Mini-Review\n\nEarth as a Planet\n\nPublications of the IAU Office of Astronomy for Education",
+      "heading_ru": "Страница 1",
+      "body_ru": "Мини-обзор OAE\n\nЗемля как планета\n\nИздания Офиса астрономии для образования Международного астрономического союза",
+      "links": [],
+      "media_ids": [
+        "media:oae-pdf-earthasaplanet_mini_review-cover",
+        "media:oae-pdf-earthasaplanet_mini_review-daa4f3b939d6a5d50788",
+        "media:oae-pdf-earthasaplanet_mini_review-dc03fc3121750665e938",
+        "media:oae-pdf-earthasaplanet_mini_review-e83ee8af005b3d78db77",
+        "media:oae-pdf-earthasaplanet_mini_review-33d8af68c9a4714cafc4",
+        "media:oae-pdf-earthasaplanet_mini_review-6986400f2baa4c8f46bb",
+        "media:oae-pdf-earthasaplanet_mini_review-97c1ae95a53c0c16229d",
+        "media:oae-pdf-earthasaplanet_mini_review-69319fea3fc9e9e2241c",
+        "media:oae-pdf-earthasaplanet_mini_review-13b0a3de7f6647c24d21",
+        "media:oae-pdf-earthasaplanet_mini_review-db3a2056d45d8b45bfdd",
+        "media:oae-pdf-earthasaplanet_mini_review-205237af2dc11a853e3e",
+        "media:oae-pdf-earthasaplanet_mini_review-a9f665c7987b086878fd",
+        "media:oae-pdf-earthasaplanet_mini_review-aea6f9e599eaaa00009c",
+        "media:oae-pdf-earthasaplanet_mini_review-7364f920765131e5a9a7",
+        "media:oae-pdf-earthasaplanet_mini_review-1bb1d778ed9e4c2e0a75",
+        "media:oae-pdf-earthasaplanet_mini_review-78ab8239eb7d313c7381",
+        "media:oae-pdf-earthasaplanet_mini_review-4c342b794022835bbed9",
+        "media:oae-pdf-earthasaplanet_mini_review-a86fc953b7b40c4fd90c",
+        "media:oae-pdf-earthasaplanet_mini_review-23c47344fd13c4aeb01c",
+        "media:oae-pdf-earthasaplanet_mini_review-15ce59603eb2f16ad177",
+        "media:oae-pdf-earthasaplanet_mini_review-058177a18643248d5444",
+        "media:oae-pdf-earthasaplanet_mini_review-3c62b8d4a7bfc8491396",
+        "media:oae-pdf-earthasaplanet_mini_review-5b2d716d07d37acbd349",
+        "media:oae-pdf-earthasaplanet_mini_review-4bc200fe04bdcda5c18d",
+        "media:oae-pdf-earthasaplanet_mini_review-65a35a84887a25acec53",
+        "media:oae-pdf-earthasaplanet_mini_review-10a60f73640e06348aa2",
+        "media:oae-pdf-earthasaplanet_mini_review-6a7a8616a3d58ca48989",
+        "media:oae-pdf-earthasaplanet_mini_review-fc304fe81648bc7c9b09"
+      ]
+    },
+    {
+      "id": "page-2",
+      "type": "article_body",
+      "heading": "Page 2",
+      "body": "The following is a collection of summaries originally published in the proceedings of the 3rd Shaw-IAU workshop on Astronomy for Education held 12 - 15 October, 2021 as a virtual event. The workshop was organised by the [AU Office of Astronomy for Education. More details can be found on: https: //astro4edu. org/shaw-iau/3rd-s haw-iau-workshop/.\n\nSession Organiser: Dario del Moro.\n\nAuthors: Mike Simmons, George Miley, Jeffrey Bennett, William H. Waller, and Hassan Baghbani.\n\nCompiled & Edited by: Asmita Bhandare (Project lead), Giuliana Giobbi, Colm Larkin, Rebecca Sanderson, Eduardo Penteado, Niall Deacon, Gwen Sanderson, and Anna Sippel.\n\nThe IAU Office of Astronomy for Education (OAE) is hosted at Haus der Astronomie (HdA), managed by the Max Planck Institute for Astronomy. The OAE’s mission is to support and coordinate astronomy education by astronomy researchers and educators, aimed at primary or secondary schools worldwide. HdA’s hosting the OAE was made possible through the support of the German foundations Klaus Tschira Stiftung and Carl-Zeiss-Stiftung. The Shaw-IAU Workshops on Astronomy for Education are funded by the Shaw Prize Foundation.\n\nThe OAE is supported by a growing network of OAE Centers and OAE Nodes, collaborating to lead global projects developed within the network. The OAE Centers and Nodes are: the OAE Center China-Nanjing, hosted by the Beijing Planetarium (BJP); the OAE Center Cyprus, hosted by Cyprus Space Exploration Organization (CSEO); the OAE Center Egypt, hosted by the National Research Institute of Astronomy and Geophysics (NRIAG); the OAE Center India, hosted by the Inter-University Centre for Astronomy and Astrophysics (IUCAA); the OAE Center Italy, hosted by the National Institute for Astrophysics (INAF); the OAE Node Republic of Korea, hosted by the Korean Astronomical Society (KAS); OAE Node France at CY Cergy Paris University hosted by CY Cergy Paris University; and the OAE Node Nepal, hosted by the Nepal Astronomical Society (NASO).",
+      "heading_ru": "Страница 2",
+      "body_ru": "Здесь собраны краткие изложения докладов, впервые опубликованные в трудах 3-го семинара Шоу и МАС по астрономическому образованию. Семинар прошёл онлайн с 12 по 15 октября 2021 года. Его организовал Офис астрономии для образования Международного астрономического союза. Подробнее об этом семинаре — https://astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/.\n\nОрганизатор секции — Dario del Moro.\n\nАвторы — Mike Simmons, George Miley, Jeffrey Bennett, William H. Waller и Hassan Baghbani.\n\nСоставление и редактура — Asmita Bhandare (руководитель проекта), Giuliana Giobbi, Colm Larkin, Rebecca Sanderson, Eduardo Penteado, Niall Deacon, Gwen Sanderson и Anna Sippel.\n\nОфис астрономии для образования МАС (OAE) работает на базе Дома астрономии (Haus der Astronomie, HdA), которым управляет Институт астрономии Общества Макса Планка. Офис помогает астрономам и педагогам преподавать астрономию в начальных и средних школах по всему миру и координирует их работу. Разместить OAE в Доме астрономии помогли немецкие фонды Klaus Tschira Stiftung и Carl-Zeiss-Stiftung. Семинары Шоу и МАС по астрономическому образованию финансирует Фонд премии Шоу.\n\nOAE поддерживает растущая сеть центров и узлов, которые совместно ведут международные проекты. Центр OAE в Нанкине (Китай) работает на базе Пекинского планетария (BJP), центр на Кипре — Кипрской организации космических исследований (CSEO), центр в Египте — Национального исследовательского института астрономии и геофизики (NRIAG), центр в Индии — Межуниверситетского центра астрономии и астрофизики (IUCAA), центр в Италии — Национального института астрофизики (INAF). Узел OAE в Республике Корея работает на базе Корейского астрономического общества (KAS), узел во Франции — Университета CY Cergy Paris, узел в Непале — Непальского астрономического общества (NASO).",
+      "links": [
+        {
+          "url": "https://astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/",
+          "text": "https://astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/",
+          "text_ru": "https://astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "page-3",
+      "type": "article_body",
+      "heading": "Page 3",
+      "body": "e Earth as a Planet\n\nSession organiser: Dario del Moro, Department of Physics, University of Rome Tor Vergata, OAE Center Italy, Italy\n\nSESSION\n\nApart from being the cradle of humankind, Earth is also the third planet of our Solar system. This allows us to apply the astronomer point of view to it, and this point of view is the leading topic of the \"Earth as Planet\" session. This point of view has at least two different declinations, which were both explored in the session: the source of the awareness that we are all \"under the same sky\", and the consciousness that the physical laws that apply here are the same as elsewhere, and therefore we can learn about our world by comparing it to the others planets.\n\nTo represent the first point of view, we had two talks by Mike Simmons and George Miley. They presented ideas and methods to convey this ‘cosmic awareness’ to inspire fraternity and motivate the young.\n\nFor the second point of view, strongly related to the climate change issue, we had two talks by Jeff Bennet and William Waller. They introduced ways to advance the public understanding of global warming, with a positive approach, leveraging on our inspirational role as scientists.\n\nOn October 13, 2021, actor William Shatner - Captain Kirk of the Enterprise - had his first real orbital flight experience. His first words after exiting the capsule? \"Everybody in the world needs to do this. Everybody in the world needs to see this.\" Once again, we went into space and came back with the awareness that this world is fragile and we should take care of it, together. To solve the problems, together.",
+      "heading_ru": "Страница 3",
+      "body_ru": "Земля как планета\n\nОрганизатор секции — Дарио дель Моро, физический факультет Римского университета Тор Вергата и итальянский центр OAE.\n\nО секции\n\nЗемля — колыбель человечества и третья планета Солнечной системы. Рассмотреть её глазами астронома — главная задача секции «Земля как планета». У такого взгляда есть по меньшей мере две стороны. Во-первых, он помогает осознать, что все мы живём под одним небом. Во-вторых, на Земле действуют те же физические законы, что и в других местах. Значит, сравнение с другими планетами помогает понять наш собственный мир. На секции обсуждались обе стороны.\n\nМайк Симмонс и Джордж Майли рассказали, как объяснять эту связь с космосом, чтобы развивать чувство общности и заинтересовать молодёжь. Джефф Беннетт и Уильям Уоллер обсудили вторую сторону, тесно связанную с изменением климата. Они предложили, как помогать широкой аудитории понимать глобальное потепление, опираясь на способность учёных вдохновлять и говорить о конструктивных действиях.\n\n13 октября 2021 года Уильям Шетнер, сыгравший капитана Кирка звездолёта «Энтерпрайз», впервые полетел в космос. Полёт был суборбитальным. В английском тексте он назван орбитальным. Выйдя из капсулы, Шетнер сказал, что такой опыт и такой вид должны быть доступны каждому. Мы снова вернулись из космоса с пониманием, насколько хрупок наш мир и как важно заботиться о нём и решать его проблемы сообща.",
+      "links": [
+        {
+          "url": "https://www.blueorigin.com/missions/ns-18",
+          "text": "Blue Origin: NS-18",
+          "text_ru": "Blue Origin о полёте NS-18"
+        }
+      ],
+      "media_ids": [
+        "media:oae-pdf-earthasaplanet_mini_review-436a86c5f334c89d77c0",
+        "media:oae-pdf-earthasaplanet_mini_review-6e78c00982f0ff6dabd1",
+        "media:oae-pdf-earthasaplanet_mini_review-49b963842462e930277d",
+        "media:oae-pdf-earthasaplanet_mini_review-447846ef93f318f4c62d",
+        "media:oae-pdf-earthasaplanet_mini_review-c2989780d7a517d76a77"
+      ]
+    },
+    {
+      "id": "page-4",
+      "type": "article_body",
+      "heading": "Page 4",
+      "body": "TALK CONTRIBUTIONS\n\nAstronomy and the Overview Effect\n\nSpeaker: Mike Simmons, Affiliate Research Scientist, Blue Marble Space Institute of Science, USA\n\nUpon seeing Earth from space, astronauts often experience the overview effect, a profound shift in their understanding of Earth as a fragile oasis of interwoven and inseparable systems in the vastness of space. But fewer than 1000 of the Earth’s billions of inhabitants have had the opportunity to observe Earth as a planet among the stars first-hand. Astronomy gives us a way to bring the overview effect down to Earth, providing a sense of our traveling through space together. This planetary identity is essential if we are to solve the many problems of Spaceship Earth such as climate change, pandemics, and profound inequity. The overview effect, however it is experienced, is the key to advancing from \"us and them\" to \"we.\"\n\nTalk link: https: //youtu. be/KEbgV_HF tuo\n\nHumanity must rise above the earth, to the top of the atmosphere and beyond. For only then will we understand the world in which we live. - Socrates\n\nThe overview effect, coined by author Frank White in his book of the same name, is the cognitive shift experienced by many astronauts who see Earth from space. We all understand the planetary nature of Earth intellectually. Images from spacecraft, like Earthrise from Apollo 8 and the Pale Blue Dot from Voyager 1, have shown it to us. But we do not really internalize it as part of our existence. Like the Copernican perspective of the Solar System, it is something we know to be true, something we can prove and understand, but that we do not experience directly by seeing it for ourselves from outside. Astronauts on the International Space Station spend much of their spare time Earthgazing. The view of Earth changes constantly, and astronauts describe it as giving the impression of a dynamic, living organism. They describe Earth’s atmosphere as \"paper-thin\", the Earth as appearing fragile, and the dynamic systems of the planet as clearly interconnected. They often return with a new appreciation for the Earth as a planet, and for the connection between humanity and nature. While the lack of visible borders is often quoted as being an important aspect of the Overview Effect, there is much more to it. Astronauts also see Earth surrounded by stars, as a planet embedded in the immensity of the Universe. When asked about this, astronaut and astrophysicist Jeff Hoffman replied, \"You do, from that perspective, see the Earth as a planet. You see the Sun as a star. We see the Sun in a blue sky, but up there, you see the Sun in a black sky. So, yeah, you are seeing it from the cosmic perspective.\"\n\nThe nature of our dependence on each other is not new. R. Buckminster Fuller wrote, \"We are all astronauts on a little spaceship called Earth.\" Marshall McLuhan added, \"There are",
+      "heading_ru": "Страница 4",
+      "body_ru": "Доклады\n\nАстрономия и эффект обзора\n\nДокладчик — Майк Симмонс, ассоциированный исследователь Blue Marble Space Institute of Science, США.\n\nВзгляд на Землю из космоса нередко меняет мировосприятие астронавтов. Они видят Землю как хрупкий оазис посреди космоса, где все системы переплетены и зависят друг от друга. Это называют эффектом обзора. На момент доклада менее тысячи из миллиардов жителей Земли видели нашу планету среди звёзд собственными глазами. Астрономия помогает испытать эффект обзора с поверхности Земли и почувствовать, что все мы вместе путешествуем сквозь космос. Это ощущение принадлежности к одной планете важно для решения таких проблем, как изменение климата, пандемии и глубокое неравенство. Как бы люди ни испытали эффект обзора, он помогает перейти от разделения на «своих» и «чужих» к чувству общности.\n\nЗапись доклада доступна по ссылке на странице.\n\nДокладчик приводит высказывание, которое приписывают Сократу. Чтобы понять мир, в котором мы живём, человечеству нужно подняться над Землёй, до границы атмосферы и дальше.\n\nТермин «эффект обзора» ввёл в одноимённой книге Фрэнк Уайт. Так он назвал перемену восприятия у многих астронавтов, увидевших Землю из космоса. Мы и с Земли понимаем, что она планета. Нам знакомы снимки из космоса, например «Восход Земли» с «Аполлона-8» и «Бледно-голубая точка» с «Вояджера-1». Однако такое знание трудно сделать частью личного опыта. С гелиоцентрическим устройством Солнечной системы похожая ситуация: его можно понять и обосновать, а посмотреть на систему со стороны собственными глазами мы пока не можем.\n\nНа Международной космической станции астронавты много свободного времени проводят у иллюминаторов, глядя на Землю. Её вид постоянно меняется, и она напоминает им живой организм. Атмосфера кажется тонкой, как бумага, сама планета — хрупкой, а её динамические системы — явно взаимосвязанными. Астронавты часто возвращаются с новым пониманием того, что значит жить на планете и насколько человечество связано с природой. Среди причин эффекта обзора часто называют отсутствие видимых границ. Другая его сторона — вид Земли среди звёзд, как планеты в огромной Вселенной. По словам астронавта и астрофизика Джеффа Хоффмана, такой ракурс позволяет увидеть Землю как планету, а Солнце — как звезду. С Земли мы видим его на синем небе, а из космоса — на чёрном. Это и есть взгляд из космоса.\n\nЛюди давно говорят о том, насколько мы зависим друг от друга. Ричард Бакминстер Фуллер писал, что мы все астронавты на небольшом космическом корабле под названием Земля. Высказывание Маршалла Маклюэна приведено на следующей странице.",
+      "links": [
+        {
+          "url": "https://youtu.be/KEbgV_HFtuo",
+          "text": "https://youtu.be/KEbgV_HFtuo",
+          "text_ru": "https://youtu.be/KEbgV_HFtuo"
+        }
+      ],
+      "media_ids": [
+        "media:oae-pdf-earthasaplanet_mini_review-e8c6998610c0ef1fc186",
+        "media:oae-pdf-earthasaplanet_mini_review-aa0c838fa94652625602",
+        "media:oae-pdf-earthasaplanet_mini_review-65ae7bdc27e443987dee"
+      ]
+    },
+    {
+      "id": "page-5",
+      "type": "article_body",
+      "heading": "Page 5",
+      "body": "no passengers on Spaceship Earth, we are all crew.\" Observing Spaceship Earth from outside, experiencing the overview effect, the intellectual concept becomes reality. It is clear, tangible, palpable, even obvious. But fewer than 600 people have seen the Earth from space. Private flights and virtual reality will help bring the experience to a few more. What about the rest of humanity?\n\nThe answer is in the stars. Astronomers look into space from Earth, watching our motion among the planets and our place among the stars. When we see the Moon rising, we know others half a world away are watching it set. When we explore the cosmos with telescopes, we look out at our cosmic environment. We see that we are in space, orbiting the center of mass of the Milky Way galaxy along with billions of other stars. We see the immensity of the Universe and we understand that we are a part of it. Astronomers have a unique perspective, a cosmic perspective. While we do not leave Earth in body, we travel through our local and distant neighborhoods. We are familiar with planets and can see how the Earth is one. We experience what others do not. The passion to share that perspective with others - bringing our telescopes to the streets for people to see the Moon, planets, and more up close for themselves - is not just about sharing a hobby. It is sharing the cosmic perspective that reveals our planetary existence. Those first views of the cosmos through a telescope can be life-changing. Astronomy is the overview effect for those of us who will not make it into space. And it is available to everyone on Earth.\n\nAstronomy is more than a modern-day hobby. It has been a part of all cultures throughout time. There are astronomy enthusiasts everywhere, and sharing the special perspective they have gained is a passion unique to astronomy. The Blue Marble image taken from the Moon by Apollo 8 astronaut Bill Anders started a global movement of environmental awareness, including Earth Day. Anders said, \"We came all this way to explore the Moon, and the most important thing is that we discovered the Earth.\" The Pale Blue Dot image taken by Voyager 1 while six billion kilometers from the Sun shows us the Earth as, in Carl Sagan’s words, \"a very small stage in a vast cosmic arena.\" From space, Earth is not \"down there.\" It is \"out there\", like any other planet. This is a critical part of the overview effect experienced by astronauts. Astronomers understand it as well.\n\n| have found a special connectedness between astronomers around the world based on our common experiences. Our cultures may be different, but the practice of astronomy is the same. We share the same sky. We share that sky with our ancestors as well. We may have different myths about the sky and make different constellations, but even those are created for the same reasons. We feel connected with the stars. We always have. The community of astronomers is truly global, connected by something universal. We can - we must - share what we have with others. We hear \"We are all in this together\" all the time but even those who say it fail to act like it. The Overview Effect is a paradigm shift that engenders a true sense of interconnectedness and interdependence in the few who have experienced it. Astronomy is the overview effect for the rest of us. More on the overview effect at the Overview Institute website: www. overviewinstitute.org. Watch Overview, a short film on the overview effect by Planetary Collective: https: //vimeo.com/55073825. More details on the Center for Planetary Identity: https: //www.planetaryidentity.com/.",
+      "heading_ru": "Страница 5",
+      "body_ru": "«На космическом корабле Земля нет пассажиров: мы все члены экипажа». Когда смотришь на Землю со стороны и испытываешь эффект обзора, умозрительная идея становится реальностью, ясной, осязаемой и даже очевидной. Но Землю из космоса видели менее 600 человек. Частные полёты и виртуальная реальность позволят испытать это ещё нескольким людям. Как быть с остальным человечеством?\n\nОтвет подсказывают звёзды. Астрономы смотрят в космос с Земли, наблюдают наше движение среди планет и определяют наше место среди звёзд. Глядя на восход Луны, мы знаем, что на другой стороне Земли кто-то видит, как она заходит. Исследуя Вселенную в телескопы, мы знакомимся с нашим космическим окружением. Мы видим, что сами находимся в космосе и вместе с миллиардами звёзд обращаемся вокруг центра масс Млечного Пути. Мы видим огромную Вселенную и понимаем, что принадлежим ей.\n\nУ астрономов есть особый, космический взгляд на мир. Мы можем исследовать ближайшее окружение и далёкие области Вселенной, оставаясь на Земле. Мы знаем, что такое планеты, и видим, что Земля — одна из них. Мы испытываем то, что доступно не всем. Желание поделиться этим опытом побуждает нас выносить телескопы на улицы, чтобы люди сами увидели Луну, планеты и другие объекты. Так мы делимся взглядом на мир, который помогает ощутить, что мы живём на планете. Первые наблюдения в телескоп могут изменить жизнь. Для тех, кто не полетит в космос, астрономия даёт возможность испытать эффект обзора. Она доступна каждому на Земле.\n\nАстрономия сопровождала все культуры в разные эпохи. Любители астрономии есть повсюду и стремятся делиться своим особым взглядом на мир. Астронавт «Аполлона-8» Билл Андерс сделал снимок «Восход Земли» с орбиты Луны. В тексте статьи этому снимку дано название Blue Marble, которое относится к фотографии экипажа «Аполлона-17». Фотография помогла привлечь внимание людей к состоянию окружающей среды и дала толчок экологическим инициативам по всему миру, включая День Земли. Андерс сказал: «Мы проделали весь этот путь, чтобы исследовать Луну, а главным открытием оказалась Земля». На снимке «Бледная голубая точка», сделанном «Вояджером-1» в шести миллиардах километров от Солнца, Земля выглядит, по словам Карла Сагана, как «крошечная сцена на огромной космической арене». Из космоса Земля видна там, вдали, как любая другая планета. В этом важная часть эффекта обзора, который испытывают астронавты. Астрономы тоже понимают это чувство.\n\nЯ заметил особую связь между астрономами разных стран, основанную на общем опыте. Культуры могут различаться, но астрономические наблюдения везде одинаковы. Мы смотрим на то же небо, на которое смотрели наши предки. У нас могут быть разные мифы о небе и разные созвездия, но причины, по которым мы их создаём, одинаковы. Мы всегда чувствовали связь со звёздами. Сообщество астрономов по-настоящему глобально, и объединяет его то, что есть у всех. Мы можем и должны делиться этим опытом. Мы постоянно слышим, что все в одной лодке, однако даже те, кто это говорит, редко поступают соответственно. Эффект обзора меняет картину мира. Немногие, кому довелось его испытать, по-настоящему ощущают взаимосвязь и взаимозависимость. Остальным такой опыт может дать астрономия.\n\nСайт Overview Institute: www.overviewinstitute.org.\nКороткометражный фильм Overview студии Planetary Collective: https://vimeo.com/55073825\nЦентр планетарной идентичности: https://www.planetaryidentity.com/",
+      "links": [
+        {
+          "url": "http://www.overviewinstitute.org",
+          "text": "http://www.overviewinstitute.org",
+          "text_ru": "http://www.overviewinstitute.org"
+        },
+        {
+          "url": "https://vimeo.com/55073825",
+          "text": "https://vimeo.com/55073825",
+          "text_ru": "https://vimeo.com/55073825"
+        },
+        {
+          "url": "https://www.planetaryidentity.com/",
+          "text": "https://www.planetaryidentity.com/",
+          "text_ru": "https://www.planetaryidentity.com/"
+        },
+        {
+          "url": "https://www.nasa.gov/history/20-years-ago-first-image-of-earth-from-mars-and-other-postcards-of-home/",
+          "text": "NASA: Earthrise and Blue Marble",
+          "text_ru": "Снимки NASA «Восход Земли» и «Голубой мрамор»"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "page-6",
+      "type": "article_body",
+      "heading": "Page 6",
+      "body": "The \"Pale Blue Dot - Universe Awareness\" Programme for Very Young Children\n\nSpeaker: George Miley, Leiden Observatory, The Netherlands\n\n| This talk will demonstrate how exposing children to the wonders A of the Universe at an early age can inspire them and contribute uniquely to advancing several of the United Nations Sustainable Development Goals. | shall discuss the rationale for reaching out to ; Ain. children aged 5 to 10 and describe the use of such an approach N in the Pale Blue Dot - Universe Awareness project. UNAWE was Gaw initiated in 2005 with a main goal of stimulating a sense of global citizenship from a young age. It has since been implemented in\n\n=. =a eos aCe\n\n'\n\nof 40 more than 60 countries. Pale Blue Dot is building on Universe at , Awareness and will in addition focus on advancing each of the a teas SDGs, with a set of appropriate materials and modules.\n\nhe '\n\nisis ee\n\nTalk link: https: //youtu.be/Xwub8vHU4Bg\n\nExposing children to the wonders of the Universe at an early age can excite and inspire them and contribute uniquely to advancing several of the United Nations Sustainable Development Goals, particularly SDG4.7 - stimulating a sense of global citizenship.\n\nThe survival of our planet is threatened by many global dangers that can only be tackled by cultivating globalism and adopting a global approach. These dangers include human-induced climate change, pandemics, the risk of nuclear war, clashes between rival ethnic groups, in- creasing political polarization, and extreme nationalism. There is therefore a need to cultivate a sense of global citizenship, tolerance and solidarity throughout the world. Promoting a world view in young children at an age when their value systems are beginning to form is one of the most effective tools for doing this.\n\nThe strategy of targeting young children to promote the message of global citizenship derives from evidence that:\n\n1. Ages 5 - 8 are crucial in brain development and is a crucial period in the development of\nour value systems (Brierley & Barlow, 1994),\n\n2. Early childhood education contributes to global development (Samuelsson and Kaga, 2007,\nShonkoff, et al. 2007),\n\n3. The social effectiveness of education is greatest for the youngest children (multi-decadal\nstudy by Nobel Prize-winning economist James Heckman and colleagues (Heckman et al,\n2009).\n\nThis evidence was the rationale for initiating the Universe Awareness programme (UNAWE) and its follow-up project Pale Blue Dot-Universe Awareness (PBD-UNAWE). UNAWE was started by",
+      "heading_ru": "Страница 6",
+      "body_ru": "«Бледно-голубая точка» и Universe Awareness — программа для детей младшего возраста\n\nДокладчик — Джордж Майли, Лейденская обсерватория, Нидерланды.\n\nВ докладе я расскажу, как знакомство с удивительными явлениями Вселенной в раннем возрасте может вдохновлять детей и помогать достижению нескольких Целей устойчивого развития ООН. Объясню, почему мы работаем с детьми от 5 до 10 лет, и расскажу, как этот подход используется в проекте «Бледно-голубая точка» и Universe Awareness. Программа Universe Awareness (UNAWE) началась в 2005 году. Её основная цель — с детства развивать чувство принадлежности к мировому сообществу. Программа действовала более чем в 60 странах. Проект «Бледно-голубая точка» продолжает её работу и дополнительно направлен на достижение Целей устойчивого развития. Для этого разрабатываются учебные материалы и модули. Доклад доступен по ссылке на странице.\n\nЗнакомство с Вселенной может увлечь и вдохновить детей уже в раннем возрасте и способствовать достижению нескольких Целей устойчивого развития ООН. В частности, задача 4.7 предусматривает воспитание гражданственности в глобальном масштабе.\n\nВыживанию нашей планеты угрожают глобальные опасности, с которыми можно справиться только сообща. Среди них антропогенное изменение климата, пандемии, риск ядерной войны, столкновения между этническими группами, усиление политической поляризации и крайних форм национализма. Поэтому нужно развивать чувство принадлежности к мировому сообществу, терпимость и солидарность. Один из самых действенных способов — открывать детям широкую картину мира в возрасте, когда их система ценностей только формируется.\n\nНа выбор этой возрастной группы повлияли следующие результаты исследований.\n\n1. Возраст 5–8 лет особенно важен для развития мозга и формирования системы ценностей (Brierley и Barlow, 1994).\n2. Дошкольное и начальное образование способствует глобальному развитию (Samuelsson и Kaga, 2007; Shonkoff и др., 2007).\n3. Наибольший общественный эффект образования проявляется у самых младших детей. К такому выводу пришёл нобелевский лауреат Джеймс Хекман с коллегами в исследовании, охватившем несколько десятилетий (Heckman и др., 2009).\n\nЭти данные послужили основанием для программы Universe Awareness (UNAWE) и её продолжения «Бледно-голубая точка» (PBD-UNAWE). Сведения о создании UNAWE продолжаются на следующей странице.",
+      "links": [
+        {
+          "url": "https://youtu.be/Xwub8vHU4Bg",
+          "text": "https://youtu.be/Xwub8vHU4Bg",
+          "text_ru": "https://youtu.be/Xwub8vHU4Bg"
+        }
+      ],
+      "media_ids": [
+        "media:oae-pdf-earthasaplanet_mini_review-ab526afb95cd4c34bd83",
+        "media:oae-pdf-earthasaplanet_mini_review-08b937699e86dfaaf0ca"
+      ]
+    },
+    {
+      "id": "page-7",
+      "type": "article_body",
+      "heading": "Page 7",
+      "body": "Leiden University in 2005 with the main goal of stimulating a sense of global citizenship from a young age. It has since been implemented in more than 60 countries, and was the basis for two projects funded by the European Research Council (e.g. EU-UNAWE Team, 2015). \"Pale Blue Dot\" (PBD-UNAWE), founded in 2018, builds on Universe Awareness and also focuses on advancing several of the UN Sustainable Development Goals, in addition to SDG 4.7 on globalism.\n\nThe philosophy of PBD-UNAWE is encapsulated in three quotations by Carl Sagan:\n\n1. \"Fanatical ethnic or national chauvinisme are difficult to maintain when we see our planet\nas a fragile blue crescent fading to become an inconspicuous point of light against the\nbastion and citadel of the stars.\" (SDG 6 - Peace).\n\n2. \"Look again at that dot. That is here. That is home. That is us. It makes clear our\nresponsibility to deal kindly with one another, and preserve and appreciate the pale blue\ndot\" (SDG 13 - Climate).\n\n3. \"| wanted to be a scientist since my earliest school days. The crystallizing moment came\nwhen | first caught on, that stars are mighty suns, and how staggeringly far away they\nmust be to appear to us as mere bright spots.\" (SDG 4 - Education).\n\nA set of new materials and teaching modules for PBD-UNAWE is being developed by Cecilia Scorza at Munich, who is organizing a pilot project in 5 countries, together with local educators and astronomers. Pale Blue Dot has been adopted as a \"flagship\" project by the IAU OAD in Cape Town and is being managed by the IAU European Office of Astronomy for Development in Leiden. It is planned to translate the materials into several languages and cultures and to develop and distribute accompanying training tools for teachers.\n\nIn September 2020, during the 75th anniversary of the founding of the United Nations, the\nIAU European Regional Office of Astronomy for Development held a virtual UN GA75 Dialogue\non \"Astronomy for Global Citizenship\" (https: //astro4dev.eu/images/main/Dialogu\ne_summary.pdf). The speakers included South African Minister of International Relations\nand Cooperation, Grace Naledi Pandor. All participants, including Minister Pandor, strongly\nsupported the concluding statement of the Dialogue that was subsequently communicated\nto the UN Secretary General: \"Before they are 10 years old, every child should be introduced\nto pictures of our tiny earth from space and the inspiring notion that we all together inhabit\na tiny planet in a vast wonderful universe. This will help foster their sense of belonging to a\ncommon humanity (SDG 4.7), encourage them to respect and protect the environment (SDG\n13) and advance the cause of peace (SDG 16)\"\n\nIn summary, stimulating a sense of globalism among all people is crucially important for the survival of our planet and targeting young children with programmes such as PBD-UNAWE is one of the most effective methods of doing this. There is a great need to support such efforts. We hope to build up PBD-UNAWE gradually - first with the 5-country pilot project and gradually increase the scope of the project until the above UN Dialogue resolution can be implemented.\n\n| am deeply grateful to the many gifted people who contributed enormously to this project over the years. They include but are not limited to: Mahbobah Ahmadi, Kevin Govender, Carolina Odman, Premana Premadi, Rosa Ros, Teresa Riera, Pedro Russo, Cecilia Scorza, and Michelle",
+      "heading_ru": "Страница 7",
+      "body_ru": "Программу UNAWE основал Лейденский университет в 2005 году. Её главная цель — развивать чувство принадлежности к мировому сообществу с раннего возраста. С тех пор программу внедрили более чем в 60 странах. Она послужила основой двух проектов, которые финансировал Европейский исследовательский совет (например, EU-UNAWE Team, 2015). Проект «Бледно-голубая точка» (PBD-UNAWE) основан в 2018 году. Он продолжает Universe Awareness и, помимо глобального гражданства (задача 4.7), помогает достижению нескольких других Целей устойчивого развития ООН.\n\nФилософию проекта выражают три высказывания Карла Сагана.\n\n1. «Трудно сохранять фанатичный этнический или национальный шовинизм, когда видишь, как хрупкий голубой серп нашей планеты меркнет и становится едва заметной точкой света среди звёзд». ЦУР 16 — мир. В исходной подписи ошибочно указана ЦУР 6.\n2. «Взгляните на эту точку ещё раз. Это здесь. Это наш дом. Это мы. Становится ясно, что мы обязаны относиться друг к другу добрее, беречь и ценить эту бледно-голубую точку». ЦУР 13 — борьба с изменением климата.\n3. «Я хотел стать учёным с первых школьных лет. Решающим стал момент, когда я понял, что звёзды — это огромные солнца и как поразительно далеко они должны быть, чтобы казаться нам точками света». ЦУР 4 — образование.\n\nСесилия Скорца в Мюнхене разрабатывает новые учебные материалы и модули PBD-UNAWE и вместе с местными педагогами и астрономами организует пилотный проект в пяти странах. Офис астрономии для развития МАС в Кейптауне принял «Бледно-голубую точку» как один из своих основных проектов. Им управляет Европейский офис астрономии для развития МАС в Лейдене. Материалы планируют перевести на несколько языков, адаптировать к разным культурным контекстам, а также разработать и распространить средства подготовки учителей.\n\nВ сентябре 2020 года, в год 75-летия ООН, Европейский офис астрономии для развития МАС провёл виртуальный диалог ООН GA75 «Астрономия для глобального гражданства». Среди выступавших была министр международных отношений и сотрудничества ЮАР Грейс Наледи Пандор. Все участники, включая министра, поддержали итоговое заявление, переданное генеральному секретарю ООН. В нём предлагается до десяти лет показывать каждому ребёнку снимки Земли из космоса и знакомить его с мыслью, что мы все живём на крошечной планете в огромной Вселенной. Это помогает почувствовать принадлежность к единому человечеству (задача 4.7), побуждает уважать и охранять окружающую среду (ЦУР 13) и содействует миру (ЦУР 16).\n\nГлобальная солидарность необходима для выживания нашей планеты. Программы для детей младшего возраста, такие как PBD-UNAWE, — один из самых действенных способов её развивать. Подобным инициативам нужна поддержка. Мы рассчитываем начать с пилота в пяти странах и постепенно расширить проект, пока предложение диалога ООН не станет осуществимым.\n\nЯ благодарен всем, кто внёс большой вклад в проект. Среди них Махбобе Ахмади, Кевин Говендер, Каролина Одман, Премана Премади, Роса Рос, Тереса Риера, Педро Руссо, Сесилия Скорца и Мишель Виллебрандс.",
+      "links": [
+        {
+          "url": "https://astro4dev.eu/images/main/Dialogue_summary.pdf",
+          "text": "https://astro4dev.eu/images/main/Dialogue_summary.pdf",
+          "text_ru": "https://astro4dev.eu/images/main/Dialogue_summary.pdf"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "page-8",
+      "type": "article_body",
+      "heading": "Page 8",
+      "body": "Willebrands (in alphabetical order).\n\nReferences:\n\nBrierley and Barlow, \"Give me a child until they are 7\", Brain Studies and Early Childhood Education, 2nd Ed. (1994)\n\nEU-UNAWE Team, Final Report Summary. Building on the International Year of Astronomy: Making young children aware of the Universe, Cordis EU Research Results, (2015), https: //cordis.europa. eu/project/id/263239/reporting\n\nHeckman et al., Rate of Return to the High/Scope Perry Preschool Program, NBER Working Paper 15471 and references therein (2009),\n\nSamuelsson and Kaga Eds., Proc. Conf. \"Contribution of early childhood education to a sustainable society\" UNESCO digital publications (2007)\n\nShonkoff, J.P, Chair, et al. 2007, The Science of Early Childhood Development, National Sci- ence Council on the developing child, Center on the Developing Child, Harvard University\n\n(2007)\n\nAstronomers’ Role in Climate Education Speaker: Jeffrey Bennett, Big Kid Science / U. Colorado (Boulder), USA\n\nYou may think of climate science as distinct from astronomy, but the differences are not so important to the public. Both disciplines use the same basic physics, and many aspects of climate science come from astronomy (e.g., Venus). In this presentation, | will focus on why the public popularity of astronomy gives us a unique platform for advancing public understanding of global warming. | will emphasize the importance of approaching the topic ‘with inspiration, not fear’, providing concrete examples of strategies for audiences ranging from school kids to the general public. Note: Many of the examples will be drawn from my book A Global Warming Primer, posted free online at globalwarmingprimer.com, and my free middle school climate curriculum (bigkidscience.com/climatechange).\n\nTalk link: https: //youtu. be/gtq3ERLCaB4\n\nGlobal Warming Communication — Why Astronomers?: We are scientists. We may think of climate science as distinct from astronomy, but the differences are not so important to the",
+      "heading_ru": "Страница 8",
+      "body_ru": "В предыдущем абзаце имена приведены в алфавитном порядке по фамилиям.\n\nЛитература\n\n• Brierley и Barlow. «Дайте мне ребёнка до 7 лет». Brain Studies and Early Childhood Education («Исследования мозга и дошкольное образование»), 2-е издание (1994).\n• EU-UNAWE Team. Краткий итоговый отчёт «В развитие Международного года астрономии: знакомство маленьких детей со Вселенной». Cordis EU Research Results (2015). https://cordis.europa.eu/project/id/263239/reporting\n• Heckman и соавторы. «Норма отдачи от дошкольной программы High/Scope Perry», рабочий доклад NBER № 15471 и указанные в нём источники (2009).\n• Samuelsson и Kaga (ред.). Материалы конференции «Вклад дошкольного образования в устойчивое общество», цифровые публикации ЮНЕСКО (2007).\n• Shonkoff, J. P. (председатель) и соавторы. «Наука о развитии в раннем детстве». Национальный научный совет по вопросам развития ребёнка и Центр развития ребёнка Гарвардского университета (2007).\n\nРоль астрономов в просвещении по вопросам климата\n\nДокладчик: Джеффри Беннетт, Big Kid Science и Университет Колорадо в Боулдере, США.\n\nКлиматологию можно считать отдельной от астрономии дисциплиной, но для широкой публики различия между ними не так важны. Обе опираются на одну и ту же базовую физику. Многие вопросы климатологии связаны с астрономией, например через изучение Венеры. В докладе я покажу, почему популярность астрономии позволяет нам по-особому помочь широкой аудитории понять глобальное потепление. Подчеркну важность подхода, который вдохновляет людей действовать, и приведу конкретные примеры для разных аудиторий, от школьников до широкой публики. Многие примеры взяты из моей книги «Введение в глобальное потепление», которая бесплатно доступна на globalwarmingprimer.com, и из бесплатной программы по климату для средней школы: bigkidscience.com/climatechange.\n\nЗапись доклада: https://youtu.be/gtq3ERLCaB4\n\nПочему о глобальном потеплении могут рассказывать астрономы? Мы учёные. Нам климатология и астрономия могут казаться отдельными дисциплинами, но аудитория воспринимает это иначе. Продолжение на следующей странице.",
+      "links": [
+        {
+          "url": "https://cordis.europa.eu/project/id/263239/reporting",
+          "text": "https://cordis.europa.eu/project/id/263239/reporting",
+          "text_ru": "https://cordis.europa.eu/project/id/263239/reporting"
+        },
+        {
+          "url": "https://youtu.be/gtq3ERLCaB4",
+          "text": "https://youtu.be/gtq3ERLCaB4",
+          "text_ru": "https://youtu.be/gtq3ERLCaB4"
+        }
+      ],
+      "media_ids": [
+        "media:oae-pdf-earthasaplanet_mini_review-b51c618f3181d6ba0280",
+        "media:oae-pdf-earthasaplanet_mini_review-c54bcbb836d02f98867b"
+      ]
+    },
+    {
+      "id": "page-9",
+      "type": "article_body",
+      "heading": "Page 9",
+      "body": "public. It is \"our\" topic. Many of the key topics in climate science are also part of astronomy. For example, Venus and planetary science, Radiative transfer and the greenhouse effect, The Sun and its effects on Earth, Relevance to astrobiology, SETI, etc. Public interest in astronomy gives us credibility with the public. For those teaching college courses on introduction to astronomy/astrobiology, your class may be the only place where your students will learn about the science of global warming.\n\nGeneral Principles for Climate Communication: Maintain \"radical civility\" (as discussed by Travis Rector), which essentially means being respectful to your audience, even to those who may seem unreasonable to us. Be sure you always focus not only on science and consequences, but also on solutions, so that we are showing that there is indeed hope. Going along with that, your focus should be on inspiration not fear. This is a bit subtle, since global warming is scary, but keep focus on the fact that it is also solvable and our goal is therefore to inspire the action that will create the kind of world in which we will all want to live.\n\nWhat is the \"Future\"?: Most people tend to think in horizons no more than a few years, and media discussions of climate change rarely go beyond about 2050. But, many or most of today’s kids - and your kids/grand kids - are likely to still be living in the year 2100 and beyond. So it is important to focus on that longer time horizon.\n\nDiscussing the Science: \"Global Warming 1-2-3\": The climate is complex, but the basic science of global warming is actually as simple as \"1-2-3\":\n\n1. FACT: Carbon dioxide (and other greenhouse gasses) makes Earth warmer than it would be\notherwise (and the more there is, the warmer it becomes).\n\n2. FACT: Use of fossil fuels (coal/oil/gas) is adding carbon dioxide to the atmosphere.\n\n3. CONCLUSION: We expect global warming to occur.\n\nAnd the data confirm that global warming is happening as the 1-2-3 science predicts.\n\nDiscussing the Consequences: There are many consequences, but | find it useful to separate them into five major categories:\n\n1. Regional climate change\n\n2. Increase in storms and extreme weather\n\n3. Melting of Sea Ice\n\n4. Rising Sea Level\n\n5. Ocean acidification\n\nDiscussing the Solutions: Two basic steps to creating a \"post-global warming world\":\n\n1. Stop making the problem worse, which means stop adding greenhouse gas to the atmosphere.\n2. Find a way (e.g., future technology) to bring the CO2 level back to something more reasonable,\nsuch as 350 ppm.\n\nThe first step requires replacing fossil fuels with other energy sources, and we already have three existing technologies that could allow us to still have just as much energy without causing further greenhouse emissions: Energy efficiency, renewables (wind, solar, etc.) and nuclear - must remain on the table as one of the potential solutions for global warming. Future technologies could do far more, including providing the energy needed for active carbon dioxide removal. For example, advanced biofuels, solar energy from space, nuclear fusion. And given a time horizon looking toward the year 2100, it seems almost inevitable that, by then, we will have the",
+      "heading_ru": "Страница 9",
+      "body_ru": "Климат — тоже наша тема. Многие важные темы климатологии входят и в круг вопросов астрономии. Это, например, Венера и планетология, перенос излучения и парниковый эффект, влияние Солнца на Землю, связь с астробиологией и поиском внеземного разума (SETI). Интерес к астрономии помогает нам завоевать доверие аудитории. Для тех, кто ведёт вводный курс астрономии или астробиологии в вузе, он может оказаться единственным местом, где студенты узнают о научных основах глобального потепления.\n\nОбщие принципы разговора о климате\n\nПридерживайтесь принципа «радикальной вежливости», о котором говорит Трэвис Ректор. Уважайте слушателей, даже если их позиция кажется вам неразумной. Обсуждайте научные данные, последствия и возможные решения, чтобы показать, что выход есть. Старайтесь вдохновлять людей на действия. Это непросто: глобальное потепление пугает, но его можно смягчить. Цель — побудить людей к действиям, которые помогут создать мир, где им самим захочется жить.\n\nКакой горизонт считать будущим?\n\nБольшинство людей думают на несколько лет вперёд. В СМИ обсуждение изменения климата редко выходит за пределы 2050 года. При этом многие нынешние дети, в том числе ваши дети и внуки, вероятно, будут жить в 2100 году и позже. Поэтому важно говорить о более далёком будущем.\n\nНаучные основы. «Глобальное потепление в три шага»\n\nКлимат сложен, однако основу глобального потепления можно объяснить в три шага:\n\n1. Факт. Углекислый газ и другие парниковые газы делают Землю теплее. Чем их больше, тем она теплее.\n2. Факт. Использование ископаемого топлива, включая уголь, нефть и газ, добавляет углекислый газ в атмосферу.\n3. Вывод. Следует ожидать глобального потепления.\n\nДанные подтверждают, что потепление происходит, как и предсказывает эта схема.\n\nПоследствия\n\nАвтор выделяет пять основных групп:\n\n1. Региональные изменения климата.\n2. Учащение штормов и экстремальных явлений погоды.\n3. Таяние морского льда.\n4. Повышение уровня моря.\n5. Закисление океана.\n\nВозможные решения\n\nДва основных шага к миру после глобального потепления:\n\n1. Перестать усугублять проблему, то есть прекратить добавлять парниковые газы в атмосферу.\n2. Найти способ, например с помощью будущих технологий, вернуть концентрацию CO₂ к более приемлемому уровню, например 350 частей на миллион (ppm).\n\nДля первого шага нужно заменить ископаемое топливо другими источниками энергии. Уже есть три способа сохранить доступный объём энергии без дальнейших выбросов: повышение энергоэффективности, возобновляемые источники, в том числе ветер и солнце, и атомная энергетика. Атомную энергетику следует рассматривать среди возможных решений.\n\nБудущие технологии могут дать больше, включая энергию для активного удаления углекислого газа. Среди примеров — новые виды биотоплива, получение солнечной энергии в космосе и термоядерный синтез. При горизонте до 2100 года, по мнению автора, почти наверняка появятся технологии, позволяющие обеспечить всех чистой, дешёвой и доступной в больших объёмах энергией. Продолжение на следующей странице.",
+      "links": [],
+      "media_ids": []
+    },
+    {
+      "id": "page-10",
+      "type": "article_body",
+      "heading": "Page 10",
+      "body": "technology needed to provide clean, cheap, and abundant energy to all.\n\nInspire Your Audience to Action: Think about two possible futures:\n1. Status quo, in which we will suffer severe consequences from global warming.\n2. Rapid action, leading us to a post-global warming world.\n\nWrite a letter to your grandchildren that will be sealed in a time capsule for 50 years. What will they think of the actions you took today?\n\nResources:\n\nFor college students: Sections on global warming in my textbooks on astronomy (The Cosmic Perspective) and astrobiology (Life in the Universe).\n\nFor the public: A Global Warming Primer, posted freely at globalwarmingprimer.com\n\nFor middle/high school: free Earth/Space Science curriculum posted at grade8science.com; Chapter 7 focuses on climate change.\n\nFor kids: The Wizard Who Saved the World, more info at bigkidscience.com/wizard.\n\nFree Totality app for solar eclipses includes section on global warming; more info and download links at bigkidscience.com/eclipse\n\nScale model solar systems provide a great way to help people obtain a \"cosmic perspective\" on our planet and also to understand many ideas of global warming. Available now to communities around the world. Information at voyagesolarsystem. org.\n\nComparing the Climates of Earth, Mars, and Venus - Educational Takeaways\n\nSpeaker: William H. Waller, IAU/OAE/US-NAEC, Endicott College and The Galactic Inquirer, USA\n\nBy comparing the atmospheres and climates of Earth, Venus and Mars, | have found a quantitative warming relation that scales with the 0.3 power of the carbon dioxide mass overlying each square meter of planetary surface. This relation is consistent with the more recent warming experienced on Earth due to human activities. Although the atmospheric photo-chemistry that underlies the observed warming is complex, K-12 students can still progress in their learning D from basic observations of rising temperatures and carbon dioxide levels to plotting quantitative relations, interpreting their significance, and deliberating over possible human interventions.\n\nTalk link: https: //youtu.be/gq2LjmfrpPg\n\n10",
+      "heading_ru": "Страница 10",
+      "body_ru": "Вдохновите слушателей действовать\n\nПредставьте два возможных будущих:\n\n1. Всё остаётся как есть, и мы сталкиваемся с тяжёлыми последствиями глобального потепления.\n2. Мы быстро действуем и приходим к миру, преодолевшему глобальное потепление.\n\nНапишите письмо своим внукам, которое запечатают в капсуле времени на 50 лет. Что они подумают о ваших сегодняшних поступках?\n\nРесурсы\n\n• Для студентов вузов: разделы о глобальном потеплении в учебниках автора по астрономии The Cosmic Perspective («Космический взгляд») и астробиологии Life in the Universe («Жизнь во Вселенной»).\n• Для широкой публики: введение A Global Warming Primer, бесплатный доступ на globalwarmingprimer.com.\n• Для средней и старшей школы: бесплатный курс о Земле и космосе на grade8science.com. Глава 7 посвящена изменению климата.\n• Для детей: The Wizard Who Saved the World («Волшебник, который спас мир»). Подробнее на bigkidscience.com/wizard.\n• Бесплатное приложение Totality о солнечных затмениях содержит раздел о глобальном потеплении. Информация и ссылки для скачивания: bigkidscience.com/eclipse.\n\nМасштабные модели Солнечной системы помогают увидеть Землю в космическом контексте и понять многие идеи, связанные с глобальным потеплением. Такие модели доступны сообществам из разных стран. Сведения на voyagesolarsystem.org.\n\nСравнение климата Земли, Марса и Венеры. Что можно использовать в обучении\n\nДокладчик: William H. Waller, МАС/OAE/US-NAEC, колледж Эндикотта и The Galactic Inquirer, США.\n\nСопоставив атмосферы и климат Земли, Венеры и Марса, я получил количественную зависимость. Потепление пропорционально массе атмосферного CO₂ над каждым квадратным метром поверхности планеты в степени 0,3. Эта зависимость согласуется с недавним антропогенным потеплением на Земле. Фотохимические процессы в атмосфере, лежащие в основе наблюдаемого потепления, сложны. Тем не менее школьники могут пройти путь от простых наблюдений за ростом температуры и концентрации углекислого газа до построения графиков количественных зависимостей, объяснения их смысла и обсуждения возможных мер.\n\nЗапись доклада: https://youtu.be/gq2LjmfrpPg",
+      "links": [
+        {
+          "url": "https://youtu.be/gq2LjmfrpPg",
+          "text": "https://youtu.be/gq2LjmfrpPg",
+          "text_ru": "https://youtu.be/gq2LjmfrpPg"
+        }
+      ],
+      "media_ids": [
+        "media:oae-pdf-earthasaplanet_mini_review-c2bbd342b7f15831f998",
+        "media:oae-pdf-earthasaplanet_mini_review-9e9ab7b6f479fd3c912f"
+      ]
+    },
+    {
+      "id": "page-11",
+      "type": "article_body",
+      "heading": "Page 11",
+      "body": "Planetary Greenhouse Effects\n\n_Mernss (C0, ory) k’ = 0.8804\n\nFigure 1: The relationship between percentile warming in Kelvins (relative to an atmosphere- free planet) and the surface density of atmospheric carbon dioxide for Earth, Mars, and Venus. Consideration of the warming produced by CO2 only yields a power-law relation with an exponent of about 0.3.\n\nThe signal has grown ever clearer. The Earth’s atmosphere, oceans, and land masses have warmed by 1.0° C (1.8° F) since pre-industrial times. Most of this warming has occurred over the past 50 years. The Intergovernmental Panel on Climate Change (IPCC) has concluded that human activities have prompted the bulk of this warming. The burning of fossil fuels, in particular, has increased the concentration of atmospheric carbon dioxide from 280 ppm in pre-industrial times to more than 400 ppm today - an augmentation of this greenhouse gas by more than 44 percent.\n\nBy comparing the climates of Earth, Venus, and Mars, | have considered the solar irradiation of these planets, the equilibrium temperatures that they would have without their atmospheres, and the temperatures that currently characterize their surfaces, due to the greenhouse gas warming produced by their atmospheres. Through these planetary comparisons, | conclude that warming by greenhouse gases has played an important role on all three planets. Moreover, the warming scales with the total amount of greenhouse gases in the respective atmospheres. By focusing on the carbon dioxide content, | have found a quantitative warming relation that scales with the 0.3 power of the carbon dioxide mass overlying each square meter of planetary surface (see Figure 1). This relation is consistent with the more recent warming experienced on Earth.\n\nAlthough the atmospheric photochemistry that underlies the observed warming is complex, K-12 students can still progress in their learning - from basic observations of rising temper- atures and carbon dioxide levels to plotting quantitative relations, interpreting their signifi- cance, and deliberating over possible human interventions. These remediations include de- carbonizing our energy production, industrial processes, and modes of transportation, along with sequestering the excess carbon dioxide by cultivating more trees, kelp beds, and other natural photosynthesizers. A 30-minute video presentation on this subject is available at https: //www. youtube. com/watch?v=nUqW8BGbcz0.\n\n11",
+      "heading_ru": "Страница 11",
+      "body_ru": "Парниковый эффект на планетах\n\nРис. 1. Зависимость относительного потепления, рассчитанного по температуре в кельвинах относительно планеты без атмосферы, от массы атмосферного CO₂ на единицу площади для Земли, Марса и Венеры. Если учитывать потепление только от CO₂, получается степенная зависимость с показателем около 0,3. На графике коэффициент детерминации R² = 0,8804.\n\nПризнаки потепления стали яснее. С доиндустриального времени атмосфера, океаны и суша Земли потеплели на 1,0 °C (1,8 °F). Большая часть этого потепления пришлась на последние 50 лет к моменту доклада. Межправительственная группа экспертов по изменению климата (МГЭИК) пришла к выводу, что основная часть потепления вызвана деятельностью человека. В частности, сжигание ископаемого топлива повысило концентрацию углекислого газа с 280 ppm в доиндустриальное время до более 400 ppm к моменту доклада, то есть более чем на 44%.\n\nЯ сравнил климат Земли, Венеры и Марса, учитывая поступающее солнечное излучение, равновесные температуры этих планет в отсутствие атмосферы и фактические температуры поверхности с учётом парникового эффекта. Из сравнения следует, что парниковые газы сыграли важную роль в потеплении на всех трёх планетах. Величина потепления зависит от общего содержания парниковых газов в атмосфере каждой планеты. Для CO₂ я получил зависимость потепления от массы атмосферного углекислого газа над каждым квадратным метром поверхности, возведённой в степень 0,3 (см. рис. 1). Эта зависимость согласуется с потеплением на Земле к моменту доклада.\n\nХотя атмосферная фотохимия наблюдаемого потепления сложна, школьники могут начать с наблюдений роста температуры и концентрации CO₂, а затем перейти к построению графиков, толкованию зависимостей и обсуждению возможных мер. К ним относятся сокращение углеродных выбросов в энергетике, промышленности и транспорте, а также связывание избытка CO₂ за счёт выращивания деревьев, восстановления зарослей ламинарии и поддержки других природных фотосинтезирующих организмов. На эту тему доступна 30-минутная видеопрезентация: https://www.youtube.com/watch?v=nUqW8BGbcz0",
+      "links": [
+        {
+          "url": "https://www.youtube.com/watch?v=nUqW8BGbcz0",
+          "text": "https://www.youtube.com/watch?v=nUqW8BGbcz0",
+          "text_ru": "https://www.youtube.com/watch?v=nUqW8BGbcz0"
+        }
+      ],
+      "media_ids": [
+        "media:oae-pdf-earthasaplanet_mini_review-d512fc3d2536631111cd"
+      ]
+    },
+    {
+      "id": "page-12",
+      "type": "article_body",
+      "heading": "Page 12",
+      "body": "POSTER CONTRIBUTIONS\n\nAstronomy Education and its Role in Saving the Environment\n\nPresenter: Hassan Baghbani, Iranian Teachers Astronomy Union, Iran\n\nCollaborators: Mahdi Rokni, Fatemeh Hasheminasab, Elham Rajaei, Ayda Rajaei, Mina Someilipour, Ameneh Jamali, Fatemeh Baghbani '.\n\nThe role of astronomy education in helping to preserve the environment Bushehr Teachers’ Astronomical Society has changed the way they look at the Earth by holding several astronomy courses for teachers and students in different cities of Bushehr province, so that instead of having a limited view, they can have a long-term view on preserving the environment. These trainings are the formation of the largest environmental protection groups in different cities of Bushehr province, which has been able to make the most successful examples of environmental protection in lran.The way it works is that after training teachers, they build environmental conservation teams in schools and teach students, and make students’ families more sensitive to environmental protection.\n\noe\n\nPoster link: https: //astro4edu. org/siw/p22\n\nITAU is the first interdisciplinary teacher union of Iran with teachers from elementary, secondary and high school, who work in astronomy and nature fields simultaneously.\n\nAfter many years of activities there are 20 active local groups of teachers and students in Bushehr and 9 more associations in other provinces of Iran. This association is busy with teaching the teachers and teacher-students, especially in underprivileged areas. Till now more than 2000 teachers have gained education in this field from this union. Also, about 10000 students annually participate in different activities and workshops in motivating the teachers and forming local and international teacher groups are some of the aims in different ways. Teaching astronomy and environment to the teachers of this union.\n\nThe result of proper training of teachers and their attention to environmental protection has led to the formation of the most important environmental defense movements in Bushehr province, in all of which it has been led and managed by teachers. For example, in 2016, prevented the establishment of a petrochemical plant in the middle of the abpaksh. Also in 2018 because resistance to the operation of a stone mine that caused the destruction of the Biramy Mountain and the water springs of the region was stopped, the leaders of that protest were teachers.\n\n‘www.skylian.org\n\n12",
+      "heading_ru": "Страница 12",
+      "body_ru": "Стендовые доклады\n\nРоль астрономического образования в охране окружающей среды\n\nДокладчик — Хасан Багбани, Иранский союз учителей астрономии (ITAU), Иран.\n\nСоавторы — Махди Рокни, Фатеме Хашеминасаб, Эльхам Раджаи, Айда Раджаи, Мина Сомейлипур, Амене Джамали и Фатеме Багбани.\n\nАстрономическое общество учителей Бушира провело курсы по астрономии для учителей и школьников из разных городов одноимённой провинции. Занятия помогли им по-новому взглянуть на Землю и увидеть, как важно заботиться об окружающей среде в долгосрочной перспективе. На основе этих курсов в разных городах Бушира возникли крупные природоохранные группы. Они реализовали ряд успешных природоохранных инициатив в Иране. Учителя после обучения создают в школах природоохранные команды, обучают детей и помогают их семьям внимательнее относиться к окружающей среде. Стендовый доклад доступен по ссылке на странице.\n\nITAU — первый междисциплинарный союз учителей Ирана, который объединяет педагогов начальной, средней и старшей школы, одновременно занимающихся астрономией и природой. За годы работы в Бушире появилось 20 действующих групп учителей и школьников, а в других провинциях — ещё девять объединений. Союз обучает учителей и студентов педагогических специальностей, особенно в районах с недостатком ресурсов. К моменту доклада такое обучение прошли более 2000 учителей, а в занятиях и семинарах ежегодно участвовало около 10 000 школьников. Союз обучает учителей астрономии и вопросам окружающей среды, помогает им сохранять мотивацию и создавать местные и международные учительские группы.\n\nПодготовка учителей и их внимание к охране природы привели к появлению важных экологических инициатив в провинции Бушир. Ими руководили педагоги. В 2016 году они предотвратили строительство нефтехимического завода в Абпахше. В 2018 году учителя возглавили протест против разработки каменного карьера, угрожавшего горе Бирам и местным источникам воды. Работы удалось остановить.\n\nСайт организации — www.skylian.org.\n\nСтраница 12.",
+      "links": [
+        {
+          "url": "https://astro4edu.org/siw/p22",
+          "text": "https://astro4edu.org/siw/p22",
+          "text_ru": "https://astro4edu.org/siw/p22"
+        },
+        {
+          "url": "http://www.skylian.org",
+          "text": "http://www.skylian.org",
+          "text_ru": "http://www.skylian.org"
+        }
+      ],
+      "media_ids": [
+        "media:oae-pdf-earthasaplanet_mini_review-ea4a9a7e031dfd594f36",
+        "media:oae-pdf-earthasaplanet_mini_review-a4bab73545e7c1cdd0bc",
+        "media:oae-pdf-earthasaplanet_mini_review-5d1e7f4e25c0e242fff9"
+      ]
+    },
+    {
+      "id": "page-13",
+      "type": "article_body",
+      "heading": "Page 13",
+      "body": "One of the other efforts of teachers to preserve the environment is Resistance against the destruction of Avicenna forest and the rescue of Nayband National Park from a tourist town and hotel construction that is still underway. The result of six years of efforts by these groups. Preventing the establishment of a petrochemical plant in the grove ,Three large mines in envi- ronmentally sensitive areas And so on. ITAU tried to correct the views of society as much as possible. In the first step: training in teamwork and holding joint programs will create a close friendship between peoples. Training And preventing excessive consumption, especially of vital elements such as water, has an important role in preventing poverty and migration.\n\nAccompanying the local community and protecting the environment and planting trees and pro-\n\ntecting animals are a great help to the environment. Self-knowledge and better understanding of themselves in the form of team projects will improve students’ view of future business.\n\n13",
+      "heading_ru": "Страница 13",
+      "body_ru": "Среди других природоохранных инициатив учителей — защита леса Авиценны от вырубки и борьба за сохранение национального парка Найбанд, которому угрожают строительство туристического города и гостиниц. На момент доклада эта работа продолжалась. За шесть лет группы предотвратили строительство нефтехимического завода в роще и открытие трёх крупных карьеров в экологически уязвимых районах.\n\nИранский союз учителей астрономии старался изменить общественное отношение к природе. Первый шаг — учить работать в команде и проводить совместные программы, чтобы укреплять связи между людьми. Обучение и сокращение чрезмерного потребления жизненно важных ресурсов, особенно воды, помогают предотвращать бедность и вынужденный переезд.\n\nРабота вместе с местными сообществами, защита природы, посадка деревьев и охрана животных приносят пользу окружающей среде. Командные проекты также помогают учащимся лучше узнать себя и яснее представить будущую профессиональную деятельность.\n\nСтраница 13.",
+      "links": [],
+      "media_ids": [
+        "media:oae-pdf-earthasaplanet_mini_review-5ed8397213485df6d66b"
+      ]
+    },
+    {
+      "id": "page-14",
+      "type": "article_body",
+      "heading": "Page 14",
+      "body": "DISCUSSION SUMMARY\n\nAfter the recorded talks, the session hosted a very lively round table with the speakers replying to the audience questions. Let me recap here some of the more interesting: \"How can we get governments to act now and cooperatively across the world for long-term solutions?\"; \"How can we go from awareness to action? In case, what kind of actions would you suggest to citizens?\"; \"Do we astronomers have to rethink our social role? Do we need to spread more curiosity, inspiration, and motivation?\"; \"Are we doing enough? How to do more?\".\n\nWhile replying to those questions, the round table participants agreed that we astronomers have a relevant role in spreading the knowledge, in education. We astronomers can help advance the public understanding of global warming. However, we must share that knowledge with a positive attitude. And it is a matter of using the right approach and leveraging on our inspirational role. Also, we should share the same wonder that we felt as kids, pondering on the Universe. Those sensations inspired us, motivated us, and ultimately also defined what we are as grown-ups. Introducing early kids to the cosmic perspective may help have better, more aware persons in the coming years.",
+      "heading_ru": "Страница 14",
+      "body_ru": "Итоги обсуждения\n\nПосле записанных выступлений состоялся оживлённый круглый стол, на котором докладчики отвечали на вопросы слушателей. Среди них были следующие вопросы.\n\n• Как побудить правительства действовать сейчас и совместно искать долгосрочные решения?\n• Как перейти от понимания проблемы к действию? Что могут сделать отдельные граждане?\n• Стоит ли астрономам переосмыслить свою общественную роль? Как пробуждать любопытство, вдохновение и желание действовать?\n• Достаточно ли мы делаем? Что ещё можно сделать?\n\nУчастники круглого стола согласились, что астрономы играют важную роль в распространении знаний и образовании. Мы можем помочь широкой аудитории понять глобальное потепление. Для этого важно говорить о теме конструктивно и опираться на нашу способность вдохновлять людей. Стоит делиться тем же чувством удивления, которое мы испытывали в детстве, размышляя о Вселенной. Оно нас вдохновляло, побуждало действовать и в конечном счёте во многом определило, кем мы стали. Если знакомить детей с космическим взглядом на Землю с раннего возраста, им может быть легче вырасти людьми, осознающими своё место в мире.",
+      "links": [],
+      "media_ids": [
+        "media:oae-pdf-earthasaplanet_mini_review-1c3235a57092fb771f91"
+      ]
+    },
+    {
+      "id": "page-15",
+      "type": "article_body",
+      "heading": "Page 15",
+      "body": "http://astro4edu.org @astro4edu",
+      "heading_ru": "Страница 15",
+      "body_ru": "http://astro4edu.org @astro4edu",
+      "links": [],
+      "media_ids": [
+        "media:oae-pdf-earthasaplanet_mini_review-116962379f276f82de9a",
+        "media:oae-pdf-earthasaplanet_mini_review-c7be67db3a23c1750a12",
+        "media:oae-pdf-earthasaplanet_mini_review-8b237217afba4b9b6f98",
+        "media:oae-pdf-earthasaplanet_mini_review-f46eb8ed0742632cb3df",
+        "media:oae-pdf-earthasaplanet_mini_review-b87f50a9881b00ffca47",
+        "media:oae-pdf-earthasaplanet_mini_review-8f2afe72ea99dfc678db",
+        "media:oae-pdf-earthasaplanet_mini_review-ea94a6c646ec43b0d837",
+        "media:oae-pdf-earthasaplanet_mini_review-a4c414601c471c7a72ee",
+        "media:oae-pdf-earthasaplanet_mini_review-91e149c0f6e500c447d0",
+        "media:oae-pdf-earthasaplanet_mini_review-aa85bc4c504970c1ec0d",
+        "media:oae-pdf-earthasaplanet_mini_review-4075d3495ea21852c1ab",
+        "media:oae-pdf-earthasaplanet_mini_review-6a3c7c8b665cf3967597",
+        "media:oae-pdf-earthasaplanet_mini_review-b0efec6ebd3102eb201a",
+        "media:oae-pdf-earthasaplanet_mini_review-bdc304ac39c73cd7dcca",
+        "media:oae-pdf-earthasaplanet_mini_review-27fd49ef1a2d4ae05b34",
+        "media:oae-pdf-earthasaplanet_mini_review-2ef13b1d6b0bc4fa0c0c",
+        "media:oae-pdf-earthasaplanet_mini_review-25243cd175d21c24ee82",
+        "media:oae-pdf-earthasaplanet_mini_review-3c62b8d4a7bfc8491396",
+        "media:oae-pdf-earthasaplanet_mini_review-70ae942da2c9dbbcb3a2",
+        "media:oae-pdf-earthasaplanet_mini_review-4d8ee199040aa09ea7e2",
+        "media:oae-pdf-earthasaplanet_mini_review-058177a18643248d5444",
+        "media:oae-pdf-earthasaplanet_mini_review-5471f59c4a15e136655b",
+        "media:oae-pdf-earthasaplanet_mini_review-7a33fb7331394ac32e12",
+        "media:oae-pdf-earthasaplanet_mini_review-a9b9a0b2f0cdac5f40b2",
+        "media:oae-pdf-earthasaplanet_mini_review-de5d7e5fc50b6502bb1e",
+        "media:oae-pdf-earthasaplanet_mini_review-22c1293e8c029397b525",
+        "media:oae-pdf-earthasaplanet_mini_review-0baf27d8ed1f858551aa"
+      ]
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Earth as a planet: Mini-Review",
+      "blocks": {
+        "page-1": {
+          "heading": "Page 1",
+          "body": "OAE Mini-Review\n\nEarth as a Planet\n\nPublications of the IAU Office of Astronomy for Education"
+        },
+        "page-2": {
+          "heading": "Page 2",
+          "body": "The following is a collection of summaries originally published in the proceedings of the 3rd Shaw-IAU workshop on Astronomy for Education held 12 - 15 October, 2021 as a virtual event. The workshop was organised by the [AU Office of Astronomy for Education. More details can be found on: https: //astro4edu. org/shaw-iau/3rd-s haw-iau-workshop/.\n\nSession Organiser: Dario del Moro.\n\nAuthors: Mike Simmons, George Miley, Jeffrey Bennett, William H. Waller, and Hassan Baghbani.\n\nCompiled & Edited by: Asmita Bhandare (Project lead), Giuliana Giobbi, Colm Larkin, Rebecca Sanderson, Eduardo Penteado, Niall Deacon, Gwen Sanderson, and Anna Sippel.\n\nThe IAU Office of Astronomy for Education (OAE) is hosted at Haus der Astronomie (HdA), managed by the Max Planck Institute for Astronomy. The OAE’s mission is to support and coordinate astronomy education by astronomy researchers and educators, aimed at primary or secondary schools worldwide. HdA’s hosting the OAE was made possible through the support of the German foundations Klaus Tschira Stiftung and Carl-Zeiss-Stiftung. The Shaw-IAU Workshops on Astronomy for Education are funded by the Shaw Prize Foundation.\n\nThe OAE is supported by a growing network of OAE Centers and OAE Nodes, collaborating to lead global projects developed within the network. The OAE Centers and Nodes are: the OAE Center China-Nanjing, hosted by the Beijing Planetarium (BJP); the OAE Center Cyprus, hosted by Cyprus Space Exploration Organization (CSEO); the OAE Center Egypt, hosted by the National Research Institute of Astronomy and Geophysics (NRIAG); the OAE Center India, hosted by the Inter-University Centre for Astronomy and Astrophysics (IUCAA); the OAE Center Italy, hosted by the National Institute for Astrophysics (INAF); the OAE Node Republic of Korea, hosted by the Korean Astronomical Society (KAS); OAE Node France at CY Cergy Paris University hosted by CY Cergy Paris University; and the OAE Node Nepal, hosted by the Nepal Astronomical Society (NASO)."
+        },
+        "page-3": {
+          "heading": "Page 3",
+          "body": "e Earth as a Planet\n\nSession organiser: Dario del Moro, Department of Physics, University of Rome Tor Vergata, OAE Center Italy, Italy\n\nSESSION\n\nApart from being the cradle of humankind, Earth is also the third planet of our Solar system. This allows us to apply the astronomer point of view to it, and this point of view is the leading topic of the \"Earth as Planet\" session. This point of view has at least two different declinations, which were both explored in the session: the source of the awareness that we are all \"under the same sky\", and the consciousness that the physical laws that apply here are the same as elsewhere, and therefore we can learn about our world by comparing it to the others planets.\n\nTo represent the first point of view, we had two talks by Mike Simmons and George Miley. They presented ideas and methods to convey this ‘cosmic awareness’ to inspire fraternity and motivate the young.\n\nFor the second point of view, strongly related to the climate change issue, we had two talks by Jeff Bennet and William Waller. They introduced ways to advance the public understanding of global warming, with a positive approach, leveraging on our inspirational role as scientists.\n\nOn October 13, 2021, actor William Shatner - Captain Kirk of the Enterprise - had his first real orbital flight experience. His first words after exiting the capsule? \"Everybody in the world needs to do this. Everybody in the world needs to see this.\" Once again, we went into space and came back with the awareness that this world is fragile and we should take care of it, together. To solve the problems, together."
+        },
+        "page-4": {
+          "heading": "Page 4",
+          "body": "TALK CONTRIBUTIONS\n\nAstronomy and the Overview Effect\n\nSpeaker: Mike Simmons, Affiliate Research Scientist, Blue Marble Space Institute of Science, USA\n\nUpon seeing Earth from space, astronauts often experience the overview effect, a profound shift in their understanding of Earth as a fragile oasis of interwoven and inseparable systems in the vastness of space. But fewer than 1000 of the Earth’s billions of inhabitants have had the opportunity to observe Earth as a planet among the stars first-hand. Astronomy gives us a way to bring the overview effect down to Earth, providing a sense of our traveling through space together. This planetary identity is essential if we are to solve the many problems of Spaceship Earth such as climate change, pandemics, and profound inequity. The overview effect, however it is experienced, is the key to advancing from \"us and them\" to \"we.\"\n\nTalk link: https: //youtu. be/KEbgV_HF tuo\n\nHumanity must rise above the earth, to the top of the atmosphere and beyond. For only then will we understand the world in which we live. - Socrates\n\nThe overview effect, coined by author Frank White in his book of the same name, is the cognitive shift experienced by many astronauts who see Earth from space. We all understand the planetary nature of Earth intellectually. Images from spacecraft, like Earthrise from Apollo 8 and the Pale Blue Dot from Voyager 1, have shown it to us. But we do not really internalize it as part of our existence. Like the Copernican perspective of the Solar System, it is something we know to be true, something we can prove and understand, but that we do not experience directly by seeing it for ourselves from outside. Astronauts on the International Space Station spend much of their spare time Earthgazing. The view of Earth changes constantly, and astronauts describe it as giving the impression of a dynamic, living organism. They describe Earth’s atmosphere as \"paper-thin\", the Earth as appearing fragile, and the dynamic systems of the planet as clearly interconnected. They often return with a new appreciation for the Earth as a planet, and for the connection between humanity and nature. While the lack of visible borders is often quoted as being an important aspect of the Overview Effect, there is much more to it. Astronauts also see Earth surrounded by stars, as a planet embedded in the immensity of the Universe. When asked about this, astronaut and astrophysicist Jeff Hoffman replied, \"You do, from that perspective, see the Earth as a planet. You see the Sun as a star. We see the Sun in a blue sky, but up there, you see the Sun in a black sky. So, yeah, you are seeing it from the cosmic perspective.\"\n\nThe nature of our dependence on each other is not new. R. Buckminster Fuller wrote, \"We are all astronauts on a little spaceship called Earth.\" Marshall McLuhan added, \"There are"
+        },
+        "page-5": {
+          "heading": "Page 5",
+          "body": "no passengers on Spaceship Earth, we are all crew.\" Observing Spaceship Earth from outside, experiencing the overview effect, the intellectual concept becomes reality. It is clear, tangible, palpable, even obvious. But fewer than 600 people have seen the Earth from space. Private flights and virtual reality will help bring the experience to a few more. What about the rest of humanity?\n\nThe answer is in the stars. Astronomers look into space from Earth, watching our motion among the planets and our place among the stars. When we see the Moon rising, we know others half a world away are watching it set. When we explore the cosmos with telescopes, we look out at our cosmic environment. We see that we are in space, orbiting the center of mass of the Milky Way galaxy along with billions of other stars. We see the immensity of the Universe and we understand that we are a part of it. Astronomers have a unique perspective, a cosmic perspective. While we do not leave Earth in body, we travel through our local and distant neighborhoods. We are familiar with planets and can see how the Earth is one. We experience what others do not. The passion to share that perspective with others - bringing our telescopes to the streets for people to see the Moon, planets, and more up close for themselves - is not just about sharing a hobby. It is sharing the cosmic perspective that reveals our planetary existence. Those first views of the cosmos through a telescope can be life-changing. Astronomy is the overview effect for those of us who will not make it into space. And it is available to everyone on Earth.\n\nAstronomy is more than a modern-day hobby. It has been a part of all cultures throughout time. There are astronomy enthusiasts everywhere, and sharing the special perspective they have gained is a passion unique to astronomy. The Blue Marble image taken from the Moon by Apollo 8 astronaut Bill Anders started a global movement of environmental awareness, including Earth Day. Anders said, \"We came all this way to explore the Moon, and the most important thing is that we discovered the Earth.\" The Pale Blue Dot image taken by Voyager 1 while six billion kilometers from the Sun shows us the Earth as, in Carl Sagan’s words, \"a very small stage in a vast cosmic arena.\" From space, Earth is not \"down there.\" It is \"out there\", like any other planet. This is a critical part of the overview effect experienced by astronauts. Astronomers understand it as well.\n\n| have found a special connectedness between astronomers around the world based on our common experiences. Our cultures may be different, but the practice of astronomy is the same. We share the same sky. We share that sky with our ancestors as well. We may have different myths about the sky and make different constellations, but even those are created for the same reasons. We feel connected with the stars. We always have. The community of astronomers is truly global, connected by something universal. We can - we must - share what we have with others. We hear \"We are all in this together\" all the time but even those who say it fail to act like it. The Overview Effect is a paradigm shift that engenders a true sense of interconnectedness and interdependence in the few who have experienced it. Astronomy is the overview effect for the rest of us. More on the overview effect at the Overview Institute website: www. overviewinstitute.org. Watch Overview, a short film on the overview effect by Planetary Collective: https: //vimeo.com/55073825. More details on the Center for Planetary Identity: https: //www.planetaryidentity.com/."
+        },
+        "page-6": {
+          "heading": "Page 6",
+          "body": "The \"Pale Blue Dot - Universe Awareness\" Programme for Very Young Children\n\nSpeaker: George Miley, Leiden Observatory, The Netherlands\n\n| This talk will demonstrate how exposing children to the wonders A of the Universe at an early age can inspire them and contribute uniquely to advancing several of the United Nations Sustainable Development Goals. | shall discuss the rationale for reaching out to ; Ain. children aged 5 to 10 and describe the use of such an approach N in the Pale Blue Dot - Universe Awareness project. UNAWE was Gaw initiated in 2005 with a main goal of stimulating a sense of global citizenship from a young age. It has since been implemented in\n\n=. =a eos aCe\n\n'\n\nof 40 more than 60 countries. Pale Blue Dot is building on Universe at , Awareness and will in addition focus on advancing each of the a teas SDGs, with a set of appropriate materials and modules.\n\nhe '\n\nisis ee\n\nTalk link: https: //youtu.be/Xwub8vHU4Bg\n\nExposing children to the wonders of the Universe at an early age can excite and inspire them and contribute uniquely to advancing several of the United Nations Sustainable Development Goals, particularly SDG4.7 - stimulating a sense of global citizenship.\n\nThe survival of our planet is threatened by many global dangers that can only be tackled by cultivating globalism and adopting a global approach. These dangers include human-induced climate change, pandemics, the risk of nuclear war, clashes between rival ethnic groups, in- creasing political polarization, and extreme nationalism. There is therefore a need to cultivate a sense of global citizenship, tolerance and solidarity throughout the world. Promoting a world view in young children at an age when their value systems are beginning to form is one of the most effective tools for doing this.\n\nThe strategy of targeting young children to promote the message of global citizenship derives from evidence that:\n\n1. Ages 5 - 8 are crucial in brain development and is a crucial period in the development of\nour value systems (Brierley & Barlow, 1994),\n\n2. Early childhood education contributes to global development (Samuelsson and Kaga, 2007,\nShonkoff, et al. 2007),\n\n3. The social effectiveness of education is greatest for the youngest children (multi-decadal\nstudy by Nobel Prize-winning economist James Heckman and colleagues (Heckman et al,\n2009).\n\nThis evidence was the rationale for initiating the Universe Awareness programme (UNAWE) and its follow-up project Pale Blue Dot-Universe Awareness (PBD-UNAWE). UNAWE was started by"
+        },
+        "page-7": {
+          "heading": "Page 7",
+          "body": "Leiden University in 2005 with the main goal of stimulating a sense of global citizenship from a young age. It has since been implemented in more than 60 countries, and was the basis for two projects funded by the European Research Council (e.g. EU-UNAWE Team, 2015). \"Pale Blue Dot\" (PBD-UNAWE), founded in 2018, builds on Universe Awareness and also focuses on advancing several of the UN Sustainable Development Goals, in addition to SDG 4.7 on globalism.\n\nThe philosophy of PBD-UNAWE is encapsulated in three quotations by Carl Sagan:\n\n1. \"Fanatical ethnic or national chauvinisme are difficult to maintain when we see our planet\nas a fragile blue crescent fading to become an inconspicuous point of light against the\nbastion and citadel of the stars.\" (SDG 6 - Peace).\n\n2. \"Look again at that dot. That is here. That is home. That is us. It makes clear our\nresponsibility to deal kindly with one another, and preserve and appreciate the pale blue\ndot\" (SDG 13 - Climate).\n\n3. \"| wanted to be a scientist since my earliest school days. The crystallizing moment came\nwhen | first caught on, that stars are mighty suns, and how staggeringly far away they\nmust be to appear to us as mere bright spots.\" (SDG 4 - Education).\n\nA set of new materials and teaching modules for PBD-UNAWE is being developed by Cecilia Scorza at Munich, who is organizing a pilot project in 5 countries, together with local educators and astronomers. Pale Blue Dot has been adopted as a \"flagship\" project by the IAU OAD in Cape Town and is being managed by the IAU European Office of Astronomy for Development in Leiden. It is planned to translate the materials into several languages and cultures and to develop and distribute accompanying training tools for teachers.\n\nIn September 2020, during the 75th anniversary of the founding of the United Nations, the\nIAU European Regional Office of Astronomy for Development held a virtual UN GA75 Dialogue\non \"Astronomy for Global Citizenship\" (https: //astro4dev.eu/images/main/Dialogu\ne_summary.pdf). The speakers included South African Minister of International Relations\nand Cooperation, Grace Naledi Pandor. All participants, including Minister Pandor, strongly\nsupported the concluding statement of the Dialogue that was subsequently communicated\nto the UN Secretary General: \"Before they are 10 years old, every child should be introduced\nto pictures of our tiny earth from space and the inspiring notion that we all together inhabit\na tiny planet in a vast wonderful universe. This will help foster their sense of belonging to a\ncommon humanity (SDG 4.7), encourage them to respect and protect the environment (SDG\n13) and advance the cause of peace (SDG 16)\"\n\nIn summary, stimulating a sense of globalism among all people is crucially important for the survival of our planet and targeting young children with programmes such as PBD-UNAWE is one of the most effective methods of doing this. There is a great need to support such efforts. We hope to build up PBD-UNAWE gradually - first with the 5-country pilot project and gradually increase the scope of the project until the above UN Dialogue resolution can be implemented.\n\n| am deeply grateful to the many gifted people who contributed enormously to this project over the years. They include but are not limited to: Mahbobah Ahmadi, Kevin Govender, Carolina Odman, Premana Premadi, Rosa Ros, Teresa Riera, Pedro Russo, Cecilia Scorza, and Michelle"
+        },
+        "page-8": {
+          "heading": "Page 8",
+          "body": "Willebrands (in alphabetical order).\n\nReferences:\n\nBrierley and Barlow, \"Give me a child until they are 7\", Brain Studies and Early Childhood Education, 2nd Ed. (1994)\n\nEU-UNAWE Team, Final Report Summary. Building on the International Year of Astronomy: Making young children aware of the Universe, Cordis EU Research Results, (2015), https: //cordis.europa. eu/project/id/263239/reporting\n\nHeckman et al., Rate of Return to the High/Scope Perry Preschool Program, NBER Working Paper 15471 and references therein (2009),\n\nSamuelsson and Kaga Eds., Proc. Conf. \"Contribution of early childhood education to a sustainable society\" UNESCO digital publications (2007)\n\nShonkoff, J.P, Chair, et al. 2007, The Science of Early Childhood Development, National Sci- ence Council on the developing child, Center on the Developing Child, Harvard University\n\n(2007)\n\nAstronomers’ Role in Climate Education Speaker: Jeffrey Bennett, Big Kid Science / U. Colorado (Boulder), USA\n\nYou may think of climate science as distinct from astronomy, but the differences are not so important to the public. Both disciplines use the same basic physics, and many aspects of climate science come from astronomy (e.g., Venus). In this presentation, | will focus on why the public popularity of astronomy gives us a unique platform for advancing public understanding of global warming. | will emphasize the importance of approaching the topic ‘with inspiration, not fear’, providing concrete examples of strategies for audiences ranging from school kids to the general public. Note: Many of the examples will be drawn from my book A Global Warming Primer, posted free online at globalwarmingprimer.com, and my free middle school climate curriculum (bigkidscience.com/climatechange).\n\nTalk link: https: //youtu. be/gtq3ERLCaB4\n\nGlobal Warming Communication — Why Astronomers?: We are scientists. We may think of climate science as distinct from astronomy, but the differences are not so important to the"
+        },
+        "page-9": {
+          "heading": "Page 9",
+          "body": "public. It is \"our\" topic. Many of the key topics in climate science are also part of astronomy. For example, Venus and planetary science, Radiative transfer and the greenhouse effect, The Sun and its effects on Earth, Relevance to astrobiology, SETI, etc. Public interest in astronomy gives us credibility with the public. For those teaching college courses on introduction to astronomy/astrobiology, your class may be the only place where your students will learn about the science of global warming.\n\nGeneral Principles for Climate Communication: Maintain \"radical civility\" (as discussed by Travis Rector), which essentially means being respectful to your audience, even to those who may seem unreasonable to us. Be sure you always focus not only on science and consequences, but also on solutions, so that we are showing that there is indeed hope. Going along with that, your focus should be on inspiration not fear. This is a bit subtle, since global warming is scary, but keep focus on the fact that it is also solvable and our goal is therefore to inspire the action that will create the kind of world in which we will all want to live.\n\nWhat is the \"Future\"?: Most people tend to think in horizons no more than a few years, and media discussions of climate change rarely go beyond about 2050. But, many or most of today’s kids - and your kids/grand kids - are likely to still be living in the year 2100 and beyond. So it is important to focus on that longer time horizon.\n\nDiscussing the Science: \"Global Warming 1-2-3\": The climate is complex, but the basic science of global warming is actually as simple as \"1-2-3\":\n\n1. FACT: Carbon dioxide (and other greenhouse gasses) makes Earth warmer than it would be\notherwise (and the more there is, the warmer it becomes).\n\n2. FACT: Use of fossil fuels (coal/oil/gas) is adding carbon dioxide to the atmosphere.\n\n3. CONCLUSION: We expect global warming to occur.\n\nAnd the data confirm that global warming is happening as the 1-2-3 science predicts.\n\nDiscussing the Consequences: There are many consequences, but | find it useful to separate them into five major categories:\n\n1. Regional climate change\n\n2. Increase in storms and extreme weather\n\n3. Melting of Sea Ice\n\n4. Rising Sea Level\n\n5. Ocean acidification\n\nDiscussing the Solutions: Two basic steps to creating a \"post-global warming world\":\n\n1. Stop making the problem worse, which means stop adding greenhouse gas to the atmosphere.\n2. Find a way (e.g., future technology) to bring the CO2 level back to something more reasonable,\nsuch as 350 ppm.\n\nThe first step requires replacing fossil fuels with other energy sources, and we already have three existing technologies that could allow us to still have just as much energy without causing further greenhouse emissions: Energy efficiency, renewables (wind, solar, etc.) and nuclear - must remain on the table as one of the potential solutions for global warming. Future technologies could do far more, including providing the energy needed for active carbon dioxide removal. For example, advanced biofuels, solar energy from space, nuclear fusion. And given a time horizon looking toward the year 2100, it seems almost inevitable that, by then, we will have the"
+        },
+        "page-10": {
+          "heading": "Page 10",
+          "body": "technology needed to provide clean, cheap, and abundant energy to all.\n\nInspire Your Audience to Action: Think about two possible futures:\n1. Status quo, in which we will suffer severe consequences from global warming.\n2. Rapid action, leading us to a post-global warming world.\n\nWrite a letter to your grandchildren that will be sealed in a time capsule for 50 years. What will they think of the actions you took today?\n\nResources:\n\nFor college students: Sections on global warming in my textbooks on astronomy (The Cosmic Perspective) and astrobiology (Life in the Universe).\n\nFor the public: A Global Warming Primer, posted freely at globalwarmingprimer.com\n\nFor middle/high school: free Earth/Space Science curriculum posted at grade8science.com; Chapter 7 focuses on climate change.\n\nFor kids: The Wizard Who Saved the World, more info at bigkidscience.com/wizard.\n\nFree Totality app for solar eclipses includes section on global warming; more info and download links at bigkidscience.com/eclipse\n\nScale model solar systems provide a great way to help people obtain a \"cosmic perspective\" on our planet and also to understand many ideas of global warming. Available now to communities around the world. Information at voyagesolarsystem. org.\n\nComparing the Climates of Earth, Mars, and Venus - Educational Takeaways\n\nSpeaker: William H. Waller, IAU/OAE/US-NAEC, Endicott College and The Galactic Inquirer, USA\n\nBy comparing the atmospheres and climates of Earth, Venus and Mars, | have found a quantitative warming relation that scales with the 0.3 power of the carbon dioxide mass overlying each square meter of planetary surface. This relation is consistent with the more recent warming experienced on Earth due to human activities. Although the atmospheric photo-chemistry that underlies the observed warming is complex, K-12 students can still progress in their learning D from basic observations of rising temperatures and carbon dioxide levels to plotting quantitative relations, interpreting their significance, and deliberating over possible human interventions.\n\nTalk link: https: //youtu.be/gq2LjmfrpPg\n\n10"
+        },
+        "page-11": {
+          "heading": "Page 11",
+          "body": "Planetary Greenhouse Effects\n\n_Mernss (C0, ory) k’ = 0.8804\n\nFigure 1: The relationship between percentile warming in Kelvins (relative to an atmosphere- free planet) and the surface density of atmospheric carbon dioxide for Earth, Mars, and Venus. Consideration of the warming produced by CO2 only yields a power-law relation with an exponent of about 0.3.\n\nThe signal has grown ever clearer. The Earth’s atmosphere, oceans, and land masses have warmed by 1.0° C (1.8° F) since pre-industrial times. Most of this warming has occurred over the past 50 years. The Intergovernmental Panel on Climate Change (IPCC) has concluded that human activities have prompted the bulk of this warming. The burning of fossil fuels, in particular, has increased the concentration of atmospheric carbon dioxide from 280 ppm in pre-industrial times to more than 400 ppm today - an augmentation of this greenhouse gas by more than 44 percent.\n\nBy comparing the climates of Earth, Venus, and Mars, | have considered the solar irradiation of these planets, the equilibrium temperatures that they would have without their atmospheres, and the temperatures that currently characterize their surfaces, due to the greenhouse gas warming produced by their atmospheres. Through these planetary comparisons, | conclude that warming by greenhouse gases has played an important role on all three planets. Moreover, the warming scales with the total amount of greenhouse gases in the respective atmospheres. By focusing on the carbon dioxide content, | have found a quantitative warming relation that scales with the 0.3 power of the carbon dioxide mass overlying each square meter of planetary surface (see Figure 1). This relation is consistent with the more recent warming experienced on Earth.\n\nAlthough the atmospheric photochemistry that underlies the observed warming is complex, K-12 students can still progress in their learning - from basic observations of rising temper- atures and carbon dioxide levels to plotting quantitative relations, interpreting their signifi- cance, and deliberating over possible human interventions. These remediations include de- carbonizing our energy production, industrial processes, and modes of transportation, along with sequestering the excess carbon dioxide by cultivating more trees, kelp beds, and other natural photosynthesizers. A 30-minute video presentation on this subject is available at https: //www. youtube. com/watch?v=nUqW8BGbcz0.\n\n11"
+        },
+        "page-12": {
+          "heading": "Page 12",
+          "body": "POSTER CONTRIBUTIONS\n\nAstronomy Education and its Role in Saving the Environment\n\nPresenter: Hassan Baghbani, Iranian Teachers Astronomy Union, Iran\n\nCollaborators: Mahdi Rokni, Fatemeh Hasheminasab, Elham Rajaei, Ayda Rajaei, Mina Someilipour, Ameneh Jamali, Fatemeh Baghbani '.\n\nThe role of astronomy education in helping to preserve the environment Bushehr Teachers’ Astronomical Society has changed the way they look at the Earth by holding several astronomy courses for teachers and students in different cities of Bushehr province, so that instead of having a limited view, they can have a long-term view on preserving the environment. These trainings are the formation of the largest environmental protection groups in different cities of Bushehr province, which has been able to make the most successful examples of environmental protection in lran.The way it works is that after training teachers, they build environmental conservation teams in schools and teach students, and make students’ families more sensitive to environmental protection.\n\noe\n\nPoster link: https: //astro4edu. org/siw/p22\n\nITAU is the first interdisciplinary teacher union of Iran with teachers from elementary, secondary and high school, who work in astronomy and nature fields simultaneously.\n\nAfter many years of activities there are 20 active local groups of teachers and students in Bushehr and 9 more associations in other provinces of Iran. This association is busy with teaching the teachers and teacher-students, especially in underprivileged areas. Till now more than 2000 teachers have gained education in this field from this union. Also, about 10000 students annually participate in different activities and workshops in motivating the teachers and forming local and international teacher groups are some of the aims in different ways. Teaching astronomy and environment to the teachers of this union.\n\nThe result of proper training of teachers and their attention to environmental protection has led to the formation of the most important environmental defense movements in Bushehr province, in all of which it has been led and managed by teachers. For example, in 2016, prevented the establishment of a petrochemical plant in the middle of the abpaksh. Also in 2018 because resistance to the operation of a stone mine that caused the destruction of the Biramy Mountain and the water springs of the region was stopped, the leaders of that protest were teachers.\n\n‘www.skylian.org\n\n12"
+        },
+        "page-13": {
+          "heading": "Page 13",
+          "body": "One of the other efforts of teachers to preserve the environment is Resistance against the destruction of Avicenna forest and the rescue of Nayband National Park from a tourist town and hotel construction that is still underway. The result of six years of efforts by these groups. Preventing the establishment of a petrochemical plant in the grove ,Three large mines in envi- ronmentally sensitive areas And so on. ITAU tried to correct the views of society as much as possible. In the first step: training in teamwork and holding joint programs will create a close friendship between peoples. Training And preventing excessive consumption, especially of vital elements such as water, has an important role in preventing poverty and migration.\n\nAccompanying the local community and protecting the environment and planting trees and pro-\n\ntecting animals are a great help to the environment. Self-knowledge and better understanding of themselves in the form of team projects will improve students’ view of future business.\n\n13"
+        },
+        "page-14": {
+          "heading": "Page 14",
+          "body": "DISCUSSION SUMMARY\n\nAfter the recorded talks, the session hosted a very lively round table with the speakers replying to the audience questions. Let me recap here some of the more interesting: \"How can we get governments to act now and cooperatively across the world for long-term solutions?\"; \"How can we go from awareness to action? In case, what kind of actions would you suggest to citizens?\"; \"Do we astronomers have to rethink our social role? Do we need to spread more curiosity, inspiration, and motivation?\"; \"Are we doing enough? How to do more?\".\n\nWhile replying to those questions, the round table participants agreed that we astronomers have a relevant role in spreading the knowledge, in education. We astronomers can help advance the public understanding of global warming. However, we must share that knowledge with a positive attitude. And it is a matter of using the right approach and leveraging on our inspirational role. Also, we should share the same wonder that we felt as kids, pondering on the Universe. Those sensations inspired us, motivated us, and ultimately also defined what we are as grown-ups. Introducing early kids to the cosmic perspective may help have better, more aware persons in the coming years."
+        },
+        "page-15": {
+          "heading": "Page 15",
+          "body": "http://astro4edu.org @astro4edu"
+        }
+      }
+    },
+    "ru": {
+      "title": "Земля как планета: мини-обзор",
+      "blocks": {
+        "page-1": {
+          "heading": "Страница 1",
+          "body": "Мини-обзор OAE\n\nЗемля как планета\n\nИздания Офиса астрономии для образования Международного астрономического союза"
+        },
+        "page-2": {
+          "heading": "Страница 2",
+          "body": "Здесь собраны краткие изложения докладов, впервые опубликованные в трудах 3-го семинара Шоу и МАС по астрономическому образованию. Семинар прошёл онлайн с 12 по 15 октября 2021 года. Его организовал Офис астрономии для образования Международного астрономического союза. Подробнее об этом семинаре — https://astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/.\n\nОрганизатор секции — Dario del Moro.\n\nАвторы — Mike Simmons, George Miley, Jeffrey Bennett, William H. Waller и Hassan Baghbani.\n\nСоставление и редактура — Asmita Bhandare (руководитель проекта), Giuliana Giobbi, Colm Larkin, Rebecca Sanderson, Eduardo Penteado, Niall Deacon, Gwen Sanderson и Anna Sippel.\n\nОфис астрономии для образования МАС (OAE) работает на базе Дома астрономии (Haus der Astronomie, HdA), которым управляет Институт астрономии Общества Макса Планка. Офис помогает астрономам и педагогам преподавать астрономию в начальных и средних школах по всему миру и координирует их работу. Разместить OAE в Доме астрономии помогли немецкие фонды Klaus Tschira Stiftung и Carl-Zeiss-Stiftung. Семинары Шоу и МАС по астрономическому образованию финансирует Фонд премии Шоу.\n\nOAE поддерживает растущая сеть центров и узлов, которые совместно ведут международные проекты. Центр OAE в Нанкине (Китай) работает на базе Пекинского планетария (BJP), центр на Кипре — Кипрской организации космических исследований (CSEO), центр в Египте — Национального исследовательского института астрономии и геофизики (NRIAG), центр в Индии — Межуниверситетского центра астрономии и астрофизики (IUCAA), центр в Италии — Национального института астрофизики (INAF). Узел OAE в Республике Корея работает на базе Корейского астрономического общества (KAS), узел во Франции — Университета CY Cergy Paris, узел в Непале — Непальского астрономического общества (NASO)."
+        },
+        "page-3": {
+          "heading": "Страница 3",
+          "body": "Земля как планета\n\nОрганизатор секции — Дарио дель Моро, физический факультет Римского университета Тор Вергата и итальянский центр OAE.\n\nО секции\n\nЗемля — колыбель человечества и третья планета Солнечной системы. Рассмотреть её глазами астронома — главная задача секции «Земля как планета». У такого взгляда есть по меньшей мере две стороны. Во-первых, он помогает осознать, что все мы живём под одним небом. Во-вторых, на Земле действуют те же физические законы, что и в других местах. Значит, сравнение с другими планетами помогает понять наш собственный мир. На секции обсуждались обе стороны.\n\nМайк Симмонс и Джордж Майли рассказали, как объяснять эту связь с космосом, чтобы развивать чувство общности и заинтересовать молодёжь. Джефф Беннетт и Уильям Уоллер обсудили вторую сторону, тесно связанную с изменением климата. Они предложили, как помогать широкой аудитории понимать глобальное потепление, опираясь на способность учёных вдохновлять и говорить о конструктивных действиях.\n\n13 октября 2021 года Уильям Шетнер, сыгравший капитана Кирка звездолёта «Энтерпрайз», впервые полетел в космос. Полёт был суборбитальным. В английском тексте он назван орбитальным. Выйдя из капсулы, Шетнер сказал, что такой опыт и такой вид должны быть доступны каждому. Мы снова вернулись из космоса с пониманием, насколько хрупок наш мир и как важно заботиться о нём и решать его проблемы сообща."
+        },
+        "page-4": {
+          "heading": "Страница 4",
+          "body": "Доклады\n\nАстрономия и эффект обзора\n\nДокладчик — Майк Симмонс, ассоциированный исследователь Blue Marble Space Institute of Science, США.\n\nВзгляд на Землю из космоса нередко меняет мировосприятие астронавтов. Они видят Землю как хрупкий оазис посреди космоса, где все системы переплетены и зависят друг от друга. Это называют эффектом обзора. На момент доклада менее тысячи из миллиардов жителей Земли видели нашу планету среди звёзд собственными глазами. Астрономия помогает испытать эффект обзора с поверхности Земли и почувствовать, что все мы вместе путешествуем сквозь космос. Это ощущение принадлежности к одной планете важно для решения таких проблем, как изменение климата, пандемии и глубокое неравенство. Как бы люди ни испытали эффект обзора, он помогает перейти от разделения на «своих» и «чужих» к чувству общности.\n\nЗапись доклада доступна по ссылке на странице.\n\nДокладчик приводит высказывание, которое приписывают Сократу. Чтобы понять мир, в котором мы живём, человечеству нужно подняться над Землёй, до границы атмосферы и дальше.\n\nТермин «эффект обзора» ввёл в одноимённой книге Фрэнк Уайт. Так он назвал перемену восприятия у многих астронавтов, увидевших Землю из космоса. Мы и с Земли понимаем, что она планета. Нам знакомы снимки из космоса, например «Восход Земли» с «Аполлона-8» и «Бледно-голубая точка» с «Вояджера-1». Однако такое знание трудно сделать частью личного опыта. С гелиоцентрическим устройством Солнечной системы похожая ситуация: его можно понять и обосновать, а посмотреть на систему со стороны собственными глазами мы пока не можем.\n\nНа Международной космической станции астронавты много свободного времени проводят у иллюминаторов, глядя на Землю. Её вид постоянно меняется, и она напоминает им живой организм. Атмосфера кажется тонкой, как бумага, сама планета — хрупкой, а её динамические системы — явно взаимосвязанными. Астронавты часто возвращаются с новым пониманием того, что значит жить на планете и насколько человечество связано с природой. Среди причин эффекта обзора часто называют отсутствие видимых границ. Другая его сторона — вид Земли среди звёзд, как планеты в огромной Вселенной. По словам астронавта и астрофизика Джеффа Хоффмана, такой ракурс позволяет увидеть Землю как планету, а Солнце — как звезду. С Земли мы видим его на синем небе, а из космоса — на чёрном. Это и есть взгляд из космоса.\n\nЛюди давно говорят о том, насколько мы зависим друг от друга. Ричард Бакминстер Фуллер писал, что мы все астронавты на небольшом космическом корабле под названием Земля. Высказывание Маршалла Маклюэна приведено на следующей странице."
+        },
+        "page-5": {
+          "heading": "Страница 5",
+          "body": "«На космическом корабле Земля нет пассажиров: мы все члены экипажа». Когда смотришь на Землю со стороны и испытываешь эффект обзора, умозрительная идея становится реальностью, ясной, осязаемой и даже очевидной. Но Землю из космоса видели менее 600 человек. Частные полёты и виртуальная реальность позволят испытать это ещё нескольким людям. Как быть с остальным человечеством?\n\nОтвет подсказывают звёзды. Астрономы смотрят в космос с Земли, наблюдают наше движение среди планет и определяют наше место среди звёзд. Глядя на восход Луны, мы знаем, что на другой стороне Земли кто-то видит, как она заходит. Исследуя Вселенную в телескопы, мы знакомимся с нашим космическим окружением. Мы видим, что сами находимся в космосе и вместе с миллиардами звёзд обращаемся вокруг центра масс Млечного Пути. Мы видим огромную Вселенную и понимаем, что принадлежим ей.\n\nУ астрономов есть особый, космический взгляд на мир. Мы можем исследовать ближайшее окружение и далёкие области Вселенной, оставаясь на Земле. Мы знаем, что такое планеты, и видим, что Земля — одна из них. Мы испытываем то, что доступно не всем. Желание поделиться этим опытом побуждает нас выносить телескопы на улицы, чтобы люди сами увидели Луну, планеты и другие объекты. Так мы делимся взглядом на мир, который помогает ощутить, что мы живём на планете. Первые наблюдения в телескоп могут изменить жизнь. Для тех, кто не полетит в космос, астрономия даёт возможность испытать эффект обзора. Она доступна каждому на Земле.\n\nАстрономия сопровождала все культуры в разные эпохи. Любители астрономии есть повсюду и стремятся делиться своим особым взглядом на мир. Астронавт «Аполлона-8» Билл Андерс сделал снимок «Восход Земли» с орбиты Луны. В тексте статьи этому снимку дано название Blue Marble, которое относится к фотографии экипажа «Аполлона-17». Фотография помогла привлечь внимание людей к состоянию окружающей среды и дала толчок экологическим инициативам по всему миру, включая День Земли. Андерс сказал: «Мы проделали весь этот путь, чтобы исследовать Луну, а главным открытием оказалась Земля». На снимке «Бледная голубая точка», сделанном «Вояджером-1» в шести миллиардах километров от Солнца, Земля выглядит, по словам Карла Сагана, как «крошечная сцена на огромной космической арене». Из космоса Земля видна там, вдали, как любая другая планета. В этом важная часть эффекта обзора, который испытывают астронавты. Астрономы тоже понимают это чувство.\n\nЯ заметил особую связь между астрономами разных стран, основанную на общем опыте. Культуры могут различаться, но астрономические наблюдения везде одинаковы. Мы смотрим на то же небо, на которое смотрели наши предки. У нас могут быть разные мифы о небе и разные созвездия, но причины, по которым мы их создаём, одинаковы. Мы всегда чувствовали связь со звёздами. Сообщество астрономов по-настоящему глобально, и объединяет его то, что есть у всех. Мы можем и должны делиться этим опытом. Мы постоянно слышим, что все в одной лодке, однако даже те, кто это говорит, редко поступают соответственно. Эффект обзора меняет картину мира. Немногие, кому довелось его испытать, по-настоящему ощущают взаимосвязь и взаимозависимость. Остальным такой опыт может дать астрономия.\n\nСайт Overview Institute: www.overviewinstitute.org.\nКороткометражный фильм Overview студии Planetary Collective: https://vimeo.com/55073825\nЦентр планетарной идентичности: https://www.planetaryidentity.com/"
+        },
+        "page-6": {
+          "heading": "Страница 6",
+          "body": "«Бледно-голубая точка» и Universe Awareness — программа для детей младшего возраста\n\nДокладчик — Джордж Майли, Лейденская обсерватория, Нидерланды.\n\nВ докладе я расскажу, как знакомство с удивительными явлениями Вселенной в раннем возрасте может вдохновлять детей и помогать достижению нескольких Целей устойчивого развития ООН. Объясню, почему мы работаем с детьми от 5 до 10 лет, и расскажу, как этот подход используется в проекте «Бледно-голубая точка» и Universe Awareness. Программа Universe Awareness (UNAWE) началась в 2005 году. Её основная цель — с детства развивать чувство принадлежности к мировому сообществу. Программа действовала более чем в 60 странах. Проект «Бледно-голубая точка» продолжает её работу и дополнительно направлен на достижение Целей устойчивого развития. Для этого разрабатываются учебные материалы и модули. Доклад доступен по ссылке на странице.\n\nЗнакомство с Вселенной может увлечь и вдохновить детей уже в раннем возрасте и способствовать достижению нескольких Целей устойчивого развития ООН. В частности, задача 4.7 предусматривает воспитание гражданственности в глобальном масштабе.\n\nВыживанию нашей планеты угрожают глобальные опасности, с которыми можно справиться только сообща. Среди них антропогенное изменение климата, пандемии, риск ядерной войны, столкновения между этническими группами, усиление политической поляризации и крайних форм национализма. Поэтому нужно развивать чувство принадлежности к мировому сообществу, терпимость и солидарность. Один из самых действенных способов — открывать детям широкую картину мира в возрасте, когда их система ценностей только формируется.\n\nНа выбор этой возрастной группы повлияли следующие результаты исследований.\n\n1. Возраст 5–8 лет особенно важен для развития мозга и формирования системы ценностей (Brierley и Barlow, 1994).\n2. Дошкольное и начальное образование способствует глобальному развитию (Samuelsson и Kaga, 2007; Shonkoff и др., 2007).\n3. Наибольший общественный эффект образования проявляется у самых младших детей. К такому выводу пришёл нобелевский лауреат Джеймс Хекман с коллегами в исследовании, охватившем несколько десятилетий (Heckman и др., 2009).\n\nЭти данные послужили основанием для программы Universe Awareness (UNAWE) и её продолжения «Бледно-голубая точка» (PBD-UNAWE). Сведения о создании UNAWE продолжаются на следующей странице."
+        },
+        "page-7": {
+          "heading": "Страница 7",
+          "body": "Программу UNAWE основал Лейденский университет в 2005 году. Её главная цель — развивать чувство принадлежности к мировому сообществу с раннего возраста. С тех пор программу внедрили более чем в 60 странах. Она послужила основой двух проектов, которые финансировал Европейский исследовательский совет (например, EU-UNAWE Team, 2015). Проект «Бледно-голубая точка» (PBD-UNAWE) основан в 2018 году. Он продолжает Universe Awareness и, помимо глобального гражданства (задача 4.7), помогает достижению нескольких других Целей устойчивого развития ООН.\n\nФилософию проекта выражают три высказывания Карла Сагана.\n\n1. «Трудно сохранять фанатичный этнический или национальный шовинизм, когда видишь, как хрупкий голубой серп нашей планеты меркнет и становится едва заметной точкой света среди звёзд». ЦУР 16 — мир. В исходной подписи ошибочно указана ЦУР 6.\n2. «Взгляните на эту точку ещё раз. Это здесь. Это наш дом. Это мы. Становится ясно, что мы обязаны относиться друг к другу добрее, беречь и ценить эту бледно-голубую точку». ЦУР 13 — борьба с изменением климата.\n3. «Я хотел стать учёным с первых школьных лет. Решающим стал момент, когда я понял, что звёзды — это огромные солнца и как поразительно далеко они должны быть, чтобы казаться нам точками света». ЦУР 4 — образование.\n\nСесилия Скорца в Мюнхене разрабатывает новые учебные материалы и модули PBD-UNAWE и вместе с местными педагогами и астрономами организует пилотный проект в пяти странах. Офис астрономии для развития МАС в Кейптауне принял «Бледно-голубую точку» как один из своих основных проектов. Им управляет Европейский офис астрономии для развития МАС в Лейдене. Материалы планируют перевести на несколько языков, адаптировать к разным культурным контекстам, а также разработать и распространить средства подготовки учителей.\n\nВ сентябре 2020 года, в год 75-летия ООН, Европейский офис астрономии для развития МАС провёл виртуальный диалог ООН GA75 «Астрономия для глобального гражданства». Среди выступавших была министр международных отношений и сотрудничества ЮАР Грейс Наледи Пандор. Все участники, включая министра, поддержали итоговое заявление, переданное генеральному секретарю ООН. В нём предлагается до десяти лет показывать каждому ребёнку снимки Земли из космоса и знакомить его с мыслью, что мы все живём на крошечной планете в огромной Вселенной. Это помогает почувствовать принадлежность к единому человечеству (задача 4.7), побуждает уважать и охранять окружающую среду (ЦУР 13) и содействует миру (ЦУР 16).\n\nГлобальная солидарность необходима для выживания нашей планеты. Программы для детей младшего возраста, такие как PBD-UNAWE, — один из самых действенных способов её развивать. Подобным инициативам нужна поддержка. Мы рассчитываем начать с пилота в пяти странах и постепенно расширить проект, пока предложение диалога ООН не станет осуществимым.\n\nЯ благодарен всем, кто внёс большой вклад в проект. Среди них Махбобе Ахмади, Кевин Говендер, Каролина Одман, Премана Премади, Роса Рос, Тереса Риера, Педро Руссо, Сесилия Скорца и Мишель Виллебрандс."
+        },
+        "page-8": {
+          "heading": "Страница 8",
+          "body": "В предыдущем абзаце имена приведены в алфавитном порядке по фамилиям.\n\nЛитература\n\n• Brierley и Barlow. «Дайте мне ребёнка до 7 лет». Brain Studies and Early Childhood Education («Исследования мозга и дошкольное образование»), 2-е издание (1994).\n• EU-UNAWE Team. Краткий итоговый отчёт «В развитие Международного года астрономии: знакомство маленьких детей со Вселенной». Cordis EU Research Results (2015). https://cordis.europa.eu/project/id/263239/reporting\n• Heckman и соавторы. «Норма отдачи от дошкольной программы High/Scope Perry», рабочий доклад NBER № 15471 и указанные в нём источники (2009).\n• Samuelsson и Kaga (ред.). Материалы конференции «Вклад дошкольного образования в устойчивое общество», цифровые публикации ЮНЕСКО (2007).\n• Shonkoff, J. P. (председатель) и соавторы. «Наука о развитии в раннем детстве». Национальный научный совет по вопросам развития ребёнка и Центр развития ребёнка Гарвардского университета (2007).\n\nРоль астрономов в просвещении по вопросам климата\n\nДокладчик: Джеффри Беннетт, Big Kid Science и Университет Колорадо в Боулдере, США.\n\nКлиматологию можно считать отдельной от астрономии дисциплиной, но для широкой публики различия между ними не так важны. Обе опираются на одну и ту же базовую физику. Многие вопросы климатологии связаны с астрономией, например через изучение Венеры. В докладе я покажу, почему популярность астрономии позволяет нам по-особому помочь широкой аудитории понять глобальное потепление. Подчеркну важность подхода, который вдохновляет людей действовать, и приведу конкретные примеры для разных аудиторий, от школьников до широкой публики. Многие примеры взяты из моей книги «Введение в глобальное потепление», которая бесплатно доступна на globalwarmingprimer.com, и из бесплатной программы по климату для средней школы: bigkidscience.com/climatechange.\n\nЗапись доклада: https://youtu.be/gtq3ERLCaB4\n\nПочему о глобальном потеплении могут рассказывать астрономы? Мы учёные. Нам климатология и астрономия могут казаться отдельными дисциплинами, но аудитория воспринимает это иначе. Продолжение на следующей странице."
+        },
+        "page-9": {
+          "heading": "Страница 9",
+          "body": "Климат — тоже наша тема. Многие важные темы климатологии входят и в круг вопросов астрономии. Это, например, Венера и планетология, перенос излучения и парниковый эффект, влияние Солнца на Землю, связь с астробиологией и поиском внеземного разума (SETI). Интерес к астрономии помогает нам завоевать доверие аудитории. Для тех, кто ведёт вводный курс астрономии или астробиологии в вузе, он может оказаться единственным местом, где студенты узнают о научных основах глобального потепления.\n\nОбщие принципы разговора о климате\n\nПридерживайтесь принципа «радикальной вежливости», о котором говорит Трэвис Ректор. Уважайте слушателей, даже если их позиция кажется вам неразумной. Обсуждайте научные данные, последствия и возможные решения, чтобы показать, что выход есть. Старайтесь вдохновлять людей на действия. Это непросто: глобальное потепление пугает, но его можно смягчить. Цель — побудить людей к действиям, которые помогут создать мир, где им самим захочется жить.\n\nКакой горизонт считать будущим?\n\nБольшинство людей думают на несколько лет вперёд. В СМИ обсуждение изменения климата редко выходит за пределы 2050 года. При этом многие нынешние дети, в том числе ваши дети и внуки, вероятно, будут жить в 2100 году и позже. Поэтому важно говорить о более далёком будущем.\n\nНаучные основы. «Глобальное потепление в три шага»\n\nКлимат сложен, однако основу глобального потепления можно объяснить в три шага:\n\n1. Факт. Углекислый газ и другие парниковые газы делают Землю теплее. Чем их больше, тем она теплее.\n2. Факт. Использование ископаемого топлива, включая уголь, нефть и газ, добавляет углекислый газ в атмосферу.\n3. Вывод. Следует ожидать глобального потепления.\n\nДанные подтверждают, что потепление происходит, как и предсказывает эта схема.\n\nПоследствия\n\nАвтор выделяет пять основных групп:\n\n1. Региональные изменения климата.\n2. Учащение штормов и экстремальных явлений погоды.\n3. Таяние морского льда.\n4. Повышение уровня моря.\n5. Закисление океана.\n\nВозможные решения\n\nДва основных шага к миру после глобального потепления:\n\n1. Перестать усугублять проблему, то есть прекратить добавлять парниковые газы в атмосферу.\n2. Найти способ, например с помощью будущих технологий, вернуть концентрацию CO₂ к более приемлемому уровню, например 350 частей на миллион (ppm).\n\nДля первого шага нужно заменить ископаемое топливо другими источниками энергии. Уже есть три способа сохранить доступный объём энергии без дальнейших выбросов: повышение энергоэффективности, возобновляемые источники, в том числе ветер и солнце, и атомная энергетика. Атомную энергетику следует рассматривать среди возможных решений.\n\nБудущие технологии могут дать больше, включая энергию для активного удаления углекислого газа. Среди примеров — новые виды биотоплива, получение солнечной энергии в космосе и термоядерный синтез. При горизонте до 2100 года, по мнению автора, почти наверняка появятся технологии, позволяющие обеспечить всех чистой, дешёвой и доступной в больших объёмах энергией. Продолжение на следующей странице."
+        },
+        "page-10": {
+          "heading": "Страница 10",
+          "body": "Вдохновите слушателей действовать\n\nПредставьте два возможных будущих:\n\n1. Всё остаётся как есть, и мы сталкиваемся с тяжёлыми последствиями глобального потепления.\n2. Мы быстро действуем и приходим к миру, преодолевшему глобальное потепление.\n\nНапишите письмо своим внукам, которое запечатают в капсуле времени на 50 лет. Что они подумают о ваших сегодняшних поступках?\n\nРесурсы\n\n• Для студентов вузов: разделы о глобальном потеплении в учебниках автора по астрономии The Cosmic Perspective («Космический взгляд») и астробиологии Life in the Universe («Жизнь во Вселенной»).\n• Для широкой публики: введение A Global Warming Primer, бесплатный доступ на globalwarmingprimer.com.\n• Для средней и старшей школы: бесплатный курс о Земле и космосе на grade8science.com. Глава 7 посвящена изменению климата.\n• Для детей: The Wizard Who Saved the World («Волшебник, который спас мир»). Подробнее на bigkidscience.com/wizard.\n• Бесплатное приложение Totality о солнечных затмениях содержит раздел о глобальном потеплении. Информация и ссылки для скачивания: bigkidscience.com/eclipse.\n\nМасштабные модели Солнечной системы помогают увидеть Землю в космическом контексте и понять многие идеи, связанные с глобальным потеплением. Такие модели доступны сообществам из разных стран. Сведения на voyagesolarsystem.org.\n\nСравнение климата Земли, Марса и Венеры. Что можно использовать в обучении\n\nДокладчик: William H. Waller, МАС/OAE/US-NAEC, колледж Эндикотта и The Galactic Inquirer, США.\n\nСопоставив атмосферы и климат Земли, Венеры и Марса, я получил количественную зависимость. Потепление пропорционально массе атмосферного CO₂ над каждым квадратным метром поверхности планеты в степени 0,3. Эта зависимость согласуется с недавним антропогенным потеплением на Земле. Фотохимические процессы в атмосфере, лежащие в основе наблюдаемого потепления, сложны. Тем не менее школьники могут пройти путь от простых наблюдений за ростом температуры и концентрации углекислого газа до построения графиков количественных зависимостей, объяснения их смысла и обсуждения возможных мер.\n\nЗапись доклада: https://youtu.be/gq2LjmfrpPg"
+        },
+        "page-11": {
+          "heading": "Страница 11",
+          "body": "Парниковый эффект на планетах\n\nРис. 1. Зависимость относительного потепления, рассчитанного по температуре в кельвинах относительно планеты без атмосферы, от массы атмосферного CO₂ на единицу площади для Земли, Марса и Венеры. Если учитывать потепление только от CO₂, получается степенная зависимость с показателем около 0,3. На графике коэффициент детерминации R² = 0,8804.\n\nПризнаки потепления стали яснее. С доиндустриального времени атмосфера, океаны и суша Земли потеплели на 1,0 °C (1,8 °F). Большая часть этого потепления пришлась на последние 50 лет к моменту доклада. Межправительственная группа экспертов по изменению климата (МГЭИК) пришла к выводу, что основная часть потепления вызвана деятельностью человека. В частности, сжигание ископаемого топлива повысило концентрацию углекислого газа с 280 ppm в доиндустриальное время до более 400 ppm к моменту доклада, то есть более чем на 44%.\n\nЯ сравнил климат Земли, Венеры и Марса, учитывая поступающее солнечное излучение, равновесные температуры этих планет в отсутствие атмосферы и фактические температуры поверхности с учётом парникового эффекта. Из сравнения следует, что парниковые газы сыграли важную роль в потеплении на всех трёх планетах. Величина потепления зависит от общего содержания парниковых газов в атмосфере каждой планеты. Для CO₂ я получил зависимость потепления от массы атмосферного углекислого газа над каждым квадратным метром поверхности, возведённой в степень 0,3 (см. рис. 1). Эта зависимость согласуется с потеплением на Земле к моменту доклада.\n\nХотя атмосферная фотохимия наблюдаемого потепления сложна, школьники могут начать с наблюдений роста температуры и концентрации CO₂, а затем перейти к построению графиков, толкованию зависимостей и обсуждению возможных мер. К ним относятся сокращение углеродных выбросов в энергетике, промышленности и транспорте, а также связывание избытка CO₂ за счёт выращивания деревьев, восстановления зарослей ламинарии и поддержки других природных фотосинтезирующих организмов. На эту тему доступна 30-минутная видеопрезентация: https://www.youtube.com/watch?v=nUqW8BGbcz0"
+        },
+        "page-12": {
+          "heading": "Страница 12",
+          "body": "Стендовые доклады\n\nРоль астрономического образования в охране окружающей среды\n\nДокладчик — Хасан Багбани, Иранский союз учителей астрономии (ITAU), Иран.\n\nСоавторы — Махди Рокни, Фатеме Хашеминасаб, Эльхам Раджаи, Айда Раджаи, Мина Сомейлипур, Амене Джамали и Фатеме Багбани.\n\nАстрономическое общество учителей Бушира провело курсы по астрономии для учителей и школьников из разных городов одноимённой провинции. Занятия помогли им по-новому взглянуть на Землю и увидеть, как важно заботиться об окружающей среде в долгосрочной перспективе. На основе этих курсов в разных городах Бушира возникли крупные природоохранные группы. Они реализовали ряд успешных природоохранных инициатив в Иране. Учителя после обучения создают в школах природоохранные команды, обучают детей и помогают их семьям внимательнее относиться к окружающей среде. Стендовый доклад доступен по ссылке на странице.\n\nITAU — первый междисциплинарный союз учителей Ирана, который объединяет педагогов начальной, средней и старшей школы, одновременно занимающихся астрономией и природой. За годы работы в Бушире появилось 20 действующих групп учителей и школьников, а в других провинциях — ещё девять объединений. Союз обучает учителей и студентов педагогических специальностей, особенно в районах с недостатком ресурсов. К моменту доклада такое обучение прошли более 2000 учителей, а в занятиях и семинарах ежегодно участвовало около 10 000 школьников. Союз обучает учителей астрономии и вопросам окружающей среды, помогает им сохранять мотивацию и создавать местные и международные учительские группы.\n\nПодготовка учителей и их внимание к охране природы привели к появлению важных экологических инициатив в провинции Бушир. Ими руководили педагоги. В 2016 году они предотвратили строительство нефтехимического завода в Абпахше. В 2018 году учителя возглавили протест против разработки каменного карьера, угрожавшего горе Бирам и местным источникам воды. Работы удалось остановить.\n\nСайт организации — www.skylian.org.\n\nСтраница 12."
+        },
+        "page-13": {
+          "heading": "Страница 13",
+          "body": "Среди других природоохранных инициатив учителей — защита леса Авиценны от вырубки и борьба за сохранение национального парка Найбанд, которому угрожают строительство туристического города и гостиниц. На момент доклада эта работа продолжалась. За шесть лет группы предотвратили строительство нефтехимического завода в роще и открытие трёх крупных карьеров в экологически уязвимых районах.\n\nИранский союз учителей астрономии старался изменить общественное отношение к природе. Первый шаг — учить работать в команде и проводить совместные программы, чтобы укреплять связи между людьми. Обучение и сокращение чрезмерного потребления жизненно важных ресурсов, особенно воды, помогают предотвращать бедность и вынужденный переезд.\n\nРабота вместе с местными сообществами, защита природы, посадка деревьев и охрана животных приносят пользу окружающей среде. Командные проекты также помогают учащимся лучше узнать себя и яснее представить будущую профессиональную деятельность.\n\nСтраница 13."
+        },
+        "page-14": {
+          "heading": "Страница 14",
+          "body": "Итоги обсуждения\n\nПосле записанных выступлений состоялся оживлённый круглый стол, на котором докладчики отвечали на вопросы слушателей. Среди них были следующие вопросы.\n\n• Как побудить правительства действовать сейчас и совместно искать долгосрочные решения?\n• Как перейти от понимания проблемы к действию? Что могут сделать отдельные граждане?\n• Стоит ли астрономам переосмыслить свою общественную роль? Как пробуждать любопытство, вдохновение и желание действовать?\n• Достаточно ли мы делаем? Что ещё можно сделать?\n\nУчастники круглого стола согласились, что астрономы играют важную роль в распространении знаний и образовании. Мы можем помочь широкой аудитории понять глобальное потепление. Для этого важно говорить о теме конструктивно и опираться на нашу способность вдохновлять людей. Стоит делиться тем же чувством удивления, которое мы испытывали в детстве, размышляя о Вселенной. Оно нас вдохновляло, побуждало действовать и в конечном счёте во многом определило, кем мы стали. Если знакомить детей с космическим взглядом на Землю с раннего возраста, им может быть легче вырасти людьми, осознающими своё место в мире."
+        },
+        "page-15": {
+          "heading": "Страница 15",
+          "body": "http://astro4edu.org @astro4edu"
+        }
+      }
+    }
+  },
+  "media": [
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-cover",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/cover-earthasaplanet_mini_review.png",
+      "ru_path": "data/media/ru/oae-cover-earthasaplanet_mini_review.png",
+      "sha256": "59d3f755bf6aaead4bb91c53f458ae8d913cad71ce35dd7ab27416a0dce853ef",
+      "ru_sha256": "3eb65637a29707859175e3c8fd413a2f77de81dbf63df4e0d100097d33c37930",
+      "size": 635053,
+      "alt_en": "OAE Mini-Review. Earth as a Planet. Publications of the IAU Office of Astronomy for Education.",
+      "alt_ru": "Мини-обзор OAE. Земля как планета. Издания Управления астрономического образования МАС.",
+      "title_en": "",
+      "title_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "credit": "IAU Office of Astronomy for Education",
+      "credit_url": null,
+      "license": null,
+      "license_url": null,
+      "source_language": "en",
+      "component_ids": [
+        "media:oae-pdf-earthasaplanet_mini_review-daa4f3b939d6a5d50788",
+        "media:oae-pdf-earthasaplanet_mini_review-dc03fc3121750665e938",
+        "media:oae-pdf-earthasaplanet_mini_review-e83ee8af005b3d78db77",
+        "media:oae-pdf-earthasaplanet_mini_review-33d8af68c9a4714cafc4",
+        "media:oae-pdf-earthasaplanet_mini_review-6986400f2baa4c8f46bb",
+        "media:oae-pdf-earthasaplanet_mini_review-97c1ae95a53c0c16229d",
+        "media:oae-pdf-earthasaplanet_mini_review-69319fea3fc9e9e2241c",
+        "media:oae-pdf-earthasaplanet_mini_review-13b0a3de7f6647c24d21",
+        "media:oae-pdf-earthasaplanet_mini_review-db3a2056d45d8b45bfdd",
+        "media:oae-pdf-earthasaplanet_mini_review-205237af2dc11a853e3e",
+        "media:oae-pdf-earthasaplanet_mini_review-a9f665c7987b086878fd",
+        "media:oae-pdf-earthasaplanet_mini_review-aea6f9e599eaaa00009c",
+        "media:oae-pdf-earthasaplanet_mini_review-7364f920765131e5a9a7",
+        "media:oae-pdf-earthasaplanet_mini_review-1bb1d778ed9e4c2e0a75",
+        "media:oae-pdf-earthasaplanet_mini_review-78ab8239eb7d313c7381",
+        "media:oae-pdf-earthasaplanet_mini_review-4c342b794022835bbed9",
+        "media:oae-pdf-earthasaplanet_mini_review-a86fc953b7b40c4fd90c",
+        "media:oae-pdf-earthasaplanet_mini_review-23c47344fd13c4aeb01c",
+        "media:oae-pdf-earthasaplanet_mini_review-15ce59603eb2f16ad177",
+        "media:oae-pdf-earthasaplanet_mini_review-058177a18643248d5444",
+        "media:oae-pdf-earthasaplanet_mini_review-3c62b8d4a7bfc8491396",
+        "media:oae-pdf-earthasaplanet_mini_review-5b2d716d07d37acbd349",
+        "media:oae-pdf-earthasaplanet_mini_review-4bc200fe04bdcda5c18d",
+        "media:oae-pdf-earthasaplanet_mini_review-65a35a84887a25acec53",
+        "media:oae-pdf-earthasaplanet_mini_review-10a60f73640e06348aa2",
+        "media:oae-pdf-earthasaplanet_mini_review-6a7a8616a3d58ca48989",
+        "media:oae-pdf-earthasaplanet_mini_review-fc304fe81648bc7c9b09"
+      ],
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-daa4f3b939d6a5d50788",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/daa4f3b939d6a5d507880c6c0a674db98f26df709a1f3f2213f5f51fd33eb09d.png",
+      "sha256": "daa4f3b939d6a5d507880c6c0a674db98f26df709a1f3f2213f5f51fd33eb09d",
+      "size": 1065,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-dc03fc3121750665e938",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/dc03fc3121750665e93874a65f67050f9dc3f7e378405ab60a71ae15b2514cd9.png",
+      "sha256": "dc03fc3121750665e93874a65f67050f9dc3f7e378405ab60a71ae15b2514cd9",
+      "size": 2186,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-e83ee8af005b3d78db77",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/e83ee8af005b3d78db7733875984009ee01c70b56418a7816a1900bed8522668.png",
+      "sha256": "e83ee8af005b3d78db7733875984009ee01c70b56418a7816a1900bed8522668",
+      "size": 1045,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-33d8af68c9a4714cafc4",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/33d8af68c9a4714cafc41635fea11f47f0fc93af9fb9ebfef85d0f57054af2fd.png",
+      "sha256": "33d8af68c9a4714cafc41635fea11f47f0fc93af9fb9ebfef85d0f57054af2fd",
+      "size": 1266,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-6986400f2baa4c8f46bb",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/6986400f2baa4c8f46bbf388be2064171a188cd649ed600e756deeb1ff9ee8b8.png",
+      "sha256": "6986400f2baa4c8f46bbf388be2064171a188cd649ed600e756deeb1ff9ee8b8",
+      "size": 720,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-97c1ae95a53c0c16229d",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/97c1ae95a53c0c16229d8cbf2ce83f968b610d61f2d15f1f2b2892fa25fe98d1.png",
+      "sha256": "97c1ae95a53c0c16229d8cbf2ce83f968b610d61f2d15f1f2b2892fa25fe98d1",
+      "size": 4633,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-69319fea3fc9e9e2241c",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/69319fea3fc9e9e2241c4c455634114fc544697ce1f50f3b1f80abc5e096889c.jpeg",
+      "sha256": "69319fea3fc9e9e2241c4c455634114fc544697ce1f50f3b1f80abc5e096889c",
+      "size": 699,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-13b0a3de7f6647c24d21",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/13b0a3de7f6647c24d21ffe69018949b677ebbf7e0ab4321ebdb1cd937476af1.png",
+      "sha256": "13b0a3de7f6647c24d21ffe69018949b677ebbf7e0ab4321ebdb1cd937476af1",
+      "size": 108,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-db3a2056d45d8b45bfdd",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/db3a2056d45d8b45bfdd01e028be24bc29e054d83cb3042bf4c3fbf3c36964f8.png",
+      "sha256": "db3a2056d45d8b45bfdd01e028be24bc29e054d83cb3042bf4c3fbf3c36964f8",
+      "size": 92458,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-205237af2dc11a853e3e",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/205237af2dc11a853e3e99601878ace6d2875ba7e65e6ad3d4b095d69006c3dc.jpeg",
+      "sha256": "205237af2dc11a853e3e99601878ace6d2875ba7e65e6ad3d4b095d69006c3dc",
+      "size": 699,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-a9f665c7987b086878fd",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/a9f665c7987b086878fd449c8af91869c34b5b4c64cb61e5c8dd5f22119b6dbc.jpeg",
+      "sha256": "a9f665c7987b086878fd449c8af91869c34b5b4c64cb61e5c8dd5f22119b6dbc",
+      "size": 699,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-aea6f9e599eaaa00009c",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/aea6f9e599eaaa00009c290ef1f26d57d57cd35cd07010b8b3cf8a82e80fb4f6.png",
+      "sha256": "aea6f9e599eaaa00009c290ef1f26d57d57cd35cd07010b8b3cf8a82e80fb4f6",
+      "size": 219,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-7364f920765131e5a9a7",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/7364f920765131e5a9a792e8a4a5913812b1aabe8b9e0ddae005375fd6e84b79.png",
+      "sha256": "7364f920765131e5a9a792e8a4a5913812b1aabe8b9e0ddae005375fd6e84b79",
+      "size": 4409,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-1bb1d778ed9e4c2e0a75",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/1bb1d778ed9e4c2e0a75155fba4fabdc96499941f64d3425bb4629dd25f7fb5c.jpeg",
+      "sha256": "1bb1d778ed9e4c2e0a75155fba4fabdc96499941f64d3425bb4629dd25f7fb5c",
+      "size": 699,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-78ab8239eb7d313c7381",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/78ab8239eb7d313c7381c434e99e6c150980d74673ca11eb1764404a5b521d7c.png",
+      "sha256": "78ab8239eb7d313c7381c434e99e6c150980d74673ca11eb1764404a5b521d7c",
+      "size": 484,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-4c342b794022835bbed9",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/4c342b794022835bbed9d633e3d0ecc3ca2948152a57938b8465bc734b6b7d04.png",
+      "sha256": "4c342b794022835bbed9d633e3d0ecc3ca2948152a57938b8465bc734b6b7d04",
+      "size": 90763,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-a86fc953b7b40c4fd90c",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/a86fc953b7b40c4fd90c83b249f8f2ff3c1343e3c9f52a968c67e5b82eb8f244.jpeg",
+      "sha256": "a86fc953b7b40c4fd90c83b249f8f2ff3c1343e3c9f52a968c67e5b82eb8f244",
+      "size": 699,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-23c47344fd13c4aeb01c",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/23c47344fd13c4aeb01c964258364550bbbf6508677cab5652d8e7d32056dcfd.png",
+      "sha256": "23c47344fd13c4aeb01c964258364550bbbf6508677cab5652d8e7d32056dcfd",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-15ce59603eb2f16ad177",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/15ce59603eb2f16ad177d27fe1bc28754a91f0154b60ed4850d3796995406f3a.jpeg",
+      "sha256": "15ce59603eb2f16ad177d27fe1bc28754a91f0154b60ed4850d3796995406f3a",
+      "size": 699,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-058177a18643248d5444",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/058177a18643248d544446f22df6b3daa93e3ec3697d42b624bcc5d5398f2ea2.png",
+      "sha256": "058177a18643248d544446f22df6b3daa93e3ec3697d42b624bcc5d5398f2ea2",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-3c62b8d4a7bfc8491396",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/3c62b8d4a7bfc8491396e3903335897523267472faf57826f28d1937118f87c9.jpeg",
+      "sha256": "3c62b8d4a7bfc8491396e3903335897523267472faf57826f28d1937118f87c9",
+      "size": 699,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-5b2d716d07d37acbd349",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/5b2d716d07d37acbd349bdcee8eff85296b3bee699603ce30352f23221537601.png",
+      "sha256": "5b2d716d07d37acbd349bdcee8eff85296b3bee699603ce30352f23221537601",
+      "size": 52508,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-4bc200fe04bdcda5c18d",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/4bc200fe04bdcda5c18d3e028cf4b00c5baa26b5ef636379af3063f3f3047727.jpeg",
+      "sha256": "4bc200fe04bdcda5c18d3e028cf4b00c5baa26b5ef636379af3063f3f3047727",
+      "size": 700,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-65a35a84887a25acec53",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/65a35a84887a25acec53927f667d08809ba73b34ca92952af98fc26e1fa77f1e.jpeg",
+      "sha256": "65a35a84887a25acec53927f667d08809ba73b34ca92952af98fc26e1fa77f1e",
+      "size": 700,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-10a60f73640e06348aa2",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/10a60f73640e06348aa2dfad6c1f2a390b59cac49ce66bc312025030c1a0609a.jpeg",
+      "sha256": "10a60f73640e06348aa2dfad6c1f2a390b59cac49ce66bc312025030c1a0609a",
+      "size": 700,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-6a7a8616a3d58ca48989",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/6a7a8616a3d58ca4898939470eb09e6b5838b60693ab9ae86667f18929bd8ecc.jpeg",
+      "sha256": "6a7a8616a3d58ca4898939470eb09e6b5838b60693ab9ae86667f18929bd8ecc",
+      "size": 47760,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-fc304fe81648bc7c9b09",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=1",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/fc304fe81648bc7c9b09c6c2203c2d89b723797857758c66c5853f4c2f5c5250.png",
+      "sha256": "fc304fe81648bc7c9b09c6c2203c2d89b723797857758c66c5853f4c2f5c5250",
+      "size": 362,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-436a86c5f334c89d77c0",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=3",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/436a86c5f334c89d77c0c870b6bf77287d9b490452ed40c893913b5e8f2eca28.jpeg",
+      "sha256": "436a86c5f334c89d77c0c870b6bf77287d9b490452ed40c893913b5e8f2eca28",
+      "size": 73421,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-6e78c00982f0ff6dabd1",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=3",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/6e78c00982f0ff6dabd18f3a1de19bff443e9d95c2ac7a0d145c1c199cf6be2c.png",
+      "sha256": "6e78c00982f0ff6dabd18f3a1de19bff443e9d95c2ac7a0d145c1c199cf6be2c",
+      "size": 729,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-49b963842462e930277d",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=3",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/49b963842462e930277d8217584dc27d310a580896f562dfaf1a3c77f16941c7.png",
+      "sha256": "49b963842462e930277d8217584dc27d310a580896f562dfaf1a3c77f16941c7",
+      "size": 257,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-447846ef93f318f4c62d",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=3",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/447846ef93f318f4c62df7e122fa07f9dc0571abcb084e598d035d33b99ffe5d.png",
+      "sha256": "447846ef93f318f4c62df7e122fa07f9dc0571abcb084e598d035d33b99ffe5d",
+      "size": 6040,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "Session overview",
+      "alt_ru": "Обзор сессии",
+      "ru_path": "data/media/ru/oae-review-figure-ed01ea9.png",
+      "ru_sha256": "9351d50bf8dc8c237c4a24ad21c4c330e517e39996da2995a5e08dd356bd924a"
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-c2989780d7a517d76a77",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=3",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/c2989780d7a517d76a77ef05454697b5eaa3f51cfa5c8b798e67ef932ad780e5.png",
+      "sha256": "c2989780d7a517d76a77ef05454697b5eaa3f51cfa5c8b798e67ef932ad780e5",
+      "size": 12412,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-e8c6998610c0ef1fc186",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=4",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/e8c6998610c0ef1fc18664307a972794aecf4f650baa402ecdd52d21336ba70a.jpeg",
+      "sha256": "e8c6998610c0ef1fc18664307a972794aecf4f650baa402ecdd52d21336ba70a",
+      "size": 61300,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-aa0c838fa94652625602",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=4",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/aa0c838fa94652625602fb3e61a0f70865d629b2258ee908042681a8b6d2b446.png",
+      "sha256": "aa0c838fa94652625602fb3e61a0f70865d629b2258ee908042681a8b6d2b446",
+      "size": 5296,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-65ae7bdc27e443987dee",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=4",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/65ae7bdc27e443987dee0e15a4bb998871b54cab1dd0562db7e38b94b93d6843.png",
+      "sha256": "65ae7bdc27e443987dee0e15a4bb998871b54cab1dd0562db7e38b94b93d6843",
+      "size": 6559,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "Talk contributions",
+      "alt_ru": "Устные доклады",
+      "ru_path": "data/media/ru/oae-review-figure-65ae7bd.png",
+      "ru_sha256": "fa21656e732df9b178f2d2b777dd78cbaa371cbf743d0daac2efcef27e4a0ad3"
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-ab526afb95cd4c34bd83",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=6",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/ab526afb95cd4c34bd83f78460641084d73cabf278146ac17ae51d1e167b0b98.jpeg",
+      "sha256": "ab526afb95cd4c34bd83f78460641084d73cabf278146ac17ae51d1e167b0b98",
+      "size": 58860,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-08b937699e86dfaaf0ca",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=6",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/08b937699e86dfaaf0ca3d0de3f7a7cc36521e24bb66941c1bf25710c789b3da.png",
+      "sha256": "08b937699e86dfaaf0ca3d0de3f7a7cc36521e24bb66941c1bf25710c789b3da",
+      "size": 5259,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-b51c618f3181d6ba0280",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=8",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/b51c618f3181d6ba02808a0901c917040e85ad967dcdcc93a56fb6f0cee9aceb.jpeg",
+      "sha256": "b51c618f3181d6ba02808a0901c917040e85ad967dcdcc93a56fb6f0cee9aceb",
+      "size": 63392,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-c54bcbb836d02f98867b",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=8",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/c54bcbb836d02f98867b83c26166edda3e3913ea98471d74f6a7365a8175d38a.png",
+      "sha256": "c54bcbb836d02f98867b83c26166edda3e3913ea98471d74f6a7365a8175d38a",
+      "size": 5375,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-c2bbd342b7f15831f998",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=10",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/c2bbd342b7f15831f99801d9ea196997725bf46b732144df295d81945ad32153.png",
+      "sha256": "c2bbd342b7f15831f99801d9ea196997725bf46b732144df295d81945ad32153",
+      "size": 1584562,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-9e9ab7b6f479fd3c912f",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=10",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/9e9ab7b6f479fd3c912ff96d6cdd6a902eb8dce651d49194c83fe32e2442d115.png",
+      "sha256": "9e9ab7b6f479fd3c912ff96d6cdd6a902eb8dce651d49194c83fe32e2442d115",
+      "size": 5253,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-d512fc3d2536631111cd",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=11",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/d512fc3d2536631111cd5c0cdd65dedcdf342c4cb0e4004efc4a2232dd61ba1d.jpeg",
+      "sha256": "d512fc3d2536631111cd5c0cdd65dedcdf342c4cb0e4004efc4a2232dd61ba1d",
+      "size": 21038,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "alt_en": "Planetary Greenhouse Effects. Vertical axis: percent warming relative to equilibrium temperature without atmosphere. Horizontal axis: atmospheric CO₂ mass per square metre of planet surface (kg/m²). Earth, Mars and Venus, with CO₂-only estimates and additional effects from water vapour, dust and sulfuric acid aerosols. R² = 0.8804.",
+      "alt_ru": "Парниковый эффект на планетах. Вертикальная ось — относительное потепление в процентах по сравнению с равновесной температурой без атмосферы. Горизонтальная ось — масса атмосферного CO₂ на квадратный метр поверхности (кг/м²). Оценки для Земли, Марса и Венеры с учётом только CO₂ и дополнительных эффектов водяного пара, пыли и сернокислотного аэрозоля. R² = 0,8804.",
+      "ru_path": "data/media/ru/oae-review-figure-d512fc3d.png",
+      "ru_sha256": "f8ce9bdc55e6f24637470ee29d11e91ec0ebcb5a6993e27449b5f4d271f2fa8c"
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-ea4a9a7e031dfd594f36",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=12",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/ea4a9a7e031dfd594f364af5958068a8a48d2e5e3f4aa6e98a4d3d21208277c3.jpeg",
+      "sha256": "ea4a9a7e031dfd594f364af5958068a8a48d2e5e3f4aa6e98a4d3d21208277c3",
+      "size": 26612,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-a4bab73545e7c1cdd0bc",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=12",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/a4bab73545e7c1cdd0bcff9e3ad094314b6d3c914174f79857b6995552cdffde.png",
+      "sha256": "a4bab73545e7c1cdd0bcff9e3ad094314b6d3c914174f79857b6995552cdffde",
+      "size": 4637,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-5d1e7f4e25c0e242fff9",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=12",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/5d1e7f4e25c0e242fff9e8a1c1f213bc1d9f212e80d98f543f0245b5eb45f30d.png",
+      "sha256": "5d1e7f4e25c0e242fff9e8a1c1f213bc1d9f212e80d98f543f0245b5eb45f30d",
+      "size": 6427,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "Poster contributions",
+      "alt_ru": "Стендовые доклады",
+      "ru_path": "data/media/ru/oae-review-figure-5d1e7f4.png",
+      "ru_sha256": "99ba110254a750ef5cd9785e0f79d1047179b299b7ec731746ad21718e37bc78"
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-5ed8397213485df6d66b",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=13",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/5ed8397213485df6d66b6a35bf3b18e81ec52dd70f6bab0395fa09ab59e97573.jpeg",
+      "sha256": "5ed8397213485df6d66b6a35bf3b18e81ec52dd70f6bab0395fa09ab59e97573",
+      "size": 194563,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-1c3235a57092fb771f91",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=14",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/1c3235a57092fb771f91c15754adb9da17957134d67ce4f22795c300494d2b75.png",
+      "sha256": "1c3235a57092fb771f91c15754adb9da17957134d67ce4f22795c300494d2b75",
+      "size": 6402,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "",
+      "alt_en": "Discussion summary",
+      "alt_ru": "Итоги обсуждения",
+      "ru_path": "data/media/ru/oae-review-figure-1c3235a.png",
+      "ru_sha256": "be7a24a7fab73aee13c62f082f5d86db812e738526777ff27714f7e580265276"
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-116962379f276f82de9a",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/116962379f276f82de9ad0e396cb7177df61114cd8d998e3d107ef7efa43d395.png",
+      "sha256": "116962379f276f82de9ad0e396cb7177df61114cd8d998e3d107ef7efa43d395",
+      "size": 1054,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-c7be67db3a23c1750a12",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/c7be67db3a23c1750a12b84a024c6294aabfc4759d9a61794c1ea5df8e92ca27.png",
+      "sha256": "c7be67db3a23c1750a12b84a024c6294aabfc4759d9a61794c1ea5df8e92ca27",
+      "size": 2183,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-8b237217afba4b9b6f98",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/8b237217afba4b9b6f98b860b70584ae6f0b7cd84d0bff264dd506f2c3f4f95e.png",
+      "sha256": "8b237217afba4b9b6f98b860b70584ae6f0b7cd84d0bff264dd506f2c3f4f95e",
+      "size": 1041,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-f46eb8ed0742632cb3df",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/f46eb8ed0742632cb3df8a40fa1ccb0a8155f950d4fb9a48e7fc7ed40ac87705.png",
+      "sha256": "f46eb8ed0742632cb3df8a40fa1ccb0a8155f950d4fb9a48e7fc7ed40ac87705",
+      "size": 1221,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-b87f50a9881b00ffca47",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/b87f50a9881b00ffca47343c775c8035d604f92ce1dbb50523140db12d971f87.png",
+      "sha256": "b87f50a9881b00ffca47343c775c8035d604f92ce1dbb50523140db12d971f87",
+      "size": 868,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-8f2afe72ea99dfc678db",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/8f2afe72ea99dfc678dbbe9490a5947bd9af111e365af5fa55343c7b1b36ab89.png",
+      "sha256": "8f2afe72ea99dfc678dbbe9490a5947bd9af111e365af5fa55343c7b1b36ab89",
+      "size": 4453,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-ea94a6c646ec43b0d837",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/ea94a6c646ec43b0d8379ffce863aae05ed0c1dfe761391e921f7c45f0aa551c.png",
+      "sha256": "ea94a6c646ec43b0d8379ffce863aae05ed0c1dfe761391e921f7c45f0aa551c",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-a4c414601c471c7a72ee",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/a4c414601c471c7a72eef9594ab321e5fca12c619ec3d1b084947fb1c3ceec84.png",
+      "sha256": "a4c414601c471c7a72eef9594ab321e5fca12c619ec3d1b084947fb1c3ceec84",
+      "size": 4229,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-91e149c0f6e500c447d0",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/91e149c0f6e500c447d0a663d8866499c715fd0f8c65c7b2d4a731aa450cc335.png",
+      "sha256": "91e149c0f6e500c447d0a663d8866499c715fd0f8c65c7b2d4a731aa450cc335",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-aa85bc4c504970c1ec0d",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/aa85bc4c504970c1ec0df62bdf8b1d4f7e810a86a86514451c29bfcc34314f51.png",
+      "sha256": "aa85bc4c504970c1ec0df62bdf8b1d4f7e810a86a86514451c29bfcc34314f51",
+      "size": 113,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-4075d3495ea21852c1ab",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/4075d3495ea21852c1ab080fe3560a8d8c520755197f2cf1e1494675b32a312f.png",
+      "sha256": "4075d3495ea21852c1ab080fe3560a8d8c520755197f2cf1e1494675b32a312f",
+      "size": 4532,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-6a3c7c8b665cf3967597",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/6a3c7c8b665cf396759795d732d9138c1214c54ee74d9a19bb723e1bd146360c.png",
+      "sha256": "6a3c7c8b665cf396759795d732d9138c1214c54ee74d9a19bb723e1bd146360c",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-b0efec6ebd3102eb201a",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/b0efec6ebd3102eb201a54940bb142c205bb85756d6dd018c9d07d98ad8875be.png",
+      "sha256": "b0efec6ebd3102eb201a54940bb142c205bb85756d6dd018c9d07d98ad8875be",
+      "size": 4236,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-bdc304ac39c73cd7dcca",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/bdc304ac39c73cd7dcca44f4266c42dbae552b2b4b70cfdd9e4cb3145e088f00.png",
+      "sha256": "bdc304ac39c73cd7dcca44f4266c42dbae552b2b4b70cfdd9e4cb3145e088f00",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-27fd49ef1a2d4ae05b34",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/27fd49ef1a2d4ae05b346a50fb35c49b2e0d01c8f3a76752875d15e8257f202a.png",
+      "sha256": "27fd49ef1a2d4ae05b346a50fb35c49b2e0d01c8f3a76752875d15e8257f202a",
+      "size": 217,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-2ef13b1d6b0bc4fa0c0c",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/2ef13b1d6b0bc4fa0c0c2619d84c912a54831d40cee2a3260e620073bb315ced.png",
+      "sha256": "2ef13b1d6b0bc4fa0c0c2619d84c912a54831d40cee2a3260e620073bb315ced",
+      "size": 90724,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-25243cd175d21c24ee82",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/25243cd175d21c24ee820d681f197cbb1c31034f8e311723ac44b3fe330f0761.png",
+      "sha256": "25243cd175d21c24ee820d681f197cbb1c31034f8e311723ac44b3fe330f0761",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-70ae942da2c9dbbcb3a2",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/70ae942da2c9dbbcb3a204376905763cd0ce75c33e35cf0fa11f17e9c32472cb.png",
+      "sha256": "70ae942da2c9dbbcb3a204376905763cd0ce75c33e35cf0fa11f17e9c32472cb",
+      "size": 94,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-4d8ee199040aa09ea7e2",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/4d8ee199040aa09ea7e2e138548f88e598c732ccd6df2f0e59c4fc25f6bcf920.png",
+      "sha256": "4d8ee199040aa09ea7e2e138548f88e598c732ccd6df2f0e59c4fc25f6bcf920",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-5471f59c4a15e136655b",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/5471f59c4a15e136655b789f44db818c43cc4a6ba31f16aad2894aceee5b7d48.png",
+      "sha256": "5471f59c4a15e136655b789f44db818c43cc4a6ba31f16aad2894aceee5b7d48",
+      "size": 52451,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-7a33fb7331394ac32e12",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/7a33fb7331394ac32e125ce63e1d4554d8eccce860575fbc87861d56190ec074.png",
+      "sha256": "7a33fb7331394ac32e125ce63e1d4554d8eccce860575fbc87861d56190ec074",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-a9b9a0b2f0cdac5f40b2",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/a9b9a0b2f0cdac5f40b24f109f2b4a9a03dfee26f69514f0d8a899cd22f27877.png",
+      "sha256": "a9b9a0b2f0cdac5f40b24f109f2b4a9a03dfee26f69514f0d8a899cd22f27877",
+      "size": 95,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-de5d7e5fc50b6502bb1e",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/de5d7e5fc50b6502bb1e0368702bb0c969a1cbdc28ba1d1cf69267c829dc2fd5.png",
+      "sha256": "de5d7e5fc50b6502bb1e0368702bb0c969a1cbdc28ba1d1cf69267c829dc2fd5",
+      "size": 145132,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-22c1293e8c029397b525",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/22c1293e8c029397b525c47aef8c3a45e5e41bab6425d182a29457f548f34522.png",
+      "sha256": "22c1293e8c029397b525c47aef8c3a45e5e41bab6425d182a29457f548f34522",
+      "size": 479,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-pdf-earthasaplanet_mini_review-0baf27d8ed1f858551aa",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf#page=15",
+      "record_url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+      "original_path": "media/original/review-pdf/0baf27d8ed1f858551aa394a86f3de479ae6190c1f27534cec9dab98ceb4d359.png",
+      "sha256": "0baf27d8ed1f858551aa394a86f3de479ae6190c1f27534cec9dab98ceb4d359",
+      "size": 1928,
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Машинный перевод. Редакторское утверждение ожидается."
+  }
+}

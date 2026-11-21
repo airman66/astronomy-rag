@@ -206,14 +206,16 @@ def merge_media(media_rows: list[dict], prior: dict, keep_stale: StaleTranslatio
         if source_file_changed:
             source_changed = True
         for field in ("title", "short_caption", "caption", "alt"):
+            translated = f"{field}_ru"
             if row.get(field + "_en") == previous.get(field + "_en"):
-                row[field + "_ru"] = previous.get(field + "_ru", row[field + "_ru"])
+                if translated in previous:
+                    row[translated] = previous[translated]
             elif previous:
                 source_changed = media_changed = True
                 keep_stale(
-                    f"/media/{media_index}/{field}_ru",
+                    f"/media/{media_index}/{translated}",
                     previous.get(field + "_en"),
-                    previous.get(field + "_ru"),
+                    previous.get(translated),
                 )
         if not source_file_changed:
             for field in ("ru_path", "ru_sha256", "original_path", "sha256", "size"):

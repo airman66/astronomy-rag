@@ -1,0 +1,204 @@
+{
+  "id": "article:oae-review-international-collaborations-with-an-educational-component",
+  "kind": "article",
+  "source": {
+    "type": "oae_review_topic",
+    "url": "https://www.astro4edu.org/oae-reviews/international-collaborations-with-an-educational-component",
+    "imported_at": "2026-11-18T16:43:53.213382+00:00",
+    "sha256": "de4bd2d34c03d8af35006dcd60690d3f70d5d4b2a761a5dd80906701604c2f77"
+  },
+  "metadata": {
+    "term_numbers": [],
+    "document_ids": [
+      "article:oae-document-internationalcollaborationswithaneducationalcomponent_mini_review"
+    ],
+    "categories_ru": []
+  },
+  "sections": [
+    {
+      "id": "about",
+      "type": "article_body",
+      "heading": "About",
+      "body": "The resources focus mainly on two aspects of international collaborations and networking activities that could be crucial for educators. On one hand, examples of international projects especially intended for education and communication to the public. These normally promote teacher training, networking occasions and activities and resources to share. They could also provide ideas, sometimes funding, always motivation, and inspiration to teachers and kids everywhere. On the other hand, examples of international scientific big research projects that have a very interesting public part and educational component, which is of course very useful because it provides insights, data, ideas at the forefront of scientific research that are inspirational both for teachers and students. Huge networks of teachers and activities with different approaches are highlighted, some of them \"\"really international\"\", others more local; examples of how international projects could be adapted locally; examples of networks for producing and sharing resources and activities on non-traditional innovative science (gravitational waves, cosmic rays), resources, training, and tools to engage the students and the public at best.",
+      "heading_ru": "О теме",
+      "body_ru": "В обзоре рассмотрены два направления международного сотрудничества, особенно важных для педагогов. Первое — проекты в области образования и популяризации науки. Они помогают учителям повышать квалификацию, знакомиться с коллегами, обмениваться материалами и участвовать в общих мероприятиях. Такие проекты подсказывают идеи, иногда дают средства на работу и вдохновляют учителей и детей в разных странах.\n\nВторое направление — крупные научные проекты с программами для широкой публики, учителей и школьников. Они знакомят с результатами, данными и идеями из передовых областей науки.\n\nВ подборке — крупные учительские сети и мероприятия международного и местного масштаба, примеры адаптации проектов к местным условиям и сотрудничества при разработке материалов по новым для школы темам, таким как гравитационные волны и космические лучи. Включены также материалы, программы подготовки и инструменты для работы с учащимися и широкой публикой.",
+      "links": [],
+      "media_ids": [
+        "media:oae-review-international-collaborations-with-an-educational-component"
+      ]
+    },
+    {
+      "id": "initial_document",
+      "type": "related_resources",
+      "heading": "Mini-review document",
+      "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 4.86 MB) f .",
+      "heading_ru": "Мини-обзор",
+      "body_ru": "Этой теме посвятили секцию третьего семинара Шоу и МАС по астрономическому образованию. По материалам секции подготовили мини-обзор (PDF, 4,86 МБ).",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/sessions/international-collaborations-with-an-educational-component/",
+          "text": "session",
+          "text_ru": "Секция семинара"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/schedule/",
+          "text": "3rd Shaw-IAU Workshop",
+          "text_ru": "Третий семинар Шоу и МАС"
+        },
+        {
+          "url": "https://www.astro4edu.org/media/documents/InternationalCollaborationswithanEducationalComponent_mini_review.pdf",
+          "text": "mini-review ( PDF file 4.86 MB)",
+          "text_ru": "Мини-обзор в PDF"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations",
+      "type": "related_resources",
+      "heading": "Talks",
+      "body": "",
+      "heading_ru": "Доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/133/",
+          "text": "A journey of a thousand miles begins with a single step: education in International Collaboration",
+          "text_ru": "Путь в тысячу миль начинается с одного шага. Образование в международных проектах"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/78/",
+          "text": "But Do They Understand Me? How to make astronomy beliefs visible and what to do when you find out.",
+          "text_ru": "Понимают ли меня слушатели? Как выяснить, что они думают об астрономии, и что делать дальше"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/135/",
+          "text": "IGrav: Engaging people throughout the world in exploring the exciting field of gravitation",
+          "text_ru": "IGrav. Как открыть мир гравитации людям в разных странах"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/134/",
+          "text": "Lessons learnt from educational initiatives in the framework of global science outreach programs",
+          "text_ru": "Чему научили образовательные инициативы международных программ популяризации науки"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/141/",
+          "text": "The AWB Nigeria Experience",
+          "text_ru": "Опыт нигерийского отделения «Астрономов без границ»"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/77/",
+          "text": "The Earth, seen from the sky, has no political frontiers",
+          "text_ru": "На Земле, если смотреть с неба, нет политических границ"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/201/",
+          "text": "Plates for Education, Scotland",
+          "text_ru": "Астрономические пластины для образования в Шотландии"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/475/",
+          "text": "EXPLORE: Bringing Mars Analog Astronaut Missions to Students Worldwide",
+          "text_ru": "EXPLORE. Как познакомить школьников разных стран с имитационными марсианскими миссиями"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/421/",
+          "text": "The Latest from Galaxy Zoo",
+          "text_ru": "Последние результаты Galaxy Zoo"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-4",
+      "type": "related_resources",
+      "heading": "Documents",
+      "body": "",
+      "heading_ru": "Документы",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/document/Gd36wX844v39/",
+          "text": "International Collaborations with an Educational Component: Mini-Review",
+          "text_ru": "Международное сотрудничество в астрономическом образовании. Мини-обзор"
+        }
+      ],
+      "media_ids": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "International collaborations with an educational component",
+      "blocks": {
+        "about": {
+          "heading": "About",
+          "body": "The resources focus mainly on two aspects of international collaborations and networking activities that could be crucial for educators. On one hand, examples of international projects especially intended for education and communication to the public. These normally promote teacher training, networking occasions and activities and resources to share. They could also provide ideas, sometimes funding, always motivation, and inspiration to teachers and kids everywhere. On the other hand, examples of international scientific big research projects that have a very interesting public part and educational component, which is of course very useful because it provides insights, data, ideas at the forefront of scientific research that are inspirational both for teachers and students. Huge networks of teachers and activities with different approaches are highlighted, some of them \"\"really international\"\", others more local; examples of how international projects could be adapted locally; examples of networks for producing and sharing resources and activities on non-traditional innovative science (gravitational waves, cosmic rays), resources, training, and tools to engage the students and the public at best."
+        },
+        "initial_document": {
+          "heading": "Mini-review document",
+          "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 4.86 MB) f ."
+        },
+        "presentations": {
+          "heading": "Talks",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Documents",
+          "body": ""
+        }
+      }
+    },
+    "ru": {
+      "title": "Международное сотрудничество в астрономическом образовании",
+      "blocks": {
+        "about": {
+          "heading": "О теме",
+          "body": "В обзоре рассмотрены два направления международного сотрудничества, особенно важных для педагогов. Первое — проекты в области образования и популяризации науки. Они помогают учителям повышать квалификацию, знакомиться с коллегами, обмениваться материалами и участвовать в общих мероприятиях. Такие проекты подсказывают идеи, иногда дают средства на работу и вдохновляют учителей и детей в разных странах.\n\nВторое направление — крупные научные проекты с программами для широкой публики, учителей и школьников. Они знакомят с результатами, данными и идеями из передовых областей науки.\n\nВ подборке — крупные учительские сети и мероприятия международного и местного масштаба, примеры адаптации проектов к местным условиям и сотрудничества при разработке материалов по новым для школы темам, таким как гравитационные волны и космические лучи. Включены также материалы, программы подготовки и инструменты для работы с учащимися и широкой публикой."
+        },
+        "initial_document": {
+          "heading": "Мини-обзор",
+          "body": "Этой теме посвятили секцию третьего семинара Шоу и МАС по астрономическому образованию. По материалам секции подготовили мини-обзор (PDF, 4,86 МБ)."
+        },
+        "presentations": {
+          "heading": "Доклады",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Документы",
+          "body": ""
+        }
+      },
+      "aliases": []
+    }
+  },
+  "media": [
+    {
+      "id": "media:oae-review-international-collaborations-with-an-educational-component",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/oae_review_files/illustration_images/sdss_plates_for_education_news_image.jpeg",
+      "record_url": "https://www.astro4edu.org/oae-reviews/international-collaborations-with-an-educational-component",
+      "original_path": "media/original/oae-review-international-collaborations-with-an-educational-component.jpeg",
+      "sha256": "2b0356c2bae845322c8e95d36a3483a53f360f8cf445d06b42e6032024b8af3d",
+      "size": 10662,
+      "alt_en": "Illustration image for International collaborations with an educational component",
+      "alt_ru": "Три участницы держат круглую астрономическую пластину.",
+      "credit": "Sloan Digital Sky Survey, used under CC-BY-4.0",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Машинный перевод. Редакторское утверждение ожидается."
+  }
+}

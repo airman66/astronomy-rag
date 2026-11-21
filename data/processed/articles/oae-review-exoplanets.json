@@ -1,0 +1,1095 @@
+{
+  "id": "article:oae-review-exoplanets",
+  "kind": "article",
+  "source": {
+    "type": "oae_review_topic",
+    "url": "https://www.astro4edu.org/oae-reviews/exoplanets",
+    "imported_at": "2026-11-18T16:43:53.184085+00:00",
+    "sha256": "860e5201f978ee65df2c3e58d302f7ae2e6834599c882a5cac5088058be5dda4"
+  },
+  "metadata": {
+    "term_numbers": [
+      20,
+      26,
+      29,
+      33,
+      35,
+      42,
+      46,
+      81,
+      84,
+      85,
+      91,
+      106,
+      108,
+      109,
+      125,
+      129,
+      137,
+      139,
+      153,
+      169,
+      176,
+      204,
+      232,
+      245,
+      253,
+      254,
+      257,
+      269,
+      287,
+      354,
+      360,
+      367,
+      411,
+      416,
+      417,
+      418,
+      420,
+      425,
+      426,
+      427,
+      464,
+      468,
+      484
+    ],
+    "document_ids": [
+      "article:oae-document-mini-review-exoplanets"
+    ],
+    "categories_ru": []
+  },
+  "sections": [
+    {
+      "id": "about",
+      "type": "article_body",
+      "heading": "About",
+      "body": "Exoplanets are one of the most dynamic and fascinating areas of astronomical research. They inspire in students both awe and some of the most fundamental questions about our existence.",
+      "heading_ru": "О теме",
+      "body_ru": "Изучение экзопланет — одно из самых быстро развивающихся и увлекательных направлений астрономии. Эта тема вызывает у учащихся восхищение и побуждает задуматься о фундаментальных вопросах нашего существования.",
+      "links": [],
+      "media_ids": [
+        "media:oae-review-exoplanets"
+      ]
+    },
+    {
+      "id": "initial_document",
+      "type": "related_resources",
+      "heading": "Mini-review document",
+      "body": "This topic has a mini-review ( PDF file 83.42 kB) .",
+      "heading_ru": "Краткий обзор",
+      "body_ru": "По этой теме подготовлен краткий обзор (PDF, 83,42 кБ).",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/media/documents/mini-review-exoplanets.pdf",
+          "text": "mini-review ( PDF file 83.42 kB)",
+          "text_ru": "Краткий обзор (PDF, 83,42 кБ)"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations",
+      "type": "related_resources",
+      "heading": "Talks",
+      "body": "",
+      "heading_ru": "Доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/212/",
+          "text": "Project based learning on exoplanetary explorations",
+          "text_ru": "Проектное обучение на примере исследований экзопланет"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/216/",
+          "text": "Using authentic exoplanet data to promote active learning of physics and mathematics in schools",
+          "text_ru": "Как использовать данные наблюдений экзопланет для активного изучения физики и математики в школе"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/322/",
+          "text": "Demonstrating Exoplanet Cloud formation and Lighting in the Classroom",
+          "text_ru": "Как показать на уроке образование облаков и молний на экзопланетах"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/309/",
+          "text": "Biosignatures: On Earth and Beyond",
+          "text_ru": "Биосигнатуры на Земле и за её пределами"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/313/",
+          "text": "Exoplanet Atmospheres",
+          "text_ru": "Атмосферы экзопланет"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/286/",
+          "text": "Exoplanets and the Definition of Habitability",
+          "text_ru": "Экзопланеты и критерии обитаемости"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/402/",
+          "text": "Insights into Scientist Teacher Partnerships During the Creation of Exoplanet Science Lessons",
+          "text_ru": "Опыт сотрудничества учёных и учителей при подготовке уроков об экзопланетах"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/364/",
+          "text": "Hands-On Experiments as Physical Analogies for Exoplanet Weather Phenomena",
+          "text_ru": "Практические опыты, моделирующие погодные явления на экзопланетах"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/346/",
+          "text": "Webb: Probing the Material that Builds Planets",
+          "text_ru": "Как телескоп «Джеймс Уэбб» исследует вещество, из которого образуются планеты"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/446/",
+          "text": "Exoplanets in the classroom by using hands-on activities",
+          "text_ru": "Практические задания по экзопланетам в классе"
+        },
+        {
+          "url": "https://www.astro4edu.org/workshops/talk/545/",
+          "text": "Exoplanet Transits: Low-Cost Arduino Kit for Signal Processing in Class",
+          "text_ru": "Транзиты экзопланет. Недорогой набор на базе Arduino для обработки сигналов на уроке"
+        },
+        {
+          "url": "https://www.astro4edu.org/workshops/talk/531/",
+          "text": "E.T., you’ve got mail: an Italian school competition to design and transmit messages to exoplanets",
+          "text_ru": "Инопланетянин, тебе письмо! Итальянский школьный конкурс по созданию и передаче посланий к экзопланетам"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-4",
+      "type": "related_resources",
+      "heading": "Poster Presentations",
+      "body": "",
+      "heading_ru": "Стендовые доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/165/",
+          "text": "Is our solar system representative of the exoplanetary systems discovered? An activity and assessment instrument based on current exoplanet transit data",
+          "text_ru": "Типична ли Солнечная система среди известных планетных систем? Задание и материалы для оценки знаний на основе современных данных о транзитах экзопланет"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/276/",
+          "text": "Exploring Exoplanets: A Card Game to Introduce Students to Planetary Formation",
+          "text_ru": "Изучаем экзопланеты. Карточная игра о формировании планет"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-5",
+      "type": "media_collection",
+      "heading": "Images",
+      "body": "",
+      "heading_ru": "Изображения",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/media/7Z43MS63Ln65/",
+          "text": "Gold plaque with drawings of a man & woman, Pioneer spacecraft, solar system, a hydrogen atom and lines converging on Earth",
+          "text_ru": "Золотистая пластина с изображениями мужчины и женщины, аппарата «Пионер», Солнечной системы, атома водорода и линий, сходящихся в точке, обозначающей Землю"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/as70Ly49bn92/",
+          "text": "An array of colored pixels showing graphics including a double helix and a stick figure drawing of a human",
+          "text_ru": "Мозаика из цветных пикселей с изображениями двойной спирали и схематичной фигурки человека"
+        },
+        {
+          "url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+          "text": "Creative Commons Attribution-ShareAlike 3.0 Unported icons",
+          "text_ru": "Значки лицензии Creative Commons «С указанием авторства — С сохранением условий» (CC BY-SA 3.0, универсальная версия)"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/xk31D628WY83/",
+          "text": "A bright oval with a dark circle in the center. To the right of the dark circle but still inside the oval is a bright dot.",
+          "text_ru": "В центре светлого овала виден тёмный круг, а справа от него внутри овала — яркая точка"
+        },
+        {
+          "url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+          "text": "Creative Commons Attribution 4.0 International (CC BY 4.0) icons",
+          "text_ru": "Значки лицензии Creative Commons «С указанием авторства» (CC BY 4.0, международная версия)"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/1M75kp80RP4/",
+          "text": "A series of light and dark rings that resemble an archery target around the star TW Hydrae",
+          "text_ru": "Светлые и тёмные кольца вокруг звезды TW Гидры напоминают мишень для стрельбы из лука"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/cF23yx36oS64/",
+          "text": "beta Pictoris b moves from bottom right towards the center of the image, reappearing 22 months later on the top left",
+          "text_ru": "Планета β Живописца b движется из правой нижней части кадра к центру и через 22 месяца появляется слева вверху"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/PE34qs98WJ63/",
+          "text": "The planet beta Pictoris b is a bright dot close to its parent star. Around this we see a warm disk edge-on",
+          "text_ru": "Планета β Живописца b видна как яркая точка рядом со своей звездой, которую окружает тёплый диск, наблюдаемый с ребра"
+        }
+      ],
+      "media_ids": [
+        "media:7Z43MS63Ln65",
+        "media:as70Ly49bn92",
+        "media:xk31D628WY83",
+        "media:1M75kp80RP4",
+        "media:cF23yx36oS64",
+        "media:PE34qs98WJ63"
+      ]
+    },
+    {
+      "id": "activities",
+      "type": "media_collection",
+      "heading": "Selected Activities",
+      "body": "",
+      "heading_ru": "Избранные занятия",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "http://astroedu.iau.org/en/activities/origami-molecular-footballs/",
+          "text": "Thumbnail for Origami Molecular Footballs",
+          "text_ru": "Миниатюра задания «Молекулярные футбольные мячи из бумаги»"
+        },
+        {
+          "url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+          "text": "Creative Commons Attribution 4.0 International (CC BY 4.0) icons",
+          "text_ru": "Значки лицензии Creative Commons «С указанием авторства» (CC BY 4.0, международная версия)"
+        },
+        {
+          "url": "http://astroedu.iau.org/en/activities/microscopic-molecular-footballs/",
+          "text": "Thumbnail for Microscopic Molecular Footballs",
+          "text_ru": "Миниатюра задания «Микроскопические молекулярные футбольные мячи»"
+        },
+        {
+          "url": "http://astroedu.iau.org/en/activities/lightning-on-other-planets/",
+          "text": "Thumbnail for Lightning on other planets",
+          "text_ru": "Миниатюра задания «Молнии на других планетах»"
+        },
+        {
+          "url": "http://astroedu.iau.org/en/activities/hunting-for-exoplanets-with-arduino/",
+          "text": "Thumbnail for Hunting for exoplanets with Arduino",
+          "text_ru": "Миниатюра задания «Поиск экзопланет с Arduino»"
+        },
+        {
+          "url": "http://astroedu.iau.org/en/activities/clouds-on-other-planets/",
+          "text": "Thumbnail for Clouds on other Planets",
+          "text_ru": "Миниатюра задания «Облака на других планетах»"
+        },
+        {
+          "url": "http://astroedu.iau.org/en/activities/identikit-of-an-alien/",
+          "text": "Thumbnail for Identikit of an alien",
+          "text_ru": "Миниатюра задания «Фоторобот инопланетянина»"
+        },
+        {
+          "url": "http://astroedu.iau.org/en/activities/measuring-an-exoplanet/",
+          "text": "Thumbnail for Measuring an exoplanet",
+          "text_ru": "Миниатюра задания «Измеряем параметры экзопланеты»"
+        },
+        {
+          "url": "http://astroedu.iau.org/en/activities/exoplanet-in-a-box/",
+          "text": "Thumbnail for Exoplanet in a box",
+          "text_ru": "Миниатюра задания «Экзопланета в коробке»"
+        },
+        {
+          "url": "http://astroedu.iau.org/en/activities/can-you-find-the-exoplanet/",
+          "text": "Thumbnail for Can you find the exoplanet?",
+          "text_ru": "Миниатюра задания «Найдёшь ли ты экзопланету?»"
+        },
+        {
+          "url": "http://astroedu.iau.org/en/activities/the-engine-of-life/",
+          "text": "Thumbnail for The Engine of Life",
+          "text_ru": "Миниатюра задания «Двигатель жизни»"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/search-results/?page=1&language_choice=en&file_type=act&language_restriction=all&license_restriction=all&category_restriction=6#search_results",
+          "text": "Browse all activities for this topic",
+          "text_ru": "Все занятия по теме"
+        }
+      ],
+      "media_ids": [
+        "media:oae-inline-5ca27353797f7ae64c68",
+        "media:oae-inline-4481f9a889c4d038311f",
+        "media:oae-inline-d58851649e9636ac3b98",
+        "media:oae-inline-f68749c94ba9e6f032f9",
+        "media:oae-inline-0ff0c2ea2625320435fb",
+        "media:oae-inline-e42e063707da8fa4ffb1",
+        "media:oae-inline-510f570e6a82400452cd",
+        "media:oae-inline-e3971383630b43b20fa7",
+        "media:oae-inline-3a22b0ee9e299de64cf0",
+        "media:oae-inline-d2fc1b19e6f209306a9f"
+      ]
+    },
+    {
+      "id": "documents",
+      "type": "related_resources",
+      "heading": "Documents",
+      "body": "",
+      "heading_ru": "Документы",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/media/documents/mini-review-exoplanets.pdf",
+          "text": "Mini-Review on Exoplanet Detection Methods",
+          "text_ru": "Краткий обзор методов обнаружения экзопланет"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "glossary_terms",
+      "type": "related_resources",
+      "heading": "Linked Glossary Terms",
+      "body": "",
+      "heading_ru": "Термины по теме",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/425/",
+          "text": "Accretion",
+          "text_ru": "Аккреция"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/426/",
+          "text": "Accretion Disk",
+          "text_ru": "Аккреционный диск"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/427/",
+          "text": "Adaptive Optics",
+          "text_ru": "Адаптивная оптика"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/20/",
+          "text": "Astrobiology",
+          "text_ru": "Астробиология"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/26/",
+          "text": "Astronomical Unit",
+          "text_ru": "Астрономическая единица"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/29/",
+          "text": "Atmosphere",
+          "text_ru": "Атмосфера"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/33/",
+          "text": "Aurora",
+          "text_ru": "Полярное сияние"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/35/",
+          "text": "Axis",
+          "text_ru": "Ось"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/42/",
+          "text": "Blackbody Radiation",
+          "text_ru": "Излучение абсолютно чёрного тела"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/46/",
+          "text": "Brown Dwarf",
+          "text_ru": "Коричневый карлик"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/81/",
+          "text": "Disk",
+          "text_ru": "Диск"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/84/",
+          "text": "Doppler Effect",
+          "text_ru": "Эффект Доплера"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/85/",
+          "text": "Dust",
+          "text_ru": "Пыль"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/411/",
+          "text": "Earth-like Planet",
+          "text_ru": "Землеподобная планета"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/91/",
+          "text": "Eclipse",
+          "text_ru": "Затмение"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/106/",
+          "text": "Exoplanet",
+          "text_ru": "Экзопланета"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/108/",
+          "text": "Extraterrestrial Intelligence",
+          "text_ru": "Внеземной разум"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/109/",
+          "text": "Extraterrestrial Life",
+          "text_ru": "Внеземная жизнь"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/125/",
+          "text": "Gas Giant",
+          "text_ru": "Газовый гигант"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/129/",
+          "text": "Giant Planet",
+          "text_ru": "Планета-гигант"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/137/",
+          "text": "Greenhouse Effect",
+          "text_ru": "Парниковый эффект"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/139/",
+          "text": "Habitable Zone",
+          "text_ru": "Зона обитаемости"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/153/",
+          "text": "Ice Giant",
+          "text_ru": "Ледяной гигант"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/169/",
+          "text": "Kepler's Laws",
+          "text_ru": "Законы Кеплера"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/176/",
+          "text": "Light Curve",
+          "text_ru": "Кривая блеска"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/204/",
+          "text": "Moons",
+          "text_ru": "Естественные спутники"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/464/",
+          "text": "Occultation",
+          "text_ru": "Покрытие"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/232/",
+          "text": "Orbit",
+          "text_ru": "Орбита"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/245/",
+          "text": "Period",
+          "text_ru": "Период"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/253/",
+          "text": "Planet",
+          "text_ru": "Планета"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/254/",
+          "text": "Planet Formation",
+          "text_ru": "Формирование планет"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/257/",
+          "text": "Planetary Science",
+          "text_ru": "Планетология"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/468/",
+          "text": "Planetary System",
+          "text_ru": "Планетная система"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/418/",
+          "text": "Planetesimal",
+          "text_ru": "Планетезималь"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/416/",
+          "text": "Protoplanet",
+          "text_ru": "Протопланета"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/417/",
+          "text": "Protoplanetary Disk",
+          "text_ru": "Протопланетный диск"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/269/",
+          "text": "Radial Velocity",
+          "text_ru": "Лучевая скорость"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/287/",
+          "text": "Ring",
+          "text_ru": "Кольцо"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/420/",
+          "text": "Roche Limit",
+          "text_ru": "Предел Роша"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/354/",
+          "text": "Terrestrial Planet",
+          "text_ru": "Планета земной группы"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/484/",
+          "text": "Tidal Locking",
+          "text_ru": "Приливный захват"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/360/",
+          "text": "Tide",
+          "text_ru": "Прилив"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/367/",
+          "text": "Transit",
+          "text_ru": "Транзит"
+        }
+      ],
+      "media_ids": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Exoplanets",
+      "blocks": {
+        "about": {
+          "heading": "About",
+          "body": "Exoplanets are one of the most dynamic and fascinating areas of astronomical research. They inspire in students both awe and some of the most fundamental questions about our existence."
+        },
+        "initial_document": {
+          "heading": "Mini-review document",
+          "body": "This topic has a mini-review ( PDF file 83.42 kB) ."
+        },
+        "presentations": {
+          "heading": "Talks",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Poster Presentations",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Images",
+          "body": ""
+        },
+        "activities": {
+          "heading": "Selected Activities",
+          "body": ""
+        },
+        "documents": {
+          "heading": "Documents",
+          "body": ""
+        },
+        "glossary_terms": {
+          "heading": "Linked Glossary Terms",
+          "body": ""
+        }
+      }
+    },
+    "ru": {
+      "title": "Экзопланеты",
+      "blocks": {
+        "about": {
+          "heading": "О теме",
+          "body": "Изучение экзопланет — одно из самых быстро развивающихся и увлекательных направлений астрономии. Эта тема вызывает у учащихся восхищение и побуждает задуматься о фундаментальных вопросах нашего существования."
+        },
+        "initial_document": {
+          "heading": "Краткий обзор",
+          "body": "По этой теме подготовлен краткий обзор (PDF, 83,42 кБ)."
+        },
+        "presentations": {
+          "heading": "Доклады",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Стендовые доклады",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Изображения",
+          "body": ""
+        },
+        "activities": {
+          "heading": "Избранные занятия",
+          "body": ""
+        },
+        "documents": {
+          "heading": "Документы",
+          "body": ""
+        },
+        "glossary_terms": {
+          "heading": "Термины по теме",
+          "body": ""
+        }
+      },
+      "aliases": []
+    }
+  },
+  "media": [
+    {
+      "id": "media:oae-review-exoplanets",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/oae_review_files/illustration_images/eso0842a_news_image.jpg",
+      "record_url": "https://www.astro4edu.org/oae-reviews/exoplanets",
+      "original_path": "media/original/oae-review-exoplanets.jpg",
+      "sha256": "df1d81c9468ca3f3adca1683bf72fc395668634a1a8dba31801e333fbcebd8a2",
+      "size": 5309,
+      "alt_en": "Illustration image for Exoplanets",
+      "alt_ru": "Окрестности звезды Бета Живописца в ближнем инфракрасном диапазоне",
+      "credit": null,
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:7Z43MS63Ln65",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://astro4edu.org/media/multimedia/pioneer-plaques.png",
+      "record_url": "https://astro4edu.org/resources/media/7Z43MS63Ln65/",
+      "original_path": "data/media/original/media_7Z43MS63Ln65.png",
+      "ru_path": null,
+      "sha256": "21388cac38820f0a4e07056709eef4bcf2793bae170744e82a2c343400833c67",
+      "size": 5943483,
+      "title_en": "Pioneer Plaques",
+      "title_ru": "Таблички «Пионеров»",
+      "short_caption_en": "Pioneer Plaques",
+      "short_caption_ru": "Таблички «Пионеров»",
+      "caption_en": "The Pioneer 10 and 11 spacecraft are the first human-made objects to leave the solar system and venture into interstellar space. To inform potentially intelligent species about our existence, they both carry small metal plaques identifying their time, place of origin and information about their builders. They provide the location of our solar system in the Milky Way by depicting the Solar System's position relative to 14 pulsars, with radiating lines that include information about their frequencies. A model of a hydrogen atom undergoing one particular atomic transition is depicted. The wavelength and frequency of this transition are used to express sizes and frequencies of the other items shown in the plaque. A more detailed view of Earth's position in the solar system, with the spacecraft's trajectory moving away from Earth, passing Mars and Jupiter is displayed at the bottom. The plaque also depicts a naked man and woman alongside the spacecraft to provide a sense of scale. The man’s hand is raised as a friendly gesture. \r\nThe 6-inch by 9-inch gold-anodized aluminum plate has the design engraved on it. It was attached to the support struts of the spacecraft's antenna to try to to protect it from  erosion by any interstellar dust the spacecraft may encounter on its journey. Designed by Carl Sagan and Frank Drake, with artwork by Linda Salzman Sagan, these plaques are meant to communicate the origin of the spacecraft to any extraterrestrial life that might encounter them. \r\nWhile Pioneer 10 is on a course towards the star Aldebaran in the Taurus constellation, which will take about two million years to reach, Pioneer 11 is heading in a different direction towards the constellation of Aquila. It will take approximately four million years to pass close to some of the constellation’s stars.",
+      "caption_ru": "«Пионер-10» и «Пионер-11» — одни из первых созданных человеком аппаратов, отправленных по траекториям выхода из Солнечной системы в межзвёздное пространство. На борту каждого находится небольшая металлическая табличка для возможных разумных обитателей других миров. Она сообщает, откуда и в какую эпоху отправился аппарат и кто его создал. Положение Солнечной системы в Млечном Пути показано относительно 14 пульсаров. Информация об их частотах закодирована на расходящихся лучах. На табличке изображён атом водорода при определённом переходе между энергетическими состояниями. Длина волны и частота, соответствующие этому переходу, используются как единицы для размеров и частот на рисунке. Внизу показана Земля среди планет Солнечной системы и траектория аппарата от Земли мимо Марса и Юпитера. Чтобы дать представление о масштабе, рядом с силуэтом аппарата изобразили обнажённых мужчину и женщину. Мужчина поднял руку в знак приветствия.\n\nРисунок выгравирован на пластине из анодированного алюминия золотистого цвета размером 6 × 9 дюймов. Пластину прикрепили к стойкам антенны аппарата, чтобы защитить её от возможного воздействия межзвёздной пыли. Таблички разработали Карл Саган и Фрэнк Дрейк, рисунок выполнила Линда Зальцман Саган. Они должны рассказать о происхождении аппарата представителям внеземной жизни, если те его обнаружат.\n\n«Пионер-10» движется в направлении Альдебарана в созвездии Тельца. Расстояние до этой звезды он преодолеет примерно за два миллиона лет. «Пионер-11» движется в сторону созвездия Орла. Примерно через четыре миллиона лет он пройдёт вблизи некоторых звёзд этого созвездия.",
+      "alt_en": "Gold plaque with drawings of a man & woman,  Pioneer spacecraft, solar system, a hydrogen atom and lines converging on Earth",
+      "alt_ru": "Золотистая пластина с изображениями мужчины и женщины, аппарата «Пионер», Солнечной системы, атома водорода и линий, сходящихся в точке, обозначающей Землю.",
+      "credit": "NASA Ames",
+      "credit_url": "https://science.nasa.gov/resource/pioneer-plaque/",
+      "license": "PD",
+      "license_url": null,
+      "term_numbers": [
+        108
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:as70Ly49bn92",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://astro4edu.org/media/multimedia/arecibo-message.png",
+      "record_url": "https://astro4edu.org/resources/media/as70Ly49bn92/",
+      "original_path": "data/media/original/media_as70Ly49bn92.png",
+      "ru_path": null,
+      "sha256": "db44fe676efbd1b983d9733d6d15a4b1ccda12d4a6d8acd70dde406deebd1f76",
+      "size": 61851,
+      "title_en": "Arecibo Message",
+      "title_ru": "Послание Аресибо",
+      "short_caption_en": "Arecibo Message",
+      "short_caption_ru": "Послание Аресибо",
+      "caption_en": "This image shows a representation of an interstellar radio message, known as the “Arecibo Message”. As part of this visualisation different parts are highlighted by different colors. It was sent on the 16th of November in 1974 from the Arecibo Telescope in Puerto Rico, at this time the largest radio telescope on Earth, on the 16th of November in 1974. Its destination was the globular cluster M13 in the constellation of Hercules. M13 is one of the brightest of its kind, contains about half a million stars and is located at a distance of approximately 25 000 light years. It was chosen as a target because of its dense stellar population, meaning the message would reach more stars and hopefully planets. Moreover, it is one of the nearer globular clusters available in the sky at the time and place when the message was sent.\r\nThe Arecibo Message was a symbolic event, intended to show that humans could broadcast a message to the stars. The message contains 1679 (chosen as it is the product of two prime numbers) bits of data which, when arrange in a two dimensional array, form the image shown here. It consists of seven parts which contain representations of DNA, a human, and information on the Earth and Solar System. The message content was designed by a group of scientists from Cornell University and the Arecibo Observatory.",
+      "caption_ru": "Графическое представление межзвёздного радиосигнала, известного как «Послание Аресибо». Разные части послания выделены цветом. Его отправили 16 ноября 1974 года с радиотелескопа Аресибо в Пуэрто-Рико, на тот момент крупнейшего радиотелескопа на Земле. Сигнал направили к шаровому скоплению M13 в созвездии Геркулеса. Это одно из самых ярких шаровых скоплений. В нём около полумиллиона звёзд, а расстояние до него составляет примерно 25 000 световых лет. M13 выбрали из-за высокой плотности звёзд. Так сигнал мог бы охватить больше звёзд и, возможно, их планет. Кроме того, M13 было одним из ближайших шаровых скоплений, видимых из Аресибо в момент передачи.\n\nПослание было символическим. Его отправка показала, что люди способны передать сигнал к звёздам. Послание содержит 1679 бит данных. Это число выбрали как произведение двух простых чисел. Когда биты располагают в двумерной сетке, получается представленное здесь изображение. Оно состоит из семи частей и содержит схематические изображения ДНК и человека, а также сведения о Земле и Солнечной системе. Содержание послания разработала группа учёных из Корнеллского университета и обсерватории Аресибо.",
+      "alt_en": "An array of colored pixels showing graphics including a double helix and a stick figure drawing of a human",
+      "alt_ru": "Мозаика из цветных пикселей с изображениями двойной спирали и схематичной фигурки человека.",
+      "credit": "Arne Nordmann (wikicommons user norro)",
+      "credit_url": "https://en.wikipedia.org/wiki/File:Arecibo_message.svg",
+      "license": "CC-BY-SA-3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "term_numbers": [
+        108
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:xk31D628WY83",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://astro4edu.org/media/multimedia/the-planet-pds-70b-inside-a-protoplanetary-disk.png",
+      "record_url": "https://astro4edu.org/resources/media/xk31D628WY83/",
+      "original_path": "data/media/original/media_xk31D628WY83.png",
+      "ru_path": null,
+      "sha256": "249212f647468a9adef1172791eed226817e10e0277067247689cedb8dd45821",
+      "size": 1586121,
+      "title_en": "The planet PDS 70b inside a protoplanetary disk",
+      "title_ru": "Планета PDS 70 b внутри протопланетного диска",
+      "short_caption_en": "The planet PDS 70b inside a protoplanetary disk",
+      "short_caption_ru": "Планета PDS 70 b внутри протопланетного диска",
+      "caption_en": "An image of the planet PDS 70b. The young star PDS 70b has a protoplanetary disk surrounding it. Disks like these contains gas, fine sandy particles that astronomers refer to as dust and also larger bodies ranging from objects the size of pebbles to protoplanets (planets that are still forming). \r\n\r\nThis image was taken in infrared light using adaptive optics. Adaptive optics is a technique that uses flexible mirrors and computer analysis to remove the blurring effect of the Earth's atmosphere. This allows astronomers to search regions close to stars like PDS 70 that would otherwise be swamped by light from the star spread out by the Earth's atmosphere. In the center is a black circle. This is caused by a coronograph, a small circle that blocks out light from the parent star. This is surrounded by a bright oval, infrared light emitted from the material in the protoplanetary disk. To the right of the black circle covering the star is a bright dot. This is PDS 70b, a giant planet that is still forming .",
+      "caption_ru": "На снимке видна планета PDS 70 b. Молодую звезду PDS 70 окружает протопланетный диск. В таких дисках есть газ, мелкие твёрдые частицы, которые астрономы называют пылью, и более крупные тела — от частиц размером с гальку до формирующихся планет.\n\nСнимок сделан в инфракрасном диапазоне с помощью адаптивной оптики. Деформируемые зеркала и управление с помощью компьютера компенсируют размытость, вызванную земной атмосферой. Это позволяет исследовать области вокруг таких звёзд, как PDS 70, которые иначе терялись бы в рассеянном атмосферой свете звезды. Чёрный круг в центре — маска коронографа, которая блокирует свет звезды. Вокруг маски виден светлый овал, образованный инфракрасным излучением вещества протопланетного диска. Справа от закрытой звезды различима яркая точка — ещё формирующаяся планета-гигант PDS 70 b.",
+      "alt_en": "A bright oval with a dark circle in the center. To the right of the dark circle but still inside the oval is a bright dot.",
+      "alt_ru": "В центре светлого овала виден тёмный круг, а справа от него внутри овала — яркая точка.",
+      "credit": "ESO/ A. Müller, MPIA",
+      "credit_url": "https://www.eso.org/public/images/eso1821a/",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        254,
+        416,
+        417,
+        427
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:1M75kp80RP4",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://astro4edu.org/media/multimedia/eso1611a.jpg",
+      "record_url": "https://astro4edu.org/resources/media/1M75kp80RP4/",
+      "original_path": "data/media/original/media_1M75kp80RP4.jpg",
+      "ru_path": null,
+      "sha256": "6a3c401d30f547d61c04f53e2fc93c0499d72049a0f0bf8c8149aa5033341c08",
+      "size": 210479,
+      "title_en": "Planet formation around the star TW Hydrae",
+      "title_ru": "Формирование планет вокруг звезды TW Гидры",
+      "short_caption_en": "Young planets carve out shapes in the disk of material around the star TW Hyrdrae",
+      "short_caption_ru": "Молодые планеты меняют структуру диска вокруг звезды TW Гидры",
+      "caption_en": "This image shows the disk around the young star TW Hydrae. This star is only about 10 million years old, young enough that planets are still forming in a disk of gas and dust around it. This image was created using an array of submillimetre telescopes, each of which looks like a satellite dish. The signals from these telescopes were combined by a central processing computer to make this image. The lighter and darker patches show areas of the disk where there is more or less dust respectively. The dark rings and bright rings are evidence that the dust in the disk has been shepherded into some orbits and away from others. This is likely because there is one or more planets that are still forming hidden in the disk.\r\n\r\nThe whole image shows the disk around TW Hydrae out to a distance of about 70 astronomical units frm the central star. The two outer dark rings are separated from the central star by approximately the average distance between the Sun and Uranus and the average distance between the Sun and Pluto. The inner central hole appears to have been carved out by a planet orbiting TW Hydrae at a distance similar to the distance between the Earth and the Sun.",
+      "caption_ru": "На снимке виден диск вокруг молодой звезды TW Гидры. Ей всего около 10 миллионов лет, и в окружающем её диске газа и пыли ещё могут формироваться планеты. Изображение получили с помощью массива субмиллиметровых телескопов. Каждый из них похож на спутниковую антенну. Сигналы телескопов объединили и обработали на центральном компьютере. Светлые и тёмные участки соответствуют областям, где пыли больше или меньше. Чередующиеся кольца показывают, что на одних орбитах пыль скапливается, а на других её становится меньше. Вероятно, внутри диска скрыты одна или несколько формирующихся планет.\n\nНа снимке виден диск до расстояния около 70 астрономических единиц от звезды. Расстояния до двух внешних тёмных колец приблизительно равны средним расстояниям от Солнца до Урана и Плутона. Центральный просвет мог образоваться из-за планеты, которая обращается вокруг TW Гидры примерно на таком же расстоянии, как Земля от Солнца.",
+      "alt_en": "A series of light and dark rings that resemble an archery target around the star TW Hydrae",
+      "alt_ru": "Светлые и тёмные кольца вокруг звезды TW Гидры напоминают мишень для стрельбы из лука.",
+      "credit": "S. Andrews (Harvard-Smithsonian CfA); B. Saxton (NRAO/AUI/NSF); ALMA (ESO/NAOJ/NRAO)",
+      "credit_url": "https://www.eso.org/public/images/eso1611a/",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        254
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:cF23yx36oS64",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://astro4edu.org/media/multimedia/potw1846a.jpg",
+      "record_url": "https://astro4edu.org/resources/media/cF23yx36oS64/",
+      "original_path": "data/media/original/media_cF23yx36oS64.jpg",
+      "ru_path": "data/media/ru/media_cF23yx36oS64.png",
+      "sha256": "ed96c8067787440fb735fccb74b6ae9a12ff886a97f188194b17b9cf5fcd5af8",
+      "size": 710171,
+      "title_en": "The orbit of beta Pictoris b",
+      "title_ru": "Орбита планеты β Живописца b",
+      "short_caption_en": "The orbital motion of the exoplanet beta Pictoris b, tracked over four years",
+      "short_caption_ru": "Движение экзопланеты β Живописца b по орбите за четыре года",
+      "caption_en": "This series of images shows the orbital motion of the extrasolar planet (exoplanet) beta Pictoris b. The planet is the bright dot in each image. The planet's host star is hidden behind the black circle in the middle of each image. This is done to remove the much brighter host star which would otherwise drown out the light from the planet. The planet's orbit is viewed edge-on. Seeing the orbit from this perspective makes it look like the planet moves along a straight line. \r\nBetween February 2015 and November 2016 beta Pictoris b appears to move closer and closer to its host star. The planet then moved so close to the star that it was not seen for almost two years, after which it reappeared on the other side of the star.",
+      "caption_ru": "На серии кадров видно движение экзопланеты β Живописца b по орбите. На каждом кадре планета выглядит как яркая точка. Её звезда закрыта чёрной маской в центре кадра, поскольку её свет намного ярче и иначе заглушил бы свет планеты. Мы видим орбиту с ребра, поэтому кажется, что планета движется по прямой.\n\nС февраля 2015 года по ноябрь 2016 года β Живописца b на снимках постепенно приближалась к своей звезде. Затем она подошла к звезде на видимом небе настолько близко, что почти два года её нельзя было различить. После этого планета появилась по другую сторону звезды.",
+      "alt_en": "beta Pictoris b moves from bottom right towards the center of the image, reappearing 22 months later on the top left",
+      "alt_ru": "Планета β Живописца b движется из правой нижней части кадра к центру и через 22 месяца появляется слева вверху.",
+      "credit": "ESO/Lagrange/SPHERE consortium",
+      "credit_url": "https://www.eso.org/public/images/potw1846a/",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        106,
+        232
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "ru_sha256": "6aa8773e4613272769cf8ebb2f4ca608ef648c7ee8343b8286b09a411d6bfaff"
+    },
+    {
+      "id": "media:PE34qs98WJ63",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://astro4edu.org/media/multimedia/eso0842a.jpg",
+      "record_url": "https://astro4edu.org/resources/media/PE34qs98WJ63/",
+      "original_path": "data/media/original/media_PE34qs98WJ63.jpg",
+      "ru_path": null,
+      "sha256": "46ee2862ab910ff4a163afc47d5b7c21a4ef2e1fecd7f298f49c1e20e705bd62",
+      "size": 128051,
+      "title_en": "",
+      "title_ru": "",
+      "short_caption_en": "The exoplanet beta Pictoris b",
+      "short_caption_ru": "Экзопланета β Живописца b",
+      "caption_en": "This composite of two images shows the planet beta Pictoris b and a disk of material both of which orbit the young star beta Pictoris. Both are taken in infrared light. The inner image was one of the first pictures taken of a planet around another star (an exoplanet). This image was made using a technique called adaptive optics which removes the blurring effect of the Earth's atmosphere that spreads out a star's light. The star's light is then concentrated tightly enough that it can be hidden behind a blocking circle (shown here in black) called a coronagraph. The ripples around this are artifacts of the imaging process. Beta Pictoris b, a gas giant planet about twelve times the mass of Jupiter, appears as a dot above and to the left of the black circle.\r\n\r\nThe outer image shows the thermal emission from the warm disk of material surrounding the young star beta Pictoris. As we are viewing this disk edge-on it appears as a line. This disk of gas and dust provided the material to form beta Pictoris b.",
+      "caption_ru": "На этом составном изображении видны планета β Живописца b и диск вещества, которые обращаются вокруг молодой звезды β Живописца. Оба снимка сделаны в инфракрасном диапазоне. Центральная часть изображения — один из первых снимков планеты у другой звезды. Его получили с помощью адаптивной оптики, которая компенсирует размытие света звезды земной атмосферой. После коррекции свет звезды сосредоточен настолько, что его можно закрыть круглой маской коронографа. На снимке это чёрный круг. Волнистые ореолы вокруг него — артефакты съёмки. Газовый гигант β Живописца b примерно в 12 раз массивнее Юпитера. Он виден как яркая точка слева вверху от чёрного круга.\n\nНа внешнем снимке виден свет, отражённый пылевым диском вокруг молодой звезды β Живописца. Диск наблюдается с ребра, поэтому выглядит как линия. Из газа и пыли в этом диске сформировалась планета β Живописца b.",
+      "alt_en": "The planet beta Pictoris b is a bright dot close to its parent star. Around this we see a warm disk edge-on",
+      "alt_ru": "Планета β Живописца b видна как яркая точка рядом со своей звездой, которую окружает тёплый диск, наблюдаемый с ребра.",
+      "credit": "ESO/A.-M. Lagrange et al.",
+      "credit_url": "https://www.eso.org/public/images/eso0842a/",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        106,
+        254,
+        427
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-inline-5ca27353797f7ae64c68",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/origami-molecular-footballs_en_large_news_thumbnail_2VbjUaP.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/origami-molecular-footballs/",
+      "original_path": "media/original/review-topics/oae-inline-5ca27353797f7ae64c68.jpg",
+      "sha256": "b9a48d6ec1c06d194ca4ec8b3e142ab1ad71942731f2abab6878296370eaac9a",
+      "size": 41059,
+      "alt_en": "Thumbnail for  Origami Molecular Footballs",
+      "alt_ru": "Миниатюра задания «Молекулярные футбольные мячи из бумаги»",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-inline-4481f9a889c4d038311f",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/microscopic-molecular-footballs_en_large_news_thumbnail_pIyfqoe.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/microscopic-molecular-footballs/",
+      "original_path": "media/original/review-topics/oae-inline-4481f9a889c4d038311f.jpg",
+      "sha256": "d9b047b0d3f4c57c5281fc82ada43146ab9c6fc69edb50a0c37c98426f481689",
+      "size": 44176,
+      "alt_en": "A photo of the worksheet for “Microscopic Molecular Footballs”. The sheet invites students to cut out the net, follow the dotted lines and remove the hexagons marked “cut out”. They fold the net so matching pictures overlap and glue these faces to form pentagons. In the completed model there are 20 hexagons, 12 pentagons and 60 carbon atoms. A QR code in the worksheet explains the pictures on the faces.",
+      "alt_ru": "Рабочий лист к заданию «Микроскопические молекулярные футбольные мячи». Вырежьте развёртку по внешнему контуру и вырежьте по пунктиру шестиугольники с надписью «вырезать». Сложите развёртку так, чтобы шестиугольники с одинаковыми картинками наложились друг на друга. Склейте их, чтобы получить пятиугольники. Продолжайте складывать и склеивать, пока не получится мяч. В готовой модели 20 шестиугольников, 12 пятиугольников и 60 атомов углерода. Значение картинок на гранях можно узнать по QR-коду на рабочем листе.",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "Thumbnail for  Microscopic Molecular Footballs",
+      "ru_path": "data/media/ru/oae-review-figure-d9b047b0.png",
+      "ru_sha256": "a128eab6388d8deea281957e13d4de0b4006a7235895edf5887f162fbb2cd1e8"
+    },
+    {
+      "id": "media:oae-inline-d58851649e9636ac3b98",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/lightning-on-other-planets_en_large_news_thumbnail_VKlEgbT.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/lightning-on-other-planets/",
+      "original_path": "media/original/review-topics/oae-inline-d58851649e9636ac3b98.jpg",
+      "sha256": "4a68e2c6b8b52470fbf89440b37dc85d275e839145a913112a36c1333031ba8c",
+      "size": 32436,
+      "alt_en": "Thumbnail for  Lightning on other planets",
+      "alt_ru": "Миниатюра задания «Молнии на других планетах»",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-inline-f68749c94ba9e6f032f9",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/hunting-for-exoplanets-with-arduino_en_large_news_thumbnail_tkVc4dO.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/hunting-for-exoplanets-with-arduino/",
+      "original_path": "media/original/review-topics/oae-inline-f68749c94ba9e6f032f9.jpg",
+      "sha256": "03d7328ecd324ea83b7e1bcc3d0a3626d4ae82fb65e26712c15b2cbda273fa0f",
+      "size": 41755,
+      "alt_en": "Thumbnail for  Hunting for exoplanets with Arduino",
+      "alt_ru": "Миниатюра задания «Поиск экзопланет с Arduino»",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-inline-0ff0c2ea2625320435fb",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/clouds-on-other-planets_en_large_news_thumbnail_HC3z5sM.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/clouds-on-other-planets/",
+      "original_path": "media/original/review-topics/oae-inline-0ff0c2ea2625320435fb.jpg",
+      "sha256": "f091317c3e7c1df094e9d8f2698a946a4be50bf51170c0e77f72d8ce021e1cfa",
+      "size": 43347,
+      "alt_en": "Thumbnail for  Clouds on other Planets",
+      "alt_ru": "Миниатюра задания «Облака на других планетах»",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-inline-e42e063707da8fa4ffb1",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/identikit-of-an-alien_en_large_news_thumbnail_1NbbxPH.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/identikit-of-an-alien/",
+      "original_path": "media/original/review-topics/oae-inline-e42e063707da8fa4ffb1.jpg",
+      "sha256": "fed11c8bcf7ec89be38502a026bba08d2b6e68aeeec0a5257cffc1d0ac388f9a",
+      "size": 41647,
+      "alt_en": "Thumbnail for  Identikit of an alien",
+      "alt_ru": "Миниатюра задания «Фоторобот инопланетянина»",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-inline-510f570e6a82400452cd",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/measuring-an-exoplanet_en_large_news_thumbnail_p3qy6i1.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/measuring-an-exoplanet/",
+      "original_path": "media/original/review-topics/oae-inline-510f570e6a82400452cd.jpg",
+      "sha256": "d12df8ba13a2768db21d6d8c1c2087552d67f4a005193bfc196bb67f3811c65a",
+      "size": 52467,
+      "alt_en": "The activity “Measuring an exoplanet”. The collage combines images of planets, a sphere marked with a question mark and three light curves showing a dip during a transit.",
+      "alt_ru": "Задание «Измеряем параметры экзопланеты». В коллаже показаны планеты, сфера со знаком вопроса и три кривые блеска с падением яркости при транзите.",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "Thumbnail for  Measuring an exoplanet"
+    },
+    {
+      "id": "media:oae-inline-e3971383630b43b20fa7",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/exoplanet-in-a-box_en_large_news_thumbnail_CWIn2Et.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/exoplanet-in-a-box/",
+      "original_path": "media/original/review-topics/oae-inline-e3971383630b43b20fa7.jpg",
+      "sha256": "8b5fad85e43db4da5317feac7564250149604facd621b37fd0a19cdcd9fca877",
+      "size": 43175,
+      "alt_en": "The activity “Exoplanet in a box”. A cardboard model has three slits at different distances from its light source. A phone records changes in light. In the upper right, a planet crosses the star and its brightness drops on the light curve. The lower right shows a FizziQ plot of spot luminance as a percentage of the reference value against time in seconds.",
+      "alt_ru": "Задание «Экзопланета в коробке». В картонном макете сделаны три прорези на разном расстоянии от источника света. Изменения яркости измеряют смартфоном. Справа вверху планета проходит перед звездой, и на кривой блеска появляется провал. Справа внизу график из FizziQ показывает яркость в точке в процентах от опорного значения. Время отложено в секундах.",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "Thumbnail for  Exoplanet in a box",
+      "ru_path": "data/media/ru/oae-review-figure-8b5fad85.png",
+      "ru_sha256": "79e2c2ce685f75143692b52e01a57b8e8bb86a351d691121b7584e2b3aacb8c0"
+    },
+    {
+      "id": "media:oae-inline-3a22b0ee9e299de64cf0",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/can-you-find-the-exoplanet_en_VSut90U_large_news_thumbnail_vs0OeTE.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/can-you-find-the-exoplanet/",
+      "original_path": "media/original/review-topics/oae-inline-3a22b0ee9e299de64cf0.jpg",
+      "sha256": "a32648b9975379e48dd665dbc5c3efad23cdc5dea540d980607216a50282ad14",
+      "size": 74355,
+      "alt_en": "The activity “Can you find the exoplanet?”. A red circle marks HD 189733. Arrows lead to an artist’s impression of the planet and to a SalsaJ screenshot with photometry for three stars.",
+      "alt_ru": "Задание «Найдёшь ли ты экзопланету?». Красным кругом отмечена HD 189733. Стрелки ведут к художественному изображению планеты и к окну SalsaJ с рядами фотометрических измерений для трёх звёзд.",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "Thumbnail for  Can you find the exoplanet?",
+      "ru_path": "data/media/ru/oae-review-figure-a32648b9.png",
+      "ru_sha256": "ebf69c6d37c82d34ecfa30e8990478448e342a5a7cce3674f8dfefd27cc3f7c9"
+    },
+    {
+      "id": "media:oae-inline-d2fc1b19e6f209306a9f",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/the-engine-of-life_en_large_news_thumbnail_hIZQ6F6.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/the-engine-of-life/",
+      "original_path": "media/original/review-topics/oae-inline-d2fc1b19e6f209306a9f.jpg",
+      "sha256": "b8aa4ba445b9f24862decb8fe9007a7467371405066923963bc243ada94e3f9f",
+      "size": 33737,
+      "alt_en": "Thumbnail for  The Engine of Life",
+      "alt_ru": "Миниатюра задания «Двигатель жизни»",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Машинный перевод. Редакторское утверждение ожидается."
+  }
+}

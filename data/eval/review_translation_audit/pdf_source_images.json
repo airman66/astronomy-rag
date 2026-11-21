@@ -1,0 +1,1515 @@
+{
+  "schema_version": 1,
+  "documents": {
+    "article:oae-document-oae_response_to_the_2023_5th_shaw-iau_workshop_feedback": {
+      "pdf_sha256": "7b0ecef6e575e7c0b3b53dd4b9e037c48e1328acee5c5da586f36c4d5e7f9cf2",
+      "pdf_object_fields": [
+        "page",
+        "xref",
+        "alpha_xref",
+        "pixel_width",
+        "pixel_height"
+      ],
+      "entries": [
+        {
+          "prior_export": "media/original/review-pdf/7df57c39a39ad6af50c2a0f9915e50b61fd58dcd4ef40082201fd9e64934e386.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_response_to_the_2023_5th_shaw-iau_workshop_feedback-7df57c39a39ad6af50c2",
+              "original_path": "media/original/review-pdf/21cc5b7dc30ce28e35b99168ff33511aa3afd84f5ed3a4e58d391004d7b9223f.png",
+              "sha256": "21cc5b7dc30ce28e35b99168ff33511aa3afd84f5ed3a4e58d391004d7b9223f"
+            }
+          ],
+          "pdf_objects": [
+            [
+              1,
+              12,
+              13,
+              257,
+              257
+            ]
+          ]
+        }
+      ]
+    },
+    "article:oae-document-oae_evaluation_framework__toolkit_v4": {
+      "pdf_sha256": "f337df28cae38df74a894770f82742a837b916ea0a5d9992290eb129f3a9ccbf",
+      "pdf_object_fields": [
+        "page",
+        "xref",
+        "alpha_xref",
+        "pixel_width",
+        "pixel_height"
+      ],
+      "entries": [
+        {
+          "prior_export": "media/original/review-pdf/637af2aeebfa9934d9fadfa2c562eb48b852724c68a4c81e25c717e6219d8be4.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-637af2aeebfa9934d9fa",
+              "original_path": "media/original/review-pdf/e6de8dd5aa0d66e8b0a0d3eae38dd44f1cf6a56f4770b12a4dffd2a3df5bb105.png",
+              "sha256": "e6de8dd5aa0d66e8b0a0d3eae38dd44f1cf6a56f4770b12a4dffd2a3df5bb105"
+            }
+          ],
+          "pdf_objects": [
+            [
+              4,
+              112,
+              113,
+              425,
+              643
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/66aac41bc15246e5762494042cda1f2e43a015733ed1afcf4f2c22f5b4575a78.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-66aac41bc15246e57624",
+              "original_path": "media/original/review-pdf/ab7ad3aeddb89efc289c590b15882bcf7e81ae061abd2029e75db7a2694aff4c.png",
+              "sha256": "ab7ad3aeddb89efc289c590b15882bcf7e81ae061abd2029e75db7a2694aff4c"
+            }
+          ],
+          "pdf_objects": [
+            [
+              5,
+              122,
+              123,
+              508,
+              151
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/10bfd147e871cc179551a3d1a3b66c82cc65364630c4362d1b396266da0b9dd6.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-10bfd147e871cc179551",
+              "original_path": "media/original/review-pdf/dd69084a96ee115f92e09c140cac1170cba23ce58e3a44c519316995cc25b584.png",
+              "sha256": "dd69084a96ee115f92e09c140cac1170cba23ce58e3a44c519316995cc25b584"
+            }
+          ],
+          "pdf_objects": [
+            [
+              5,
+              126,
+              127,
+              735,
+              151
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/d8334017aa41b91afb96796be5aa4ceb375cd4055ad0eefd0517f92d2cf78ab2.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-d8334017aa41b91afb96",
+              "original_path": "media/original/review-pdf/675c3a69a96014f489a7af1daef7fbfd514b882c3148e69d7739030afda0766b.png",
+              "sha256": "675c3a69a96014f489a7af1daef7fbfd514b882c3148e69d7739030afda0766b"
+            }
+          ],
+          "pdf_objects": [
+            [
+              10,
+              147,
+              148,
+              49,
+              49
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/f941b1d58948e249747208052def1bad6896a9f885e36df57df9ffd63a685470.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-f941b1d58948e2497472",
+              "original_path": "media/original/review-pdf/8ec17ba94cb700d044cba11b8ea59857dc15e58a48a95f7213309a3494eeffb9.png",
+              "sha256": "8ec17ba94cb700d044cba11b8ea59857dc15e58a48a95f7213309a3494eeffb9"
+            }
+          ],
+          "pdf_objects": [
+            [
+              10,
+              149,
+              150,
+              82,
+              82
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/c17ea9d8cf16057960cf737ca067c66b645b20d0a40e76081a1597c0028f7cc6.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-c17ea9d8cf16057960cf",
+              "original_path": "media/original/review-pdf/9ef416c0639be6ad16682e49df48d2bfb88ef7f6d37e65f6bfcf3ad15b8616bb.png",
+              "sha256": "9ef416c0639be6ad16682e49df48d2bfb88ef7f6d37e65f6bfcf3ad15b8616bb"
+            }
+          ],
+          "pdf_objects": [
+            [
+              31,
+              204,
+              205,
+              627,
+              648
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/7d4eb88eb75aba332b323a46706ef2fd764160f1597ecc7139b7117f8c5df07d.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-7d4eb88eb75aba332b32",
+              "original_path": "media/original/review-pdf/27db4b71ee32086f94c6da14b5fd5d49c15038fffcb867909e1c322f93fffb1a.png",
+              "sha256": "27db4b71ee32086f94c6da14b5fd5d49c15038fffcb867909e1c322f93fffb1a"
+            }
+          ],
+          "pdf_objects": [
+            [
+              31,
+              220,
+              221,
+              619,
+              27
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/5cee27086ff8827065133b362db21af6bc5b7518bf2f70a5d44a72717428c490.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-5cee27086ff882706513",
+              "original_path": "media/original/review-pdf/63622bd6c45895bfbb95ebe57defb9f69348a2cbd4c25a56e448f28388aeee98.png",
+              "sha256": "63622bd6c45895bfbb95ebe57defb9f69348a2cbd4c25a56e448f28388aeee98"
+            }
+          ],
+          "pdf_objects": [
+            [
+              31,
+              222,
+              223,
+              231,
+              27
+            ],
+            [
+              31,
+              224,
+              225,
+              231,
+              27
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/945eef0d703aa72122c58240944bbdce4534462572f92bf81aafe6ce04d6fd18.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-945eef0d703aa72122c5",
+              "original_path": "media/original/review-pdf/ef019f9a8a07bba7123469ddd334e03d60dbc71181a738469e881f932af934b6.png",
+              "sha256": "ef019f9a8a07bba7123469ddd334e03d60dbc71181a738469e881f932af934b6"
+            }
+          ],
+          "pdf_objects": [
+            [
+              31,
+              226,
+              227,
+              300,
+              27
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/a83bd3b776ba42a14b511c74a397deb8b65cf305ce3c145e441f4c6429eaa6ba.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-a83bd3b776ba42a14b51",
+              "original_path": "media/original/review-pdf/7da72d9f747a5e82112c02f9db22192020a7ccb4bc5e84c5b4a330ab7046c816.png",
+              "sha256": "7da72d9f747a5e82112c02f9db22192020a7ccb4bc5e84c5b4a330ab7046c816"
+            }
+          ],
+          "pdf_objects": [
+            [
+              31,
+              228,
+              229,
+              322,
+              27
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/5667e1d393fc0065e3a58499b06c86c1a76cf40b0c65bd590d0fdc5a82be6e6b.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-5667e1d393fc0065e3a5",
+              "original_path": "media/original/review-pdf/c7a8b938ff9d9f6f74cc42e806d9ab27e45335770233078d24043b38ac832b3c.png",
+              "sha256": "c7a8b938ff9d9f6f74cc42e806d9ab27e45335770233078d24043b38ac832b3c"
+            }
+          ],
+          "pdf_objects": [
+            [
+              31,
+              230,
+              231,
+              241,
+              74
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/3b68097adb7c21628575cc7e197a062df097eeda638aec74b1bbba1bd2472342.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-3b68097adb7c21628575",
+              "original_path": "media/original/review-pdf/2799d11de7009b1ff298e324422ca52ffbed127ce03f23fc890fd40f12d65ae1.png",
+              "sha256": "2799d11de7009b1ff298e324422ca52ffbed127ce03f23fc890fd40f12d65ae1"
+            }
+          ],
+          "pdf_objects": [
+            [
+              36,
+              241,
+              242,
+              649,
+              251
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/533f4b0def1f12ede4a9b6c5897576c7f69ed14340ac8cdc789665be033a457b.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-533f4b0def1f12ede4a9",
+              "original_path": "media/original/review-pdf/878144d461b0852e87f89ff7c83a61e5d0d7c43198e082b10b0c58acbce575e8.png",
+              "sha256": "878144d461b0852e87f89ff7c83a61e5d0d7c43198e082b10b0c58acbce575e8"
+            }
+          ],
+          "pdf_objects": [
+            [
+              36,
+              243,
+              244,
+              433,
+              178
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/2942398956ac88dc38c2a18ab3ed8f46bf1f6ab18fbf7e13853162b541e3814a.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-2942398956ac88dc38c2",
+              "original_path": "media/original/review-pdf/50b222b87177f11b269f8ce9b4f2e8326731db4cd478020a077f881d97c8b333.png",
+              "sha256": "50b222b87177f11b269f8ce9b4f2e8326731db4cd478020a077f881d97c8b333"
+            }
+          ],
+          "pdf_objects": [
+            [
+              36,
+              245,
+              246,
+              430,
+              165
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/d9bca7db5c7dfb8fd9be51128625f5c90d94ba9d1b744251fadd9e6cf97a2bb4.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-d9bca7db5c7dfb8fd9be",
+              "original_path": "media/original/review-pdf/d9a003d2f00d970854d38194f314df0a72278db90aeed19cc31c38276e3f8e4f.png",
+              "sha256": "d9a003d2f00d970854d38194f314df0a72278db90aeed19cc31c38276e3f8e4f"
+            }
+          ],
+          "pdf_objects": [
+            [
+              36,
+              247,
+              248,
+              837,
+              305
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/373032059c602767a22d103caeeebcba83e0d36b67ccbb2216d831a12138bf1d.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-373032059c602767a22d",
+              "original_path": "media/original/review-pdf/0b4bf83f0f4cb441ccf0d906d67067c2c7cf43c67d76482b496f8fcb42b74e81.png",
+              "sha256": "0b4bf83f0f4cb441ccf0d906d67067c2c7cf43c67d76482b496f8fcb42b74e81"
+            }
+          ],
+          "pdf_objects": [
+            [
+              36,
+              249,
+              250,
+              242,
+              41
+            ],
+            [
+              36,
+              251,
+              252,
+              242,
+              41
+            ],
+            [
+              36,
+              253,
+              254,
+              242,
+              41
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/6c71c5749fe25e26c7a6d3ae468c1ba4bf37fd87139933b09cec7e6abe19fc1d.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-6c71c5749fe25e26c7a6",
+              "original_path": "media/original/review-pdf/6884297119de1eb77cc2755a8ff04d3c4d9d96ecd5dcabc5a301559c9631ff68.png",
+              "sha256": "6884297119de1eb77cc2755a8ff04d3c4d9d96ecd5dcabc5a301559c9631ff68"
+            }
+          ],
+          "pdf_objects": [
+            [
+              42,
+              277,
+              278,
+              302,
+              302
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/c5d1113101f49b1cebed086fe84c3a6f71d9922e6dbdbff3fa2277440f8f7292.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-c5d1113101f49b1cebed",
+              "original_path": "media/original/review-pdf/d69801e1b9b48fc1bc8fae4a5c7e91ee6abb02a9ea62b5c004b20dfcf0b2bdb7.png",
+              "sha256": "d69801e1b9b48fc1bc8fae4a5c7e91ee6abb02a9ea62b5c004b20dfcf0b2bdb7"
+            },
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-c5d1113101f49b1cebed-b48e7127e8",
+              "original_path": "media/original/review-pdf/b48e7127e84d338485a02d414c934afe1a9bab00393a19c8628996b7fda982f8.png",
+              "sha256": "b48e7127e84d338485a02d414c934afe1a9bab00393a19c8628996b7fda982f8"
+            },
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-c5d1113101f49b1cebed-b11984e76c",
+              "original_path": "media/original/review-pdf/b11984e76cdec08f80cdc5c1e8dbb4aa14a4b0618a6a98670667041b5be01fc3.png",
+              "sha256": "b11984e76cdec08f80cdc5c1e8dbb4aa14a4b0618a6a98670667041b5be01fc3"
+            }
+          ],
+          "pdf_objects": [
+            [
+              10,
+              138,
+              139,
+              50,
+              50
+            ],
+            [
+              10,
+              141,
+              142,
+              50,
+              50
+            ],
+            [
+              10,
+              144,
+              145,
+              50,
+              50
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/e5c1b3fafb6812cadbadba5e793ab016a3425ef56941bbfd7ab9c438f594d201.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-e5c1b3fafb6812cadbad",
+              "original_path": "media/original/review-pdf/b4932e4d0a2f634dd0b3354537e2c1099bd1fcb459561779710fe0c0f796a4c4.png",
+              "sha256": "b4932e4d0a2f634dd0b3354537e2c1099bd1fcb459561779710fe0c0f796a4c4"
+            },
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-e5c1b3fafb6812cadbad-636389f0de",
+              "original_path": "media/original/review-pdf/636389f0de4cfc5122432bd8f2a79be32a669f7e6539d6e54ff947f687d18a01.png",
+              "sha256": "636389f0de4cfc5122432bd8f2a79be32a669f7e6539d6e54ff947f687d18a01"
+            },
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-e5c1b3fafb6812cadbad-afa2e34199",
+              "original_path": "media/original/review-pdf/afa2e3419990ced5f47da81b5ff47b0e5ebb80b1333e1608f1fb764b74a8d283.png",
+              "sha256": "afa2e3419990ced5f47da81b5ff47b0e5ebb80b1333e1608f1fb764b74a8d283"
+            },
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-e5c1b3fafb6812cadbad-dcaebfe6dc",
+              "original_path": "media/original/review-pdf/dcaebfe6dc26b28d5fa4fc49556bd60e37e9ac9628a219974bf6d18beaa4257f.png",
+              "sha256": "dcaebfe6dc26b28d5fa4fc49556bd60e37e9ac9628a219974bf6d18beaa4257f"
+            },
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-e5c1b3fafb6812cadbad-c8a36c571d",
+              "original_path": "media/original/review-pdf/c8a36c571dda1c5bca31f47133f5b1c73fdd2012f2b9ffb9068c68f72b0e5b94.png",
+              "sha256": "c8a36c571dda1c5bca31f47133f5b1c73fdd2012f2b9ffb9068c68f72b0e5b94"
+            },
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-e5c1b3fafb6812cadbad-9b0bdee4a5",
+              "original_path": "media/original/review-pdf/9b0bdee4a5ba7154ab92f811566ce13f91705346e57bacb00f0cb5afd93291ab.png",
+              "sha256": "9b0bdee4a5ba7154ab92f811566ce13f91705346e57bacb00f0cb5afd93291ab"
+            },
+            {
+              "id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-e5c1b3fafb6812cadbad-406e1ad2f1",
+              "original_path": "media/original/review-pdf/406e1ad2f11994e5957df49a6fe8fa8cde130c3b5434359b1723ad5282300c1a.png",
+              "sha256": "406e1ad2f11994e5957df49a6fe8fa8cde130c3b5434359b1723ad5282300c1a"
+            }
+          ],
+          "pdf_objects": [
+            [
+              31,
+              206,
+              207,
+              75,
+              71
+            ],
+            [
+              31,
+              208,
+              209,
+              75,
+              71
+            ],
+            [
+              31,
+              210,
+              211,
+              75,
+              71
+            ],
+            [
+              31,
+              212,
+              213,
+              75,
+              71
+            ],
+            [
+              31,
+              214,
+              215,
+              75,
+              71
+            ],
+            [
+              31,
+              216,
+              217,
+              75,
+              71
+            ],
+            [
+              31,
+              218,
+              219,
+              75,
+              71
+            ]
+          ]
+        }
+      ]
+    },
+    "article:oae-document-oaereview-evaluation-2025": {
+      "pdf_sha256": "461dfc1bc13963894523e6a815c0637866dee45853baff7a9538138c149eb3e5",
+      "pdf_object_fields": [
+        "page",
+        "xref",
+        "alpha_xref",
+        "pixel_width",
+        "pixel_height"
+      ],
+      "entries": [
+        {
+          "prior_export": "media/original/review-pdf/e7fdd3627f367d218f1b88cc5dda514a0db1c8e4e3f461a65d51d0cc6285bd26.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-e7fdd3627f367d218f1b",
+              "original_path": "media/original/review-pdf/b93fc6dc8402147988a70c42aaba1c62e23800ff25f8a2de114e2686208fc41a.png",
+              "sha256": "b93fc6dc8402147988a70c42aaba1c62e23800ff25f8a2de114e2686208fc41a"
+            }
+          ],
+          "pdf_objects": [
+            [
+              4,
+              91,
+              92,
+              120,
+              105
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/5e74bd16e374c09a5e4efdb90078a1dfb664585d980dfc3b617b15cad00c0595.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-5e74bd16e374c09a5e4e",
+              "original_path": "media/original/review-pdf/d03b68f408657668e54d86c9bf3cc656ed0ec2f838b4a5ff998e3387d598366b.png",
+              "sha256": "d03b68f408657668e54d86c9bf3cc656ed0ec2f838b4a5ff998e3387d598366b"
+            }
+          ],
+          "pdf_objects": [
+            [
+              4,
+              95,
+              96,
+              211,
+              161
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/9060d40bf934897234ba4e22502a606caf1b3666220905e85719263f89ff6be1.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-9060d40bf934897234ba",
+              "original_path": "media/original/review-pdf/b3597b245b7823f8dffaa01a5a2326faf1951d90ce1dd60280fc88dee2f21bf0.png",
+              "sha256": "b3597b245b7823f8dffaa01a5a2326faf1951d90ce1dd60280fc88dee2f21bf0"
+            }
+          ],
+          "pdf_objects": [
+            [
+              4,
+              97,
+              98,
+              550,
+              105
+            ],
+            [
+              4,
+              119,
+              120,
+              550,
+              105
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/873cc947e5acd9b715ec6e7a53b7382e62e30a007b5fe437f4ac2596f962fc88.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-873cc947e5acd9b715ec",
+              "original_path": "media/original/review-pdf/26007d5422625c49eaf29e77a4daa39d8d7dcb0e5fa91134321fb79581150692.png",
+              "sha256": "26007d5422625c49eaf29e77a4daa39d8d7dcb0e5fa91134321fb79581150692"
+            }
+          ],
+          "pdf_objects": [
+            [
+              4,
+              101,
+              123,
+              1069,
+              162
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/8b823b5c915896140c3db6507cabe348377c4f8c80da189b17c2064574e3e4dd.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-8b823b5c915896140c3d",
+              "original_path": "media/original/review-pdf/4626502459479bda6867c07b8e2411e10ea4681151bfe2a6d53cf15473d055dc.png",
+              "sha256": "4626502459479bda6867c07b8e2411e10ea4681151bfe2a6d53cf15473d055dc"
+            }
+          ],
+          "pdf_objects": [
+            [
+              4,
+              105,
+              106,
+              120,
+              121
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/1bb47615b5bca57edb64e4993a1f0225b289dc19f205f53ccaadd65604719806.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-1bb47615b5bca57edb64",
+              "original_path": "media/original/review-pdf/f46b456a12a427036a9858f3465eb526027750234c7ed6a3f9aad0f0331d070b.png",
+              "sha256": "f46b456a12a427036a9858f3465eb526027750234c7ed6a3f9aad0f0331d070b"
+            }
+          ],
+          "pdf_objects": [
+            [
+              4,
+              107,
+              108,
+              118,
+              109
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/5000a046eacfa8f75fc0c56cca052b9b22f912eed285e6415d17290a9d8fbe60.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-5000a046eacfa8f75fc0",
+              "original_path": "media/original/review-pdf/2f3ef90288be3ff055a57b3eb30ddd41869d8cc7b5a13c2160f9f9ff3a2ebdcc.png",
+              "sha256": "2f3ef90288be3ff055a57b3eb30ddd41869d8cc7b5a13c2160f9f9ff3a2ebdcc"
+            }
+          ],
+          "pdf_objects": [
+            [
+              4,
+              109,
+              110,
+              211,
+              193
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/9b801cbd25098c70ab4f34609a8b67254bc349a2e634665502654f875f6b69d0.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-9b801cbd25098c70ab4f",
+              "original_path": "media/original/review-pdf/56cd6fcbe3f215a930ffb525f8b9366643c0f034e03a43923e48df77d466ce7c.png",
+              "sha256": "56cd6fcbe3f215a930ffb525f8b9366643c0f034e03a43923e48df77d466ce7c"
+            }
+          ],
+          "pdf_objects": [
+            [
+              4,
+              111,
+              112,
+              550,
+              121
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/004faa0fd6b556b28100883d478ffe63eca5c36aa862f9fc948e4f6b8dbd9d1d.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-004faa0fd6b556b28100",
+              "original_path": "media/original/review-pdf/7da74cbed51fb69470d8c1ea8e736610d98bccc995451eefa838bafa21a2b011.png",
+              "sha256": "7da74cbed51fb69470d8c1ea8e736610d98bccc995451eefa838bafa21a2b011"
+            }
+          ],
+          "pdf_objects": [
+            [
+              4,
+              113,
+              114,
+              547,
+              109
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/d0bb26c12a3f96255892eecdab1cba5bdbe78cf92fe02fd7afc9946d459e3729.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-d0bb26c12a3f96255892",
+              "original_path": "media/original/review-pdf/f5b1768aff926c304b0f4ed041ead93cc1c85da7e86b67be2beed1cce2c67672.png",
+              "sha256": "f5b1768aff926c304b0f4ed041ead93cc1c85da7e86b67be2beed1cce2c67672"
+            }
+          ],
+          "pdf_objects": [
+            [
+              4,
+              115,
+              116,
+              1069,
+              194
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/51436c33b67f1450e0609700eab95cbd96057c325ad408414e24c5042c221719.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-51436c33b67f1450e060",
+              "original_path": "media/original/review-pdf/770ff646bfd1e5e24901f0c892e4175c0df751b44107010c3546049a480ebdf1.png",
+              "sha256": "770ff646bfd1e5e24901f0c892e4175c0df751b44107010c3546049a480ebdf1"
+            }
+          ],
+          "pdf_objects": [
+            [
+              7,
+              139,
+              140,
+              407,
+              239
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/b1b400bb273a5b732b04a4f8ac8e67078c87047415d5e624421baa32927f9843.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-b1b400bb273a5b732b04",
+              "original_path": "media/original/review-pdf/6b525c7cb04475c50860edef048a01b01a0b319387f5a0bdcc780fbdf30475ea.png",
+              "sha256": "6b525c7cb04475c50860edef048a01b01a0b319387f5a0bdcc780fbdf30475ea"
+            }
+          ],
+          "pdf_objects": [
+            [
+              7,
+              141,
+              142,
+              574,
+              238
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/0594aae2ecdf530dd3d649fbca53c7f49f0ea2ed44e61ebb9f249d5d2fac30b7.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-0594aae2ecdf530dd3d6",
+              "original_path": "media/original/review-pdf/29e52a6532792647eaa041c29e1488d8d06889d12fc451a3d52541e6654e31e6.png",
+              "sha256": "29e52a6532792647eaa041c29e1488d8d06889d12fc451a3d52541e6654e31e6"
+            }
+          ],
+          "pdf_objects": [
+            [
+              7,
+              145,
+              146,
+              408,
+              103
+            ],
+            [
+              7,
+              149,
+              150,
+              408,
+              103
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/8285cf8688eef9a1d11a41cb52b2a81cc9d4a362faebc82221c29ff761d763f9.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-8285cf8688eef9a1d11a",
+              "original_path": "media/original/review-pdf/b9af5c3ce8a28466ccd7eb09f54e3f763b46227dadb1b0f3032347c6eccd6685.png",
+              "sha256": "b9af5c3ce8a28466ccd7eb09f54e3f763b46227dadb1b0f3032347c6eccd6685"
+            }
+          ],
+          "pdf_objects": [
+            [
+              7,
+              147,
+              148,
+              574,
+              265
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/db7d7e5b6226f0b365b0633e61dce4d221d5d6c4d23292f2637409bdaa09fc34.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-db7d7e5b6226f0b365b0",
+              "original_path": "media/original/review-pdf/8e60f11d4a03a478a3a9935351c2ea319aff907c3696eddf425e28d18a1e032e.png",
+              "sha256": "8e60f11d4a03a478a3a9935351c2ea319aff907c3696eddf425e28d18a1e032e"
+            }
+          ],
+          "pdf_objects": [
+            [
+              7,
+              151,
+              152,
+              574,
+              103
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/4953c6f312ef7b4581848776a889752871a1e80e52dc7a385427803aeb3e3599.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-4953c6f312ef7b458184",
+              "original_path": "media/original/review-pdf/f800cab5db6543e18e7a6fd15b756e7530486bd26e751ea538500a556591a431.png",
+              "sha256": "f800cab5db6543e18e7a6fd15b756e7530486bd26e751ea538500a556591a431"
+            }
+          ],
+          "pdf_objects": [
+            [
+              7,
+              153,
+              154,
+              408,
+              150
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/6060cb86718d1b47dc0f7db173505c3fef14f1e4aa8995031ec912fab59ffaf7.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-6060cb86718d1b47dc0f",
+              "original_path": "media/original/review-pdf/9dce1ac93e648e5cf89196ff26818d102fca6d96ffcb0cf61b5ea5b42394c22c.png",
+              "sha256": "9dce1ac93e648e5cf89196ff26818d102fca6d96ffcb0cf61b5ea5b42394c22c"
+            }
+          ],
+          "pdf_objects": [
+            [
+              7,
+              155,
+              156,
+              1120,
+              33
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/2f87a29bbb2dcfd8130632454a05438077552adc82b41ec54d567d7bda9c5d59.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-2f87a29bbb2dcfd81306",
+              "original_path": "media/original/review-pdf/299d425e82b7b4d4f18ea4a3d37f1ecd51c6127b4f52bb1a2ddf2d3aeeaeecb3.png",
+              "sha256": "299d425e82b7b4d4f18ea4a3d37f1ecd51c6127b4f52bb1a2ddf2d3aeeaeecb3"
+            }
+          ],
+          "pdf_objects": [
+            [
+              7,
+              157,
+              158,
+              252,
+              42
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/50275aa60ef0d391618d627cea6b98e8f8a3ea703fdd1b70e9af902843a47898.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-50275aa60ef0d391618d",
+              "original_path": "media/original/review-pdf/df31488338120c222c3c698375ce1a88439efb5cac606776385ce7601217aff9.png",
+              "sha256": "df31488338120c222c3c698375ce1a88439efb5cac606776385ce7601217aff9"
+            }
+          ],
+          "pdf_objects": [
+            [
+              7,
+              159,
+              160,
+              370,
+              38
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/3726072b4589613aa03e1a83553215e4f4245fcfb3fd351d9752121aa71714fc.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-3726072b4589613aa03e",
+              "original_path": "media/original/review-pdf/a93501b5b96880086a40d819120d96135896b42d3202be8ebd63cb6c453129d4.png",
+              "sha256": "a93501b5b96880086a40d819120d96135896b42d3202be8ebd63cb6c453129d4"
+            }
+          ],
+          "pdf_objects": [
+            [
+              7,
+              161,
+              162,
+              164,
+              38
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/5cc695d62e6b4ce5328289fa12c1d4567538ed907bfd6267fa1f1de6ec000245.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-5cc695d62e6b4ce53282",
+              "original_path": "media/original/review-pdf/44f3444bd6743e60172b86551d1ad486fa498fa7993b134e58dda27b50f90297.png",
+              "sha256": "44f3444bd6743e60172b86551d1ad486fa498fa7993b134e58dda27b50f90297"
+            },
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-5cc695d62e6b4ce53282-57ba86bed2",
+              "original_path": "media/original/review-pdf/57ba86bed29775de42bf5742c4a2d177f2b76e89f1333a99bd17f7321acbc08e.png",
+              "sha256": "57ba86bed29775de42bf5742c4a2d177f2b76e89f1333a99bd17f7321acbc08e"
+            }
+          ],
+          "pdf_objects": [
+            [
+              4,
+              93,
+              94,
+              118,
+              93
+            ],
+            [
+              4,
+              117,
+              118,
+              118,
+              93
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/5803c5afa671c50d3cbaaf865720b35615676aa06a87fcabf2afba214d8e080c.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-5803c5afa671c50d3cba",
+              "original_path": "media/original/review-pdf/bb4f42a4f7fb868f50a1fa60bd6e392958fcc1c0292a7a76c76b57e6f35bd654.png",
+              "sha256": "bb4f42a4f7fb868f50a1fa60bd6e392958fcc1c0292a7a76c76b57e6f35bd654"
+            },
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-5803c5afa671c50d3cba-5bcdbaa91e",
+              "original_path": "media/original/review-pdf/5bcdbaa91ebf9ab04ccd7ff93bd51dc71e4a60fa6b999432208c1328282f2ed0.png",
+              "sha256": "5bcdbaa91ebf9ab04ccd7ff93bd51dc71e4a60fa6b999432208c1328282f2ed0"
+            }
+          ],
+          "pdf_objects": [
+            [
+              4,
+              99,
+              100,
+              547,
+              93
+            ],
+            [
+              4,
+              121,
+              122,
+              547,
+              93
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/2c97794e9e38da27d93dce53f1ee460da8aee7685a5797cc25a43f9efd7bf2df.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-2c97794e9e38da27d93d",
+              "original_path": "media/original/review-pdf/356bc0e53f3a6f1df6a94a820c26b9ca42c95263bd9e10cb07c9815398616a97.png",
+              "sha256": "356bc0e53f3a6f1df6a94a820c26b9ca42c95263bd9e10cb07c9815398616a97"
+            },
+            {
+              "id": "media:oae-pdf-oaereview-evaluation-2025-2c97794e9e38da27d93d-37c2d6f81a",
+              "original_path": "media/original/review-pdf/37c2d6f81a33492814306141893ae15ef393292ada62681d1f40014e994a73ca.png",
+              "sha256": "37c2d6f81a33492814306141893ae15ef393292ada62681d1f40014e994a73ca"
+            }
+          ],
+          "pdf_objects": [
+            [
+              4,
+              103,
+              104,
+              70,
+              63
+            ],
+            [
+              4,
+              124,
+              125,
+              70,
+              63
+            ]
+          ]
+        }
+      ]
+    },
+    "article:oae-document-oae_evaluation_toolkit_standard": {
+      "pdf_sha256": "d762bde83c89256e17062792dd44c29e4397b4334f3016ee233174499a5c1719",
+      "pdf_object_fields": [
+        "page",
+        "xref",
+        "alpha_xref",
+        "pixel_width",
+        "pixel_height"
+      ],
+      "entries": [
+        {
+          "prior_export": "media/original/review-pdf/637af2aeebfa9934d9fadfa2c562eb48b852724c68a4c81e25c717e6219d8be4.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-637af2aeebfa9934d9fa",
+              "original_path": "media/original/review-pdf/e6de8dd5aa0d66e8b0a0d3eae38dd44f1cf6a56f4770b12a4dffd2a3df5bb105.png",
+              "sha256": "e6de8dd5aa0d66e8b0a0d3eae38dd44f1cf6a56f4770b12a4dffd2a3df5bb105"
+            }
+          ],
+          "pdf_objects": [
+            [
+              4,
+              109,
+              110,
+              425,
+              643
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/66aac41bc15246e5762494042cda1f2e43a015733ed1afcf4f2c22f5b4575a78.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-66aac41bc15246e57624",
+              "original_path": "media/original/review-pdf/ab7ad3aeddb89efc289c590b15882bcf7e81ae061abd2029e75db7a2694aff4c.png",
+              "sha256": "ab7ad3aeddb89efc289c590b15882bcf7e81ae061abd2029e75db7a2694aff4c"
+            }
+          ],
+          "pdf_objects": [
+            [
+              5,
+              118,
+              119,
+              508,
+              151
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/10bfd147e871cc179551a3d1a3b66c82cc65364630c4362d1b396266da0b9dd6.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-10bfd147e871cc179551",
+              "original_path": "media/original/review-pdf/dd69084a96ee115f92e09c140cac1170cba23ce58e3a44c519316995cc25b584.png",
+              "sha256": "dd69084a96ee115f92e09c140cac1170cba23ce58e3a44c519316995cc25b584"
+            }
+          ],
+          "pdf_objects": [
+            [
+              5,
+              122,
+              123,
+              735,
+              151
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/d8334017aa41b91afb96796be5aa4ceb375cd4055ad0eefd0517f92d2cf78ab2.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-d8334017aa41b91afb96",
+              "original_path": "media/original/review-pdf/4e06de822e29c81d0ca7ce30e29ac295b7c45f6db85b102d877f278bfae570fc.png",
+              "sha256": "4e06de822e29c81d0ca7ce30e29ac295b7c45f6db85b102d877f278bfae570fc"
+            }
+          ],
+          "pdf_objects": [
+            [
+              10,
+              148,
+              149,
+              49,
+              49
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/f941b1d58948e249747208052def1bad6896a9f885e36df57df9ffd63a685470.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-f941b1d58948e2497472",
+              "original_path": "media/original/review-pdf/8ec17ba94cb700d044cba11b8ea59857dc15e58a48a95f7213309a3494eeffb9.png",
+              "sha256": "8ec17ba94cb700d044cba11b8ea59857dc15e58a48a95f7213309a3494eeffb9"
+            }
+          ],
+          "pdf_objects": [
+            [
+              10,
+              150,
+              151,
+              82,
+              82
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/c17ea9d8cf16057960cf737ca067c66b645b20d0a40e76081a1597c0028f7cc6.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-c17ea9d8cf16057960cf",
+              "original_path": "media/original/review-pdf/9ef416c0639be6ad16682e49df48d2bfb88ef7f6d37e65f6bfcf3ad15b8616bb.png",
+              "sha256": "9ef416c0639be6ad16682e49df48d2bfb88ef7f6d37e65f6bfcf3ad15b8616bb"
+            }
+          ],
+          "pdf_objects": [
+            [
+              30,
+              201,
+              202,
+              627,
+              648
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/7d4eb88eb75aba332b323a46706ef2fd764160f1597ecc7139b7117f8c5df07d.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-7d4eb88eb75aba332b32",
+              "original_path": "media/original/review-pdf/27db4b71ee32086f94c6da14b5fd5d49c15038fffcb867909e1c322f93fffb1a.png",
+              "sha256": "27db4b71ee32086f94c6da14b5fd5d49c15038fffcb867909e1c322f93fffb1a"
+            }
+          ],
+          "pdf_objects": [
+            [
+              30,
+              217,
+              218,
+              619,
+              27
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/5cee27086ff8827065133b362db21af6bc5b7518bf2f70a5d44a72717428c490.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-5cee27086ff882706513",
+              "original_path": "media/original/review-pdf/63622bd6c45895bfbb95ebe57defb9f69348a2cbd4c25a56e448f28388aeee98.png",
+              "sha256": "63622bd6c45895bfbb95ebe57defb9f69348a2cbd4c25a56e448f28388aeee98"
+            }
+          ],
+          "pdf_objects": [
+            [
+              30,
+              219,
+              220,
+              231,
+              27
+            ],
+            [
+              30,
+              221,
+              222,
+              231,
+              27
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/945eef0d703aa72122c58240944bbdce4534462572f92bf81aafe6ce04d6fd18.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-945eef0d703aa72122c5",
+              "original_path": "media/original/review-pdf/ef019f9a8a07bba7123469ddd334e03d60dbc71181a738469e881f932af934b6.png",
+              "sha256": "ef019f9a8a07bba7123469ddd334e03d60dbc71181a738469e881f932af934b6"
+            }
+          ],
+          "pdf_objects": [
+            [
+              30,
+              223,
+              224,
+              300,
+              27
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/a83bd3b776ba42a14b511c74a397deb8b65cf305ce3c145e441f4c6429eaa6ba.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-a83bd3b776ba42a14b51",
+              "original_path": "media/original/review-pdf/7da72d9f747a5e82112c02f9db22192020a7ccb4bc5e84c5b4a330ab7046c816.png",
+              "sha256": "7da72d9f747a5e82112c02f9db22192020a7ccb4bc5e84c5b4a330ab7046c816"
+            }
+          ],
+          "pdf_objects": [
+            [
+              30,
+              225,
+              226,
+              322,
+              27
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/5667e1d393fc0065e3a58499b06c86c1a76cf40b0c65bd590d0fdc5a82be6e6b.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-5667e1d393fc0065e3a5",
+              "original_path": "media/original/review-pdf/c7a8b938ff9d9f6f74cc42e806d9ab27e45335770233078d24043b38ac832b3c.png",
+              "sha256": "c7a8b938ff9d9f6f74cc42e806d9ab27e45335770233078d24043b38ac832b3c"
+            }
+          ],
+          "pdf_objects": [
+            [
+              30,
+              227,
+              228,
+              241,
+              74
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/3b68097adb7c21628575cc7e197a062df097eeda638aec74b1bbba1bd2472342.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-3b68097adb7c21628575",
+              "original_path": "media/original/review-pdf/2799d11de7009b1ff298e324422ca52ffbed127ce03f23fc890fd40f12d65ae1.png",
+              "sha256": "2799d11de7009b1ff298e324422ca52ffbed127ce03f23fc890fd40f12d65ae1"
+            }
+          ],
+          "pdf_objects": [
+            [
+              35,
+              238,
+              239,
+              649,
+              251
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/533f4b0def1f12ede4a9b6c5897576c7f69ed14340ac8cdc789665be033a457b.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-533f4b0def1f12ede4a9",
+              "original_path": "media/original/review-pdf/878144d461b0852e87f89ff7c83a61e5d0d7c43198e082b10b0c58acbce575e8.png",
+              "sha256": "878144d461b0852e87f89ff7c83a61e5d0d7c43198e082b10b0c58acbce575e8"
+            }
+          ],
+          "pdf_objects": [
+            [
+              35,
+              240,
+              241,
+              433,
+              178
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/2942398956ac88dc38c2a18ab3ed8f46bf1f6ab18fbf7e13853162b541e3814a.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-2942398956ac88dc38c2",
+              "original_path": "media/original/review-pdf/50b222b87177f11b269f8ce9b4f2e8326731db4cd478020a077f881d97c8b333.png",
+              "sha256": "50b222b87177f11b269f8ce9b4f2e8326731db4cd478020a077f881d97c8b333"
+            }
+          ],
+          "pdf_objects": [
+            [
+              35,
+              242,
+              243,
+              430,
+              165
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/d9bca7db5c7dfb8fd9be51128625f5c90d94ba9d1b744251fadd9e6cf97a2bb4.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-d9bca7db5c7dfb8fd9be",
+              "original_path": "media/original/review-pdf/d9a003d2f00d970854d38194f314df0a72278db90aeed19cc31c38276e3f8e4f.png",
+              "sha256": "d9a003d2f00d970854d38194f314df0a72278db90aeed19cc31c38276e3f8e4f"
+            }
+          ],
+          "pdf_objects": [
+            [
+              35,
+              244,
+              245,
+              837,
+              305
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/373032059c602767a22d103caeeebcba83e0d36b67ccbb2216d831a12138bf1d.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-373032059c602767a22d",
+              "original_path": "media/original/review-pdf/0b4bf83f0f4cb441ccf0d906d67067c2c7cf43c67d76482b496f8fcb42b74e81.png",
+              "sha256": "0b4bf83f0f4cb441ccf0d906d67067c2c7cf43c67d76482b496f8fcb42b74e81"
+            }
+          ],
+          "pdf_objects": [
+            [
+              35,
+              246,
+              247,
+              242,
+              41
+            ],
+            [
+              35,
+              248,
+              249,
+              242,
+              41
+            ],
+            [
+              35,
+              250,
+              251,
+              242,
+              41
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/6c71c5749fe25e26c7a6d3ae468c1ba4bf37fd87139933b09cec7e6abe19fc1d.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-6c71c5749fe25e26c7a6",
+              "original_path": "media/original/review-pdf/6884297119de1eb77cc2755a8ff04d3c4d9d96ecd5dcabc5a301559c9631ff68.png",
+              "sha256": "6884297119de1eb77cc2755a8ff04d3c4d9d96ecd5dcabc5a301559c9631ff68"
+            }
+          ],
+          "pdf_objects": [
+            [
+              40,
+              273,
+              274,
+              302,
+              302
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/c5d1113101f49b1cebed086fe84c3a6f71d9922e6dbdbff3fa2277440f8f7292.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-c5d1113101f49b1cebed",
+              "original_path": "media/original/review-pdf/f87d25f5b568da33a3a2b4586601b2b75baee2407db4f17fa916ff28a6e3a376.png",
+              "sha256": "f87d25f5b568da33a3a2b4586601b2b75baee2407db4f17fa916ff28a6e3a376"
+            },
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-c5d1113101f49b1cebed-8278ff15dd",
+              "original_path": "media/original/review-pdf/8278ff15dd355452adb683dde5c6f961b8fb8c0dd089d90579484c7fe02344d6.png",
+              "sha256": "8278ff15dd355452adb683dde5c6f961b8fb8c0dd089d90579484c7fe02344d6"
+            },
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-c5d1113101f49b1cebed-570d848970",
+              "original_path": "media/original/review-pdf/570d848970abb501c2ad75debdbacf9806476973350da3d1717516a3f1f3ced3.png",
+              "sha256": "570d848970abb501c2ad75debdbacf9806476973350da3d1717516a3f1f3ced3"
+            }
+          ],
+          "pdf_objects": [
+            [
+              10,
+              139,
+              140,
+              50,
+              50
+            ],
+            [
+              10,
+              142,
+              143,
+              50,
+              50
+            ],
+            [
+              10,
+              145,
+              146,
+              50,
+              50
+            ]
+          ]
+        },
+        {
+          "prior_export": "media/original/review-pdf/e5c1b3fafb6812cadbadba5e793ab016a3425ef56941bbfd7ab9c438f594d201.png",
+          "images": [
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-e5c1b3fafb6812cadbad",
+              "original_path": "media/original/review-pdf/b4932e4d0a2f634dd0b3354537e2c1099bd1fcb459561779710fe0c0f796a4c4.png",
+              "sha256": "b4932e4d0a2f634dd0b3354537e2c1099bd1fcb459561779710fe0c0f796a4c4"
+            },
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-e5c1b3fafb6812cadbad-636389f0de",
+              "original_path": "media/original/review-pdf/636389f0de4cfc5122432bd8f2a79be32a669f7e6539d6e54ff947f687d18a01.png",
+              "sha256": "636389f0de4cfc5122432bd8f2a79be32a669f7e6539d6e54ff947f687d18a01"
+            },
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-e5c1b3fafb6812cadbad-afa2e34199",
+              "original_path": "media/original/review-pdf/afa2e3419990ced5f47da81b5ff47b0e5ebb80b1333e1608f1fb764b74a8d283.png",
+              "sha256": "afa2e3419990ced5f47da81b5ff47b0e5ebb80b1333e1608f1fb764b74a8d283"
+            },
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-e5c1b3fafb6812cadbad-dcaebfe6dc",
+              "original_path": "media/original/review-pdf/dcaebfe6dc26b28d5fa4fc49556bd60e37e9ac9628a219974bf6d18beaa4257f.png",
+              "sha256": "dcaebfe6dc26b28d5fa4fc49556bd60e37e9ac9628a219974bf6d18beaa4257f"
+            },
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-e5c1b3fafb6812cadbad-c8a36c571d",
+              "original_path": "media/original/review-pdf/c8a36c571dda1c5bca31f47133f5b1c73fdd2012f2b9ffb9068c68f72b0e5b94.png",
+              "sha256": "c8a36c571dda1c5bca31f47133f5b1c73fdd2012f2b9ffb9068c68f72b0e5b94"
+            },
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-e5c1b3fafb6812cadbad-9b0bdee4a5",
+              "original_path": "media/original/review-pdf/9b0bdee4a5ba7154ab92f811566ce13f91705346e57bacb00f0cb5afd93291ab.png",
+              "sha256": "9b0bdee4a5ba7154ab92f811566ce13f91705346e57bacb00f0cb5afd93291ab"
+            },
+            {
+              "id": "media:oae-pdf-oae_evaluation_toolkit_standard-e5c1b3fafb6812cadbad-406e1ad2f1",
+              "original_path": "media/original/review-pdf/406e1ad2f11994e5957df49a6fe8fa8cde130c3b5434359b1723ad5282300c1a.png",
+              "sha256": "406e1ad2f11994e5957df49a6fe8fa8cde130c3b5434359b1723ad5282300c1a"
+            }
+          ],
+          "pdf_objects": [
+            [
+              30,
+              203,
+              204,
+              75,
+              71
+            ],
+            [
+              30,
+              205,
+              206,
+              75,
+              71
+            ],
+            [
+              30,
+              207,
+              208,
+              75,
+              71
+            ],
+            [
+              30,
+              209,
+              210,
+              75,
+              71
+            ],
+            [
+              30,
+              211,
+              212,
+              75,
+              71
+            ],
+            [
+              30,
+              213,
+              214,
+              75,
+              71
+            ],
+            [
+              30,
+              215,
+              216,
+              75,
+              71
+            ]
+          ]
+        }
+      ]
+    }
+  }
+}

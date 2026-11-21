@@ -1,0 +1,1902 @@
+{
+  "id": "article:oae-review-naked-eye-astronomy",
+  "kind": "article",
+  "source": {
+    "type": "oae_review_topic",
+    "url": "https://www.astro4edu.org/oae-reviews/naked-eye-astronomy",
+    "imported_at": "2026-11-18T16:43:53.253730+00:00",
+    "sha256": "5b12266a1f2d19f8b05511141c22380b35d1df1e9858baa45d419bccbd962e87"
+  },
+  "metadata": {
+    "term_numbers": [
+      7,
+      8,
+      15,
+      16,
+      29,
+      30,
+      33,
+      39,
+      45,
+      48,
+      49,
+      52,
+      53,
+      56,
+      57,
+      59,
+      61,
+      62,
+      64,
+      65,
+      66,
+      68,
+      74,
+      77,
+      83,
+      90,
+      125,
+      129,
+      130,
+      140,
+      145,
+      147,
+      154,
+      163,
+      167,
+      172,
+      173,
+      175,
+      177,
+      179,
+      181,
+      182,
+      185,
+      189,
+      192,
+      193,
+      196,
+      197,
+      199,
+      203,
+      208,
+      210,
+      226,
+      228,
+      232,
+      233,
+      234,
+      237,
+      243,
+      245,
+      247,
+      252,
+      253,
+      255,
+      275,
+      277,
+      278,
+      293,
+      294,
+      299,
+      300,
+      302,
+      304,
+      305,
+      306,
+      310,
+      314,
+      317,
+      318,
+      321,
+      331,
+      332,
+      342,
+      343,
+      344,
+      345,
+      347,
+      351,
+      354,
+      372,
+      377,
+      389,
+      390,
+      391,
+      392,
+      412,
+      424,
+      428,
+      429,
+      432,
+      436,
+      448,
+      449,
+      454,
+      456,
+      462,
+      464,
+      466,
+      467,
+      469,
+      473,
+      475
+    ],
+    "document_ids": [
+      "article:oae-document-nakedeyeastronomy_mini_review"
+    ],
+    "categories_ru": []
+  },
+  "sections": [
+    {
+      "id": "about",
+      "type": "article_body",
+      "heading": "About",
+      "body": "Naked-eye astronomy invites us to enjoy and learn about the night sky without any optical aid or a telescope. In theory it might seem easy to simply look up and dive into the world of stars, but in practice is often difficult to achieve. Some of the contributing difficulties include: light pollution, night sky observations cannot be carried out during regular school lessons, and our modern world provides us with many distractions preventing us from looking up at all. As such, this is one of the main tasks of educators & practitioners, to encourage and motivate students to overcome this first step. In addition, observing the night sky with no tools is an activity that many professional astronomers have little experience in. However, learning about the night sky can help overcome fears of the night, and unlock the wonders of the sky. This resources provide a guide to transition from theory to practice and application of various aspects that enable planning projects related to Naked-eye astronomy. Various possibilities are presented to provide students as well as the public, with different backgrounds and interests an invitation to the night sky. This can be via the use of a mobile phone app to get started until the use of a planisphere is learned, night sky observations at observatory or historical sites or even in a café in a city.",
+      "heading_ru": "О теме",
+      "body_ru": "Наблюдая невооружённым глазом, можно любоваться ночным небом и изучать его без телескопа и других оптических приборов. Кажется, достаточно поднять голову. На практике этому мешают засветка, невозможность наблюдать ночью во время обычных школьных уроков и множество отвлекающих занятий. Одна из главных задач педагогов и организаторов — заинтересовать учащихся и помочь им сделать первый шаг. Даже у многих профессиональных астрономов мало опыта наблюдений без приборов. Знакомство с ночным небом помогает преодолеть страх темноты и замечать удивительные явления.\n\nПодборка помогает перейти от теории к практике и спланировать проект наблюдений. В ней собраны способы познакомить с ночным небом учащихся и широкую публику с разными интересами и подготовкой. Начать можно с приложения на телефоне, пока человек не научился пользоваться подвижной картой звёздного неба. Наблюдения можно проводить в обсерватории, в историческом месте или даже в городском кафе.",
+      "links": [],
+      "media_ids": [
+        "media:oae-review-naked-eye-astronomy"
+      ]
+    },
+    {
+      "id": "initial_document",
+      "type": "related_resources",
+      "heading": "Mini-review document",
+      "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 5.70 MB) f .",
+      "heading_ru": "Мини-обзор",
+      "body_ru": "Этой теме была посвящена секция 3-го семинара Шоу и МАС. По её материалам подготовили мини-обзор (PDF, 5,70 МБ).",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/sessions/naked-eye-astronomy/",
+          "text": "session",
+          "text_ru": "Секция"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/schedule/",
+          "text": "3rd Shaw-IAU Workshop",
+          "text_ru": "3-й семинар Шоу и МАС"
+        },
+        {
+          "url": "https://www.astro4edu.org/media/documents/NakedEyeAstronomy_mini_review.pdf",
+          "text": "mini-review ( PDF file 5.70 MB)",
+          "text_ru": "Мини-обзор (PDF, 5,70 МБ)"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations",
+      "type": "related_resources",
+      "heading": "Talks",
+      "body": "",
+      "heading_ru": "Доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/85/",
+          "text": "Astronomy diaries and their effect on students' understanding and attitudes",
+          "text_ru": "Дневники астрономических наблюдений. Как они влияют на понимание предмета и отношение к нему"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/88/",
+          "text": "Inviting students and teachers to look up!",
+          "text_ru": "Предлагаем ученикам и учителям взглянуть на небо"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/87/",
+          "text": "Naked eye astronomy projects",
+          "text_ru": "Проекты наблюдений невооружённым глазом"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/91/",
+          "text": "Promoting of Astronomy through Naked-eye Observation on Heritage Sites",
+          "text_ru": "Популяризация астрономии через наблюдения невооружённым глазом на исторических памятниках"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/169/",
+          "text": "Star Stories at Kottamia Observatory",
+          "text_ru": "Истории о звёздах в обсерватории Каттамия"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/86/",
+          "text": "Students' mental models about the apparent motion of the Sun and stars.",
+          "text_ru": "Как учащиеся представляют видимое движение Солнца и звёзд"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/89/",
+          "text": "The citizen night-sky from Valparaíso",
+          "text_ru": "Как жители Вальпараисо наблюдают ночное небо"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/454/",
+          "text": "The Impact of Stargazing Events on Students’ Interest in STEM in Ethiopia",
+          "text_ru": "Как наблюдения звёзд влияют на интерес эфиопских школьников к STEM"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-4",
+      "type": "related_resources",
+      "heading": "Poster Presentations",
+      "body": "",
+      "heading_ru": "Стендовые доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/60/",
+          "text": "Astrocultural tourism in Romania -another way of doing astronomy education",
+          "text_ru": "Астрономическое наследие и туризм в Румынии. Ещё один способ преподавать астрономию"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/59/",
+          "text": "Star tales that tell the origins of their names",
+          "text_ru": "Звёздные предания и происхождение названий звёзд"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-5",
+      "type": "media_collection",
+      "heading": "Selected Images",
+      "body": "",
+      "heading_ru": "Изображения",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/media/an19H51Tc11/",
+          "text": "Two illuminated teepees in a subarctic forest. Green bands of aurorae light up the sky.",
+          "text_ru": "Два освещённых типи стоят в субарктическом лесу. В небе видны зелёные полосы полярного сияния."
+        },
+        {
+          "url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+          "text": "Creative Commons Attribution 4.0 International (CC BY 4.0) icons",
+          "text_ru": "Значки лицензии Creative Commons «С указанием авторства» 4.0 Всемирная (CC BY 4.0)"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/5C82uL75Pc27/",
+          "text": "Hundreds of small arcs made by stars form circles centred on a point near the horizon. A tree stands in the foreground.",
+          "text_ru": "Сотни коротких звёздных дуг образуют окружности с центром у горизонта. На переднем плане дерево."
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/Sy59yc52QK50/",
+          "text": "The Sun sinks from the top left of the image towards the middle. This path is reflected in the surface of the lake.",
+          "text_ru": "Солнце опускается от верхнего левого края кадра к центру. Его путь отражается в озере."
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/yB89J346o973/",
+          "text": "Six images of the Sun. The moon moves across the Sun’s disk, covering most in the middle images before moving away.",
+          "text_ru": "На шести кадрах Луна проходит перед диском Солнца. В середине серии она закрывает наибольшую часть диска."
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/J552vZ73Dc84/",
+          "text": "A montage of images of Mars, seen here as a series of red dots in a squashed z-shaped pattern.",
+          "text_ru": "На серии снимков Марс виден как ряд красных точек, образующих уплощённую букву Z."
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/Rt986z16uG22/",
+          "text": "12 images of sunset. Sunset moves from the left at the top, to the right in the middle, and back to the left at the bottom",
+          "text_ru": "На двенадцати снимках точка захода Солнца смещается слева в верхней части вправо к середине, затем снова влево внизу."
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/OO19Ja33ik48/",
+          "text": "Eight images of the Sun rising. From the lower, earlier images the Moon moves across the Sun from top left to bottom right.",
+          "text_ru": "На восьми последовательных кадрах восхода Луна движется по диску Солнца сверху слева вниз направо."
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/9E87Hf46pq20/",
+          "text": "24 images of the Sun around the edge of a circular image. In the lowest image, a black circle blocks the centre of the Sun.",
+          "text_ru": "По краю круглой композиции расположены 24 изображения Солнца. На нижнем кадре тёмный круг закрывает центр солнечного диска."
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/MV22xW3EP96/",
+          "text": "Seven images of the Sun. From the left it sinks, reaching its lowest in the centre image, before rising higher to the right.",
+          "text_ru": "На серии из семи кадров Солнце слева опускается к средней точке, где оно ниже всего, а справа снова поднимается."
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/lN187577SX71/",
+          "text": "Curved bright lines rise from the left, peaking on the right. The further to the left a line rises, the higher it peaks.",
+          "text_ru": "Яркие дуги поднимаются слева и достигают максимальной высоты справа. Чем дальше влево начинается дуга, тем выше она поднимается."
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/images/?page=1&category=naked-eye-astronomy",
+          "text": "Browse all images for this topic",
+          "text_ru": "Все изображения по теме"
+        }
+      ],
+      "media_ids": [
+        "media:an19H51Tc11",
+        "media:5C82uL75Pc27",
+        "media:Sy59yc52QK50",
+        "media:yB89J346o973",
+        "media:J552vZ73Dc84",
+        "media:Rt986z16uG22",
+        "media:OO19Ja33ik48",
+        "media:9E87Hf46pq20",
+        "media:MV22xW3EP96",
+        "media:lN187577SX71"
+      ]
+    },
+    {
+      "id": "diagrams",
+      "type": "media_collection",
+      "heading": "Selected Diagrams",
+      "body": "",
+      "heading_ru": "Схемы",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/diagram/6464Zx69Rv2/",
+          "text": "The Moon lies between the Sun and Earth casts a small shadow and large partial shadow",
+          "text_ru": "Луна находится между Солнцем и Землёй. На Землю падает небольшая полная тень и более широкая полутень."
+        },
+        {
+          "url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+          "text": "Creative Commons Attribution 4.0 International (CC BY 4.0) icons",
+          "text_ru": "Значки лицензии Creative Commons «С указанием авторства» 4.0 Всемирная (CC BY 4.0)"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/diagram/Nt1OV98jk24/",
+          "text": "The Moon begins as dark, an illuminated portion grows from the top. Then once fully illuminated a dark portion grows from the top",
+          "text_ru": "Лунный диск сначала тёмный. Освещённая часть растёт от верхнего края. После полнолуния тёмная часть также начинает расти сверху."
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/diagram/6y63px402A3/",
+          "text": "The Moon begins as dark, an illuminated portion grows from the right. Then once fully illuminated a dark portion grows from the right",
+          "text_ru": "Лунный диск сначала тёмный. Освещённая часть растёт справа. После полнолуния тёмная часть также начинает расти справа."
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/diagram/DW565j5mE91/",
+          "text": "The Moon begins as dark, an illuminated portion grows from the left. Then once fully illuminated a dark portion grows from the left",
+          "text_ru": "Лунный диск сначала тёмный. Освещённая часть растёт слева. После полнолуния тёмная часть также начинает расти слева."
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/diagram/bA48h020s763/",
+          "text": "The Earth with its tilted rotation axis at 4 points (December Solstice, March Equinox, June Solstice, September Equinox) in its orbit round the Sun",
+          "text_ru": "Земля с наклонённой осью вращения в четырёх точках орбиты. Декабрьское солнцестояние, мартовское равноденствие, июньское солнцестояние и сентябрьское равноденствие."
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/diagram/4g46V657yk21/",
+          "text": "Two diagrams, on the right the sky forms a dome over the observer. On the left we see this dome on the Earth's surface",
+          "text_ru": "Справа небо показано как купол над наблюдателем. Слева показано положение этого купола на поверхности Земли."
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/search-results/?page=1&language_choice=en&file_type=dia&language_restriction=all&license_restriction=all&category_restriction=4#search_results",
+          "text": "Browse all diagrams for this topic",
+          "text_ru": "Все схемы по теме"
+        }
+      ],
+      "media_ids": [
+        "diagram:6464Zx69Rv2",
+        "diagram:Nt1OV98jk24",
+        "diagram:6y63px402A3",
+        "diagram:DW565j5mE91",
+        "diagram:bA48h020s763",
+        "diagram:4g46V657yk21"
+      ]
+    },
+    {
+      "id": "videos",
+      "type": "media_collection",
+      "heading": "Selected Videos",
+      "body": "",
+      "heading_ru": "Видео",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/media/AB430t11jX43/",
+          "text": "The Big Dipper drifts lower towards the horizon on the left, on the right a comet rises in the sky.",
+          "text_ru": "Ковш Большой Медведицы слева опускается к горизонту. Справа восходит комета."
+        },
+        {
+          "url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+          "text": "Creative Commons Attribution 4.0 International (CC BY 4.0) icons",
+          "text_ru": "Значки лицензии Creative Commons «С указанием авторства» 4.0 Всемирная (CC BY 4.0)"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/Jq59Xa17ay16/",
+          "text": "The Milky Way appears as a diagonal stripe bottom left to top right. It becomes more horizontal as the video progresses.",
+          "text_ru": "Полоса Млечного Пути тянется от левого нижнего угла к верхнему правому. По мере съёмки она становится ближе к горизонтали."
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/LF10IZ41Yc54/",
+          "text": "The Southern Cross points out the South Celestial Pole, around which the sky appears to rotate",
+          "text_ru": "Южный Крест указывает на южный полюс мира, вокруг которого небо кажется вращающимся."
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/27284m8gy12/",
+          "text": "The sky rotates around one star that appears fixed. Bubbles and swirls of green aurorae fill the foreground",
+          "text_ru": "Небо поворачивается вокруг звезды, которая кажется неподвижной. На переднем плане переливаются зелёные полосы полярного сияния."
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/8i19wv485F65/",
+          "text": "The dish of a radio telescope rotates as the Big Dipper moves in the sky behind.",
+          "text_ru": "Антенна радиотелескопа поворачивается на фоне движущегося по небу Ковша Большой Медведицы."
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/PP87mr753x68/",
+          "text": "The Big Dipper sinks in the sky with the handle sweeping out a larger circle than the bowl of the asterism.",
+          "text_ru": "Ковш Большой Медведицы опускается на небе. Его ручка описывает дугу большего радиуса, чем чаша."
+        }
+      ],
+      "media_ids": [
+        "media:AB430t11jX43",
+        "media:Jq59Xa17ay16",
+        "media:LF10IZ41Yc54",
+        "media:27284m8gy12",
+        "media:8i19wv485F65",
+        "media:PP87mr753x68"
+      ]
+    },
+    {
+      "id": "glossary_terms",
+      "type": "related_resources",
+      "heading": "Linked Glossary Terms",
+      "body": "",
+      "heading_ru": "Термины глоссария",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/7/",
+          "text": "Andromeda",
+          "text_ru": "Андромеда"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/8/",
+          "text": "Andromeda Galaxy",
+          "text_ru": "Галактика Андромеды"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/15/",
+          "text": "Apparent Magnitude",
+          "text_ru": "Видимая звёздная величина"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/428/",
+          "text": "Aquarius",
+          "text_ru": "Водолей"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/16/",
+          "text": "Aries",
+          "text_ru": "Овен"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/293/",
+          "text": "Artificial Satellite",
+          "text_ru": "Искусственный спутник"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/429/",
+          "text": "Asterism",
+          "text_ru": "Астеризм"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/29/",
+          "text": "Atmosphere",
+          "text_ru": "Атмосфера"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/30/",
+          "text": "Atmospheric Extinction",
+          "text_ru": "Атмосферное поглощение"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/33/",
+          "text": "Aurora",
+          "text_ru": "Полярное сияние"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/39/",
+          "text": "Big Dipper",
+          "text_ru": "Ковш Большой Медведицы"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/45/",
+          "text": "Brightness",
+          "text_ru": "Яркость"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/432/",
+          "text": "Cancer",
+          "text_ru": "Рак"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/48/",
+          "text": "Capricornus",
+          "text_ru": "Козерог"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/49/",
+          "text": "Celestial Body",
+          "text_ru": "Небесное тело"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/52/",
+          "text": "Celestial Pole",
+          "text_ru": "Небесный полюс"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/53/",
+          "text": "Celestial Sphere",
+          "text_ru": "Небесная сфера"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/56/",
+          "text": "Circumpolar Stars",
+          "text_ru": "Околополярные звёзды"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/57/",
+          "text": "Cluster",
+          "text_ru": "Скопление"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/59/",
+          "text": "Color",
+          "text_ru": "Цвет"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/62/",
+          "text": "Comet",
+          "text_ru": "Комета"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/61/",
+          "text": "Cometary Coma",
+          "text_ru": "Кометная кома"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/64/",
+          "text": "Cometary Tail",
+          "text_ru": "Хвост кометы"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/65/",
+          "text": "Conjunction",
+          "text_ru": "Соединение"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/66/",
+          "text": "Constellation",
+          "text_ru": "Созвездие"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/68/",
+          "text": "Corona",
+          "text_ru": "Корона"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/74/",
+          "text": "Crater",
+          "text_ru": "Кратер"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/77/",
+          "text": "Dark Nebula",
+          "text_ru": "Тёмная туманность"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/436/",
+          "text": "Day",
+          "text_ru": "День"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/83/",
+          "text": "Diurnal Motion",
+          "text_ru": "Суточное движение"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/90/",
+          "text": "Earth's Rotation",
+          "text_ru": "Вращение Земли"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/125/",
+          "text": "Gas Giant",
+          "text_ru": "Газовый гигант"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/129/",
+          "text": "Giant Planet",
+          "text_ru": "Гигантская планета"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/130/",
+          "text": "Giant Star",
+          "text_ru": "Звезда-гигант"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/140/",
+          "text": "Halley's Comet",
+          "text_ru": "Комета Галлея"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/448/",
+          "text": "Halo",
+          "text_ru": "Гало"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/145/",
+          "text": "Horizon",
+          "text_ru": "Горизонт"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/147/",
+          "text": "Hour Angle",
+          "text_ru": "Часовой угол"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/154/",
+          "text": "Impact Craters",
+          "text_ru": "Ударные кратеры"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/449/",
+          "text": "Inner Planet",
+          "text_ru": "Внутренняя планета"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/163/",
+          "text": "Iron Meteorite",
+          "text_ru": "Железный метеорит"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/167/",
+          "text": "Jupiter",
+          "text_ru": "Юпитер"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/172/",
+          "text": "Leo",
+          "text_ru": "Лев"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/173/",
+          "text": "Libra",
+          "text_ru": "Весы"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/175/",
+          "text": "Light",
+          "text_ru": "Свет"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/177/",
+          "text": "Light Pollution",
+          "text_ru": "Световое загрязнение"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/179/",
+          "text": "Longitude",
+          "text_ru": "Долгота"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/181/",
+          "text": "Lunar Eclipse",
+          "text_ru": "Лунное затмение"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/182/",
+          "text": "Lunar Phase",
+          "text_ru": "Лунная фаза"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/454/",
+          "text": "Magellanic Clouds",
+          "text_ru": "Магеллановы Облака"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/185/",
+          "text": "Magnitude",
+          "text_ru": "Звёздная величина"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/456/",
+          "text": "Mare",
+          "text_ru": "Море"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/189/",
+          "text": "Mars",
+          "text_ru": "Марс"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/192/",
+          "text": "Mercury",
+          "text_ru": "Меркурий"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/193/",
+          "text": "Meridian",
+          "text_ru": "Меридиан"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/196/",
+          "text": "Meteorite",
+          "text_ru": "Метеорит"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/197/",
+          "text": "Meteoroid",
+          "text_ru": "Метеороид"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/199/",
+          "text": "Milky Way",
+          "text_ru": "Млечный Путь"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/203/",
+          "text": "Moon",
+          "text_ru": "Луна"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/208/",
+          "text": "Names of Stars",
+          "text_ru": "Названия звёзд"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/210/",
+          "text": "Navigation",
+          "text_ru": "Навигация"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/462/",
+          "text": "Night",
+          "text_ru": "Ночь"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/226/",
+          "text": "Observation",
+          "text_ru": "Наблюдение"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/464/",
+          "text": "Occultation",
+          "text_ru": "Покрытие"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/466/",
+          "text": "Open Cluster",
+          "text_ru": "Рассеянное скопление"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/228/",
+          "text": "Opposition",
+          "text_ru": "Противостояние"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/232/",
+          "text": "Orbit",
+          "text_ru": "Орбита"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/233/",
+          "text": "Orbital Period",
+          "text_ru": "Орбитальный период"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/467/",
+          "text": "Orion",
+          "text_ru": "Орион"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/234/",
+          "text": "Outer Planets",
+          "text_ru": "Внешние планеты"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/237/",
+          "text": "Parallax",
+          "text_ru": "Параллакс"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/243/",
+          "text": "Penumbra",
+          "text_ru": "Полутень"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/245/",
+          "text": "Period",
+          "text_ru": "Период"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/247/",
+          "text": "Phase",
+          "text_ru": "Фаза"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/252/",
+          "text": "Pisces",
+          "text_ru": "Рыбы"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/253/",
+          "text": "Planet",
+          "text_ru": "Планета"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/255/",
+          "text": "Planetarium",
+          "text_ru": "Планетарий"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/469/",
+          "text": "Pleiades",
+          "text_ru": "Плеяды"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/424/",
+          "text": "Polar Circle",
+          "text_ru": "Полярный круг"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/275/",
+          "text": "Rainbow",
+          "text_ru": "Радуга"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/277/",
+          "text": "Red Giant",
+          "text_ru": "Красный гигант"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/278/",
+          "text": "Red Supergiant",
+          "text_ru": "Красный сверхгигант"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/473/",
+          "text": "Rotation",
+          "text_ru": "Вращение"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/412/",
+          "text": "Satellite",
+          "text_ru": "Спутник"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/294/",
+          "text": "Saturn",
+          "text_ru": "Сатурн"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/299/",
+          "text": "Scorpius",
+          "text_ru": "Скорпион"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/300/",
+          "text": "Seasons",
+          "text_ru": "Времена года"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/475/",
+          "text": "Shadow",
+          "text_ru": "Тень"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/302/",
+          "text": "Shooting Star",
+          "text_ru": "Падающая звезда"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/304/",
+          "text": "Sirius",
+          "text_ru": "Сириус"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/305/",
+          "text": "Sky",
+          "text_ru": "Небо"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/306/",
+          "text": "Sky Map",
+          "text_ru": "Карта неба"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/310/",
+          "text": "Solar Eclipse",
+          "text_ru": "Солнечное затмение"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/314/",
+          "text": "Solar System",
+          "text_ru": "Солнечная система"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/317/",
+          "text": "Solstice",
+          "text_ru": "Солнцестояние"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/318/",
+          "text": "Southern Cross",
+          "text_ru": "Южный Крест"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/321/",
+          "text": "Space Station",
+          "text_ru": "Космическая станция"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/331/",
+          "text": "Star",
+          "text_ru": "Звезда"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/332/",
+          "text": "Star Cluster",
+          "text_ru": "Звёздное скопление"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/342/",
+          "text": "Sun",
+          "text_ru": "Солнце"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/343/",
+          "text": "Sun Path (Day Arc)",
+          "text_ru": "Путь Солнца (дневная дуга)"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/344/",
+          "text": "Sundial",
+          "text_ru": "Солнечные часы"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/345/",
+          "text": "Sunspot",
+          "text_ru": "Солнечное пятно"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/347/",
+          "text": "Supergiant Star",
+          "text_ru": "Сверхгигант"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/351/",
+          "text": "Taurus",
+          "text_ru": "Телец"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/354/",
+          "text": "Terrestrial Planet",
+          "text_ru": "Землеподобная планета"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/372/",
+          "text": "Umbra",
+          "text_ru": "Тень"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/377/",
+          "text": "Venus",
+          "text_ru": "Венера"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/389/",
+          "text": "Year",
+          "text_ru": "Год"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/390/",
+          "text": "Zenith",
+          "text_ru": "Зенит"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/391/",
+          "text": "Zodiac",
+          "text_ru": "Зодиак"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/glossary/term/392/",
+          "text": "Zodiacal Light",
+          "text_ru": "Зодиакальный свет"
+        }
+      ],
+      "media_ids": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Naked-eye astronomy",
+      "blocks": {
+        "about": {
+          "heading": "About",
+          "body": "Naked-eye astronomy invites us to enjoy and learn about the night sky without any optical aid or a telescope. In theory it might seem easy to simply look up and dive into the world of stars, but in practice is often difficult to achieve. Some of the contributing difficulties include: light pollution, night sky observations cannot be carried out during regular school lessons, and our modern world provides us with many distractions preventing us from looking up at all. As such, this is one of the main tasks of educators & practitioners, to encourage and motivate students to overcome this first step. In addition, observing the night sky with no tools is an activity that many professional astronomers have little experience in. However, learning about the night sky can help overcome fears of the night, and unlock the wonders of the sky. This resources provide a guide to transition from theory to practice and application of various aspects that enable planning projects related to Naked-eye astronomy. Various possibilities are presented to provide students as well as the public, with different backgrounds and interests an invitation to the night sky. This can be via the use of a mobile phone app to get started until the use of a planisphere is learned, night sky observations at observatory or historical sites or even in a café in a city."
+        },
+        "initial_document": {
+          "heading": "Mini-review document",
+          "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 5.70 MB) f ."
+        },
+        "presentations": {
+          "heading": "Talks",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Poster Presentations",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Selected Images",
+          "body": ""
+        },
+        "diagrams": {
+          "heading": "Selected Diagrams",
+          "body": ""
+        },
+        "videos": {
+          "heading": "Selected Videos",
+          "body": ""
+        },
+        "glossary_terms": {
+          "heading": "Linked Glossary Terms",
+          "body": ""
+        }
+      }
+    },
+    "ru": {
+      "title": "Астрономические наблюдения невооружённым глазом",
+      "blocks": {
+        "about": {
+          "heading": "О теме",
+          "body": "Наблюдая невооружённым глазом, можно любоваться ночным небом и изучать его без телескопа и других оптических приборов. Кажется, достаточно поднять голову. На практике этому мешают засветка, невозможность наблюдать ночью во время обычных школьных уроков и множество отвлекающих занятий. Одна из главных задач педагогов и организаторов — заинтересовать учащихся и помочь им сделать первый шаг. Даже у многих профессиональных астрономов мало опыта наблюдений без приборов. Знакомство с ночным небом помогает преодолеть страх темноты и замечать удивительные явления.\n\nПодборка помогает перейти от теории к практике и спланировать проект наблюдений. В ней собраны способы познакомить с ночным небом учащихся и широкую публику с разными интересами и подготовкой. Начать можно с приложения на телефоне, пока человек не научился пользоваться подвижной картой звёздного неба. Наблюдения можно проводить в обсерватории, в историческом месте или даже в городском кафе."
+        },
+        "initial_document": {
+          "heading": "Мини-обзор",
+          "body": "Этой теме была посвящена секция 3-го семинара Шоу и МАС. По её материалам подготовили мини-обзор (PDF, 5,70 МБ)."
+        },
+        "presentations": {
+          "heading": "Доклады",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Стендовые доклады",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Изображения",
+          "body": ""
+        },
+        "diagrams": {
+          "heading": "Схемы",
+          "body": ""
+        },
+        "videos": {
+          "heading": "Видео",
+          "body": ""
+        },
+        "glossary_terms": {
+          "heading": "Термины глоссария",
+          "body": ""
+        }
+      },
+      "aliases": []
+    }
+  },
+  "media": [
+    {
+      "id": "media:oae-review-naked-eye-astronomy",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/oae_review_files/illustration_images/naked_eye_astronomy_news_image_Su1GhNh.png",
+      "record_url": "https://www.astro4edu.org/oae-reviews/naked-eye-astronomy",
+      "original_path": "media/original/oae-review-naked-eye-astronomy.png",
+      "sha256": "cdc2fe683f56edf13411499945fa841a8199c7d79baf5243428da2c3de15182f",
+      "size": 13547,
+      "alt_en": "The Sun above silhouettes of houses and trees. Option b is left of the Sun, c is right, and d is below.",
+      "alt_ru": "Солнце над силуэтами домов и деревьев. Вариант b слева от Солнца, c справа, d ниже.",
+      "credit": "Hans Bekaert",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "Illustration image for Naked-eye astronomy",
+      "ru_path": "data/media/ru/oae-naked-eye-overview-cover.png",
+      "ru_sha256": "35515b827f08fce9b5a9ed35b491229dad9d35bd000657c4e21233d21ca2c664"
+    },
+    {
+      "id": "media:an19H51Tc11",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/api/records/10359618/files/Honorable%20mention%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Still%20images%20with%20smartphones-mobile%20devices:%20Northern%20Lights%20-%20Teepees,%20by%20Oanh%20Vuong.jpeg/content",
+      "record_url": "https://astro4edu.org/resources/media/an19H51Tc11/",
+      "original_path": "data/media/original/media_an19H51Tc11.jpeg",
+      "ru_path": null,
+      "sha256": "b3e4bc994d804555fd0945a26f4afc4283dd2442775068aa1e7e7d6f02f2c658",
+      "size": 2192778,
+      "title_en": "Northern Lights - Teepees",
+      "title_ru": "Северное сияние над типи",
+      "short_caption_en": "Northern Lights - Teepees",
+      "short_caption_ru": "Северное сияние над типи",
+      "caption_en": "Honorable mention in the 2023 IAU OAE Astrophotography Contest, category of Still images taken exclusively with smartphones/mobile devices.\r\n\r\nTaken with a smartphone at Cassidy Point, Yellowknife, Canada, on 24 March 2023, this stunning display captured the ethereal Northern Lights painting the night sky. The biting cold of -20°F (-29°C) set the stage for the vibrant hues of the Aurora Borealis, a celestial ballet created by collisions between charged solar particles and the Earth's atmosphere. The Earth’s magnetic field directs the charged particles towards the polar regions, where they interact with the various atoms and molecules in the atmosphere. This natural phenomenon transforms the sky into a canvas of radiant greens, pinks, and purples, casting a mesmerising glow above. The different colours of an aurora are determined by the gases in Earth’s atmosphere, the altitude where the aurora occurs, the density of the atmosphere, and the energy of the charged particles. In general, green is attributed to atomic oxygen, red is associated with high-altitude atomic oxygen and molecular nitrogen, while purple and blue are associated with molecular nitrogen only. Pink auroras are typically associated with a mix of nitrogen blue and red. Against this cosmic backdrop, the teepees of Aurora Village below provide a tranquil contrast to the celestial spectacle unfolding overhead. Preserving the pristine darkness of this location ensures the continued splendour of such awe-inspiring natural light shows.",
+      "caption_ru": "Почётное упоминание на конкурсе астрофотографии Управления астрономического образования МАС 2023 года в категории фотографий, сделанных только смартфонами или другими мобильными устройствами.\n\nЭтот снимок северного сияния сделан на смартфон в Кассиди-Пойнт, близ Йеллоунайфа, в Канаде, 24 марта 2023 года. При морозе −20 °F (−29 °C) над ночным небом разлилось яркое сияние. Магнитное поле Земли направляет заряженные частицы от Солнца к полярным областям. Там частицы сталкиваются с атомами и молекулами атмосферы, и те начинают излучать свет.\n\nНа снимке видны зелёные, розовые и фиолетовые оттенки. Цвет зависит от состава и плотности воздуха, высоты и энергии частиц. Зелёное свечение обычно даёт атомарный кислород. С красным связаны атомарный кислород на больших высотах и излучение молекулярного азота. Азот также даёт синие и фиолетовые оттенки. Розовый может появляться при наложении синего свечения азота на красное.\n\nУ подножия сияния видны типи комплекса Aurora Village. Сохранение тёмного неба в этом месте позволит и дальше наблюдать такие явления.",
+      "alt_en": "Two illuminated teepees in a subarctic forest. Green bands of aurorae light up the sky.",
+      "alt_ru": "Два освещённых типи в субарктическом лесу. Над ними тянутся зелёные полосы полярного сияния.",
+      "credit": "Oanh Vuong/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        33,
+        128,
+        511
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:5C82uL75Pc27",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/api/records/10356977/files/Winner%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Still%20images%20with%20smartphones-mobile%20devices:%20Star%20Trail%20in%20the%20Southern%20Hemisphere%20with%20Bortle%204%20Scale%20Light%20Pollution,%20by%20Slamat%20Riyadi.jpg/content",
+      "record_url": "https://astro4edu.org/resources/media/5C82uL75Pc27/",
+      "original_path": "data/media/original/media_5C82uL75Pc27.jpg",
+      "ru_path": null,
+      "sha256": "cbe7dd473dd93c4f6e34ee2cc80480c6e770324a23b79422d86f193832496229",
+      "size": 5353476,
+      "title_en": "Star Trail in the Southern Hemisphere with Bortle 4 Scale Light Pollution",
+      "title_ru": "Звёздные следы в Южном полушарии. Световое загрязнение класса 4 по шкале Бортля",
+      "short_caption_en": "Star Trail in the Southern Hemisphere with Bortle 4 Scale Light Pollution",
+      "short_caption_ru": "Звёздные следы в Южном полушарии. Световое загрязнение класса 4 по шкале Бортля",
+      "caption_en": "Winner in the 2023 IAU OAE Astrophotography Contest, category of Still images taken exclusively with smartphones/mobile devices.\r\n\r\nThis breathtaking photo, captured under the clear night sky of Linggamekar Village, Cilimus, Kuningan, West Java, Indonesia on 25 June 2020, displays star trails sweeping across the southern hemisphere’s heavens. The star trails are due to Earth’s rotation causing the apparent motion of stars, creating these mesmerising arcs of light when followed over extended periods. Here, the point the stars rotate around (the South Celestial Pole) is close to the horizon, as the image was taken close to the equator. The photographer used the star trail feature on a smartphone, which captured a series of images over an extended period and stacked them together. The striking tree in the foreground adds depth to the image, contrasting the celestial motion above with its Earthly stillness, while also masking some of the surrounding light pollution. Different parts of the world offer diverse and stunning perspectives on the night sky, emphasising the importance of preserving dark skies everywhere.",
+      "caption_ru": "Победитель конкурса астрофотографии Управления астрономического образования МАС 2023 года в категории фотографий, сделанных только смартфонами и другими мобильными устройствами.\n\nСнимок сделан 25 июня 2020 года в деревне Линггамекар, район Чилимус, округ Кунинган, Западная Ява (Индонезия). Из-за вращения Земли звёзды описывают на небе дуги. Вблизи экватора Южный полюс мира расположен низко над горизонтом. Фотограф использовал режим съёмки звёздных следов на смартфоне. Он объединяет серию снимков, сделанных за длительное время. Дерево на переднем плане подчёркивает движение звёзд и частично закрывает источники засветки. В разных частях Земли ночное небо выглядит по-разному. Сохранение тёмного неба важно везде.",
+      "alt_en": "Hundreds of small arcs made by stars form circles centred on a point near the horizon. A tree stands in the foreground.",
+      "alt_ru": "Сотни звёздных следов образуют дуги с общим центром вблизи горизонта. На переднем плане силуэт дерева.",
+      "credit": "Slamat Riyadi/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        52,
+        53,
+        90
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:Sy59yc52QK50",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/api/records/10278682/files/Honorable%20mention%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Still%20images%20of%20the%20day%20arc%20of%20the%20Sun%20and%20solargraphs:%20The%20Last%20Hour%20of%20the%20Day,%20by%20Fabrizio%20Melandri.jpg/content",
+      "record_url": "https://astro4edu.org/resources/media/Sy59yc52QK50/",
+      "original_path": "data/media/original/media_Sy59yc52QK50.jpg",
+      "ru_path": null,
+      "sha256": "614abfd27688291ad1ef7b955eb4176d77920a29fec2b807206a70c05ffdcb13",
+      "size": 940086,
+      "title_en": "The Last Hour of the Day",
+      "title_ru": "Последний час светового дня",
+      "short_caption_en": "The Last Hour of the Day",
+      "short_caption_ru": "Последний час светового дня",
+      "caption_en": "Honorable mention in the 2023 IAU OAE Astrophotography Contest, category of Still images of day arcs of the Sun and Solargraphs.\r\n\r\nThis image, taken on 2 May 1997 at Lake Scaffaiolo in Italy, masterfully captures the Sun's descent in a sequence of mirrored reflections on the placid waters. Its breathtaking representation of time showcases the serene beauty of the surroundings, and stands as a timeless testament to the fleeting moments of the day’s final hour.",
+      "caption_ru": "Почётное упоминание конкурса астрофотографии Управления астрономического образования МАС 2023 года в категории «Фотографии суточных дуг Солнца и солярографы».\n\nСнимок сделан 2 мая 1997 года на озере Скаффайоло в Италии. Путь опускающегося Солнца повторяется в цепочке отражений на спокойной воде. Серия передаёт течение времени и спокойствие пейзажа в последний час перед закатом.",
+      "alt_en": "The Sun sinks from the top left of the image towards the middle. This path is reflected in the surface of the lake.",
+      "alt_ru": "Солнце опускается из левого верхнего угла к середине кадра. Его путь отражается на поверхности озера.",
+      "credit": "Fabrizio Melandri/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        343
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:yB89J346o973",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/api/records/10359529/files/Honorable%20mention%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Still%20images%20with%20smartphones-mobile%20devices:%20Smartphone%20Partial%20Eclipse%20Combined,%20by%20Douglas%20Duncan.jpg/content",
+      "record_url": "https://astro4edu.org/resources/media/yB89J346o973/",
+      "original_path": "data/media/original/media_yB89J346o973.jpg",
+      "ru_path": null,
+      "sha256": "ce08d72a5f65ac107fe44642a58da33bc5c883090b1ad3f6c680d085058574e3",
+      "size": 465840,
+      "title_en": "Smartphone Partial Eclipse Combined",
+      "title_ru": "Частное солнечное затмение. Совмещённые кадры со смартфона",
+      "short_caption_en": "Smartphone Partial Eclipse Combined",
+      "short_caption_ru": "Частное солнечное затмение. Совмещённые кадры со смартфона",
+      "caption_en": "Honorable mention in the 2023 IAU OAE Astrophotography Contest, category of Still images taken exclusively with smartphones/mobile devices.\r\n\r\nIn 2021, Maine, USA, bore witness to a captivating partial solar eclipse, an astronomical spectacle where the Moon passes between the Earth and the Sun, partially blocking the Sun’s radiant light as viewed from Earth. This image used a smartphone and an app and filter called “Solar Snap”, invented by the photographer, to capture various stages of this celestial phenomenon. It is crucial to note that observing a solar eclipse should only be done with proper eye protection to avoid eye damage caused by direct Sunlight exposure. During a solar eclipse, the Moon reaches a point in its orbit where it is between the Earth and the Sun, resulting in partial or complete coverage of the Sun’s disc, depending on the specific relative positions. This composite image seamlessly combines six distinct moments, presenting the Moon's gradual journey across the Sun’s disc. Each crescent showcased represents a unique phase of this captivating event, offering a fleeting glimpse into the wonder of our natural world. Accessible tools like smartphones, coupled with appropriate apps and filters, enable individuals to safely document and cherish these remarkable celestial events.",
+      "caption_ru": "Почётное упоминание конкурса астрофотографии Управления астрономического образования МАС 2023 года в категории «Фотографии, сделанные только смартфонами или другими мобильными устройствами».\n\nВ 2021 году в штате Мэн (США) наблюдали частное солнечное затмение. Оно происходит, когда Луна проходит между Землёй и Солнцем и закрывает часть солнечного диска для земного наблюдателя. Фотограф снял разные фазы затмения на смартфон с помощью придуманных им приложения и фильтра Solar Snap. Наблюдать частное затмение можно только со специальной защитой глаз. Прямой солнечный свет может повредить зрение. Во время солнечного затмения Луна оказывается между Землёй и Солнцем и закрывает его диск частично или полностью, в зависимости от взаимного положения трёх тел. На этом снимке совмещены шесть кадров, на которых видно, как Луна проходит по солнечному диску. Каждый серп соответствует отдельной фазе. Смартфон с подходящим солнечным фильтром и приложением позволяет безопасно заснять затмение.",
+      "alt_en": "Six images of the Sun. The moon moves across the Sun’s disk, covering most in the middle images before moving away.",
+      "alt_ru": "На шести кадрах видно, как Луна проходит по солнечному диску. В середине серии она закрывает наибольшую часть диска, а затем отходит.",
+      "credit": "Douglas Duncan/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        240
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:J552vZ73Dc84",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/api/records/10358051/files/Winner%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Still%20images%20with%20smartphones-mobile%20devices:%20Retrograde%20Motion%20of%20Mars,%20by%20Rob%20Kerby%20Guevarra.jpg/content",
+      "record_url": "https://astro4edu.org/resources/media/J552vZ73Dc84/",
+      "original_path": "data/media/original/media_J552vZ73Dc84.jpg",
+      "ru_path": null,
+      "sha256": "74d786f9a9d1fc9b6b8aaca096651990c36bf7b52d3fc71224b7c70753608ab5",
+      "size": 3433356,
+      "title_en": "Retrograde Motion of Mars",
+      "title_ru": "Попятное движение Марса",
+      "short_caption_en": "Retrograde Motion of Mars",
+      "short_caption_ru": "Попятное движение Марса",
+      "caption_en": "Winner in the 2023 IAU OAE Astrophotography Contest, category Still images with smartphones-mobile devices.\r\n\r\nThis image captures the celestial waltz of Mars as it demonstrates its intriguing retrograde motion against the background of fixed stars. This event, when Mars appears to backtrack in its orbit, arises from the different speeds at which Earth and Mars orbit the Sun. Earth’s faster movement occasionally positions it ahead of Mars, creating the illusion of the Red Planet moving in reverse from our perspective. This retrograde motion occurs when Mars is on the other side of the sky from the Sun, when it is said to be in opposition. Following Mars from 14 August 2022 to 5 April 2023, this smartphone image stands as a testament to perseverance and precision in the tranquil setting of Bataan, Philippines. Enduring unpredictable weather and ever-shifting celestial alignments, the photographer meticulously captured each shot at regular intervals of five to eight days. The process involved aligning 35 distinct images of Mars, taken without any external lens or telescope, alongside a stacked background image composed of 54 frames lasting 15 seconds each, portraying the starry expanse. Fusing these images involved precisely aligning them and cropping Mars in order to centre its position, revealing its retrograde movement against the backdrop of stars. This intricate process, blending the images seamlessly into the background by masking, highlights the planet’s unique motion. In the lower right corner, the Pleiades star cluster is visible.",
+      "caption_ru": "Победитель конкурса астрофотографии Управления астрономического образования МАС 2023 года в категории фотографий, сделанных смартфонами и другими мобильными устройствами.\n\nНа снимке прослеживается попятное движение Марса на фоне звёзд. Земля обращается вокруг Солнца быстрее и время от времени обгоняет Марс. Вблизи противостояния, когда Марс виден на противоположной от Солнца стороне неба, наблюдателю с Земли кажется, что планета ненадолго движется относительно звёзд в обратную сторону.\n\nФотограф снимал Марс в провинции Батаан (Филиппины) с 14 августа 2022 по 5 апреля 2023 года с интервалами от пяти до восьми дней. Для композиции он совместил 35 снимков Марса, сделанных смартфоном без дополнительного объектива или телескопа, с изображением звёздного фона, составленным из 54 кадров с выдержкой 15 секунд каждый. Кадры выровняли, вырезали области вокруг Марса и наложили их на фон с помощью масок. В правом нижнем углу видны Плеяды.",
+      "alt_en": "A montage of images of Mars, seen here as a series of red dots in a squashed z-shaped pattern.",
+      "alt_ru": "Монтаж снимков Марса. Положения планеты отмечены красными точками, которые образуют сплющенную фигуру, похожую на букву Z.",
+      "credit": "Rob Kerby Guevarra/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        189,
+        228,
+        469
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:Rt986z16uG22",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/api/records/10278787/files/Third%20place%20winner%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Still%20images%20of%20sunrise%20and%20sunset%20locations%20over%20the%20year:%20Where%20the%20Sun%20Sets%20Every%20Month,%20by%20John%20Paul%20Pile.jpg/content",
+      "record_url": "https://astro4edu.org/resources/media/Rt986z16uG22/",
+      "original_path": "data/media/original/media_Rt986z16uG22.jpg",
+      "ru_path": null,
+      "sha256": "23fe8f51c719759ffc2b111bc9eb8b78fd1a199979a904c6aec2ae5158a12913",
+      "size": 11815300,
+      "title_en": "Where the Sun Sets Every Month",
+      "title_ru": "Где заходит Солнце в разные месяцы",
+      "short_caption_en": "Where the Sun Sets Every Month",
+      "short_caption_ru": "Где заходит Солнце в разные месяцы",
+      "caption_en": "Third place winner in the 2023 IAU OAE Astrophotography Contest, category of Still images of sunrise and sunset location over the year.\r\n\r\nTaken with a smartphone from San Rafael, Bulacan, Philippines, this series of images capture the changing position of sunset over the year owing to Earth’s axial tilt and orbit around the Sun. From January to December 2022, each image reflects the changing backdrop and position of the Sun at dusk. Observe the changing foliage and the appearance of an electricity pole in October. This collection serves as a visual testament to the celestial dance between Earth and the Sun, and the natural transformations on the ground.",
+      "caption_ru": "Третье место конкурса астрофотографии Управления астрономического образования МАС 2023 года в категории «Фотографии мест восхода и захода Солнца в течение года».\n\nЭта серия снята смартфоном в Сан-Рафаэле, провинция Булакан, Филиппины. Она показывает, как в течение года смещается точка захода Солнца из-за наклона земной оси и движения Земли по орбите. С января по декабрь 2022 года менялись и положение Солнца на закате, и пейзаж. Обратите внимание на изменения листвы и на столб линии электропередачи, который появился в октябре. По серии можно проследить изменения и на небе, и на земле.",
+      "alt_en": "12 images of sunset. Sunset moves from the left at the top, to the right in the middle, and back to the left at the bottom",
+      "alt_ru": "Двенадцать кадров заката. В верхнем ряду Солнце заходит слева, в середине серии — справа, а в нижней части снова слева.",
+      "credit": "John Paul Pile/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        34,
+        317,
+        341,
+        343,
+        404
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:OO19Ja33ik48",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/api/records/10278568/files/Third%20place%20winner%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Still%20images%20of%20the%20day%20arc%20of%20the%20Sun%20and%20solargraphs:%20Equatorial%20Sunrise%20Eclipse,%20by%20Fabrizio%20Melandri.jpg/content",
+      "record_url": "https://astro4edu.org/resources/media/OO19Ja33ik48/",
+      "original_path": "data/media/original/media_OO19Ja33ik48.jpg",
+      "ru_path": null,
+      "sha256": "b59648061d66b61655d41bedeb0c7a26f93c0d402aaf93d6861b074f0102185e",
+      "size": 892419,
+      "title_en": "Equatorial Sunrise Eclipse",
+      "title_ru": "Солнечное затмение на восходе у экватора",
+      "short_caption_en": "Equatorial Sunrise Eclipse",
+      "short_caption_ru": "Солнечное затмение на восходе у экватора",
+      "caption_en": "Third place winner in the 2023 IAU OAE Astrophotography Contest, category of Still images of day arcs of the Sun and Solargraphs.\r\n\r\nThis breathtaking image shows a sunrise sequence of the annular eclipse of 2006, as it unfolds against the tranquil backdrop of Des Roches beach in Kourou, French Guiana. Positioned near a renowned spaceport, this location provides an impeccable viewpoint to behold the celestial event. This image was captured using an analogue camera, with a shot being taken every 10 minutes on the same film frame. The exposures were changed as the Sun rose. The Moon’s disc can be seen gradually moving across the Sun’s disc from the earliest (lower) image until it covers the Sun. It then slowly moves away, revealing the whole of the solar disc again. Kourou’s unique geographic location close to Earth’s equator ensures that the path of the rising Sun is nearly perpendicular to the horizon, magnifying the splendour of the eclipse.",
+      "caption_ru": "Третье место конкурса астрофотографии Управления астрономического образования МАС 2023 года в категории «Фотографии суточных дуг Солнца и солярографы».\n\nСерия показывает восход Солнца во время кольцеобразного затмения 2006 года над пляжем Де-Рош в Куру, Французская Гвиана. Пляж расположен рядом с космодромом, и оттуда хорошо виден восход. Фотограф использовал плёночную камеру и делал снимки каждые 10 минут на один кадр плёнки, меняя экспозицию по мере восхода. Лунный диск постепенно смещается по солнечному диску. Это заметно уже на первом, нижнем изображении. Во время кольцеобразной фазы Луна закрывает центральную часть Солнца. Затем она постепенно отходит и снова открывает весь солнечный диск. Куру расположен близко к экватору, поэтому при восходе Солнце движется почти перпендикулярно горизонту.",
+      "alt_en": "Eight images of the Sun rising. From the lower, earlier images the Moon moves across the Sun from top left to bottom right.",
+      "alt_ru": "Восемь кадров восходящего Солнца. Начиная с ранних, нижних кадров, Луна движется по солнечному диску сверху слева вниз направо.",
+      "credit": "Fabrizio Melandri/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        11
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:9E87Hf46pq20",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/api/records/10278539/files/First%20place%20winner%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Still%20images%20of%20the%20day%20arc%20of%20the%20Sun%20and%20solargraphs:%20The%20Eclipse%20Clock-Eclipse%20on%20a%20Polar%20Day,%20by%20Stephanie%20Ziyi%20Ye.JPG/content",
+      "record_url": "https://astro4edu.org/resources/media/9E87Hf46pq20/",
+      "original_path": "data/media/original/media_9E87Hf46pq20.jpg",
+      "ru_path": null,
+      "sha256": "2d046b3473ad6617f6ee58c38fff867942af65cf6d4c3a12f6a13b3c855031b4",
+      "size": 1234247,
+      "title_en": "The Eclipse Clock-Eclipse on a Polar Day",
+      "title_ru": "Часы затмения. Солнечное затмение в полярный день",
+      "short_caption_en": "The Eclipse Clock-Eclipse on a Polar Day",
+      "short_caption_ru": "Часы затмения. Солнечное затмение в полярный день",
+      "caption_en": "First place winner in the 2023 IAU OAE Astrophotography Contest, category of Still images of day arcs of the Sun and Solargraphs.\r\n\r\nConstructed by combining multiple images over the course of a 24-hour period, the image was captured in Union Glacier, Antarctica, during the total solar eclipse of 4 December 2021, and showcases the day arc of the Sun. It illustrates the unique phenomenon of a polar day, during which the Sun travels around the sky without setting. During polar days, areas within the polar circles experience 24 hours of continuous daylight, and the Sun doesn’t set for an extended period. The image also offers a rare perspective of a solar eclipse, where the Moon passes between the Sun and Earth, and as viewed from Earth. This can be seen in the lower image of the Sun, where the Moon covers the solar disc.",
+      "caption_ru": "Первое место конкурса астрофотографии Управления астрономического образования МАС 2023 года в категории «Фотографии суточных дуг Солнца и солярографы».\n\nФотография составлена из кадров, снятых за 24 часа на леднике Юнион в Антарктиде во время полного солнечного затмения 4 декабря 2021 года. Она показывает суточный путь Солнца. Во время полярного дня Солнце движется по небу и не заходит. В пределах полярных кругов в этот период светло круглые сутки, а Солнце остаётся над горизонтом длительное время. На снимке также виден редкий ракурс солнечного затмения. Когда Луна проходит между Солнцем и Землёй, с Земли видно, как она закрывает солнечный диск. На составном снимке это нижний кадр.",
+      "alt_en": "24 images of the Sun around the edge of a circular image. In the lowest image, a black circle blocks the centre of the Sun.",
+      "alt_ru": "По краю круглого изображения расположены 24 кадра Солнца. На нижнем кадре тёмный диск закрывает центр Солнца.",
+      "credit": "Stephanie Ziyi Ye/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        343,
+        365,
+        424
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:MV22xW3EP96",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/api/records/10278711/files/First%20place%20winner%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Still%20images%20of%20sunrise%20and%20sunset%20locations%20over%20the%20year:%20When%20the%20Sun%20Bounces,%20by%20Milos%20Obert.jpg/content",
+      "record_url": "https://astro4edu.org/resources/media/MV22xW3EP96/",
+      "original_path": "data/media/original/media_MV22xW3EP96.jpg",
+      "ru_path": null,
+      "sha256": "cfcdfac62f96e8d2cd04986644db8e9e51fcd7b394fa47e1b32d1bcdb99d27b0",
+      "size": 3542177,
+      "title_en": "When the Sun Bounces",
+      "title_ru": "Когда Солнце отскакивает от горизонта",
+      "short_caption_en": "When the Sun Bounces",
+      "short_caption_ru": "Когда Солнце отскакивает от горизонта",
+      "caption_en": "First place winner in the 2023 IAU OAE Astrophotography Contest, category of Still images of sunrise and sunset location over the year.\r\n\r\nThis image was taken at Norway's North Cape. Owing to the latitude of this location, the Sun never truly sets during the summer months, from around April to August. This results in the unique spectacle of continuous daylight, known as a polar day. This captivating series of images, taken in 2022, showcases the Sun's relentless journey across the horizon every 30 minutes. At its lowest point in the sky, the Sun does not set, but appears to bounce off the horizon. The globe on the far right in the photo stands as a sentinel, marking the northernmost point of the European continental mainland.",
+      "caption_ru": "Первое место конкурса астрофотографии Управления астрономического образования МАС 2023 года в категории «Фотографии мест восхода и захода Солнца в течение года».\n\nСерия снята на мысе Нордкап в Норвегии. На этой широте в тёплое время года, примерно с апреля по август, Солнце некоторое время не заходит. Это явление называется полярным днём. Кадры сделаны в 2022 году с интервалом 30 минут и показывают движение Солнца вдоль горизонта. В нижней точке Солнце остаётся над горизонтом и словно отскакивает от него. Справа видна скульптура в виде глобуса, известный ориентир Нордкапа.",
+      "alt_en": "Seven images of the Sun. From the left it sinks, reaching its lowest in the centre image, before rising higher to the right.",
+      "alt_ru": "Семь изображений Солнца. Слева направо оно опускается, достигает нижней точки в центре и вновь поднимается.",
+      "credit": "Milos Obert/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        343,
+        424,
+        488,
+        491
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:lN187577SX71",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/api/records/10278550/files/Second%20place%20winner%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Still%20images%20of%20the%20day%20arc%20of%20the%20Sun%20and%20solargraphs:%20The%20Path%20of%20the%20Sun,%20by%20Frank%20Niessen.jpg/content",
+      "record_url": "https://astro4edu.org/resources/media/lN187577SX71/",
+      "original_path": "data/media/original/media_lN187577SX71.jpg",
+      "ru_path": null,
+      "sha256": "9fb66796fea8e7cdd258bc2619906f2db61d8480f91338f12836bba50fd30817",
+      "size": 465458,
+      "title_en": "The Path of the Sun",
+      "title_ru": "Путь Солнца по небу",
+      "short_caption_en": "The Path of the Sun",
+      "short_caption_ru": "Путь Солнца по небу",
+      "caption_en": "Second place winner in the 2023 IAU OAE Astrophotography Contest, category of Still images of day arcs of the Sun and Solargraphs.\r\n\r\nThis enchanting image, captured in Germany between 21 June 2018 and 21 December 2018, is a poetic blend of art and science, showcasing nature's rhythm and the passage of time. It combines images taken at different times of day over the course of six months. Each curve tracks the Sun’s path (or arc) across the sky on a particular day. The sweeping arc of the Sun is distorted here by the projection, making it appear like a curve. The position of the daily arc across the sky changes with the Sun’s seasonal movement in the sky. Captured using a simple pinhole camera fashioned from a coffee can, it shows the Sun's journey over the course of six months, and the gradual shift of the daily arc from the summer, when it is higher in the sky, to its lowest arc at the winter solstice. Gaps in the Sun’s path represent days or times of day when the Sun was obscured by clouds. This image is a vivid testament to the changing seasons, revealing the Sun's dance in the sky as days grow shorter or longer.",
+      "caption_ru": "Второе место конкурса астрофотографии Управления астрономического образования МАС 2023 года в категории «Фотографии суточных дуг Солнца и солярографы».\n\nНа этом снимке, сделанном в Германии с 21 июня по 21 декабря 2018 года, наглядно виден ход времени и смена сезонов. На нём совмещены изображения, полученные в разное время суток за полгода. Каждая линия соответствует суточному пути Солнца по небу. Форма линии искажена проекцией. Сезонное движение Солнца меняет положение суточной дуги. Фотограф сделал простую камеру-обскуру из банки из-под кофе. На снимке видно, как высокая летняя дуга Солнца постепенно опускается и достигает минимума в день зимнего солнцестояния. Пропуски на линиях соответствуют дням и часам, когда Солнце скрывали облака. По снимку можно проследить, как меняется путь Солнца и сокращается или увеличивается световой день.",
+      "alt_en": "Curved bright lines rise from the left, peaking on the right. The further to the left a line rises, the higher it peaks.",
+      "alt_ru": "Светлые дуги поднимаются слева и достигают максимальной высоты справа. Чем левее начинается дуга, тем выше она поднимается.",
+      "credit": "Frank Niessen/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        34,
+        317,
+        341,
+        343,
+        404
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "diagram:6464Zx69Rv2",
+      "kind": "diagram",
+      "file_type": "img",
+      "source_url": "http://www.astro4edu.org/media/diagrams/multimedia/Total_Solar_Eclipse.png",
+      "record_url": "https://astro4edu.org/resources/diagram/6464Zx69Rv2/",
+      "original_path": "data/media/original/diagram_6464Zx69Rv2.png",
+      "ru_path": "data/media/ru/diagram_6464Zx69Rv2.png",
+      "sha256": "1dfdabbe7616027e5fd98a9a9614c794939c996fe8ba0fb9e0bc8133c4208656",
+      "size": 2063193,
+      "title_en": "Total Solar Eclipse",
+      "title_ru": "Полное солнечное затмение",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "caption_en": "This not to scale diagram shows what happens during a total solar eclipse. The Moon orbits the Earth, but its orbit is slightly tilted with respect to the Earth’s orbit around the Sun. During the new moon lunar phase, the Moon lies between the Earth and the Sun, but due to the Moon’s tilted orbit around the Earth, the Moon normally lies above or below the Sun at this point. However twice a year the Moon’s orbit lines up in such a way that the Moon can lie in a direct line between the Earth and Sun. During each of these periods (each of which last roughly a month) solar (and lunar) eclipses can occur. The Moon is about 400 times smaller than the Sun, but is 400 times closer to the Earth than the Sun. Hence the Sun and Moon have approximately the same angular size when viewed from the Earth. This means that it is possible for the Moon to completely cover the Sun when viewed from Earth. This is known as a total solar eclipse. \r\n\r\nHere we see a schematic of such and eclipse. The Moon casts a shadow on the Earth known as the umbra. This is a roughly circular shadow a few hundred kilometres across although its shape can be severely distorted when the eclipse is at the edge of the illuminated part of the Earth. Any region within the umbra will see the Moon completely cover the Sun and thus will experience a total solar eclipse. Outside of the umbra there are regions where the Moon will cover part of the Sun. This partial shadow is known as the penumbra. Regions in the penumbra will experience a partial solar eclipse.\r\n\r\nAn eclipse is a dynamic event with the Moon moving in its orbit and the Earth rotating. Hence the umbra and penumbra move across the Earth’s surface together. The path the umbra takes across the Earth is known as the path of totality. Let’s consider one particular region that lies in the path of totality: except in rare cases where an eclipse begins at sunrise, a region that experiences totality will first see the Moon cover part of the Sun and gradually move across Sun until it is totally covered. From outside the Earth this would appear as the penumbra moving over this particular region followed by the umbra moving over this region. Once the Moon moves so that it no longer completely covers the Sun, totality ends and the umbra moves away from this particular region. The Moon will continue to uncover the Sun until (unless the Sun sets before the end of the eclipse) the Sun is completely uncovered. From outside the Earth this would appear as the umbra moving away from our particular region and the edge of the penumbra approaching and eventually passing over the region. \r\n\r\nOutside of the path or totality there is a much broader region that will lie in the penumbra but will be missed by the umbra. Such regions will not experience a total solar eclipse during this event, only a partial solar eclipse.",
+      "caption_ru": "На схеме полного солнечного затмения расстояния и размеры показаны условно. В новолуние Луна проходит между Землёй и Солнцем. Из-за наклона лунной орбиты к плоскости орбиты Земли она обычно проходит на небе чуть выше или ниже Солнца. Примерно дважды в год наступают сезоны затмений. В течение примерно месяца геометрия орбит позволяет Луне, Земле и Солнцу оказаться на одной линии и произойти солнечному или лунному затмению. Диаметр Луны примерно в 400 раз меньше диаметра Солнца, и расстояние до неё примерно в 400 раз меньше. Поэтому с Земли их диски выглядят почти одинакового размера, и Луна может полностью закрыть Солнце.\n\nВ области полной лунной тени наблюдается полное затмение. Поперечник этой области составляет до нескольких сотен километров, а её форма может сильно вытягиваться у края освещённой части Земли. В полутени Луна закрывает лишь часть солнечного диска. Там видно частное затмение.\n\nЛуна движется по орбите, а Земля вращается, поэтому тень и полутень перемещаются по земной поверхности. Путь полной тени называется полосой полного затмения. Обычно наблюдатель в этой полосе сначала видит, как Луна постепенно закрывает Солнце. Затем Солнце на короткое время скрывается целиком и снова начинает открываться. Если смотреть из космоса, через это место сначала проходит полутень, затем полная тень и снова полутень. Вблизи восхода или заката часть затмения может пройти за горизонтом. В более широкой области полутени за пределами полосы полной тени видно только частное затмение.",
+      "alt_en": "The Moon lies between the Sun and Earth casts a small shadow and large partial shadow",
+      "alt_ru": "Луна между Солнцем и Землёй отбрасывает на Землю небольшую полную тень и более широкую полутень.",
+      "credit": "Aneta Margraf/IAU OAE",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        182,
+        203,
+        215,
+        240,
+        243,
+        310,
+        342,
+        365,
+        372
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "ru_sha256": "d6b95600091f361aa85163bca12eddeba7613faf754562a01c1a81ea6e0a5e26"
+    },
+    {
+      "id": "diagram:Nt1OV98jk24",
+      "kind": "diagram",
+      "file_type": "img",
+      "source_url": "http://www.astro4edu.org/media/diagrams/multimedia/Phase_Equator_en.png",
+      "record_url": "https://astro4edu.org/resources/diagram/Nt1OV98jk24/",
+      "original_path": "data/media/original/diagram_Nt1OV98jk24.png",
+      "ru_path": "data/media/ru/diagram_Nt1OV98jk24.png",
+      "sha256": "09a2e7a053e811cb47905189e9b2b4323eb987a64f7dc62b33b52cee8c5ca51b",
+      "size": 1269030,
+      "title_en": "Lunar Phase Equator",
+      "title_ru": "Фазы Луны при наблюдении с экватора",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "caption_en": "The phases of the Moon when viewed from the Equator. Here west is up, north is left and east is down. The Moon orbits the Earth every 29.5 days. It is tidally locked to the Earth meaning its rotation period is the same as its orbital period and the same side of the Moon always faces the Earth. At any particular time, half of the Moon is illuminated by the Sun and half is in shadow. Over the course of the Moon’s orbit around the Earth every part of the Moon is illuminated for half of the orbit and is in shadow for the other half of the orbit.\r\n\r\nWhen the Moon sits between the Earth and the Sun its illuminated half faces away from the Earth and we only see the half that is in shadow. This phase of the Moon is known as new moon. As the Moon moves in its orbit, a small but growing sliver of the illuminated half of the Moon begins to be seen from the Earth. This illuminated sliver appears on the western side of the Moon’s face when viewed from Earth. This phase is known as waxing crescent moon. By a quarter of the way through the Moon’s orbit around the Earth the Moon appears 90° away from the Sun and half of the Moon’s illuminated half points toward the Earth. This phase is known as first quarter moon. As the orbit continues more than half of the Moon seen from Earth is now illuminated with a dark crescent. This phase is known as waxing gibbous moon. Once we reach the halfway point in the Moon’s orbit round the Earth the Moon is now on the opposite side of the Earth from the Sun and we see all of the Moon’s illuminated half. As the whole of the side of the Moon that faces the Earth is now illuminated this is referred to as full moon. \r\n\r\nFor the remaining half of the Moon’s orbit the half of the moon that faces the Earth begins to move into shadow. Hence the illuminated portion of the Moon that we see from Earth begins to shrink or wane. The western edge of the face of the Moon when viewed from Earth begins to appear dark and this grows through subsequent phases. The phases are repeated in reverse order: waning gibbous, third quarter, waning crescent and finally back to new moon.\r\n\r\nThe perspective for this diagram is with west up, north left and east down. When the moon is viewed looking west, for example viewing the waxing crescent just after sunset, the view of the Moon would be rotated by 180°.\r\n\r\nNote the surface features of the Moon are illustrative and do not accurately represent the Moon’s true surface.",
+      "caption_ru": "Фазы Луны при наблюдении с экватора. На схеме запад вверху, север слева, восток внизу.\n\nЛуна обращается вокруг Земли примерно за 27,3 суток. Столько же длится один оборот Луны вокруг собственной оси, поэтому к Земле она обращена практически одной и той же стороной. Такая синхронизация возникла из-за приливного взаимодействия. Цикл фаз от новолуния до новолуния длится около 29,5 суток. Вне затмений Солнце освещает одну половину Луны, а вторая остаётся в тени. В ходе цикла каждый участок поверхности примерно половину времени освещён и половину времени находится в тени.\n\nВ новолуние Луна находится в направлении Солнца. Её освещённая сторона обращена от Земли, а ближняя сторона скрыта в темноте. Затем с западного края лунного диска появляется тонкий растущий серп. Когда Луна удаляется на небе от Солнца на 90°, наступает первая четверть. Освещена половина видимого диска. Затем освещённая часть занимает больше половины, и у края остаётся тёмный серп. Это растущая Луна между первой четвертью и полнолунием. В полнолуние Луна находится по другую сторону от Земли относительно Солнца, и мы видим практически всю обращённую к нам половину освещённой.\n\nПосле полнолуния освещённая часть диска убывает. Тёмный участок появляется на западном краю и постепенно увеличивается. Сначала мы видим убывающую Луну с освещённой частью больше половины диска, затем последнюю четверть, после неё убывающий серп, а затем снова наступает новолуние.\n\nЕсли смотреть на Луну на западе, например на растущий серп сразу после заката, вид диска будет повёрнут на 180° относительно показанного.\n\nДетали лунной поверхности на схеме условные. Примечание к переводу. В оригинале 29,5 суток приведены как период обращения Луны. Это длительность цикла фаз. Период обращения относительно звёзд составляет около 27,3 суток.",
+      "alt_en": "The Moon begins as dark, an illuminated portion grows from the top. Then once fully illuminated a dark portion grows from the top",
+      "alt_ru": "После новолуния освещённая часть диска растёт сверху. После полнолуния сверху растёт затенённая часть.",
+      "credit": "Aneta Margraf/IAU OAE",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        113,
+        182,
+        215,
+        267,
+        379,
+        380,
+        383,
+        384,
+        397,
+        398
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "ru_sha256": "213d1015e80622d0191da7bf90b1c1c324f222e1957ab406073ae2f9841200c8"
+    },
+    {
+      "id": "diagram:6y63px402A3",
+      "kind": "diagram",
+      "file_type": "img",
+      "source_url": "http://www.astro4edu.org/media/diagrams/multimedia/Phase_Southern_Hemisphere_en_a58pZDn.png",
+      "record_url": "https://astro4edu.org/resources/diagram/6y63px402A3/",
+      "original_path": "data/media/original/diagram_6y63px402A3.png",
+      "ru_path": "data/media/ru/diagram_6y63px402A3.png",
+      "sha256": "aa55090adcbee7cf99f048b0fae6091eeb698052c6cf7419233cd927c1a85f8d",
+      "size": 1255284,
+      "title_en": "Lunar Phase Southern Hemisphere",
+      "title_ru": "Фазы Луны в Южном полушарии",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "caption_en": "The phases of the Moon when viewed from the Southern Hemisphere. Here north is up and west is left The Moon orbits the Earth every 29.5 days. It is tidally locked to the Earth meaning its rotation period is the same as its orbital period and the same side of the Moon always faces the Earth. At any particular time, half of the Moon is illuminated by the Sun and half is in shadow. Over the course of the Moon’s orbit around the Earth every part of the Moon is illuminated for half of the orbit and is in shadow for the other half of the orbit.\r\n\r\nWhen the Moon sits between the Earth and the Sun its illuminated half faces away from the Earth and we only see the half that is in shadow. This phase of the Moon is known as new moon. As the Moon moves in its orbit, a small but growing sliver of the illuminated half of the Moon begins to be seen from the Earth. This illuminated sliver appears on the western side of the Moon’s face when viewed from Earth. This phase is known as waxing crescent moon. By a quarter of the way through the Moon’s orbit around the Earth the Moon appears 90° away from the Sun and half of the Moon’s illuminated half points toward the Earth. This phase is known as first quarter moon. As the orbit continues more than half of the Moon seen from Earth is now illuminated with a dark crescent. This phase is known as waxing gibbous moon. Once we reach the halfway point in the Moon’s orbit round the Earth the Moon is now on the opposite side of the Earth from the Sun and we see all of the Moon’s illuminated half. As the whole of the side of the Moon that faces the Earth is now illuminated this is referred to as full moon. \r\n\r\nFor the remaining half of the Moon’s orbit the half of the moon that faces the Earth begins to move into shadow. Hence the illuminated portion of the Moon that we see from Earth begins to shrink or wane. The western edge of the face of the Moon when viewed from Earth begins to appear dark and this grows through subsequent phases. The phases are repeated in reverse order: waning gibbous, third quarter, waning crescent and finally back to new moon.\r\n\r\nNote the surface features of the Moon are illustrative and do not accurately represent the Moon’s true surface.",
+      "caption_ru": "Фазы Луны при наблюдении из Южного полушария. На схеме север вверху, запад слева.\n\nЛуна обращается вокруг Земли примерно за 27,3 суток. Столько же длится один оборот Луны вокруг собственной оси, поэтому к Земле она обращена практически одной и той же стороной. Такая синхронизация возникла из-за приливного взаимодействия. Цикл фаз от новолуния до новолуния длится около 29,5 суток. Вне затмений Солнце освещает одну половину Луны, а вторая остаётся в тени. В ходе цикла каждый участок поверхности примерно половину времени освещён и половину времени находится в тени.\n\nВ новолуние Луна находится в направлении Солнца. Её освещённая сторона обращена от Земли, а ближняя сторона скрыта в темноте. Затем с западного края лунного диска появляется тонкий растущий серп. Когда Луна удаляется на небе от Солнца на 90°, наступает первая четверть. Освещена половина видимого диска. Затем освещённая часть занимает больше половины, и у края остаётся тёмный серп. Это растущая Луна между первой четвертью и полнолунием. В полнолуние Луна находится по другую сторону от Земли относительно Солнца, и мы видим практически всю обращённую к нам половину освещённой.\n\nПосле полнолуния освещённая часть диска убывает. Тёмный участок появляется на западном краю и постепенно увеличивается. Сначала мы видим убывающую Луну с освещённой частью больше половины диска, затем последнюю четверть, после неё убывающий серп, а затем снова наступает новолуние.\n\nДетали лунной поверхности на схеме условные. Примечание к переводу. В оригинале 29,5 суток приведены как период обращения Луны. Это длительность цикла фаз. Период обращения относительно звёзд составляет около 27,3 суток.",
+      "alt_en": "The Moon begins as dark, an illuminated portion grows from the right. Then once fully illuminated a dark portion grows from the right",
+      "alt_ru": "После новолуния освещённая часть диска растёт справа. После полнолуния справа растёт затенённая часть.",
+      "credit": "Aneta Margraf/IAU OAE",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        113,
+        182,
+        215,
+        267,
+        379,
+        380,
+        383,
+        384,
+        397,
+        398
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "ru_sha256": "ee8117d34ea0c86cdb1aa49e15bf26883e4153b40584438d65bba94fee65bf71"
+    },
+    {
+      "id": "diagram:DW565j5mE91",
+      "kind": "diagram",
+      "file_type": "img",
+      "source_url": "http://www.astro4edu.org/media/diagrams/multimedia/Phase_Northern_Hemisphere_en.png",
+      "record_url": "https://astro4edu.org/resources/diagram/DW565j5mE91/",
+      "original_path": "data/media/original/diagram_DW565j5mE91.png",
+      "ru_path": "data/media/ru/diagram_DW565j5mE91.png",
+      "sha256": "ee2795303bca18b3d107356eba0000fef2f8b06bf8aa39ebef52e60dd462e2f0",
+      "size": 1264087,
+      "title_en": "Lunar Phase Northern Hemisphere",
+      "title_ru": "Фазы Луны в Северном полушарии",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "caption_en": "The phases of the Moon when viewed from the Northern Hemisphere. Here north is up and east is left. The Moon orbits the Earth every 29.5 days. It is tidally locked to the Earth meaning its rotation period is the same as its orbital period and the same side of the Moon always faces the Earth. At any particular time, half of the Moon is illuminated by the Sun and half is in shadow. Over the course of the Moon’s orbit around the Earth every part of the Moon is illuminated for half of the orbit and is in shadow for the other half of the orbit.\r\n\r\nWhen the Moon sits between the Earth and the Sun its illuminated half faces away from the Earth and we only see the half that is in shadow. This phase of the Moon is known as new moon. As the Moon moves in its orbit, a small but growing sliver of the illuminated half of the Moon begins to be seen from the Earth. This illuminated sliver appears on the western side of the Moon’s face when viewed from Earth. This phase is known as waxing crescent moon. By a quarter of the way through the Moon’s orbit around the Earth the Moon appears 90° away from the Sun and half of the Moon’s illuminated half points toward the Earth. This phase is known as first quarter moon. As the orbit continues more than half of the Moon seen from Earth is now illuminated with a dark crescent. This phase is known as waxing gibbous moon. Once we reach the halfway point in the Moon’s orbit round the Earth the Moon is now on the opposite side of the Earth from the Sun and we see all of the Moon’s illuminated half. As the whole of the side of the Moon that faces the Earth is now illuminated this is referred to as full moon. \r\n\r\nFor the remaining half of the Moon’s orbit the half of the moon that faces the Earth begins to move into shadow. Hence the illuminated portion of the Moon that we see from Earth begins to shrink or wane. The western edge of the face of the Moon when viewed from Earth begins to appear dark and this grows through subsequent phases. The phases are repeated in reverse order: waning gibbous, third quarter, waning crescent and finally back to new moon.\r\n\r\nNote the surface features of the Moon are illustrative and do not accurately represent the Moon’s true surface.",
+      "caption_ru": "Фазы Луны при наблюдении из Северного полушария. На схеме север вверху, восток слева.\n\nЛуна обращается вокруг Земли примерно за 27,3 суток. Столько же длится один оборот Луны вокруг собственной оси, поэтому к Земле она обращена практически одной и той же стороной. Такая синхронизация возникла из-за приливного взаимодействия. Цикл фаз от новолуния до новолуния длится около 29,5 суток. Вне затмений Солнце освещает одну половину Луны, а вторая остаётся в тени. В ходе цикла каждый участок поверхности примерно половину времени освещён и половину времени находится в тени.\n\nВ новолуние Луна находится в направлении Солнца. Её освещённая сторона обращена от Земли, а ближняя сторона скрыта в темноте. Затем с западного края лунного диска появляется тонкий растущий серп. Когда Луна удаляется на небе от Солнца на 90°, наступает первая четверть. Освещена половина видимого диска. Затем освещённая часть занимает больше половины, и у края остаётся тёмный серп. Это растущая Луна между первой четвертью и полнолунием. В полнолуние Луна находится по другую сторону от Земли относительно Солнца, и мы видим практически всю обращённую к нам половину освещённой.\n\nПосле полнолуния освещённая часть диска убывает. Тёмный участок появляется на западном краю и постепенно увеличивается. Сначала мы видим убывающую Луну с освещённой частью больше половины диска, затем последнюю четверть, после неё убывающий серп, а затем снова наступает новолуние.\n\nДетали лунной поверхности на схеме условные. Примечание к переводу. В оригинале 29,5 суток приведены как период обращения Луны. Это длительность цикла фаз. Период обращения относительно звёзд составляет около 27,3 суток.",
+      "alt_en": "The Moon begins as dark, an illuminated portion grows from the left. Then once fully illuminated a dark portion grows from the left",
+      "alt_ru": "После новолуния освещённая часть диска растёт слева. После полнолуния слева растёт затенённая часть.",
+      "credit": "Aneta Margraf/IAU OAE",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        113,
+        182,
+        215,
+        267,
+        379,
+        380,
+        383,
+        384,
+        397,
+        398
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "ru_sha256": "b5f90633aab2aa279978c3fd26d3787eddc5205f0e4a38cf9da1920fe901d5f0"
+    },
+    {
+      "id": "diagram:bA48h020s763",
+      "kind": "diagram",
+      "file_type": "img",
+      "source_url": "http://www.astro4edu.org/media/diagrams/multimedia/equinox_solstices.png",
+      "record_url": "https://astro4edu.org/resources/diagram/bA48h020s763/",
+      "original_path": "data/media/original/diagram_bA48h020s763.png",
+      "ru_path": "data/media/ru/diagram_bA48h020s763.png",
+      "sha256": "53cb5a814a5caa4e58ebe451ec25764c736799e61a0563c3e5b7db4dd0d92287",
+      "size": 2018797,
+      "title_en": "Solstices and Equinoxes",
+      "title_ru": "Солнцестояния и равноденствия",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "caption_en": "This diagram demonstrates the relative positions of the Earth and Sun at the two solstices and two equinoxes. The Earth’s rotation axis is tilted by 23.4° from the axis of its orbit. This means that for half the Earth’s annual orbit around the Sun, the Southern Hemisphere is tilted towards the Sun and the Northern Hemisphere is tilted away from the Sun. During this time the Sun appears to lie below the celestial equator. Due to this at any particular point in the Southern Hemisphere the Sun will appear to be higher above the horizon at a particular time of day and the days will be longer. Conversely during this time, the Sun appears lower in the sky at any particular point in the day in the Northern Hemisphere and the days are shorter.\r\n\r\nThis effect is most pronounced in late December when the Sun appears at its most southerly point in the sky, corresponding to the longest day of the year in the Southern Hemisphere. This normally occurs on the 21st or 22nd of December (UTC), depending on when the most recent leap year was, but can very occasionally occur on the 20th or 23rd of December. This event is known as the December solstice. As the Sun’s rays hit the Southern Hemisphere at a more perpendicular angle during this time, the Southern Hemisphere is typically warmer in this time of year than at other times of year. This is often referred to as summer in temperate and antarctic regions of the Southern Hemisphere and thus the December solstice is known as the summer solstice. South of the Antarctic Circle at this time the Sun never sets and a Polar Day can last several months. Conversely in the Northern Hemisphere, the Sun’s rays hit the Earth at a more grazing angle than at other times of year so it is colder and this solstice is known as the winter solstice. North of the Arctic Circle the Sun never rises during this time and the Polar Night can last several months. \r\n\r\nAs the year progresses the Earth moves in its orbit and the tilt of the Earth’s axis moves so it appears more side-on to the Sun. From the perspective of an observer on Earth this means that the Sun moves north in the sky, eventually reaching the celestial equator in late March, This usually occurs on the 20th of March (UTC) but can sometimes occur on the 19th or 21st of March. During this time all places on Earth will experience night and day that is approximately 12 hours long. The Sun’s rays now hit the Southern hemisphere at a more shallow angle than they did in December and hit the Northern Hemisphere at a more perpendicular angle. This means that the Northen Hemisphere will have warmed since December and the Southern Hemisphere cooled. This leads to the March equinox being referred to as the autumn equinox in the Southern Hemisphere and the spring or vernal equinox in the Northern Hemisphere. \r\n\r\nAs the year progresses further the Sun moves further north on the sky, the Northern Hemisphere days lengthen and the Southern Hemisphere days shorten. By June the Earth’s orbit has progressed to the point where the Northern Hemisphere points towards the Sun and the Southern Hemisphere away from the Sun. At one point between the 20th and 22nd of June (UTC) the Sun reaches its most northerly point in the sky, this is known as June solstice. It is now summer in northern temperate and artic regions so this is known as the summer solstice in the Northern Hemisphere and the winter solstice in the Southern Hemisphere. This is the longest day of the year in the Northern Hemisphere and the shortest day of the year in the Southern Hemisphere. During this time regions north of the Arctic Circle experience a long Polar Day and regions south of the Antarctic Circle experience polar night.\r\n\r\nThe year progresses further and the Earth moves in its orbit so that the tilt of the Earth’s axis again appears side-on for the Sun. The Sun moves south in the sky and again crosses the celestial equator between the 21st and 24th of September (UTC). At this time all places on the Earth experience equal lengths of day and night. This is known as the September equinox, also called the spring or vernal equinox in the Southern Hemisphere and the autumn equinox in the Northern Hemisphere.\r\n\r\nNote the sizes of the Earth, Sun and the Earth’s orbit around the Sun are not to scale in this diagram.",
+      "caption_ru": "На схеме показано положение Земли относительно Солнца в дни двух солнцестояний и двух равноденствий. Земная ось наклонена на 23,4° к перпендикуляру к плоскости орбиты. Примерно половину года к Солнцу наклонено Южное полушарие, а Северное отклонено от него. В это время Солнце находится южнее небесного экватора. В Южном полушарии днём оно поднимается выше над горизонтом, и светлое время суток длится дольше. В Северном полушарии Солнце поднимается ниже и дни короче.\n\nЭтот эффект наиболее заметен в конце декабря, когда Солнце достигает самого южного положения на небе. В Южном полушарии это самый длинный день года. Декабрьское солнцестояние приходится обычно на 21 или 22 декабря по UTC, а в редких случаях на 20 или 23 декабря. В эту пору солнечные лучи падают на Южное полушарие ближе к перпендикуляру, поэтому там обычно теплее, чем в другое время года. В умеренных и антарктических широтах это лето, а солнцестояние называют летним. К югу от Южного полярного круга в это время Солнце не заходит. Полярный день может длиться несколько месяцев. В Северном полушарии лучи падают под меньшим углом к поверхности. Там холоднее, и солнцестояние называют зимним. К северу от Северного полярного круга Солнце в это время не восходит. Полярная ночь может длиться несколько месяцев.\n\nПо мере движения Земли по орбите её ось занимает положение, при котором ни одно полушарие не наклонено к Солнцу. С Земли видно, как Солнце движется к северу и в конце марта пересекает небесный экватор. Обычно это происходит 20 марта по UTC, иногда 19 или 21 марта. День и ночь длятся примерно по 12 часов. По сравнению с декабрём солнечные лучи теперь падают на поверхность в Южном полушарии под меньшим углом, а в Северном под бо́льшим. В Северном полушарии становится теплее, в Южном прохладнее. Поэтому мартовское равноденствие в Южном полушарии называют осенним, а в Северном весенним.\n\nЗатем Солнце продолжает двигаться к северу. Дни в Северном полушарии удлиняются, а в Южном укорачиваются. К июню Земля доходит до участка орбиты, где к Солнцу наклонено Северное полушарие. Между 20 и 22 июня по UTC Солнце достигает самого северного положения на небе. Это июньское солнцестояние. В умеренных и арктических широтах Северного полушария наступает лето. Там это летнее солнцестояние и самый длинный день года. В Южном полушарии это зимнее солнцестояние и самый короткий день. К северу от Северного полярного круга стоит полярный день, а к югу от Южного полярного круга полярная ночь.\n\nЗемля продолжает двигаться по орбите. Солнце смещается к югу и между 21 и 24 сентября по UTC вновь пересекает небесный экватор. День и ночь имеют примерно одинаковую продолжительность. Это сентябрьское равноденствие, весеннее в Южном полушарии и осеннее в Северном.\n\nРазмеры Земли, Солнца и земной орбиты показаны без соблюдения масштаба. Примечание к переводу. В оригинале сказано, что в сентябрьское равноденствие день и ночь точно равны. На деле продолжительность светлого времени зависит от широты, размера солнечного диска и атмосферной рефракции.",
+      "alt_en": "The Earth with its tilted rotation axis at 4 points (December Solstice, March Equinox, June Solstice, September Equinox) in its orbit round the Sun",
+      "alt_ru": "Земля с наклонённой осью в четырёх точках орбиты. Отмечены декабрьское и июньское солнцестояния, мартовское и сентябрьское равноденствия.",
+      "credit": "Maria Cristina Fortuna/IAU OAE",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        34,
+        51,
+        300,
+        317,
+        341,
+        404,
+        406,
+        407,
+        439,
+        488,
+        489,
+        491,
+        492
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "ru_sha256": "1e971561c0962557e2fa5ac0a56840be3e24d002ab266882bd6b606075f2ba39"
+    },
+    {
+      "id": "diagram:4g46V657yk21",
+      "kind": "diagram",
+      "file_type": "img",
+      "source_url": "http://www.astro4edu.org/media/diagrams/multimedia/altitude_azimuth_en.png",
+      "record_url": "https://astro4edu.org/resources/diagram/4g46V657yk21/",
+      "original_path": "data/media/original/diagram_4g46V657yk21.png",
+      "ru_path": "data/media/ru/diagram_4g46V657yk21.png",
+      "sha256": "dc5fc7cf1ff84a7b6559db4d40f7fe49cfd0040664d57f5c184932e90257a2f1",
+      "size": 1756707,
+      "title_en": "Horizontal Coordinate System",
+      "title_ru": "Горизонтальная система координат",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "caption_en": "This image shows the horizontal coordinate system of an observer on Earth. On the right we see the coordinate system in the local context of the observer. The observer appears here as a point surrounded by the celestial sphere. The ground appears as a plane, while the Earth is round, we can approximate the ground in the area around the observer as a plane. The line where this plane intersects with the celestial sphere is the horizon. The point directly above the observer is the zenith, the point directly below the observer is the nadir which is hidden by the ground. \r\n\r\nTwo coordinates define this coordinate system, altitude and azimuth, hence the reason this sometimes called an alt-az coordinate system. The altitude is zero at the horizon, maximum (90°) at the zenith and minimum (-90°) at the nadir. Azimuth is the angle around the horizon. Most commonly this is defined to be zero in the direction of north. Any point on the celestial sphere can be defined by these two coordinates. However what objects appear on these position will depend on the time and the location of the observer.\r\n\r\nOn the left-hand part of the diagram, we can see that when we put the observer and their local horizontal coordinate system in a global context, that the parts of the sky the observer can see depend on their position on the Earth and on the rotation of the Earth. The zenith points perpendicular to the Earth's surface so the position on the sky the zenith and nadir correspond to is dependent on the observer's latitude. The horizon also depends on the observer's position on the Earth.",
+      "caption_ru": "Справа показана горизонтальная система координат наблюдателя на Земле. Наблюдатель находится в центре небесной сферы, а участок поверхности Земли под ним на схеме приближённо представлен плоскостью. Линия пересечения этой плоскости с небесной сферой — горизонт. Точка точно над наблюдателем называется зенитом. Точка прямо под ним — надир. Её закрывает Земля.\n\nПоложение светила задают высотой и азимутом. На горизонте высота равна 0°, в зените — +90°, в надире — −90°. Азимут — угол, отсчитываемый вдоль горизонта, обычно от направления на север. Высотой и азимутом можно задать любую точку небесной сферы. Координаты конкретного светила зависят от времени и места наблюдения.\n\nСлева показано, как местная система координат расположена относительно всей Земли. Направление на зенит перпендикулярно местной поверхности. Положение зенита и надира на небе зависит от широты, а положение горизонта — от места наблюдения. Из-за вращения Земли видимая часть звёздного неба со временем меняется.",
+      "alt_en": "Two diagrams, on the right the sky forms a dome over the observer. On the left we see this dome on the Earth's surface",
+      "alt_ru": "Справа небесная сфера с горизонтом, зенитом и надиром наблюдателя. Слева та же система координат показана относительно Земли.",
+      "credit": "Maria Cristina Fortuna/IAU OAE",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        6,
+        36,
+        145,
+        390,
+        460
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "ru_sha256": "19548ac8771df4fcc06c5269c3d5e4085b58dc05d48755ebf5c069227538a484"
+    },
+    {
+      "id": "media:AB430t11jX43",
+      "kind": "media",
+      "file_type": "vid",
+      "source_url": "https://zenodo.org/api/records/10360171/files/Honorable%20mention%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Time-lapses%20of%20rotation%20of%20Big%20Dipper%20or%20Southern%20Cross:%20Big%20Dipper%20and%20Comet%20Neowise%20C2020%20F3,%20by%20Giorgia%20Hofer.avi/content",
+      "record_url": "https://astro4edu.org/resources/media/AB430t11jX43/",
+      "original_path": null,
+      "ru_path": null,
+      "sha256": null,
+      "size": null,
+      "title_en": "Big Dipper and Comet Neowise C2020 F3",
+      "title_ru": "Большой Ковш и комета C/2020 F3 (NEOWISE)",
+      "short_caption_en": "Big Dipper and Comet Neowise C2020 F3",
+      "short_caption_ru": "Большой Ковш и комета C/2020 F3 (NEOWISE)",
+      "caption_en": "Honorable mention in the 2023 IAU OAE Astrophotography Contest, category of Time-lapses of rotation of Big Dipper or Southern Cross.\r\n\r\nThis time-lapse documents the trajectory of the iconic Big Dipper across three frames taken in July 2020. Captured from three locations in Italy, Tre Cime di Lavaredo Auronzo di Cadore, Monte Rite, Cibiana di Cadore, and Casera Razzo, Vigo di Cadore, this visual odyssey showcases the captivating journey of the Big Dipper with the addition of trails of stars painting a celestial canvas. It not only traces the path of this renowned asterism but also features the rare appearance of comet Neowise C/2020 F3, an extraordinary event that graced our skies during July 2020.",
+      "caption_ru": "Почётное упоминание на конкурсе астрофотографии Управления астрономического образования МАС 2023 года в категории покадровых съёмок вращения Большого Ковша или Южного Креста.\n\nНа трёх кадрах июля 2020 года показан путь Большого Ковша по небу. Съёмку вели из трёх мест в Италии: Тре-Чиме-ди-Лаваредо (Ауронцо-ди-Кадоре), Монте-Рите (Чибиана-ди-Кадоре) и Казера-Раццо (Виго-ди-Кадоре). Движение звёзд видно по оставленным ими следам. В кадр попала и комета NEOWISE (C/2020 F3), которую можно было наблюдать в июле 2020 года.",
+      "alt_en": "The Big Dipper drifts lower towards the horizon on the left, on the right a comet rises in the sky.",
+      "alt_ru": "Слева Большой Ковш опускается к горизонту, справа поднимается комета.",
+      "credit": "Giorgia Hofer/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        39,
+        52,
+        53,
+        56,
+        261,
+        305,
+        473
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:Jq59Xa17ay16",
+      "kind": "media",
+      "file_type": "vid",
+      "source_url": "https://zenodo.org/api/records/10360040/files/First%20place%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Time-lapses%20of%20rotation%20of%20Big%20Dipper%20or%20Southern%20Cross:%20Southern%20Sky%20Over%20La%20Silla,%20by%20José%20Rodrigues.mp4/content",
+      "record_url": "https://astro4edu.org/resources/media/Jq59Xa17ay16/",
+      "original_path": null,
+      "ru_path": null,
+      "sha256": null,
+      "size": null,
+      "title_en": "Southern Sky Over La Silla",
+      "title_ru": "Южное небо над Ла-Сильей",
+      "short_caption_en": "Southern Sky Over La Silla",
+      "short_caption_ru": "Южное небо над Ла-Сильей",
+      "caption_en": "First place winner in the 2023 IAU OAE Astrophotography Contest, category of Time-lapses of rotation of Big Dipper or Southern Cross.\r\n\r\nThis video shows the Milky Way’s sprawling brilliance across the celestial expanse. Among the stars’ grand theatre, the Southern Cross constellation claims its place in the scene, distinguished by its distinctive cross shape as seen in the top of this video and slightly to the right just over the Milky Way, slowly disappearing as the video progresses. This celestial marker, a prominent feature in the southern hemisphere, holds cultural and navigational significance, having served as a navigational guidepost for centuries. Accompanying the Milky Way’s grandeur are the two Magellanic clouds, celestial companions seen dancing in the distant sky. The Carina Nebula adds its ethereal glow to the cosmic panorama, painting a radiant hue against the darkness. In the midst of this celestial ballet, a gentle green hue envelops the atmosphere, a phenomenon known as airglow, adding a touch of subtle luminescence to the night sky. The terrestrial also makes an appearance, with planes flying overhead and vehicles driving between observatory buildings. This time-lapse, taken from the La Silla Observatory in Chile, is a window to the captivating dance of stars, offering a glimpse into the awe-inspiring beauty of our galaxy and the celestial landmarks that grace the southern sky.",
+      "caption_ru": "Первое место на конкурсе астрофотографии Управления астрономического образования МАС 2023 года в категории покадровых съёмок вращения Большого Ковша или Южного Креста.\n\nМлечный Путь тянется через всё небо. В верхней части кадра, немного правее и над полосой Млечного Пути, выступает Южный Крест. Его легко узнать по форме, и по ходу съёмки он постепенно исчезает из кадра. Для наблюдателей в Южном полушарии Южный Крест имеет культурное значение и уже много столетий служит ориентиром. В кадре также видны оба Магеллановых Облака и туманность Киля. Слабый зеленоватый оттенок неба создаёт собственное свечение атмосферы.\n\nНа фоне звёзд пролетают самолёты, а между зданиями обсерватории движутся машины. Покадровая съёмка из обсерватории Ла-Силья в Чили показывает на одном небе Млечный Путь и заметные объекты южных широт.",
+      "alt_en": "The Milky Way appears as a diagonal stripe bottom left to top right. It becomes more horizontal as the video progresses.",
+      "alt_ru": "Полоса Млечного Пути сначала тянется снизу слева вверх направо. По ходу видео она становится почти горизонтальной.",
+      "credit": "José Rodrigues/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        52,
+        53,
+        90,
+        226,
+        305,
+        318
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:LF10IZ41Yc54",
+      "kind": "media",
+      "file_type": "vid",
+      "source_url": "https://zenodo.org/api/records/10360177/files/Honorable%20mention%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Time-lapses%20of%20rotation%20of%20Big%20Dipper%20or%20Southern%20Cross:%20Beautiful%20Night%20in%20the%20Atacama%20desert,%20by%20Uwe%20Reichert.mp4/content",
+      "record_url": "https://astro4edu.org/resources/media/LF10IZ41Yc54/",
+      "original_path": null,
+      "ru_path": null,
+      "sha256": null,
+      "size": null,
+      "title_en": "Beautiful Night in the Atacama Desert",
+      "title_ru": "Прекрасная ночь в пустыне Атакама",
+      "short_caption_en": "Beautiful Night in the Atacama Desert",
+      "short_caption_ru": "Прекрасная ночь в пустыне Атакама",
+      "caption_en": "Honorable mention in the 2023 IAU OAE Astrophotography Contest, category of Time-lapses of rotation of Big Dipper or Southern Cross.\r\n\r\nTaken from San Pedro de Atacama, Chile, in June 2023, this time-lapse reveals the celestial ballet that unfolds as the Southern Cross takes its majestic journey across the sky, pointing the way to the South Celestial Pole around which the sky rotates, until it gracefully sets. The star-studded canvas showcases the grandeur of the Milky Way, adorned by the rotating Large and Small Magellanic Clouds swirling around the Southern Celestial Pole. The prominent constellations of Crux, Centaurus, Scorpius, and the former Argo Navis (Carina, Puppis, Vela) are also visible. The spectacle begins just after nightfall, capturing the radiant descent of Canopus, a beacon about to dip below the horizon. Throughout the sequence, there is a subtle presence of passing aeroplanes, fleeting headlights of cars, drifting clouds, and the ethereal airglow. At a stunning moment, a vivid meteor streaked across the sky, a breathtaking fireball briefly igniting the right lower corner around the 41st second mark. As the sequence progresses, the rising moon elegantly illuminates the landscape, casting its glow upon an ancient tree trunk resting on the dry, dusty grounds of the Salar de Atacama. This captivating journey through the night skies concludes before the break of dawn, offering a glimpse into the celestial marvels that are woven into the nocturnal tapestry of San Pedro de Atacama.",
+      "caption_ru": "Почётное упоминание на конкурсе астрофотографии Управления астрономического образования МАС 2023 года в категории покадровых съёмок движения Большого Ковша или Южного Креста.\n\nВидео снято в Сан-Педро-де-Атакама (Чили) в июне 2023 года. Южный Крест указывает в сторону Южного полюса мира и движется по небу, пока не скрывается за горизонтом. Видны Млечный Путь, Большое и Малое Магеллановы Облака, которые движутся вокруг Южного полюса мира, а также созвездия Южного Креста, Центавра, Скорпиона, а также Киль, Корма и Паруса, прежде входившие в созвездие Корабля Арго.\n\nЗапись начинается сразу после наступления темноты, когда Канопус опускается к горизонту. В течение ночи видны пролетающие самолёты, автомобильные фары, облака и собственное свечение атмосферы. Примерно на 41-й секунде в правом нижнем углу вспыхивает болид. Позже восходит Луна и освещает старый ствол дерева на солончаке Салар-де-Атакама. Запись заканчивается перед рассветом.",
+      "alt_en": "The Southern Cross points out the South Celestial Pole, around which the sky appears to rotate",
+      "alt_ru": "Южный Крест указывает направление на южный полюс мира. Кажется, что всё небо вращается вокруг этой точки.",
+      "credit": "Uwe Reichert/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        52,
+        53,
+        90,
+        318
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:27284m8gy12",
+      "kind": "media",
+      "file_type": "vid",
+      "source_url": "https://zenodo.org/api/records/10360160/files/Third%20place%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Time-lapses%20of%20rotation%20of%20Big%20Dipper%20or%20Southern%20Cross:%20The%20Big%20Dipper%20in%20the%20Polar%20Night,%20by%20Stephanie%20Ziyi%20Ye.mp4/content",
+      "record_url": "https://astro4edu.org/resources/media/27284m8gy12/",
+      "original_path": null,
+      "ru_path": null,
+      "sha256": null,
+      "size": null,
+      "title_en": "The Big Dipper in the Polar Night",
+      "title_ru": "Большой Ковш в полярную ночь",
+      "short_caption_en": "The Big Dipper in the Polar Night",
+      "short_caption_ru": "Большой Ковш в полярную ночь",
+      "caption_en": "Third place winner in the 2023 IAU OAE Astrophotography Contest, category of Time-lapses of rotation of Big Dipper or Southern Cross.\r\n\r\nStep into the cosmic theatre of Iceland’s northern skies in this time-lapse where the illustrious Big Dipper commands attention, tracing an almost complete circle around Polaris — an exquisite sight that is not visible from mid-latitudes. This time-lapse, captured through fisheye lenses, reveals the timeless choreography of the Big Dipper, vividly illustrating its celestial waltz. Amidst this spectacle, the Arctic night reveals its grandeur, painting a panoramic canvas that showcases not just the celestial journey of this iconic asterism but also the ethereal dance of the Northern Lights. In this breathtaking tapestry, the Big Dipper takes centre stage against the mesmerising backdrop of the Icelandic nightscape, adorned by the vibrant hues of the Aurora Borealis.",
+      "caption_ru": "Третье место на конкурсе астрофотографии Управления астрономического образования МАС 2023 года в категории покадровых съёмок вращения Большого Ковша или Южного Креста.\n\nНа покадровой съёмке северного неба Исландии Большой Ковш описывает почти полный круг вокруг Полярной звезды. Из средних широт такой вид недоступен. Съёмка объективом «рыбий глаз» охватывает и путь звёзд, и широкую панораму арктической ночи. На фоне яркого северного сияния хорошо видно, как знакомый рисунок из звёзд поворачивается вокруг небесного полюса.",
+      "alt_en": "The sky rotates around one star that appears fixed. Bubbles and swirls of green aurorae fill the foreground",
+      "alt_ru": "Звёзды движутся вокруг одной неподвижной на вид звезды. Внизу видны зелёные завитки полярного сияния.",
+      "credit": "Stephanie Ziyi Ye/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        33,
+        39,
+        492,
+        511
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:8i19wv485F65",
+      "kind": "media",
+      "file_type": "vid",
+      "source_url": "https://zenodo.org/api/records/10360188/files/Honorable%20mention%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Time-lapses%20of%20rotation%20of%20Big%20Dipper%20or%20Southern%20Cross:%20The%20Big%20Dipper%20with%20the%20Sardinia%20Radio%20Telescope%20SRT,%20by%20Antonio%20Finazzi.mov/content",
+      "record_url": "https://astro4edu.org/resources/media/8i19wv485F65/",
+      "original_path": null,
+      "ru_path": null,
+      "sha256": null,
+      "size": null,
+      "title_en": "The Big Dipper with the Sardinia Radio Telescope SRT",
+      "title_ru": "Большой Ковш и Сардинский радиотелескоп SRT",
+      "short_caption_en": "The Big Dipper with the Sardinia Radio Telescope SRT",
+      "short_caption_ru": "Большой Ковш и Сардинский радиотелескоп SRT",
+      "caption_en": "Honorable mention in the 2023 IAU OAE Astrophotography Contest, category of Time-lapses of rotation of Big Dipper or Southern Cross.\r\n\r\nThis time-lapse captures the movement of the stars alongside the majestic 64-metre Sardinia Radio Telescope (SRT) from the National Institute of Astrophysics (INAF), with special attention to the renowned Big Dipper against the backdrop of the celestial sphere. The camera pans as the famous asterism sinks in the sky while planes fly past and the radio telescope rotates. The harmonious interplay between the stellar pathways and the colossal dish of the radio telescope creates a mesmerising visual ode to the cosmic ballet taken in September 2019.",
+      "caption_ru": "Почётное упоминание на конкурсе астрофотографии Управления астрономического образования МАС 2023 года в категории покадровых съёмок вращения Большого Ковша или Южного Креста.\n\nНа фоне 64-метрового Сардинского радиотелескопа (SRT) Национального института астрофизики (INAF) видно движение звёзд, в том числе Большого Ковша. Камера поворачивается вслед за астеризмом, который опускается к горизонту. Мимо пролетают самолёты, а тарелка телескопа вращается. Следы звёзд и движущаяся антенна показаны в одном кадре. Съёмка сделана в сентябре 2019 года.",
+      "alt_en": "The dish of a radio telescope rotates as the Big Dipper moves in the sky behind.",
+      "alt_ru": "Тарелка радиотелескопа поворачивается. Позади неё по небу движется Большой Ковш.",
+      "credit": "Antonio Finazzi/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        27,
+        39,
+        52,
+        53,
+        90,
+        226,
+        261
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:PP87mr753x68",
+      "kind": "media",
+      "file_type": "vid",
+      "source_url": "https://zenodo.org/api/records/10360167/files/Honorable%20mention%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Time-lapses%20of%20rotation%20of%20Big%20Dipper%20or%20Southern%20Cross:%20Big%20Dipper%20Over%20the%20Mono%20Lake,%20by%20Fabrizio%20Melandri.mp4/content",
+      "record_url": "https://astro4edu.org/resources/media/PP87mr753x68/",
+      "original_path": null,
+      "ru_path": null,
+      "sha256": null,
+      "size": null,
+      "title_en": "Big Dipper Over the Mono Lake",
+      "title_ru": "Большой Ковш над озером Моно",
+      "short_caption_en": "Big Dipper Over the Mono Lake",
+      "short_caption_ru": "Большой Ковш над озером Моно",
+      "caption_en": "Honorable mention in the 2023 IAU OAE Astrophotography Contest, category of Time-lapses of rotation of Big Dipper or Southern Cross.\r\n\r\nThe Big Dipper asterism gracefully moves above the otherworldly tufa formations of Mono Lake, California. The time-lapse captures the Big Dipper’s movement across the northern horizon until its inferior conjunction. At Mono Lake’s latitude (+38°), the stars of the Big Dipper remain circumpolar, except for Alkaid. The North Star sits 38° above the horizon, just outside the field of view in the top right. The lunar illumination bathes the landscape in a soft glow, gradually fading as the Moon sets, cloaking the scene in darkness.",
+      "caption_ru": "Почётное упоминание конкурса астрофотографии Управления астрономического образования МАС 2023 года в категории «Ускоренные съёмки вращения Большого Ковша или Южного Креста».\n\nБольшой Ковш плавно движется над причудливыми туфовыми образованиями озера Моно в Калифорнии. На ускоренной записи видно, как Ковш движется над северным горизонтом вплоть до нижней кульминации. На широте озера Моно (+38°) звёзды Ковша не заходят за горизонт. Исключение — Алькаид. Полярная звезда находится на высоте 38° над горизонтом, чуть выше правого верхнего угла кадра. Луна мягко освещает пейзаж. По мере её захода свет меркнет, и пейзаж погружается во тьму.",
+      "alt_en": "The Big Dipper sinks in the sky with the handle sweeping out a larger circle than the bowl of the asterism.",
+      "alt_ru": "Большой Ковш опускается. Звёзды его ручки описывают более широкие дуги, чем звёзды чаши.",
+      "credit": "Fabrizio Melandri/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        39,
+        52,
+        53,
+        56,
+        90,
+        261
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Машинный перевод. Редакторское утверждение ожидается."
+  }
+}

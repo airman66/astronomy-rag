@@ -1,0 +1,1164 @@
+{
+  "id": "article:oae-review-earth-as-a-planet",
+  "kind": "article",
+  "source": {
+    "type": "oae_review_topic",
+    "url": "https://www.astro4edu.org/oae-reviews/earth-as-a-planet",
+    "imported_at": "2026-11-18T16:43:53.111757+00:00",
+    "sha256": "2b4bbcd95731c82a0154243cf022d3b1f17bf69281fa86e84cdfadb281455cf6",
+    "editorial_references": [
+      {
+        "url": "https://www.blueorigin.com/missions/ns-18",
+        "note": "Дата и миссия полёта Уильяма Шетнера"
+      }
+    ]
+  },
+  "metadata": {
+    "term_numbers": [],
+    "document_ids": [
+      "article:oae-document-earthasaplanet_mini_review"
+    ],
+    "categories_ru": []
+  },
+  "sections": [
+    {
+      "id": "about",
+      "type": "article_body",
+      "heading": "About",
+      "body": "On October 13, 2021, actor William Shatner -- Captain Kirk of the Enterprise -- had his first real orbital flight experience. His first words after exiting the capsule? \"\"Everybody in the world needs to do this. Everybody in the world needs to see this.\"\" Once again, we went into space and came back with the awareness that this world is fragile and we should take care of it, together. To solve the problems, together. Apart from being the cradle of humankind, Earth is also the third planet of our Solar system. This allows us to apply the astronomer point of view to it, and this point of view is the leading topic of the \"\"Earth as Planet\"\" review. This point of view has at least two different declinations, which are both explored in the material: the source of the awareness that we are all \"\"under the same sky\"\", and the consciousness that the physical laws that apply here are the same as elsewhere, and therefore we can learn about our world by comparing it to the others planets. The resources also include material to advance the public understanding of global warming, with a positive approach, leveraging on the inspirational role of scientists.",
+      "heading_ru": "О теме",
+      "body_ru": "13 октября 2021 года Уильям Шетнер, сыгравший капитана Кирка на корабле «Энтерпрайз», впервые побывал в космосе. Он совершил суборбитальный полёт. Выйдя из капсулы, он сказал: «Каждому в мире нужно это испытать. Каждому в мире нужно это увидеть». Взгляд на Землю из космоса вновь напомнил, насколько она хрупка и как важно вместе о ней заботиться и решать общие проблемы.\n\nЗемля — наш дом и третья планета Солнечной системы. В этом обзоре мы смотрим на неё глазами астрономов. С одной стороны, такой взгляд помогает осознать, что все мы живём под одним небом. С другой — на Земле действуют те же физические законы, что и на других планетах. Сравнивая их, можно больше узнать о нашем собственном мире. В подборке есть и материалы о глобальном потеплении для широкой аудитории. В них показано, как учёные помогают разобраться в проблеме и побуждают людей искать решения.",
+      "links": [],
+      "media_ids": [
+        "media:oae-review-earth-as-a-planet"
+      ]
+    },
+    {
+      "id": "initial_document",
+      "type": "related_resources",
+      "heading": "Mini-review document",
+      "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 3.35 MB) f .",
+      "heading_ru": "Мини-обзор",
+      "body_ru": "Тему обсуждали на отдельном заседании 3-го семинара Shaw–IAU. По материалам заседания подготовили мини-обзор (PDF, 3,35 МБ).",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/sessions/earth-as-a-planet/",
+          "text": "session",
+          "text_ru": "Заседание «Земля как планета»"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/schedule/",
+          "text": "3rd Shaw-IAU Workshop",
+          "text_ru": "3-й семинар Shaw–IAU"
+        },
+        {
+          "url": "https://www.astro4edu.org/media/documents/EarthasaPlanet_mini_review.pdf",
+          "text": "mini-review ( PDF file 3.35 MB)",
+          "text_ru": "Мини-обзор (PDF, 3,35 МБ)"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations",
+      "type": "related_resources",
+      "heading": "Talks",
+      "body": "",
+      "heading_ru": "Доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/76/",
+          "text": "Astronomers' Role in Climate Education",
+          "text_ru": "Роль астрономов в просвещении об изменении климата"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/72/",
+          "text": "Comparing the Climates of Earth, Mars, and Venus -- Educational Takeaways",
+          "text_ru": "Климат Земли, Марса и Венеры. Что даёт сравнение для преподавания"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/75/",
+          "text": "The Overview Effect, Astronomy, and Spaceship Earth",
+          "text_ru": "Эффект обзора, астрономия и космический корабль «Земля»"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-4",
+      "type": "related_resources",
+      "heading": "Poster Presentations",
+      "body": "",
+      "heading_ru": "Стендовые доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/22/",
+          "text": "Astronomy Education and its role in saving the environment",
+          "text_ru": "Роль астрономического образования в защите окружающей среды"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-5",
+      "type": "media_collection",
+      "heading": "Images",
+      "body": "",
+      "heading_ru": "Изображения",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/media/an19H51Tc11/",
+          "text": "Two illuminated teepees in a subarctic forest. Green bands of aurorae light up the sky.",
+          "text_ru": "Два освещённых типи в субарктическом лесу под зелёными полосами полярного сияния"
+        },
+        {
+          "url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+          "text": "Creative Commons Attribution 4.0 International (CC BY 4.0) icons",
+          "text_ru": "Значки лицензии Creative Commons Attribution 4.0 International (CC BY 4.0)"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/Lp55pE92F863/",
+          "text": "Ripples of green light over a tree-lined horizon. Pillars of white light rise into the sky.",
+          "text_ru": "Зелёные волны сияния над деревьями и белые световые столбы"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/9j76AZ10iH86/",
+          "text": "A shiny silver cross-section of a meteorite with two sets of many parallel lines crossing each other",
+          "text_ru": "Два набора параллельных линий пересекаются на блестящем серебристом срезе метеорита"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/6H75mH49Qh62/",
+          "text": "A map with the red prime meridian line running through London & crossing the darker horizontal equator in the Gulf of Guinea.",
+          "text_ru": "На карте красный нулевой меридиан проходит через Лондон и пересекает тёмную линию экватора в Гвинейском заливе"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/5p59P228iI38/",
+          "text": "The Moon in the far background and Earth's the blue of the Earth's atmosphere smoothly changes to the black of space",
+          "text_ru": "Луна вдали над Землёй. Голубая атмосфера постепенно переходит в черноту космоса"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/jh312430Ry7/",
+          "text": "Map of the world with different time zones marked by color. The basic pattern is timezones as 15-degree swathes of longitude.",
+          "text_ru": "Цветная карта часовых поясов. Многие пояса занимают полосы долготы шириной около 15°"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/ZY935z21c855/",
+          "text": "A map showing increasing temperatures across almost the whole world with the most warming in the Arctic",
+          "text_ru": "Карта роста температуры почти по всему миру. Сильнее всего потеплела Арктика"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/k449VX88me30/",
+          "text": "The Earth from space showing swirling clouds, oceans and continents",
+          "text_ru": "Земля из космоса с облачными вихрями, океанами и материками"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/q124ZA8aq21/",
+          "text": "The Earth from space showing oceans and continents",
+          "text_ru": "Океаны и материки Земли из космоса"
+        }
+      ],
+      "media_ids": [
+        "media:an19H51Tc11",
+        "media:Lp55pE92F863",
+        "media:9j76AZ10iH86",
+        "media:6H75mH49Qh62",
+        "media:5p59P228iI38",
+        "media:jh312430Ry7",
+        "media:ZY935z21c855",
+        "media:k449VX88me30",
+        "media:q124ZA8aq21"
+      ]
+    },
+    {
+      "id": "activities",
+      "type": "media_collection",
+      "heading": "Selected Activities",
+      "body": "",
+      "heading_ru": "Избранные занятия",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "http://astroedu.iau.org/en/activities/lightning-on-other-planets/",
+          "text": "Thumbnail for Lightning on other planets",
+          "text_ru": "Молнии на других планетах"
+        },
+        {
+          "url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+          "text": "Creative Commons Attribution 4.0 International (CC BY 4.0) icons",
+          "text_ru": "Значки лицензии Creative Commons Attribution 4.0 International (CC BY 4.0)"
+        },
+        {
+          "url": "http://astroedu.iau.org/en/activities/clouds-on-other-planets/",
+          "text": "Thumbnail for Clouds on other Planets",
+          "text_ru": "Облака на других планетах"
+        },
+        {
+          "url": "http://astroedu.iau.org/en/activities/identikit-of-an-alien/",
+          "text": "Thumbnail for Identikit of an alien",
+          "text_ru": "Портрет инопланетянина"
+        },
+        {
+          "url": "http://astroedu.iau.org/en/activities/paper-planets/",
+          "text": "Thumbnail for Paper Planets",
+          "text_ru": "Бумажные планеты"
+        },
+        {
+          "url": "http://astroedu.iau.org/en/activities/cubic-planets/",
+          "text": "Thumbnail for Cubic Planets",
+          "text_ru": "Кубические планеты"
+        },
+        {
+          "url": "http://astroedu.iau.org/en/activities/discover-earths-climate-with-a-balloon/",
+          "text": "Thumbnail for Discover Earth's climate with a balloon",
+          "text_ru": "Изучаем климат Земли с помощью воздушного шара"
+        },
+        {
+          "url": "http://astroedu.iau.org/en/activities/become-a-geo-detective/",
+          "text": "Thumbnail for Become a Geo-detective!",
+          "text_ru": "Стань геодетективом!"
+        },
+        {
+          "url": "http://astroedu.iau.org/en/activities/let-there-be-light-but-not-too-much/",
+          "text": "Thumbnail for Let there be light… but not too much!",
+          "text_ru": "Да будет свет… но в меру!"
+        },
+        {
+          "url": "http://astroedu.iau.org/en/activities/age-that-crater/",
+          "text": "Thumbnail for Age that crater!",
+          "text_ru": "Определи возраст кратера!"
+        },
+        {
+          "url": "http://astroedu.iau.org/en/activities/navigate-like-a-viking-use-the-sun-not-your-phone/",
+          "text": "Thumbnail for Navigate like a Viking – Use the Sun, not your phone!",
+          "text_ru": "Ориентируйся как викинг: по Солнцу, без телефона!"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/search-results/?page=1&language_choice=en&file_type=act&language_restriction=all&license_restriction=all&category_restriction=13#search_results",
+          "text": "Browse all activities for this topic",
+          "text_ru": "Все занятия по теме"
+        }
+      ],
+      "media_ids": [
+        "media:oae-inline-d58851649e9636ac3b98",
+        "media:oae-inline-0ff0c2ea2625320435fb",
+        "media:oae-inline-e42e063707da8fa4ffb1",
+        "media:oae-inline-437442b3ec3c84e13dca",
+        "media:oae-inline-bdcea50d55257616e0be",
+        "media:oae-inline-ebbae6deb1f81b8a96a3",
+        "media:oae-inline-651fab0174bffbaa2a69",
+        "media:oae-inline-c11b50dc0069a69b66bf",
+        "media:oae-inline-7e3581df764c03b3ff86",
+        "media:oae-inline-defb1b552533b807ac4f"
+      ]
+    },
+    {
+      "id": "diagrams",
+      "type": "media_collection",
+      "heading": "Diagrams",
+      "body": "",
+      "heading_ru": "Диаграммы",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/diagram/Qf59LF190B19/",
+          "text": "Two views of the Earth with important lines of latitude and longitude marked",
+          "text_ru": "Два вида Земли с обозначениями основных параллелей и меридианов"
+        },
+        {
+          "url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+          "text": "Creative Commons Attribution 4.0 International (CC BY 4.0) icons",
+          "text_ru": "Значки лицензии Creative Commons Attribution 4.0 International (CC BY 4.0)"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/diagram/xo4V340iY17/",
+          "text": "A map of the Earth with 24 vertical timezones. The International Date Line runs between Russian and Alaska and bisects the Pacific",
+          "text_ru": "Карта Земли с 24 часовыми поясами. Линия перемены дат проходит между Россией и Аляской через Тихий океан"
+        }
+      ],
+      "media_ids": [
+        "diagram:Qf59LF190B19",
+        "diagram:xo4V340iY17"
+      ]
+    },
+    {
+      "id": "videos",
+      "type": "media_collection",
+      "heading": "Videos",
+      "body": "",
+      "heading_ru": "Видео",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/media/27284m8gy12/",
+          "text": "The sky rotates around one star that appears fixed. Bubbles and swirls of green aurorae fill the foreground",
+          "text_ru": "Небо вращается вокруг почти неподвижной звезды. На переднем плане зелёные волны и завитки полярного сияния"
+        },
+        {
+          "url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+          "text": "Creative Commons Attribution 4.0 International (CC BY 4.0) icons",
+          "text_ru": "Значки лицензии Creative Commons Attribution 4.0 International (CC BY 4.0)"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/zu33xi40X922/",
+          "text": "The Earth surrounded by a swarm of green and orange points. Further out is a thin ring of green and orange points.",
+          "text_ru": "Землю окружает множество зелёных и оранжевых точек. Дальше видно тонкое кольцо из точек тех же цветов"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/Cl42Ze25QA59/",
+          "text": "A large, circular shadow, about one half the width of North America slowly moves across the continent from south-west to north-east",
+          "text_ru": "Круглая тень шириной примерно в половину Северной Америки медленно движется через материк с юго-запада на северо-восток"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/HC4hM958437/",
+          "text": "Over an observatory with several domes the Moons slowly covers the Sun leaving a thin, glowing ring.",
+          "text_ru": "Над обсерваторией с несколькими куполами Луна постепенно закрывает Солнце, оставляя тонкое светящееся кольцо"
+        }
+      ],
+      "media_ids": [
+        "media:27284m8gy12",
+        "media:zu33xi40X922",
+        "media:Cl42Ze25QA59",
+        "media:HC4hM958437"
+      ]
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Earth as a planet",
+      "blocks": {
+        "about": {
+          "heading": "About",
+          "body": "On October 13, 2021, actor William Shatner -- Captain Kirk of the Enterprise -- had his first real orbital flight experience. His first words after exiting the capsule? \"\"Everybody in the world needs to do this. Everybody in the world needs to see this.\"\" Once again, we went into space and came back with the awareness that this world is fragile and we should take care of it, together. To solve the problems, together. Apart from being the cradle of humankind, Earth is also the third planet of our Solar system. This allows us to apply the astronomer point of view to it, and this point of view is the leading topic of the \"\"Earth as Planet\"\" review. This point of view has at least two different declinations, which are both explored in the material: the source of the awareness that we are all \"\"under the same sky\"\", and the consciousness that the physical laws that apply here are the same as elsewhere, and therefore we can learn about our world by comparing it to the others planets. The resources also include material to advance the public understanding of global warming, with a positive approach, leveraging on the inspirational role of scientists."
+        },
+        "initial_document": {
+          "heading": "Mini-review document",
+          "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 3.35 MB) f ."
+        },
+        "presentations": {
+          "heading": "Talks",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Poster Presentations",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Images",
+          "body": ""
+        },
+        "activities": {
+          "heading": "Selected Activities",
+          "body": ""
+        },
+        "diagrams": {
+          "heading": "Diagrams",
+          "body": ""
+        },
+        "videos": {
+          "heading": "Videos",
+          "body": ""
+        }
+      }
+    },
+    "ru": {
+      "title": "Земля как планета",
+      "blocks": {
+        "about": {
+          "heading": "О теме",
+          "body": "13 октября 2021 года Уильям Шетнер, сыгравший капитана Кирка на корабле «Энтерпрайз», впервые побывал в космосе. Он совершил суборбитальный полёт. Выйдя из капсулы, он сказал: «Каждому в мире нужно это испытать. Каждому в мире нужно это увидеть». Взгляд на Землю из космоса вновь напомнил, насколько она хрупка и как важно вместе о ней заботиться и решать общие проблемы.\n\nЗемля — наш дом и третья планета Солнечной системы. В этом обзоре мы смотрим на неё глазами астрономов. С одной стороны, такой взгляд помогает осознать, что все мы живём под одним небом. С другой — на Земле действуют те же физические законы, что и на других планетах. Сравнивая их, можно больше узнать о нашем собственном мире. В подборке есть и материалы о глобальном потеплении для широкой аудитории. В них показано, как учёные помогают разобраться в проблеме и побуждают людей искать решения."
+        },
+        "initial_document": {
+          "heading": "Мини-обзор",
+          "body": "Тему обсуждали на отдельном заседании 3-го семинара Shaw–IAU. По материалам заседания подготовили мини-обзор (PDF, 3,35 МБ)."
+        },
+        "presentations": {
+          "heading": "Доклады",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Стендовые доклады",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Изображения",
+          "body": ""
+        },
+        "activities": {
+          "heading": "Избранные занятия",
+          "body": ""
+        },
+        "diagrams": {
+          "heading": "Диаграммы",
+          "body": ""
+        },
+        "videos": {
+          "heading": "Видео",
+          "body": ""
+        }
+      },
+      "aliases": []
+    }
+  },
+  "media": [
+    {
+      "id": "media:oae-review-earth-as-a-planet",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/oae_review_files/illustration_images/The_Blue_Marble_remastered_news_image.jpg",
+      "record_url": "https://www.astro4edu.org/oae-reviews/earth-as-a-planet",
+      "original_path": "media/original/oae-review-earth-as-a-planet.jpg",
+      "sha256": "80de686b5ffab82379cd0116c184b387c946df88af6e44a760b05007452627d8",
+      "size": 15906,
+      "alt_en": "Illustration image for Earth as a planet",
+      "alt_ru": "Земля из космоса. Видны Африка, Мадагаскар, Индийский океан и полосы облаков.",
+      "credit": "NASA",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:an19H51Tc11",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/api/records/10359618/files/Honorable%20mention%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Still%20images%20with%20smartphones-mobile%20devices:%20Northern%20Lights%20-%20Teepees,%20by%20Oanh%20Vuong.jpeg/content",
+      "record_url": "https://astro4edu.org/resources/media/an19H51Tc11/",
+      "original_path": "data/media/original/media_an19H51Tc11.jpeg",
+      "ru_path": null,
+      "sha256": "b3e4bc994d804555fd0945a26f4afc4283dd2442775068aa1e7e7d6f02f2c658",
+      "size": 2192778,
+      "title_en": "Northern Lights - Teepees",
+      "title_ru": "Северное сияние над типи",
+      "short_caption_en": "Northern Lights - Teepees",
+      "short_caption_ru": "Северное сияние над типи",
+      "caption_en": "Honorable mention in the 2023 IAU OAE Astrophotography Contest, category of Still images taken exclusively with smartphones/mobile devices.\r\n\r\nTaken with a smartphone at Cassidy Point, Yellowknife, Canada, on 24 March 2023, this stunning display captured the ethereal Northern Lights painting the night sky. The biting cold of -20°F (-29°C) set the stage for the vibrant hues of the Aurora Borealis, a celestial ballet created by collisions between charged solar particles and the Earth's atmosphere. The Earth’s magnetic field directs the charged particles towards the polar regions, where they interact with the various atoms and molecules in the atmosphere. This natural phenomenon transforms the sky into a canvas of radiant greens, pinks, and purples, casting a mesmerising glow above. The different colours of an aurora are determined by the gases in Earth’s atmosphere, the altitude where the aurora occurs, the density of the atmosphere, and the energy of the charged particles. In general, green is attributed to atomic oxygen, red is associated with high-altitude atomic oxygen and molecular nitrogen, while purple and blue are associated with molecular nitrogen only. Pink auroras are typically associated with a mix of nitrogen blue and red. Against this cosmic backdrop, the teepees of Aurora Village below provide a tranquil contrast to the celestial spectacle unfolding overhead. Preserving the pristine darkness of this location ensures the continued splendour of such awe-inspiring natural light shows.",
+      "caption_ru": "Почётное упоминание на конкурсе астрофотографии Управления астрономического образования МАС 2023 года в категории фотографий, сделанных только смартфонами или другими мобильными устройствами.\n\nЭтот снимок северного сияния сделан на смартфон в Кассиди-Пойнт, близ Йеллоунайфа, в Канаде, 24 марта 2023 года. При морозе −20 °F (−29 °C) над ночным небом разлилось яркое сияние. Магнитное поле Земли направляет заряженные частицы от Солнца к полярным областям. Там частицы сталкиваются с атомами и молекулами атмосферы, и те начинают излучать свет.\n\nНа снимке видны зелёные, розовые и фиолетовые оттенки. Цвет зависит от состава и плотности воздуха, высоты и энергии частиц. Зелёное свечение обычно даёт атомарный кислород. С красным связаны атомарный кислород на больших высотах и излучение молекулярного азота. Азот также даёт синие и фиолетовые оттенки. Розовый может появляться при наложении синего свечения азота на красное.\n\nУ подножия сияния видны типи комплекса Aurora Village. Сохранение тёмного неба в этом месте позволит и дальше наблюдать такие явления.",
+      "alt_en": "Two illuminated teepees in a subarctic forest. Green bands of aurorae light up the sky.",
+      "alt_ru": "Два освещённых типи в субарктическом лесу. Над ними тянутся зелёные полосы полярного сияния.",
+      "credit": "Oanh Vuong/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        33,
+        128,
+        511
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:Lp55pE92F863",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/api/records/10356863/files/Winner%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Still%20images%20with%20smartphones-mobile%20devices:%20Northern%20Lights-Color,%20by%20Jason%20Johnson.jpeg/content",
+      "record_url": "https://astro4edu.org/resources/media/Lp55pE92F863/",
+      "original_path": "data/media/original/media_Lp55pE92F863.jpeg",
+      "ru_path": null,
+      "sha256": "f877214a9f7906346397240ee8f89968143adba301eb082f3fca765f169df616",
+      "size": 3184323,
+      "title_en": "Northern Lights Color",
+      "title_ru": "Цвет северного сияния",
+      "short_caption_en": "Northern Lights Color",
+      "short_caption_ru": "Цвет северного сияния",
+      "caption_en": "Winner in the 2023 IAU OAE Astrophotography Contest, category of Still images taken exclusively with smartphones/mobile devices.\r\n\r\nThis photograph taken with a smartphone captures the ethereal beauty of the Northern Lights at Cassidy Point, Yellowknife, NT, Canada on 24 March 2023, at temperatures well below freezing (–29°C). The mesmerising dance of the Aurora Borealis (Australis), commonly known as the Northern (Southern) Lights, paints the night sky in striking hues. The aurora is a natural phenomenon caused by charged particles from the Sun interacting with Earth’s atmosphere, and being redirected by Earth’s magnetic field towards the north and south polar regions. The charged particles excite atoms and molecules in the atmosphere, resulting in a light display that varies in colour and form. The different colours of an aurora are determined by the gases (atoms and molecules) in Earth's atmosphere, the altitude of the aurora, the density of the atmosphere, and the energy of the charged particles.  In general, green is attributed to atomic oxygen, red is associated with high-altitude atomic oxygen and molecular nitrogen, while purple and blue are associated with molecular nitrogen only. Pink auroras are typically associated with a mix of nitrogen blue and red.  On this particular night, the serene environment of Cassidy Point provided an unobstructed view of the lights.",
+      "caption_ru": "Победитель конкурса астрофотографии Управления астрономического образования МАС 2023 года в категории фотографий, сделанных только смартфонами и другими мобильными устройствами.\n\nСеверное сияние снято на смартфон в Кассиди-Пойнт, близ Йеллоунайфа (Северо-Западные территории, Канада), 24 марта 2023 года при температуре −29 °C. Полярные сияния называют северными или южными в зависимости от полушария. Магнитное поле Земли направляет заряженные частицы от Солнца к полярным областям. Там они возбуждают атомы и молекулы атмосферы, которые затем излучают свет.\n\nЦвет зависит от состава и плотности атмосферы, высоты свечения и энергии частиц. Зелёный свет обычно излучает атомарный кислород. С красным связаны атомарный кислород на больших высотах и молекулярный азот. Излучение молекулярного азота также даёт синие и фиолетовые оттенки. Розовый может появляться при наложении синего свечения азота на красное. В ту ночь из Кассиди-Пойнт открывался вид на сияние по всему горизонту.",
+      "alt_en": "Ripples of green light over a tree-lined horizon. Pillars of white light rise into the sky.",
+      "alt_ru": "Над тёмной полосой леса видны зелёные волны сияния и светлые столбы, уходящие вверх.",
+      "credit": "Jason Johnson/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        33,
+        128,
+        511
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:9j76AZ10iH86",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://astro4edu.org/media/multimedia/iron-meteorite.png",
+      "record_url": "https://astro4edu.org/resources/media/9j76AZ10iH86/",
+      "original_path": "data/media/original/media_9j76AZ10iH86.png",
+      "ru_path": null,
+      "sha256": "a6ff475e672ecb8d5ebd0930ebc92221883d9ad82ff7dbb784a32da230d5e218",
+      "size": 4512007,
+      "title_en": "Iron Meteorite",
+      "title_ru": "Железный метеорит",
+      "short_caption_en": "Iron Meteorite",
+      "short_caption_ru": "Железный метеорит",
+      "caption_en": "This iron meteorite was originally found in Harriman, Tennessee, USA and is now held in the collection of the Smithsonian Natural History Museum, Washington DC, USA. The total mass of the meteorite was about 30kg. Here we see the interior after the meteorite was cut into pieces. \r\n\r\nIron meteorites are largely composed of an iron-nickel. They also often have a crystalline structure which manifests here as a series of crossing shiny straight lines known as a Widmanstätten pattern. This is thought to have formed as the meteoroid (the object that would eventually fall through the Earth's atmosphere as a meteor and land on the ground as a meteorite) cooled very slowly in the vacuum of space in the early solar system. This led to the growth of this crystalline structure.",
+      "caption_ru": "Этот железный метеорит нашли в Харримане, в американском штате Теннесси. Сейчас он хранится в коллекции Смитсоновского национального музея естественной истории в Вашингтоне. Общая масса метеорита составляла около 30 кг. На снимке виден один из его срезов.\n\nЖелезные метеориты состоят главным образом из железоникелевого сплава. Пересекающиеся блестящие полосы на срезе образуют видманштеттенову структуру. Считается, что эти кристаллы выросли в ранней Солнечной системе, когда породивший метеорит метеороид очень медленно остывал в космосе. Позже он вошёл в земную атмосферу и часть вещества достигла поверхности.",
+      "alt_en": "A shiny silver cross-section of a meteorite with  two sets of many parallel lines crossing each other",
+      "alt_ru": "На серебристом срезе железного метеорита пересекаются два ряда параллельных полос.",
+      "credit": "Chuck Sutherland",
+      "credit_url": "https://www.flickr.com/photos/9563286@N03/21770358081",
+      "license": "PD",
+      "license_url": null,
+      "term_numbers": [
+        163,
+        196,
+        302
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:6H75mH49Qh62",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://astro4edu.org/media/multimedia/the-prime-meridian.png",
+      "record_url": "https://astro4edu.org/resources/media/6H75mH49Qh62/",
+      "original_path": "data/media/original/media_6H75mH49Qh62.png",
+      "ru_path": null,
+      "sha256": "2dd9c44174af97dd6ceeebac2001ee12973545a2944ad928034ec0006c87c042",
+      "size": 563808,
+      "title_en": "The Prime Meridian",
+      "title_ru": "Нулевой меридиан",
+      "short_caption_en": "The Prime Meridian",
+      "short_caption_ru": "Нулевой меридиан",
+      "caption_en": "The prime meridian is defined as zero degrees longitude and runs from the North Pole through Greenwich in London to the South Pole. It is represented as a bright red line on this schematic Earth map. The horizontal line corresponds to the equator, while the antimeridian itself forms the outer edges at 180 degrees to the west and east.",
+      "caption_ru": "Нулевой меридиан соответствует долготе 0° и проходит от Северного полюса через Гринвич в Лондоне к Южному полюсу. На схематичной карте Земли он показан красным. Горизонтальная линия обозначает экватор. Противоположный меридиан образует края карты на долготе 180°.",
+      "alt_en": "A map with the red prime meridian line running through London & crossing the darker horizontal equator in the Gulf of Guinea.",
+      "alt_ru": "На карте красная линия нулевого меридиана проходит через Лондон и пересекает тёмную линию экватора в Гвинейском заливе.",
+      "credit": "Wikicommons user Kmf164",
+      "credit_url": "https://commons.wikimedia.org/wiki/File:Primemeridian_nolabels.jpg",
+      "license": "PD",
+      "license_url": null,
+      "term_numbers": [
+        102,
+        421
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:5p59P228iI38",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://astro4edu.org/media/multimedia/moon-and-earths-thin-atmosphere.png",
+      "record_url": "https://astro4edu.org/resources/media/5p59P228iI38/",
+      "original_path": "data/media/original/media_5p59P228iI38.png",
+      "ru_path": null,
+      "sha256": "435a19a575d5ee66c20b1876b4ba43c9e3dd3070e4084ca01c8cbea15a76040e",
+      "size": 3992789,
+      "title_en": "Moon and Earth's thin atmosphere",
+      "title_ru": "Луна и тонкая атмосфера Земли",
+      "short_caption_en": "Moon and Earth's thin atmosphere",
+      "short_caption_ru": "Луна и тонкая атмосфера Земли",
+      "caption_en": "Taken from the International Space Station (ISS), approximately 400 kilometers above the ground, the picture shows the Moon far in the background and Earth's thin atmosphere. It appears blue as light in this wavelength is scattered more than in others by the gases in the upper layers. The photo was taken in March 2015 by a crew member. Clearly visible is the vanishingly small layer of gases compared to Earth's dimensions. There is no clear border between the atmosphere and space; it is a smooth transition with no sharp edges. The thickness to the upper limit of the stratosphere, roughly 50 kilometers, does not even amount to one percent of Earth's radius. Above 600 kilometers, particles reaching the critical escape velocity can leave into space. The total mass of the atmosphere is around 300 times less than that of all oceans combined or one million times less than Earth's total mass.",
+      "caption_ru": "На фотографии, сделанной с Международной космической станции примерно в 400 км над Землёй, видны Луна вдали и тонкий голубой слой земной атмосферы. Голубой свет рассеивается газами сильнее, чем свет с большей длиной волны. Снимок сделал член экипажа МКС в марте 2015 года.\n\nПо сравнению с Землёй слой газов очень тонкий. Стратосфера заканчивается примерно на высоте 50 км. Это меньше одного процента радиуса Земли. Атмосфера постепенно переходит в космическое пространство. В её самых разреженных слоях, выше примерно 600 км, частицы могут покинуть Землю, если достигают скорости убегания. Масса атмосферы примерно в 300 раз меньше массы всех океанов и примерно в миллион раз меньше массы Земли.",
+      "alt_en": "The Moon in the far background and Earth's the blue of the Earth's atmosphere smoothly changes to the black of space",
+      "alt_ru": "Луна над Землёй. Голубая полоса атмосферы постепенно переходит в тёмное космическое пространство.",
+      "credit": "Earth Science and Remote Sensing Unit, NASA Johnson Space Center",
+      "credit_url": "https://eol.jsc.nasa.gov/searchphotos/photo.pl?mission=ISS042&roll=E&frame=307643",
+      "license": "PD",
+      "license_url": null,
+      "term_numbers": [
+        29
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:jh312430Ry7",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://astro4edu.org/media/multimedia/map-of-de-facto-time-zones-on-earth.png",
+      "record_url": "https://astro4edu.org/resources/media/jh312430Ry7/",
+      "original_path": "data/media/original/media_jh312430Ry7.png",
+      "ru_path": "data/media/ru/media_jh312430Ry7.png",
+      "sha256": "b96c03baf54e8139934a4ded5aefdf42abefc70ba8521258577b2b9551a8af59",
+      "size": 2881798,
+      "title_en": "Map of de-facto time zones on Earth",
+      "title_ru": "Карта фактических часовых поясов на Земле",
+      "short_caption_en": "Map of de-facto time zones on Earth",
+      "short_caption_ru": "Карта фактических часовых поясов на Земле",
+      "caption_en": "Due to the Earth's spherical shape and its rotation around its own axis, local noon – the moment in time when, for an observer at a specific geographic location, the Sun reaches its highest position in the sky varies with longitude. That is why a time coordinate, such as Universal Time (UT or UTC), might be of advantage for specifying moments in time in a unified way. But a global time coordinate will be out of synch with the local day-night rhythm in most locations on Earth. A compromise is to divide Earth into zones each comprising 15 degrees of longitude, and in each zone define time as UTC plus or minus an integer number of hours, with the offset chosen so as to make time match as closely with local time at the middle longitude of the time zone. In practice, political considerations have altered the time zone boundaries somewhat. When a country straddles several time zones, it is not uncommon for the country's government to choose one of those time zones to define the country's official time. \r\n\r\nThis map, originally created by the CIA and updated by several Wikimedia Commons users, shows the current definitions of the world's time zones. The IAU OAE is not the original author of this map. The designations employed and the presentation of the material on this maps do not imply the expression of any opinion whatsoever on the part of the IAU or the IAU OAE concerning the legal status of any country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries.",
+      "caption_ru": "Из-за шарообразной формы Земли и её вращения момент местного полудня зависит от долготы. В этот момент Солнце достигает наибольшей высоты над горизонтом для данного наблюдателя. Единая шкала, например всемирное время (UT или UTC), удобна для указания момента события. Однако в большинстве мест её показания расходятся с местным ритмом дня и ночи. В идеализированной схеме Землю делят на пояса шириной 15° по долготе и задают для каждого целое число часов со знаком плюс или минус относительно UTC. Смещение выбирают так, чтобы поясное время было как можно ближе к местному времени на среднем меридиане пояса. Реальные границы поясов меняются под влиянием политических решений. Если страна занимает несколько поясов, её правительство нередко выбирает один из них для всей страны.\n\nКарту составило ЦРУ, а затем обновили участники Викисклада. На ней показано деление на часовые пояса на момент подготовки карты. МАС и его Управление астрономического образования не являются авторами исходной карты. Обозначения и способ представления материала не выражают позиции этих организаций относительно правового статуса стран, территорий, городов, районов или их властей и относительно расположения границ.",
+      "alt_en": "Map of the world with different time zones marked by color. The basic pattern is timezones as 15-degree swathes of longitude.",
+      "alt_ru": "На карте мира часовые пояса выделены цветом. В основе деления — полосы шириной 15° по долготе.",
+      "credit": "Wikimedia Users UnaitxuGV, Heitordp and others based on a map created by the U.S. Central Intelligence Agency (CIA)",
+      "credit_url": "https://commons.wikimedia.org/wiki/File:World_Time_Zones_Map.png",
+      "license": "PD",
+      "license_url": null,
+      "term_numbers": [
+        138,
+        179,
+        362,
+        373
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "ru_sha256": "d7dbd8cff540c6222cc8f7c9e6f438aeb2d321126def2601b9e98dd03e0f55d4"
+    },
+    {
+      "id": "media:ZY935z21c855",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://astro4edu.org/media/multimedia/global-temperature-trends-past-50-years.jpg",
+      "record_url": "https://astro4edu.org/resources/media/ZY935z21c855/",
+      "original_path": "data/media/original/media_ZY935z21c855.jpg",
+      "ru_path": "data/media/ru/media_ZY935z21c855.png",
+      "sha256": "3f503f8d73befd370f178a11ad93770e9909c1ca41ae8ec160b52892d693ef6f",
+      "size": 108483,
+      "title_en": "Global Temperature Trends: Past 50 Years",
+      "title_ru": "Изменение температуры воздуха за 1973–2023 годы",
+      "short_caption_en": "Global Temperature Trends: Past 50 Years",
+      "short_caption_ru": "Изменение температуры воздуха за 1973–2023 годы",
+      "caption_en": "This map visualizes the changes in surface air temperature across the globe over the past half-century. Through meticulous analysis of annual averages, the map highlights the most significant trends in temperature change, particularly emphasizing shifts in northern latitudes and over land masses.",
+      "caption_ru": "На карте показано, как менялась температура воздуха у поверхности Земли с 1973 по 2023 год. Тенденции оценили по среднегодовым значениям. Изменения особенно заметны в северных широтах и над сушей.",
+      "alt_en": "A map showing increasing temperatures across almost the whole world with the most warming in the Arctic",
+      "alt_ru": "Карта изменения температуры воздуха с 1973 по 2023 год. Почти везде произошло потепление, самое сильное — в Арктике.",
+      "credit": "NASA’s Scientific Visualization Studio, Key and Title by Eric Fisk",
+      "credit_url": "https://data.giss.nasa.gov/gistemp/maps/index_v4.html",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        131
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "ru_sha256": "1be54cb7aa96c7e9246fe1e335ca12cd3e62a2f1f9ea9c7df077703107bf26b5"
+    },
+    {
+      "id": "media:k449VX88me30",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/multimedia/Himawari_8_True_Colour_2016-02-10_0320Z.png",
+      "record_url": "https://www.astro4edu.org/resources/media/k449VX88me30/",
+      "original_path": "media/original/media_k449VX88me30.png",
+      "ru_path": null,
+      "sha256": "d43981c0d4a091efc93ea3ba837cc4a0364853997e278a857521ef8a9750ced4",
+      "size": 2096605,
+      "title_en": "This page describes an image Earth from geostationary orbit",
+      "title_ru": "Земля с геостационарной орбиты",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "caption_en": "Full disk view of the Earth taken in 2016 by the geostationary satellite Himawari 8. It shows the Pacific, East Asia, Australia and New Zealand.",
+      "caption_ru": "Полный диск Земли на снимке геостационарного спутника «Химавари-8», сделанном в 2016 году. Видны Тихий океан, Восточная Азия, Австралия и Новая Зеландия.",
+      "alt_en": "The Earth from space showing swirling clouds, oceans and continents",
+      "alt_ru": "Земля из космоса. Над океанами и материками видны клубящиеся облака.",
+      "credit": "SSEC/CIMSS, University of Wisconsin–Madison",
+      "credit_url": null,
+      "license": "Public Domain Public Domain icons",
+      "license_url": null,
+      "term_numbers": [],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:q124ZA8aq21",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://astro4edu.org/media/multimedia/The_Blue_Marble_remastered.jpg",
+      "record_url": "https://astro4edu.org/resources/media/q124ZA8aq21/",
+      "original_path": "data/media/original/media_q124ZA8aq21.jpg",
+      "ru_path": null,
+      "sha256": "e42f2650cd861c9f79c8ac6342adf465a11385a5f2d92b9db8b23962e85b06bc",
+      "size": 5969721,
+      "title_en": "",
+      "title_ru": "",
+      "short_caption_en": "The Earth pictured from the Apollo 17 spacecraft",
+      "short_caption_ru": "Земля с борта «Аполлона-17»",
+      "caption_en": "Full disk view of the Earth taken on 7 December 1972, by the crew of the Apollo 17 spacecraft en route to the Moon at a distance of about 29,000 kilometres (18,000 mi). It shows Africa, Antarctica, and the Arabian Peninsula.",
+      "caption_ru": "Экипаж «Аполлона-17» снял полный диск Земли 7 декабря 1972 года по пути к Луне. Расстояние до Земли составляло около 29 000 км (18 000 миль). На снимке видны Африка, Антарктида и Аравийский полуостров.",
+      "alt_en": "The Earth from space showing oceans and continents",
+      "alt_ru": "Снимок Земли из космоса. Видны океаны и материки.",
+      "credit": "NASA/Apollo 17 crew/Project Apollo Archive",
+      "credit_url": null,
+      "license": "PD",
+      "license_url": null,
+      "term_numbers": [
+        89,
+        253,
+        354,
+        449
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "diagram:Qf59LF190B19",
+      "kind": "diagram",
+      "file_type": "img",
+      "source_url": "http://www.astro4edu.org/media/diagrams/multimedia/latitude_longitude_en.png",
+      "record_url": "https://astro4edu.org/resources/diagram/Qf59LF190B19/",
+      "original_path": "data/media/original/diagram_Qf59LF190B19.png",
+      "ru_path": "data/media/ru/diagram_Qf59LF190B19.png",
+      "sha256": "2a98adcfea05d7f840611dd32ccb7c9dd60bba28bf57d9fc45e44bd347669beb",
+      "size": 434218,
+      "title_en": "Latitude and Longitude",
+      "title_ru": "Широта и долгота",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "caption_en": "Two views of the Earth, one viewing the Northern Hemisphere, one viewing the Southern Hemisphere. The Earth rotates around its axis, an imaginary line that runs through the Earth from the North Pole to the South Pole. The Equator is an imaginary line that is the same distant from both the North Pole and the South Pole.\r\n\r\nThe positions of two cities, Rome in the Northern Hemisphere and Sydney in the Southern Hemisphere are marked here with red dots. Arrows indicate the two spherical coordinates latitude and longitude. \r\n\r\nLatitude marks the position north or south of the equator. Here we can see Rome has the letter N in its latitude as it is in the Northern Hemisphere and Sydney has the letter S in its latitude as it is in the Southern Hemisphere. Latitude can vary from 90° N at the North Pole to 0° at the Equator to 90° S at the South Pole.\r\n\r\nLongitude measures the position around the equator. While the choice of the zero point for latitude as the equator seems obvious, the choice of the zero point for longitude is more subjective. By convention the zero point in longitude is the prime meridian which passes through the Royal Greenwich Observatory in the UK. This is marked here as a solid line originating at the North Pole. Longitude is measured in degrees east or west of the prime meridian. As both Rome and Sydney lie to the east of Greenwich, they have the letter E as part of their longitude. Moving west to east, longitude varies from 180° W on the other side of the world from the prime meridian to 0° on the prime meridian before reaching 180° E again on the other side of world from the prime meridian.\r\n\r\nThis diagram shows the Earth at the December solstice. Two views are presented, one viewing the Northern Hemisphere and one viewing the Southern Hemisphere about nine hours later. The shaded region shows the night side of the Earth, with the day side being lighter. As it is the December solstice, the Sun appears overhead at the Tropic of Capricorn. This is a line of constant latitude at 23°26′09.3″ S. Six months later, at the June solstice, the Sun will appear to be overhead at the Tropic of Cancer at 23°26′09.3″ N. As the Sun appears over the Tropic of Capricorn more of the Southern Hemisphere is illuminated than the Northern Hemisphere. Indeed below the Antarctic Circle (the Polar Circle around the South Pole) the Sun does not set at this time of year leading to a Polar Day. Conversely, north of the Arctic Circle (the Polar Circle around the North Pole) the Sun does not rise at this time of year, leading to a Polar Night.",
+      "caption_ru": "Земля показана с двух сторон. Слева видно Северное полушарие, справа — Южное. Земля вращается вокруг воображаемой оси, которая проходит через Северный и Южный полюсы. Экватор — воображаемая линия на равном расстоянии от полюсов.\n\nКрасными точками отмечены Рим в Северном полушарии и Сидней в Южном. Стрелками показаны две координаты на сфере — широта и долгота. Широта отсчитывается к северу или к югу от экватора. Рим расположен к северу от него, Сидней — к югу. На экваторе широта равна 0°, на Северном полюсе — 90° с. ш., на Южном — 90° ю. ш.\n\nДолгота показывает положение вдоль экватора. За начало отсчёта по соглашению принят нулевой меридиан, проходящий через Королевскую обсерваторию в Гринвиче. На рисунке это сплошная линия, идущая от Северного полюса. Долготу отсчитывают к востоку или к западу от этого меридиана. Оба города находятся к востоку от Гринвича. Долгота принимает значения от 0° на нулевом меридиане до 180° на противоположном. 180° з. д. и 180° в. д. соответствуют одному меридиану.\n\nЗемля показана в декабрьское солнцестояние. Вид Южного полушария соответствует моменту примерно на девять часов позже того, который показан для Северного. Светлая часть обращена к Солнцу, затенённая — ночная. В декабре полуденное Солнце стоит в зените на тропике Козерога (23°26′09,3″ ю. ш.). Через полгода, в июньское солнцестояние, это происходит на тропике Рака (23°26′09,3″ с. ш.). В декабре освещена бо́льшая доля Южного полушария. Южнее Антарктического полярного круга Солнце не заходит, а севернее Северного полярного круга не восходит.",
+      "alt_en": "Two views of the Earth with important lines of latitude and longitude marked",
+      "alt_ru": "Два вида Земли с отмеченными параллелями и меридианами.",
+      "credit": "Maria Cristina Fortuna/IAU OAE",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        90,
+        102,
+        171,
+        179,
+        424,
+        439,
+        483,
+        491,
+        492,
+        493,
+        494,
+        495,
+        496,
+        497
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "ru_sha256": "26269c35988edee16b5b8d9aae12cfa14bc91c8063df5364e5eb940dd2874ece"
+    },
+    {
+      "id": "diagram:xo4V340iY17",
+      "kind": "diagram",
+      "file_type": "img",
+      "source_url": "http://www.astro4edu.org/media/diagrams/multimedia/international_date_line_en_pAlUbFq.png",
+      "record_url": "https://astro4edu.org/resources/diagram/xo4V340iY17/",
+      "original_path": "data/media/original/diagram_xo4V340iY17.png",
+      "ru_path": "data/media/ru/diagram_xo4V340iY17.png",
+      "sha256": "c5e1d8b48b4f891c86e2664036073eb729dac4528febe9581bb38956ab4742c8",
+      "size": 214475,
+      "title_en": "International Date Line",
+      "title_ru": "Линия перемены дат",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "caption_en": "The International Date Line (shown here as a solid line) is a specific meridian which roughly follows the meridian of longitude 180°. The International Date Line passes north–south between Russia and Alaska, through the Pacific Ocean including parts of Micronesia and Polynesia, and to the east of Australia/New Zealand before reaching the South Pole on Antarctica. The International Date Line marks the boundary where calendar dates change by one. Therefore, regions to the west of the International Date line are one calendar day ahead of regions to the east. \r\n\r\nThe International Date Line does not always exactly follow the meridian of longitude 180°. This is partly to stop some territory of a country falling on the other side of the International Date Line than the rest of that country (the Aleutian Islands in the United States being a good example). Some countries also choose which side of the International Date Line they lie on. Samoa changed which side of the date line it lay on in 2011. At this point the International Date Line was moved to lie to the east of Samoa having previously passed to the west of Samoa.\r\n\r\nOn the opposite side of the world the dashed line marks the prime meridian (the meridian of longitude 0°). This is a line that passes through the Royal Greenwich Observatory in the UK. All time zones are measure relative to Universal Time which is the zero point for all timezones. The time zones marked at the top of the diagram are the timezones in the shaded regions excluding the effects of daylight savings time.",
+      "caption_ru": "Сплошная линия обозначает международную линию перемены дат. Она проходит примерно по меридиану 180°, от пролива между Россией и Аляской через Тихий океан, мимо островов Микронезии и Полинезии, к востоку от Австралии и Новой Зеландии и далее к Южному полюсу. По разные стороны линии календарная дата различается на один день. На западной стороне календарь на день впереди.\n\nЛиния отклоняется от меридиана 180°, чтобы части одной страны могли придерживаться одной даты. Например, она огибает Алеутские острова. Страны могут сами решать, по какую сторону линии им находиться. В 2011 году Самоа перешло на западную сторону, и линию стали проводить восточнее островов.\n\nНа противоположной стороне Земли пунктиром обозначен нулевой меридиан (0°), проходящий через Королевскую обсерваторию в Гринвиче. Смещения часовых поясов отсчитывают от всемирного времени. Наверху указаны смещения для заштрихованных областей без учёта летнего времени.",
+      "alt_en": "A map of the Earth with 24 vertical timezones. The International Date Line runs between Russian and Alaska and bisects the Pacific",
+      "alt_ru": "Карта Земли с 24 условными часовыми поясами. Линия перемены дат проходит между Россией и Аляской, затем пересекает Тихий океан.",
+      "credit": "Maria Cristina Fortuna/IAU OAE",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        362,
+        373,
+        421,
+        422
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "ru_sha256": "f8dc4c557f71a111b18403f89634f807473bcaca849f0e6fc7dd0b49c67f81c8"
+    },
+    {
+      "id": "media:27284m8gy12",
+      "kind": "media",
+      "file_type": "vid",
+      "source_url": "https://zenodo.org/api/records/10360160/files/Third%20place%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Time-lapses%20of%20rotation%20of%20Big%20Dipper%20or%20Southern%20Cross:%20The%20Big%20Dipper%20in%20the%20Polar%20Night,%20by%20Stephanie%20Ziyi%20Ye.mp4/content",
+      "record_url": "https://astro4edu.org/resources/media/27284m8gy12/",
+      "original_path": null,
+      "ru_path": null,
+      "sha256": null,
+      "size": null,
+      "title_en": "The Big Dipper in the Polar Night",
+      "title_ru": "Большой Ковш в полярную ночь",
+      "short_caption_en": "The Big Dipper in the Polar Night",
+      "short_caption_ru": "Большой Ковш в полярную ночь",
+      "caption_en": "Third place winner in the 2023 IAU OAE Astrophotography Contest, category of Time-lapses of rotation of Big Dipper or Southern Cross.\r\n\r\nStep into the cosmic theatre of Iceland’s northern skies in this time-lapse where the illustrious Big Dipper commands attention, tracing an almost complete circle around Polaris — an exquisite sight that is not visible from mid-latitudes. This time-lapse, captured through fisheye lenses, reveals the timeless choreography of the Big Dipper, vividly illustrating its celestial waltz. Amidst this spectacle, the Arctic night reveals its grandeur, painting a panoramic canvas that showcases not just the celestial journey of this iconic asterism but also the ethereal dance of the Northern Lights. In this breathtaking tapestry, the Big Dipper takes centre stage against the mesmerising backdrop of the Icelandic nightscape, adorned by the vibrant hues of the Aurora Borealis.",
+      "caption_ru": "Третье место на конкурсе астрофотографии Управления астрономического образования МАС 2023 года в категории покадровых съёмок вращения Большого Ковша или Южного Креста.\n\nНа покадровой съёмке северного неба Исландии Большой Ковш описывает почти полный круг вокруг Полярной звезды. Из средних широт такой вид недоступен. Съёмка объективом «рыбий глаз» охватывает и путь звёзд, и широкую панораму арктической ночи. На фоне яркого северного сияния хорошо видно, как знакомый рисунок из звёзд поворачивается вокруг небесного полюса.",
+      "alt_en": "The sky rotates around one star that appears fixed. Bubbles and swirls of green aurorae fill the foreground",
+      "alt_ru": "Звёзды движутся вокруг одной неподвижной на вид звезды. Внизу видны зелёные завитки полярного сияния.",
+      "credit": "Stephanie Ziyi Ye/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        33,
+        39,
+        492,
+        511
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:zu33xi40X922",
+      "kind": "media",
+      "file_type": "vid",
+      "source_url": "https://astro4edu.org/media/multimedia/all_trackable_wActive_1080p60.mp4",
+      "record_url": "https://astro4edu.org/resources/media/zu33xi40X922/",
+      "original_path": null,
+      "ru_path": null,
+      "sha256": null,
+      "size": null,
+      "title_en": "Space debris orbiting the Earth",
+      "title_ru": "Космический мусор на орбите Земли",
+      "short_caption_en": "Space debris orbiting the Earth",
+      "short_caption_ru": "Космический мусор на орбите Земли",
+      "caption_en": "This animation shows objects orbiting the Earth. The data date from February 2024 and are taken from space-track.org which maintains a public catalogue of objects tracked by the United States Space Command (USSPACECOM).\r\n\r\nAt first in this video we see green dots, each representing one of the 31,000 human-made objects orbiting Earth. These include both operational and decommissioned satellites, used rocket stages from space launches, and fragments larger than 10cm created by collisions or explosions. Later in the video, some of the green dots are replace by orange dots, each of these representing one of the 9,300 operational satellites orbiting the Earth. Note that since February 2024 more satellites and rockets have been launched in to space and some objects will have fallen back to Earth, so these numbers will have changed.\r\n\r\nWe see two main groups of objects. The first are those objects orbiting close to the Earth, objects in low Earth orbit. These include communication satellites (many from the satellite constellations used to provide satellite internet services), Earth observation satellites, military satellites, two operational space stations and other objects such as rocket stages and other debris. \r\n\r\nMore distant from Earth we see a thin ring of satellites. These are in geostationary orbit. This is a special orbit where the orbital period matches the rotation period of the Earth. This means that a satellite in geostationary orbit stays above the same point on the equator and, when observed from the side of the Earth facing the satellite, will appear to stay at a position on the sky that does not change over time. Because of this, geostationary orbit is used by many communications satellites as a satellite dish on Earth used to receive or transmit a signal to that satellite can point in a fixed direction and does not need to dynamically track the satellite. Geostationary orbit is also used by weather observation satellites.",
+      "caption_ru": "На анимации показаны объекты на орбите Земли. Данные за февраль 2024 года взяты с сайта space-track.org, где опубликован каталог объектов, которые отслеживает Космическое командование США (USSPACECOM).\n\nВ начале ролика каждая зелёная точка обозначает один из 31 000 искусственных объектов. Среди них действующие и выведенные из эксплуатации спутники, отработанные ступени ракет и обломки размером более 10 см, образовавшиеся при столкновениях или взрывах. Затем часть точек становится оранжевой. Так отмечены 9 300 работавших на тот момент спутников. После февраля 2024 года запустили новые спутники и ракеты, а часть объектов сошла с орбиты, поэтому эти числа уже изменились.\n\nВблизи Земли видна группа объектов на низких околоземных орбитах. Это спутники связи, в том числе аппараты группировок спутникового интернета, спутники наблюдения Земли, военные аппараты и две действовавшие на тот момент космические станции. Здесь же находятся отработанные ступени и другой космический мусор.\n\nВдали от Земли виден узкий пояс геостационарных спутников. Период их обращения совпадает с периодом вращения Земли. Каждый такой спутник остаётся над одной точкой экватора и для наблюдателя с той стороны Земли, откуда его видно, находится в одной и той же точке неба. Поэтому антенну для приёма или передачи сигнала достаточно один раз направить на спутник. На геостационарных орбитах работают многие спутники связи и метеорологические аппараты.",
+      "alt_en": "The Earth surrounded by a swarm of green and orange points. Further out is a thin ring of green and orange points.",
+      "alt_ru": "Землю окружает облако зелёных и оранжевых точек. Дальше от неё видно тонкое кольцо из таких же точек.",
+      "credit": "NASA's Scientific Visualization Studio",
+      "credit_url": "https://svs.gsfc.nasa.gov/5258/",
+      "license": "PD",
+      "license_url": null,
+      "term_numbers": [
+        293,
+        320,
+        324
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:Cl42Ze25QA59",
+      "kind": "media",
+      "file_type": "vid",
+      "source_url": "https://astro4edu.org/media/multimedia/dscovr_epic_eclipse_2024.mp4",
+      "record_url": "https://astro4edu.org/resources/media/Cl42Ze25QA59/",
+      "original_path": null,
+      "ru_path": null,
+      "sha256": null,
+      "size": null,
+      "title_en": "2024 Total Solar Eclipse from Space",
+      "title_ru": "Полное солнечное затмение 2024 года: вид из космоса",
+      "short_caption_en": "2024 Total Solar Eclipse from Space",
+      "short_caption_ru": "Полное солнечное затмение 2024 года: вид из космоса",
+      "caption_en": "The NASA Deep Space Climate Observatory (DSCOVR) captured the total solar eclipse over North America on the 8th of April, 2024 from space using its Earth Polychromatic Imaging Camera (EPIC). This video shows images of Earth taken over the course of four and a half hours. The Moon’s shadow on the Earth can be seen as it moves from south-west to north east. While the shadow looks like it covers a huge part of the continent, only a strip up to 185 km wide in the middle of the eclipse's path saw a total eclipse at some point on this day and at any one time only the central part of the shadow would have experienced a total solar eclipse. Most of the area covered by this shadow only saw a partial eclipse.\r\n\r\nDSCOVR sits at L1, a stable gravitational point between the Sun and Earth and observes the day side of the Earth.",
+      "caption_ru": "8 апреля 2024 года обсерватория DSCOVR сняла из космоса полное солнечное затмение над Северной Америкой. Землю снимала многоспектральная камера EPIC. В ролике собраны снимки за четыре с половиной часа. Видно, как лунная тень движется по континенту с юго-запада на северо-восток.\n\nНа снимках затемнена значительная часть материка, но полную фазу в течение дня можно было увидеть только в полосе шириной до 185 км. В конкретный момент полное затмение было видно в центральной части тени. На остальной затемнённой территории наблюдалось частное затмение.\n\nDSCOVR движется по орбите в окрестности точки Лагранжа L1 между Солнцем и Землёй и наблюдает дневную сторону планеты.\n\nПримечание к переводу. В оригинале точка L1 названа устойчивой. Она неустойчива, и аппараты в её окрестности корректируют орбиту.",
+      "alt_en": "A large, circular shadow, about one half the width of North America slowly moves across the continent from south-west to north-east",
+      "alt_ru": "Широкая, почти круглая тень Луны движется по Северной Америке с юго-запада на северо-восток. Её видимый поперечник — около половины ширины континента.",
+      "credit": "NASA/DSCOVR EPIC team/Michala Garrison and Wanmei Liang",
+      "credit_url": "https://earthobservatory.nasa.gov/images/152663/total-solar-eclipse-darkens-north-america",
+      "license": "PD",
+      "license_url": null,
+      "term_numbers": [
+        310
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:HC4hM958437",
+      "kind": "media",
+      "file_type": "vid",
+      "source_url": "https://astro4edu.org/media/multimedia/eso1912d.mp4",
+      "record_url": "https://astro4edu.org/resources/media/HC4hM958437/",
+      "original_path": null,
+      "ru_path": null,
+      "sha256": null,
+      "size": null,
+      "title_en": "A total solar eclipse over the La Silla Observatory, Chile",
+      "title_ru": "Полное солнечное затмение над обсерваторией Ла-Силья, Чили",
+      "short_caption_en": "A total solar eclipse over the La Silla Observatory, Chile",
+      "short_caption_ru": "Полное солнечное затмение над обсерваторией Ла-Силья, Чили",
+      "caption_en": "A real-time video showing the total solar eclipse on the 2nd of July 2019 over the La Silla Observatory in Chile. This video covers the moments before totality, the just under two minutes of totality, and the moments after totality. Note that at the start of the video the Sun was already almost completely obscured by the Moon, it is just hard to see due to the brightness of the Sun and the exposure of the camera. Indeed the Moon started partially eclipsing the Sun roughly an hour before the start of this recording and would continue to partially obscure the Sun for roughly the same time afterwards.\r\n\r\nAt the point of totality one can see the faint glow of the Sun’s diffuse outer regions and on the horizon one can also see the glow from the parts of the surrounding areas on Earth that are not experiencing totality.",
+      "caption_ru": "Запись полного солнечного затмения 2 июля 2019 года над обсерваторией Ла-Силья в Чили идёт в реальном времени. Видны моменты перед полной фазой, сама полная фаза, длившаяся чуть меньше двух минут, и её окончание. Уже в первых кадрах Луна почти полностью закрыла Солнце. Это трудно заметить из-за яркости солнечного света и экспозиции камеры. Частное затмение началось примерно за час до начала записи и продолжалось ещё около часа после её окончания.\n\nВ полной фазе вокруг закрытого солнечного диска видна слабая корона. По горизонту светится небо над местами, куда полная тень Луны не дошла.",
+      "alt_en": "Over an observatory with several domes the Moons slowly covers the Sun leaving a thin, glowing ring.",
+      "alt_ru": "На фоне куполов обсерватории Луна закрывает Солнце. В полной фазе вокруг закрытого диска видна солнечная корона.",
+      "credit": "ESO/A. Santerne",
+      "credit_url": "https://www.eso.org/public/videos/eso1912d/",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        310,
+        365
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-inline-d58851649e9636ac3b98",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/lightning-on-other-planets_en_large_news_thumbnail_VKlEgbT.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/lightning-on-other-planets/",
+      "original_path": "media/original/review-topics/oae-inline-d58851649e9636ac3b98.jpg",
+      "sha256": "4a68e2c6b8b52470fbf89440b37dc85d275e839145a913112a36c1333031ba8c",
+      "size": 32436,
+      "alt_en": "Thumbnail for  Lightning on other planets",
+      "alt_ru": "Миниатюра задания «Молнии на других планетах»",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-inline-0ff0c2ea2625320435fb",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/clouds-on-other-planets_en_large_news_thumbnail_HC3z5sM.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/clouds-on-other-planets/",
+      "original_path": "media/original/review-topics/oae-inline-0ff0c2ea2625320435fb.jpg",
+      "sha256": "f091317c3e7c1df094e9d8f2698a946a4be50bf51170c0e77f72d8ce021e1cfa",
+      "size": 43347,
+      "alt_en": "Thumbnail for  Clouds on other Planets",
+      "alt_ru": "Миниатюра задания «Облака на других планетах»",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-inline-e42e063707da8fa4ffb1",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/identikit-of-an-alien_en_large_news_thumbnail_1NbbxPH.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/identikit-of-an-alien/",
+      "original_path": "media/original/review-topics/oae-inline-e42e063707da8fa4ffb1.jpg",
+      "sha256": "fed11c8bcf7ec89be38502a026bba08d2b6e68aeeec0a5257cffc1d0ac388f9a",
+      "size": 41647,
+      "alt_en": "Thumbnail for  Identikit of an alien",
+      "alt_ru": "Миниатюра задания «Фоторобот инопланетянина»",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-inline-437442b3ec3c84e13dca",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/paper-planets_en_large_news_thumbnail_mxx9RaC.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/paper-planets/",
+      "original_path": "media/original/review-topics/oae-inline-437442b3ec3c84e13dca.jpg",
+      "sha256": "abf6c39fb5683847c77cd799151694e5ae76c0cf327e422e191b2aed9ef2fe89",
+      "size": 44222,
+      "alt_en": "Thumbnail for  Paper Planets",
+      "alt_ru": "Миниатюра задания «Бумажные планеты»",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-inline-bdcea50d55257616e0be",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/cubic-planets_en_large_news_thumbnail.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/cubic-planets/",
+      "original_path": "media/original/review-topics/oae-inline-bdcea50d55257616e0be.jpg",
+      "sha256": "98bc0aa9c0b4225f1c397343b68435a62b26962c866f68cd3260a1a4127aef85",
+      "size": 40456,
+      "alt_en": "Thumbnail for  Cubic Planets",
+      "alt_ru": "Миниатюра задания «Планеты из кубиков»",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-inline-ebbae6deb1f81b8a96a3",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/discover-earths-climate-with-a-balloon_en_large_news_thumbnail_tKFUFGI.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/discover-earths-climate-with-a-balloon/",
+      "original_path": "media/original/review-topics/oae-inline-ebbae6deb1f81b8a96a3.jpg",
+      "sha256": "43ed00b8ac83039da42b308b8ef04ad9c86640618d6416de9c3a46efd7cbc09c",
+      "size": 55472,
+      "alt_en": "Materials for building a globe. A labeled map and paper strips show the equator, the Arctic Circle, the tropics, the poles and a meridian.",
+      "alt_ru": "Материалы для изготовления модели Земли. На карте и полосках бумаги подписаны экватор, Северный полярный круг, тропики Рака и Козерога, Северный и Южный полюсы и географический меридиан.",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "Thumbnail for  Discover Earth's climate with a balloon",
+      "ru_path": "data/media/ru/oae-earth-globe-materials.png",
+      "ru_sha256": "aabbe5d863fba4d7482dae8583573902153941141ae2d7b3826d29200c302ca9"
+    },
+    {
+      "id": "media:oae-inline-651fab0174bffbaa2a69",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/become-a-geo-detective_en_large_news_thumbnail.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/become-a-geo-detective/",
+      "original_path": "media/original/review-topics/oae-inline-651fab0174bffbaa2a69.jpg",
+      "sha256": "817e5a0e920b25def7292d750fdd0ebac4a1196f53227bbea8677fa0c5a94102",
+      "size": 48086,
+      "alt_en": "Thumbnail for  Become a Geo-detective!",
+      "alt_ru": "Миниатюра задания «Стань геодетективом!»",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-inline-c11b50dc0069a69b66bf",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/let-there-be-light-but-not-too-much_en_large_news_thumbnail.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/let-there-be-light-but-not-too-much/",
+      "original_path": "media/original/review-topics/oae-inline-c11b50dc0069a69b66bf.jpg",
+      "sha256": "5b50656cbffdd8d36612bfdaab9620e9d082a52a22005ac74308d9a09f8916f9",
+      "size": 37464,
+      "alt_en": "Thumbnail for  Let there be light… but not too much!",
+      "alt_ru": "Миниатюра задания «Да будет свет… но в меру!»",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:oae-inline-7e3581df764c03b3ff86",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/age-that-crater_en_large_news_thumbnail_7du4Au2.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/age-that-crater/",
+      "original_path": "media/original/review-topics/oae-inline-7e3581df764c03b3ff86.jpg",
+      "sha256": "b5da85cb03af74b27aa288552534324d50e1b8a974a416a76f5bc97c4e0a1285",
+      "size": 43737,
+      "alt_en": "Students use colour cards and photographs headed “The Moon” to work on the crater-age activity.",
+      "alt_ru": "Участники задания о возрасте кратеров работают с цветными карточками и фотографиями под заголовком «Луна».",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "Thumbnail for  Age that crater!",
+      "ru_path": "data/media/ru/oae-review-figure-b5da85cb.png",
+      "ru_sha256": "08b62e6003cb26073465f8dab1c27018172a4f6dfed9e3bf7551dcf8f75e1c3c"
+    },
+    {
+      "id": "media:oae-inline-defb1b552533b807ac4f",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/astroedu/images/navigate-like-a-viking-use-the-sun-not-your-phone_en_large_news_thumbnai_nhk89J3.jpg",
+      "record_url": "http://astroedu.iau.org/en/activities/navigate-like-a-viking-use-the-sun-not-your-phone/",
+      "original_path": "media/original/review-topics/oae-inline-defb1b552533b807ac4f.jpg",
+      "sha256": "010a1cf3c1a15dc856d806df7eb439da773700b171f59c9832192d5942cbc88b",
+      "size": 96347,
+      "alt_en": "Three views of a globe with a small circular direction-finding device. Among the German place names are Greenland, Iceland, Norway, Sweden, Finland, and Russia.",
+      "alt_ru": "Три фотографии глобуса с круглым приспособлением для ориентирования. На карте по-немецки подписаны Гренландия, Исландия, Норвегия, Швеция, Финляндия и Россия.",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "Thumbnail for  Navigate like a Viking – Use the Sun, not your phone!"
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Машинный перевод. Редакторское утверждение ожидается."
+  }
+}

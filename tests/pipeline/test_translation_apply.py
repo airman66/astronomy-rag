@@ -3,10 +3,11 @@
 import json
 import tempfile
 import unittest
+from hashlib import sha256
 from pathlib import Path
 from unittest.mock import patch
 
-from scripts.translation_review import apply
+from scripts.translation_review import apply, common
 from scripts.translation_review.common import (
     REVIEW_PROMPT_VERSION,
     VERIFY_PROMPT_VERSION,
@@ -14,6 +15,53 @@ from scripts.translation_review.common import (
 
 
 class TranslationAuditApplyTests(unittest.TestCase):
+    def test_current_manual_article_review_protects_both_copies_and_links(self):
+        data = Path(self.enterContext(tempfile.TemporaryDirectory()))
+        ledger = data / "manual_pages.json"
+        record_id = "article:review"
+        link = {"url": "https://example.org/a", "text": "Resource", "text_ru": "Материал"}
+        section = {
+            "id": "intro",
+            "heading": "Introduction",
+            "heading_ru": "Введение",
+            "body": "Source text",
+            "body_ru": "Проверенный текст",
+            "links": [link],
+        }
+        record = {
+            "id": record_id,
+            "sections": [section],
+            "locales": {
+                "en": {"blocks": {"intro": {"heading": section["heading"], "body": section["body"]}}},
+                "ru": {"blocks": {"intro": {"heading": section["heading_ru"], "body": section["body_ru"]}}},
+            },
+            "review": {"status": "draft"},
+        }
+        records = {record_id: record}
+        ledger.write_text(json.dumps({"records": {record_id: {"intro": {
+            "en_sha256": sha256(section["body"].encode()).hexdigest(),
+            "ru_sha256": sha256(section["body_ru"].encode()).hexdigest(),
+            "heading_links_en_sha256": sha256(b'["Introduction",[["https://example.org/a","Resource"]]]').hexdigest(),
+            "heading_links_ru_sha256": sha256('["Введение",[["https://example.org/a","Материал"]]]'.encode()).hexdigest(),
+        }}}}))
+        expected = {
+            "/sections/0/heading_ru": "Введение",
+            "/locales/ru/blocks/intro/heading": "Введение",
+            "/sections/0/body_ru": "Проверенный текст",
+            "/locales/ru/blocks/intro/body": "Проверенный текст",
+            "/sections/0/links/0/text_ru": "Материал",
+        }
+
+        with patch.object(common, "MANUAL_PAGES", ledger):
+            self.assertEqual({path: value for _, path, value in common.manual_page_edits(records)}, expected)
+            link["url"] = "https://example.org/b"
+            self.assertEqual(
+                {path for _, path, _ in common.manual_page_edits(records)},
+                {"/sections/0/body_ru", "/locales/ru/blocks/intro/body"},
+            )
+            section["body"] = "New source text"
+            self.assertEqual(list(common.manual_page_edits(records)), [])
+
     def test_previous_edits_survive_the_legacy_reports_move(self):
         data = Path(self.enterContext(tempfile.TemporaryDirectory()))
         eval_dir = data / "eval"

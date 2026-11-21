@@ -1,0 +1,223 @@
+{
+  "id": "article:oae-review-student-competitions",
+  "kind": "article",
+  "source": {
+    "type": "oae_review_topic",
+    "url": "https://www.astro4edu.org/oae-reviews/student-competitions",
+    "imported_at": "2026-11-18T16:43:53.288905+00:00",
+    "sha256": "2fca6f1d6363a76db10ae7f58b509009f4dad02917d8f9bb0cdc115348b25c59"
+  },
+  "metadata": {
+    "term_numbers": [],
+    "document_ids": [
+      "article:oae-document-studentcompetitions_mini_review"
+    ],
+    "categories_ru": []
+  },
+  "sections": [
+    {
+      "id": "about",
+      "type": "article_body",
+      "heading": "About",
+      "body": "School level student competitions come in different forms. Some competitions like Olympiads give importance to challenging problems and invite the brightest students to solve them in a time bound manner. Some other competitions invite students to participate in small research projects. Such projects can be in the form of building a small gadget or can be collecting data from a simple experiment or preparing a detailed plan proposal for a futuristic idea. There are also a number of outreach oriented competitions, like astronomy themed drawing / photography contests, theater performances or quizzes. These types of competitions pique student interest in Astronomy. The review gives an overview of this wide spectrum of competitions across the globe.",
+      "heading_ru": "О теме",
+      "body_ru": "Конкурсы для школьников бывают разными. На олимпиадах школьникам предлагают решить сложные задачи за ограниченное время. Другие конкурсы предлагают выполнить небольшой исследовательский проект: собрать простой прибор, получить данные в ходе эксперимента или подробно разработать замысел, который можно будет осуществить в будущем. Есть и просветительские форматы: конкурсы рисунков и фотографий на астрономическую тематику, театральные постановки и викторины. Такие соревнования пробуждают у школьников интерес к астрономии. В обзоре собраны примеры конкурсов разных форматов со всего мира.",
+      "links": [],
+      "media_ids": [
+        "media:oae-review-student-competitions"
+      ]
+    },
+    {
+      "id": "initial_document",
+      "type": "related_resources",
+      "heading": "Mini-review document",
+      "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 7.34 MB) f .",
+      "heading_ru": "Мини-обзор",
+      "body_ru": "Этой теме была посвящена секция 3-го семинара Шоу и МАС. По материалам секции подготовили мини-обзор (PDF, 7,34 МБ).",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/sessions/student-competitions/",
+          "text": "session",
+          "text_ru": "Секция"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/schedule/",
+          "text": "3rd Shaw-IAU Workshop",
+          "text_ru": "3-й семинар Шоу и МАС"
+        },
+        {
+          "url": "https://www.astro4edu.org/media/documents/StudentCompetitions_mini_review.pdf",
+          "text": "mini-review ( PDF file 7.34 MB)",
+          "text_ru": "Мини-обзор (PDF, 7,34 МБ)"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations",
+      "type": "related_resources",
+      "heading": "Talks",
+      "body": "",
+      "heading_ru": "Доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/96/",
+          "text": "Astronomy Education: Unlocking Creativity in Kids through Astro Art Competition",
+          "text_ru": "Астрономия в образовании: как творческий конкурс на астрономическую тему раскрывает способности детей"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/104/",
+          "text": "Building up national / regional talent nurture programme through competitions",
+          "text_ru": "Как создать национальную или региональную программу развития талантов с помощью конкурсов"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/106/",
+          "text": "Competitions from perspective of a student",
+          "text_ru": "Конкурсы глазами школьника"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/107/",
+          "text": "Project Based Competitions",
+          "text_ru": "Конкурсы школьных проектов"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/103/",
+          "text": "The purpose of Olympiads",
+          "text_ru": "Зачем нужны олимпиады"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/457/",
+          "text": "AstroSandbox: learning astronomy through courses, competitions, and clubs",
+          "text_ru": "AstroSandbox: изучаем астрономию на курсах, в конкурсах и кружках"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-4",
+      "type": "related_resources",
+      "heading": "Poster Presentations",
+      "body": "",
+      "heading_ru": "Стендовые доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/70/",
+          "text": "Innovation in Space Science Learning Project in Panama",
+          "text_ru": "Новые подходы в панамском проекте по изучению наук о космосе"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/71/",
+          "text": "Qatar Astronomy Olympiad for Schools",
+          "text_ru": "Катарская олимпиада по астрономии для школьников"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/69/",
+          "text": "The educational and scientific importance of CanSat school project",
+          "text_ru": "Образовательное и научное значение школьного проекта CanSat"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-5",
+      "type": "related_resources",
+      "heading": "Documents",
+      "body": "",
+      "heading_ru": "Документы",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/document/Fc0U276e467/",
+          "text": "Student Competitions: Mini-Review",
+          "text_ru": "Конкурсы для школьников. Мини-обзор"
+        }
+      ],
+      "media_ids": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Student competitions",
+      "blocks": {
+        "about": {
+          "heading": "About",
+          "body": "School level student competitions come in different forms. Some competitions like Olympiads give importance to challenging problems and invite the brightest students to solve them in a time bound manner. Some other competitions invite students to participate in small research projects. Such projects can be in the form of building a small gadget or can be collecting data from a simple experiment or preparing a detailed plan proposal for a futuristic idea. There are also a number of outreach oriented competitions, like astronomy themed drawing / photography contests, theater performances or quizzes. These types of competitions pique student interest in Astronomy. The review gives an overview of this wide spectrum of competitions across the globe."
+        },
+        "initial_document": {
+          "heading": "Mini-review document",
+          "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 7.34 MB) f ."
+        },
+        "presentations": {
+          "heading": "Talks",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Poster Presentations",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Documents",
+          "body": ""
+        }
+      }
+    },
+    "ru": {
+      "title": "Конкурсы для школьников",
+      "blocks": {
+        "about": {
+          "heading": "О теме",
+          "body": "Конкурсы для школьников бывают разными. На олимпиадах школьникам предлагают решить сложные задачи за ограниченное время. Другие конкурсы предлагают выполнить небольшой исследовательский проект: собрать простой прибор, получить данные в ходе эксперимента или подробно разработать замысел, который можно будет осуществить в будущем. Есть и просветительские форматы: конкурсы рисунков и фотографий на астрономическую тематику, театральные постановки и викторины. Такие соревнования пробуждают у школьников интерес к астрономии. В обзоре собраны примеры конкурсов разных форматов со всего мира."
+        },
+        "initial_document": {
+          "heading": "Мини-обзор",
+          "body": "Этой теме была посвящена секция 3-го семинара Шоу и МАС. По материалам секции подготовили мини-обзор (PDF, 7,34 МБ)."
+        },
+        "presentations": {
+          "heading": "Доклады",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Стендовые доклады",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Документы",
+          "body": ""
+        }
+      },
+      "aliases": []
+    }
+  },
+  "media": [
+    {
+      "id": "media:oae-review-student-competitions",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/oae_review_files/illustration_images/Valedictory_Session_-_Orientation_cum_Selection_Cam_bXjGB0p.jpg",
+      "record_url": "https://www.astro4edu.org/oae-reviews/student-competitions",
+      "original_path": "media/original/oae-review-student-competitions.jpg",
+      "sha256": "9550b53693285f0518ac3fc1452e1bdec08519d3309b7998f5de98013ba8902f",
+      "size": 15418,
+      "alt_en": "Illustration image for Student competitions",
+      "alt_ru": "Участники отборочных сборов сидят в аудитории лицом к кафедре и экрану.",
+      "credit": "wikipedia user - gangulybiswarup, used under CC-BY-3.0",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Машинный перевод. Редакторское утверждение ожидается."
+  }
+}

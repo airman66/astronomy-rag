@@ -25,7 +25,7 @@ def warn_limiter_down() -> None:
 def request_category(path: str) -> str:
     if path == API_PREFIX + ASSISTANT_ANSWER_PATH:
         return "assistant"
-    if path.endswith(("/file", "/illustration")):
+    if path.endswith(("/file", "/illustration", "/source.pdf", "/translation.pdf")):
         return "media"
     return "read"
 

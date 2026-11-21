@@ -1,0 +1,957 @@
+{
+  "id": "article:oae-review-daytime-astronomy",
+  "kind": "article",
+  "source": {
+    "type": "oae_review_topic",
+    "url": "https://www.astro4edu.org/oae-reviews/daytime-astronomy",
+    "imported_at": "2026-11-18T16:43:53.088767+00:00",
+    "sha256": "4674e2aa85fd2466d6b47e3bcb4300cf74c653ff9c4bf4d116ab37a118e732d3"
+  },
+  "metadata": {
+    "term_numbers": [],
+    "document_ids": [
+      "article:oae-document-daytimeastronomy_mini_review"
+    ],
+    "categories_ru": []
+  },
+  "sections": [
+    {
+      "id": "about",
+      "type": "article_body",
+      "heading": "About",
+      "body": "Daytime astronomy challenges our expectations of what astronomy entails. Our first associations revolve around the night sky, rich in fascinating objects like the Moon, planets, stars, constellations, nebulae, globular clusters, and galaxies. However, there are many exciting concepts connected to celestial objects that everybody can witness even in daylight. Firstly, there is the Sun, but we can also find the Moon and certain bright planets during the day or in the twilight of dusk and dawn. Daytime astronomy also helps us to connect with our cultural heritage. Seasons, timekeeping, and the calendar are closely related to observing the apparent annual motion of the Sun and the Moon. One major advantage of daytime astronomy activities is they happen during regular school hours. As such, they potentially reach many children and enrich their teaching with easily accessible hands-on exercises. Therefore, daytime astronomy is exceptionally well suited to teach basic astronomical concepts with few barriers concerning availability during the day and avoiding possible safety issues at night. The collection includes various activities and best practices to teach fundamental phenomena of the Sun-Moon-Earth system. They discuss examples for diurnal and annual solar motions, activities to measure the size of the Earth, as well as tips for observing solar eclipses safely.",
+      "heading_ru": "О теме",
+      "body_ru": "Дневная астрономия меняет привычное представление о том, чем занимается астрономия. В первую очередь мы вспоминаем ночное небо, где можно увидеть Луну, планеты, звёзды, созвездия, туманности, шаровые звёздные скопления и галактики. Однако многие интересные небесные явления доступны каждому и при свете дня. Помимо Солнца, днём или в утренних и вечерних сумерках можно увидеть Луну и некоторые яркие планеты.\n\nДневная астрономия также помогает лучше понять наше культурное наследие. Времена года, отсчёт времени и календарь тесно связаны с наблюдениями за видимым годичным движением Солнца и Луны. Дневные занятия можно проводить в обычные школьные часы, поэтому они доступны многим детям и позволяют дополнить уроки простыми практическими упражнениями. Это удобный способ познакомить учащихся с основами астрономии и избежать возможных трудностей и рисков ночных наблюдений.\n\nВ подборке собраны практические задания и проверенные методы преподавания основных явлений в системе Солнце — Луна — Земля. В неё вошли примеры суточного и годичного движения Солнца, задания по измерению размеров Земли и советы по безопасному наблюдению солнечных затмений.",
+      "links": [],
+      "media_ids": [
+        "media:oae-review-daytime-astronomy"
+      ]
+    },
+    {
+      "id": "initial_document",
+      "type": "related_resources",
+      "heading": "Mini-review document",
+      "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 7.56 MB) f .",
+      "heading_ru": "Краткий обзор",
+      "body_ru": "Этой теме была посвящена секция 3-го семинара Шоу и МАС. По материалам секции подготовлен краткий обзор (PDF, 7,56 МБ).",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/sessions/daytime-astronomy/",
+          "text": "session",
+          "text_ru": "Секция по дневной астрономии"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/schedule/",
+          "text": "3rd Shaw-IAU Workshop",
+          "text_ru": "3-й семинар Шоу и МАС"
+        },
+        {
+          "url": "https://www.astro4edu.org/media/documents/DaytimeAstronomy_mini_review.pdf",
+          "text": "mini-review ( PDF file 7.56 MB)",
+          "text_ru": "Краткий обзор (PDF, 7,56 МБ)"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations",
+      "type": "related_resources",
+      "heading": "Talks",
+      "body": "",
+      "heading_ru": "Доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/69/",
+          "text": "Analemmas in education",
+          "text_ru": "Аналеммы на уроках"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/67/",
+          "text": "Daytime astronomy projects for middle school students",
+          "text_ru": "Проекты по дневной астрономии для учащихся средней школы"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/70/",
+          "text": "No eclipses glasses? No problem! Simple Tools for Observing Solar Eclipses",
+          "text_ru": "Нет очков для затмения? Простые приспособления для наблюдения солнечных затмений"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/71/",
+          "text": "The Eratosthenes experiment: a 2300 year old ingenious measurement",
+          "text_ru": "Опыт Эратосфена. Как измерили Землю 2300 лет назад"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/66/",
+          "text": "The Globolocal Project and the use of the Parallel Globe",
+          "text_ru": "Проект Globolocal и использование параллельного глобуса"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/68/",
+          "text": "Where are we? How do we move?",
+          "text_ru": "Где мы находимся и как движемся?"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/438/",
+          "text": "Exploring Solar Activity Through Classroom Exercises Using Recent Sun Data",
+          "text_ru": "Изучение солнечной активности на уроке по свежим данным наблюдений"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-4",
+      "type": "related_resources",
+      "heading": "Poster Presentations",
+      "body": "",
+      "heading_ru": "Стендовые доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/45/",
+          "text": "Daytime astronomy with CLEA resources",
+          "text_ru": "Дневная астрономия с учебными материалами CLEA"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/44/",
+          "text": "Reckoning Earth's Size by Taking a Dip",
+          "text_ru": "Как измерить радиус Земли, зайдя в воду"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/43/",
+          "text": "Using Innovative Technologies to Study the Sun",
+          "text_ru": "Применение новых технологий для изучения Солнца"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-5",
+      "type": "related_resources",
+      "heading": "Documents",
+      "body": "",
+      "heading_ru": "Документы",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/document/nV486C716Q70/",
+          "text": "Daytime astronomy: Mini-Review",
+          "text_ru": "Дневная астрономия. Краткий обзор"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-6",
+      "type": "related_resources",
+      "heading": "Media Files",
+      "body": "",
+      "heading_ru": "Медиафайлы",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/media/PP87mr753x68/",
+          "text": "Big Dipper Over the Mono Lake",
+          "text_ru": "Большой Ковш над озером Моно"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/vQ8Vy70ph27/",
+          "text": "Solstices and Equinox",
+          "text_ru": "Солнцестояния и равноденствие"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/lN187577SX71/",
+          "text": "The Path of the Sun",
+          "text_ru": "Путь Солнца по небу"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/MV22xW3EP96/",
+          "text": "When the Sun Bounces",
+          "text_ru": "Когда Солнце отскакивает от горизонта"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/9E87Hf46pq20/",
+          "text": "The Eclipse Clock-Eclipse on a Polar Day",
+          "text_ru": "Часы затмения. Солнечное затмение в полярный день"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/de987v91l488/",
+          "text": "24 Hours of Rainbow",
+          "text_ru": "Радуга в течение 24 часов"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/OO19Ja33ik48/",
+          "text": "Equatorial Sunrise Eclipse",
+          "text_ru": "Солнечное затмение на восходе у экватора"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/Rt986z16uG22/",
+          "text": "Where the Sun Sets Every Month",
+          "text_ru": "Где заходит Солнце в разные месяцы"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/yB89J346o973/",
+          "text": "Smartphone Partial Eclipse Combined",
+          "text_ru": "Частное солнечное затмение. Совмещённые кадры со смартфона"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/Sy59yc52QK50/",
+          "text": "The Last Hour of the Day",
+          "text_ru": "Последний час светового дня"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/0p46lh97u891/",
+          "text": "Diamond ring",
+          "text_ru": "Бриллиантовое кольцо"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/hw22Gf24D746/",
+          "text": "Moon covering the Sun",
+          "text_ru": "Луна закрывает Солнце"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/ia30FP39uo23/",
+          "text": "Solar prominences",
+          "text_ru": "Солнечные протуберанцы"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/G3320x21Ph91/",
+          "text": "Baily's Beads",
+          "text_ru": "Чётки Бейли"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/M079Uo852j31/",
+          "text": "Solar eclipse phases",
+          "text_ru": "Фазы солнечного затмения"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/8n227G81kw13/",
+          "text": "Solar eclipse at 70%",
+          "text_ru": "Солнечное затмение на 70%"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/Oh75kE29Wk14/",
+          "text": "Solar eclipse at 50%",
+          "text_ru": "Солнечное затмение на 50%"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/Bj238148Rg32/",
+          "text": "Solar eclipse at 30%",
+          "text_ru": "Солнечное затмение на 30%"
+        },
+        {
+          "url": "https://www.astro4edu.org/resources/media/vR10OE22nf10/",
+          "text": "The Sun before the eclipse",
+          "text_ru": "Солнце перед затмением"
+        }
+      ],
+      "media_ids": [
+        "media:PP87mr753x68",
+        "media:vQ8Vy70ph27",
+        "media:lN187577SX71",
+        "media:MV22xW3EP96",
+        "media:9E87Hf46pq20",
+        "media:de987v91l488",
+        "media:OO19Ja33ik48",
+        "media:Rt986z16uG22",
+        "media:yB89J346o973",
+        "media:Sy59yc52QK50",
+        "media:0p46lh97u891",
+        "media:hw22Gf24D746",
+        "media:ia30FP39uo23",
+        "media:G3320x21Ph91",
+        "media:M079Uo852j31",
+        "media:8n227G81kw13",
+        "media:Oh75kE29Wk14",
+        "media:Bj238148Rg32",
+        "media:vR10OE22nf10"
+      ]
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Daytime astronomy",
+      "blocks": {
+        "about": {
+          "heading": "About",
+          "body": "Daytime astronomy challenges our expectations of what astronomy entails. Our first associations revolve around the night sky, rich in fascinating objects like the Moon, planets, stars, constellations, nebulae, globular clusters, and galaxies. However, there are many exciting concepts connected to celestial objects that everybody can witness even in daylight. Firstly, there is the Sun, but we can also find the Moon and certain bright planets during the day or in the twilight of dusk and dawn. Daytime astronomy also helps us to connect with our cultural heritage. Seasons, timekeeping, and the calendar are closely related to observing the apparent annual motion of the Sun and the Moon. One major advantage of daytime astronomy activities is they happen during regular school hours. As such, they potentially reach many children and enrich their teaching with easily accessible hands-on exercises. Therefore, daytime astronomy is exceptionally well suited to teach basic astronomical concepts with few barriers concerning availability during the day and avoiding possible safety issues at night. The collection includes various activities and best practices to teach fundamental phenomena of the Sun-Moon-Earth system. They discuss examples for diurnal and annual solar motions, activities to measure the size of the Earth, as well as tips for observing solar eclipses safely."
+        },
+        "initial_document": {
+          "heading": "Mini-review document",
+          "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 7.56 MB) f ."
+        },
+        "presentations": {
+          "heading": "Talks",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Poster Presentations",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Documents",
+          "body": ""
+        },
+        "presentations-6": {
+          "heading": "Media Files",
+          "body": ""
+        }
+      }
+    },
+    "ru": {
+      "title": "Дневная астрономия",
+      "blocks": {
+        "about": {
+          "heading": "О теме",
+          "body": "Дневная астрономия меняет привычное представление о том, чем занимается астрономия. В первую очередь мы вспоминаем ночное небо, где можно увидеть Луну, планеты, звёзды, созвездия, туманности, шаровые звёздные скопления и галактики. Однако многие интересные небесные явления доступны каждому и при свете дня. Помимо Солнца, днём или в утренних и вечерних сумерках можно увидеть Луну и некоторые яркие планеты.\n\nДневная астрономия также помогает лучше понять наше культурное наследие. Времена года, отсчёт времени и календарь тесно связаны с наблюдениями за видимым годичным движением Солнца и Луны. Дневные занятия можно проводить в обычные школьные часы, поэтому они доступны многим детям и позволяют дополнить уроки простыми практическими упражнениями. Это удобный способ познакомить учащихся с основами астрономии и избежать возможных трудностей и рисков ночных наблюдений.\n\nВ подборке собраны практические задания и проверенные методы преподавания основных явлений в системе Солнце — Луна — Земля. В неё вошли примеры суточного и годичного движения Солнца, задания по измерению размеров Земли и советы по безопасному наблюдению солнечных затмений."
+        },
+        "initial_document": {
+          "heading": "Краткий обзор",
+          "body": "Этой теме была посвящена секция 3-го семинара Шоу и МАС. По материалам секции подготовлен краткий обзор (PDF, 7,56 МБ)."
+        },
+        "presentations": {
+          "heading": "Доклады",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Стендовые доклады",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Документы",
+          "body": ""
+        },
+        "presentations-6": {
+          "heading": "Медиафайлы",
+          "body": ""
+        }
+      },
+      "aliases": []
+    }
+  },
+  "media": [
+    {
+      "id": "media:oae-review-daytime-astronomy",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/oae_review_files/illustration_images/daytime_astronomy_news_image.png",
+      "record_url": "https://www.astro4edu.org/oae-reviews/daytime-astronomy",
+      "original_path": "media/original/oae-review-daytime-astronomy.png",
+      "sha256": "f2cf828218107fa6db8457b99c49a50be1fcb8d6dbe0b476f030ee20098ad632",
+      "size": 34624,
+      "alt_en": "Illustration image for Daytime astronomy",
+      "alt_ru": "Положения Солнца на голубом небе, совмещённые на одном изображении",
+      "credit": "Vegard Lundby Rekaa",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:PP87mr753x68",
+      "kind": "media",
+      "file_type": "vid",
+      "source_url": "https://zenodo.org/api/records/10360167/files/Honorable%20mention%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Time-lapses%20of%20rotation%20of%20Big%20Dipper%20or%20Southern%20Cross:%20Big%20Dipper%20Over%20the%20Mono%20Lake,%20by%20Fabrizio%20Melandri.mp4/content",
+      "record_url": "https://astro4edu.org/resources/media/PP87mr753x68/",
+      "original_path": null,
+      "ru_path": null,
+      "sha256": null,
+      "size": null,
+      "title_en": "Big Dipper Over the Mono Lake",
+      "title_ru": "Большой Ковш над озером Моно",
+      "short_caption_en": "Big Dipper Over the Mono Lake",
+      "short_caption_ru": "Большой Ковш над озером Моно",
+      "caption_en": "Honorable mention in the 2023 IAU OAE Astrophotography Contest, category of Time-lapses of rotation of Big Dipper or Southern Cross.\r\n\r\nThe Big Dipper asterism gracefully moves above the otherworldly tufa formations of Mono Lake, California. The time-lapse captures the Big Dipper’s movement across the northern horizon until its inferior conjunction. At Mono Lake’s latitude (+38°), the stars of the Big Dipper remain circumpolar, except for Alkaid. The North Star sits 38° above the horizon, just outside the field of view in the top right. The lunar illumination bathes the landscape in a soft glow, gradually fading as the Moon sets, cloaking the scene in darkness.",
+      "caption_ru": "Почётное упоминание конкурса астрофотографии Управления астрономического образования МАС 2023 года в категории «Ускоренные съёмки вращения Большого Ковша или Южного Креста».\n\nБольшой Ковш плавно движется над причудливыми туфовыми образованиями озера Моно в Калифорнии. На ускоренной записи видно, как Ковш движется над северным горизонтом вплоть до нижней кульминации. На широте озера Моно (+38°) звёзды Ковша не заходят за горизонт. Исключение — Алькаид. Полярная звезда находится на высоте 38° над горизонтом, чуть выше правого верхнего угла кадра. Луна мягко освещает пейзаж. По мере её захода свет меркнет, и пейзаж погружается во тьму.",
+      "alt_en": "The Big Dipper sinks in the sky with the handle sweeping out a larger circle than the bowl of the asterism.",
+      "alt_ru": "Большой Ковш опускается. Звёзды его ручки описывают более широкие дуги, чем звёзды чаши.",
+      "credit": "Fabrizio Melandri/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        39,
+        52,
+        53,
+        56,
+        90,
+        261
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:vQ8Vy70ph27",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/api/records/10278664/files/Honorable%20mention%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Still%20images%20of%20the%20day%20arc%20of%20the%20Sun%20and%20solargraphs:%20Solstices%20and%20Equinox,%20by%20Tunç%20Tezel.jpg/content",
+      "record_url": "https://astro4edu.org/resources/media/vQ8Vy70ph27/",
+      "original_path": "data/media/original/media_vQ8Vy70ph27.jpg",
+      "ru_path": null,
+      "sha256": "4c619f658e3d693cbaa4d8822239219a124b841102801d99ea7138ea72eaf9d6",
+      "size": 1711838,
+      "title_en": "Solstices and Equinox",
+      "title_ru": "Солнцестояния и равноденствие",
+      "short_caption_en": "Solstices and Equinox",
+      "short_caption_ru": "Солнцестояния и равноденствие",
+      "caption_en": "Honorable mention in the 2023 IAU OAE Astrophotography Contest, category of Still images of day arcs of the Sun and Solargraphs.\r\n\r\nThis captivating image showcases the journey of the Sun through the sky during the winter solstice (bottom), equinox (middle), and summer solstice (top) in Bursa, Turkey, between 21 December 2007 and 20 June 2008. Using a fisheye lens, the photographer captured the Sun's positions at regular intervals from sunrise to sunset on the three different days, illustrating the changing lengths of day and night throughout the year. The variations in the Sun’s daily path across the sky, its height at midday, and the positions of sunrise and sunset, as well as the length of a day, depend on Earth’s axial tilt relative to its orbit around the Sun. The series was taken from a rooftop in Bursa, where the local terrain adds its own unique touch by occasionally obstructing the horizon. Oriented with north at the top and south at the bottom, this visual diary serves as a stunning representation of the Sun’s path for those residing in mid-northern latitudes.",
+      "caption_ru": "Почётное упоминание конкурса астрофотографии Управления астрономического образования МАС 2023 года в категории «Фотографии суточных дуг Солнца и солярографы».\n\nНа снимке показаны пути Солнца по небу в день зимнего солнцестояния (внизу), равноденствия (посередине) и летнего солнцестояния (вверху). Снимки сделаны в Бурсе, Турция, с 21 декабря 2007 года по 20 июня 2008 года. В каждый из трёх дней фотограф снимал Солнце объективом «рыбий глаз» через равные промежутки времени от восхода до заката. Серия показывает, как в течение года меняется продолжительность дня и ночи. Суточный путь Солнца, его высота в полдень, точки восхода и захода и продолжительность светового дня зависят от наклона земной оси к плоскости орбиты Земли. Фотографии сделаны с крыши в Бурсе. Местность местами заслоняет горизонт. Вверху кадра — север, внизу — юг. По этому фотодневнику можно проследить движение Солнца на средних северных широтах.",
+      "alt_en": "Three paths of the Sun across the sky. The highest almost crosses the middle of the image, the lowest is one sixth of the way",
+      "alt_ru": "Три траектории Солнца на небе. Верхняя проходит почти через середину кадра, нижняя поднимается примерно на одну шестую его высоты.",
+      "credit": "Tunç Tezel/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        34,
+        317,
+        341,
+        343,
+        404
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:lN187577SX71",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/api/records/10278550/files/Second%20place%20winner%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Still%20images%20of%20the%20day%20arc%20of%20the%20Sun%20and%20solargraphs:%20The%20Path%20of%20the%20Sun,%20by%20Frank%20Niessen.jpg/content",
+      "record_url": "https://astro4edu.org/resources/media/lN187577SX71/",
+      "original_path": "data/media/original/media_lN187577SX71.jpg",
+      "ru_path": null,
+      "sha256": "9fb66796fea8e7cdd258bc2619906f2db61d8480f91338f12836bba50fd30817",
+      "size": 465458,
+      "title_en": "The Path of the Sun",
+      "title_ru": "Путь Солнца по небу",
+      "short_caption_en": "The Path of the Sun",
+      "short_caption_ru": "Путь Солнца по небу",
+      "caption_en": "Second place winner in the 2023 IAU OAE Astrophotography Contest, category of Still images of day arcs of the Sun and Solargraphs.\r\n\r\nThis enchanting image, captured in Germany between 21 June 2018 and 21 December 2018, is a poetic blend of art and science, showcasing nature's rhythm and the passage of time. It combines images taken at different times of day over the course of six months. Each curve tracks the Sun’s path (or arc) across the sky on a particular day. The sweeping arc of the Sun is distorted here by the projection, making it appear like a curve. The position of the daily arc across the sky changes with the Sun’s seasonal movement in the sky. Captured using a simple pinhole camera fashioned from a coffee can, it shows the Sun's journey over the course of six months, and the gradual shift of the daily arc from the summer, when it is higher in the sky, to its lowest arc at the winter solstice. Gaps in the Sun’s path represent days or times of day when the Sun was obscured by clouds. This image is a vivid testament to the changing seasons, revealing the Sun's dance in the sky as days grow shorter or longer.",
+      "caption_ru": "Второе место конкурса астрофотографии Управления астрономического образования МАС 2023 года в категории «Фотографии суточных дуг Солнца и солярографы».\n\nНа этом снимке, сделанном в Германии с 21 июня по 21 декабря 2018 года, наглядно виден ход времени и смена сезонов. На нём совмещены изображения, полученные в разное время суток за полгода. Каждая линия соответствует суточному пути Солнца по небу. Форма линии искажена проекцией. Сезонное движение Солнца меняет положение суточной дуги. Фотограф сделал простую камеру-обскуру из банки из-под кофе. На снимке видно, как высокая летняя дуга Солнца постепенно опускается и достигает минимума в день зимнего солнцестояния. Пропуски на линиях соответствуют дням и часам, когда Солнце скрывали облака. По снимку можно проследить, как меняется путь Солнца и сокращается или увеличивается световой день.",
+      "alt_en": "Curved bright lines rise from the left, peaking on the right. The further to the left a line rises, the higher it peaks.",
+      "alt_ru": "Светлые дуги поднимаются слева и достигают максимальной высоты справа. Чем левее начинается дуга, тем выше она поднимается.",
+      "credit": "Frank Niessen/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        34,
+        317,
+        341,
+        343,
+        404
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:MV22xW3EP96",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/api/records/10278711/files/First%20place%20winner%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Still%20images%20of%20sunrise%20and%20sunset%20locations%20over%20the%20year:%20When%20the%20Sun%20Bounces,%20by%20Milos%20Obert.jpg/content",
+      "record_url": "https://astro4edu.org/resources/media/MV22xW3EP96/",
+      "original_path": "data/media/original/media_MV22xW3EP96.jpg",
+      "ru_path": null,
+      "sha256": "cfcdfac62f96e8d2cd04986644db8e9e51fcd7b394fa47e1b32d1bcdb99d27b0",
+      "size": 3542177,
+      "title_en": "When the Sun Bounces",
+      "title_ru": "Когда Солнце отскакивает от горизонта",
+      "short_caption_en": "When the Sun Bounces",
+      "short_caption_ru": "Когда Солнце отскакивает от горизонта",
+      "caption_en": "First place winner in the 2023 IAU OAE Astrophotography Contest, category of Still images of sunrise and sunset location over the year.\r\n\r\nThis image was taken at Norway's North Cape. Owing to the latitude of this location, the Sun never truly sets during the summer months, from around April to August. This results in the unique spectacle of continuous daylight, known as a polar day. This captivating series of images, taken in 2022, showcases the Sun's relentless journey across the horizon every 30 minutes. At its lowest point in the sky, the Sun does not set, but appears to bounce off the horizon. The globe on the far right in the photo stands as a sentinel, marking the northernmost point of the European continental mainland.",
+      "caption_ru": "Первое место конкурса астрофотографии Управления астрономического образования МАС 2023 года в категории «Фотографии мест восхода и захода Солнца в течение года».\n\nСерия снята на мысе Нордкап в Норвегии. На этой широте в тёплое время года, примерно с апреля по август, Солнце некоторое время не заходит. Это явление называется полярным днём. Кадры сделаны в 2022 году с интервалом 30 минут и показывают движение Солнца вдоль горизонта. В нижней точке Солнце остаётся над горизонтом и словно отскакивает от него. Справа видна скульптура в виде глобуса, известный ориентир Нордкапа.",
+      "alt_en": "Seven images of the Sun. From the left it sinks, reaching its lowest in the centre image, before rising higher to the right.",
+      "alt_ru": "Семь изображений Солнца. Слева направо оно опускается, достигает нижней точки в центре и вновь поднимается.",
+      "credit": "Milos Obert/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        343,
+        424,
+        488,
+        491
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:9E87Hf46pq20",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/api/records/10278539/files/First%20place%20winner%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Still%20images%20of%20the%20day%20arc%20of%20the%20Sun%20and%20solargraphs:%20The%20Eclipse%20Clock-Eclipse%20on%20a%20Polar%20Day,%20by%20Stephanie%20Ziyi%20Ye.JPG/content",
+      "record_url": "https://astro4edu.org/resources/media/9E87Hf46pq20/",
+      "original_path": "data/media/original/media_9E87Hf46pq20.jpg",
+      "ru_path": null,
+      "sha256": "2d046b3473ad6617f6ee58c38fff867942af65cf6d4c3a12f6a13b3c855031b4",
+      "size": 1234247,
+      "title_en": "The Eclipse Clock-Eclipse on a Polar Day",
+      "title_ru": "Часы затмения. Солнечное затмение в полярный день",
+      "short_caption_en": "The Eclipse Clock-Eclipse on a Polar Day",
+      "short_caption_ru": "Часы затмения. Солнечное затмение в полярный день",
+      "caption_en": "First place winner in the 2023 IAU OAE Astrophotography Contest, category of Still images of day arcs of the Sun and Solargraphs.\r\n\r\nConstructed by combining multiple images over the course of a 24-hour period, the image was captured in Union Glacier, Antarctica, during the total solar eclipse of 4 December 2021, and showcases the day arc of the Sun. It illustrates the unique phenomenon of a polar day, during which the Sun travels around the sky without setting. During polar days, areas within the polar circles experience 24 hours of continuous daylight, and the Sun doesn’t set for an extended period. The image also offers a rare perspective of a solar eclipse, where the Moon passes between the Sun and Earth, and as viewed from Earth. This can be seen in the lower image of the Sun, where the Moon covers the solar disc.",
+      "caption_ru": "Первое место конкурса астрофотографии Управления астрономического образования МАС 2023 года в категории «Фотографии суточных дуг Солнца и солярографы».\n\nФотография составлена из кадров, снятых за 24 часа на леднике Юнион в Антарктиде во время полного солнечного затмения 4 декабря 2021 года. Она показывает суточный путь Солнца. Во время полярного дня Солнце движется по небу и не заходит. В пределах полярных кругов в этот период светло круглые сутки, а Солнце остаётся над горизонтом длительное время. На снимке также виден редкий ракурс солнечного затмения. Когда Луна проходит между Солнцем и Землёй, с Земли видно, как она закрывает солнечный диск. На составном снимке это нижний кадр.",
+      "alt_en": "24 images of the Sun around the edge of a circular image. In the lowest image, a black circle blocks the centre of the Sun.",
+      "alt_ru": "По краю круглого изображения расположены 24 кадра Солнца. На нижнем кадре тёмный диск закрывает центр Солнца.",
+      "credit": "Stephanie Ziyi Ye/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        343,
+        365,
+        424
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:de987v91l488",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/api/records/10359756/files/Honorable%20mention%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Still%20images%20with%20smartphones-mobile%20devices:%2024%20Hours%20of%20Rainbow,%20by%20Fabrizio%20Guasconi.JPG/content",
+      "record_url": "https://astro4edu.org/resources/media/de987v91l488/",
+      "original_path": "data/media/original/media_de987v91l488.jpg",
+      "ru_path": null,
+      "sha256": "9bbc664894cd36c59232ea6e7fef1a916f1763f0568330000fa55323e73fe7de",
+      "size": 2462260,
+      "title_en": "24 Hours of Rainbow",
+      "title_ru": "24 часа радуги",
+      "short_caption_en": "24 Hours of Rainbow",
+      "short_caption_ru": "24 часа радуги",
+      "caption_en": "Honorable mention in the 2023 IAU OAE Astrophotography Contest, category of Still images taken exclusively with smartphones/mobile devices.\r\n\r\nThis panoramic view taken with a smartphone of Livorno, Italy, showcases a series of vivid rainbows captured on three different days in December 2021. Rainbows are the result of sunlight being refracted by water droplets suspended in the air, typically after rainfall or during misty conditions. The water droplets act like a prism, breaking up (refracting) the sunlight into the various colours. The different wavelengths of light are refracted by different amounts, which is why we see this layering of colours. The photographer skillfully merged the most remarkable shots taken on different days to highlight the diverse sizes and brilliance of these rainbows. The locations at which the rainbows appear to be centred are different because each rainbow appeared when the Sun was at a different position in the sky. This composite image beautifully captures the transient yet mesmerising allure of rainbows, illustrating their fleeting appearance and gradual dissipation influenced by the shifting atmospheric conditions.",
+      "caption_ru": "Почётное упоминание конкурса астрофотографии Управления астрономического образования МАС 2023 года в категории «Фотографии, сделанные только смартфонами или другими мобильными устройствами».\n\nНа панораме, снятой смартфоном в Ливорно, Италия, совмещены яркие радуги, которые фотограф наблюдал в три разных дня декабря 2021 года. Радуга возникает, когда солнечный свет проходит через взвешенные в воздухе капли воды, например после дождя или в тумане. Капли действуют подобно призме. Свет разных длин волн преломляется под разными углами, и поэтому мы видим отдельные цветные полосы. Фотограф совместил наиболее выразительные кадры, чтобы показать разницу в размерах и яркости радуг. Их центры расположены в разных точках, потому что Солнце в моменты съёмки находилось в разных частях неба. Составной снимок передаёт, как быстро появляются и исчезают радуги при изменении атмосферных условий.",
+      "alt_en": "A composite showing four rainbows. Each is centred on different points",
+      "alt_ru": "Составное изображение четырёх радуг. Центр каждой дуги находится в своей точке.",
+      "credit": "Fabrizio Guasconi/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        275,
+        282,
+        328
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:OO19Ja33ik48",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/api/records/10278568/files/Third%20place%20winner%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Still%20images%20of%20the%20day%20arc%20of%20the%20Sun%20and%20solargraphs:%20Equatorial%20Sunrise%20Eclipse,%20by%20Fabrizio%20Melandri.jpg/content",
+      "record_url": "https://astro4edu.org/resources/media/OO19Ja33ik48/",
+      "original_path": "data/media/original/media_OO19Ja33ik48.jpg",
+      "ru_path": null,
+      "sha256": "b59648061d66b61655d41bedeb0c7a26f93c0d402aaf93d6861b074f0102185e",
+      "size": 892419,
+      "title_en": "Equatorial Sunrise Eclipse",
+      "title_ru": "Солнечное затмение на восходе у экватора",
+      "short_caption_en": "Equatorial Sunrise Eclipse",
+      "short_caption_ru": "Солнечное затмение на восходе у экватора",
+      "caption_en": "Third place winner in the 2023 IAU OAE Astrophotography Contest, category of Still images of day arcs of the Sun and Solargraphs.\r\n\r\nThis breathtaking image shows a sunrise sequence of the annular eclipse of 2006, as it unfolds against the tranquil backdrop of Des Roches beach in Kourou, French Guiana. Positioned near a renowned spaceport, this location provides an impeccable viewpoint to behold the celestial event. This image was captured using an analogue camera, with a shot being taken every 10 minutes on the same film frame. The exposures were changed as the Sun rose. The Moon’s disc can be seen gradually moving across the Sun’s disc from the earliest (lower) image until it covers the Sun. It then slowly moves away, revealing the whole of the solar disc again. Kourou’s unique geographic location close to Earth’s equator ensures that the path of the rising Sun is nearly perpendicular to the horizon, magnifying the splendour of the eclipse.",
+      "caption_ru": "Третье место конкурса астрофотографии Управления астрономического образования МАС 2023 года в категории «Фотографии суточных дуг Солнца и солярографы».\n\nСерия показывает восход Солнца во время кольцеобразного затмения 2006 года над пляжем Де-Рош в Куру, Французская Гвиана. Пляж расположен рядом с космодромом, и оттуда хорошо виден восход. Фотограф использовал плёночную камеру и делал снимки каждые 10 минут на один кадр плёнки, меняя экспозицию по мере восхода. Лунный диск постепенно смещается по солнечному диску. Это заметно уже на первом, нижнем изображении. Во время кольцеобразной фазы Луна закрывает центральную часть Солнца. Затем она постепенно отходит и снова открывает весь солнечный диск. Куру расположен близко к экватору, поэтому при восходе Солнце движется почти перпендикулярно горизонту.",
+      "alt_en": "Eight images of the Sun rising. From the lower, earlier images the Moon moves across the Sun from top left to bottom right.",
+      "alt_ru": "Восемь кадров восходящего Солнца. Начиная с ранних, нижних кадров, Луна движется по солнечному диску сверху слева вниз направо.",
+      "credit": "Fabrizio Melandri/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        11
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:Rt986z16uG22",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/api/records/10278787/files/Third%20place%20winner%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Still%20images%20of%20sunrise%20and%20sunset%20locations%20over%20the%20year:%20Where%20the%20Sun%20Sets%20Every%20Month,%20by%20John%20Paul%20Pile.jpg/content",
+      "record_url": "https://astro4edu.org/resources/media/Rt986z16uG22/",
+      "original_path": "data/media/original/media_Rt986z16uG22.jpg",
+      "ru_path": null,
+      "sha256": "23fe8f51c719759ffc2b111bc9eb8b78fd1a199979a904c6aec2ae5158a12913",
+      "size": 11815300,
+      "title_en": "Where the Sun Sets Every Month",
+      "title_ru": "Где заходит Солнце в разные месяцы",
+      "short_caption_en": "Where the Sun Sets Every Month",
+      "short_caption_ru": "Где заходит Солнце в разные месяцы",
+      "caption_en": "Third place winner in the 2023 IAU OAE Astrophotography Contest, category of Still images of sunrise and sunset location over the year.\r\n\r\nTaken with a smartphone from San Rafael, Bulacan, Philippines, this series of images capture the changing position of sunset over the year owing to Earth’s axial tilt and orbit around the Sun. From January to December 2022, each image reflects the changing backdrop and position of the Sun at dusk. Observe the changing foliage and the appearance of an electricity pole in October. This collection serves as a visual testament to the celestial dance between Earth and the Sun, and the natural transformations on the ground.",
+      "caption_ru": "Третье место конкурса астрофотографии Управления астрономического образования МАС 2023 года в категории «Фотографии мест восхода и захода Солнца в течение года».\n\nЭта серия снята смартфоном в Сан-Рафаэле, провинция Булакан, Филиппины. Она показывает, как в течение года смещается точка захода Солнца из-за наклона земной оси и движения Земли по орбите. С января по декабрь 2022 года менялись и положение Солнца на закате, и пейзаж. Обратите внимание на изменения листвы и на столб линии электропередачи, который появился в октябре. По серии можно проследить изменения и на небе, и на земле.",
+      "alt_en": "12 images of sunset. Sunset moves from the left at the top, to the right in the middle, and back to the left at the bottom",
+      "alt_ru": "Двенадцать кадров заката. В верхнем ряду Солнце заходит слева, в середине серии — справа, а в нижней части снова слева.",
+      "credit": "John Paul Pile/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        34,
+        317,
+        341,
+        343,
+        404
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:yB89J346o973",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/api/records/10359529/files/Honorable%20mention%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Still%20images%20with%20smartphones-mobile%20devices:%20Smartphone%20Partial%20Eclipse%20Combined,%20by%20Douglas%20Duncan.jpg/content",
+      "record_url": "https://astro4edu.org/resources/media/yB89J346o973/",
+      "original_path": "data/media/original/media_yB89J346o973.jpg",
+      "ru_path": null,
+      "sha256": "ce08d72a5f65ac107fe44642a58da33bc5c883090b1ad3f6c680d085058574e3",
+      "size": 465840,
+      "title_en": "Smartphone Partial Eclipse Combined",
+      "title_ru": "Частное солнечное затмение. Совмещённые кадры со смартфона",
+      "short_caption_en": "Smartphone Partial Eclipse Combined",
+      "short_caption_ru": "Частное солнечное затмение. Совмещённые кадры со смартфона",
+      "caption_en": "Honorable mention in the 2023 IAU OAE Astrophotography Contest, category of Still images taken exclusively with smartphones/mobile devices.\r\n\r\nIn 2021, Maine, USA, bore witness to a captivating partial solar eclipse, an astronomical spectacle where the Moon passes between the Earth and the Sun, partially blocking the Sun’s radiant light as viewed from Earth. This image used a smartphone and an app and filter called “Solar Snap”, invented by the photographer, to capture various stages of this celestial phenomenon. It is crucial to note that observing a solar eclipse should only be done with proper eye protection to avoid eye damage caused by direct Sunlight exposure. During a solar eclipse, the Moon reaches a point in its orbit where it is between the Earth and the Sun, resulting in partial or complete coverage of the Sun’s disc, depending on the specific relative positions. This composite image seamlessly combines six distinct moments, presenting the Moon's gradual journey across the Sun’s disc. Each crescent showcased represents a unique phase of this captivating event, offering a fleeting glimpse into the wonder of our natural world. Accessible tools like smartphones, coupled with appropriate apps and filters, enable individuals to safely document and cherish these remarkable celestial events.",
+      "caption_ru": "Почётное упоминание конкурса астрофотографии Управления астрономического образования МАС 2023 года в категории «Фотографии, сделанные только смартфонами или другими мобильными устройствами».\n\nВ 2021 году в штате Мэн (США) наблюдали частное солнечное затмение. Оно происходит, когда Луна проходит между Землёй и Солнцем и закрывает часть солнечного диска для земного наблюдателя. Фотограф снял разные фазы затмения на смартфон с помощью придуманных им приложения и фильтра Solar Snap. Наблюдать частное затмение можно только со специальной защитой глаз. Прямой солнечный свет может повредить зрение. Во время солнечного затмения Луна оказывается между Землёй и Солнцем и закрывает его диск частично или полностью, в зависимости от взаимного положения трёх тел. На этом снимке совмещены шесть кадров, на которых видно, как Луна проходит по солнечному диску. Каждый серп соответствует отдельной фазе. Смартфон с подходящим солнечным фильтром и приложением позволяет безопасно заснять затмение.",
+      "alt_en": "Six images of the Sun. The moon moves across the Sun’s disk, covering most in the middle images before moving away.",
+      "alt_ru": "На шести кадрах видно, как Луна проходит по солнечному диску. В середине серии она закрывает наибольшую часть диска, а затем отходит.",
+      "credit": "Douglas Duncan/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        240
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:Sy59yc52QK50",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://zenodo.org/api/records/10278682/files/Honorable%20mention%20in%20the%202023%20IAU%20OAE%20Astrophotography%20Contest,%20category%20Still%20images%20of%20the%20day%20arc%20of%20the%20Sun%20and%20solargraphs:%20The%20Last%20Hour%20of%20the%20Day,%20by%20Fabrizio%20Melandri.jpg/content",
+      "record_url": "https://astro4edu.org/resources/media/Sy59yc52QK50/",
+      "original_path": "data/media/original/media_Sy59yc52QK50.jpg",
+      "ru_path": null,
+      "sha256": "614abfd27688291ad1ef7b955eb4176d77920a29fec2b807206a70c05ffdcb13",
+      "size": 940086,
+      "title_en": "The Last Hour of the Day",
+      "title_ru": "Последний час светового дня",
+      "short_caption_en": "The Last Hour of the Day",
+      "short_caption_ru": "Последний час светового дня",
+      "caption_en": "Honorable mention in the 2023 IAU OAE Astrophotography Contest, category of Still images of day arcs of the Sun and Solargraphs.\r\n\r\nThis image, taken on 2 May 1997 at Lake Scaffaiolo in Italy, masterfully captures the Sun's descent in a sequence of mirrored reflections on the placid waters. Its breathtaking representation of time showcases the serene beauty of the surroundings, and stands as a timeless testament to the fleeting moments of the day’s final hour.",
+      "caption_ru": "Почётное упоминание конкурса астрофотографии Управления астрономического образования МАС 2023 года в категории «Фотографии суточных дуг Солнца и солярографы».\n\nСнимок сделан 2 мая 1997 года на озере Скаффайоло в Италии. Путь опускающегося Солнца повторяется в цепочке отражений на спокойной воде. Серия передаёт течение времени и спокойствие пейзажа в последний час перед закатом.",
+      "alt_en": "The Sun sinks from the top left of the image towards the middle. This path is reflected in the surface of the lake.",
+      "alt_ru": "Солнце опускается из левого верхнего угла к середине кадра. Его путь отражается на поверхности озера.",
+      "credit": "Fabrizio Melandri/IAU OAE (CC BY 4.0)",
+      "credit_url": null,
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [
+        343
+      ],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:0p46lh97u891",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/multimedia/KI9A8122-Verbessert-NR.jpg",
+      "record_url": "https://www.astro4edu.org/resources/media/0p46lh97u891/",
+      "original_path": "media/original/media_0p46lh97u891.jpg",
+      "ru_path": null,
+      "sha256": "db3d10211ce6ddaff7325cf258d1c254f6c5408beb954dcb40e5bf0d45d9a21f",
+      "size": 4168918,
+      "title_en": "This page describes an image Diamond ring",
+      "title_ru": "Снимок «Бриллиантовое кольцо»",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "caption_en": "Diamond ring effect observed during the total solar eclipse of April 8th, 2024. Image taken in Arkansas, USA.",
+      "caption_ru": "Эффект бриллиантового кольца во время полного солнечного затмения 8 апреля 2024 года. Снимок сделан в штате Арканзас, США.",
+      "alt_en": "Diamond ring",
+      "alt_ru": "Бриллиантовое кольцо",
+      "credit": "Carolin Liefke",
+      "credit_url": null,
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:hw22Gf24D746",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/multimedia/KI9A8113-Enhanced-NR.jpg",
+      "record_url": "https://www.astro4edu.org/resources/media/hw22Gf24D746/",
+      "original_path": "media/original/media_hw22Gf24D746.jpg",
+      "ru_path": null,
+      "sha256": "3813b783e8737e12986ad94cd131d937ff6b49b2f5a89deda2b8d965fca0084f",
+      "size": 15247383,
+      "title_en": "This page describes an image Moon covering the Sun",
+      "title_ru": "Снимок «Луна закрывает Солнце»",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "caption_en": "Moon covering the Sun during the total solar eclipse of April 8th, 2024. The solar corona is also visible at totality. Image taken in Arkansas, USA. This image was processed using a Larson-Sekanina-style technique. Multiple exposures ranging from 1/500 second to 4 seconds were stacked and combined with a rotational gradient filter to reveal fine structural detail across the corona's extreme brightness range. This is done because the inner corona saturates at longer exposures, while the outer corona and the Moon are only visible at those same longer exposures.",
+      "caption_ru": "Луна закрывает Солнце во время полного солнечного затмения 8 апреля 2024 года. В полной фазе видна солнечная корона. Снимок сделан в штате Арканзас, США. При обработке применён метод на основе фильтра Ларсона — Секанины. Кадры с выдержками от 1/500 до 4 секунд сложили и обработали фильтром вращательного градиента, чтобы выявить мелкие детали структуры короны при большом перепаде яркости. На снимках с длинной выдержкой яркая внутренняя корона пересвечена, зато именно на них различимы внешняя корона и Луна.",
+      "alt_en": "Moon covering the Sun",
+      "alt_ru": "Луна закрывает Солнце",
+      "credit": "Carolin Liefke",
+      "credit_url": null,
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:ia30FP39uo23",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/multimedia/KI9A8116-Verbessert-NR.jpg",
+      "record_url": "https://www.astro4edu.org/resources/media/ia30FP39uo23/",
+      "original_path": "media/original/media_ia30FP39uo23.jpg",
+      "ru_path": null,
+      "sha256": "1cc04d387aa1b9801f5c63e037f00d2320e3e08ec5e6425e26fe86757e4b7dc7",
+      "size": 1512606,
+      "title_en": "This page describes an image Solar prominences",
+      "title_ru": "Снимок «Солнечные протуберанцы»",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "caption_en": "Solar prominences during the total solar eclipse of April 8th, 2024. Image taken in Arkansas, USA.",
+      "caption_ru": "Солнечные протуберанцы во время полного солнечного затмения 8 апреля 2024 года. Снимок сделан в штате Арканзас, США.",
+      "alt_en": "Solar prominences",
+      "alt_ru": "Солнечные протуберанцы",
+      "credit": "Carolin Liefke",
+      "credit_url": null,
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:G3320x21Ph91",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/multimedia/KI9A8032-Verbessert-NR-Crop.jpg",
+      "record_url": "https://www.astro4edu.org/resources/media/G3320x21Ph91/",
+      "original_path": "media/original/media_G3320x21Ph91.jpg",
+      "ru_path": null,
+      "sha256": "0e5c6ea2ed79733be83202578d97999b69dcfd6281b8e62cb67d366449955e99",
+      "size": 219244,
+      "title_en": "This page describes an image Baily's Beads",
+      "title_ru": "Снимок «Чётки Бейли»",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "caption_en": "Baily's Beads during the total solar eclipse of April 8th, 2024. Image taken in Arkansas, USA.",
+      "caption_ru": "Чётки Бейли во время полного солнечного затмения 8 апреля 2024 года. Снимок сделан в штате Арканзас, США.",
+      "alt_en": "OAE Main Office  logo",
+      "alt_ru": "Чётки Бейли",
+      "credit": "Carolin Liefke",
+      "credit_url": null,
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:M079Uo852j31",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/multimedia/Komposit_nujrHhb.jpg",
+      "record_url": "https://www.astro4edu.org/resources/media/M079Uo852j31/",
+      "original_path": "media/original/media_M079Uo852j31.jpg",
+      "ru_path": null,
+      "sha256": "bbbf4637826886e93cf2cc3a59b82325fb821efbcbcfa9c4a8960d4d0788ff21",
+      "size": 12612523,
+      "title_en": "This page describes an image Solar eclipse phases",
+      "title_ru": "Снимок «Фазы солнечного затмения»",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "caption_en": "Composed image of the solar eclipse of April 8th, 2024. These images were taken in Arkansas, USA.",
+      "caption_ru": "Кадры полного солнечного затмения 8 апреля 2024 года, совмещённые на одном изображении. Они сделаны в штате Арканзас, США.",
+      "alt_en": "OAE Main Office  logo",
+      "alt_ru": "Последовательность фаз солнечного затмения",
+      "credit": "Carolin Liefke",
+      "credit_url": null,
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:8n227G81kw13",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/multimedia/IMG_7957.jpg",
+      "record_url": "https://www.astro4edu.org/resources/media/8n227G81kw13/",
+      "original_path": "media/original/media_8n227G81kw13.jpg",
+      "ru_path": null,
+      "sha256": "a8b34680b46a15474e8b2283043f4f7230d139b0e826d50698b08a45aae3e08e",
+      "size": 894803,
+      "title_en": "This page describes an image Solar eclipse at 70%",
+      "title_ru": "Снимок «Солнечное затмение на 70%»",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "caption_en": "Solar eclipse at 70% on April 8th, 2024. Image taken in Arkansas, USA.",
+      "caption_ru": "Солнечное затмение на 70% 8 апреля 2024 года. Снимок сделан в США.",
+      "alt_en": "OAE Main Office  logo",
+      "alt_ru": "Солнечное затмение на 70%",
+      "credit": "Carolin Liefke",
+      "credit_url": null,
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:Oh75kE29Wk14",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/multimedia/IMG_7955.jpg",
+      "record_url": "https://www.astro4edu.org/resources/media/Oh75kE29Wk14/",
+      "original_path": "media/original/media_Oh75kE29Wk14.jpg",
+      "ru_path": null,
+      "sha256": "a622ea163b5c0a4ee9e6d1b4c610ba6ebc118e2a8c1e5a706d6cbc3516c932b1",
+      "size": 825178,
+      "title_en": "This page describes an image Solar eclipse at 50%",
+      "title_ru": "Снимок «Солнечное затмение на 50%»",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "caption_en": "Solar eclipse at 50% on April 8th, 2024. Image taken in Arkansas, USA.",
+      "caption_ru": "Солнечное затмение на 50% 8 апреля 2024 года. Снимок сделан в США.",
+      "alt_en": "Solar eclipse at 50%",
+      "alt_ru": "Солнечное затмение на 50%",
+      "credit": "Carolin Liefke",
+      "credit_url": null,
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:Bj238148Rg32",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/multimedia/IMG_7953.jpg",
+      "record_url": "https://www.astro4edu.org/resources/media/Bj238148Rg32/",
+      "original_path": "media/original/media_Bj238148Rg32.jpg",
+      "ru_path": null,
+      "sha256": "247c3796aa08fbfb6ec0fc81258472227a21ee9893fa9b1d2adeb80594c337dd",
+      "size": 812111,
+      "title_en": "This page describes an image Solar eclipse at 30%",
+      "title_ru": "Снимок «Солнечное затмение на 30%»",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "caption_en": "Solar eclipse at 30% on April 8th, 2024. Image taken in Arkansas, USA.",
+      "caption_ru": "Солнечное затмение на 30% 8 апреля 2024 года. Снимок сделан в США.",
+      "alt_en": "Solar eclipse at 30%",
+      "alt_ru": "Солнечное затмение на 30%",
+      "credit": "Carolin Liefke",
+      "credit_url": null,
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    },
+    {
+      "id": "media:vR10OE22nf10",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/multimedia/IMG_7949.jpg",
+      "record_url": "https://www.astro4edu.org/resources/media/vR10OE22nf10/",
+      "original_path": "media/original/media_vR10OE22nf10.jpg",
+      "ru_path": null,
+      "sha256": "97b8514903b8e7d3ce61d11959f27baf14397ce863def8320f4a012c2a57361e",
+      "size": 4265956,
+      "title_en": "This page describes an image The Sun before the eclipse",
+      "title_ru": "Снимок «Солнце перед затмением»",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "caption_en": "The Sun before the eclipse.",
+      "caption_ru": "Солнце перед затмением.",
+      "alt_en": "OAE Main Office  logo",
+      "alt_ru": "Солнце перед затмением",
+      "credit": "Carolin Liefke",
+      "credit_url": null,
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/deed.en",
+      "term_numbers": [],
+      "source_language": "en",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Машинный перевод. Редакторское утверждение ожидается."
+  }
+}

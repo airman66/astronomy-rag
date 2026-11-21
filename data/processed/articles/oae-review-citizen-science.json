@@ -1,0 +1,236 @@
+{
+  "id": "article:oae-review-citizen-science",
+  "kind": "article",
+  "source": {
+    "type": "oae_review_topic",
+    "url": "https://www.astro4edu.org/oae-reviews/citizen-science",
+    "imported_at": "2026-11-18T16:43:53.075188+00:00",
+    "sha256": "fa3ebb0015eef605b6033b488861c360788f48c6dc9ad0edc85d244b53bdecf4"
+  },
+  "metadata": {
+    "term_numbers": [],
+    "document_ids": [
+      "article:oae-document-citizenscience_mini_review"
+    ],
+    "categories_ru": []
+  },
+  "sections": [
+    {
+      "id": "about",
+      "type": "article_body",
+      "heading": "About",
+      "body": "In the last few years, several citizen science projects have been very successful in introducing and engaging the public in authentic research. Citizen scientists continue to be a valuable asset in helping scientists tackle large data sets and extract useful information to solve some exciting mysteries of the universe. This review includes contributions from several ongoing citizen science initiatives across the globe, with an aim to encourage participation in various projects and even motivate anyone who wants to set up their own citizen science projects.",
+      "heading_ru": "О теме",
+      "body_ru": "В последние годы проекты гражданской науки успешно привлекают широкую публику к настоящим исследованиям. Добровольцы помогают учёным разбирать большие наборы данных и находить сведения, которые позволяют ответить на вопросы об устройстве Вселенной. В обзоре собраны материалы действующих проектов из разных стран. Они помогут выбрать проект для участия или начать собственный.",
+      "links": [],
+      "media_ids": [
+        "media:oae-review-citizen-science"
+      ]
+    },
+    {
+      "id": "initial_document",
+      "type": "related_resources",
+      "heading": "Mini-review document",
+      "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 11.93 MB) f .",
+      "heading_ru": "Мини-обзор",
+      "body_ru": "Этой теме посвятили секцию третьего семинара Шоу и МАС по астрономическому образованию. По материалам секции подготовили мини-обзор (PDF, 11,93 МБ).",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/sessions/citizen-science/",
+          "text": "session",
+          "text_ru": "Секция семинара"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/schedule/",
+          "text": "3rd Shaw-IAU Workshop",
+          "text_ru": "Третий семинар Шоу и МАС"
+        },
+        {
+          "url": "https://www.astro4edu.org/media/documents/CitizenScience_mini_review.pdf",
+          "text": "mini-review ( PDF file 11.93 MB)",
+          "text_ru": "Мини-обзор в PDF"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations",
+      "type": "related_resources",
+      "heading": "Talks",
+      "body": "",
+      "heading_ru": "Доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/112/",
+          "text": "#RADatHomeIndia a Collaboratory model of citizen science research",
+          "text_ru": "#RADatHomeIndia. Как устроена совместная работа учёных и добровольцев"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/116/",
+          "text": "Boosting Online Community to Drive Virtual Engagement",
+          "text_ru": "Как развивать онлайн-сообщество и вовлекать участников на расстоянии"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/64/",
+          "text": "Citizen Science with the Zooniverse",
+          "text_ru": "Гражданская наука на платформе Zooniverse"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/111/",
+          "text": "Galaxy Cruise",
+          "text_ru": "GALAXY CRUISE"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/115/",
+          "text": "NASA's Citizen Science Program",
+          "text_ru": "Программа гражданской науки NASA"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/421/",
+          "text": "The Latest from Galaxy Zoo",
+          "text_ru": "Последние результаты Galaxy Zoo"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-4",
+      "type": "related_resources",
+      "heading": "Poster Presentations",
+      "body": "",
+      "heading_ru": "Постеры",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/42/",
+          "text": "GWitchHunters – The Citizens for the Improvement of Gravitational Wave Detectors",
+          "text_ru": "GWitchHunters. Как добровольцы помогают совершенствовать детекторы гравитационных волн"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/39/",
+          "text": "How Citizen Scientists are Monitoring Global Meteor Shower Activity with ML Open Source Research",
+          "text_ru": "Как добровольцы наблюдают метеорные потоки по всему миру с помощью открытых инструментов машинного обучения"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/41/",
+          "text": "Solar Eclipse 2019: citizen science initiative to investigate GPS signals in Chile",
+          "text_ru": "Солнечное затмение 2019 года. Гражданское исследование сигналов GPS в Чили"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/40/",
+          "text": "Zooniverse and IASC: citizen science at the service of the popularization of astronomy and in the se",
+          "text_ru": "Zooniverse и IASC. Гражданская наука для популяризации астрономии и поиска астероидов"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/48/",
+          "text": "Teaching Astronomy with Culturally Responsive Citizen Science Curricula",
+          "text_ru": "Как преподавать астрономию с учётом культурного опыта учащихся на примере проектов гражданской науки"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-5",
+      "type": "related_resources",
+      "heading": "Documents",
+      "body": "",
+      "heading_ru": "Документы",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/document/jc21Hp77t133/",
+          "text": "Citizen Science: Mini-Review",
+          "text_ru": "Гражданская наука. Мини-обзор"
+        }
+      ],
+      "media_ids": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Citizen Science",
+      "blocks": {
+        "about": {
+          "heading": "About",
+          "body": "In the last few years, several citizen science projects have been very successful in introducing and engaging the public in authentic research. Citizen scientists continue to be a valuable asset in helping scientists tackle large data sets and extract useful information to solve some exciting mysteries of the universe. This review includes contributions from several ongoing citizen science initiatives across the globe, with an aim to encourage participation in various projects and even motivate anyone who wants to set up their own citizen science projects."
+        },
+        "initial_document": {
+          "heading": "Mini-review document",
+          "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 11.93 MB) f ."
+        },
+        "presentations": {
+          "heading": "Talks",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Poster Presentations",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Documents",
+          "body": ""
+        }
+      }
+    },
+    "ru": {
+      "title": "Гражданская наука",
+      "blocks": {
+        "about": {
+          "heading": "О теме",
+          "body": "В последние годы проекты гражданской науки успешно привлекают широкую публику к настоящим исследованиям. Добровольцы помогают учёным разбирать большие наборы данных и находить сведения, которые позволяют ответить на вопросы об устройстве Вселенной. В обзоре собраны материалы действующих проектов из разных стран. Они помогут выбрать проект для участия или начать собственный."
+        },
+        "initial_document": {
+          "heading": "Мини-обзор",
+          "body": "Этой теме посвятили секцию третьего семинара Шоу и МАС по астрономическому образованию. По материалам секции подготовили мини-обзор (PDF, 11,93 МБ)."
+        },
+        "presentations": {
+          "heading": "Доклады",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Постеры",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Документы",
+          "body": ""
+        }
+      },
+      "aliases": []
+    }
+  },
+  "media": [
+    {
+      "id": "media:oae-review-citizen-science",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/oae_review_files/illustration_images/citizen_science_news_image.png",
+      "record_url": "https://www.astro4edu.org/oae-reviews/citizen-science",
+      "original_path": "media/original/oae-review-citizen-science.png",
+      "sha256": "af166b41d7c1e18203e37f4b8215699a5928fb50ad951a6d66729ab381d7c7c0",
+      "size": 66100,
+      "alt_en": "Screenshot of the NASA citizen-science projects page. It describes volunteer research and lists categories: all projects, universe, solar system, Sun and Earth. The sidebar lists resources for researchers and volunteers.",
+      "alt_ru": "Снимок страницы проектов гражданской науки НАСА. Вверху вкладки «Проекты», «Новости» и «Участники проектов НАСА». На странице объясняется, как добровольцы участвуют в исследованиях. В проектах со значком человека можно участвовать со смартфона или ноутбука. Категории обозначены цветом: все проекты, Вселенная, Солнечная система, Солнце и Земля. Справа ссылки для исследователей и участников.",
+      "credit": "Marc J. Kuchner/NASA",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "Illustration image for Citizen Science",
+      "ru_path": "data/media/ru/oae-citizen-science-screenshot.png",
+      "ru_sha256": "8df614b5b1f65244556dadff8bb022013a8c130b58f4e9e620b10d8066d4bf99"
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Машинный перевод. Редакторское утверждение ожидается."
+  }
+}

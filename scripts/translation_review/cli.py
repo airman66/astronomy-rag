@@ -93,8 +93,16 @@ def main() -> None:
         import_verify(units, args.files, args.model)
         return
     key = os.getenv("DEEPSEEK_API_KEY", "")
-    if args.phase in ("review", "verify", "all") and not key:
-        raise SystemExit("DEEPSEEK_API_KEY missing")
+    for phase in ("review", "verify"):
+        if args.phase not in (phase, "all"):
+            continue
+        backend = os.getenv(f"AUDIT_{phase.upper()}_BACKEND", "deepseek")
+        if backend == "deepseek" and not key:
+            raise SystemExit("DEEPSEEK_API_KEY missing")
+        if backend == "runpod" and not (os.getenv("RUNPOD_API_KEY") and os.getenv("RUNPOD_ENDPOINT_ID")):
+            raise SystemExit("RUNPOD_API_KEY and RUNPOD_ENDPOINT_ID required")
+        if backend not in ("deepseek", "runpod", "ollama"):
+            raise SystemExit(f"Unknown audit backend: {backend}")
     if args.phase in ("review", "all"):
         run_review(units, records, key, args.workers, args.max_chars, args.limit_batches)
     if args.phase in ("verify", "all"):

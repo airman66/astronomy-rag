@@ -1,0 +1,283 @@
+{
+  "id": "article:oae-review-teaching-methods",
+  "kind": "article",
+  "source": {
+    "type": "oae_review_topic",
+    "url": "https://www.astro4edu.org/oae-reviews/teaching-methods",
+    "imported_at": "2026-11-18T16:43:53.312389+00:00",
+    "sha256": "6d4bdbf1229a41fb9969881bbf4108e7b7cf5b5355240f93833ec8d2f472ac32"
+  },
+  "metadata": {
+    "term_numbers": [],
+    "document_ids": [
+      "article:oae-document-teachingmethods_mini_review"
+    ],
+    "categories_ru": []
+  },
+  "sections": [
+    {
+      "id": "about",
+      "type": "article_body",
+      "heading": "About",
+      "body": "This review is devoted to analyzing teaching methods, practices and different perspectives that can encourage students' engagement and the understanding of Astronomy, Astrophysics and in general STEM disciplines and their methods.",
+      "heading_ru": "О теме",
+      "body_ru": "В обзоре рассматриваются методы, практики и подходы, которые помогают заинтересовать учащихся астрономией, астрофизикой и другими дисциплинами STEM и лучше понять как сами дисциплины, так и методы, которыми в них пользуются.",
+      "links": [],
+      "media_ids": [
+        "media:oae-review-teaching-methods"
+      ]
+    },
+    {
+      "id": "initial_document",
+      "type": "related_resources",
+      "heading": "Mini-review document",
+      "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 7.52 MB) f .",
+      "heading_ru": "Мини-обзор",
+      "body_ru": "Этой теме была посвящена секция 3-го семинара Шоу и МАС. По её материалам подготовили мини-обзор (PDF, 7,52 МБ).",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/sessions/teaching-methods/",
+          "text": "session",
+          "text_ru": "Секция"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/schedule/",
+          "text": "3rd Shaw-IAU Workshop",
+          "text_ru": "3-й семинар Шоу и МАС"
+        },
+        {
+          "url": "https://www.astro4edu.org/media/documents/TeachingMethods_mini_review.pdf",
+          "text": "mini-review ( PDF file 7.52 MB)",
+          "text_ru": "Мини-обзор (PDF, 7,52 МБ)"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations",
+      "type": "related_resources",
+      "heading": "Talks",
+      "body": "",
+      "heading_ru": "Доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/123/",
+          "text": "Astronomy Education as a means to transform our worldviews",
+          "text_ru": "Как астрономическое образование может изменить наше мировоззрение"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/125/",
+          "text": "Challenge in Teaching Astronomical Causes of Seasons in the Tropics",
+          "text_ru": "Почему в тропиках трудно объяснять астрономические причины смены времён года"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/126/",
+          "text": "Challenge-based learning for astronomy education",
+          "text_ru": "Изучение астрономии через решение практических задач"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/122/",
+          "text": "Cultivating creativity and Astronomy Education",
+          "text_ru": "Развитие творческих способностей и астрономическое образование"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/124/",
+          "text": "What all teachers of primary and lower secondary education should know from teacher’s perspective",
+          "text_ru": "Что должны знать учителя начальных и средних классов. Взгляд педагога"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/457/",
+          "text": "AstroSandbox: learning astronomy through courses, competitions, and clubs",
+          "text_ru": "AstroSandbox: изучаем астрономию на курсах, в конкурсах и кружках"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/453/",
+          "text": "Back to Basics: Project-Based Astronomy Learning in Schools",
+          "text_ru": "К основам. Изучение астрономии в школе через проекты"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/451/",
+          "text": "From Curiosity to Clarity: Human-Centred Pedagogies for Teaching Astronomy in the 21st Century",
+          "text_ru": "От любопытства к пониманию. Как преподавать астрономию в XXI веке с опорой на опыт учащихся"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/459/",
+          "text": "Musical Filters: A Multi-sensory Approach to Teaching the Electromagnetic Spectrum",
+          "text_ru": "Музыкальные фильтры. Изучаем электромагнитный спектр с помощью разных органов чувств"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/458/",
+          "text": "Preliminary Exploration of Astronomy Popularization Experimental Activities",
+          "text_ru": "Первые опыты с практическими занятиями по популяризации астрономии"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/456/",
+          "text": "Radio helps the Video star: reimaging astronomy education in local language radio.",
+          "text_ru": "Радио спешит на помощь видео. Преподавание астрономии на радио на местных языках"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/449/",
+          "text": "Staged reading as a genre suitable for planetariums",
+          "text_ru": "Сценическая читка как жанр для планетариев"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/460/",
+          "text": "Stars, Colors, and Children: Teaching Astronomy Creatively at the Art Narty Festival",
+          "text_ru": "Звёзды, цвета и дети. Творческие занятия астрономией на фестивале Art Narty"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/454/",
+          "text": "The Impact of Stargazing Events on Students’ Interest in STEM in Ethiopia",
+          "text_ru": "Как наблюдения звёзд влияют на интерес эфиопских школьников к STEM"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/450/",
+          "text": "The Museum of Science and Planetarium Goes to School",
+          "text_ru": "Музей науки и планетарий приходят в школу"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/452/",
+          "text": "Working with a network of 6000 rural libraries for astronomy education in rural communities",
+          "text_ru": "Как сеть из 6000 сельских библиотек помогает преподавать астрономию"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-4",
+      "type": "related_resources",
+      "heading": "Poster Presentations",
+      "body": "",
+      "heading_ru": "Стендовые доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/73/",
+          "text": "Astronomy Education Outreach with Younger Community Through Online Service-Learning Approach",
+          "text_ru": "Онлайн-обучение через общественно полезную деятельность. Как знакомить младших школьников с астрономией"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/76/",
+          "text": "Scaffolding from Astronomers -Delivering lessons to schools and STEAM education-",
+          "text_ru": "Поддержка астрономов. Школьные уроки и образование в области STEAM"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/74/",
+          "text": "Teaching undergraduate astronomy classes with active learning strategies",
+          "text_ru": "Активное обучение на курсах астрономии для студентов бакалавриата"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/72/",
+          "text": "The significance of doing practical and experimental astronomy",
+          "text_ru": "Зачем заниматься практической и экспериментальной астрономией"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/75/",
+          "text": "The Transferential Relationship From The Discourses Between Children And Monitors In An Observatory",
+          "text_ru": "Отношения переноса в общении детей с ведущими занятий в обсерватории"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-5",
+      "type": "related_resources",
+      "heading": "Documents",
+      "body": "",
+      "heading_ru": "Документы",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/document/ep34ud25b3/",
+          "text": "Teaching methods: Mini-Review",
+          "text_ru": "Методы преподавания. Мини-обзор"
+        }
+      ],
+      "media_ids": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Teaching methods",
+      "blocks": {
+        "about": {
+          "heading": "About",
+          "body": "This review is devoted to analyzing teaching methods, practices and different perspectives that can encourage students' engagement and the understanding of Astronomy, Astrophysics and in general STEM disciplines and their methods."
+        },
+        "initial_document": {
+          "heading": "Mini-review document",
+          "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 7.52 MB) f ."
+        },
+        "presentations": {
+          "heading": "Talks",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Poster Presentations",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Documents",
+          "body": ""
+        }
+      }
+    },
+    "ru": {
+      "title": "Методы преподавания",
+      "blocks": {
+        "about": {
+          "heading": "О теме",
+          "body": "В обзоре рассматриваются методы, практики и подходы, которые помогают заинтересовать учащихся астрономией, астрофизикой и другими дисциплинами STEM и лучше понять как сами дисциплины, так и методы, которыми в них пользуются."
+        },
+        "initial_document": {
+          "heading": "Мини-обзор",
+          "body": "Этой теме была посвящена секция 3-го семинара Шоу и МАС. По её материалам подготовили мини-обзор (PDF, 7,52 МБ)."
+        },
+        "presentations": {
+          "heading": "Доклады",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Стендовые доклады",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Документы",
+          "body": ""
+        }
+      },
+      "aliases": []
+    }
+  },
+  "media": [
+    {
+      "id": "media:oae-review-teaching-methods",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/oae_review_files/illustration_images/teaching_methods_news_image.png",
+      "record_url": "https://www.astro4edu.org/oae-reviews/teaching-methods",
+      "original_path": "media/original/oae-review-teaching-methods.png",
+      "sha256": "a2a71ffea3223d656b5924c7f4f6a74d2a5cce9b41edb9e12ca4a95fa658013c",
+      "size": 116273,
+      "alt_en": "Illustration image for Teaching methods",
+      "alt_ru": "На занятии преподаватель держит большой глобус, а один из школьников — небольшой жёлтый шар.",
+      "credit": "Hidehiko Agata",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      }
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Машинный перевод. Редакторское утверждение ожидается."
+  }
+}

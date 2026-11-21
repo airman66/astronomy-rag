@@ -20,8 +20,13 @@ from scripts.translation_review.common import (
     digest,
     latest,
     legacy_translation_input,
+    manual_definition_edits,
+    manual_media_edits,
+    manual_page_edits,
     now,
     read_jsonl,
+    record_path,
+    terms_by_number,
     write_json,
 )
 
@@ -79,8 +84,7 @@ def sync_editorial(records: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
                             )
                             ru["title"] = title
         if touched:
-            path = TERMS / f"{record['source']['term_number']}.json"
-            write_json_atomic(path, record)
+            write_json_atomic(record_path(record, TERMS), record)
     if changes:
         history = json.loads(EDITORIAL.read_text(encoding="utf-8")) if EDITORIAL.exists() else {"changes": []}
         history["changes"].extend({**change, "synced_at": now()} for change in changes)
@@ -141,6 +145,11 @@ def run_apply(units: dict[str, dict[str, Any]], records: dict[str, dict[str, Any
     reviews = latest(read_jsonl(REVIEW), REVIEW_VERSIONS)
     verifications = latest(read_jsonl(VERIFY), VERIFY_VERSIONS)
     manual, replaced_digests, replaced_texts = previous_edits()
+    manual_paths = {
+        (record_id, path) for record_id, path, _, _ in manual_definition_edits(records)
+    }
+    manual_paths.update((record_id, path) for record_id, path, _ in manual_media_edits(records))
+    manual_paths.update((record_id, path) for record_id, path, _ in manual_page_edits(records))
     history = json.loads(APPLIED.read_text(encoding="utf-8")) if APPLIED.exists() else {"runs": []}
     prior_versions = defaultdict(set)
     for run in history["runs"]:
@@ -182,6 +191,9 @@ def run_apply(units: dict[str, dict[str, Any]], records: dict[str, dict[str, Any
                     }
                 )
                 continue
+            if (record_id, ru_path) in manual_paths:
+                disputed.append({**entry, "reason": "manual_source_review"})
+                continue
             if record.get("review", {}).get("status") == "reviewed":
                 disputed.append({**entry, "reason": "record_already_reviewed"})
                 continue
@@ -210,7 +222,7 @@ def run_apply(units: dict[str, dict[str, Any]], records: dict[str, dict[str, Any
             )
             changed.add(record_id)
     # Related-term links must name their target with its final Russian title.
-    by_number = {record["source"]["term_number"]: record for record in records.values()}
+    by_number = terms_by_number(records)
     for record_id, record in records.items():
         if record.get("review", {}).get("status") == "reviewed":
             continue
@@ -226,6 +238,8 @@ def run_apply(units: dict[str, dict[str, Any]], records: dict[str, dict[str, Any
                 current = link.get("text_ru") or ""
                 if current != title_ru and current.strip() not in manual and title_ru:
                     path = f"/sections/{index}/links/{link_index}/text_ru"
+                    if (record_id, path) in manual_paths:
+                        continue
                     if title_ru.strip() in prior_versions.get((record_id, path), ()):
                         continue
                     applied.append(
@@ -241,10 +255,9 @@ def run_apply(units: dict[str, dict[str, Any]], records: dict[str, dict[str, Any
                     )
                     link["text_ru"] = title_ru
                     changed.add(record_id)
-    for record_id in sorted(changed, key=lambda rid: int(rid.split(":")[1])):
+    for record_id in sorted(changed):
         record = records[record_id]
-        path = TERMS / f"{record['source']['term_number']}.json"
-        write_json_atomic(path, record)
+        write_json_atomic(record_path(record, TERMS), record)
     result = {"applied_at": now(), "applied": applied, "disputed": disputed, "touched_records": len(changed)}
     history["runs"].append(result)
     write_json(APPLIED, history)

@@ -53,6 +53,22 @@ python3 -m app.chunks
 
 Импорт и перевод возобновляемы. Проверка `app.audit` сверяет структуру, ссылки, тексты и файлы. `scripts/register_image_edits.py` обновляет `data/image_edits.json` и пути русских изображений в канонических записях; после него перестройте SQLite.
 
+Для OAE Reviews импортируются 20 страниц тем и 23 PDF от OAE (19 обзоров, два методических комплекта, памятка и ответ на отзывы о воркшопе). Импорт PDF использует Poppler и Tesseract с английским языковым пакетом. Документы и темы доступны через `/api/v1/articles`, оригиналы лежат в `data/raw/reviews/`.
+
+Для пересборки OAE Reviews из чистого клона установите зависимости из `requirements.txt` и выполните команды:
+
+```sh
+python -m pip install -r requirements-pdf.txt
+python -m app.audit --reviews
+python -m app.pipeline.review_exports
+python -m app.chunks
+python -m scripts.seed_embedding_cache data/index
+```
+
+Команды используют сохранённые тексты и изображения. Для проверки сборки в отдельной папке передайте `review_exports --output-dir /path/to/pdf`. Для пересборки одного выпуска передайте также `--glob 'oae-document-….json'`. Импорт источников запускается отдельно через `python -m app.pipeline.reviews --media`, извлечение иллюстраций для нового PDF — через `python -m app.pipeline.review_figures --glob 'oae-document-….json'`.
+
+Оригиналы PDF выдаются через `GET /api/v1/articles/{article_id}/source.pdf`, русские издания — через `GET /api/v1/articles/{article_id}/translation.pdf`. Индекс строится по тексту страниц PDF, разделам тем и описаниям иллюстраций. Чанк хранит ID статьи и раздела или ID медиа, связанного с записью. Qwen3-Embedding индексирует текст, а сами файлы доступны по ссылкам API.
+
 `python3 -m app.importer --refresh` сохраняет новые версии API и HTML рядом со старыми снимками и повторно проверяет исходные медиа. При изменении изображения прежняя русская версия снимается с выдачи до повторной локализации. `--refresh --ids 1 2` обновляет только указанные термины, но проверяет медиа всех записей.
 
 `data/index/` создан на временном GPU Pod Runpod. Скрипт `scripts/build_index.py` получает `chunks.jsonl` и `chunk-manifest.json`, один и тот же GGUF Qwen3-Embedding-8B и URL `llama-server --embedding --pooling last`. Команда:

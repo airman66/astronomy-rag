@@ -1,0 +1,236 @@
+{
+  "id": "article:oae-review-teaching-with-astronomy-exhibits",
+  "kind": "article",
+  "source": {
+    "type": "oae_review_topic",
+    "url": "https://www.astro4edu.org/oae-reviews/teaching-with-astronomy-exhibits",
+    "imported_at": "2026-11-18T16:43:53.334808+00:00",
+    "sha256": "74c63d69b1bed7d4238c630f26e10c0f35e5f7e5c44aeef0ee8218f43a7ea3c4"
+  },
+  "metadata": {
+    "term_numbers": [],
+    "document_ids": [
+      "article:oae-document-teachingwithastronomyexhibits_mini_review"
+    ],
+    "categories_ru": []
+  },
+  "sections": [
+    {
+      "id": "about",
+      "type": "article_body",
+      "heading": "About",
+      "body": "This collection includes resources that focus on the use of easy-to-reproduce exhibits in contemporary interactive teaching of Astronomy in schools and for public outreach purposes.",
+      "heading_ru": "О теме",
+      "body_ru": "В подборке собраны материалы о том, как использовать простые в изготовлении экспонаты на интерактивных школьных занятиях астрономией и в просветительских программах.",
+      "links": [],
+      "media_ids": [
+        "media:oae-review-teaching-with-astronomy-exhibits"
+      ]
+    },
+    {
+      "id": "initial_document",
+      "type": "related_resources",
+      "heading": "Mini-review document",
+      "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 13.34 MB) f .",
+      "heading_ru": "Мини-обзор",
+      "body_ru": "Этой теме была посвящена секция 3-го семинара Шоу и МАС. По её материалам подготовили мини-обзор (PDF, 13,34 МБ).",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/sessions/teaching-with-astronomy-exhibits/",
+          "text": "session",
+          "text_ru": "Секция"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/3rd-shaw-iau-workshop/schedule/",
+          "text": "3rd Shaw-IAU Workshop",
+          "text_ru": "3-й семинар Шоу и МАС"
+        },
+        {
+          "url": "https://www.astro4edu.org/media/documents/TeachingwithAstronomyExhibits_mini_review.pdf",
+          "text": "mini-review ( PDF file 13.34 MB)",
+          "text_ru": "Мини-обзор (PDF, 13,34 МБ)"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations",
+      "type": "related_resources",
+      "heading": "Talks",
+      "body": "",
+      "heading_ru": "Доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/98/",
+          "text": "3D planetary tactile globes for the “Inspiring Stars” exhibition",
+          "text_ru": "Тактильные объёмные глобусы планет для выставки «Вдохновляющие звёзды» (Inspiring Stars)"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/102/",
+          "text": "Astronomy through interactive exhibits",
+          "text_ru": "Астрономия через интерактивные экспонаты"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/101/",
+          "text": "Designing astronomy exhibition to support outdoor education for school.",
+          "text_ru": "Как спроектировать астрономическую выставку для школьных занятий на открытом воздухе"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/100/",
+          "text": "Engaging through DIY workshops to discover scientific principles and high-tech applications.",
+          "text_ru": "Мастерские по самостоятельной сборке. От научных принципов к передовым технологиям"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/117/",
+          "text": "Spacetime Simulator",
+          "text_ru": "Симулятор пространства-времени"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/97/",
+          "text": "The Tactile Universe: Accessible astrophysics public engagement with the vision impaired community",
+          "text_ru": "«Тактильная Вселенная». Доступная астрофизика для людей с нарушениями зрения"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/466/",
+          "text": "Open-Ended Interaction for Conveying Complex Topics in the Planetarium",
+          "text_ru": "Свободное взаимодействие с экспонатами для объяснения сложных тем в планетарии"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/456/",
+          "text": "Radio helps the Video star: reimaging astronomy education in local language radio.",
+          "text_ru": "Радио спешит на помощь видео. Преподавание астрономии на радио на местных языках"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/talk/450/",
+          "text": "The Museum of Science and Planetarium Goes to School",
+          "text_ru": "Музей науки и планетарий приходят в школу"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-4",
+      "type": "related_resources",
+      "heading": "Poster Presentations",
+      "body": "",
+      "heading_ru": "Стендовые доклады",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/77/",
+          "text": "Astronomy Teaching Aids",
+          "text_ru": "Учебные пособия по астрономии"
+        },
+        {
+          "url": "https://www.astro4edu.org/shaw-iau/poster/78/",
+          "text": "Starry Starry Night",
+          "text_ru": "Звёздная, звёздная ночь"
+        }
+      ],
+      "media_ids": []
+    },
+    {
+      "id": "presentations-5",
+      "type": "related_resources",
+      "heading": "Documents",
+      "body": "",
+      "heading_ru": "Документы",
+      "body_ru": "",
+      "links": [
+        {
+          "url": "https://www.astro4edu.org/resources/document/p7376152Ok43/",
+          "text": "Teaching with astronomy exhibits: Mini-Review",
+          "text_ru": "Преподавание астрономии с помощью экспонатов. Мини-обзор"
+        }
+      ],
+      "media_ids": []
+    }
+  ],
+  "locales": {
+    "en": {
+      "title": "Teaching with astronomy exhibits",
+      "blocks": {
+        "about": {
+          "heading": "About",
+          "body": "This collection includes resources that focus on the use of easy-to-reproduce exhibits in contemporary interactive teaching of Astronomy in schools and for public outreach purposes."
+        },
+        "initial_document": {
+          "heading": "Mini-review document",
+          "body": "This review was the topic of a session at the 3rd Shaw-IAU Workshop . The proceedings from this session have been adapted into a mini-review ( PDF file 13.34 MB) f ."
+        },
+        "presentations": {
+          "heading": "Talks",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Poster Presentations",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Documents",
+          "body": ""
+        }
+      }
+    },
+    "ru": {
+      "title": "Преподавание астрономии с помощью экспонатов",
+      "blocks": {
+        "about": {
+          "heading": "О теме",
+          "body": "В подборке собраны материалы о том, как использовать простые в изготовлении экспонаты на интерактивных школьных занятиях астрономией и в просветительских программах."
+        },
+        "initial_document": {
+          "heading": "Мини-обзор",
+          "body": "Этой теме была посвящена секция 3-го семинара Шоу и МАС. По её материалам подготовили мини-обзор (PDF, 13,34 МБ)."
+        },
+        "presentations": {
+          "heading": "Доклады",
+          "body": ""
+        },
+        "presentations-4": {
+          "heading": "Стендовые доклады",
+          "body": ""
+        },
+        "presentations-5": {
+          "heading": "Документы",
+          "body": ""
+        }
+      },
+      "aliases": []
+    }
+  },
+  "media": [
+    {
+      "id": "media:oae-review-teaching-with-astronomy-exhibits",
+      "kind": "media",
+      "file_type": "img",
+      "source_url": "https://www.astro4edu.org/media/oae_review_files/illustration_images/astronomy_exhibits_news_image.png",
+      "record_url": "https://www.astro4edu.org/oae-reviews/teaching-with-astronomy-exhibits",
+      "original_path": "media/original/oae-review-teaching-with-astronomy-exhibits.png",
+      "sha256": "7de1450d8f5aab86aac8a4be577da30c8514564f75afe138196b30609998dd7a",
+      "size": 150290,
+      "alt_en": "Exhibition hall with planet models and interactive stations. Sign: Astronomy Exhibition.",
+      "alt_ru": "Зал с моделями планет и интерактивными экспонатами. Надпись «Астрономическая выставка».",
+      "credit": "Farprakay Jiarakoopt/NARIT",
+      "title_en": "",
+      "title_ru": "",
+      "caption_en": "",
+      "caption_ru": "",
+      "short_caption_en": "",
+      "short_caption_ru": "",
+      "review": {
+        "status": "draft",
+        "reviewer": null
+      },
+      "source_alt_en": "Illustration image for Teaching with astronomy exhibits",
+      "ru_path": "data/media/ru/oae-exhibits-overview-cover.png",
+      "ru_sha256": "41aa5e3f00b9660c94218d2ccae0cdbe0f9b3ad6f3014ead4f586ae2b8cd4d13"
+    }
+  ],
+  "review": {
+    "status": "draft",
+    "reviewer": null,
+    "notes": "Машинный перевод. Редакторское утверждение ожидается."
+  }
+}

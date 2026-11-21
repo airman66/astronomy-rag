@@ -88,6 +88,7 @@ class MediaDetail(BaseModel):
     license_url: str | None = None
     term_numbers: list[int] = Field(default_factory=list)
     source_language: str = "en"
+    component_ids: list[str] = Field(default_factory=list)
     review: ReviewInfo
 
 
