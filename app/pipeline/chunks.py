@@ -32,32 +32,69 @@ def sha(text: str) -> str:
     return hashlib.sha256(text.encode()).hexdigest()
 
 
+def _split_prose(paragraph: str, budget: int) -> list[str]:
+    """Split a long prose paragraph on whitespace without cutting words.
+
+    Structural lines (tables, formula blocks and lists) remain indivisible;
+    those can exceed the budget rather than corrupt scientific notation.
+    """
+    if token_count(paragraph) <= budget:
+        return [paragraph]
+    if "\n" in paragraph or re.match(r"^\s*(?:[-*•]|\d+[.)])\s", paragraph) or "\\begin{" in paragraph:
+        return [paragraph]
+    pieces: list[str] = []
+    current: list[str] = []
+    for word in paragraph.split():
+        candidate = " ".join([*current, word])
+        if current and token_count(candidate) > budget:
+            pieces.append(" ".join(current))
+            current = []
+        if token_count(word) > budget:
+            # Extremely long indivisible tokens remain intact; clipping
+            # their bytes would corrupt URLs, identifiers or scientific text.
+            if current:
+                pieces.append(" ".join(current))
+                current = []
+            pieces.append(word)
+        else:
+            current.append(word)
+    if current:
+        pieces.append(" ".join(current))
+    return pieces
+
+
 def paragraphs(body: str, budget: int, overlap: float) -> list[str]:
-    """Split only at paragraph boundaries; preserve lists/formulas as a unit."""
-    parts = [p.strip() for p in re.split(r"\n\s*\n", body) if p.strip()]
+    """Pack article prose at paragraph/sentence boundaries with bounded overlap."""
+    if budget <= 0 or not 0 <= overlap < 1:
+        raise ValueError("budget must be positive and overlap in [0, 1)")
+    parts = [piece for paragraph in re.split(r"\n\s*\n", body) if paragraph.strip()
+             for piece in _split_prose(paragraph.strip(), budget)]
     if not parts:
         return []
     groups: list[str] = []
     current: list[str] = []
-    size = 0
     for part in parts:
         count = token_count(part)
-        if current and size + count > budget:
+        if current and token_count("\n\n".join([*current, part])) > budget:
             groups.append("\n\n".join(current))
-            keep = max(0, int(budget * overlap))
-            tail: list[str] = []
+            # Retain complete previous paragraphs only while both overlap
+            # and the next group remain inside the token budget.
+            retained: list[str] = []
             for old in reversed(current):
-                if token_count(" ".join(tail)) >= keep:
+                candidate = [old, *retained]
+                if (token_count("\n\n".join(candidate)) > budget * overlap
+                        or token_count("\n\n".join([*candidate, part])) > budget):
                     break
-                tail.insert(0, old)
-            current = tail
-            size = sum(token_count(x) for x in current)
+                retained = candidate
+            current = retained
         current.append(part)
-        size += count
+        if count > budget:
+            # Large unsplittable scientific blocks intentionally overflow.
+            groups.append("\n\n".join(current))
+            current = []
     if current:
         groups.append("\n\n".join(current))
     return groups
-
 
 def make_chunk(record_id: str, section_id: str, locale: str, title: str, heading: str, body: str, kind: str, url: str, status: str, ordinal: int = 0, media_id: str | None = None, source_record_id: str | None = None) -> dict:
     identifier = f"{record_id}/{section_id}/{locale}/{ordinal}"
