@@ -35,11 +35,43 @@ jobs:
       - name: Check HTTP endpoints, WebP, and Redis rate limiting
         run: |
           docker compose run -d --no-deps --name astronomy-rag-smoke-peer -p 127.0.0.1:8002:8000 -e CATALOG_DB_PATH=/tmp/glossary.db glossary-rag
-          curl -fsS --retry 15 --retry-all-errors --retry-delay 1 --max-time 2 http://127.0.0.1:8002/health
+          # The peer builds its own SQLite/FTS5 catalogue on a cold start.
+          # The original 15-second retry budget was borderline on GitHub runners.
+          peer_start=$SECONDS
+          peer_ready=false
+          while (( SECONDS - peer_start < 120 )); do
+            if ! peer_state=$(docker inspect --format '{{.State.Status}}' astronomy-rag-smoke-peer); then
+              echo "::error::Smoke peer disappeared before becoming ready"
+              exit 1
+            fi
+            if [[ "$peer_state" != "running" ]]; then
+              echo "::error::Smoke peer exited during startup (state: $peer_state)"
+              docker logs --tail 150 astronomy-rag-smoke-peer || true
+              exit 1
+            fi
+            if curl -fsS --max-time 2 http://127.0.0.1:8002/health >/dev/null 2>&1; then
+              peer_ready=true
+              break
+            fi
+            sleep 2
+          done
+          if [[ "$peer_ready" != true ]]; then
+            echo "::error::Smoke peer did not become ready within 120 seconds"
+            docker logs --tail 150 astronomy-rag-smoke-peer || true
+            exit 1
+          fi
+          echo "Smoke peer ready after $((SECONDS - peer_start)) seconds"
           .venv/bin/python -m scripts.smoke_http http://127.0.0.1:8001 --peer http://127.0.0.1:8002 --search-mode lexical
       - name: Docker logs
         if: failure()
-        run: docker compose logs --tail 100
+        run: |
+          docker compose logs --tail 100
+          if docker container inspect astronomy-rag-smoke-peer >/dev/null 2>&1; then
+            echo "=== Smoke peer logs ==="
+            docker logs --tail 150 astronomy-rag-smoke-peer || true
+            echo "=== Smoke peer status ==="
+            docker inspect --format '{{json .State}}' astronomy-rag-smoke-peer || true
+          fi
       - name: Stop Docker
         if: always()
         run: |
