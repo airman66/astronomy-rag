@@ -2,7 +2,6 @@
 
 import hashlib
 import unittest
-from pathlib import Path
 
 from scripts.media.check_paths import inspect
 from tests.support.catalog import make_term, temporary_dir, write_term
