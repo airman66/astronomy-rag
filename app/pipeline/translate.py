@@ -229,11 +229,10 @@ def main() -> None:
                 continue
             locale_en = record.get("locales", {}).get("en", {})
             locale_ru = record.get("locales", {}).get("ru", {})
-            for field in ("aliases",):
-                source_values = locale_en.get(field, [])
-                target_values = locale_ru.setdefault(field, [])
-                while len(target_values) < len(source_values):
-                    target_values.append("")
+            source_aliases = locale_en.get("aliases", [])
+            target_aliases = locale_ru.setdefault("aliases", [])
+            while len(target_aliases) < len(source_aliases):
+                target_aliases.append("")
             source_categories = record.get("metadata", {}).get("categories", [])
             target_categories = record.setdefault("metadata", {}).setdefault("categories_ru", [])
             while len(target_categories) < len(source_categories):

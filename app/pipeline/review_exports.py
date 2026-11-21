@@ -73,11 +73,9 @@ def export_record(
             if paragraph.strip():
                 lines = "<br>".join(escape(line) for line in paragraph.splitlines())
                 body.append(f"<p>{lines}</p>")
-        covered_components = {
-            component_id
-            for media_id in section.get("media_ids", [])
-            for component_id in images[media_id].get("component_ids", [])
-        }
+        covered_components: set[str] = set()
+        for media_id in section.get("media_ids", []):
+            covered_components.update(images[media_id].get("component_ids", []))
         shown_images: set[tuple[str, str, str]] = set()
         for media_id in section.get("media_ids", []):
             if media_id in covered_components:
