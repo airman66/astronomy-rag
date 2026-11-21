@@ -32,6 +32,7 @@ jobs:
           .venv/bin/python -m scripts.evaluate --retrieval-only --check --output /tmp/rag-retrieval.json
           .venv/bin/python -m scripts.index.verify data/index
           .venv/bin/python -m app.audit --reviews --skip-original-media
+          .venv/bin/python -m scripts.media.check_paths --report /tmp/media-coverage.json
       - name: Start Docker on a clean checkout
         run: docker compose up --build -d --wait --wait-timeout 90
       - name: Check HTTP endpoints, WebP, and Redis rate limiting
