@@ -22,6 +22,7 @@ from scripts.translation_review.review import (
     review_batches,
     review_payload,
     validate_review,
+    verification_item,
 )
 
 
@@ -35,22 +36,10 @@ def export_verify(
     out.mkdir(parents=True, exist_ok=True)
     paths = []
     for index in range(0, len(pending), chunk):
-        items = []
-        for row in pending[index : index + chunk]:
-            unit = units[row["unit"]]
-            record = records[unit["context_record"]]
-            items.append(
-                {
-                    "id": row["unit"][:16],
-                    "kind": "/".join(unit["kinds"]),
-                    "term_en": record["locales"]["en"]["title"],
-                    "en": unit["en"],
-                    "ru_current": unit["ru"],
-                    "ru_proposed": row["corrected_ru"],
-                    "reviewer_issues": row["issues"],
-                    "target_ru_title": unit.get("target_ru_title"),
-                }
-            )
+        items = [
+            verification_item(row, units, records)
+            for row in pending[index : index + chunk]
+        ]
         path = out / f"verify-{index // chunk + 1:02d}.json"
         path.write_text(
             json.dumps({"instructions": VERIFY_SYSTEM, "items": items}, ensure_ascii=False, indent=1),

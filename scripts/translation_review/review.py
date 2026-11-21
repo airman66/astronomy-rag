@@ -124,6 +124,27 @@ def review_payload(batch: list[dict[str, Any]], records: dict[str, dict[str, Any
     return {"groups": list(groups.values())}
 
 
+
+def verification_item(
+    review: dict[str, Any],
+    units: dict[str, dict[str, Any]],
+    records: dict[str, dict[str, Any]],
+) -> dict[str, Any]:
+    """Use the same input fields for online and exported verification."""
+    unit = units[review["unit"]]
+    record = records[unit["context_record"]]
+    return {
+        "id": review["unit"][:16],
+        "kind": "/".join(unit["kinds"]),
+        "term_en": record["locales"]["en"]["title"],
+        "en": unit["en"],
+        "ru_current": unit["ru"],
+        "ru_proposed": review["corrected_ru"],
+        "reviewer_issues": review["issues"],
+        "target_ru_title": unit.get("target_ru_title"),
+    }
+
+
 def validate_review(result: dict[str, Any], batch: list[dict[str, Any]]) -> list[dict[str, Any]]:
     expected = {unit["id"][:16]: unit for unit in batch}
     items = result.get("items")
@@ -244,22 +265,7 @@ def run_verify(
     )
 
     def work(batch: list[dict[str, Any]]) -> int:
-        payload = {"items": []}
-        for row in batch:
-            unit = units[row["unit"]]
-            record = records[unit["context_record"]]
-            payload["items"].append(
-                {
-                    "id": row["unit"][:16],
-                    "kind": "/".join(unit["kinds"]),
-                    "term_en": record["locales"]["en"]["title"],
-                    "en": unit["en"],
-                    "ru_current": unit["ru"],
-                    "ru_proposed": row["corrected_ru"],
-                    "reviewer_issues": row["issues"],
-                    "target_ru_title": unit.get("target_ru_title"),
-                }
-            )
+        payload = {"items": [verification_item(row, units, records) for row in batch]}
         expected = {row["unit"][:16]: row["unit"] for row in batch}
         last: Exception | None = None
         for attempt in range(4):
