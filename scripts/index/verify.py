@@ -13,12 +13,16 @@ from pathlib import Path
 import faiss
 import numpy as np
 
-from app.catalog.index import read_chunks, read_manifest
+from app.catalog.index import MODEL, read_chunks, read_manifest
 from app.infra.files import checksum
 
 
 def verify_index(root: Path) -> dict[str, int]:
     manifest = read_manifest(root)
+    if manifest.get("model") != MODEL or manifest.get("pooling") != "last":
+        raise ValueError("Unexpected embedding model or pooling in index manifest")
+    if manifest.get("normalization", "L2") != "L2":
+        raise ValueError("Index must use L2-normalized vectors")
     for filename, field in (
         ("chunks.jsonl", "chunks_sha256"),
         ("vector-map.json", "vector_map_sha256"),

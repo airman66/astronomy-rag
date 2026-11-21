@@ -15,7 +15,7 @@ from app.infra.files import write_bytes, write_json
 
 DATA = data_directory()
 
-CHUNK_VERSION = "2"
+CHUNK_VERSION = "3"
 TOKENIZER_MODEL = "Qwen/Qwen3-Embedding-8B"
 
 
