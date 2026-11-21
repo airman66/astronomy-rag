@@ -47,7 +47,7 @@ return 0
 """
 
 
-# Remove expired slots and reserve a new slot in one Redis operation.
+# Cleanup and capacity checks must run atomically to avoid overbooking slots.
 _ACQUIRE_CALL = """
 redis.call('ZREMRANGEBYSCORE', KEYS[1], '-inf', ARGV[1])
 if redis.call('ZCARD', KEYS[1]) >= tonumber(ARGV[3]) then return 0 end
