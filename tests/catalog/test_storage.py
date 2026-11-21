@@ -77,3 +77,17 @@ class CatalogRebuildTests(unittest.TestCase):
         self.assertEqual(total("Solar_System"), 1)
         self.assertEqual(total("StarXClass"), 0)
         self.assertEqual(total("SolarXSystem"), 0)
+
+    def test_title_and_alias_filters_treat_wildcards_as_text(self):
+        self.term["locales"]["en"]["title"] = "A%Star"
+        self.term["locales"]["en"]["aliases"] = ["Bright_Sky"]
+        write_term(self.root, self.term)
+        storage.rebuild_database()
+
+        def total(query: str) -> int:
+            return storage.list_records("term", page=1, page_size=10, locale="en", query=query)[1]
+
+        self.assertEqual(total("A%Star"), 1)
+        self.assertEqual(total("Bright_Sky"), 1)
+        self.assertEqual(total("AXStar"), 0)
+        self.assertEqual(total("BrightXSky"), 0)
