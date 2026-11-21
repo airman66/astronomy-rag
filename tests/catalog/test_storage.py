@@ -66,3 +66,14 @@ class CatalogRebuildTests(unittest.TestCase):
 
         with self.assertRaisesRegex(ValueError, "No canonical term records"):
             storage.ensure_database(force_check=True)
+
+    def test_category_filter_is_exact_even_for_sql_wildcards(self):
+        self.term["metadata"]["categories"] = ["Star%Class", "Solar_System"]
+        write_term(self.root, self.term)
+        storage.rebuild_database()
+        def total(category: str) -> int:
+            return storage.list_records("term", page=1, page_size=10, locale="en", category=category)[1]
+        self.assertEqual(total("Star%Class"), 1)
+        self.assertEqual(total("Solar_System"), 1)
+        self.assertEqual(total("StarXClass"), 0)
+        self.assertEqual(total("SolarXSystem"), 0)

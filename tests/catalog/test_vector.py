@@ -77,3 +77,62 @@ class VectorFailureCacheTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "Index file checksum mismatch"):
                     vector.load()
         self.assertEqual(checksum.call_count, 1, "a failed load is cached instead of re-hashing files")
+
+class ModelChecksumTests(unittest.TestCase):
+    def test_stale_verified_marker_does_not_bypass_hash(self):
+        import os
+        import tempfile
+        from pathlib import Path
+
+        with tempfile.TemporaryDirectory() as directory:
+            model = Path(directory) / "small.gguf"
+            model.write_bytes(b"original")
+            stat = model.stat()
+            marker = model.with_name(model.name + ".verified")
+            marker.write_text(f"fakehash {stat.st_size} {int(stat.st_mtime)}\\n")
+            model.write_bytes(b"replaced")
+            os.utime(model, ns=(stat.st_atime_ns, stat.st_mtime_ns))
+            self.assertEqual(index_files.model_checksum(model), index_files.checksum(model))
+            self.assertNotEqual(index_files.model_checksum(model), "fakehash")
+
+
+@requires_faiss
+class VectorLocaleCoverageTests(unittest.TestCase):
+    def test_mixed_language_shortlist_is_expanded(self):
+        import numpy as np
+
+        class FakeIndex:
+            d = 2
+            ntotal = 52
+
+            def __init__(self):
+                self.pools = []
+
+            def search(self, embedding, pool):
+                self.pools.append(pool)
+                return (
+                    np.array([[0.9] * pool], dtype="float32"),
+                    np.array([list(range(pool))], dtype="int64"),
+                )
+
+        index = FakeIndex()
+        mapping = [{"chunk_id": str(i)} for i in range(index.ntotal)]
+        chunks = {
+            str(i): {
+                "id": str(i), "locale": "ru" if i == 51 else "en",
+                "record_id": f"term:{i}", "section_id": "definition",
+                "kind": "term", "title": "Star", "text": "A star",
+                "url": f"/api/v1/terms/{i}", "review_status": "draft",
+            }
+            for i in range(index.ntotal)
+        }
+        response = Mock()
+        response.json.return_value = {"data": [{"embedding": [1.0, 0.0]}]}
+        manifest = {"query_instruction": "Find astronomy definitions.", "model": "test"}
+        with (
+            patch.object(vector, "load", return_value=(index, mapping, chunks, manifest)),
+            patch("requests.post", return_value=response),
+        ):
+            hits = vector.search("звезда", "ru", limit=1)
+        self.assertEqual(index.pools, [50, 52])
+        self.assertEqual(hits[0]["record_id"], "term:51")

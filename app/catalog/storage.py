@@ -288,8 +288,9 @@ def list_records(kind: str, *, page: int, page_size: int, locale: str, query: st
         clauses.append(searchable)
         args.extend([needle] * (3 if table == "terms" else 2))
     if category and table == "terms":
-        clauses.append("categories LIKE ?")
-        args.append(f'%"{category}"%')
+        # JSON1 gives exact category matching and treats %/_ as literal text.
+        clauses.append("EXISTS (SELECT 1 FROM json_each(terms.categories) WHERE value=?)")
+        args.append(category)
     if letter:
         clauses.append(f"title_{locale}_norm LIKE ? ESCAPE '\\'")
         args.append(f"{_like(normalize(letter)[:1])}%")

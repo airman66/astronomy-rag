@@ -3,7 +3,7 @@
 import json
 from pathlib import Path
 
-from app.infra.files import checksum, write_bytes
+from app.infra.files import checksum
 
 MODEL = "Qwen/Qwen3-Embedding-8B-GGUF"
 MODEL_REVISION = "69d0e58a13e463cd99a9b83e3f5fee7c10265fab"
@@ -22,19 +22,11 @@ def read_chunks(path: Path) -> list[dict]:
 
 
 def model_checksum(path: Path) -> str:
-    """SHA-256 of the GGUF; reuses "<sha> <size> <mtime>" written after an earlier full check."""
-    marker = path.with_name(path.name + ".verified")
-    stat = path.stat()
-    if marker.exists():
-        parts = marker.read_text(encoding="utf-8").split()
-        if len(parts) == 3 and parts[1] == str(stat.st_size) and parts[2] == str(int(stat.st_mtime)):
-            return parts[0]
-    digest = checksum(path)
-    try:
-        write_bytes(marker, f"{digest} {stat.st_size} {int(stat.st_mtime)}\n".encode())
-    except OSError:
-        pass
-    return digest
+    """Hash the GGUF bytes rather than trusting a stale/user-writable marker.
+
+    This runs when an index is loaded (in a background startup task), not per query.
+    """
+    return checksum(path)
 
 
 def load_index(root: Path, models: Path):
