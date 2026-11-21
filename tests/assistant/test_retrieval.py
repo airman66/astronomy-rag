@@ -74,3 +74,16 @@ class AssistantRetrievalTests(unittest.TestCase):
         self.assertEqual(image["url"], "/api/v1/media/media:example/file?locale=ru")
         section["media_ids"] = ["media:missing"]
         self.assertIsNone(retrieval.image_for(record, section, "ru"))
+
+    def test_page_hint_provides_real_definition_without_lexical_matches(self):
+        with patch.object(retrieval, "search_with_mode", return_value=([], "lexical")):
+            fragments = retrieval.evidence_for("Объясни это", "ru", context_record_id="term:1")
+        self.assertEqual(list(fragments), ["e1"])
+        self.assertEqual(fragments["e1"].record["id"], "term:1")
+        self.assertEqual(fragments["e1"].canonical_definition, "Горячая звезда.")
+
+    def test_invalid_or_missing_page_hint_is_not_used_as_evidence(self):
+        with patch.object(retrieval, "search_with_mode", return_value=([], "lexical")):
+            for invalid in ("term:999999999999999999999", "article:../../secret", "term:xyz", "article:missing"):
+                with self.subTest(hint=invalid):
+                    self.assertEqual(retrieval.evidence_for("this", "en", context_record_id=invalid), {})

@@ -59,3 +59,14 @@ class AssistantModeTests(ApiCase):
                 self.assertEqual(result["grounding"], "policy")
                 self.assertIn("астрономии", result["answer"])
                 self.assertEqual(result["sources"], [])
+
+    def test_page_relative_question_is_grounded_in_open_term(self):
+        response = self.client.post(
+            ANSWER_PATH,
+            json={"question": "Объясни это", "mode": "auto", "context": {"record_id": "term:1"}},
+        )
+        self.assertEqual(response.status_code, 200, response.text)
+        result = response.json()
+        self.assertEqual(result["mode"], "term")
+        self.assertEqual(result["sources"][0]["record_id"], "term:1")
+        self.assertEqual(result["answer"], "Горячая звезда.")

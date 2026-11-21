@@ -114,19 +114,28 @@ def search(query: str, locale: str, limit: int = 20, min_score: float | None = N
     norm = float(np.linalg.norm(vector))
     if norm > 0:
         vector /= norm  # the index stores L2-normalised vectors: scores are cosine similarities
-    scores, identifiers = index.search(vector, min(index.ntotal, max(limit * 4, 50)))
-    result = []
-    for score, identifier in zip(scores[0], identifiers[0]):
-        if identifier < 0 or float(score) < threshold:
-            continue
-        chunk = chunks[mapping[int(identifier)]["chunk_id"]]
-        if chunk["locale"] != locale:
-            continue
-        record_id = chunk["record_id"]
-        section_id = chunk["section_id"]
-        if chunk.get("media_id") and chunk.get("source_record_id"):
-            record_id, section_id = chunk["source_record_id"], chunk["media_id"]
-        result.append({"record_id": record_id, "section_id": section_id, "kind": chunk["kind"], "title": chunk["title"], "excerpt": chunk["text"][:400], "chunk_id": chunk["id"], "evidence_text": chunk["text"], "url": chunk["url"], "review_status": chunk["review_status"], "score": float(score)})
-        if len(result) >= limit:
-            break
-    return result
+    if limit <= 0 or index.ntotal == 0:
+        return []
+
+    # Hits in the other language must not starve matching-language candidates.
+    # Expand only when necessary; the query embedding is requested once.
+    pool = min(index.ntotal, max(limit * 4, 50))
+    while True:
+        scores, identifiers = index.search(vector, pool)
+        result: list[dict] = []
+        for score, identifier in zip(scores[0], identifiers[0]):
+            if identifier < 0 or float(score) < threshold:
+                continue
+            chunk = chunks[mapping[int(identifier)]["chunk_id"]]
+            if chunk["locale"] != locale:
+                continue
+            record_id = chunk["record_id"]
+            section_id = chunk["section_id"]
+            if chunk.get("media_id") and chunk.get("source_record_id"):
+                record_id, section_id = chunk["source_record_id"], chunk["media_id"]
+            result.append({"record_id": record_id, "section_id": section_id, "kind": chunk["kind"], "title": chunk["title"], "excerpt": chunk["text"][:400], "chunk_id": chunk["id"], "evidence_text": chunk["text"], "url": chunk["url"], "review_status": chunk["review_status"], "score": float(score)})
+            if len(result) >= limit:
+                return result
+        if pool == index.ntotal or float(scores[0][-1]) < threshold:
+            return result
+        pool = min(index.ntotal, pool * 2)

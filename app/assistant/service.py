@@ -127,10 +127,13 @@ async def answer(
     *, trace: dict | None = None,
 ) -> dict:
     started = time.perf_counter()
+    hint = (context or {}).get("record_id")
+    if not isinstance(hint, str):
+        hint = None
     evidence = {} if mode == "general" else await asyncio.to_thread(
         evidence_for, question, locale, prefer_article=mode == "article",
+        context_record_id=hint,
     )
-    hint = (context or {}).get("record_id")
     payload = {
         "question": question,
         "locale": locale,

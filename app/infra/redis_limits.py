@@ -9,57 +9,65 @@ import redis
 
 from app.infra.config import CALL_LEASE_SECONDS, redis_url
 
-_WINDOW = """
-local cooldown = redis.call('TTL', KEYS[2])
-if cooldown > 0 then return cooldown end
-local count = redis.call('INCR', KEYS[1])
-if count == 1 then redis.call('EXPIRE', KEYS[1], 10) end
-if count > tonumber(ARGV[1]) then
-  redis.call('SET', KEYS[2], '1', 'EX', 10, 'NX')
+# Each rate-limit decision updates the client and shared-IP buckets atomically.
+# Rejected requests must not consume quota from a different bucket.
+_WINDOW_BOTH = """
+local client_cooldown = redis.call('TTL', KEYS[2])
+if client_cooldown > 0 then return client_cooldown end
+local ip_cooldown = redis.call('TTL', KEYS[4])
+if ip_cooldown > 0 then return ip_cooldown end
+if tonumber(redis.call('GET', KEYS[1]) or '0') >= tonumber(ARGV[1]) then
+  redis.call('SET', KEYS[2], '1', 'EX', ARGV[3], 'NX')
   return redis.call('TTL', KEYS[2])
 end
+if tonumber(redis.call('GET', KEYS[3]) or '0') >= tonumber(ARGV[2]) then
+  redis.call('SET', KEYS[4], '1', 'EX', ARGV[3], 'NX')
+  return redis.call('TTL', KEYS[4])
+end
+if redis.call('INCR', KEYS[1]) == 1 then redis.call('EXPIRE', KEYS[1], ARGV[3]) end
+if redis.call('INCR', KEYS[3]) == 1 then redis.call('EXPIRE', KEYS[3], ARGV[3]) end
 return 0
 """
 
-# Assistant: one accepted request per 10 s. An early retry gets the remaining time of that
-# interval and does not start a new penalty (SPEC: Retry-After = остаток ожидания).
-_ONCE = """
-if redis.call('SET', KEYS[1], '1', 'EX', ARGV[1], 'NX') then return 0 end
+# Assistant has a per-identity 10-second cooldown and a shared-IP ceiling.
+# Check both before changing either key, so IP rejection doesn't burn client quota.
+_ASSISTANT_BOTH = """
 local ttl = redis.call('TTL', KEYS[1])
-if ttl < 1 then ttl = 1 end
-return ttl
-"""
-
-# Shared per-IP ceiling for the assistant: a fixed 10 s window without extra cooldown.
-_CEILING = """
-local count = redis.call('INCR', KEYS[1])
-if count == 1 then redis.call('EXPIRE', KEYS[1], ARGV[2]) end
-if count > tonumber(ARGV[1]) then
-  local ttl = redis.call('TTL', KEYS[1])
-  if ttl < 1 then ttl = 1 end
-  return ttl
+if ttl > 0 then return ttl end
+if tonumber(redis.call('GET', KEYS[2]) or '0') >= tonumber(ARGV[2]) then
+  local ip_ttl = redis.call('TTL', KEYS[2])
+  if ip_ttl < 1 then ip_ttl = 1 end
+  return ip_ttl
+end
+redis.call('SET', KEYS[1], '1', 'EX', ARGV[1])
+if redis.call('INCR', KEYS[2]) == 1 then
+  redis.call('EXPIRE', KEYS[2], ARGV[1])
 end
 return 0
 """
 
 class RedisLimiter:
     def __init__(self, url: str | None = None) -> None:
-        self.redis = redis.Redis.from_url(url or redis_url(), decode_responses=True)
+        # Bound network failures so requests cannot hang indefinitely on Redis.
+        self.redis = redis.Redis.from_url(
+            url or redis_url(), decode_responses=True, socket_connect_timeout=2, socket_timeout=2,
+        )
 
     def check(self, identity: str, ip: str, category: str) -> int:
         limit = {"assistant": 1, "read": 30, "media": 120}[category]
         key = hashlib.sha256(identity.encode()).hexdigest()
         ip_key = hashlib.sha256(ip.encode()).hexdigest()
         if category == "assistant":
-            retry = int(self.redis.eval(_ONCE, 1, f"rl:assistant:{key}", 10))
-            if retry:
-                return retry
-            return int(self.redis.eval(_CEILING, 1, f"rl:ip:assistant:{ip_key}", limit * 4, 10))
-        retry = int(self.redis.eval(_WINDOW, 2, f"rl:{category}:{key}", f"rl:cool:{category}:{key}", limit))
-        if retry:
-            return retry
-        # A distinct session cannot evade this shared IP ceiling.
-        return int(self.redis.eval(_WINDOW, 2, f"rl:ip:{category}:{ip_key}", f"rl:cool:ip:{category}:{ip_key}", limit * 4))
+            return int(self.redis.eval(
+                _ASSISTANT_BOTH, 2, f"rl:assistant:{key}", f"rl:ip:assistant:{ip_key}",
+                10, limit * 4,
+            ))
+        return int(self.redis.eval(
+            _WINDOW_BOTH, 4,
+            f"rl:{category}:{key}", f"rl:cool:{category}:{key}",
+            f"rl:ip:{category}:{ip_key}", f"rl:cool:ip:{category}:{ip_key}",
+            limit, limit * 4, 10,
+        ))
 
     def acquire_call(self, token: str, maximum: int = 4) -> bool:
         script = """
