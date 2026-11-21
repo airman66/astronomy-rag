@@ -32,3 +32,10 @@ class ChunkBoundaryTests(unittest.TestCase):
         result = chunks.paragraphs(body, budget=10, overlap=0.9)
         self.assertEqual(len(result), 2)
         self.assertTrue(all(chunks.token_count(x) <= 10 for x in result))
+
+    def test_wrapped_ocr_prose_is_split_and_sentences_preferred(self):
+        body = "One two three four.\nFive six seven eight. Nine ten eleven twelve."
+        result = chunks.paragraphs(body, budget=5, overlap=0)
+        self.assertGreater(len(result), 1)
+        self.assertTrue(all(chunks.token_count(fragment) <= 5 for fragment in result))
+        self.assertEqual([part.strip().endswith(".") for part in result], [True] * len(result))

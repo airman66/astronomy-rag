@@ -33,35 +33,51 @@ def sha(text: str) -> str:
 
 
 def _split_prose(paragraph: str, budget: int) -> list[str]:
-    """Split a long prose paragraph on whitespace without cutting words.
+    """Split overlong prose by sentences first, and by words only if needed.
 
-    Structural lines (tables, formula blocks and lists) remain indivisible;
-    those can exceed the budget rather than corrupt scientific notation.
+    Preserve formulas, tables and multi-line lists as indivisible units; those
+    may exceed the budget rather than corrupt their mathematical structure.
     """
     if token_count(paragraph) <= budget:
         return [paragraph]
-    if "\n" in paragraph or re.match(r"^\s*(?:[-*•]|\d+[.)])\s", paragraph) or "\\begin{" in paragraph:
+    if ("\\begin{" in paragraph or "$$" in paragraph
+            or re.search(r"(?m)^\s*(?:[-*•]|\d+[.)])\s", paragraph)
+            or re.search(r"(?m)^\s*\|[^\n]*\|", paragraph)):
         return [paragraph]
-    pieces: list[str] = []
-    current: list[str] = []
-    for word in paragraph.split():
-        candidate = " ".join([*current, word])
-        if current and token_count(candidate) > budget:
-            pieces.append(" ".join(current))
-            current = []
-        if token_count(word) > budget:
-            # Extremely long indivisible tokens remain intact; clipping
-            # their bytes would corrupt URLs, identifiers or scientific text.
-            if current:
-                pieces.append(" ".join(current))
-                current = []
-            pieces.append(word)
-        else:
-            current.append(word)
-    if current:
-        pieces.append(" ".join(current))
-    return pieces
 
+    def split_sentence(sentence: str) -> list[str]:
+        if token_count(sentence) <= budget:
+            return [sentence]
+        pieces: list[str] = []
+        words: list[str] = []
+        for word in sentence.split():
+            if words and token_count(" ".join([*words, word])) > budget:
+                pieces.append(" ".join(words))
+                words = []
+            if token_count(word) > budget:
+                # Do not clip identifiers or scientific words in the middle.
+                if words:
+                    pieces.append(" ".join(words))
+                    words = []
+                pieces.append(word)
+            else:
+                words.append(word)
+        if words:
+            pieces.append(" ".join(words))
+        return pieces
+
+    sentences = [piece.strip() for sentence in re.split(r"(?<=[.!?])\s+", paragraph)
+                 if sentence.strip() for piece in split_sentence(sentence)]
+    result: list[str] = []
+    current: list[str] = []
+    for sentence in sentences:
+        if current and token_count(" ".join([*current, sentence])) > budget:
+            result.append(" ".join(current))
+            current = []
+        current.append(sentence)
+    if current:
+        result.append(" ".join(current))
+    return result
 
 def paragraphs(body: str, budget: int, overlap: float) -> list[str]:
     """Pack article prose at paragraph/sentence boundaries with bounded overlap."""
@@ -95,6 +111,7 @@ def paragraphs(body: str, budget: int, overlap: float) -> list[str]:
     if current:
         groups.append("\n\n".join(current))
     return groups
+
 
 def make_chunk(record_id: str, section_id: str, locale: str, title: str, heading: str, body: str, kind: str, url: str, status: str, ordinal: int = 0, media_id: str | None = None, source_record_id: str | None = None) -> dict:
     identifier = f"{record_id}/{section_id}/{locale}/{ordinal}"
