@@ -39,3 +39,7 @@ class ChunkBoundaryTests(unittest.TestCase):
         self.assertGreater(len(result), 1)
         self.assertTrue(all(chunks.token_count(fragment) <= 5 for fragment in result))
         self.assertEqual([part.strip().endswith(".") for part in result], [True] * len(result))
+
+    def test_split_sentence_strips_each_piece(self):
+        result = chunks._split_prose("  One two. Three four five six.", budget=3)
+        self.assertEqual(result, ["One two.", "Three four five", "six."])

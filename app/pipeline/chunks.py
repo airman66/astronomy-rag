@@ -69,7 +69,8 @@ def _split_prose(paragraph: str, budget: int) -> list[str]:
     sentences: list[str] = []
     for sentence in re.split(r"(?<=[.!?])\s+", paragraph):
         if sentence.strip():
-            sentences.extend(split_sentence(sentence))
+            for piece in split_sentence(sentence):
+                sentences.append(piece.strip())
     result: list[str] = []
     current: list[str] = []
     for sentence in sentences:
