@@ -107,8 +107,9 @@ def normalized(value: str) -> list[str]:
 
 
 def file_ok(title: str) -> bool:
-    return title.casefold().endswith(IMAGE_SUFFIXES) and not any(
-        bad in title.casefold() for bad in ("flag of", "logo", "icon", "seal of", "coat of arms", "wordmark")
+    name = title.casefold()
+    return name.endswith(IMAGE_SUFFIXES) and not any(
+        bad in name for bad in ("flag of", "logo", "icon", "seal of", "coat of arms", "wordmark")
     )
 
 
@@ -135,20 +136,17 @@ def pages(host: str, title: str, search: bool = False) -> list[dict]:
 
 
 def files(title: str) -> list[dict]:
-    results = []
-    for query in (f'intitle:"{title}"',):
-        data = api(
-            "commons.wikimedia.org",
-            generator="search",
-            gsrsearch=query,
-            gsrnamespace=6,
-            gsrlimit=20,
-            prop="imageinfo",
-            iiprop="size",
-            redirects=1,
-        )
-        results.extend(data.get("query", {}).get("pages", []))
-    return results
+    data = api(
+        "commons.wikimedia.org",
+        generator="search",
+        gsrsearch=f'intitle:"{title}"',
+        gsrnamespace=6,
+        gsrlimit=20,
+        prop="imageinfo",
+        iiprop="size",
+        redirects=1,
+    )
+    return data.get("query", {}).get("pages", [])
 
 
 def image_metadata(title: str, host: str = "commons.wikimedia.org") -> dict | None:
