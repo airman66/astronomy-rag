@@ -56,6 +56,7 @@ redis.call('EXPIRE', KEYS[1], 300)
 return 1
 """
 
+
 class RedisLimiter:
     def __init__(self, url: str | None = None) -> None:
         # Bound network failures so requests cannot hang indefinitely on Redis.

@@ -1,6 +1,6 @@
 import logging
-from collections.abc import Awaitable, Callable
 import time
+from collections.abc import Awaitable, Callable
 
 import redis
 from fastapi import Request

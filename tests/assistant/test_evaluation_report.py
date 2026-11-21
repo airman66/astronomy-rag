@@ -51,7 +51,6 @@ class AssistantEvaluationReportTests(unittest.TestCase):
         self.assertFalse(metrics["facts"]["distance"])
         self.assertFalse(metrics["passed"])
 
-        # A known chunk must also retain its actual catalog URL.
         other_url = "/api/v1/terms/3"
         result["primary_url"] = other_url
         result["sources"] = [{**evidence, "url": other_url}]

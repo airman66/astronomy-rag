@@ -124,7 +124,6 @@ def review_payload(batch: list[dict[str, Any]], records: dict[str, dict[str, Any
     return {"groups": list(groups.values())}
 
 
-
 def verification_item(
     review: dict[str, Any],
     units: dict[str, dict[str, Any]],
