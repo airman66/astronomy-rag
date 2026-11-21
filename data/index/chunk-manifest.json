@@ -4,5 +4,5 @@
   "overlap": 0.1,
   "tokenizer_model": "Qwen/Qwen3-Embedding-8B",
   "chunk_count": 5311,
-  "chunks_sha256": "b98c8aead4d32a8971340151af43b4eeb3507dcbdd809f424ed4fc192d957f6e"
+  "chunks_sha256": "5cd3cc1dee407d2fa6f005308573d58cd072219e5f5645dc6e482b837c9df333"
 }
