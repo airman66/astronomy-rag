@@ -280,43 +280,54 @@ def _like(value: str) -> str:
 
 
 def list_records(kind: str, *, page: int, page_size: int, locale: str, query: str = "", category: str = "", letter: str = "", status: str = "") -> tuple[list[dict], int]:
-    table = "terms" if kind == "term" else "articles"
-    clauses, args = [], []
-    if query:
-        needle = f"%{_like(normalize(query))}%"
-        columns = ["title_en_norm", "title_ru_norm"]
-        if table == "terms":
-            columns.append("aliases_norm")
-        clauses.append("(" + " OR ".join(f"{column} LIKE ? ESCAPE '\\'" for column in columns) + ")")
-        args.extend([needle] * len(columns))
-    if category and table == "terms":
-        # JSON1 gives exact category matching and treats %/_ as literal text.
-        clauses.append("EXISTS (SELECT 1 FROM json_each(terms.categories) WHERE value=?)")
-        args.append(category)
-    if letter:
-        clauses.append(f"title_{locale}_norm LIKE ? ESCAPE '\\'")
-        args.append(f"{_like(normalize(letter)[:1])}%")
-    if status:
-        clauses.append("review_status=?")
-        args.append(status)
-    where = " WHERE " + " AND ".join(clauses) if clauses else ""
-    order = f"title_{locale}_norm, title_en_norm"
+    is_term = kind == "term"
+    table = "terms" if is_term else "articles"
+    params = {
+        "is_term": is_term,
+        "ru": locale == "ru",
+        "needle": f"%{_like(normalize(query))}%" if query else "",
+        "category": category if is_term else "",
+        "letter": f"{_like(normalize(letter)[:1])}%" if letter else "",
+        "status": status,
+        "limit": page_size,
+        "offset": min((page - 1) * page_size, 2**63 - 1),
+    }
     with _read() as db:
-        total = db.execute(f"SELECT COUNT(*) FROM {table}{where}", args).fetchone()[0]
-        offset = (page - 1) * page_size
-        if offset >= total:
-            return [], total
-        rows = db.execute(f"SELECT * FROM {table}{where} ORDER BY {order} LIMIT ? OFFSET ?", [*args, page_size, offset]).fetchall()
+        rows = db.execute(
+            r"""WITH records AS (
+                SELECT number AS identifier, title_en, title_ru, title_en_norm, title_ru_norm,
+                       aliases_norm, categories, review_status, payload FROM terms WHERE :is_term
+                UNION ALL
+                SELECT id, title_en, title_ru, title_en_norm, title_ru_norm,
+                       '', '[]', review_status, payload FROM articles WHERE NOT :is_term
+            ), filtered AS (
+                SELECT *, CASE WHEN :ru THEN title_ru_norm ELSE title_en_norm END AS sort_title
+                FROM records
+                WHERE (:needle = '' OR title_en_norm LIKE :needle ESCAPE '\'
+                    OR title_ru_norm LIKE :needle ESCAPE '\' OR aliases_norm LIKE :needle ESCAPE '\')
+                  AND (:category = '' OR EXISTS (SELECT 1 FROM json_each(records.categories) WHERE value=:category))
+                  AND (:letter = '' OR sort_title LIKE :letter ESCAPE '\')
+                  AND (:status = '' OR review_status=:status)
+            ), page AS (
+                SELECT * FROM filtered ORDER BY sort_title, title_en_norm LIMIT :limit OFFSET :offset
+            )
+            SELECT total, page.* FROM (SELECT COUNT(*) AS total FROM filtered)
+            LEFT JOIN page ON 1 ORDER BY sort_title, title_en_norm""",
+            params,
+        ).fetchall()
+    total = rows[0]["total"]
+    if rows[0]["identifier"] is None:
+        return [], total
     result = []
     for row in rows:
         payload = json.loads(row["payload"])
-        title = row[f"title_{locale}"] or row["title_en"]
+        title = row["title_ru" if locale == "ru" else "title_en"] or row["title_en"]
         illustration = payload.get("illustration")
         result.append({
             "id": payload["id"],
             "title": title,
             "title_en": row["title_en"],
-            "url": f"/api/v1/{table}/{row['number'] if table == 'terms' else row['id']}",
+            "url": f"/api/v1/{table}/{row['identifier']}",
             "review_status": row["review_status"],
             "categories": payload.get("metadata", {}).get("categories", []),
             "categories_ru": payload.get("metadata", {}).get("categories_ru", []),
@@ -328,7 +339,11 @@ def list_records(kind: str, *, page: int, page_size: int, locale: str, query: st
 def letters(locale: str) -> list[dict]:
     """First letters of term titles in the requested language, for an alphabet index."""
     with _read() as db:
-        rows = db.execute(f"SELECT substr(title_{locale}_norm, 1, 1) AS letter, COUNT(*) AS count FROM terms GROUP BY letter ORDER BY letter").fetchall()
+        rows = db.execute(
+            "SELECT substr(CASE WHEN ? THEN title_ru_norm ELSE title_en_norm END, 1, 1) AS letter, "
+            "COUNT(*) AS count FROM terms GROUP BY letter ORDER BY letter",
+            (locale == "ru",),
+        ).fetchall()
     return [{"letter": row["letter"].upper(), "count": row["count"]} for row in rows if row["letter"] and row["letter"].isalpha()]
 
 
@@ -366,13 +381,11 @@ def lexical_search(query: str, locale: str, limit: int, *, record_id: str | None
     expression = _expression(query, locale)
     if not expression:
         return []
-    record_filter = " AND record_id=?" if record_id is not None else ""
-    params = (expression, locale, record_id, limit) if record_id is not None else (expression, locale, limit)
     with _read() as db:
         rows = db.execute(
             "SELECT record_id,section_id,locale,kind,title,body,url,review_status,"
             "bm25(search_fts, 0,0,0,0,0,0,0,0, 8,1,6,0.8) AS score FROM search_fts "
-            f"WHERE search_fts MATCH ? AND locale=?{record_filter} ORDER BY score LIMIT ?",
-            params,
+            "WHERE search_fts MATCH ? AND locale=? AND (? IS NULL OR record_id=?) ORDER BY score LIMIT ?",
+            (expression, locale, record_id, record_id, limit),
         ).fetchall()
     return [{"record_id": row["record_id"], "section_id": row["section_id"], "kind": row["kind"], "title": row["title"], "excerpt": row["body"][:400], "url": row["url"], "review_status": row["review_status"], "score": -row["score"]} for row in rows]
