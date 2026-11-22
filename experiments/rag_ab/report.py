@@ -10,15 +10,29 @@ from typing import Any
 
 from app.infra.files import write_json
 from experiments.rag_ab.live import usage_totals
-from experiments.rag_ab.retrieval import OLD, OUT, ROOT, packing_config, questions
+from experiments.rag_ab.retrieval import CONFIGS, OLD, OUT, ROOT, packing_config, questions_with_sha
 from scripts.evaluation.retrieval import percentile
 
-CONFIG = "8x8500"
 PHASES = ("packing", "llm", "oae", "legacy", "repeat", "repeat2")
 
 
 def read(name: str) -> Any:
     return json.loads((OUT / name).read_bytes())
+
+
+def phase_context(phase: str, suite_sha: str, retrieval_sha: str | None = None) -> str:
+    """Read the budget used by the phase and verify available input hashes."""
+    name = f"{phase}-run.json"
+    manifest = read(name)
+    context = manifest.get("context")
+    choices = {"factorial"} if phase == "packing" else CONFIGS
+    if manifest.get("phase") != phase or not isinstance(context, str) or context not in choices:
+        raise SystemExit(f"Invalid phase or context in {name}")
+    if manifest.get("suite_sha256", suite_sha) != suite_sha:
+        raise SystemExit(f"Question suite differs from {name}")
+    if retrieval_sha is not None and manifest.get("retrieval_sha256", retrieval_sha) != retrieval_sha:
+        raise SystemExit(f"Retrieval snapshot differs from {name}")
+    return context
 
 
 def by_variant(rows: Iterable[dict]) -> dict[str, list[dict]]:
@@ -219,14 +233,24 @@ def warm_legacy(row: dict) -> dict:
 
 
 def build(include_repeats: bool) -> None:
-    new = questions(ROOT / "questions.json")
+    new, new_sha = questions_with_sha(ROOT / "questions.json")
     llm: list[dict] = read("llm-scored.json")
     if not include_repeats:
+        phase_context("llm", new_sha)
         write_json(OUT / "repeat-cases.json", select_repeats(new, llm))
         return
     assert {case["id"] for case in new} == {r["id"] for r in llm if r["variant"] == "A"}
+    retrieval_bytes = (OUT / "retrieval.json").read_bytes()
+    retrieval_sha = hashlib.sha256(retrieval_bytes).hexdigest()
+    sources = json.loads(retrieval_bytes)
+    oae, oae_sha = questions_with_sha(OLD / "oae_passage_questions.json")
+    legacy_cases, legacy_sha = questions_with_sha(OLD / "full_questions.json")
+    suite_hashes = {"oae": oae_sha, "legacy": legacy_sha}
+    contexts = {
+        phase: phase_context(phase, suite_hashes.get(phase, new_sha), None if phase == "legacy" else retrieval_sha)
+        for phase in PHASES
+    }
     write_blind(llm, new)
-    sources: dict = read("retrieval.json")
     traces = {row["id"]: row for row in sources["results"]}
     legacy: dict = read("legacy-live.json")
     phases: dict[str, list[dict]] = {name: read(f"{name}-scored.json") for name in PHASES}
@@ -254,11 +278,7 @@ def build(include_repeats: bool) -> None:
     write_json(OUT / "summary.json", summary)
 
     case_reports = {}
-    for suite, cases in (
-        ("new", new),
-        ("oae", questions(OLD / "oae_passage_questions.json")),
-        ("legacy", questions(OLD / "full_questions.json")),
-    ):
+    for suite, cases in (("new", new), ("oae", oae), ("legacy", legacy_cases)):
         case_reports[suite] = {}
         for case in cases:
             ident = case["id"]
@@ -280,7 +300,7 @@ def build(include_repeats: bool) -> None:
                 for row in matched:
                     compact = compact_row(row)
                     if trace and row.get("grade"):
-                        config = packing_config(phase, row["variant"], CONFIG)
+                        config = packing_config(phase, row["variant"], contexts[phase])
                         grade = {**row["grade"], **row.get("manual_review", {}).get("grade", {})}
                         compact["parts"] = what_happened(trace, config, grade)
                     report["phases"][phase].append(compact)

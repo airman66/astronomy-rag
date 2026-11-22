@@ -51,8 +51,10 @@ class PackedContext(TypedDict):
     chars: int
 
 
-def questions(path: Path) -> list[dict]:
-    return json.loads(path.read_bytes())["questions"]
+def questions_with_sha(path: Path) -> tuple[list[dict], str]:
+    """Return the questions and the digest of the same file contents."""
+    content = path.read_bytes()
+    return json.loads(content)["questions"], hashlib.sha256(content).hexdigest()
 
 
 def ms_since(start: float) -> float:
@@ -274,12 +276,17 @@ def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     manifest = read_manifest(storage.DATA / "index")
     assert manifest["corpus_sha256"] == corpus_digest(storage.DATA) == storage.corpus_version()
+    index_provenance = {
+        "index": manifest,
+        "index_manifest_sha256": checksum(storage.DATA / "index" / "index-manifest.json"),
+    }
     assert vector.load() is not None
     warm, mode = search.search_with_mode("What is a star?", "en", limit=80)
     assert mode == "hybrid" and warm
     if args.legacy:
+        cases, suite_sha = questions_with_sha(OLD / "full_questions.json")
         rows = []
-        for case in questions(OLD / "full_questions.json"):
+        for case in cases:
             hits, search_ms = [], 0.0
             if case.get("requested_mode") != "general":
                 hits, _, search_ms = capture_search(case, 40)
@@ -292,12 +299,16 @@ def main() -> None:
                     },
                 }
             )
-        write_json(OUT / "legacy-retrieval.json", rows)
+        write_json(
+            OUT / "legacy-retrieval.json",
+            {**index_provenance, "suite_sha256": {"legacy": suite_sha}, "results": rows},
+        )
         return
     paths = {"new": ROOT / "questions.json", "oae": OLD / "oae_passage_questions.json"}
+    suite_hashes = {}
     rows = []
     for suite, path in paths.items():
-        cases = questions(path)
+        cases, suite_hashes[suite] = questions_with_sha(path)
         for case in cases:
             rows.append(case_run(case, suite))
         print(suite, len(cases), flush=True)
@@ -308,9 +319,8 @@ def main() -> None:
             "base_commit": subprocess.check_output(["git", "rev-parse", "85ebed8"], text=True).strip(),
             "prompt_version": PROMPT_VERSION,
             "prompt_sha256": hashlib.sha256(ANSWER_PROMPT.encode()).hexdigest(),
-            "index_manifest_sha256": checksum(storage.DATA / "index" / "index-manifest.json"),
-            "index": manifest,
-            "suite_sha256": {key: checksum(path) for key, path in paths.items()},
+            **index_provenance,
+            "suite_sha256": suite_hashes,
             "metrics": summary,
             "results": rows,
         },

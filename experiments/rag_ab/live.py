@@ -2,6 +2,7 @@
 
 import argparse
 import asyncio
+import fcntl
 import hashlib
 import json
 import random
@@ -11,7 +12,7 @@ from collections import Counter
 from collections.abc import Awaitable, Callable, Iterable, Sequence
 from dataclasses import replace
 from pathlib import Path
-from typing import Annotated, Any, Literal, TypedDict
+from typing import Annotated, Any, BinaryIO, Literal, TypedDict
 
 import httpx
 from pydantic import BaseModel, ConfigDict, Field, StringConstraints, ValidationError
@@ -39,7 +40,7 @@ from experiments.rag_ab.retrieval import (
     PackedEvidence,
     ms_since,
     packing_config,
-    questions,
+    questions_with_sha,
 )
 from scripts.evaluation.retrieval import evaluate_response, valid_sources
 
@@ -349,6 +350,23 @@ async def grade(case: dict, candidates: list[dict], client: CompletionClient) ->
     raise RuntimeError(f"Judge failed for {case['id']} (response or schema)")
 
 
+def read_checkpoint(handle: BinaryIO) -> list[Any]:
+    """Recover an interrupted final write while keeping complete records."""
+    handle.seek(0)
+    lines = handle.readlines()
+    tail = lines.pop() if lines and not lines[-1].endswith(b"\n") else None
+    rows = [json.loads(line) for line in lines]
+    if tail is None:
+        return rows
+    try:
+        rows.append(json.loads(tail))
+    except (json.JSONDecodeError, UnicodeDecodeError):
+        handle.truncate(handle.tell() - len(tail))
+    else:
+        handle.write(b"\n")
+    return rows
+
+
 async def run_batches[Key, Row](
     keys: Sequence[Key],
     worker: Callable[[Key], Awaitable[Row]],
@@ -356,22 +374,27 @@ async def run_batches[Key, Row](
     key_of: Callable[[Row], Key],
     concurrency: int,
 ) -> dict[Key, Row]:
-    existing = (
-        [json.loads(line) for line in out.read_text(encoding="utf-8").splitlines()] if out.exists() else []
-    )
-    by_key: dict[Key, Row] = {key_of(row): row for row in existing}
-    pending = [key for key in keys if key not in by_key]
-    with out.open("a", encoding="utf-8") as handle:
+    with out.open("a+b") as handle:
+        existing = read_checkpoint(handle)
+        by_key: dict[Key, Row] = {key_of(row): row for row in existing}
+        if len(by_key) != len(existing) or not by_key.keys() <= set(keys):
+            raise ValueError(f"Unexpected or duplicate checkpoint keys: {out}")
+        pending = [key for key in keys if key not in by_key]
 
         async def save(key: Key) -> None:
             row = await worker(key)
             assert key_of(row) == key
             by_key[key] = row
-            handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+            handle.write((json.dumps(row, ensure_ascii=False) + "\n").encode("utf-8"))
             handle.flush()
 
         for offset in range(0, len(pending), concurrency):
-            await asyncio.gather(*(save(key) for key in pending[offset : offset + concurrency]))
+            results = await asyncio.gather(
+                *(save(key) for key in pending[offset : offset + concurrency]), return_exceptions=True,
+            )
+            for result in results:
+                if isinstance(result, BaseException):
+                    raise result
             progress = min(offset + concurrency, len(pending))
             if progress % 20 < concurrency or progress == len(pending):
                 print(out.name, progress, "/", len(pending), flush=True)
@@ -401,29 +424,36 @@ def generation_order(phase: str, cases: Iterable[dict], prior: dict[str, list[st
     return jobs
 
 
-async def main() -> None:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("phase", choices=("packing", "llm", "oae", "legacy", "repeat", "repeat2"))
-    parser.add_argument("--config", choices=CONFIGS, default="8x11000")
-    parser.add_argument("--concurrency", type=int, default=4)
-    args = parser.parse_args()
-    phase = args.phase
-    OUT.mkdir(parents=True, exist_ok=True)
-    load_env()
-    settings = LLMSettings.from_env()
-    if settings.provider != "deepseek" or settings.model != "deepseek-flash" or not settings.api_key:
-        raise SystemExit("Expected deepseek-flash and a configured local key")
-    retrieval = json.loads((OUT / "retrieval.json").read_bytes())
-    snapshot_rows = (
-        json.loads((OUT / "legacy-retrieval.json").read_bytes())
-        if phase == "legacy"
-        else retrieval["results"]
-    )
-    snapshots = {row["id"]: row for row in snapshot_rows}
-    path = {"oae": OLD / "oae_passage_questions.json", "legacy": OLD / "full_questions.json"}.get(
-        phase, ROOT / "questions.json"
-    )
-    cases = {case["id"]: case for case in questions(path)}
+def open_checkpoint(phase: str, provenance: dict) -> None:
+    """Validate an existing checkpoint or describe a new one before the first write."""
+    manifest_path = OUT / f"{phase}-run.json"
+    if manifest_path.exists():
+        if json.loads(manifest_path.read_bytes()) != provenance:
+            raise SystemExit(f"Checkpoint inputs differ: {manifest_path}. Use a new RAG_AB_OUTPUT_DIR.")
+        return
+    for suffix in ("responses", "grades"):
+        path = OUT / f"{phase}-{suffix}.jsonl"
+        if path.exists() and path.stat().st_size:
+            raise SystemExit(f"Checkpoint manifest missing for {path}. Use a new RAG_AB_OUTPUT_DIR.")
+    write_json(manifest_path, provenance)
+
+
+async def run_phase(phase: str, config: str, concurrency: int, settings: LLMSettings) -> None:
+    suite, path = {
+        "oae": ("oae", OLD / "oae_passage_questions.json"),
+        "legacy": ("legacy", OLD / "full_questions.json"),
+    }.get(phase, ("new", ROOT / "questions.json"))
+    questions, suite_sha = questions_with_sha(path)
+    snapshot_path = OUT / ("legacy-retrieval.json" if phase == "legacy" else "retrieval.json")
+    snapshot_bytes = snapshot_path.read_bytes()
+    retrieval = json.loads(snapshot_bytes)
+    if not isinstance(retrieval, dict) or retrieval["suite_sha256"].get(suite) != suite_sha:
+        raise SystemExit(f"Retrieval snapshot suite differs: {snapshot_path}. Rebuild the snapshot.")
+    corpus_sha = retrieval["index"]["corpus_sha256"]
+    if not corpus_sha or corpus_sha != storage.corpus_version():
+        raise SystemExit(f"Retrieval snapshot corpus differs from the active catalogue: {snapshot_path}")
+    snapshots = {row["id"]: row for row in retrieval["results"]}
+    cases = {case["id"]: case for case in questions}
     is_repeat = phase in {"repeat", "repeat2"}
     prior = json.loads((OUT / "repeat-cases.json").read_bytes()) if is_repeat else {}
     if is_repeat:
@@ -432,14 +462,13 @@ async def main() -> None:
 
     def snapshot_for(key: tuple[str, str]) -> PackedContext:
         case_id, version = key
-        return snapshots[case_id]["configs"][packing_config(phase, version, args.config)]
+        return snapshots[case_id]["configs"][packing_config(phase, version, config)]
 
     scheduled = {key: snapshot_for(key) for key in order}
-    manifest_path = OUT / f"{phase}-run.json"
     provenance = {
         "phase": phase,
-        "context": "factorial" if phase == "packing" else args.config,
-        "concurrency": args.concurrency,
+        "context": "factorial" if phase == "packing" else config,
+        "concurrency": concurrency,
         "model": settings.model,
         "answer_budget": settings.max_tokens or 768,
         "planner_budget": 1536,
@@ -455,10 +484,11 @@ async def main() -> None:
             }.items()
         },
         "retrieval_index_sha256": retrieval["index_manifest_sha256"],
+        "retrieval_sha256": hashlib.sha256(snapshot_bytes).hexdigest(),
+        "suite_sha256": suite_sha,
+        "schedule_sha256": hashlib.sha256(json.dumps(order).encode()).hexdigest(),
     }
-    if manifest_path.exists() and json.loads(manifest_path.read_bytes()) != provenance:
-        raise SystemExit(f"Existing checkpoint has different parameters: {manifest_path}")
-    write_json(manifest_path, provenance)
+    open_checkpoint(phase, provenance)
     async with httpx.AsyncClient() as http:
         planner_settings = replace(settings, max_tokens=1536)
         client = LLMClient(http, settings)
@@ -483,7 +513,7 @@ async def main() -> None:
             generate,
             OUT / f"{phase}-responses.jsonl",
             lambda row: (row["id"], row["variant"]),
-            args.concurrency,
+            concurrency,
         )
         if phase == "legacy":
             for key, row in rows.items():
@@ -521,7 +551,7 @@ async def main() -> None:
             judge_one,
             OUT / f"{phase}-grades.jsonl",
             lambda row: row["id"],
-            args.concurrency,
+            concurrency,
         )
         for key, row in rows.items():
             case_id, version = key
@@ -545,6 +575,27 @@ async def main() -> None:
             )
             row["passed"] = row["quality"] and row["mode_correct"] and row["coverage_correct"]
         write_json(OUT / f"{phase}-scored.json", list(rows.values()))
+
+
+async def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("phase", choices=("packing", "llm", "oae", "legacy", "repeat", "repeat2"))
+    parser.add_argument("--config", choices=CONFIGS, default="8x11000")
+    parser.add_argument("--concurrency", type=int, default=4)
+    args = parser.parse_args()
+    if args.concurrency < 1:
+        parser.error("--concurrency must be positive")
+    load_env()
+    settings = LLMSettings.from_env()
+    if settings.provider != "deepseek" or settings.model != "deepseek-flash" or not settings.api_key:
+        raise SystemExit("Expected deepseek-flash and a configured local key")
+    OUT.mkdir(parents=True, exist_ok=True)
+    with (OUT / f".{args.phase}-run.lock").open("a") as lock:
+        try:
+            fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except (BlockingIOError, PermissionError):
+            raise SystemExit(f"Phase {args.phase} is already running in {OUT}") from None
+        await run_phase(args.phase, args.config, args.concurrency, settings)
 
 
 if __name__ == "__main__":
