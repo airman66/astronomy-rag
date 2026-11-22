@@ -9,11 +9,12 @@ from __future__ import annotations
 import logging
 import os
 import time
+from pathlib import Path
 from threading import Lock
 from typing import NamedTuple
 
 from app.catalog import storage
-from app.catalog.index import MANIFEST_NAME, load_index
+from app.catalog.index import MANIFEST_NAME, artifact_generation, file_generation, load_index, model_path, read_manifest
 from app.infra.config import data_directory
 from app.infra.metrics import count
 
@@ -27,83 +28,78 @@ _lock = Lock()
 
 
 class _LoadedIndex(NamedTuple):
-    generation: str
+    generation: tuple
     artifacts: tuple
 
 
 _loaded: _LoadedIndex | None = None
-_checked_at = 0.0
-_failure: dict[str, tuple[float, Exception]] = {}
+_failure: tuple[tuple, float, str] | None = None
 log = logging.getLogger("glossary.vector")
 
 
-def _failure_key() -> str:
-    manifest = DATA / "index" / MANIFEST_NAME
-    try:
-        stat = manifest.stat()
-    except OSError:
-        return f"{DATA.resolve()}|missing"
-    return f"{DATA.resolve()}|{stat.st_ino}|{stat.st_mtime_ns}|{stat.st_ctime_ns}|{stat.st_size}"
-
-
-def available() -> bool:
-    return _loaded is not None
-
-
-def loaded_generation() -> str | None:
+def loaded_generation() -> tuple | None:
     loaded = _loaded
     return loaded.generation if loaded is not None else None
 
 
-def _changed_on_disk(generation: str) -> bool:
-    """A republished index (new manifest) replaces the loaded one; checked at most every 30 s."""
-    global _checked_at
-    now = time.monotonic()
-    if now - _checked_at < 30:
-        return False
-    _checked_at = now
-    return _failure_key() != generation
+def _generation(root: Path, models: Path) -> tuple:
+    stamps = artifact_generation(root)
+    try:
+        path = model_path(models, read_manifest(root))
+        model_stamp = file_generation(path)
+    except (OSError, ValueError, AttributeError):
+        model_stamp = None
+    return root.resolve(), stamps, model_stamp
 
 
 def load():
-    global _loaded, _checked_at
-    current = _loaded
-    if current is not None and not _changed_on_disk(current.generation):
-        return current.artifacts
+    global _loaded, _failure
     root = DATA / "index"
-    if not (root / MANIFEST_NAME).exists():
+    models = DATA / "models"
+    if not _lock.acquire(blocking=False):
+        current = _loaded
         return current.artifacts if current is not None else None
-    key = _failure_key()
-    failed = _failure.get(key)
-    if failed and time.monotonic() - failed[0] < RETRY_AFTER_FAILURE:
-        if current is not None:
-            return current.artifacts  # keep serving the previous index while the new one is inconsistent
-        raise failed[1]
-    with _lock:
-        if _loaded is not None and _loaded.generation == key:
-            return _loaded.artifacts
+    try:
+        current = _loaded
+        previous = current.artifacts if current is not None else None
+        if not (root / MANIFEST_NAME).is_file():
+            return previous
+        generation = _generation(root, models)
+        if current is not None and current.generation == generation:
+            return previous
+        failed = _failure
+        if failed is not None and failed[0] == generation and time.monotonic() - failed[1] < RETRY_AFTER_FAILURE:
+            if previous is not None:
+                return previous
+            raise ValueError(failed[2])
         try:
-            loaded = load_index(root, DATA / "models")
+            loaded = load_index(root, models)
+            if generation != _generation(root, models):
+                raise ValueError("Index artifacts or model changed during loading")
         except Exception as exc:
-            _failure[key] = (time.monotonic(), exc)
-            if _loaded is not None:
+            _failure = (generation, time.monotonic(), str(exc))
+            if previous is not None:
                 log.warning("new vector index rejected, keeping the loaded one: %s", exc)
-                return _loaded.artifacts
+                return previous
+            log.warning("vector index unavailable: %s", exc)
             raise
-        _failure.pop(key, None)
-        _loaded = _LoadedIndex(key, loaded)
-        _checked_at = time.monotonic()
+        _failure = None
+        _loaded = _LoadedIndex(generation, loaded)
         log.info("vector index loaded: %s chunks", loaded[0].ntotal)
         return loaded
+    finally:
+        _lock.release()
 
 
 def search(
     query: str, locale: str, limit: int = 20, min_score: float | None = None,
-    *, timeout: float = QUERY_TIMEOUT, corpus_sha: str | None = None,
-) -> list[dict]:
-    loaded = load()
+    *, timeout: float = QUERY_TIMEOUT, corpus_sha: str | None = None, allow_index_load: bool = True,
+) -> list[dict] | None:
+    """Return None when no index exists and an empty list after a successful query with no hits."""
+    current = _loaded
+    loaded = load() if allow_index_load else current.artifacts if current is not None else None
     if loaded is None:
-        return []
+        return None
     index, mapping, chunks, manifest = loaded
     source_sha = manifest.get("corpus_sha256")
     catalog_sha = corpus_sha if corpus_sha is not None else storage.corpus_version()
@@ -123,17 +119,17 @@ def search(
         )
         response.raise_for_status()
         embedding = np.asarray(response.json()["data"][0]["embedding"], dtype="float32")
-        if embedding.shape != (index.d,) or not np.isfinite(embedding).all() or not np.any(embedding):
+        if embedding.shape != (index.d,) or not np.isfinite(embedding).all():
             raise ValueError("Invalid query embedding for vector index")
+        norm = float(np.linalg.norm(embedding))
+        if not 0 < norm < float("inf"):
+            raise ValueError("Invalid query embedding norm for vector index")
     except (requests.RequestException, ValueError, KeyError, IndexError, TypeError):
         count("astronomy_embedding_errors_total")
         raise
     finally:
         count("astronomy_embedding_request_seconds_total", time.perf_counter() - started)
-    vector = embedding.reshape(1, index.d)
-    norm = float(np.linalg.norm(vector))
-    if norm > 0:
-        vector /= norm  # the index stores L2-normalised vectors: scores are cosine similarities
+    vector = embedding.reshape(1, index.d) / norm
     if limit <= 0 or index.ntotal == 0:
         return []
 

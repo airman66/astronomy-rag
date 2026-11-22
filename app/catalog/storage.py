@@ -70,7 +70,9 @@ def fingerprint(root: Path | None = None) -> str:
     digest = hashlib.sha256(SCHEMA_VERSION.encode())
     for path in canonical_files(root):
         stat = path.stat()
-        digest.update(f"{path.relative_to(root).as_posix()}|{stat.st_size}|{stat.st_mtime_ns}\n".encode())
+        digest.update(
+            f"{path.relative_to(root).as_posix()}|{stat.st_size}|{stat.st_mtime_ns}|{stat.st_ctime_ns}|{stat.st_ino}\n".encode()
+        )
     return digest.hexdigest()
 
 
@@ -167,7 +169,24 @@ def build_database(
 
 def corpus_version() -> str | None:
     with _read() as db:
+        return _ready_corpus(db)
+
+
+def database_corpus(path: Path) -> str | None:
+    """Read the identity of an already-built catalogue without rebuilding it."""
+    with closing(sqlite3.connect(f"{path.resolve().as_uri()}?mode=ro", uri=True)) as db:
+        return _ready_corpus(db)
+
+
+def _ready_corpus(db: sqlite3.Connection) -> str | None:
+    compatible = db.execute(
+        "SELECT 1 FROM meta WHERE key='schema_version' AND value=? AND EXISTS (SELECT 1 FROM terms)",
+        (SCHEMA_VERSION,),
+    ).fetchone()
+    if compatible:
+        db.execute("SELECT rowid FROM search_fts LIMIT 1").fetchone()
         return _corpus_version(db)
+    return None
 
 
 def _corpus_version(db: sqlite3.Connection) -> str | None:

@@ -4,7 +4,7 @@ from fastapi import APIRouter, Query, Request
 from fastapi.responses import FileResponse
 
 from app.api.errors import error
-from app.api.media_files import media_response
+from app.api.media_files import media_not_found, media_response
 from app.api.responses import IMAGE_TYPES, LIMITS
 from app.api.schemas.catalog import MediaDetail
 from app.api.schemas.common import ErrorResponse
@@ -34,11 +34,11 @@ def media_file(request: Request, media_id: str, locale: Literal["ru", "en"] = "r
                v: str | None = Query(None, max_length=64)):
     item = storage.get_media(media_id)
     if not item:
-        return error(404, "media_not_found", "Медиа не найдено")
+        return media_not_found("media_not_found", "Медиа не найдено", v)
     path = local_file(storage.DATA, localized_filename(item, locale))
     if path is None:
-        return error(404, "media_file_not_found", "Файл медиа не найден")
+        return media_not_found("media_file_not_found", "Файл медиа не найден", v)
     digest = localized_digest(item, locale)
     if v is not None and v != digest:
-        return error(404, "media_file_not_found", "Версия медиа не найдена")
+        return media_not_found("media_file_not_found", "Версия медиа не найдена", v)
     return media_response(request, path, digest, v, error_code="media_file_not_found")

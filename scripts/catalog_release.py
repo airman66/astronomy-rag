@@ -10,7 +10,8 @@ import uuid
 from pathlib import Path
 
 from app.catalog import storage
-from app.catalog.release import INDEX_FILES, RELEASE_MANIFEST, release_manifest, verify_media_files, verify_release
+from app.catalog.index import INDEX_FILES
+from app.catalog.release import RELEASE_MANIFEST, release_manifest, verify_media_files, verify_release
 from app.infra.config import data_directory
 from app.infra.files import checksum, write_json
 
@@ -43,7 +44,7 @@ def publish(source: Path, releases: Path) -> Path:
         for name in INDEX_FILES:
             shutil.copy2(source / "index" / name, stage / "index" / name)
         # Model downloads are independent of the corpus; the runtime verifies GGUF bytes.
-        models = os.path.relpath(source / "models", releases / "version")
+        models = os.path.relpath((source / "models").resolve(), releases.resolve() / "version")
         (stage / "models").symlink_to(models, target_is_directory=True)
         verify_index(stage / "index", require_current_chunking=True)
         verify_media_files(stage)

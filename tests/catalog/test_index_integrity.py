@@ -3,7 +3,12 @@
 import hashlib
 import json
 import unittest
+from unittest.mock import Mock, patch
 
+from app.catalog.index import read_chunks
+from app.infra.files import checksum
+from scripts.index.build import build
+from scripts.index.cache import seed
 from scripts.index.verify import verify_index
 from tests.catalog.fixtures import seed_vector_index
 from tests.support.catalog import temporary_dir
@@ -51,6 +56,7 @@ class IndexIntegrityTests(unittest.TestCase):
             "chunk_version": "2",
             "chunk_count": manifest["chunk_count"],
             "chunks_sha256": manifest["chunks_sha256"],
+            "corpus_sha256": manifest["corpus_sha256"],
         }
         manifest["chunk_config"] = config
         manifest_path.write_text(json.dumps(manifest))
@@ -59,3 +65,66 @@ class IndexIntegrityTests(unittest.TestCase):
         self.assertEqual(verify_index(self.index_dir)["chunks"], 2)
         with self.assertRaisesRegex(ValueError, "Rebuild the index with chunking version"):
             verify_index(self.index_dir, require_current_chunking=True)
+
+    def test_cache_seed_rejects_changed_mapping_before_reading_vectors(self):
+        (self.index_dir / "vector-map.json").write_text("[]")
+        with self.assertRaisesRegex(ValueError, "Index file checksum mismatch"):
+            seed(self.index_dir)
+        self.assertEqual(list(self.index_dir.glob("embedding-cache-*.npz")), [])
+
+
+class IndexBuildTests(unittest.TestCase):
+    def setUp(self):
+        self.root = temporary_dir(self)
+        seed_vector_index(self.root)
+        self.index_dir = self.root / "index"
+        self.model = self.root / "models/small.gguf"
+        self.chunks = self.index_dir / "chunks.jsonl"
+        self.config = self.index_dir / "chunk-manifest.json"
+        rows = read_chunks(self.chunks)
+        for row in rows:
+            row["search_text"] = row["text"]
+            row["content_hash"] = row["id"].replace("/", "-")
+        self.chunks.write_text("".join(json.dumps(row) + "\n" for row in rows))
+        config = json.loads(self.config.read_text())
+        config["chunks_sha256"] = checksum(self.chunks)
+        self.config.write_text(json.dumps(config))
+        self.published = {
+            self.index_dir / name: checksum(self.index_dir / name)
+            for name in ("index-manifest.json", "index.faiss", "vector-map.json")
+        }
+
+    def assert_publication_unchanged(self):
+        self.assertEqual({path: checksum(path) for path in self.published}, self.published)
+
+    def test_chunk_replacement_during_embedding_preserves_previous_index(self):
+        response = Mock()
+        response.json.return_value = {"data": [
+            {"index": 0, "embedding": [1.0, 1.0]}, {"index": 1, "embedding": [1.0, 0.0]},
+        ]}
+
+        def change_corpus(*args, **kwargs):
+            config = json.loads(self.config.read_text())
+            config["corpus_sha256"] = "different"
+            self.config.write_text(json.dumps(config))
+            return response
+
+        with patch("requests.post", side_effect=change_corpus):
+            with self.assertRaisesRegex(ValueError, "Chunks changed during index build"):
+                build(self.index_dir, self.model, "http://embeddings.test", 2)
+        self.assert_publication_unchanged()
+
+    def test_bad_embedding_batches_do_not_write_artifacts_or_pollute_cache(self):
+        for first, index, message in (
+            ([1.0, 1.0], 0, "unexpected vector indices"),
+            ([0.0, 0.0], 1, "finite, nonzero norms"),
+        ):
+            response = Mock()
+            response.json.return_value = {"data": [
+                {"index": 0, "embedding": first}, {"index": index, "embedding": [1.0, 0.0]},
+            ]}
+            with self.subTest(message=message), patch("requests.post", return_value=response):
+                with self.assertRaisesRegex(ValueError, message):
+                    build(self.index_dir, self.model, "http://embeddings.test", 2)
+                self.assert_publication_unchanged()
+                self.assertEqual(list(self.index_dir.glob("embedding-cache-*.npz")), [])

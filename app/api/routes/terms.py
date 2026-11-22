@@ -4,7 +4,7 @@ from fastapi import APIRouter, Path, Query, Request
 from fastapi.responses import FileResponse
 
 from app.api.errors import error
-from app.api.media_files import media_response
+from app.api.media_files import media_not_found, media_response
 from app.api.responses import IMAGE_TYPES, LIMITS
 from app.api.schemas.catalog import FacetsResponse, ListResponse, RecordDetail
 from app.api.schemas.common import ErrorResponse
@@ -75,11 +75,11 @@ def term_illustration(request: Request, term_number: TermNumber, v: str | None =
     """Файл обложки термина. Если обложка недоступна, возвращает 404 `illustration_not_found`."""
     item = storage.get_illustration(term_number)
     if not item:
-        return error(404, "illustration_not_found", "Иллюстрация ещё не готова")
+        return media_not_found("illustration_not_found", "Иллюстрация ещё не готова", v)
     path = local_file(storage.DATA, item["path"])
     if path is None:
-        return error(404, "illustration_not_found", "Файл иллюстрации не найден")
+        return media_not_found("illustration_not_found", "Файл иллюстрации не найден", v)
     digest = item.get("sha256")
     if v is not None and v != digest:
-        return error(404, "illustration_not_found", "Версия иллюстрации не найдена")
+        return media_not_found("illustration_not_found", "Версия иллюстрации не найдена", v)
     return media_response(request, path, digest, v, error_code="illustration_not_found")

@@ -9,7 +9,8 @@ from zipfile import ZIP_DEFLATED, ZipFile
 import faiss
 import numpy as np
 
-from app.catalog.index import read_manifest
+from app.catalog.index import ARTIFACT_HASH_FIELDS, index_writer, read_manifest
+from app.infra.files import checksum
 
 
 def cache_path(root: Path, model_sha256: str) -> Path:
@@ -36,7 +37,16 @@ def save_cache(path: Path, vectors: dict[str, np.ndarray]) -> None:
 
 
 def seed(root: Path) -> None:
+    with index_writer(root):
+        _seed(root)
+
+
+def _seed(root: Path) -> None:
     manifest = read_manifest(root)
+    # Seeding after re-chunking reuses the previous FAISS and its mapping.
+    for name in ("index.faiss", "vector-map.json"):
+        if checksum(root / name) != manifest[ARTIFACT_HASH_FIELDS[name]]:
+            raise ValueError(f"Index file checksum mismatch: {name}")
     mapping = json.loads((root / "vector-map.json").read_text())
     index = faiss.read_index(str(root / "index.faiss"))
     if index.ntotal != len(mapping):

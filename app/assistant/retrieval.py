@@ -103,10 +103,10 @@ def _page_evidence(record_id: str, locale: str) -> tuple[dict, Evidence] | None:
 
 def evidence_for(
     question: str, locale: str, *, prefer_article: bool = False,
-    context_record_id: str | None = None, trace: dict | None = None,
+    context_record_id: str | None = None, trace: dict | None = None, allow_index_load: bool = True,
 ) -> dict[str, Evidence]:
     """Keep exact passages, diversify by record and reserve space for a matching article."""
-    hits, search_mode = search_with_mode(question, locale, limit=80)
+    hits, search_mode = search_with_mode(question, locale, limit=80, allow_index_load=allow_index_load)
     if trace is not None:
         trace["search_mode"] = search_mode
         trace["vector_hits"] = sum(bool(hit.get("chunk_id")) for hit in hits)

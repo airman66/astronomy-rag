@@ -8,7 +8,7 @@ from unittest.mock import Mock, patch
 from app.catalog import index as index_files
 from app.catalog import search, storage, vector
 from app.catalog.corpus import corpus_digest
-from tests.catalog.fixtures import seed_vector_index
+from tests.catalog.fixtures import bind_vector_index, seed_vector_index
 from tests.support.catalog import make_term, temporary_dir, use_catalog, use_vector_root, write_term
 
 requires_faiss = unittest.skipUnless(importlib.util.find_spec("faiss"), "faiss-cpu is not installed")
@@ -26,7 +26,6 @@ class RankFusionTests(unittest.TestCase):
         with (
             patch.object(search.storage, "lexical_search_snapshot", return_value=([agreed], "test-corpus")),
             patch.object(vector, "search", return_value=semantic),
-            patch.object(vector, "available", return_value=True),
         ):
             results, mode = search.search_with_mode("definition", "en")
         self.assertEqual(mode, "hybrid")
@@ -44,10 +43,7 @@ class CorpusSnapshotTests(unittest.TestCase):
         write_term(root, make_term(2, "Moon", "Луна", "Satellite.", "Спутник."))
         replacement = root / "replacement.db"
         storage.build_database(root, replacement)
-        manifest_path = root / "index/index-manifest.json"
-        manifest = json.loads(manifest_path.read_text())
-        manifest["corpus_sha256"] = corpus_digest(root)
-        manifest_path.write_text(json.dumps(manifest))
+        bind_vector_index(root, corpus_digest(root))
         original_load = vector.load
         response = Mock()
         response.json.return_value = {"data": [{"embedding": [0.0, 1.0]}]}
@@ -77,9 +73,8 @@ class CorpusSnapshotTests(unittest.TestCase):
         write_term(root, make_term(2, "Moon", "Луна", "Satellite.", "Спутник."))
         storage.ensure_database()
         manifest_path = root / "index/index-manifest.json"
+        bind_vector_index(root, corpus_digest(root))
         manifest = json.loads(manifest_path.read_text())
-        manifest["corpus_sha256"] = corpus_digest(root)
-        manifest_path.write_text(json.dumps(manifest))
         vector.load()
 
         manifest["query_instruction"] = "Updated query instruction."
@@ -92,8 +87,7 @@ class CorpusSnapshotTests(unittest.TestCase):
         with patch("requests.post", side_effect=[old, new]) as post:
             hits, mode = search.paged_search("объект", "ru", 200)
             self.assertEqual((hits[0]["record_id"], mode), ("term:1", "hybrid"))
-            with patch.object(vector, "_checked_at", vector.time.monotonic() - 31):
-                vector.load()
+            vector.load()
 
             for _ in range(2):
                 hits, mode = search.paged_search("объект", "ru", 200)
@@ -116,6 +110,7 @@ class VectorContractTests(unittest.TestCase):
             patch("requests.post", return_value=response) as post,
         ):
             result = vector.search("Что такое Солнце?", "ru", 2)
+        assert result is not None
         self.assertEqual(result[0]["record_id"], "term:1")
         self.assertEqual(
             post.call_args.kwargs["json"]["input"],
@@ -126,6 +121,40 @@ class VectorContractTests(unittest.TestCase):
         (self.root / "models/small.gguf").write_bytes(b"changed")
         with self.assertRaisesRegex(ValueError, "model checksum"):
             vector.load()
+
+    def test_failed_generation_is_retried_when_index_file_is_repaired(self):
+        path = self.root / "index/vector-map.json"
+        intact = path.read_bytes()
+        path.write_bytes(b"[]")
+        with self.assertRaisesRegex(ValueError, "checksum mismatch"):
+            vector.load()
+        path.write_bytes(intact)
+        self.assertIsNotNone(vector.load())
+
+    def test_model_arrival_invalidates_cached_missing_file_failure(self):
+        path = self.root / "models/small.gguf"
+        content = path.read_bytes()
+        path.unlink()
+        with self.assertRaises(FileNotFoundError):
+            vector.load()
+        path.write_bytes(content)
+        self.assertIsNotNone(vector.load())
+
+    def test_file_replaced_during_load_is_not_admitted(self):
+        path = self.root / "index/vector-map.json"
+        original_read = index_files.read_chunks
+
+        def replace_mapping(chunks):
+            replacement = path.with_suffix(".tmp")
+            replacement.write_bytes(path.read_bytes())
+            replacement.replace(path)
+            return original_read(chunks)
+
+        with patch.object(index_files, "read_chunks", side_effect=replace_mapping):
+            with self.assertRaisesRegex(ValueError, "artifacts changed during loading"):
+                vector.load()
+        self.assertIsNone(vector.loaded_generation())
+        self.assertIsNotNone(vector.load())
 
 
 @requires_faiss
@@ -207,5 +236,6 @@ class VectorLocaleCoverageTests(unittest.TestCase):
             patch("requests.post", return_value=response),
         ):
             hits = vector.search("звезда", "ru", limit=1)
+        assert hits is not None
         self.assertEqual(index.pools, [50, 52])
         self.assertEqual(hits[0]["record_id"], "term:51")

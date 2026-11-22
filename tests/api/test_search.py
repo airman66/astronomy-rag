@@ -60,7 +60,6 @@ class SearchFallbackTests(ApiCase):
                 "astronomy_search_hybrid_total": 0,
                 "astronomy_search_cache_hits_total": 0,
             }),
-            patch.object(vector, "available", return_value=True),
             patch.object(vector, "search", return_value=[]) as embed,
         ):
             self.client.get("/api/v1/search", params={"q": "black hole", "locale": "en", "page": 1})

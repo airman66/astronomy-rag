@@ -86,11 +86,16 @@ class _SnapshotCache:
 _snapshots = _SnapshotCache()
 
 
+def media_not_found(code: str, message: str, version: str | None) -> Response:
+    headers = {"Cache-Control": "no-store"} if version is not None else None
+    return error(404, code, message, headers=headers)
+
+
 def _file_response(
     request: Request, path: Path, digest: str | None, version: str | None, error_code: str,
 ) -> Response:
     if version is not None and version != digest:
-        return error(404, error_code, "Версия файла не найдена")
+        return media_not_found(error_code, "Версия файла не найдена", version)
     cache = "public, max-age=31536000, immutable" if version else "public, max-age=0, must-revalidate"
     headers = {"Cache-Control": cache}
     if digest:
@@ -127,7 +132,7 @@ class _MutableMediaResponse(Response):
             try:
                 digest = await run_in_threadpool(_snapshots.link, self.path, snapshot)
             except FileNotFoundError:
-                response = error(404, self.error_code, "Файл не найден")
+                response = media_not_found(self.error_code, "Файл не найден", self.version)
             else:
                 response = _file_response(self.request, snapshot, digest, self.version, self.error_code)
             # Keep the snapshot alive until FileResponse has sent the body itself.

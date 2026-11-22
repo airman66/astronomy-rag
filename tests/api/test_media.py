@@ -78,6 +78,7 @@ class SourceMediaTests(ApiCase):
         headers = {"If-None-Match": f'"{digest}"'}
         response = self.client.get(url, params={"v": digest}, headers=headers)
         self.assertEqual(response.status_code, 404)
+        self.assertEqual(response.headers["Cache-Control"], "no-store")
         self.assertEqual(response.json()["code"], "media_file_not_found")
         response = self.client.get(url, headers=headers)
         self.assertEqual(response.status_code, 200)

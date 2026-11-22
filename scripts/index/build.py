@@ -13,11 +13,13 @@ import numpy as np
 import requests
 
 from app.catalog.index import (
+    CHUNK_MANIFEST_NAME,
     MANIFEST_NAME,
     MODEL,
     MODEL_FILE,
     MODEL_REVISION,
     QUERY_INSTRUCTION,
+    index_writer,
     model_checksum,
     read_chunks,
 )
@@ -36,9 +38,30 @@ def main() -> None:
 
 
 def build(root: Path, model_file: Path, embedding_url: str, batch_size: int) -> None:
+    if batch_size < 1:
+        raise ValueError("Embedding batch size must be positive")
+    with index_writer(root):
+        _build(root, model_file, embedding_url, batch_size)
+
+
+def _embedding_matrix(vectors: list) -> np.ndarray:
+    matrix = np.asarray(vectors, dtype="float32")
+    if matrix.ndim != 2 or not matrix.size:
+        raise ValueError("Expected a matrix of embedding vectors")
+    norms = np.linalg.norm(matrix, axis=1)
+    if not np.isfinite(norms).all() or np.any(norms <= 0):
+        raise ValueError("Embedding vectors must have finite, nonzero norms")
+    return matrix
+
+
+def _build(root: Path, model_file: Path, embedding_url: str, batch_size: int) -> None:
     chunks_file = root / "chunks.jsonl"
+    config_file = root / CHUNK_MANIFEST_NAME
+    config_bytes = config_file.read_bytes()
+    source = json.loads(config_bytes)
+    if not source.get("corpus_sha256"):
+        raise ValueError("Missing corpus provenance; rebuild chunks first")
     chunks = read_chunks(chunks_file)
-    source = json.loads((root / "chunk-manifest.json").read_text())
     if checksum(chunks_file) != source["chunks_sha256"] or len(chunks) != source["chunk_count"]:
         raise ValueError("Chunk manifest does not match chunks.jsonl")
     if not chunks:
@@ -63,16 +86,19 @@ def build(root: Path, model_file: Path, embedding_url: str, batch_size: int) -> 
         )
         response.raise_for_status()
         encoded = sorted(response.json()["data"], key=lambda item: item["index"])
-        if len(encoded) != len(batch):
-            raise ValueError("Embedding server returned an unexpected vector count")
-        vectors = [item["embedding"] for item in encoded]
+        if [item["index"] for item in encoded] != list(range(len(batch))):
+            raise ValueError("Embedding server returned unexpected vector indices")
+        vectors = _embedding_matrix([item["embedding"] for item in encoded])
+        previous = next(iter(cache.values()), None)
+        if previous is not None and previous.shape != vectors.shape[1:]:
+            raise ValueError("Embedding server returned a different vector dimension")
         for row, vector in zip(batch, vectors):
-            cache[row["content_hash"]] = np.asarray(vector, dtype="float32")
+            cache[row["content_hash"]] = vector
         if start + len(batch) - checkpoint >= 128:
             save_cache(cache_file, cache)
             checkpoint = start + len(batch)
         print(f"embedded {min(start + len(batch), len(missing))}/{len(missing)}", flush=True)
-    matrix = np.stack([cache[key] for key in keys]).astype("float32")
+    matrix = _embedding_matrix([cache[key] for key in keys])
     faiss.normalize_L2(matrix)
     index = faiss.IndexFlatIP(matrix.shape[1])
     index.add(matrix)
@@ -87,30 +113,32 @@ def build(root: Path, model_file: Path, embedding_url: str, batch_size: int) -> 
         faiss.write_index(index, str(index_temp))
         write_json(map_temp, mapping)
         save_cache(cache_file, {key: cache[key] for key in set(keys)})
-        index_temp.replace(root / index_temp.name)
-        map_temp.replace(root / map_temp.name)
-    manifest = {
-        "schema_version": 1,
-        "built_at": datetime.now(timezone.utc).isoformat(),
-        "model": MODEL,
-        "model_revision": MODEL_REVISION,
-        "model_file": MODEL_FILE,
-        "model_sha256": model_sha,
-        "quantization": "Q4_K_M",
-        "pooling": "last",
-        "query_instruction": QUERY_INSTRUCTION,
-        "dimension": int(matrix.shape[1]),
-        "chunk_count": len(chunks),
-        "chunk_config": source,
-        "corpus_sha256": source["corpus_sha256"],
-        "chunks_sha256": checksum(chunks_file),
-        "index_sha256": checksum(root / "index.faiss"),
-        "vector_map_sha256": checksum(root / "vector-map.json"),
-        "embedding_cache_sha256": checksum(cache_file),
-        "normalization": "L2",
-        "metric": "inner_product",
-    }
-    write_json(root / MANIFEST_NAME, manifest)
+        manifest = {
+            "schema_version": 1,
+            "built_at": datetime.now(timezone.utc).isoformat(),
+            "model": MODEL,
+            "model_revision": MODEL_REVISION,
+            "model_file": MODEL_FILE,
+            "model_sha256": model_sha,
+            "quantization": "Q4_K_M",
+            "pooling": "last",
+            "query_instruction": QUERY_INSTRUCTION,
+            "dimension": int(matrix.shape[1]),
+            "chunk_count": len(chunks),
+            "chunk_config": source,
+            "corpus_sha256": source["corpus_sha256"],
+            "chunks_sha256": source["chunks_sha256"],
+            "index_sha256": checksum(index_temp),
+            "vector_map_sha256": checksum(map_temp),
+            "embedding_cache_sha256": checksum(cache_file),
+            "normalization": "L2",
+            "metric": "inner_product",
+        }
+        write_json(staging / MANIFEST_NAME, manifest)
+        if config_file.read_bytes() != config_bytes or checksum(chunks_file) != source["chunks_sha256"]:
+            raise ValueError("Chunks changed during index build")
+        for name in (index_temp.name, map_temp.name, MANIFEST_NAME):
+            (staging / name).replace(root / name)
     print(
         json.dumps(
             {"chunks": len(chunks), "dimension": int(matrix.shape[1]), "model_revision": MODEL_REVISION}

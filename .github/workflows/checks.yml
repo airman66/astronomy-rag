@@ -33,15 +33,15 @@ jobs:
           .venv/bin/python -m scripts.index.verify data/index --require-current-chunking
           .venv/bin/python -m app.audit --reviews
           .venv/bin/python -m scripts.media.check_paths --strict --verify-hashes --report /tmp/media-coverage.json
+          .venv/bin/python -m scripts.catalog_release publish data/releases
       - name: Start Docker on a clean checkout
         run: docker compose up --build -d --wait --wait-timeout 90
       - name: Verify atomic Redis rate limiting against live Redis
         run: docker compose exec -T glossary-rag python -m scripts.smoke_redis
       - name: Check HTTP endpoints, WebP, and Redis rate limiting
         run: |
-          docker compose run -d --no-deps --name astronomy-rag-smoke-peer -p 127.0.0.1:8002:8000 -e CATALOG_DB_PATH=/tmp/glossary.db glossary-rag
-          # The peer prepares its own SQLite/FTS5 catalogue before serving.
-          # The original 15-second retry budget was borderline on GitHub runners.
+          docker compose run -d --no-deps --name astronomy-rag-smoke-peer -p 127.0.0.1:8002:8000 -e DATA_RELEASE=/app/data/releases/current glossary-rag
+          # The peer verifies the published SQLite, FAISS and media before serving.
           peer_start=$SECONDS
           peer_ready=false
           while (( SECONDS - peer_start < 120 )); do
@@ -54,7 +54,7 @@ jobs:
               docker logs --tail 150 astronomy-rag-smoke-peer || true
               exit 1
             fi
-            if curl -fsS --max-time 2 http://127.0.0.1:8002/health >/dev/null 2>&1; then
+            if curl -fsS --max-time 2 http://127.0.0.1:8002/ready >/dev/null 2>&1; then
               peer_ready=true
               break
             fi

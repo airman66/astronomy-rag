@@ -34,6 +34,9 @@ def run(base, peer, expected_mode):
         assert readiness["semantic"] == "ready"
     assert b"astronomy_search_lexical_total" in request(base, "/metrics")[2]
     assert get_json(base, "/api/v1/terms")["total"] == 501
+    if peer != base:
+        assert get_json(peer, "/ready")["catalogue"] == "ready"
+        assert get_json(peer, "/api/v1/terms")["total"] == 501
     article = get_json(base, "/api/v1/articles/article:exoplanet-detection")
     assert {"ru", "en"} == set(article["locales"])
     assert {"transit", "radial-velocity"} <= {section["id"] for section in article["sections"]}

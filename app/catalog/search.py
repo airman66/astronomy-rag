@@ -18,7 +18,9 @@ log = logging.getLogger("glossary.search")
 _last_semantic_error = float("-inf")
 
 
-def search_with_mode(query: str, locale: str, limit: int = 20) -> tuple[list[dict], Literal["hybrid", "lexical"]]:
+def search_with_mode(
+    query: str, locale: str, limit: int = 20, *, allow_index_load: bool = True,
+) -> tuple[list[dict], Literal["hybrid", "lexical"]]:
     """Hybrid FTS + vector search; falls back to FTS alone when embeddings are unavailable."""
     global _last_semantic_error
 
@@ -28,14 +30,16 @@ def search_with_mode(query: str, locale: str, limit: int = 20) -> tuple[list[dic
         return lexical, "lexical"
 
     try:
-        semantic = vector.search(query, locale, min(limit, SEMANTIC_POOL), corpus_sha=corpus_sha)
+        semantic = vector.search(
+            query, locale, min(limit, SEMANTIC_POOL), corpus_sha=corpus_sha, allow_index_load=allow_index_load,
+        )
     except Exception as exc:  # embedding server/model/index problems must not break search
         if time.monotonic() - _last_semantic_error > 60:
             log.warning("semantic search unavailable, using lexical results: %s: %s", type(exc).__name__, exc)
             _last_semantic_error = time.monotonic()
         count("astronomy_search_lexical_total")
         return lexical, "lexical"
-    if not vector.available():
+    if semantic is None:
         count("astronomy_search_lexical_total")
         return lexical, "lexical"
     fused: dict[tuple[str, str], dict] = {}
@@ -76,7 +80,7 @@ def paged_search(query: str, locale: str, limit: int) -> tuple[list[dict], Liter
     query = " ".join(query.split())
     generation = _page_generation()
     if generation is None:
-        return search_with_mode(query, locale, limit)
+        return search_with_mode(query, locale, limit, allow_index_load=False)
     key = (query, locale, limit, generation)
     with _page_lock:
         cached = _page_cache.get(key)
@@ -85,7 +89,7 @@ def paged_search(query: str, locale: str, limit: int) -> tuple[list[dict], Liter
             count("astronomy_search_cache_hits_total")
             count("astronomy_search_hybrid_total")
             return cached[1], "hybrid"
-    rows, mode = search_with_mode(query, locale, limit)
+    rows, mode = search_with_mode(query, locale, limit, allow_index_load=False)
     if mode == "hybrid" and _page_generation() == generation:
         with _page_lock:
             _page_cache[key] = time.monotonic(), rows

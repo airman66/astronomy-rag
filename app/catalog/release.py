@@ -2,15 +2,17 @@
 
 import hashlib
 import json
+import os
 from pathlib import Path
 
+from app.catalog import storage
 from app.catalog.corpus import corpus_digest
+from app.catalog.index import ARTIFACT_HASH_FIELDS, INDEX_FILES, check_chunk_manifest, read_manifest
 from app.catalog.media import inspect_media_files, local_file, review_pdf
 from app.infra.files import checksum
 
 RELEASE_MANIFEST = "release-manifest.json"
-RELEASE_SCHEMA_VERSION = 2
-INDEX_FILES = ("chunks.jsonl", "chunk-manifest.json", "index-manifest.json", "index.faiss", "vector-map.json")
+RELEASE_SCHEMA_VERSION = 3
 
 
 def _illustrations_digest(root: Path) -> str | None:
@@ -48,24 +50,40 @@ def _review_pdf_digests(root: Path) -> dict[str, str]:
     return digests
 
 
-def release_manifest(root: Path) -> dict:
+def release_manifest(root: Path, *, schema_version: int = RELEASE_SCHEMA_VERSION) -> dict:
     root = root.resolve()
-    return {
-        "schema_version": RELEASE_SCHEMA_VERSION,
-        "corpus_sha256": corpus_digest(root),
+    digest = corpus_digest(root)
+    index = read_manifest(root / "index")
+    check_chunk_manifest(root / "index", index)
+    if index["corpus_sha256"] != digest or storage.database_corpus(root / "glossary.db") != digest:
+        raise ValueError("Release catalogue and index must match the canonical corpus")
+    index_sha = {name: checksum(root / "index" / name) for name in INDEX_FILES}
+    for name, field in ARTIFACT_HASH_FIELDS.items():
+        if index_sha[name] != index[field]:
+            raise ValueError(f"Index file checksum mismatch: {name}")
+    manifest = {
+        "schema_version": schema_version,
+        "corpus_sha256": digest,
         "illustrations_sha256": _illustrations_digest(root),
         "review_pdf_sha256": _review_pdf_digests(root),
         "catalog_sha256": checksum(root / "glossary.db"),
-        "index_sha256": {name: checksum(root / "index" / name) for name in INDEX_FILES},
+        "index_sha256": index_sha,
     }
+    if schema_version == RELEASE_SCHEMA_VERSION:
+        models = os.readlink(root / "models")
+        if Path(models).is_absolute():
+            raise ValueError("Release model link must be relative")
+        manifest["models_path"] = models
+    return manifest
 
 
 def verify_release(root: Path) -> None:
     root = root.resolve(strict=True)
     expected = json.loads((root / RELEASE_MANIFEST).read_bytes())
-    if expected.get("schema_version") != RELEASE_SCHEMA_VERSION:
+    version = expected.get("schema_version")
+    if version not in (2, RELEASE_SCHEMA_VERSION):
         raise ValueError("Unsupported data release manifest version; publish a new release")
-    actual = release_manifest(root)
+    actual = release_manifest(root, schema_version=version)
     if actual["review_pdf_sha256"] != expected.get("review_pdf_sha256"):
         raise ValueError("Published PDF checksums do not match the release manifest")
     if expected != actual:

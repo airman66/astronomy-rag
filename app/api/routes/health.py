@@ -17,11 +17,11 @@ PROBE_INTERVAL = 15.0
 
 class SemanticReadiness:
     def __init__(self) -> None:
-        self._result = (float("-inf"), False)
+        self._result: tuple[float, str | None] = (float("-inf"), None)
 
-    def ready(self) -> bool:
-        checked, ready = self._result
-        return ready and time.monotonic() - checked < 2 * PROBE_INTERVAL + vector.QUERY_TIMEOUT
+    def ready(self, corpus: str) -> bool:
+        checked, probed_corpus = self._result
+        return corpus == probed_corpus and time.monotonic() - checked < 2 * PROBE_INTERVAL + vector.QUERY_TIMEOUT
 
     @contextmanager
     def monitor(self):
@@ -34,12 +34,14 @@ class SemanticReadiness:
 
     def _check(self, stop: Event) -> None:
         while not stop.is_set():
+            ready_corpus = None
             try:
-                vector.search("What is a star?", "en", limit=1)
-                ready = vector.available()
+                corpus = storage.corpus_version()
+                if corpus and vector.search("What is a star?", "en", limit=1, corpus_sha=corpus) is not None:
+                    ready_corpus = corpus
             except Exception:  # A failed dependency probe must be reported as unavailable.
-                ready = False
-            self._result = (time.monotonic(), ready)
+                pass
+            self._result = (time.monotonic(), ready_corpus)
             stop.wait(PROBE_INTERVAL)
 
 
@@ -52,18 +54,18 @@ def health() -> HealthResponse:
 def readiness(request: Request, response: Response) -> ReadyResponse:
     required = os.getenv("REQUIRE_HYBRID") == "1"
     try:
-        catalogue = bool(storage.corpus_version())
+        corpus = storage.corpus_version()
     except (sqlite3.Error, OSError, ValueError):
-        catalogue = False
+        corpus = None
     probe: SemanticReadiness | None = getattr(request.app.state, "semantic_readiness", None)
-    semantic = bool(catalogue and probe and probe.ready())
-    if not catalogue or (required and not semantic):
+    semantic = bool(corpus and probe and probe.ready(corpus))
+    if not corpus or (required and not semantic):
         response.status_code = 503
         status = "unavailable"
     else:
         status = "ready" if semantic else "degraded"
     return ReadyResponse(
-        status=status, catalogue="ready" if catalogue else "unavailable",
+        status=status, catalogue="ready" if corpus else "unavailable",
         semantic="ready" if semantic else "unavailable", hybrid_required=required,
     )
 

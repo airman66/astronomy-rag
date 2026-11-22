@@ -10,6 +10,7 @@ __pycache__/
 *.db
 *.sqlite*
 data/index/embedding-cache-*.npz
+.index-write.lock
 data/models/
 data/media/original/
 data/raw/*.svg

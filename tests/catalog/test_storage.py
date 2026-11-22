@@ -1,4 +1,5 @@
 import json
+import os
 import sqlite3
 from contextlib import closing
 import unittest
@@ -55,6 +56,21 @@ class CatalogRebuildTests(unittest.TestCase):
         prepare_catalog()
         with patch.object(storage, "READ_ONLY", True):
             self.assertEqual(storage.get_term(1), self.term)
+
+    def test_prepare_detects_replacement_with_same_size_and_mtime(self):
+        prepare_catalog()
+        original = self.record.stat()
+        replacement = self.record.with_suffix(".tmp")
+        replacement.write_bytes(self.record.read_bytes().replace(b"Hot.", b"New."))
+        os.utime(replacement, ns=(original.st_atime_ns, original.st_mtime_ns))
+        replacement.replace(self.record)
+        self.assertEqual(self.record.stat().st_mtime_ns, original.st_mtime_ns)
+        self.assertEqual(self.record.stat().st_size, original.st_size)
+
+        prepare_catalog()
+        term = storage.get_term(1)
+        assert term is not None
+        self.assertEqual(term["locales"]["en"]["blocks"]["definition"]["body"], "New.")
 
     def test_empty_update_keeps_catalog(self):
         storage.ensure_database()

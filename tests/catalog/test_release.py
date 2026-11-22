@@ -1,16 +1,17 @@
 import json
 import os
+import shutil
 import sqlite3
 from contextlib import closing
 from pathlib import Path
 from unittest import TestCase
 
 from app.catalog.corpus import corpus_digest
-from app.catalog.release import verify_release
+from app.catalog.index import load_index
+from app.catalog.release import RELEASE_MANIFEST, release_manifest, verify_release
 from app.infra.files import checksum
-from app.pipeline.chunks import CHUNK_VERSION
 from scripts.catalog_release import publish
-from tests.catalog.fixtures import seed_vector_index
+from tests.catalog.fixtures import bind_vector_index, seed_vector_index
 from tests.support.catalog import make_term, temporary_dir, write_term
 
 
@@ -23,17 +24,7 @@ class ReleaseTests(TestCase):
         self.bind_index_to_corpus()
 
     def bind_index_to_corpus(self):
-        index_file = self.source / "index" / "index-manifest.json"
-        index = json.loads(index_file.read_text())
-        chunk = {
-            "chunk_version": CHUNK_VERSION,
-            "chunk_count": index["chunk_count"],
-            "chunks_sha256": index["chunks_sha256"],
-            "corpus_sha256": corpus_digest(self.source),
-        }
-        (index_file.parent / "chunk-manifest.json").write_text(json.dumps(chunk))
-        index.update(corpus_sha256=chunk["corpus_sha256"], chunk_config=chunk)
-        index_file.write_text(json.dumps(index))
+        bind_vector_index(self.source, corpus_digest(self.source))
 
     def test_changed_corpus_does_not_replace_a_valid_release(self):
         first = publish(self.source, self.target)
@@ -61,6 +52,54 @@ class ReleaseTests(TestCase):
         self.assertEqual(second, first)
         self.assertEqual((self.target / "current").resolve(), first)
         verify_release(second)
+
+    def test_changed_model_location_gets_a_separate_release(self):
+        first = publish(self.source, self.target)
+        second_source = temporary_dir(self).resolve()
+        shutil.copytree(self.source, second_source, dirs_exist_ok=True, ignore=shutil.ignore_patterns("releases"))
+        (self.source / "models" / "small.gguf").unlink()
+
+        second = publish(second_source, self.target)
+        self.assertNotEqual(first, second)
+        self.assertEqual((first / "models").resolve(), self.source / "models")
+        self.assertEqual((second / "models").resolve(), second_source / "models")
+        self.assertEqual((self.target / "current").resolve(), second)
+        load_index(second / "index", second / "models")
+        (second / "models").unlink()
+        (second / "models").symlink_to("../../models")
+        with self.assertRaisesRegex(ValueError, "does not match its manifest"):
+            verify_release(second)
+
+    def test_schema_two_releases_remain_readable(self):
+        release = publish(self.source, self.target)
+        manifest = release_manifest(release, schema_version=2)
+        (release / RELEASE_MANIFEST).write_text(json.dumps(manifest))
+        verify_release(release)
+
+    def test_contradictory_chunk_provenance_preserves_current(self):
+        first = publish(self.source, self.target)
+        write_term(self.source, make_term(1, "Sun", "Солнце", "Changed.", "Изменено."))
+        path = self.source / "index" / "index-manifest.json"
+        manifest = json.loads(path.read_text())
+        manifest["corpus_sha256"] = corpus_digest(self.source)
+        path.write_text(json.dumps(manifest))
+
+        with self.assertRaisesRegex(ValueError, "Chunk manifest does not match index manifest"):
+            publish(self.source, self.target)
+        self.assertEqual((self.target / "current").resolve(), first)
+
+    def test_release_verifies_corpus_inside_sqlite_even_with_updated_file_hash(self):
+        release = publish(self.source, self.target)
+        database = release / "glossary.db"
+        with closing(sqlite3.connect(database)) as db:
+            db.execute("UPDATE meta SET value = 'different corpus' WHERE key = 'corpus_sha256'")
+            db.commit()
+        path = release / RELEASE_MANIFEST
+        manifest = json.loads(path.read_text())
+        manifest["catalog_sha256"] = checksum(database)
+        path.write_text(json.dumps(manifest))
+        with self.assertRaisesRegex(ValueError, "must match the canonical corpus"):
+            verify_release(release)
 
     def seed_cover(self) -> Path:
         relative_path = Path("media/illustrations/1.webp")
