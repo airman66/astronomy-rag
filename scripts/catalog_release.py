@@ -58,7 +58,7 @@ def publish(source: Path, releases: Path) -> Path:
                 if not release.is_dir():
                     raise
         if stage.exists():  # The version already existed and may have changed since it was built.
-            verify_release(release)
+            verify_release(release, expected_id=release.name)
         link = releases / f".current-{uuid.uuid4().hex}"
         try:
             link.symlink_to(release.name, target_is_directory=True)

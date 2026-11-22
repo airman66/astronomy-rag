@@ -46,7 +46,7 @@ class CorpusSnapshotTests(unittest.TestCase):
         bind_vector_index(root, corpus_digest(root))
         original_load = vector.load
         response = Mock()
-        response.json.return_value = {"data": [{"embedding": [0.0, 1.0]}]}
+        response.json.return_value = {"model": index_files.MODEL, "data": [{"embedding": [0.0, 1.0]}]}
 
         def load_after_replacement():
             replacement.replace(storage.DB)
@@ -80,9 +80,9 @@ class CorpusSnapshotTests(unittest.TestCase):
         manifest["query_instruction"] = "Updated query instruction."
         manifest_path.write_text(json.dumps(manifest))
         old = Mock()
-        old.json.return_value = {"data": [{"embedding": [1.0, 0.0]}]}
+        old.json.return_value = {"model": index_files.MODEL, "data": [{"embedding": [1.0, 0.0]}]}
         new = Mock()
-        new.json.return_value = {"data": [{"embedding": [0.0, 1.0]}]}
+        new.json.return_value = {"model": index_files.MODEL, "data": [{"embedding": [0.0, 1.0]}]}
 
         with patch("requests.post", side_effect=[old, new]) as post:
             hits, mode = search.paged_search("объект", "ru", 200)
@@ -104,7 +104,7 @@ class VectorContractTests(unittest.TestCase):
 
     def test_query_prompt_and_index_agree(self):
         response = Mock()
-        response.json.return_value = {"data": [{"embedding": [1.0, 0.0]}]}
+        response.json.return_value = {"model": "/models/small.gguf", "data": [{"embedding": [1.0, 0.0]}]}
         with (
             patch.object(vector.storage, "corpus_version", return_value="test-corpus"),
             patch("requests.post", return_value=response) as post,
@@ -228,8 +228,11 @@ class VectorLocaleCoverageTests(unittest.TestCase):
             for i in range(index.ntotal)
         }
         response = Mock()
-        response.json.return_value = {"data": [{"embedding": [1.0, 0.0]}]}
-        manifest = {"query_instruction": "Find astronomy definitions.", "model": "test", "corpus_sha256": "test-corpus"}
+        response.json.return_value = {"model": "test", "data": [{"embedding": [1.0, 0.0]}]}
+        manifest = {
+            "query_instruction": "Find astronomy definitions.", "model": "test",
+            "model_file": "small.gguf", "corpus_sha256": "test-corpus",
+        }
         with (
             patch.object(vector, "load", return_value=(index, mapping, chunks, manifest)),
             patch.object(vector.storage, "corpus_version", return_value="test-corpus"),

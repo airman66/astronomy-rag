@@ -14,7 +14,7 @@ from threading import Lock
 from typing import NamedTuple
 
 from app.catalog import storage
-from app.catalog.index import MANIFEST_NAME, artifact_generation, file_generation, load_index, model_path, read_manifest
+from app.catalog.index import MANIFEST_NAME, artifact_generation, embedding_data, file_generation, load_index, model_path, read_manifest
 from app.infra.config import data_directory
 from app.infra.metrics import count
 
@@ -118,7 +118,8 @@ def search(
             url, json={"input": prompt, "model": manifest["model"], "encoding_format": "float"}, timeout=timeout,
         )
         response.raise_for_status()
-        embedding = np.asarray(response.json()["data"][0]["embedding"], dtype="float32")
+        rows = embedding_data(response.json(), manifest["model"], manifest["model_file"])
+        embedding = np.asarray(rows[0]["embedding"], dtype="float32")
         if embedding.shape != (index.d,) or not np.isfinite(embedding).all():
             raise ValueError("Invalid query embedding for vector index")
         norm = float(np.linalg.norm(embedding))

@@ -3,6 +3,7 @@
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 
 from app.catalog import storage
@@ -77,9 +78,10 @@ def release_manifest(root: Path, *, schema_version: int = RELEASE_SCHEMA_VERSION
     return manifest
 
 
-def verify_release(root: Path) -> None:
+def verify_release(root: Path, *, expected_id: str | None = None) -> None:
     root = root.resolve(strict=True)
-    expected = json.loads((root / RELEASE_MANIFEST).read_bytes())
+    content = (root / RELEASE_MANIFEST).read_bytes()
+    expected = json.loads(content)
     version = expected.get("schema_version")
     if version not in (2, RELEASE_SCHEMA_VERSION):
         raise ValueError("Unsupported data release manifest version; publish a new release")
@@ -88,6 +90,10 @@ def verify_release(root: Path) -> None:
         raise ValueError("Published PDF checksums do not match the release manifest")
     if expected != actual:
         raise ValueError("Published data release does not match its manifest")
+    if expected_id is None and re.fullmatch(r"[0-9a-f]{64}", root.name):
+        expected_id = root.name
+    if expected_id is not None and hashlib.sha256(content).hexdigest() != expected_id:
+        raise ValueError("Published manifest does not match its release ID")
     verify_media_files(root)
 
 

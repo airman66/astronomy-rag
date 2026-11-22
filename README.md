@@ -19,7 +19,7 @@ docker compose --profile embeddings up --build -d
 На macOS можно вместо контейнера запустить `llama-server` с Metal и задать `EMBEDDING_URL=http://host.docker.internal:8082/v1/embeddings`:
 
 ```sh
-llama-server -m data/models/Qwen3-Embedding-8B-Q4_K_M.gguf --embedding --pooling last -ngl 99 -c 4096 --host 0.0.0.0 --port 8082
+llama-server -m data/models/Qwen3-Embedding-8B-Q4_K_M.gguf --alias Qwen/Qwen3-Embedding-8B-GGUF --embedding --pooling last -ngl 99 -c 4096 --host 0.0.0.0 --port 8082
 ```
 
 Чтобы настроить ассистента, скопируйте `.env.example` в `.env` и заполните `DEEPSEEK_API_KEY`. Там же описаны дополнительные настройки Compose. `ASSISTANT_DEADLINE` задаётся в секундах и должен быть меньше 150 секунд, срока аренды слота Redis. В локальных командах `DATA_DIR` может указывать на отдельный каталог данных.
@@ -83,7 +83,7 @@ python -m scripts.seed_embedding_cache data/index
 
 `python3 -m app.importer --refresh` сохраняет новые версии API и HTML рядом со старыми снимками и повторно проверяет исходные медиа. При изменении изображения прежняя русская версия снимается с выдачи до повторной локализации. `--refresh --ids 1 2` обновляет только указанные термины, но проверяет медиа всех записей.
 
-`data/index/` создан на временном GPU Pod Runpod. Скрипт `scripts/build_index.py` получает `chunks.jsonl` и `chunk-manifest.json`, один и тот же GGUF Qwen3-Embedding-8B и URL `llama-server --embedding --pooling last`. Команда:
+`data/index/` создан на временном GPU Pod Runpod. Скрипт `scripts/build_index.py` получает `chunks.jsonl` и `chunk-manifest.json`, один и тот же GGUF Qwen3-Embedding-8B и URL `llama-server --embedding --pooling last --alias Qwen/Qwen3-Embedding-8B-GGUF`. Команда:
 
 ```sh
 python -m scripts.build_index data/index --model-file data/models/Qwen3-Embedding-8B-Q4_K_M.gguf --embedding-url http://127.0.0.1:8080/v1/embeddings

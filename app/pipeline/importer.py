@@ -16,6 +16,7 @@ from urllib.parse import urlparse
 import requests
 from bs4 import BeautifulSoup
 
+from app.catalog.media import local_file
 from app.infra.config import data_directory
 from app.infra.files import write_bytes, write_json
 from app.pipeline.records import (
@@ -204,22 +205,23 @@ def download_media(workers: int = 8, refresh: bool = False, preferred_ids: set[i
         if item.get("file_type") not in (None, "img") and not matches:
             return identifier, False, None, False
         extension = "." + matches[-1].lower() if matches else ".bin"
-        base_path = DATA / "media" / "original" / f"{identifier.replace(':', '_')}{extension}"
-        recorded_path = Path(item["original_path"]) if item.get("original_path") else None
+        root = DATA.resolve()
+        base_path = root / "media" / "original" / f"{identifier.replace(':', '_')}{extension}"
         # The recorded checksum is authoritative: a restored file must match it, otherwise the
         # source changed since import and the file is reported instead of silently accepted.
         expected = item.get("sha256")
         try:
-            if recorded_path and recorded_path.exists() and expected and digest(recorded_path.read_bytes()) != expected:
+            recorded_path = local_file(DATA, item.get("original_path"))
+            if recorded_path and expected and digest(recorded_path.read_bytes()) != expected:
                 return identifier, False, f"local file differs from recorded checksum {expected[:12]}", False
-            if recorded_path and recorded_path.exists() and not refresh:
+            if recorded_path and not refresh:
                 item["size"] = recorded_path.stat().st_size
                 return identifier, False, None, False
             content = fetch(url, binary=True)
             actual = digest(content)
             if expected and actual != expected and not refresh:
                 return identifier, False, f"checksum mismatch: source changed since import (recorded {expected[:12]}, downloaded {actual[:12]}); file not stored", False
-            if recorded_path and recorded_path.exists() and digest(recorded_path.read_bytes()) == actual:
+            if recorded_path and digest(recorded_path.read_bytes()) == actual:
                 path = recorded_path
             elif base_path.exists() and digest(base_path.read_bytes()) == actual:
                 path = base_path
@@ -227,7 +229,8 @@ def download_media(workers: int = 8, refresh: bool = False, preferred_ids: set[i
                 path = base_path if not base_path.exists() else base_path.with_name(f"{base_path.stem}.{actual}{extension}")
                 write_immutable(path, content)
             content_changed = bool(expected and actual != expected)
-            item["original_path"] = path.as_posix()
+            if path != recorded_path:
+                item["original_path"] = path.relative_to(root).as_posix()
             item["sha256"] = actual
             item["size"] = path.stat().st_size
             if content_changed:

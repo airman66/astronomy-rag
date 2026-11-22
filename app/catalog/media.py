@@ -25,7 +25,14 @@ def local_file(data_root: Path, filename: str | None) -> Path | None:
     else:
         path = root / stored
     path = path.resolve()
-    return path if path.is_relative_to(root) and path.is_file() else None
+    if path.is_relative_to(root) and path.is_file():
+        return path
+    # Older imports sometimes recorded the path with the original DATA_DIR prefix.
+    if ".." not in stored.parts and stored.parts[-3:-1] in (("media", "original"), ("media", "ru")):
+        relocated = root.joinpath(*stored.parts[-3:]).resolve()
+        if relocated.is_relative_to(root) and relocated.is_file():
+            return relocated
+    return None
 
 
 def review_pdf(root: Path, record: dict, locale: str) -> Path | None:

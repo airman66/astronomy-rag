@@ -7,14 +7,41 @@ from unittest.mock import Mock, patch
 
 from fastapi.testclient import TestClient
 
+from app.api.routes.health import SemanticReadiness
 from app.catalog import storage, vector
 from app.catalog.corpus import corpus_digest
+from app.catalog.index import MODEL
 from tests.catalog.fixtures import bind_vector_index, seed_vector_index
 from tests.support.api import ANSWER_PATH, ApiCase
 from tests.support.catalog import seed_star
 
 
 class ReadinessTests(ApiCase):
+    def test_wrong_embedding_model_fails_readiness_and_search_falls_back(self):
+        seed_star(self.root)
+        seed_vector_index(self.root)
+        bind_vector_index(self.root, corpus_digest(self.root))
+        probe = SemanticReadiness()
+        self.app.state.semantic_readiness = probe
+
+        for identity in ("other-model", None):
+            stop = Mock(spec=Event)
+            stop.is_set.side_effect = (False, True)
+            embedding = Mock()
+            payload: dict[str, object] = {"data": [{"embedding": [1.0, 0.0]}]}
+            if identity is not None:
+                payload["model"] = identity
+            embedding.json.return_value = payload
+            with (
+                self.subTest(model=identity),
+                patch("requests.post", return_value=embedding),
+                patch.dict(os.environ, {"REQUIRE_HYBRID": "1"}),
+            ):
+                probe._check(stop)
+                self.assertEqual(self.client.get("/ready").status_code, 503)
+                response = self.client.get("/api/v1/search", params={"q": "звезда"})
+                self.assertEqual(response.json()["mode"], "lexical")
+
     def test_catalogue_with_metadata_but_without_fts_is_unavailable(self):
         seed_star(self.root)
         self.assertEqual(self.client.get("/ready").status_code, 200)
@@ -87,7 +114,7 @@ class ReadinessTests(ApiCase):
             return original(*args)
 
         embedding = Mock()
-        embedding.json.return_value = {"data": [{"embedding": [1.0, 0.0]}]}
+        embedding.json.return_value = {"model": MODEL, "data": [{"embedding": [1.0, 0.0]}]}
         with (
             patch.object(vector, "load_index", side_effect=slow_load),
             patch("requests.post", return_value=embedding),

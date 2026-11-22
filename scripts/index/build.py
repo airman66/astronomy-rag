@@ -19,6 +19,7 @@ from app.catalog.index import (
     MODEL_FILE,
     MODEL_REVISION,
     QUERY_INSTRUCTION,
+    embedding_data,
     index_writer,
     model_checksum,
     read_chunks,
@@ -85,7 +86,8 @@ def _build(root: Path, model_file: Path, embedding_url: str, batch_size: int) ->
             timeout=180,
         )
         response.raise_for_status()
-        encoded = sorted(response.json()["data"], key=lambda item: item["index"])
+        rows = embedding_data(response.json(), MODEL, model_file.name)
+        encoded = sorted(rows, key=lambda item: item["index"])
         if [item["index"] for item in encoded] != list(range(len(batch))):
             raise ValueError("Embedding server returned unexpected vector indices")
         vectors = _embedding_matrix([item["embedding"] for item in encoded])

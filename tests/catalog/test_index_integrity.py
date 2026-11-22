@@ -5,7 +5,7 @@ import json
 import unittest
 from unittest.mock import Mock, patch
 
-from app.catalog.index import read_chunks
+from app.catalog.index import MODEL, read_chunks
 from app.infra.files import checksum
 from scripts.index.build import build
 from scripts.index.cache import seed
@@ -99,7 +99,7 @@ class IndexBuildTests(unittest.TestCase):
 
     def test_chunk_replacement_during_embedding_preserves_previous_index(self):
         response = Mock()
-        response.json.return_value = {"data": [
+        response.json.return_value = {"model": MODEL, "data": [
             {"index": 0, "embedding": [1.0, 1.0]}, {"index": 1, "embedding": [1.0, 0.0]},
         ]}
 
@@ -115,12 +115,13 @@ class IndexBuildTests(unittest.TestCase):
         self.assert_publication_unchanged()
 
     def test_bad_embedding_batches_do_not_write_artifacts_or_pollute_cache(self):
-        for first, index, message in (
-            ([1.0, 1.0], 0, "unexpected vector indices"),
-            ([0.0, 0.0], 1, "finite, nonzero norms"),
+        for model, first, index, message in (
+            (MODEL, [1.0, 1.0], 0, "unexpected vector indices"),
+            (MODEL, [0.0, 0.0], 1, "finite, nonzero norms"),
+            ("different-model", [1.0, 1.0], 1, "different or missing model ID"),
         ):
             response = Mock()
-            response.json.return_value = {"data": [
+            response.json.return_value = {"model": model, "data": [
                 {"index": 0, "embedding": first}, {"index": index, "embedding": [1.0, 0.0]},
             ]}
             with self.subTest(message=message), patch("requests.post", return_value=response):

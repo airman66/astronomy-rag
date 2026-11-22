@@ -127,6 +127,15 @@ def model_path(models: Path, manifest: dict) -> Path:
     return models / filename
 
 
+def embedding_data(payload: object, model: str, filename: str) -> list[dict]:
+    if not isinstance(payload, dict):
+        raise ValueError("Invalid embedding server response")
+    reported = payload.get("model")
+    if not isinstance(reported, str) or (reported != model and Path(reported).name != filename):
+        raise ValueError("Embedding server returned a different or missing model ID")
+    return payload["data"]
+
+
 def load_index(root: Path, models: Path):
     index, mapping, chunks, manifest, _ = load_artifacts(root)
     if model_checksum(model_path(models, manifest)) != manifest["model_sha256"]:
