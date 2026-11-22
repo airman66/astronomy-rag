@@ -15,9 +15,10 @@ import numpy as np
 
 from app.catalog.index import MODEL, read_chunks, read_manifest
 from app.infra.files import checksum
+from app.pipeline.chunks import CHUNK_VERSION
 
 
-def verify_index(root: Path) -> dict[str, int]:
+def verify_index(root: Path, *, require_current_chunking: bool = False) -> dict[str, int]:
     manifest = read_manifest(root)
     if manifest.get("model") != MODEL or manifest.get("pooling") != "last":
         raise ValueError("Unexpected embedding model or pooling in index manifest")
@@ -30,11 +31,19 @@ def verify_index(root: Path) -> dict[str, int]:
     ):
         if checksum(root / filename) != manifest[field]:
             raise ValueError(f"Index file checksum mismatch: {filename}")
-    if (root / "chunk-manifest.json").exists():
-        chunk_manifest = json.loads((root / "chunk-manifest.json").read_text())
+    chunk_manifest_path = root / "chunk-manifest.json"
+    if chunk_manifest_path.exists():
+        chunk_manifest = json.loads(chunk_manifest_path.read_text())
         if (chunk_manifest["chunks_sha256"] != manifest["chunks_sha256"]
                 or chunk_manifest["chunk_count"] != manifest["chunk_count"]):
             raise ValueError("Chunk manifest does not match index manifest")
+        if require_current_chunking and (
+            chunk_manifest.get("chunk_version") != CHUNK_VERSION
+            or manifest.get("chunk_config") != chunk_manifest
+        ):
+            raise ValueError(f"Rebuild the index with chunking version {CHUNK_VERSION}")
+    elif require_current_chunking:
+        raise ValueError("Missing chunk manifest")
     rows = read_chunks(root / "chunks.jsonl")
     row_by_id = {row["id"]: row for row in rows}
     mapping = json.loads((root / "vector-map.json").read_text())
@@ -45,10 +54,15 @@ def verify_index(root: Path) -> dict[str, int]:
         raise ValueError("Index dimension, count or chunk IDs mismatch")
     if index.metric_type != faiss.METRIC_INNER_PRODUCT:
         raise ValueError("FAISS index must use inner-product metric")
+    mapped_ids: set[str] = set()
     for position, item in enumerate(mapping):
-        chunk = row_by_id.get(item.get("chunk_id"))
+        chunk_id = item.get("chunk_id")
+        chunk = row_by_id.get(chunk_id)
         if chunk is None:
             raise ValueError(f"Vector {position} references an unknown chunk")
+        if chunk_id in mapped_ids:
+            raise ValueError(f"Vector {position} references a duplicate chunk ID: {chunk_id}")
+        mapped_ids.add(chunk_id)
         if "vector_id" in item and item["vector_id"] != position:
             raise ValueError(f"Vector {position} has a non-sequential ID")
         if "content_hash" in item and item["content_hash"] != chunk.get("content_hash"):
@@ -63,8 +77,9 @@ def verify_index(root: Path) -> dict[str, int]:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("index_dir", type=Path)
+    parser.add_argument("--require-current-chunking", action="store_true")
     args = parser.parse_args()
-    print(json.dumps(verify_index(args.index_dir)))
+    print(json.dumps(verify_index(args.index_dir, require_current_chunking=args.require_current_chunking)))
 
 
 if __name__ == "__main__":
