@@ -70,6 +70,36 @@ class CorpusSnapshotTests(unittest.TestCase):
             self.assertEqual(mode, "hybrid")
             self.assertEqual({hit["record_id"] for hit in hits}, {"term:2"})
 
+    def test_page_cache_drops_old_results_after_index_reload(self):
+        root = use_catalog(self)
+        seed_vector_index(root)
+        write_term(root, make_term(1, "Sun", "Солнце", "A star.", "Звезда."))
+        write_term(root, make_term(2, "Moon", "Луна", "Satellite.", "Спутник."))
+        storage.ensure_database()
+        manifest_path = root / "index/index-manifest.json"
+        manifest = json.loads(manifest_path.read_text())
+        manifest["corpus_sha256"] = corpus_digest(root)
+        manifest_path.write_text(json.dumps(manifest))
+        vector.load()
+
+        manifest["query_instruction"] = "Updated query instruction."
+        manifest_path.write_text(json.dumps(manifest))
+        old = Mock()
+        old.json.return_value = {"data": [{"embedding": [1.0, 0.0]}]}
+        new = Mock()
+        new.json.return_value = {"data": [{"embedding": [0.0, 1.0]}]}
+
+        with patch("requests.post", side_effect=[old, new]) as post:
+            hits, mode = search.paged_search("объект", "ru", 200)
+            self.assertEqual((hits[0]["record_id"], mode), ("term:1", "hybrid"))
+            with patch.object(vector, "_checked_at", vector.time.monotonic() - 31):
+                vector.load()
+
+            for _ in range(2):
+                hits, mode = search.paged_search("объект", "ru", 200)
+                self.assertEqual((hits[0]["record_id"], mode), ("term:2", "hybrid"))
+            self.assertEqual(post.call_count, 2)
+
 
 @requires_faiss
 class VectorContractTests(unittest.TestCase):

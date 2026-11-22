@@ -106,7 +106,7 @@ def _read():
         db.close()
 
 
-def ensure_database(force_check: bool = False) -> None:
+def ensure_database(force_check: bool = False, *, allow_stale: bool = True) -> None:
     """Rebuild the DB when it is missing or the canonical JSON set changed (checked every 30 s)."""
     if READ_ONLY:
         if _stored_fingerprint() is None:
@@ -124,7 +124,7 @@ def ensure_database(force_check: bool = False) -> None:
             if stored != current:
                 rebuild_database(current)
         except (OSError, ValueError, LookupError, TypeError, AttributeError, OverflowError, sqlite3.Error):
-            if stored is None:
+            if stored is None or not allow_stale:
                 raise
             log.exception("Catalog rebuild failed, serving the previous database for %s seconds", RECHECK_SECONDS)
         _checked[key] = time.monotonic()
@@ -146,14 +146,17 @@ def rebuild_database(current_fingerprint: str | None = None) -> None:
     build_database(DATA, DB, current_fingerprint)
 
 
-def build_database(root: Path, destination: Path, current_fingerprint: str | None = None) -> None:
+def build_database(
+    root: Path, destination: Path, current_fingerprint: str | None = None, *, immutable: bool = False,
+) -> None:
     destination.parent.mkdir(parents=True, exist_ok=True)
     temporary = destination.with_name(f".{destination.name}.{uuid.uuid4().hex}.building")
     try:
         initial = current_fingerprint or fingerprint(root)
         source_sha = corpus_digest(root)
+        stored_fingerprint = source_sha if immutable else initial
         with closing(sqlite3.connect(temporary)) as db:
-            _populate_database(db, initial, root, source_sha)
+            _populate_database(db, stored_fingerprint, root, source_sha)
         if fingerprint(root) != initial or corpus_digest(root) != source_sha:
             raise ValueError("Catalogue inputs changed during the build")
         temporary.replace(destination)
@@ -327,13 +330,14 @@ def list_records(kind: str, *, page: int, page_size: int, locale: str, query: st
     with _read() as db:
         rows = db.execute(
             r"""WITH records AS (
-                SELECT number AS identifier, title_en, title_ru, title_en_norm, title_ru_norm,
-                       aliases_norm, categories, review_status, payload FROM terms WHERE :is_term
+                SELECT number AS identifier, title_en_norm, title_ru_norm, aliases_norm, categories, review_status
+                FROM terms WHERE :is_term
                 UNION ALL
-                SELECT id, title_en, title_ru, title_en_norm, title_ru_norm,
-                       '', '[]', review_status, payload FROM articles WHERE NOT :is_term
+                SELECT id, title_en_norm, title_ru_norm, '', '[]', review_status
+                FROM articles WHERE NOT :is_term
             ), filtered AS (
-                SELECT *, CASE WHEN :ru THEN title_ru_norm ELSE title_en_norm END AS sort_title
+                SELECT identifier, title_en_norm, review_status,
+                       CASE WHEN :ru THEN title_ru_norm ELSE title_en_norm END AS sort_title
                 FROM records
                 WHERE (:needle = '' OR title_en_norm LIKE :needle ESCAPE '\'
                     OR title_ru_norm LIKE :needle ESCAPE '\' OR aliases_norm LIKE :needle ESCAPE '\')
@@ -341,10 +345,17 @@ def list_records(kind: str, *, page: int, page_size: int, locale: str, query: st
                   AND (:letter = '' OR sort_title LIKE :letter ESCAPE '\')
                   AND (:status = '' OR review_status=:status)
             ), page AS (
-                SELECT * FROM filtered ORDER BY sort_title, title_en_norm LIMIT :limit OFFSET :offset
+                SELECT * FROM filtered ORDER BY sort_title, title_en_norm, identifier LIMIT :limit OFFSET :offset
             )
-            SELECT total, page.* FROM (SELECT COUNT(*) AS total FROM filtered)
-            LEFT JOIN page ON 1 ORDER BY sort_title, title_en_norm""",
+            SELECT total, page.identifier, page.review_status,
+                   COALESCE(terms.title_en, articles.title_en) AS title_en,
+                   COALESCE(terms.title_ru, articles.title_ru) AS title_ru,
+                   COALESCE(terms.payload, articles.payload) AS payload
+            FROM (SELECT COUNT(*) AS total FROM filtered)
+            LEFT JOIN page ON 1
+            LEFT JOIN terms ON :is_term AND terms.number = page.identifier
+            LEFT JOIN articles ON NOT :is_term AND articles.id = page.identifier
+            ORDER BY page.sort_title, page.title_en_norm, page.identifier""",
             params,
         ).fetchall()
     total = rows[0]["total"]

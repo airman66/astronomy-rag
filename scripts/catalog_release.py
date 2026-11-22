@@ -19,7 +19,7 @@ def prepare_catalog() -> None:
     storage.DB.parent.mkdir(parents=True, exist_ok=True)
     with storage.DB.with_name(f".{storage.DB.name}.lock").open("a") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
-        storage.ensure_database(force_check=True)
+        storage.ensure_database(force_check=True, allow_stale=False)
 
 
 def publish(source: Path, releases: Path) -> Path:
@@ -47,7 +47,7 @@ def publish(source: Path, releases: Path) -> Path:
         (stage / "models").symlink_to(models, target_is_directory=True)
         verify_index(stage / "index", require_current_chunking=True)
         verify_media_files(stage)
-        storage.build_database(stage, stage / "glossary.db")
+        storage.build_database(stage, stage / "glossary.db", immutable=True)
         write_json(stage / RELEASE_MANIFEST, release_manifest(stage))
         release = releases / checksum(stage / RELEASE_MANIFEST)
         if not release.exists():

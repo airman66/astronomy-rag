@@ -1,4 +1,5 @@
 import json
+import os
 import sqlite3
 from contextlib import closing
 from pathlib import Path
@@ -49,6 +50,17 @@ class ReleaseTests(TestCase):
             publish(self.source, self.target)
         self.assertEqual((self.target / "current").resolve(), first)
         verify_release(first)
+
+    def test_publication_reuses_version_after_only_source_mtime_changes(self):
+        first = publish(self.source, self.target)
+        record = self.source / "processed/terms/1.json"
+        stat = record.stat()
+        os.utime(record, ns=(stat.st_atime_ns, stat.st_mtime_ns + 2_000_000_000))
+
+        second = publish(self.source, self.target)
+        self.assertEqual(second, first)
+        self.assertEqual((self.target / "current").resolve(), first)
+        verify_release(second)
 
     def seed_cover(self) -> Path:
         relative_path = Path("media/illustrations/1.webp")

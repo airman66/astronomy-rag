@@ -61,14 +61,21 @@ _page_cache: OrderedDict[tuple, tuple[float, list[dict]]] = OrderedDict()
 _page_lock = Lock()
 
 
+def _page_generation() -> tuple | None:
+    try:
+        files = (storage.DB, vector.DATA / "index" / MANIFEST_NAME)
+        stamps = tuple((file.resolve(), stat.st_ino, stat.st_mtime_ns, stat.st_ctime_ns, stat.st_size)
+                       for file in files for stat in (file.stat(),))
+    except OSError:
+        return None
+    return stamps, vector.loaded_generation()
+
+
 def paged_search(query: str, locale: str, limit: int) -> tuple[list[dict], Literal["hybrid", "lexical"]]:
     # Share a pool across pages without changing the case of semantic query terms.
     query = " ".join(query.split())
-    try:
-        files = (storage.DB, vector.DATA / "index" / MANIFEST_NAME)
-        generation = tuple((file.resolve(), stat.st_ino, stat.st_mtime_ns, stat.st_size)
-                           for file in files for stat in (file.stat(),))
-    except OSError:
+    generation = _page_generation()
+    if generation is None:
         return search_with_mode(query, locale, limit)
     key = (query, locale, limit, generation)
     with _page_lock:
@@ -79,7 +86,7 @@ def paged_search(query: str, locale: str, limit: int) -> tuple[list[dict], Liter
             count("astronomy_search_hybrid_total")
             return cached[1], "hybrid"
     rows, mode = search_with_mode(query, locale, limit)
-    if mode == "hybrid":
+    if mode == "hybrid" and _page_generation() == generation:
         with _page_lock:
             _page_cache[key] = time.monotonic(), rows
             _page_cache.move_to_end(key)

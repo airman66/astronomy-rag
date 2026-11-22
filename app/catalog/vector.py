@@ -10,6 +10,7 @@ import logging
 import os
 import time
 from threading import Lock
+from typing import NamedTuple
 
 from app.catalog import storage
 from app.catalog.index import MANIFEST_NAME, load_index
@@ -23,7 +24,15 @@ QUERY_TIMEOUT = float(os.getenv("EMBEDDING_TIMEOUT") or "15")
 MIN_SCORE = float(os.getenv("SEMANTIC_MIN_SCORE") or "0.55")
 RETRY_AFTER_FAILURE = 60.0
 _lock = Lock()
-_loaded = None
+
+
+class _LoadedIndex(NamedTuple):
+    generation: str
+    artifacts: tuple
+
+
+_loaded: _LoadedIndex | None = None
+_checked_at = 0.0
 _failure: dict[str, tuple[float, Exception]] = {}
 log = logging.getLogger("glossary.vector")
 
@@ -31,56 +40,61 @@ log = logging.getLogger("glossary.vector")
 def _failure_key() -> str:
     manifest = DATA / "index" / MANIFEST_NAME
     try:
-        stamp = manifest.stat().st_mtime_ns
+        stat = manifest.stat()
     except OSError:
-        stamp = 0
-    return f"{DATA.resolve()}|{stamp}"
+        return f"{DATA.resolve()}|missing"
+    return f"{DATA.resolve()}|{stat.st_ino}|{stat.st_mtime_ns}|{stat.st_ctime_ns}|{stat.st_size}"
 
 
 def available() -> bool:
     return _loaded is not None
 
 
-_stamp: dict[str, float | str] = {"key": "", "checked": 0.0}
+def loaded_generation() -> str | None:
+    loaded = _loaded
+    return loaded.generation if loaded is not None else None
 
 
-def _changed_on_disk() -> bool:
+def _changed_on_disk(generation: str) -> bool:
     """A republished index (new manifest) replaces the loaded one; checked at most every 30 s."""
-    if time.monotonic() - float(_stamp["checked"]) < 30:
+    global _checked_at
+    now = time.monotonic()
+    if now - _checked_at < 30:
         return False
-    _stamp["checked"] = time.monotonic()
-    return _failure_key() != _stamp["key"]
+    _checked_at = now
+    return _failure_key() != generation
 
 
 def load():
-    global _loaded
-    if _loaded is not None and not _changed_on_disk():
-        return _loaded
+    global _loaded, _checked_at
+    current = _loaded
+    if current is not None and not _changed_on_disk(current.generation):
+        return current.artifacts
     root = DATA / "index"
     if not (root / MANIFEST_NAME).exists():
-        return _loaded
+        return current.artifacts if current is not None else None
     key = _failure_key()
     failed = _failure.get(key)
     if failed and time.monotonic() - failed[0] < RETRY_AFTER_FAILURE:
-        if _loaded is not None:
-            return _loaded  # keep serving the previous index while the new one is inconsistent
+        if current is not None:
+            return current.artifacts  # keep serving the previous index while the new one is inconsistent
         raise failed[1]
     with _lock:
-        if _loaded is not None and _stamp["key"] == key:
-            return _loaded
+        if _loaded is not None and _loaded.generation == key:
+            return _loaded.artifacts
         try:
             loaded = load_index(root, DATA / "models")
         except Exception as exc:
             _failure[key] = (time.monotonic(), exc)
             if _loaded is not None:
                 log.warning("new vector index rejected, keeping the loaded one: %s", exc)
-                return _loaded
+                return _loaded.artifacts
             raise
         _failure.pop(key, None)
-        _loaded = loaded
-        _stamp.update(key=key, checked=time.monotonic())
-        log.info("vector index loaded: %s chunks", _loaded[0].ntotal)
-        return _loaded
+        _loaded = _LoadedIndex(key, loaded)
+        _checked_at = time.monotonic()
+        log.info("vector index loaded: %s chunks", loaded[0].ntotal)
+        return loaded
 
 
 def search(

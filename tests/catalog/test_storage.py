@@ -5,6 +5,7 @@ import unittest
 from unittest.mock import patch
 
 from app.catalog import storage
+from scripts.catalog_release import prepare_catalog
 from tests.support.catalog import make_term, use_catalog, write_term
 
 
@@ -39,6 +40,21 @@ class CatalogRebuildTests(unittest.TestCase):
             storage.ensure_database()
         self.assertFalse(storage.DB.exists())
         self.assertEqual(list(self.root.glob("*.building")), [])
+
+    def test_prepare_fails_on_invalid_update_and_recovers_on_retry(self):
+        prepare_catalog()
+        original = storage.DB.read_bytes()
+        self.record.write_text("{")
+
+        with self.assertRaises(json.JSONDecodeError):
+            prepare_catalog()
+        self.assertEqual(storage.DB.read_bytes(), original)
+
+        self.term["locales"]["ru"]["title"] = "Новая звезда"
+        write_term(self.root, self.term)
+        prepare_catalog()
+        with patch.object(storage, "READ_ONLY", True):
+            self.assertEqual(storage.get_term(1), self.term)
 
     def test_empty_update_keeps_catalog(self):
         storage.ensure_database()
