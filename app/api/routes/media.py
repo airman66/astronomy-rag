@@ -41,4 +41,4 @@ def media_file(request: Request, media_id: str, locale: Literal["ru", "en"] = "r
     digest = localized_digest(item, locale)
     if v is not None and v != digest:
         return error(404, "media_file_not_found", "Версия медиа не найдена")
-    return media_response(request, path, digest, v)
+    return media_response(request, path, digest, v, error_code="media_file_not_found")

@@ -82,4 +82,4 @@ def term_illustration(request: Request, term_number: TermNumber, v: str | None =
     digest = item.get("sha256")
     if v is not None and v != digest:
         return error(404, "illustration_not_found", "Версия иллюстрации не найдена")
-    return media_response(request, path, digest, v)
+    return media_response(request, path, digest, v, error_code="illustration_not_found")

@@ -22,10 +22,13 @@ def search_with_mode(query: str, locale: str, limit: int = 20) -> tuple[list[dic
     """Hybrid FTS + vector search; falls back to FTS alone when embeddings are unavailable."""
     global _last_semantic_error
 
-    lexical = storage.lexical_search(query, locale, limit)
+    lexical, corpus_sha = storage.lexical_search_snapshot(query, locale, limit)
+    if corpus_sha is None:
+        count("astronomy_search_lexical_total")
+        return lexical, "lexical"
 
     try:
-        semantic = vector.search(query, locale, min(limit, SEMANTIC_POOL))
+        semantic = vector.search(query, locale, min(limit, SEMANTIC_POOL), corpus_sha=corpus_sha)
     except Exception as exc:  # embedding server/model/index problems must not break search
         if time.monotonic() - _last_semantic_error > 60:
             log.warning("semantic search unavailable, using lexical results: %s: %s", type(exc).__name__, exc)

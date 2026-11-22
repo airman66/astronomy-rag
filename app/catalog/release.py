@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 from app.catalog.corpus import corpus_digest
-from app.catalog.media import local_file
+from app.catalog.media import inspect_media_files, local_file
 from app.infra.files import checksum
 
 RELEASE_MANIFEST = "release-manifest.json"
@@ -45,3 +45,12 @@ def verify_release(root: Path) -> None:
     expected = json.loads((root / RELEASE_MANIFEST).read_bytes())
     if expected != release_manifest(root):
         raise ValueError("Published data release does not match its manifest")
+    verify_media_files(root)
+
+
+def verify_media_files(root: Path) -> None:
+    report = inspect_media_files(root, require_hashes=True)
+    if report["missing"]:
+        raise ValueError(f"Published media file is missing: {report['missing'][0]['path']}")
+    if report["invalid"]:
+        raise ValueError(f"Published media file has a missing or incorrect checksum: {report['invalid'][0]['path']}")

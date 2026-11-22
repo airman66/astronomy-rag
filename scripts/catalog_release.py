@@ -10,7 +10,7 @@ import uuid
 from pathlib import Path
 
 from app.catalog import storage
-from app.catalog.release import INDEX_FILES, RELEASE_MANIFEST, release_manifest, verify_release
+from app.catalog.release import INDEX_FILES, RELEASE_MANIFEST, release_manifest, verify_media_files, verify_release
 from app.infra.config import data_directory
 from app.infra.files import checksum, write_json
 
@@ -24,7 +24,6 @@ def prepare_catalog() -> None:
 
 def publish(source: Path, releases: Path) -> Path:
     from scripts.index.verify import verify_index
-    from scripts.media.check_paths import inspect
 
     releases.mkdir(parents=True, exist_ok=True)
     current = releases / "current"
@@ -47,9 +46,7 @@ def publish(source: Path, releases: Path) -> Path:
         models = os.path.relpath(source / "models", releases / "version")
         (stage / "models").symlink_to(models, target_is_directory=True)
         verify_index(stage / "index", require_current_chunking=True)
-        media = inspect(stage, verify_hashes=True)
-        if media["missing_count"] or media["checksum_errors"]:
-            raise ValueError("Cannot publish a release with missing or changed media")
+        verify_media_files(stage)
         storage.build_database(stage, stage / "glossary.db")
         write_json(stage / RELEASE_MANIFEST, release_manifest(stage))
         release = releases / checksum(stage / RELEASE_MANIFEST)
@@ -59,7 +56,8 @@ def publish(source: Path, releases: Path) -> Path:
             except OSError:
                 if not release.is_dir():
                     raise
-        verify_release(release)
+        if stage.exists():  # The version already existed and may have changed since it was built.
+            verify_release(release)
         link = releases / f".current-{uuid.uuid4().hex}"
         try:
             link.symlink_to(release.name, target_is_directory=True)

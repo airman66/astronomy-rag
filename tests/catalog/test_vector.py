@@ -6,9 +6,10 @@ import unittest
 from unittest.mock import Mock, patch
 
 from app.catalog import index as index_files
-from app.catalog import search, vector
+from app.catalog import search, storage, vector
+from app.catalog.corpus import corpus_digest
 from tests.catalog.fixtures import seed_vector_index
-from tests.support.catalog import temporary_dir, use_vector_root
+from tests.support.catalog import make_term, temporary_dir, use_catalog, use_vector_root, write_term
 
 requires_faiss = unittest.skipUnless(importlib.util.find_spec("faiss"), "faiss-cpu is not installed")
 
@@ -23,13 +24,51 @@ class RankFusionTests(unittest.TestCase):
             {**agreed, "chunk_id": "agreed", "evidence_text": "Definition"},
         ]
         with (
-            patch.object(search.storage, "lexical_search", return_value=[agreed]),
+            patch.object(search.storage, "lexical_search_snapshot", return_value=([agreed], "test-corpus")),
             patch.object(vector, "search", return_value=semantic),
             patch.object(vector, "available", return_value=True),
         ):
             results, mode = search.search_with_mode("definition", "en")
         self.assertEqual(mode, "hybrid")
         self.assertEqual([row["chunk_id"] for row in results], ["agreed", "first"])
+
+
+@requires_faiss
+class CorpusSnapshotTests(unittest.TestCase):
+    def test_sqlite_replacement_during_search_never_fuses_different_corpora(self):
+        root = use_catalog(self)
+        seed_vector_index(root)
+        write_term(root, make_term(1, "Sun", "Солнце", "Moon.", "Луна."))
+        storage.build_database(root, storage.DB)
+        (root / "processed/terms/1.json").unlink()
+        write_term(root, make_term(2, "Moon", "Луна", "Satellite.", "Спутник."))
+        replacement = root / "replacement.db"
+        storage.build_database(root, replacement)
+        manifest_path = root / "index/index-manifest.json"
+        manifest = json.loads(manifest_path.read_text())
+        manifest["corpus_sha256"] = corpus_digest(root)
+        manifest_path.write_text(json.dumps(manifest))
+        original_load = vector.load
+        response = Mock()
+        response.json.return_value = {"data": [{"embedding": [0.0, 1.0]}]}
+
+        def load_after_replacement():
+            replacement.replace(storage.DB)
+            return original_load()
+
+        with (
+            patch.object(storage, "READ_ONLY", True),
+            patch("requests.post", return_value=response) as post,
+        ):
+            with patch.object(vector, "load", side_effect=load_after_replacement):
+                hits, mode = search.search_with_mode("Луна", "ru")
+            self.assertEqual(mode, "lexical")
+            self.assertEqual({hit["record_id"] for hit in hits}, {"term:1"})
+            post.assert_not_called()
+
+            hits, mode = search.search_with_mode("Луна", "ru")
+            self.assertEqual(mode, "hybrid")
+            self.assertEqual({hit["record_id"] for hit in hits}, {"term:2"})
 
 
 @requires_faiss

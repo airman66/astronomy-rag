@@ -19,6 +19,9 @@ class ReleaseTests(TestCase):
         self.target = self.source / "releases"
         write_term(self.source, make_term(1, "Sun", "Солнце", "A star.", "Звезда."))
         seed_vector_index(self.source)
+        self.bind_index_to_corpus()
+
+    def bind_index_to_corpus(self):
         index_file = self.source / "index" / "index-manifest.json"
         index = json.loads(index_file.read_text())
         chunk = {
@@ -81,3 +84,37 @@ class ReleaseTests(TestCase):
         cover.unlink()
         with self.assertRaisesRegex(ValueError, "cover for term 1 is missing"):
             verify_release(release)
+
+    def test_damaged_catalogue_media_fails_verification_and_republication(self):
+        first = publish(self.source, self.target)
+        term = make_term(1, "Sun", "Солнце", "A star.", "Звезда.")
+        media = {"id": "media:sun", "kind": "media", "review": {"status": "draft"}}
+        for filename, path_key, digest_key in (
+            ("original/sun.png", "original_path", "sha256"),
+            ("ru/sun.png", "ru_path", "ru_sha256"),
+        ):
+            path = self.source / "media" / filename
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(filename.encode())
+            media[path_key] = path.relative_to(self.source).as_posix()
+            media[digest_key] = checksum(path)
+        term["media"] = [media]
+        write_term(self.source, term)
+        self.bind_index_to_corpus()
+        release = publish(self.source, self.target)
+        verify_release(release)
+        current = self.target / "current"
+        current.unlink()
+        current.symlink_to(first.name)
+
+        original = release / "media/original/sun.png"
+        original.write_bytes(b"changed image")
+        with self.assertRaisesRegex(ValueError, "checksum: media/original/sun.png"):
+            verify_release(release)
+        original.write_bytes(b"original/sun.png")
+        (release / "media/ru/sun.png").unlink()
+        with self.assertRaisesRegex(ValueError, "missing: media/ru/sun.png"):
+            verify_release(release)
+        with self.assertRaisesRegex(ValueError, "missing: media/ru/sun.png"):
+            publish(self.source, self.target)
+        self.assertEqual(current.resolve(), first)

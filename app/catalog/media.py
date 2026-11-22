@@ -1,6 +1,10 @@
 """Resolve paths recorded in raw media metadata and illustration manifests."""
 
+import json
 from pathlib import Path
+
+from app.catalog.corpus import record_files
+from app.infra.files import checksum
 
 IMAGE_SUFFIXES = frozenset((".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg"))
 
@@ -35,3 +39,38 @@ def localized_digest(item: dict, locale: str) -> str | None:
 def media_file_url(identifier: str, locale: str, digest: str | None) -> str:
     url = f"/api/v1/media/{identifier}/file?locale={locale}"
     return f"{url}&v={digest}" if digest else url
+
+
+def inspect_media_files(root: Path, *, verify_hashes: bool = False, require_hashes: bool = False) -> dict:
+    """Check media references, hashing each deployed path at most once."""
+    paths: dict[tuple[str, str], Path | None] = {}
+    checksums: dict[tuple[str, str], str] = {}
+    missing: list[dict[str, str]] = []
+    invalid: list[dict[str, str]] = []
+    for file in record_files(root):
+        record = json.loads(file.read_text(encoding="utf-8"))
+        for media in record.get("media", []):
+            for field, digest_field in (("original_path", "sha256"), ("ru_path", "ru_sha256")):
+                if not (filename := media.get(field)):
+                    continue
+                item = {"record_id": record["id"], "media_id": media["id"], "field": field, "path": filename}
+                key = field, filename
+                if key not in paths:
+                    paths[key] = local_file(root, filename)
+                    if paths[key] is None:
+                        missing.append(item)
+                local = paths[key]
+                if local is None or not (verify_hashes or require_hashes):
+                    continue
+                if expected := media.get(digest_field):
+                    if key not in checksums:
+                        checksums[key] = checksum(local)
+                    if checksums[key] != expected:
+                        invalid.append(item)
+                elif require_hashes:
+                    invalid.append(item)
+    return {
+        "expected_files": len(paths), "present_files": len(paths) - len(missing), "hashes_checked": len(checksums),
+        "missing_count": len(missing), "checksum_errors": len(invalid),
+        "missing": missing, "invalid": invalid,
+    }

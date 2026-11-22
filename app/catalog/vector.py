@@ -83,13 +83,17 @@ def load():
         return _loaded
 
 
-def search(query: str, locale: str, limit: int = 20, min_score: float | None = None, *, timeout: float = QUERY_TIMEOUT) -> list[dict]:
+def search(
+    query: str, locale: str, limit: int = 20, min_score: float | None = None,
+    *, timeout: float = QUERY_TIMEOUT, corpus_sha: str | None = None,
+) -> list[dict]:
     loaded = load()
     if loaded is None:
         return []
     index, mapping, chunks, manifest = loaded
     source_sha = manifest.get("corpus_sha256")
-    if not source_sha or source_sha != storage.corpus_version():
+    catalog_sha = corpus_sha if corpus_sha is not None else storage.corpus_version()
+    if not source_sha or source_sha != catalog_sha:
         raise ValueError("Vector index does not match the SQLite catalogue")
     import numpy as np
     import requests

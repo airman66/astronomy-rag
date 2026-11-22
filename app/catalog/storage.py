@@ -164,7 +164,11 @@ def build_database(root: Path, destination: Path, current_fingerprint: str | Non
 
 def corpus_version() -> str | None:
     with _read() as db:
-        row = db.execute("SELECT value FROM meta WHERE key='corpus_sha256'").fetchone()
+        return _corpus_version(db)
+
+
+def _corpus_version(db: sqlite3.Connection) -> str | None:
+    row = db.execute("SELECT value FROM meta WHERE key='corpus_sha256'").fetchone()
     return row[0] if row else None
 
 
@@ -410,10 +414,26 @@ def lexical_search(query: str, locale: str, limit: int, *, record_id: str | None
     if not expression:
         return []
     with _read() as db:
-        rows = db.execute(
-            "SELECT record_id,section_id,locale,kind,title,body,url,review_status,"
-            "bm25(search_fts, 0,0,0,0,0,0,0,0, 8,1,6,0.8) AS score FROM search_fts "
-            "WHERE search_fts MATCH ? AND locale=? AND (? IS NULL OR record_id=?) ORDER BY score LIMIT ?",
-            (expression, locale, record_id, record_id, limit),
-        ).fetchall()
+        return _lexical_matches(db, expression, locale, limit, record_id)
+
+
+def lexical_search_snapshot(query: str, locale: str, limit: int) -> tuple[list[dict], str | None]:
+    """Read the lexical hits and their corpus version in one SQLite snapshot."""
+    expression = _expression(query, locale)
+    with _read() as db:
+        db.execute("BEGIN")
+        version = _corpus_version(db)
+        matches = _lexical_matches(db, expression, locale, limit, None) if expression else []
+    return matches, version
+
+
+def _lexical_matches(
+    db: sqlite3.Connection, expression: str, locale: str, limit: int, record_id: str | None,
+) -> list[dict]:
+    rows = db.execute(
+        "SELECT record_id,section_id,locale,kind,title,body,url,review_status,"
+        "bm25(search_fts, 0,0,0,0,0,0,0,0, 8,1,6,0.8) AS score FROM search_fts "
+        "WHERE search_fts MATCH ? AND locale=? AND (? IS NULL OR record_id=?) ORDER BY score LIMIT ?",
+        (expression, locale, record_id, record_id, limit),
+    ).fetchall()
     return [{"record_id": row["record_id"], "section_id": row["section_id"], "kind": row["kind"], "title": row["title"], "excerpt": row["body"][:400], "url": row["url"], "review_status": row["review_status"], "score": -row["score"]} for row in rows]
