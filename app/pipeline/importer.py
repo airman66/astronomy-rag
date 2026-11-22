@@ -18,7 +18,7 @@ from bs4 import BeautifulSoup
 
 from app.catalog.media import local_file
 from app.infra.config import data_directory
-from app.infra.files import write_bytes, write_json
+from app.infra.files import checksum, write_bytes, write_json
 from app.pipeline.records import (
     API,
     BASE,
@@ -212,7 +212,7 @@ def download_media(workers: int = 8, refresh: bool = False, preferred_ids: set[i
         expected = item.get("sha256")
         try:
             recorded_path = local_file(DATA, item.get("original_path"))
-            if recorded_path and expected and digest(recorded_path.read_bytes()) != expected:
+            if recorded_path and expected and checksum(recorded_path) != expected:
                 return identifier, False, f"local file differs from recorded checksum {expected[:12]}", False
             if recorded_path and not refresh:
                 item["size"] = recorded_path.stat().st_size
@@ -221,9 +221,9 @@ def download_media(workers: int = 8, refresh: bool = False, preferred_ids: set[i
             actual = digest(content)
             if expected and actual != expected and not refresh:
                 return identifier, False, f"checksum mismatch: source changed since import (recorded {expected[:12]}, downloaded {actual[:12]}); file not stored", False
-            if recorded_path and digest(recorded_path.read_bytes()) == actual:
+            if recorded_path and checksum(recorded_path) == actual:
                 path = recorded_path
-            elif base_path.exists() and digest(base_path.read_bytes()) == actual:
+            elif base_path.exists() and checksum(base_path) == actual:
                 path = base_path
             else:
                 path = base_path if not base_path.exists() else base_path.with_name(f"{base_path.stem}.{actual}{extension}")
