@@ -1,8 +1,8 @@
 {
-  "chunk_version": "2",
+  "chunk_version": "3",
   "budget_tokens": 400,
   "overlap": 0.1,
   "tokenizer_model": "Qwen/Qwen3-Embedding-8B",
-  "chunk_count": 5311,
-  "chunks_sha256": "5cd3cc1dee407d2fa6f005308573d58cd072219e5f5645dc6e482b837c9df333"
+  "chunk_count": 4964,
+  "chunks_sha256": "2744727eded367bd43623fc0da0f1d646053ae103998f0108bc51f879a748615"
 }
