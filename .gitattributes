@@ -1,4 +1,3 @@
-data/raw/pages/** linguist-vendored
-data/raw/reviews/** linguist-vendored
+data/** linguist-vendored
 data/raw/reviews/**/*.html -text -whitespace
 data/raw/reviews/*.html -text -whitespace

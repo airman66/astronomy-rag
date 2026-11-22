@@ -123,7 +123,7 @@ python3.12 -m venv .venv
 .venv/bin/python -m unittest tests.api.test_limits -v
 ```
 
-GitHub Actions запускает тесты, BasedPyright, аудит данных и проверку Docker. На чистом клоне `app.audit --skip-original-media` проверяет записи и локализованные медиа. Для полного аудита загрузите оригиналы командой `python3 -m app.importer --media-only --workers 4`. OpenAPI доступен в `/openapi.json`, Swagger UI — в `/docs`.
+GitHub Actions запускает тесты, BasedPyright, аудит данных и проверку Docker. Чистый клон содержит оригиналы и локализации, перечисленные в каталоге. CI сверяет наличие и SHA-256 медиа. OpenAPI доступен в `/openapi.json`, Swagger UI — в `/docs`.
 
 ### Оценка помощника
 

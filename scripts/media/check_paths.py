@@ -1,8 +1,4 @@
-"""Report media paths absent from the shipped deployment.
-
-Run with --strict only after the external Astro4Edu originals are populated.
-A clean Git checkout intentionally excludes some of these large files.
-"""
+"""Check that the deployed media files match the canonical records."""
 from __future__ import annotations
 
 import argparse
