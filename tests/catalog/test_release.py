@@ -85,6 +85,48 @@ class ReleaseTests(TestCase):
         with self.assertRaisesRegex(ValueError, "cover for term 1 is missing"):
             verify_release(release)
 
+    def test_review_pdfs_are_required_at_publication_and_verified_afterwards(self):
+        first = publish(self.source, self.target)
+        original = Path("raw/reviews/review.pdf")
+        translation = Path("media/ru/review-pdf/oae-document-review.pdf")
+        files = {original: b"%PDF original", translation: b"%PDF translation"}
+        article = make_term(1, "Review", "Обзор", "A review.", "Обзор.")
+        article["id"] = "article:oae-document-review"
+        article["source"].update(
+            type="oae_review_document", pdf_path=original.as_posix(),
+        )
+        for path, content in files.items():
+            (self.source / path).parent.mkdir(parents=True)
+            (self.source / path).write_bytes(content)
+        article["source"]["sha256"] = checksum(self.source / original)
+        canonical = self.source / "processed/articles/oae-document-review.json"
+        canonical.parent.mkdir()
+        canonical.write_text(json.dumps(article))
+        self.bind_index_to_corpus()
+
+        current = self.target / "current"
+        for path, locale in ((original, "en"), (translation, "ru")):
+            with self.subTest(locale=locale):
+                (self.source / path).unlink()
+                with self.assertRaisesRegex(ValueError, f"PDF {locale} .* is missing"):
+                    publish(self.source, self.target)
+                self.assertEqual(current.resolve(), first)
+                (self.source / path).write_bytes(files[path])
+        (self.source / original).write_bytes(b"%PDF damaged")
+        with self.assertRaisesRegex(ValueError, "PDF en .* checksum mismatch"):
+            publish(self.source, self.target)
+        self.assertEqual(current.resolve(), first)
+        (self.source / original).write_bytes(files[original])
+
+        release = publish(self.source, self.target)
+        verify_release(release)
+        (release / translation).write_bytes(b"%PDF changed translation")
+        with self.assertRaisesRegex(ValueError, "PDF checksums do not match"):
+            verify_release(release)
+        (release / original).unlink()
+        with self.assertRaisesRegex(ValueError, "PDF en .* is missing"):
+            verify_release(release)
+
     def test_damaged_catalogue_media_fails_verification_and_republication(self):
         first = publish(self.source, self.target)
         term = make_term(1, "Sun", "Солнце", "A star.", "Звезда.")

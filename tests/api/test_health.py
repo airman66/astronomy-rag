@@ -16,8 +16,10 @@ class ReadinessTests(ApiCase):
         started = Event()
         unblock = Event()
         finished = Event()
+        timeouts = []
 
-        def slow_embedding(*args, **kwargs):
+        def slow_embedding(*args, timeout=vector.QUERY_TIMEOUT, **kwargs):
+            timeouts.append(timeout)
             started.set()
             unblock.wait(5)
             finished.set()
@@ -31,6 +33,7 @@ class ReadinessTests(ApiCase):
         ):
             try:
                 self.assertTrue(started.wait(2))
+                self.assertEqual(timeouts, [vector.QUERY_TIMEOUT])
                 degraded = client.get("/ready")
                 self.assertEqual(degraded.status_code, 200)
                 self.assertEqual(degraded.json()["status"], "degraded")

@@ -21,7 +21,7 @@ class SemanticReadiness:
 
     def ready(self) -> bool:
         checked, ready = self._result
-        return ready and time.monotonic() - checked < 2 * PROBE_INTERVAL
+        return ready and time.monotonic() - checked < 2 * PROBE_INTERVAL + vector.QUERY_TIMEOUT
 
     @contextmanager
     def monitor(self):
@@ -35,7 +35,7 @@ class SemanticReadiness:
     def _check(self, stop: Event) -> None:
         while not stop.is_set():
             try:
-                vector.search("What is a star?", "en", limit=1, timeout=2.0)
+                vector.search("What is a star?", "en", limit=1)
                 ready = vector.available()
             except Exception:  # A failed dependency probe must be reported as unavailable.
                 ready = False

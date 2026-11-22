@@ -7,6 +7,8 @@ from app.catalog.corpus import record_files
 from app.infra.files import checksum
 
 IMAGE_SUFFIXES = frozenset((".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg"))
+REVIEW_SOURCE_PDFS = Path("raw/reviews")
+REVIEW_TRANSLATED_PDFS = Path("media/ru/review-pdf")
 
 
 def local_file(data_root: Path, filename: str | None) -> Path | None:
@@ -24,6 +26,22 @@ def local_file(data_root: Path, filename: str | None) -> Path | None:
         path = root / stored
     path = path.resolve()
     return path if path.is_relative_to(root) and path.is_file() else None
+
+
+def review_pdf(root: Path, record: dict, locale: str) -> Path | None:
+    source = record["source"]
+    if source.get("type") != "oae_review_document":
+        return None
+    if locale == "ru":
+        directory = REVIEW_TRANSLATED_PDFS
+        filename = str((root / directory / (record["id"].removeprefix("article:") + ".pdf")).absolute())
+    else:
+        directory = REVIEW_SOURCE_PDFS
+        filename = source.get("pdf_path")
+    path = local_file(root, filename)
+    if path and path.suffix == ".pdf" and path.is_relative_to((root / directory).resolve()):
+        return path
+    return None
 
 
 def localized_filename(item: dict, locale: str) -> str | None:

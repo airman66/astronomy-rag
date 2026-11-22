@@ -2,8 +2,12 @@
 
 import hashlib
 import os
+import uuid
+from collections import OrderedDict
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from threading import Lock
+from typing import NamedTuple
 
 from fastapi import Request, Response
 from fastapi.concurrency import run_in_threadpool
@@ -12,6 +16,74 @@ from starlette.types import Receive, Scope, Send
 
 from app.api.errors import error
 from app.infra.config import RELEASE_DIR
+
+MAX_CACHED_BYTES = 256 * 1024 * 1024
+MAX_CACHED_FILES = 128
+
+
+def _generation(stat: os.stat_result) -> tuple[int, ...]:
+    return stat.st_dev, stat.st_ino, stat.st_size, stat.st_mtime_ns, stat.st_ctime_ns
+
+
+class _CachedSnapshot(NamedTuple):
+    generation: tuple[int, ...]
+    path: Path
+    digest: str
+    size: int
+
+
+class _SnapshotCache:
+    def __init__(self) -> None:
+        self._directory: TemporaryDirectory | None = None
+        self._entries: OrderedDict[Path, _CachedSnapshot] = OrderedDict()
+        self._bytes = 0
+        self._lock = Lock()
+        self._copy_locks = tuple(Lock() for _ in range(8))
+
+    def link(self, path: Path, destination: Path) -> str:
+        # Serialize copies of the same path. Lookups for other files can proceed during a copy.
+        with self._copy_locks[hash(path) % len(self._copy_locks)]:
+            stat = path.stat()
+            generation = _generation(stat)
+            with self._lock:
+                cached = self._entries.get(path)
+                if cached and cached.generation == generation:
+                    # Keep a request-owned link so eviction cannot interrupt streaming.
+                    os.link(cached.path, destination)
+                    self._entries.move_to_end(path)
+                    return cached.digest
+                if cached:
+                    self._discard(path)
+
+            digest = _snapshot(path, destination)
+            try:
+                unchanged = generation == _generation(path.stat())
+            except FileNotFoundError:
+                unchanged = False
+            if unchanged and stat.st_size <= MAX_CACHED_BYTES:
+                self._store(path, destination, generation, digest, stat.st_size)
+            return digest
+
+    def _store(self, path: Path, snapshot: Path, generation: tuple[int, ...], digest: str, size: int) -> None:
+        with self._lock:
+            while self._entries and (
+                self._bytes + size > MAX_CACHED_BYTES or len(self._entries) >= MAX_CACHED_FILES
+            ):
+                self._discard(next(iter(self._entries)))
+            if self._directory is None:
+                self._directory = TemporaryDirectory(prefix="astronomy-media-cache-")
+            cached_path = Path(self._directory.name) / uuid.uuid4().hex
+            os.link(snapshot, cached_path)
+            self._entries[path] = _CachedSnapshot(generation, cached_path, digest, size)
+            self._bytes += size
+
+    def _discard(self, path: Path) -> None:
+        cached = self._entries.pop(path)
+        self._bytes -= cached.size
+        cached.path.unlink(missing_ok=True)
+
+
+_snapshots = _SnapshotCache()
 
 
 def _file_response(
@@ -53,7 +125,7 @@ class _MutableMediaResponse(Response):
         with TemporaryDirectory(prefix="astronomy-media-") as directory:
             snapshot = Path(directory) / self.path.name
             try:
-                digest = await run_in_threadpool(_snapshot, self.path, snapshot)
+                digest = await run_in_threadpool(_snapshots.link, self.path, snapshot)
             except FileNotFoundError:
                 response = error(404, self.error_code, "Файл не найден")
             else:

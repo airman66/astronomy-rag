@@ -8,7 +8,7 @@ from app.api.responses import LIMITS
 from app.api.schemas.catalog import ListResponse, RecordDetail
 from app.api.schemas.common import ErrorResponse
 from app.catalog import storage
-from app.catalog.media import local_file
+from app.catalog.media import review_pdf
 
 router = APIRouter(prefix="/articles")
 
@@ -46,11 +46,8 @@ def article_source_pdf(article_id: str):
     record = storage.get_article(article_id)
     if not record:
         return error(404, "article_not_found", "Статья не найдена")
-    source = record["source"]
-    filename = source.get("pdf_path") if source.get("type") == "oae_review_document" else None
-    path = local_file(storage.DATA, filename)
-    archive = (storage.DATA / "raw" / "reviews").resolve()
-    if path is None or not path.is_relative_to(archive) or path.suffix != ".pdf":
+    path = review_pdf(storage.DATA, record, "en")
+    if path is None:
         return error(404, "article_file_not_found", "Оригинальный PDF не найден")
     return FileResponse(path, media_type="application/pdf", filename=path.name)
 
@@ -64,10 +61,8 @@ def article_translation_pdf(article_id: str):
     record = storage.get_article(article_id)
     if not record:
         return error(404, "article_not_found", "Статья не найдена")
-    archive = storage.DATA / "media" / "ru" / "review-pdf"
-    if record["source"].get("type") == "oae_review_document":
+    path = review_pdf(storage.DATA, record, "ru")
+    if path:
         filename = record["id"].removeprefix("article:") + ".pdf"
-        path = local_file(storage.DATA, str(archive.resolve() / filename))
-        if path and path.is_relative_to(archive.resolve()):
-            return FileResponse(path, media_type="application/pdf", filename=filename)
+        return FileResponse(path, media_type="application/pdf", filename=filename)
     return error(404, "article_file_not_found", "Русский PDF не найден")

@@ -38,6 +38,12 @@ def run(base, peer, expected_mode):
     assert {"ru", "en"} == set(article["locales"])
     assert {"transit", "radial-velocity"} <= {section["id"] for section in article["sections"]}
 
+    review = "/api/v1/articles/article:oae-document-earthasaplanet_mini_review"
+    for filename in ("source.pdf", "translation.pdf"):
+        status, headers, pdf = request(base, f"{review}/{filename}")
+        assert status == 200 and headers.get_content_type() == "application/pdf", (filename, status)
+        assert pdf.startswith(b"%PDF-"), filename
+
     for locale, query in (("ru", "экзопланета"), ("en", "exoplanet")):
         params = urlencode({"q": query, "locale": locale, "page_size": 5})
         result = get_json(base, "/api/v1/search?" + params)

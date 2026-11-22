@@ -70,10 +70,11 @@ class SourceMediaTests(ApiCase):
 
     def test_atomic_media_replacement_invalidates_the_previous_version(self):
         digest = self.record_media_digest()
+        url = "/api/v1/media/media:example/file"
+        self.assertEqual(self.client.get(url, params={"v": digest}).status_code, 200)
         replacement = self.image.with_name("replacement.png")
         replacement.write_bytes(b"new image")
         replacement.replace(self.image)
-        url = "/api/v1/media/media:example/file"
         headers = {"If-None-Match": f'"{digest}"'}
         response = self.client.get(url, params={"v": digest}, headers=headers)
         self.assertEqual(response.status_code, 404)
@@ -82,6 +83,19 @@ class SourceMediaTests(ApiCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.content, b"new image")
         self.assertEqual(response.headers["ETag"], f'"{hashlib.sha256(response.content).hexdigest()}"')
+
+    def test_partial_and_conditional_requests_reuse_the_snapshot(self):
+        digest = self.record_media_digest()
+        url = f"/api/v1/media/media:example/file?v={digest}"
+        original = self.image.read_bytes()
+        with patch.object(media_files, "_snapshot", wraps=media_files._snapshot) as snapshot:
+            first = self.client.get(url, headers={"Range": "bytes=0-0"})
+            next_byte = self.client.get(url, headers={"Range": "bytes=1-1"})
+            cached = self.client.get(url, headers={"If-None-Match": first.headers["ETag"]})
+        self.assertEqual((first.status_code, first.content), (206, original[:1]))
+        self.assertEqual((next_byte.status_code, next_byte.content), (206, original[1:2]))
+        self.assertEqual((cached.status_code, cached.content), (304, b""))
+        self.assertEqual(snapshot.call_count, 1)
 
     def test_mutable_range_response_uses_and_cleans_snapshot(self):
         digest = self.record_media_digest()
