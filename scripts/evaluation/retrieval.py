@@ -5,6 +5,7 @@ import asyncio
 import hashlib
 import json
 import math
+import os
 import re
 import time
 from collections import Counter
@@ -22,7 +23,7 @@ from app.infra.config import LLMSettings, assistant_deadline, data_directory, lo
 from app.infra.files import write_json
 
 DATA = data_directory()
-EVALUATION = DATA / "eval" / "assistant"
+EVALUATION = Path(os.getenv("DATA_DIR", "data")) / "eval" / "assistant"
 
 
 def matches_source(item: dict, selector: str) -> bool:
@@ -47,13 +48,14 @@ def passage_rank(passage: dict, sources: list[dict]) -> int | None:
 
 
 def evaluate_retrieval(case: dict) -> dict | None:
+    mode = case.get("requested_mode", "auto")
     groups = list(case.get("evidence", []))
     for fact in case.get("facts", []):
         groups.extend(fact.get("evidence", []))
     passages = case.get("passages", [])
-    if not (groups or passages):
+    has_expectations = bool(groups or passages)
+    if mode == "general" and not has_expectations:
         return None
-    mode = case.get("requested_mode", "auto")
     trace: dict = {}
     evidence = {} if mode == "general" else evidence_for(
         case["question"], case["locale"], prefer_article=mode == "article",
@@ -66,7 +68,8 @@ def evaluate_retrieval(case: dict) -> dict | None:
     return {
         "id": case["id"], "evidence": sources, "missing_groups": missing,
         "passage_ranks": ranks, "missing_passages": [p for p, rank in zip(passages, ranks) if rank is None],
-        "all_expected": not missing and all(rank is not None for rank in ranks), **trace,
+        "all_expected": (not missing and all(rank is not None for rank in ranks)) if has_expectations else None,
+        **trace,
     }
 
 
@@ -240,7 +243,8 @@ async def main() -> None:
                 rows.append(row)
         ranks = [rank for row in rows for rank in row["passage_ranks"]]
         run_metrics = {
-            "cases": len(rows), "with_all_evidence": sum(row["all_expected"] for row in rows),
+            "cases": len(rows), "evidence_cases": sum(row["all_expected"] is not None for row in rows),
+            "with_all_evidence": sum(row["all_expected"] is True for row in rows),
             "passages_checked": len(ranks), "passages_found": sum(rank is not None for rank in ranks),
             "passage_mrr": round(sum(1 / rank for rank in ranks if rank) / len(ranks), 4) if ranks else None,
         }
@@ -262,22 +266,21 @@ async def main() -> None:
                 print(case["id"], "PASS" if rows[-1]["passed"] else "FAIL", round(rows[-1]["latency_ms"]), "ms")
         run_metrics = summarize(rows) if rows else {"cases": 0}
     retrieval_ids = {case["id"] for case in cases if case.get("requested_mode") != "general"}
-    searched = [row for row in rows if row["id"] in retrieval_ids]
-    run_metrics["search_modes"] = dict(Counter(row.get("search_mode") or "missing" for row in searched))
-    run_metrics["with_vector_hits"] = sum(bool(row.get("vector_hits")) for row in searched)
+    searched = {row["id"]: row for row in rows if row["id"] in retrieval_ids}
+    search_modes = Counter(searched.get(case_id, {}).get("search_mode") or "missing" for case_id in retrieval_ids)
+    run_metrics["search_modes"] = dict(search_modes)
+    run_metrics["with_vector_hits"] = sum(bool(row.get("vector_hits")) for row in searched.values())
     report.update(metrics=run_metrics, results=rows)
     output = args.output or EVALUATION / ("full_retrieval_report.json" if args.retrieval_only else "full_report.json")
     write_json(output, report)
     print(json.dumps(run_metrics, ensure_ascii=False))
     if "aborted" in report:
         raise SystemExit(report["aborted"])
-    if args.require_search_mode and (not searched or any(
-        row.get("search_mode") != args.require_search_mode for row in searched
-    )):
+    if args.require_search_mode and set(search_modes) != {args.require_search_mode}:
         raise SystemExit(f"Required {args.require_search_mode} search for every retrieval case. See {output}")
     if args.check:
         outcome = "all_expected" if args.retrieval_only else "passed"
-        failures = [row for row in rows if not row[outcome]]
+        failures = [row for row in rows if row[outcome] is False]
         for row in failures:
             if args.retrieval_only:
                 print(row["id"], "missing", row["missing_groups"], row["missing_passages"])
