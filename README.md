@@ -36,7 +36,7 @@ DATA_RELEASE=/app/data/releases/current docker compose up -d --build --force-rec
 
 Публикация проверяет происхождение FAISS, собирает SQLite, сверяет медиа и атомарно меняет ссылку `current`. Процесс закрепляет каталог выпуска на весь срок работы. Монтируйте директорию версий на каждый узел и запускайте экземпляры с одним идентификатором версии. Для отката укажите прежний каталог в `DATA_RELEASE` и перезапустите экземпляры. GGUF поставляется через привычный каталог `data/models/` и проверяется отдельно. Для чтения без Docker используйте `DATA_RELEASE=data/releases/current`.
 
-`/health` проверяет процесс, `/ready` показывает готовность каталога и семантики. Если задано `REQUIRE_HYBRID=1`, недоступная семантика даёт 503. Сборщик Prometheus может читать `/metrics` у каждого процесса отдельно. Для мониторинга доли fallback используйте счётчики `astronomy_search_lexical_total` и `astronomy_search_hybrid_total`. Счётчики embedding учитывают также запросы проверки готовности.
+`/health` проверяет процесс, `/ready` показывает готовность каталога и семантики. Семантика проверяется в фоне. Если задано `REQUIRE_HYBRID=1`, до успешной проверки и при её сбое `/ready` возвращает 503. Сборщик Prometheus может читать `/metrics` у каждого процесса отдельно. Для мониторинга доли fallback используйте счётчики `astronomy_search_lexical_total` и `astronomy_search_hybrid_total`. Гибридный счётчик включает ответы из кэша. Счётчики embedding учитывают также фоновые проверки готовности.
 
 Для RunPod вместо DeepSeek задайте `ASSISTANT_PROVIDER=runpod`, `RUNPOD_API_KEY` и `RUNPOD_ENDPOINT_ID`. Без ключа LLM чтение и поиск работают, ассистент возвращает `503 assistant_unavailable`.
 

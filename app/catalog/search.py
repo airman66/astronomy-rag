@@ -73,6 +73,7 @@ def paged_search(query: str, locale: str, limit: int) -> tuple[list[dict], Liter
         if cached and time.monotonic() - cached[0] < _PAGE_CACHE_TTL:
             _page_cache.move_to_end(key)
             count("astronomy_search_cache_hits_total")
+            count("astronomy_search_hybrid_total")
             return cached[1], "hybrid"
     rows, mode = search_with_mode(query, locale, limit)
     if mode == "hybrid":

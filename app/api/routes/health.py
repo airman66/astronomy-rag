@@ -1,9 +1,10 @@
 import os
 import sqlite3
 import time
-from threading import Lock
+from contextlib import contextmanager
+from threading import Event, Thread
 
-from fastapi import APIRouter, Response
+from fastapi import APIRouter, Request, Response
 from fastapi.responses import PlainTextResponse
 
 from app.api.schemas.common import HealthResponse, ReadyResponse
@@ -11,8 +12,35 @@ from app.catalog import storage, vector
 from app.infra import metrics
 
 router = APIRouter()
-_probe_lock = Lock()
-_probe: tuple[float, bool] = (float("-inf"), False)
+PROBE_INTERVAL = 15.0
+
+
+class SemanticReadiness:
+    def __init__(self) -> None:
+        self._result = (float("-inf"), False)
+
+    def ready(self) -> bool:
+        checked, ready = self._result
+        return ready and time.monotonic() - checked < 2 * PROBE_INTERVAL
+
+    @contextmanager
+    def monitor(self):
+        stop = Event()
+        Thread(target=self._check, args=(stop,), name="semantic-readiness", daemon=True).start()
+        try:
+            yield
+        finally:
+            stop.set()
+
+    def _check(self, stop: Event) -> None:
+        while not stop.is_set():
+            try:
+                vector.search("What is a star?", "en", limit=1, timeout=2.0)
+                ready = vector.available()
+            except Exception:  # A failed dependency probe must be reported as unavailable.
+                ready = False
+            self._result = (time.monotonic(), ready)
+            stop.wait(PROBE_INTERVAL)
 
 
 @router.get("/health", response_model=HealthResponse)
@@ -20,28 +48,15 @@ def health() -> HealthResponse:
     return HealthResponse(status="ok", service="glossary-rag")
 
 
-def semantic_ready() -> bool:
-    global _probe
-    with _probe_lock:
-        if time.monotonic() - _probe[0] < 15:
-            return _probe[1]
-        try:
-            vector.search("What is a star?", "en", limit=1, timeout=2.0)
-            ready = vector.available()
-        except Exception:  # A failed dependency probe must be reported as unavailable.
-            ready = False
-        _probe = time.monotonic(), ready
-        return ready
-
-
 @router.get("/ready", response_model=ReadyResponse, responses={503: {"model": ReadyResponse}})
-def readiness(response: Response) -> ReadyResponse:
+def readiness(request: Request, response: Response) -> ReadyResponse:
     required = os.getenv("REQUIRE_HYBRID") == "1"
     try:
         catalogue = bool(storage.corpus_version())
     except (sqlite3.Error, OSError, ValueError):
         catalogue = False
-    semantic = catalogue and semantic_ready()
+    probe: SemanticReadiness | None = getattr(request.app.state, "semantic_readiness", None)
+    semantic = bool(catalogue and probe and probe.ready())
     if not catalogue or (required and not semantic):
         response.status_code = 503
         status = "unavailable"

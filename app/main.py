@@ -16,7 +16,7 @@ from app.api.paths import API_PREFIX
 from app.api.routes import articles, assistant, health, media, search, terms
 from app.api.schemas.common import ErrorResponse
 from app.assistant.client import LLMClient
-from app.catalog import storage, vector
+from app.catalog import storage
 from app.catalog.release import verify_release
 from app.infra.config import RELEASE_DIR, cors_origins
 from app.infra.redis_limits import RedisLimiter
@@ -37,17 +37,19 @@ async def lifespan(application: FastAPI) -> AsyncIterator[None]:
         action,
         time.perf_counter() - catalog_started,
     )
-    vector.warm_up()
-    client = application.state.llm_client
-    if isinstance(client, LLMClient) and client.http is None:
-        async with httpx.AsyncClient() as http:
-            client.http = http
-            try:
-                yield
-            finally:
-                client.http = None
-    else:
-        yield
+    readiness = health.SemanticReadiness()
+    application.state.semantic_readiness = readiness
+    with readiness.monitor():
+        client = application.state.llm_client
+        if isinstance(client, LLMClient) and client.http is None:
+            async with httpx.AsyncClient() as http:
+                client.http = http
+                try:
+                    yield
+                finally:
+                    client.http = None
+        else:
+            yield
 
 
 def create_app(*, rate_limiter=None, llm_client=None) -> FastAPI:

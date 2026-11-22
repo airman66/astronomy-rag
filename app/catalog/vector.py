@@ -8,7 +8,6 @@ from __future__ import annotations
 
 import logging
 import os
-import threading
 import time
 from threading import Lock
 
@@ -82,18 +81,6 @@ def load():
         _stamp.update(key=key, checked=time.monotonic())
         log.info("vector index loaded: %s chunks", _loaded[0].ntotal)
         return _loaded
-
-
-def warm_up() -> None:
-    """Verify and load the index in a background thread so requests never wait for it."""
-
-    def run() -> None:
-        try:
-            load()
-        except Exception as exc:
-            log.warning("vector index not loaded, lexical search only: %s: %s", type(exc).__name__, exc)
-
-    threading.Thread(target=run, name="vector-warm-up", daemon=True).start()
 
 
 def search(query: str, locale: str, limit: int = 20, min_score: float | None = None, *, timeout: float = QUERY_TIMEOUT) -> list[dict]:

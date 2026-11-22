@@ -1,6 +1,7 @@
 from unittest.mock import patch
 
 from app.catalog import vector
+from app.infra import metrics
 from tests.support.api import ApiCase
 from tests.support.catalog import seed_search_terms, seed_star
 
@@ -55,6 +56,10 @@ class SearchFallbackTests(ApiCase):
         manifest = index_root / "index-manifest.json"
         manifest.write_text("{}")
         with (
+            patch.dict(metrics._values, {
+                "astronomy_search_hybrid_total": 0,
+                "astronomy_search_cache_hits_total": 0,
+            }),
             patch.object(vector, "available", return_value=True),
             patch.object(vector, "search", return_value=[]) as embed,
         ):
@@ -64,3 +69,6 @@ class SearchFallbackTests(ApiCase):
             manifest.write_text('{"updated":true}')
             self.client.get("/api/v1/search", params={"q": "black hole", "locale": "en", "page": 2})
             self.assertEqual(embed.call_count, 2)
+            counters = self.client.get("/metrics").text.splitlines()
+            self.assertIn("astronomy_search_hybrid_total 3", counters)
+            self.assertIn("astronomy_search_cache_hits_total 1", counters)
