@@ -29,7 +29,7 @@ services:
       redis:
         condition: service_healthy
     volumes:
-      - ./data:/app/data
+      - ./data:/app/data:ro
       - catalog-db:/app/state
     restart: unless-stopped
   model-fetch:

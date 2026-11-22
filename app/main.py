@@ -26,16 +26,15 @@ from app.middleware.request_limits import request_limits
 
 @asynccontextmanager
 async def lifespan(application: FastAPI) -> AsyncIterator[None]:
-    # A fresh checkout has no SQLite database; building the FTS5 catalogue
-    # can dominate startup time, especially for a second smoke-test container.
     if RELEASE_DIR is not None:
         await run_in_threadpool(verify_release, RELEASE_DIR)
     cold_start = not storage.DB.exists()
     catalog_started = time.perf_counter()
     await run_in_threadpool(storage.ensure_database, True)
+    action = "verification" if storage.READ_ONLY else "initial build" if cold_start else "check/rebuild"
     logging.getLogger("uvicorn.error").info(
         "Catalogue %s completed in %.2f seconds",
-        "initial build" if cold_start else "check/rebuild",
+        action,
         time.perf_counter() - catalog_started,
     )
     vector.warm_up()

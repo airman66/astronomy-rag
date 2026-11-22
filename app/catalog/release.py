@@ -22,6 +22,7 @@ def release_manifest(root: Path) -> dict:
 
 
 def verify_release(root: Path) -> None:
+    root = root.resolve(strict=True)
     expected = json.loads((root / RELEASE_MANIFEST).read_bytes())
     if expected != release_manifest(root):
         raise ValueError("Published data release does not match its manifest")

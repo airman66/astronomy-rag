@@ -97,15 +97,17 @@ class IllustrationTests(ApiCase):
             encoding="utf-8",
         )
         storage.ensure_database(force_check=True)
+        url = f"/api/v1/terms/1/illustration?v={hashlib.sha256(image).hexdigest()}"
         detail = self.client.get("/api/v1/terms/1").json()
-        self.assertEqual(detail["illustration"]["url"], "/api/v1/terms/1/illustration")
+        self.assertEqual(detail["illustration"]["url"], url)
         self.assertEqual(detail["illustration"]["alt_ru"], "Схема чёрной дыры")
         self.assertIsNone(self.client.get("/api/v1/terms/2").json()["illustration"])
-        file = self.client.get("/api/v1/terms/1/illustration")
+        file = self.client.get(url)
+        self.assertIn("immutable", file.headers["Cache-Control"])
         self.assertEqual(file.status_code, 200)
         self.assertEqual(file.content, image)
         listed = {item["id"]: item for item in self.client.get("/api/v1/terms").json()["items"]}
-        self.assertEqual(listed["term:1"]["illustration_url"], "/api/v1/terms/1/illustration")
+        self.assertEqual(listed["term:1"]["illustration_url"], url)
         self.assertIsNone(listed["term:2"]["illustration_url"])
 
     def test_openapi_describes_binary_files_and_limits(self):

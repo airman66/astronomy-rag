@@ -21,7 +21,7 @@ from app.infra.config import RELEASE_DIR, data_directory
 DATA = data_directory()
 DB = DATA / "glossary.db" if RELEASE_DIR else Path(os.getenv("CATALOG_DB_PATH") or DATA / "glossary.db")
 READ_ONLY = RELEASE_DIR is not None or os.getenv("CATALOG_READ_ONLY") == "1"
-SCHEMA_VERSION = "8"
+SCHEMA_VERSION = "9"
 RECHECK_SECONDS = 30.0
 _lock = threading.Lock()
 _checked: dict[str, float] = {}
@@ -256,9 +256,13 @@ def _populate_database(db: sqlite3.Connection, current_fingerprint: str, root: P
 
 def illustration_view(item: dict) -> dict:
     source = item.get("source") or {}
+    number = int(item["term_number"])
+    url = f"/api/v1/terms/{number}/illustration"
+    if digest := item.get("sha256"):
+        url = f"{url}?v={digest}"
     return {
-        "term_number": int(item["term_number"]),
-        "url": f"/api/v1/terms/{int(item['term_number'])}/illustration",
+        "term_number": number,
+        "url": url,
         "width": item.get("width"),
         "height": item.get("height"),
         "alt_ru": item.get("alt_ru", ""),

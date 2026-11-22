@@ -17,7 +17,7 @@ from app.infra.files import checksum, write_json
 
 def prepare_catalog() -> None:
     storage.DB.parent.mkdir(parents=True, exist_ok=True)
-    with storage.DB.with_suffix(".lock").open("a") as lock:
+    with storage.DB.with_name(f".{storage.DB.name}.lock").open("a") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
         storage.ensure_database(force_check=True)
 
@@ -44,9 +44,8 @@ def publish(source: Path, releases: Path) -> Path:
         for name in INDEX_FILES:
             shutil.copy2(source / "index" / name, stage / "index" / name)
         # Model downloads are independent of the corpus; the runtime verifies GGUF bytes.
-        if (source / "models").is_dir():
-            models = os.path.relpath(source / "models", releases / "version")
-            (stage / "models").symlink_to(models, target_is_directory=True)
+        models = os.path.relpath(source / "models", releases / "version")
+        (stage / "models").symlink_to(models, target_is_directory=True)
         verify_index(stage / "index", require_current_chunking=True)
         media = inspect(stage, verify_hashes=True)
         if media["missing_count"] or media["checksum_errors"]:
