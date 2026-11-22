@@ -43,6 +43,25 @@ class SourceMediaTests(ApiCase):
             self.assertEqual(response.content, self.image.read_bytes())
 
 
+    def test_hashed_media_urls_are_immutable_and_validate_legacy_urls(self):
+        path = self.root / "processed/terms/1.json"
+        record = json.loads(path.read_text())
+        digest = hashlib.sha256(self.image.read_bytes()).hexdigest()
+        record["media"][0]["sha256"] = digest
+        path.write_text(json.dumps(record))
+        storage.rebuild_database()
+        detail = self.client.get("/api/v1/media/media:example").json()
+        for locale in ("ru", "en"):
+            response = self.client.get(detail[f"file_url_{locale}"])
+            self.assertEqual(response.status_code, 200)
+            self.assertIn("immutable", response.headers["Cache-Control"])
+        url = "/api/v1/media/media:example/file"
+        response = self.client.get(url, headers={"If-None-Match": f'"{digest}"'})
+        self.assertEqual(response.status_code, 304)
+        self.assertIn("must-revalidate", response.headers["Cache-Control"])
+        self.assertEqual(self.client.get(url, params={"v": "stale"}).status_code, 404)
+
+
 class IllustrationTests(ApiCase):
     def setUp(self) -> None:
         super().setUp()

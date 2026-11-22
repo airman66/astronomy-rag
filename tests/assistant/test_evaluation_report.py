@@ -5,7 +5,7 @@ from collections import Counter
 from unittest.mock import patch
 
 from app.infra.config import ROOT
-from scripts.evaluation.retrieval import evaluate_response, evaluate_retrieval, price, summarize
+from scripts.evaluation.retrieval import evaluate_response, evaluate_retrieval, passage_rank, price, summarize
 
 
 class AssistantEvaluationReportTests(unittest.TestCase):
@@ -73,4 +73,30 @@ class AssistantEvaluationReportTests(unittest.TestCase):
         assert result is not None
         self.assertFalse(result["all_expected"])
         self.assertEqual(result["missing_groups"], [["article:stellar-magnitudes#absolute"]])
-        retrieve.assert_called_once_with("Объясни", "ru", prefer_article=True)
+        retrieve.assert_called_once_with("Объясни", "ru", prefer_article=True, context_record_id=None, trace={})
+
+    def test_matching_article_without_the_passage_does_not_pass(self):
+        source = {"record_id": "article:review", "section_id": "page-2"}
+        passage = {"source": "article:review#page-2", "quote": "a specific passage"}
+        self.assertIsNone(passage_rank(passage, [
+            {**source, "text": "an unrelated paragraph"},
+            {**source, "section_id": "page-3", "text": "a specific passage"},
+        ]))
+        self.assertEqual(passage_rank(passage, [{**source, "text": "a specific\n passage"}]), 1)
+
+
+    def test_oae_suite_covers_both_languages_for_every_rechunked_article(self):
+        data = ROOT / "data"
+        cases = json.loads((data / "eval/assistant/oae_passage_questions.json").read_text())["questions"]
+        self.assertEqual(len({item["id"] for item in cases}), 48)
+        groups = Counter()
+        for case in cases:
+            (passage,) = case["passages"]
+            record, _, section = passage["source"].partition("#")
+            locale = case["locale"]
+            source = data / "processed" / "articles" / (record.removeprefix("article:") + ".json")
+            text = json.loads(source.read_text())["locales"][locale]["blocks"][section]["body"]
+            self.assertIn(passage["quote"], " ".join(text.split()))
+            groups[record, locale] += 1
+        self.assertEqual(len({record for record, _ in groups}), 24)
+        self.assertTrue(all(groups[record, "en"] == groups[record, "ru"] == 1 for record, _ in groups))

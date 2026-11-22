@@ -13,6 +13,7 @@ from pathlib import Path
 import faiss
 import numpy as np
 
+from app.catalog.corpus import corpus_digest
 from app.catalog.index import MODEL, read_chunks, read_manifest
 from app.infra.files import checksum
 from app.pipeline.chunks import CHUNK_VERSION
@@ -44,6 +45,8 @@ def verify_index(root: Path, *, require_current_chunking: bool = False) -> dict[
             raise ValueError(f"Rebuild the index with chunking version {CHUNK_VERSION}")
     elif require_current_chunking:
         raise ValueError("Missing chunk manifest")
+    if require_current_chunking and manifest.get("corpus_sha256") != corpus_digest(root.parent):
+        raise ValueError("Index does not match the canonical corpus")
     rows = read_chunks(root / "chunks.jsonl")
     row_by_id = {row["id"]: row for row in rows}
     mapping = json.loads((root / "vector-map.json").read_text())

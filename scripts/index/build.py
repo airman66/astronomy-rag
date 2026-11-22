@@ -102,6 +102,7 @@ def build(root: Path, model_file: Path, embedding_url: str, batch_size: int) -> 
         "dimension": int(matrix.shape[1]),
         "chunk_count": len(chunks),
         "chunk_config": source,
+        "corpus_sha256": source["corpus_sha256"],
         "chunks_sha256": checksum(chunks_file),
         "index_sha256": checksum(root / "index.faiss"),
         "vector_map_sha256": checksum(root / "vector-map.json"),

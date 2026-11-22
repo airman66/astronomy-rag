@@ -56,6 +56,7 @@ def seed_vector_index(root: Path) -> None:
                 "model_file": "small.gguf",
                 "model_sha256": hashlib.sha256(b"test-model").hexdigest(),
                 "pooling": "last",
+                "corpus_sha256": "test-corpus",
                 "query_instruction": "Find astronomy definitions.",
                 "dimension": 2,
                 "chunk_count": 2,

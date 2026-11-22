@@ -1,5 +1,6 @@
 {
   "chunk_version": "3",
+  "corpus_sha256": "db3b5a876a0aedc370e6ee1fa4af33f68069a984f5929a781bb5171cad1d1fa5",
   "budget_tokens": 400,
   "overlap": 0.1,
   "tokenizer_model": "Qwen/Qwen3-Embedding-8B",

@@ -16,3 +16,4 @@ data/raw/*.svg
 data/image_ocr.json
 data/media/localization/image_ocr.json
 data/processed/.translation-cache.json
+data/releases/

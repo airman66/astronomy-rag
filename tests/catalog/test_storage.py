@@ -1,4 +1,6 @@
 import json
+import sqlite3
+from contextlib import closing
 import unittest
 from unittest.mock import patch
 
@@ -59,7 +61,7 @@ class CatalogRebuildTests(unittest.TestCase):
 
     def test_existing_empty_database_is_not_accepted_at_startup(self):
         storage.ensure_database()
-        with storage._read() as db, db:
+        with closing(sqlite3.connect(storage.DB)) as db, db:
             self.record.unlink()
             db.execute("DELETE FROM terms")
             db.execute("UPDATE meta SET value=? WHERE key='fingerprint'", (storage.fingerprint(),))

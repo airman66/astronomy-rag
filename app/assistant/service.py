@@ -132,7 +132,7 @@ async def answer(
         hint = None
     evidence = {} if mode == "general" else await asyncio.to_thread(
         evidence_for, question, locale, prefer_article=mode == "article",
-        context_record_id=hint,
+        context_record_id=hint, trace=trace,
     )
     payload = {
         "question": question,

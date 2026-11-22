@@ -42,7 +42,10 @@ class VectorContractTests(unittest.TestCase):
     def test_query_prompt_and_index_agree(self):
         response = Mock()
         response.json.return_value = {"data": [{"embedding": [1.0, 0.0]}]}
-        with patch("requests.post", return_value=response) as post:
+        with (
+            patch.object(vector.storage, "corpus_version", return_value="test-corpus"),
+            patch("requests.post", return_value=response) as post,
+        ):
             result = vector.search("Что такое Солнце?", "ru", 2)
         self.assertEqual(result[0]["record_id"], "term:1")
         self.assertEqual(
@@ -128,9 +131,10 @@ class VectorLocaleCoverageTests(unittest.TestCase):
         }
         response = Mock()
         response.json.return_value = {"data": [{"embedding": [1.0, 0.0]}]}
-        manifest = {"query_instruction": "Find astronomy definitions.", "model": "test"}
+        manifest = {"query_instruction": "Find astronomy definitions.", "model": "test", "corpus_sha256": "test-corpus"}
         with (
             patch.object(vector, "load", return_value=(index, mapping, chunks, manifest)),
+            patch.object(vector.storage, "corpus_version", return_value="test-corpus"),
             patch("requests.post", return_value=response),
         ):
             hits = vector.search("звезда", "ru", limit=1)

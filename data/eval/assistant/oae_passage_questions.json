@@ -1,0 +1,581 @@
+{
+  "schema_version": 3,
+  "questions": [
+    {
+      "id": "oae-01-en",
+      "locale": "en",
+      "question": "What kind of interdisciplinary encounter does Brendan Owens use Science Gallery to illustrate?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-astronomyacrossdisciplinesandborders_mini_review#page-4",
+          "quote": "The Science Gallery network explores this exciting frontier where scientists and artists"
+        }
+      ]
+    },
+    {
+      "id": "oae-01-ru",
+      "locale": "ru",
+      "question": "Что показывает Брендан Оуэнс на примере сети Science Gallery?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-astronomyacrossdisciplinesandborders_mini_review#page-4",
+          "quote": "Сеть Science Gallery исследует эту область. Учёные и художники вместе представляют публике"
+        }
+      ]
+    },
+    {
+      "id": "oae-02-en",
+      "locale": "en",
+      "question": "How does the research-methods mini-review tell numerical data apart from other data?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-astronomyeducationresearch101_mini_review#page-5",
+          "quote": "Quantitative data are those that are — or can be converted into"
+        }
+      ]
+    },
+    {
+      "id": "oae-02-ru",
+      "locale": "ru",
+      "question": "По какому признаку в обзоре методов исследования данные относят к количественным?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-astronomyeducationresearch101_mini_review#page-5",
+          "quote": "Количественными называют данные, которые представлены числами или могут быть преобразованы в числа."
+        }
+      ]
+    },
+    {
+      "id": "oae-03-en",
+      "locale": "en",
+      "question": "What do teachers actually do in NITARP instead of only learning about archives?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-astronomyeducationwithauthenticdata_mini_review#page-4",
+          "quote": "gets teachers involved in authentic astronomical research using the same online astronomy"
+        }
+      ]
+    },
+    {
+      "id": "oae-03-ru",
+      "locale": "ru",
+      "question": "Какую работу выполняют учителя в NITARP, помимо знакомства с архивами NASA?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-astronomyeducationwithauthenticdata_mini_review#page-4",
+          "quote": "вовлекает учителей в настоящие астрономические исследования. Они пользуются теми же онлайн-архивами данных,"
+        }
+      ]
+    },
+    {
+      "id": "oae-04-en",
+      "locale": "en",
+      "question": "How do Zooniverse scientists keep volunteers informed about the research after classifications?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-citizenscience_mini_review#page-5",
+          "quote": "each Zooniverse project has a blog and other social media outlets through"
+        }
+      ]
+    },
+    {
+      "id": "oae-04-ru",
+      "locale": "ru",
+      "question": "Через какие каналы проекты Zooniverse сообщают добровольцам о результатах научной обработки?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-citizenscience_mini_review#page-5",
+          "quote": "У каждого проекта Zooniverse также есть блог и другие площадки в социальных"
+        }
+      ]
+    },
+    {
+      "id": "oae-05-en",
+      "locale": "en",
+      "question": "How can a student estimate solar noon from a shadow that crosses a marked circle twice?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-daytimeastronomy_mini_review#page-6",
+          "quote": "add the clock time of these two points and divide by two;"
+        }
+      ]
+    },
+    {
+      "id": "oae-05-ru",
+      "locale": "ru",
+      "question": "Как вычислить местный солнечный полдень по двум отметкам тени на окружности?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-daytimeastronomy_mini_review#page-6",
+          "quote": "найдите середину между соответствующими показаниями часов. Это оценка времени местного солнечного полудня."
+        }
+      ]
+    },
+    {
+      "id": "oae-06-en",
+      "locale": "en",
+      "question": "What change in perspective does Mike Simmons call the overview effect?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-earthasaplanet_mini_review#page-4",
+          "quote": "a profound shift in their understanding of Earth as a fragile oasis"
+        }
+      ]
+    },
+    {
+      "id": "oae-06-ru",
+      "locale": "ru",
+      "question": "Как эффект обзора меняет восприятие Земли астронавтами, по Майку Симмонсу?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-earthasaplanet_mini_review#page-4",
+          "quote": "Они видят Землю как хрупкий оазис посреди космоса, где все системы переплетены"
+        }
+      ]
+    },
+    {
+      "id": "oae-07-en",
+      "locale": "en",
+      "question": "What alternatives to speech and conventional classroom materials does the inclusion review recommend?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-equitydiversityandinclusionineducation_mini_review#page-5",
+          "quote": "Give opportunities for taking action (through materials everyone can interact with) and"
+        }
+      ]
+    },
+    {
+      "id": "oae-07-ru",
+      "locale": "ru",
+      "question": "Что обзор по инклюзии предлагает дать ученикам для общения и участия в занятиях?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-equitydiversityandinclusionineducation_mini_review#page-5",
+          "quote": "Давайте учащимся возможность действовать с помощью материалов, доступных каждому, и общаться с"
+        }
+      ]
+    },
+    {
+      "id": "oae-08-en",
+      "locale": "en",
+      "question": "Why evaluate an astronomy programme while it is still running?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-evaluationofresourcesandactivities_mini_review#page-5",
+          "quote": "activities that you conduct during your work as you implement activities that"
+        }
+      ]
+    },
+    {
+      "id": "oae-08-ru",
+      "locale": "ru",
+      "question": "Зачем проводить оценку в процессе образовательной программы, пока она ещё не закончилась?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-evaluationofresourcesandactivities_mini_review#page-5",
+          "quote": "Другие проводят во время программы, чтобы вовремя внести изменения. Третьи — в"
+        }
+      ]
+    },
+    {
+      "id": "oae-09-en",
+      "locale": "en",
+      "question": "What teaching priorities are emphasised at training events in the international astronomy education review?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-internationalcollaborationswithaneducationalcomponent_mini_review#page-6",
+          "quote": "During the training events, high importance is devoted to 21st century skills,"
+        }
+      ]
+    },
+    {
+      "id": "oae-09-ru",
+      "locale": "ru",
+      "question": "Каким темам уделяют особое внимание при подготовке учителей в обзоре международных астрономических проектов?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-internationalcollaborationswithaneducationalcomponent_mini_review#page-6",
+          "quote": "При обучении учителей мы уделяем большое внимание навыкам XXI века, Целям устойчивого"
+        }
+      ]
+    },
+    {
+      "id": "oae-10-en",
+      "locale": "en",
+      "question": "How could the student-built planetarium in the low-tech review be used once it is constructed?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-low-techastronomyeducation_mini_review#page-7",
+          "quote": "is a STEM project for presenting educational and entertaining shows about astronomy"
+        }
+      ]
+    },
+    {
+      "id": "oae-10-ru",
+      "locale": "ru",
+      "question": "Для каких занятий подходит планетарий, который построили школьники в обзоре Low-Tech?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-low-techastronomyeducation_mini_review#page-7",
+          "quote": "Самодельный планетарий — проект STEM. В нём можно проводить образовательные и развлекательные"
+        }
+      ]
+    },
+    {
+      "id": "oae-11-en",
+      "locale": "en",
+      "question": "Why does the exoplanet mini-review require a nearly edge-on system for transit detection?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-mini-review-exoplanets#page-7",
+          "quote": "the transit method, which detects planets indirectly by observing periodic changes in"
+        }
+      ]
+    },
+    {
+      "id": "oae-11-ru",
+      "locale": "ru",
+      "question": "Почему для транзитного обнаружения экзопланет обзор выделяет орбиты, которые видны с ребра?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-mini-review-exoplanets#page-7",
+          "quote": "При каждом прохождении планеты перед диском её звезды наблюдатель на Земле регистрирует"
+        }
+      ]
+    },
+    {
+      "id": "oae-12-en",
+      "locale": "en",
+      "question": "Which repeated sunset or sunrise observations does the naked-eye astronomy diary require early in the semester?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-nakedeyeastronomy_mini_review#page-6",
+          "quote": "observe the position and time of four sunsets (or sunrises), 2) four"
+        }
+      ]
+    },
+    {
+      "id": "oae-12-ru",
+      "locale": "ru",
+      "question": "Что о закатах или восходах нужно записывать в первые недели дневника наблюдений невооружённым глазом?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-nakedeyeastronomy_mini_review#page-6",
+          "quote": "записать время и положение Солнца при четырёх закатах или восходах, четырежды наблюдать"
+        }
+      ]
+    },
+    {
+      "id": "oae-13-en",
+      "locale": "en",
+      "question": "In the OAE realist evaluation framework, what is outside a programme's control yet can change its results?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-oae_evaluation_framework__toolkit_v4#page-5",
+          "quote": "The context describes the elements that are separate from your programme and"
+        }
+      ]
+    },
+    {
+      "id": "oae-13-ru",
+      "locale": "ru",
+      "question": "Что инструмент OAE называет контекстом программы и как он влияет на результаты?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-oae_evaluation_framework__toolkit_v4#page-5",
+          "quote": "Контекст — это обстоятельства, которые не относятся к самой программе и которые"
+        }
+      ]
+    },
+    {
+      "id": "oae-14-en",
+      "locale": "en",
+      "question": "How does the SMART example in the OAE Evaluation Toolkit propose measuring teachers' confidence?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-oae_evaluation_toolkit_standard#page-7",
+          "quote": "Implement a survey before and after the teacher training event that measures"
+        }
+      ]
+    },
+    {
+      "id": "oae-14-ru",
+      "locale": "ru",
+      "question": "Чем измерить уверенность учителей в примере цели SMART из набора OAE?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-oae_evaluation_toolkit_standard#page-7",
+          "quote": "Провести опрос до и после занятия, чтобы оценить уверенность учителей. • Достижимость."
+        }
+      ]
+    },
+    {
+      "id": "oae-15-en",
+      "locale": "en",
+      "question": "Why did a large share of respondents miss sessions at the fifth Shaw-IAU workshop?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-oae_response_to_the_2023_5th_shaw-iau_workshop_feedback#page-3",
+          "quote": "parallel sessions should be avoided. Nearly 40% of respondents reported being unable"
+        }
+      ]
+    },
+    {
+      "id": "oae-15-ru",
+      "locale": "ru",
+      "question": "Что респонденты пятого семинара Shaw–IAU предложили изменить в расписании сессий?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-oae_response_to_the_2023_5th_shaw-iau_workshop_feedback#page-3",
+          "quote": "отказаться от параллельных сессий. Почти 40% респондентов не смогли посетить все интересовавшие"
+        }
+      ]
+    },
+    {
+      "id": "oae-16-en",
+      "locale": "en",
+      "question": "How can evaluation evidence be used for decision-making according to the OAE 2025 review?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-oaereview-evaluation-2025#page-5",
+          "quote": "Inform Decision-Making: results from an evaluation can help you make important decisions"
+        }
+      ]
+    },
+    {
+      "id": "oae-16-ru",
+      "locale": "ru",
+      "question": "Как оценка помогает выбрать, как построить занятия, согласно обзору OAE 2025?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-oaereview-evaluation-2025#page-5",
+          "quote": "Принимать решения. На основе оценки можно решить, как построить занятия. Диагностическая оценка,"
+        }
+      ]
+    },
+    {
+      "id": "oae-17-en",
+      "locale": "en",
+      "question": "What backs the teaching materials from the Center for Astronomy Education at NASA JPL?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-onlineformatsforastronomyeducation_mini_review#page-5",
+          "quote": "tested and validated by fifteen years of research on pedagogy and student"
+        }
+      ]
+    },
+    {
+      "id": "oae-17-ru",
+      "locale": "ru",
+      "question": "На чём основаны материалы Центра астрономического образования при JPL в обзоре онлайн-форматов?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-onlineformatsforastronomyeducation_mini_review#page-5",
+          "quote": "испытанных и проверенных за 15 лет исследований преподавания и обучения. Диагностические тесты"
+        }
+      ]
+    },
+    {
+      "id": "oae-18-en",
+      "locale": "en",
+      "question": "Who are the OAE prompts for JEDI meant to help when designing educational activities?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-prompts_for_jedi#page-3",
+          "quote": "Thought starters for designing accessible and welcoming educational activities Justice, equity, diversity,"
+        }
+      ]
+    },
+    {
+      "id": "oae-18-ru",
+      "locale": "ru",
+      "question": "Для какой задачи предназначены вопросы OAE о JEDI в образовательных занятиях?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-prompts_for_jedi#page-3",
+          "quote": "С чего начать разработку доступных и открытых для всех учебных занятий Справедливость,"
+        }
+      ]
+    },
+    {
+      "id": "oae-19-en",
+      "locale": "en",
+      "question": "What counts as the education component of the remote telescope project, apart from the hardware and software?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-remoteobserving_mini_review#page-5",
+          "quote": "Teaching materials Testing in class Teacher trainings Figure 1: The three fundamentals"
+        }
+      ]
+    },
+    {
+      "id": "oae-19-ru",
+      "locale": "ru",
+      "question": "Что относится к обучению в схеме проекта с удалённым телескопом, помимо оборудования и программ?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-remoteobserving_mini_review#page-5",
+          "quote": "учебные материалы, апробация в классе и подготовка учителей. Прямые наблюдения могут занимать"
+        }
+      ]
+    },
+    {
+      "id": "oae-20-en",
+      "locale": "en",
+      "question": "How are teams composed in the astronomy olympiad round described by the student competitions review?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-studentcompetitions_mini_review#page-6",
+          "quote": "The team competition mixes students from different countries, encouraging them to work"
+        }
+      ]
+    },
+    {
+      "id": "oae-20-ru",
+      "locale": "ru",
+      "question": "Как формируют команды для тура астрономической олимпиады в обзоре ученических соревнований?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-studentcompetitions_mini_review#page-6",
+          "quote": "школьники из разных стран решают задачи вместе, как в исследовательской группе. Задания"
+        }
+      ]
+    },
+    {
+      "id": "oae-21-en",
+      "locale": "en",
+      "question": "Does the ethnography of astronomy study only ethnic groups, or which other communities can it include?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-teachingaboutindigenousastronomy_mini_review#page-5",
+          "quote": "any contemporary social unit (such as an ethnic group, a social class,"
+        }
+      ]
+    },
+    {
+      "id": "oae-21-ru",
+      "locale": "ru",
+      "question": "Какие современные сообщества, помимо этнических групп, может изучать этноастрономия?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-teachingaboutindigenousastronomy_mini_review#page-5",
+          "quote": "социальный класс, семья, профессиональная группа или учреждение, как в западных, так и"
+        }
+      ]
+    },
+    {
+      "id": "oae-22-en",
+      "locale": "en",
+      "question": "What four elements of creative learning does Carmelo Presicce introduce for astronomy lessons?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-teachingmethods_mini_review#page-4",
+          "quote": "Projects, Peers, Passion and Play. Despite being quite simple ideas, applying them"
+        }
+      ]
+    },
+    {
+      "id": "oae-22-ru",
+      "locale": "ru",
+      "question": "Какие четыре составляющие творческого обучения выделяет Кармело Презичче на занятиях по астрономии?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-teachingmethods_mini_review#page-4",
+          "quote": "проекты, сотрудничество со сверстниками, увлечённость и игра (Projects, Peers, Passion, Play). Идеи"
+        }
+      ]
+    },
+    {
+      "id": "oae-23-en",
+      "locale": "en",
+      "question": "Why use coloured synthetic resin in the Catching Starlight exhibit when teaching how light focuses?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-teachingwithastronomyexhibits_mini_review#page-6",
+          "quote": "laser rays become visible inside the light ray block made of coloured"
+        }
+      ]
+    },
+    {
+      "id": "oae-23-ru",
+      "locale": "ru",
+      "question": "Зачем в опыте Catching Starlight используют окрашенную синтетическую смолу при объяснении фокусировки?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-document-teachingwithastronomyexhibits_mini_review#page-6",
+          "quote": "лучи становятся видимыми. Это позволяет увидеть фокусировку в трёх измерениях (рис. 2)."
+        }
+      ]
+    },
+    {
+      "id": "oae-24-en",
+      "locale": "en",
+      "question": "What can be improved by evaluating educational resources and activities continuously?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-review-evaluation-of-resources-and-activities#about",
+          "quote": "it can improve program design and implementation, assess its achievements and improve"
+        }
+      ]
+    },
+    {
+      "id": "oae-24-ru",
+      "locale": "ru",
+      "question": "Что можно улучшить непрерывной оценкой образовательных ресурсов и занятий?",
+      "requested_mode": "article",
+      "passages": [
+        {
+          "source": "article:oae-review-evaluation-of-resources-and-activities#about",
+          "quote": "как она устроена и как её проводят, каких результатов удалось достичь и"
+        }
+      ]
+    }
+  ]
+}

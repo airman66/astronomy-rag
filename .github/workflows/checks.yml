@@ -29,7 +29,7 @@ jobs:
           .venv/bin/basedpyright
           .venv/bin/python -m app.audit
           .venv/bin/python -m scripts.illustrations verify --complete
-          .venv/bin/python -m scripts.evaluate --retrieval-only --check --output /tmp/rag-retrieval.json
+          .venv/bin/python -m scripts.evaluate --retrieval-only --check --require-search-mode lexical --output /tmp/rag-retrieval.json
           .venv/bin/python -m scripts.index.verify data/index --require-current-chunking
           .venv/bin/python -m app.audit --reviews
           .venv/bin/python -m scripts.media.check_paths --strict --verify-hashes --report /tmp/media-coverage.json
@@ -40,7 +40,7 @@ jobs:
       - name: Check HTTP endpoints, WebP, and Redis rate limiting
         run: |
           docker compose run -d --no-deps --name astronomy-rag-smoke-peer -p 127.0.0.1:8002:8000 -e CATALOG_DB_PATH=/tmp/glossary.db glossary-rag
-          # The peer builds its own SQLite/FTS5 catalogue on a cold start.
+          # The peer prepares its own SQLite/FTS5 catalogue before serving.
           # The original 15-second retry budget was borderline on GitHub runners.
           peer_start=$SECONDS
           peer_ready=false

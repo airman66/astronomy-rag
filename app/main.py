@@ -17,7 +17,8 @@ from app.api.routes import articles, assistant, health, media, search, terms
 from app.api.schemas.common import ErrorResponse
 from app.assistant.client import LLMClient
 from app.catalog import storage, vector
-from app.infra.config import cors_origins
+from app.catalog.release import verify_release
+from app.infra.config import RELEASE_DIR, cors_origins
 from app.infra.redis_limits import RedisLimiter
 from app.middleware.body_limit import AssistantBodyLimitMiddleware
 from app.middleware.request_limits import request_limits
@@ -27,6 +28,8 @@ from app.middleware.request_limits import request_limits
 async def lifespan(application: FastAPI) -> AsyncIterator[None]:
     # A fresh checkout has no SQLite database; building the FTS5 catalogue
     # can dominate startup time, especially for a second smoke-test container.
+    if RELEASE_DIR is not None:
+        await run_in_threadpool(verify_release, RELEASE_DIR)
     cold_start = not storage.DB.exists()
     catalog_started = time.perf_counter()
     await run_in_threadpool(storage.ensure_database, True)

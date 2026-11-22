@@ -26,3 +26,12 @@ def localized_filename(item: dict, locale: str) -> str | None:
     if locale == "ru" and item.get("ru_path"):
         return item["ru_path"]
     return item.get("original_path")
+
+
+def localized_digest(item: dict, locale: str) -> str | None:
+    return item.get("ru_sha256") if locale == "ru" and item.get("ru_path") else item.get("sha256")
+
+
+def media_file_url(identifier: str, locale: str, digest: str | None) -> str:
+    url = f"/api/v1/media/{identifier}/file?locale={locale}"
+    return f"{url}&v={digest}" if digest else url

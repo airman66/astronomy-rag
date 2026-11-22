@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from typing import Literal
 
 from app.catalog import storage
-from app.catalog.media import IMAGE_SUFFIXES, local_file, localized_filename
+from app.catalog.media import IMAGE_SUFFIXES, local_file, localized_digest, localized_filename, media_file_url
 from app.catalog.search import search_with_mode
 
 
@@ -35,7 +35,7 @@ def image_for(record: dict, section: dict, locale: str) -> dict | None:
         path = local_file(storage.DATA, localized_filename(media, locale))
         if path and path.suffix.lower() in IMAGE_SUFFIXES:
             return {
-                "url": f"/api/v1/media/{media['id']}/file?locale={locale}",
+                "url": media_file_url(media["id"], locale, localized_digest(media, locale)),
                 "alt": media.get(f"alt_{locale}") or media.get(f"title_{locale}", ""),
                 "caption": media.get(f"short_caption_{locale}") or media.get(f"caption_{locale}", ""),
                 "kind": "source_media",
@@ -103,10 +103,13 @@ def _page_evidence(record_id: str, locale: str) -> tuple[dict, Evidence] | None:
 
 def evidence_for(
     question: str, locale: str, *, prefer_article: bool = False,
-    context_record_id: str | None = None,
+    context_record_id: str | None = None, trace: dict | None = None,
 ) -> dict[str, Evidence]:
     """Keep exact passages, diversify by record and reserve space for a matching article."""
-    hits, _ = search_with_mode(question, locale, limit=80)
+    hits, search_mode = search_with_mode(question, locale, limit=80)
+    if trace is not None:
+        trace["search_mode"] = search_mode
+        trace["vector_hits"] = sum(bool(hit.get("chunk_id")) for hit in hits)
     records: dict[str, tuple[dict, dict, dict[str, dict], dict[str, dict]]] = {}
     primary: dict[str, Evidence] = {}
     extras: dict[tuple[str, str, str], Evidence] = {}

@@ -1,6 +1,8 @@
 from typing import Any, Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, computed_field
+
+from app.catalog.media import media_file_url
 
 
 class ListItem(BaseModel):
@@ -90,6 +92,19 @@ class MediaDetail(BaseModel):
     source_language: str = "en"
     component_ids: list[str] = Field(default_factory=list)
     review: ReviewInfo
+
+
+    @computed_field
+    @property
+    def file_url_en(self) -> str | None:
+        return media_file_url(self.id, "en", self.sha256) if self.original_path else None
+
+    @computed_field
+    @property
+    def file_url_ru(self) -> str | None:
+        if self.ru_path:
+            return media_file_url(self.id, "ru", self.ru_sha256)
+        return media_file_url(self.id, "ru", self.sha256) if self.original_path else None
 
 
 class IllustrationInfo(BaseModel):

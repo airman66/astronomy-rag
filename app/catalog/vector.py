@@ -12,8 +12,10 @@ import threading
 import time
 from threading import Lock
 
+from app.catalog import storage
 from app.catalog.index import MANIFEST_NAME, load_index
 from app.infra.config import data_directory
+from app.infra.metrics import count
 
 DATA = data_directory()
 QUERY_TIMEOUT = float(os.getenv("EMBEDDING_TIMEOUT") or "15")
@@ -94,22 +96,35 @@ def warm_up() -> None:
     threading.Thread(target=run, name="vector-warm-up", daemon=True).start()
 
 
-def search(query: str, locale: str, limit: int = 20, min_score: float | None = None) -> list[dict]:
+def search(query: str, locale: str, limit: int = 20, min_score: float | None = None, *, timeout: float = QUERY_TIMEOUT) -> list[dict]:
     loaded = load()
     if loaded is None:
         return []
     index, mapping, chunks, manifest = loaded
+    source_sha = manifest.get("corpus_sha256")
+    if not source_sha or source_sha != storage.corpus_version():
+        raise ValueError("Vector index does not match the SQLite catalogue")
     import numpy as np
     import requests
 
     threshold = MIN_SCORE if min_score is None else min_score
     prompt = f"Instruct: {manifest['query_instruction']}\nQuery: {query}"
     url = os.getenv("EMBEDDING_URL", "http://127.0.0.1:8080/v1/embeddings")
-    response = requests.post(url, json={"input": prompt, "model": manifest["model"], "encoding_format": "float"}, timeout=QUERY_TIMEOUT)
-    response.raise_for_status()
-    embedding = np.asarray(response.json()["data"][0]["embedding"], dtype="float32")
-    if embedding.shape != (index.d,):
-        raise ValueError("Query embedding dimension differs from index")
+    started = time.perf_counter()
+    count("astronomy_embedding_requests_total")
+    try:
+        response = requests.post(
+            url, json={"input": prompt, "model": manifest["model"], "encoding_format": "float"}, timeout=timeout,
+        )
+        response.raise_for_status()
+        embedding = np.asarray(response.json()["data"][0]["embedding"], dtype="float32")
+        if embedding.shape != (index.d,) or not np.isfinite(embedding).all() or not np.any(embedding):
+            raise ValueError("Invalid query embedding for vector index")
+    except (requests.RequestException, ValueError, KeyError, IndexError, TypeError):
+        count("astronomy_embedding_errors_total")
+        raise
+    finally:
+        count("astronomy_embedding_request_seconds_total", time.perf_counter() - started)
     vector = embedding.reshape(1, index.d)
     norm = float(np.linalg.norm(vector))
     if norm > 0:
