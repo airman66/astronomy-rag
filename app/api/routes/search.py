@@ -4,7 +4,7 @@ from fastapi import APIRouter, Query
 
 from app.api.responses import LIMITS
 from app.api.schemas.search import SearchResponse
-from app.catalog.search import search_with_mode
+from app.catalog.search import paged_search
 
 router = APIRouter()
 SEARCH_POOL = 200
@@ -18,7 +18,7 @@ def search(
     page_size: int = Query(20, ge=1, le=100),
 ) -> SearchResponse:
     """Гибридный поиск (FTS5 со стеммингом + векторный индекс). `total` — размер пула релевантных результатов (не больше 200)."""
-    matches, mode = search_with_mode(q, locale, limit=SEARCH_POOL)
+    matches, mode = paged_search(q, locale, limit=SEARCH_POOL)
     return SearchResponse.model_validate(
         {
             "items": matches[(page - 1) * page_size : page * page_size],

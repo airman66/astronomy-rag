@@ -26,10 +26,26 @@ def get_json(base, path):
 def run(base, peer, expected_mode):
     for path in ("/health", "/docs", "/openapi.json"):
         assert request(base, path)[0] == 200, path
+    readiness = get_json(base, "/ready")
+    assert readiness["catalogue"] == "ready"
+    if expected_mode == "lexical":
+        assert readiness["status"] == "degraded"
+    elif expected_mode == "hybrid":
+        assert readiness["semantic"] == "ready"
+    assert b"astronomy_search_lexical_total" in request(base, "/metrics")[2]
     assert get_json(base, "/api/v1/terms")["total"] == 501
+    if peer != base:
+        assert get_json(peer, "/ready")["catalogue"] == "ready"
+        assert get_json(peer, "/api/v1/terms")["total"] == 501
     article = get_json(base, "/api/v1/articles/article:exoplanet-detection")
     assert {"ru", "en"} == set(article["locales"])
     assert {"transit", "radial-velocity"} <= {section["id"] for section in article["sections"]}
+
+    review = "/api/v1/articles/article:oae-document-earthasaplanet_mini_review"
+    for filename in ("source.pdf", "translation.pdf"):
+        status, headers, pdf = request(base, f"{review}/{filename}")
+        assert status == 200 and headers.get_content_type() == "application/pdf", (filename, status)
+        assert pdf.startswith(b"%PDF-"), filename
 
     for locale, query in (("ru", "экзопланета"), ("en", "exoplanet")):
         params = urlencode({"q": query, "locale": locale, "page_size": 5})
@@ -44,7 +60,14 @@ def run(base, peer, expected_mode):
     assert status == 200 and headers.get_content_type() == "image/webp"
     assert cover[:4] == b"RIFF" and cover[8:12] == b"WEBP"
     assert int.from_bytes(cover[4:8], "little") + 8 == len(cover)
+    assert "immutable" in headers["Cache-Control"]
     print("WebP bytes", len(cover))
+
+    original = get_json(base, "/api/v1/media/diagram:zF97Dc8Sp10")
+    status, headers, diagram = request(base, original["file_url_en"])
+    assert status == 200 and diagram.startswith(b"\x89PNG\r\n\x1a\n")
+    assert headers["ETag"] == f'"{original["sha256"]}"'
+    print("Original PNG bytes", len(diagram))
 
     path = "/api/v1/assistant/answer"
     body = {"question": "Что такое экзопланета?", "locale": "ru"}

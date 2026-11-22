@@ -12,6 +12,7 @@
   "chunk_count": 4964,
   "chunk_config": {
     "chunk_version": "3",
+    "corpus_sha256": "db3b5a876a0aedc370e6ee1fa4af33f68069a984f5929a781bb5171cad1d1fa5",
     "budget_tokens": 400,
     "overlap": 0.1,
     "tokenizer_model": "Qwen/Qwen3-Embedding-8B",
@@ -23,5 +24,6 @@
   "vector_map_sha256": "548ef128ad3549ac37867088e7a5fddc9f447abcdfab36d99cc8dfd048cc8726",
   "embedding_cache_sha256": "338b15a17e6b990544efa69d216ddac6fb63214121b71c5d788ec8fa69bc92cb",
   "normalization": "L2",
-  "metric": "inner_product"
+  "metric": "inner_product",
+  "corpus_sha256": "db3b5a876a0aedc370e6ee1fa4af33f68069a984f5929a781bb5171cad1d1fa5"
 }

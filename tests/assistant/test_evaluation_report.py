@@ -1,11 +1,20 @@
+import asyncio
 import json
+import os
 import re
+import subprocess
+import sys
 import unittest
 from collections import Counter
 from unittest.mock import patch
 
+from app.catalog.corpus import corpus_digest
 from app.infra.config import ROOT
-from scripts.evaluation.retrieval import evaluate_response, evaluate_retrieval, price, summarize
+from app.infra.files import checksum, write_json
+from scripts.catalog_release import publish
+from scripts.evaluation.retrieval import evaluate_response, evaluate_retrieval, main, passage_rank, price, summarize
+from tests.catalog.fixtures import bind_vector_index, seed_vector_index
+from tests.support.catalog import make_term, temporary_dir, write_term
 
 
 class AssistantEvaluationReportTests(unittest.TestCase):
@@ -73,4 +82,87 @@ class AssistantEvaluationReportTests(unittest.TestCase):
         assert result is not None
         self.assertFalse(result["all_expected"])
         self.assertEqual(result["missing_groups"], [["article:stellar-magnitudes#absolute"]])
-        retrieve.assert_called_once_with("Объясни", "ru", prefer_article=True)
+        retrieve.assert_called_once_with("Объясни", "ru", prefer_article=True, context_record_id=None, trace={})
+
+    def test_required_hybrid_rejects_fallback_without_expected_evidence(self):
+        directory = temporary_dir(self)
+        suite = directory / "questions.json"
+        output = directory / "report.json"
+        write_json(suite, {"questions": [
+            {"id": "scope", "question": "Sports", "locale": "en"},
+            {"id": "general", "question": "Sports", "locale": "en", "requested_mode": "general"},
+        ]})
+
+        def lexical_fallback(*args, trace, **kwargs):
+            trace.update(search_mode="lexical", vector_hits=0)
+            return {}
+
+        cli = ["evaluate", "--retrieval-only", "--check", "--require-search-mode", "hybrid",
+               "--suite", str(suite), "--output", str(output)]
+        with (
+            patch.object(sys, "argv", cli),
+            patch("builtins.print"),
+            patch("scripts.evaluation.retrieval.load_env"),
+            patch("scripts.evaluation.retrieval.evidence_for", side_effect=lexical_fallback) as retrieve,
+        ):
+            with self.assertRaisesRegex(SystemExit, "Required hybrid search"):
+                asyncio.run(main())
+        retrieve.assert_called_once()
+        report = json.loads(output.read_bytes())
+        self.assertEqual(report["metrics"]["search_modes"], {"lexical": 1})
+        self.assertEqual(report["metrics"]["evidence_cases"], 0)
+        self.assertEqual(report["metrics"]["with_all_evidence"], 0)
+        (row,) = report["results"]
+        self.assertEqual(row["id"], "scope")
+        self.assertIsNone(row["all_expected"])
+
+    def test_release_eval_reads_default_suite_and_writes_report_in_workspace(self):
+        root = temporary_dir(self)
+        source = root / "source"
+        write_term(source, make_term(1, "Sun", "Солнце", "A star.", "Звезда."))
+        seed_vector_index(source)
+        bind_vector_index(source, corpus_digest(source))
+        (source / "models/small.gguf").unlink()
+        release = publish(source, root / "releases")
+        workspace = root / "workspace"
+        evaluation = workspace / "eval/assistant"
+        write_json(evaluation / "full_questions.json", {"questions": [
+            {"id": "sun", "question": "Sun", "locale": "en", "evidence": [["term:1#definition"]]},
+        ]})
+
+        result = subprocess.run(
+            [sys.executable, "-m", "scripts.evaluate", "--retrieval-only", "--check", "--require-search-mode", "lexical"],
+            cwd=ROOT, env={**os.environ, "DATA_DIR": str(workspace), "DATA_RELEASE": str(release)},
+            capture_output=True, text=True, timeout=15,
+        )
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        report = json.loads((evaluation / "full_retrieval_report.json").read_bytes())
+        self.assertEqual(report["index_sha256"], checksum(release / "index/index-manifest.json"))
+        self.assertEqual(report["metrics"]["with_all_evidence"], 1)
+        self.assertFalse((release / "eval").exists())
+
+    def test_matching_article_without_the_passage_does_not_pass(self):
+        source = {"record_id": "article:review", "section_id": "page-2"}
+        passage = {"source": "article:review#page-2", "quote": "a specific passage"}
+        self.assertIsNone(passage_rank(passage, [
+            {**source, "text": "an unrelated paragraph"},
+            {**source, "section_id": "page-3", "text": "a specific passage"},
+        ]))
+        self.assertEqual(passage_rank(passage, [{**source, "text": "a specific\n passage"}]), 1)
+
+
+    def test_oae_suite_covers_both_languages_for_every_rechunked_article(self):
+        data = ROOT / "data"
+        cases = json.loads((data / "eval/assistant/oae_passage_questions.json").read_text())["questions"]
+        self.assertEqual(len({item["id"] for item in cases}), 48)
+        groups = Counter()
+        for case in cases:
+            (passage,) = case["passages"]
+            record, _, section = passage["source"].partition("#")
+            locale = case["locale"]
+            source = data / "processed" / "articles" / (record.removeprefix("article:") + ".json")
+            text = json.loads(source.read_text())["locales"][locale]["blocks"][section]["body"]
+            self.assertIn(passage["quote"], " ".join(text.split()))
+            groups[record, locale] += 1
+        self.assertEqual(len({record for record, _ in groups}), 24)
+        self.assertTrue(all(groups[record, "en"] == groups[record, "ru"] == 1 for record, _ in groups))

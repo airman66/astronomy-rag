@@ -1,0 +1,2063 @@
+{
+  "timestamp": "2026-11-22T12:55:42.420788+00:00",
+  "prompt_version": "2026-11-18.2",
+  "suite_sha256": "7d4a620d6f6c5fa3789fc7e5f8f53da551c0a1c43705e64eba6f6e566a9a587d",
+  "index_sha256": "2df889f02ed2461d05e3538be0dcc34b9e29bbd0ee5976cb68e19993ba1f309e",
+  "metrics": {
+    "cases": 48,
+    "with_all_evidence": 34,
+    "passages_checked": 48,
+    "passages_found": 34,
+    "passage_mrr": 0.5319,
+    "search_modes": {
+      "hybrid": 48
+    },
+    "with_vector_hits": 48
+  },
+  "results": [
+    {
+      "id": "oae-01-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-astronomyacrossdisciplinesandborders_mini_review",
+          "section_id": "page-4",
+          "chunk_id": "article:oae-document-astronomyacrossdisciplinesandborders_mini_review/page-4/en/0"
+        },
+        {
+          "record_id": "article:oae-document-astronomyacrossdisciplinesandborders_mini_review",
+          "section_id": "page-10",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-astronomyacrossdisciplinesandborders_mini_review",
+          "section_id": "page-8",
+          "chunk_id": null
+        },
+        {
+          "record_id": "term:140",
+          "section_id": "definition",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-citizenscience_mini_review",
+          "section_id": "media:oae-pdf-citizenscience_mini_review-f91194afa33f9679545a",
+          "chunk_id": null
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        1
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 4
+    },
+    {
+      "id": "oae-01-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-astronomyacrossdisciplinesandborders_mini_review",
+          "section_id": "page-4",
+          "chunk_id": "article:oae-document-astronomyacrossdisciplinesandborders_mini_review/page-4/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-astronomyacrossdisciplinesandborders_mini_review",
+          "section_id": "page-5",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-astronomyacrossdisciplinesandborders_mini_review",
+          "section_id": "page-14",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-teachingwithastronomyexhibits_mini_review",
+          "section_id": "page-11",
+          "chunk_id": "article:oae-document-teachingwithastronomyexhibits_mini_review/page-11/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-astronomyacrossdisciplinesandborders_mini_review",
+          "section_id": "page-7",
+          "chunk_id": "article:oae-document-astronomyacrossdisciplinesandborders_mini_review/page-7/ru/3"
+        },
+        {
+          "record_id": "article:oae-document-citizenscience_mini_review",
+          "section_id": "page-3",
+          "chunk_id": "article:oae-document-citizenscience_mini_review/page-3/ru/1"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        1
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 15
+    },
+    {
+      "id": "oae-02-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-oaereview-evaluation-2025",
+          "section_id": "page-12",
+          "chunk_id": "article:oae-document-oaereview-evaluation-2025/page-12/en/1"
+        },
+        {
+          "record_id": "article:oae-document-oaereview-evaluation-2025",
+          "section_id": "page-13",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-oaereview-evaluation-2025",
+          "section_id": "page-19",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-teachingmethods_mini_review",
+          "section_id": "page-25",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-review-teaching-methods",
+          "section_id": "initial_document",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-review-astronomy-education-research-101",
+          "section_id": "initial_document",
+          "chunk_id": null
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        null
+      ],
+      "missing_passages": [
+        {
+          "source": "article:oae-document-astronomyeducationresearch101_mini_review#page-5",
+          "quote": "Quantitative data are those that are — or can be converted into"
+        }
+      ],
+      "all_expected": false,
+      "search_mode": "hybrid",
+      "vector_hits": 5
+    },
+    {
+      "id": "oae-02-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-oaereview-evaluation-2025",
+          "section_id": "page-12",
+          "chunk_id": "article:oae-document-oaereview-evaluation-2025/page-12/ru/1"
+        },
+        {
+          "record_id": "article:oae-document-oaereview-evaluation-2025",
+          "section_id": "page-13",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-oaereview-evaluation-2025",
+          "section_id": "page-7",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_framework__toolkit_v4",
+          "section_id": "page-10",
+          "chunk_id": "article:oae-document-oae_evaluation_framework__toolkit_v4/page-10/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-oaereview-evaluation-2025",
+          "section_id": "page-13",
+          "chunk_id": "article:oae-document-oaereview-evaluation-2025/page-13/ru/2"
+        },
+        {
+          "record_id": "article:oae-document-oaereview-evaluation-2025",
+          "section_id": "media:oae-pdf-oaereview-evaluation-2025-732bbe8c1717e9d38058",
+          "chunk_id": "media:oae-pdf-oaereview-evaluation-2025-732bbe8c1717e9d38058/caption/ru/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        null
+      ],
+      "missing_passages": [
+        {
+          "source": "article:oae-document-astronomyeducationresearch101_mini_review#page-5",
+          "quote": "Количественными называют данные, которые представлены числами или могут быть преобразованы в числа."
+        }
+      ],
+      "all_expected": false,
+      "search_mode": "hybrid",
+      "vector_hits": 29
+    },
+    {
+      "id": "oae-03-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-astronomyeducationwithauthenticdata_mini_review",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-astronomyeducationwithauthenticdata_mini_review/page-5/en/1"
+        },
+        {
+          "record_id": "article:oae-document-astronomyeducationwithauthenticdata_mini_review",
+          "section_id": "page-4",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-astronomyeducationwithauthenticdata_mini_review",
+          "section_id": "page-6",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-oaereview-evaluation-2025",
+          "section_id": "page-26",
+          "chunk_id": "article:oae-document-oaereview-evaluation-2025/page-26/en/1"
+        },
+        {
+          "record_id": "article:oae-document-astronomyeducationwithauthenticdata_mini_review",
+          "section_id": "page-4",
+          "chunk_id": "article:oae-document-astronomyeducationwithauthenticdata_mini_review/page-4/en/1"
+        },
+        {
+          "record_id": "article:oae-review-remote-observing",
+          "section_id": "about",
+          "chunk_id": "article:oae-review-remote-observing/about/en/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        2
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 33
+    },
+    {
+      "id": "oae-03-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-astronomyeducationwithauthenticdata_mini_review",
+          "section_id": "page-4",
+          "chunk_id": "article:oae-document-astronomyeducationwithauthenticdata_mini_review/page-4/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-astronomyeducationwithauthenticdata_mini_review",
+          "section_id": "page-5",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-astronomyeducationwithauthenticdata_mini_review",
+          "section_id": "page-6",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-oaereview-evaluation-2025",
+          "section_id": "page-26",
+          "chunk_id": "article:oae-document-oaereview-evaluation-2025/page-26/ru/3"
+        },
+        {
+          "record_id": "article:oae-document-astronomyeducationwithauthenticdata_mini_review",
+          "section_id": "page-6",
+          "chunk_id": "article:oae-document-astronomyeducationwithauthenticdata_mini_review/page-6/ru/0"
+        },
+        {
+          "record_id": "article:oae-review-remote-observing",
+          "section_id": "about",
+          "chunk_id": null
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        1
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 31
+    },
+    {
+      "id": "oae-04-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-citizenscience_mini_review",
+          "section_id": "page-4",
+          "chunk_id": "article:oae-document-citizenscience_mini_review/page-4/en/1"
+        },
+        {
+          "record_id": "article:oae-document-citizenscience_mini_review",
+          "section_id": "page-5",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-review-citizen-science",
+          "section_id": "media:oae-review-citizen-science",
+          "chunk_id": "media:oae-review-citizen-science/caption/en/0"
+        },
+        {
+          "record_id": "article:oae-document-citizenscience_mini_review",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-citizenscience_mini_review/page-5/en/0"
+        },
+        {
+          "record_id": "article:oae-document-citizenscience_mini_review",
+          "section_id": "media:oae-pdf-citizenscience_mini_review-9efba19583207f951a67",
+          "chunk_id": "media:oae-pdf-citizenscience_mini_review-9efba19583207f951a67/caption/en/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        2
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 25
+    },
+    {
+      "id": "oae-04-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-citizenscience_mini_review",
+          "section_id": "page-4",
+          "chunk_id": "article:oae-document-citizenscience_mini_review/page-4/ru/1"
+        },
+        {
+          "record_id": "article:oae-document-citizenscience_mini_review",
+          "section_id": "page-18",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-citizenscience_mini_review",
+          "section_id": "page-24",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-internationalcollaborationswithaneducationalcomponent_mini_review",
+          "section_id": "page-12",
+          "chunk_id": "article:oae-document-internationalcollaborationswithaneducationalcomponent_mini_review/page-12/ru/2"
+        },
+        {
+          "record_id": "article:oae-document-citizenscience_mini_review",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-citizenscience_mini_review/page-5/ru/1"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        null
+      ],
+      "missing_passages": [
+        {
+          "source": "article:oae-document-citizenscience_mini_review#page-5",
+          "quote": "У каждого проекта Zooniverse также есть блог и другие площадки в социальных"
+        }
+      ],
+      "all_expected": false,
+      "search_mode": "hybrid",
+      "vector_hits": 25
+    },
+    {
+      "id": "oae-05-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-daytimeastronomy_mini_review",
+          "section_id": "page-6",
+          "chunk_id": "article:oae-document-daytimeastronomy_mini_review/page-6/en/0"
+        },
+        {
+          "record_id": "article:oae-document-daytimeastronomy_mini_review",
+          "section_id": "page-14",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-daytimeastronomy_mini_review",
+          "section_id": "page-17",
+          "chunk_id": null
+        },
+        {
+          "record_id": "term:344",
+          "section_id": "definition",
+          "chunk_id": "term:344/definition/en/0"
+        },
+        {
+          "record_id": "article:oae-document-nakedeyeastronomy_mini_review",
+          "section_id": "media:oae-pdf-nakedeyeastronomy_mini_review-8df0d8b22d4b8232c56c",
+          "chunk_id": null
+        },
+        {
+          "record_id": "term:475",
+          "section_id": "definition",
+          "chunk_id": null
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        1
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 14
+    },
+    {
+      "id": "oae-05-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-daytimeastronomy_mini_review",
+          "section_id": "page-6",
+          "chunk_id": "article:oae-document-daytimeastronomy_mini_review/page-6/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-daytimeastronomy_mini_review",
+          "section_id": "page-13",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-daytimeastronomy_mini_review",
+          "section_id": "page-5",
+          "chunk_id": null
+        },
+        {
+          "record_id": "term:344",
+          "section_id": "definition",
+          "chunk_id": "term:344/definition/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-daytimeastronomy_mini_review",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-daytimeastronomy_mini_review/page-5/ru/2"
+        },
+        {
+          "record_id": "article:oae-document-daytimeastronomy_mini_review",
+          "section_id": "media:oae-pdf-daytimeastronomy_mini_review-50ef73739059f6747992",
+          "chunk_id": "media:oae-pdf-daytimeastronomy_mini_review-50ef73739059f6747992/caption/ru/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        1
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 28
+    },
+    {
+      "id": "oae-06-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-earthasaplanet_mini_review",
+          "section_id": "page-4",
+          "chunk_id": "article:oae-document-earthasaplanet_mini_review/page-4/en/1"
+        },
+        {
+          "record_id": "article:oae-document-earthasaplanet_mini_review",
+          "section_id": "page-5",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-earthasaplanet_mini_review",
+          "section_id": "page-3",
+          "chunk_id": null
+        },
+        {
+          "record_id": "term:10",
+          "section_id": "definition",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-astronomyacrossdisciplinesandborders_mini_review",
+          "section_id": "media:oae-pdf-astronomyacrossdisciplinesandborders_mini_review-d354c6b3ee12801aeac4",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-astronomyeducationresearch101_mini_review",
+          "section_id": "media:oae-pdf-astronomyeducationresearch101_mini_review-d354c6b3ee12801aeac4",
+          "chunk_id": null
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        null
+      ],
+      "missing_passages": [
+        {
+          "source": "article:oae-document-earthasaplanet_mini_review#page-4",
+          "quote": "a profound shift in their understanding of Earth as a fragile oasis"
+        }
+      ],
+      "all_expected": false,
+      "search_mode": "hybrid",
+      "vector_hits": 4
+    },
+    {
+      "id": "oae-06-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-earthasaplanet_mini_review",
+          "section_id": "page-4",
+          "chunk_id": "article:oae-document-earthasaplanet_mini_review/page-4/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-earthasaplanet_mini_review",
+          "section_id": "page-5",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-earthasaplanet_mini_review",
+          "section_id": "page-3",
+          "chunk_id": null
+        },
+        {
+          "record_id": "term:462",
+          "section_id": "definition",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-earthasaplanet_mini_review",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-earthasaplanet_mini_review/page-5/ru/2"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        1
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 6
+    },
+    {
+      "id": "oae-07-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-equitydiversityandinclusionineducation_mini_review",
+          "section_id": "page-8",
+          "chunk_id": "article:oae-document-equitydiversityandinclusionineducation_mini_review/page-8/en/0"
+        },
+        {
+          "record_id": "article:oae-document-equitydiversityandinclusionineducation_mini_review",
+          "section_id": "page-19",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-equitydiversityandinclusionineducation_mini_review",
+          "section_id": "page-6",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-low-techastronomyeducation_mini_review",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-low-techastronomyeducation_mini_review/page-5/en/1"
+        },
+        {
+          "record_id": "article:oae-document-equitydiversityandinclusionineducation_mini_review",
+          "section_id": "page-7",
+          "chunk_id": "article:oae-document-equitydiversityandinclusionineducation_mini_review/page-7/en/1"
+        },
+        {
+          "record_id": "article:oae-document-teachingwithastronomyexhibits_mini_review",
+          "section_id": "page-15",
+          "chunk_id": "article:oae-document-teachingwithastronomyexhibits_mini_review/page-15/en/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        null
+      ],
+      "missing_passages": [
+        {
+          "source": "article:oae-document-equitydiversityandinclusionineducation_mini_review#page-5",
+          "quote": "Give opportunities for taking action (through materials everyone can interact with) and"
+        }
+      ],
+      "all_expected": false,
+      "search_mode": "hybrid",
+      "vector_hits": 34
+    },
+    {
+      "id": "oae-07-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-equitydiversityandinclusionineducation_mini_review",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-equitydiversityandinclusionineducation_mini_review/page-5/ru/1"
+        },
+        {
+          "record_id": "article:oae-document-equitydiversityandinclusionineducation_mini_review",
+          "section_id": "page-17",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-equitydiversityandinclusionineducation_mini_review",
+          "section_id": "page-21",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-prompts_for_jedi",
+          "section_id": "page-12",
+          "chunk_id": "article:oae-document-prompts_for_jedi/page-12/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-equitydiversityandinclusionineducation_mini_review",
+          "section_id": "page-13",
+          "chunk_id": "article:oae-document-equitydiversityandinclusionineducation_mini_review/page-13/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-teachingmethods_mini_review",
+          "section_id": "page-24",
+          "chunk_id": "article:oae-document-teachingmethods_mini_review/page-24/ru/1"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        null
+      ],
+      "missing_passages": [
+        {
+          "source": "article:oae-document-equitydiversityandinclusionineducation_mini_review#page-5",
+          "quote": "Давайте учащимся возможность действовать с помощью материалов, доступных каждому, и общаться с"
+        }
+      ],
+      "all_expected": false,
+      "search_mode": "hybrid",
+      "vector_hits": 30
+    },
+    {
+      "id": "oae-08-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-oaereview-evaluation-2025",
+          "section_id": "page-17",
+          "chunk_id": "article:oae-document-oaereview-evaluation-2025/page-17/en/1"
+        },
+        {
+          "record_id": "article:oae-document-oaereview-evaluation-2025",
+          "section_id": "page-9",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-oaereview-evaluation-2025",
+          "section_id": "page-23",
+          "chunk_id": null
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        null
+      ],
+      "missing_passages": [
+        {
+          "source": "article:oae-document-evaluationofresourcesandactivities_mini_review#page-5",
+          "quote": "activities that you conduct during your work as you implement activities that"
+        }
+      ],
+      "all_expected": false,
+      "search_mode": "hybrid",
+      "vector_hits": 37
+    },
+    {
+      "id": "oae-08-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-evaluationofresourcesandactivities_mini_review",
+          "section_id": "page-3",
+          "chunk_id": "article:oae-document-evaluationofresourcesandactivities_mini_review/page-3/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-evaluationofresourcesandactivities_mini_review",
+          "section_id": "page-5",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-evaluationofresourcesandactivities_mini_review",
+          "section_id": "page-4",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-oaereview-evaluation-2025",
+          "section_id": "page-4",
+          "chunk_id": "article:oae-document-oaereview-evaluation-2025/page-4/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-evaluationofresourcesandactivities_mini_review",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-evaluationofresourcesandactivities_mini_review/page-5/ru/1"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        2
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 29
+    },
+    {
+      "id": "oae-09-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-internationalcollaborationswithaneducationalcomponent_mini_review",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-internationalcollaborationswithaneducationalcomponent_mini_review/page-5/en/0"
+        },
+        {
+          "record_id": "article:oae-document-internationalcollaborationswithaneducationalcomponent_mini_review",
+          "section_id": "page-9",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-internationalcollaborationswithaneducationalcomponent_mini_review",
+          "section_id": "page-6",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-astronomyacrossdisciplinesandborders_mini_review",
+          "section_id": "page-13",
+          "chunk_id": "article:oae-document-astronomyacrossdisciplinesandborders_mini_review/page-13/en/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        3
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 36
+    },
+    {
+      "id": "oae-09-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-review-international-collaborations-with-an-educational-component",
+          "section_id": "about",
+          "chunk_id": "article:oae-review-international-collaborations-with-an-educational-component/about/ru/0"
+        },
+        {
+          "record_id": "article:oae-review-international-collaborations-with-an-educational-component",
+          "section_id": "initial_document",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-internationalcollaborationswithaneducationalcomponent_mini_review",
+          "section_id": "page-8",
+          "chunk_id": "article:oae-document-internationalcollaborationswithaneducationalcomponent_mini_review/page-8/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-astronomyeducationresearch101_mini_review",
+          "section_id": "page-19",
+          "chunk_id": "article:oae-document-astronomyeducationresearch101_mini_review/page-19/ru/3"
+        },
+        {
+          "record_id": "article:oae-document-internationalcollaborationswithaneducationalcomponent_mini_review",
+          "section_id": "page-3",
+          "chunk_id": "article:oae-document-internationalcollaborationswithaneducationalcomponent_mini_review/page-3/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-internationalcollaborationswithaneducationalcomponent_mini_review",
+          "section_id": "page-6",
+          "chunk_id": "article:oae-document-internationalcollaborationswithaneducationalcomponent_mini_review/page-6/ru/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        6
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 32
+    },
+    {
+      "id": "oae-10-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-low-techastronomyeducation_mini_review",
+          "section_id": "page-7",
+          "chunk_id": "article:oae-document-low-techastronomyeducation_mini_review/page-7/en/0"
+        },
+        {
+          "record_id": "article:oae-document-low-techastronomyeducation_mini_review",
+          "section_id": "page-3",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-low-techastronomyeducation_mini_review",
+          "section_id": "page-22",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-equitydiversityandinclusionineducation_mini_review",
+          "section_id": "page-18",
+          "chunk_id": "article:oae-document-equitydiversityandinclusionineducation_mini_review/page-18/en/1"
+        },
+        {
+          "record_id": "article:oae-document-low-techastronomyeducation_mini_review",
+          "section_id": "page-3",
+          "chunk_id": "article:oae-document-low-techastronomyeducation_mini_review/page-3/en/0"
+        },
+        {
+          "record_id": "article:oae-review-low-tech-astronomy-education",
+          "section_id": "media:oae-review-low-tech-astronomy-education",
+          "chunk_id": "media:oae-review-low-tech-astronomy-education/caption/en/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        1
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 23
+    },
+    {
+      "id": "oae-10-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-low-techastronomyeducation_mini_review",
+          "section_id": "page-7",
+          "chunk_id": "article:oae-document-low-techastronomyeducation_mini_review/page-7/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-low-techastronomyeducation_mini_review",
+          "section_id": "page-3",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-low-techastronomyeducation_mini_review",
+          "section_id": "page-21",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-equitydiversityandinclusionineducation_mini_review",
+          "section_id": "page-18",
+          "chunk_id": "article:oae-document-equitydiversityandinclusionineducation_mini_review/page-18/ru/1"
+        },
+        {
+          "record_id": "article:oae-document-low-techastronomyeducation_mini_review",
+          "section_id": "page-3",
+          "chunk_id": "article:oae-document-low-techastronomyeducation_mini_review/page-3/ru/1"
+        },
+        {
+          "record_id": "article:oae-document-low-techastronomyeducation_mini_review",
+          "section_id": "page-27",
+          "chunk_id": "article:oae-document-low-techastronomyeducation_mini_review/page-27/ru/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        1
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 35
+    },
+    {
+      "id": "oae-11-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-mini-review-exoplanets",
+          "section_id": "page-7",
+          "chunk_id": "article:oae-document-mini-review-exoplanets/page-7/en/0"
+        },
+        {
+          "record_id": "article:oae-document-mini-review-exoplanets",
+          "section_id": "page-4",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-mini-review-exoplanets",
+          "section_id": "page-5",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:exoplanet-detection",
+          "section_id": "transit",
+          "chunk_id": "article:exoplanet-detection/transit/en/0"
+        },
+        {
+          "record_id": "article:oae-document-mini-review-exoplanets",
+          "section_id": "page-9",
+          "chunk_id": "article:oae-document-mini-review-exoplanets/page-9/en/0"
+        },
+        {
+          "record_id": "article:oae-document-mini-review-exoplanets",
+          "section_id": "page-8",
+          "chunk_id": "article:oae-document-mini-review-exoplanets/page-8/en/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        1
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 6
+    },
+    {
+      "id": "oae-11-ru",
+      "evidence": [
+        {
+          "record_id": "article:exoplanet-detection",
+          "section_id": "transit",
+          "chunk_id": "article:exoplanet-detection/transit/ru/0"
+        },
+        {
+          "record_id": "article:exoplanet-detection",
+          "section_id": "radial-velocity",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:exoplanet-detection",
+          "section_id": "limitations",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-mini-review-exoplanets",
+          "section_id": "page-7",
+          "chunk_id": "article:oae-document-mini-review-exoplanets/page-7/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-mini-review-exoplanets",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-mini-review-exoplanets/page-5/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-mini-review-exoplanets",
+          "section_id": "page-1",
+          "chunk_id": "article:oae-document-mini-review-exoplanets/page-1/ru/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        4
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 18
+    },
+    {
+      "id": "oae-12-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-nakedeyeastronomy_mini_review",
+          "section_id": "page-6",
+          "chunk_id": "article:oae-document-nakedeyeastronomy_mini_review/page-6/en/0"
+        },
+        {
+          "record_id": "article:oae-document-nakedeyeastronomy_mini_review",
+          "section_id": "page-15",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-nakedeyeastronomy_mini_review",
+          "section_id": "page-5",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_framework__toolkit_v4",
+          "section_id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-ac2b28f4214ee5ee6e96",
+          "chunk_id": null
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        1
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 27
+    },
+    {
+      "id": "oae-12-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-nakedeyeastronomy_mini_review",
+          "section_id": "page-6",
+          "chunk_id": "article:oae-document-nakedeyeastronomy_mini_review/page-6/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-nakedeyeastronomy_mini_review",
+          "section_id": "page-4",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-nakedeyeastronomy_mini_review",
+          "section_id": "page-5",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-daytimeastronomy_mini_review",
+          "section_id": "page-4",
+          "chunk_id": "article:oae-document-daytimeastronomy_mini_review/page-4/ru/1"
+        },
+        {
+          "record_id": "article:oae-document-nakedeyeastronomy_mini_review",
+          "section_id": "page-13",
+          "chunk_id": "article:oae-document-nakedeyeastronomy_mini_review/page-13/ru/1"
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_framework__toolkit_v4",
+          "section_id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-ac2b28f4214ee5ee6e96",
+          "chunk_id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-ac2b28f4214ee5ee6e96/caption/ru/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        1
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 29
+    },
+    {
+      "id": "oae-13-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-oae_evaluation_framework__toolkit_v4",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-oae_evaluation_framework__toolkit_v4/page-5/en/0"
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_framework__toolkit_v4",
+          "section_id": "page-7",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_framework__toolkit_v4",
+          "section_id": "page-41",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_toolkit_standard",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-oae_evaluation_toolkit_standard/page-5/en/0"
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_framework__toolkit_v4",
+          "section_id": "page-3",
+          "chunk_id": "article:oae-document-oae_evaluation_framework__toolkit_v4/page-3/en/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        1
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 33
+    },
+    {
+      "id": "oae-13-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-oae_evaluation_framework__toolkit_v4",
+          "section_id": "page-3",
+          "chunk_id": "article:oae-document-oae_evaluation_framework__toolkit_v4/page-3/ru/1"
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_framework__toolkit_v4",
+          "section_id": "page-4",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_framework__toolkit_v4",
+          "section_id": "page-8",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_toolkit_standard",
+          "section_id": "media:oae-pdf-oae_evaluation_toolkit_standard-aa0681ec83eb39d68913",
+          "chunk_id": "media:oae-pdf-oae_evaluation_toolkit_standard-aa0681ec83eb39d68913/caption/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_framework__toolkit_v4",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-oae_evaluation_framework__toolkit_v4/page-5/ru/1"
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_framework__toolkit_v4",
+          "section_id": "page-8",
+          "chunk_id": "article:oae-document-oae_evaluation_framework__toolkit_v4/page-8/ru/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        null
+      ],
+      "missing_passages": [
+        {
+          "source": "article:oae-document-oae_evaluation_framework__toolkit_v4#page-5",
+          "quote": "Контекст — это обстоятельства, которые не относятся к самой программе и которые"
+        }
+      ],
+      "all_expected": false,
+      "search_mode": "hybrid",
+      "vector_hits": 31
+    },
+    {
+      "id": "oae-14-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-oae_evaluation_toolkit_standard",
+          "section_id": "page-6",
+          "chunk_id": "article:oae-document-oae_evaluation_toolkit_standard/page-6/en/0"
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_toolkit_standard",
+          "section_id": "page-20",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_toolkit_standard",
+          "section_id": "page-7",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_framework__toolkit_v4",
+          "section_id": "page-7",
+          "chunk_id": "article:oae-document-oae_evaluation_framework__toolkit_v4/page-7/en/0"
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_toolkit_standard",
+          "section_id": "page-1",
+          "chunk_id": "article:oae-document-oae_evaluation_toolkit_standard/page-1/en/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        3
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 38
+    },
+    {
+      "id": "oae-14-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-oae_evaluation_framework__toolkit_v4",
+          "section_id": "page-6",
+          "chunk_id": "article:oae-document-oae_evaluation_framework__toolkit_v4/page-6/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_framework__toolkit_v4",
+          "section_id": "page-7",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_toolkit_standard",
+          "section_id": "media:oae-pdf-oae_evaluation_toolkit_standard-a0c8c23c7063b7ca88c8",
+          "chunk_id": "media:oae-pdf-oae_evaluation_toolkit_standard-a0c8c23c7063b7ca88c8/caption/ru/0"
+        },
+        {
+          "record_id": "article:oae-review-evaluation-of-resources-and-activities",
+          "section_id": "about",
+          "chunk_id": "article:oae-review-evaluation-of-resources-and-activities/about/ru/1"
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_framework__toolkit_v4",
+          "section_id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-f7ad10b2add86dced214",
+          "chunk_id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-f7ad10b2add86dced214/caption/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_framework__toolkit_v4",
+          "section_id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-c7979b384297e8349b54",
+          "chunk_id": "media:oae-pdf-oae_evaluation_framework__toolkit_v4-c7979b384297e8349b54/caption/ru/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        null
+      ],
+      "missing_passages": [
+        {
+          "source": "article:oae-document-oae_evaluation_toolkit_standard#page-7",
+          "quote": "Провести опрос до и после занятия, чтобы оценить уверенность учителей. • Достижимость."
+        }
+      ],
+      "all_expected": false,
+      "search_mode": "hybrid",
+      "vector_hits": 37
+    },
+    {
+      "id": "oae-15-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-oae_response_to_the_2023_5th_shaw-iau_workshop_feedback",
+          "section_id": "page-3",
+          "chunk_id": "article:oae-document-oae_response_to_the_2023_5th_shaw-iau_workshop_feedback/page-3/en/0"
+        },
+        {
+          "record_id": "article:oae-document-oae_response_to_the_2023_5th_shaw-iau_workshop_feedback",
+          "section_id": "page-4",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-oae_response_to_the_2023_5th_shaw-iau_workshop_feedback",
+          "section_id": "page-5",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_toolkit_standard",
+          "section_id": "page-30",
+          "chunk_id": null
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        1
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 37
+    },
+    {
+      "id": "oae-15-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-oae_response_to_the_2023_5th_shaw-iau_workshop_feedback",
+          "section_id": "page-3",
+          "chunk_id": "article:oae-document-oae_response_to_the_2023_5th_shaw-iau_workshop_feedback/page-3/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-oae_response_to_the_2023_5th_shaw-iau_workshop_feedback",
+          "section_id": "page-2",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-oae_response_to_the_2023_5th_shaw-iau_workshop_feedback",
+          "section_id": "page-5",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-internationalcollaborationswithaneducationalcomponent_mini_review",
+          "section_id": "page-2",
+          "chunk_id": "article:oae-document-internationalcollaborationswithaneducationalcomponent_mini_review/page-2/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-oae_response_to_the_2023_5th_shaw-iau_workshop_feedback",
+          "section_id": "page-2",
+          "chunk_id": "article:oae-document-oae_response_to_the_2023_5th_shaw-iau_workshop_feedback/page-2/ru/1"
+        },
+        {
+          "record_id": "article:oae-document-oae_response_to_the_2023_5th_shaw-iau_workshop_feedback",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-oae_response_to_the_2023_5th_shaw-iau_workshop_feedback/page-5/ru/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        1
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 35
+    },
+    {
+      "id": "oae-16-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-oaereview-evaluation-2025",
+          "section_id": "page-20",
+          "chunk_id": "article:oae-document-oaereview-evaluation-2025/page-20/en/0"
+        },
+        {
+          "record_id": "article:oae-document-oaereview-evaluation-2025",
+          "section_id": "page-5",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-evaluationofresourcesandactivities_mini_review",
+          "section_id": "page-4",
+          "chunk_id": "article:oae-document-evaluationofresourcesandactivities_mini_review/page-4/en/0"
+        },
+        {
+          "record_id": "term:355",
+          "section_id": "definition",
+          "chunk_id": null
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        2
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 38
+    },
+    {
+      "id": "oae-16-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-review-evaluation-of-resources-and-activities",
+          "section_id": "about",
+          "chunk_id": "article:oae-review-evaluation-of-resources-and-activities/about/ru/1"
+        },
+        {
+          "record_id": "article:oae-review-evaluation-of-resources-and-activities",
+          "section_id": "document",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-review-evaluation-of-resources-and-activities",
+          "section_id": "panel",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-oaereview-evaluation-2025",
+          "section_id": "page-20",
+          "chunk_id": "article:oae-document-oaereview-evaluation-2025/page-20/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-oaereview-evaluation-2025",
+          "section_id": "page-4",
+          "chunk_id": "article:oae-document-oaereview-evaluation-2025/page-4/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-oaereview-evaluation-2025",
+          "section_id": "page-1",
+          "chunk_id": "article:oae-document-oaereview-evaluation-2025/page-1/ru/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        null
+      ],
+      "missing_passages": [
+        {
+          "source": "article:oae-document-oaereview-evaluation-2025#page-5",
+          "quote": "Принимать решения. На основе оценки можно решить, как построить занятия. Диагностическая оценка,"
+        }
+      ],
+      "all_expected": false,
+      "search_mode": "hybrid",
+      "vector_hits": 37
+    },
+    {
+      "id": "oae-17-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-onlineformatsforastronomyeducation_mini_review",
+          "section_id": "page-4",
+          "chunk_id": "article:oae-document-onlineformatsforastronomyeducation_mini_review/page-4/en/1"
+        },
+        {
+          "record_id": "article:oae-document-onlineformatsforastronomyeducation_mini_review",
+          "section_id": "page-15",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-onlineformatsforastronomyeducation_mini_review",
+          "section_id": "page-2",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-astronomyeducationresearch101_mini_review",
+          "section_id": "page-16",
+          "chunk_id": "article:oae-document-astronomyeducationresearch101_mini_review/page-16/en/0"
+        },
+        {
+          "record_id": "article:oae-document-onlineformatsforastronomyeducation_mini_review",
+          "section_id": "page-14",
+          "chunk_id": "article:oae-document-onlineformatsforastronomyeducation_mini_review/page-14/en/2"
+        },
+        {
+          "record_id": "article:oae-document-teachingwithastronomyexhibits_mini_review",
+          "section_id": "page-1",
+          "chunk_id": "article:oae-document-teachingwithastronomyexhibits_mini_review/page-1/en/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        null
+      ],
+      "missing_passages": [
+        {
+          "source": "article:oae-document-onlineformatsforastronomyeducation_mini_review#page-5",
+          "quote": "tested and validated by fifteen years of research on pedagogy and student"
+        }
+      ],
+      "all_expected": false,
+      "search_mode": "hybrid",
+      "vector_hits": 35
+    },
+    {
+      "id": "oae-17-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-onlineformatsforastronomyeducation_mini_review",
+          "section_id": "page-4",
+          "chunk_id": "article:oae-document-onlineformatsforastronomyeducation_mini_review/page-4/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-onlineformatsforastronomyeducation_mini_review",
+          "section_id": "page-3",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-onlineformatsforastronomyeducation_mini_review",
+          "section_id": "page-17",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-review-online-formats-for-astronomy-education",
+          "section_id": "about",
+          "chunk_id": "article:oae-review-online-formats-for-astronomy-education/about/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-onlineformatsforastronomyeducation_mini_review",
+          "section_id": "page-18",
+          "chunk_id": "article:oae-document-onlineformatsforastronomyeducation_mini_review/page-18/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-onlineformatsforastronomyeducation_mini_review",
+          "section_id": "page-1",
+          "chunk_id": "article:oae-document-onlineformatsforastronomyeducation_mini_review/page-1/ru/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        null
+      ],
+      "missing_passages": [
+        {
+          "source": "article:oae-document-onlineformatsforastronomyeducation_mini_review#page-5",
+          "quote": "испытанных и проверенных за 15 лет исследований преподавания и обучения. Диагностические тесты"
+        }
+      ],
+      "all_expected": false,
+      "search_mode": "hybrid",
+      "vector_hits": 29
+    },
+    {
+      "id": "oae-18-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-prompts_for_jedi",
+          "section_id": "page-2",
+          "chunk_id": "article:oae-document-prompts_for_jedi/page-2/en/0"
+        },
+        {
+          "record_id": "article:oae-document-prompts_for_jedi",
+          "section_id": "page-4",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-prompts_for_jedi",
+          "section_id": "page-3",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-review-equity-diversity-and-inclusion-in-education",
+          "section_id": "about",
+          "chunk_id": "article:oae-review-equity-diversity-and-inclusion-in-education/about/en/0"
+        },
+        {
+          "record_id": "article:oae-document-prompts_for_jedi",
+          "section_id": "page-1",
+          "chunk_id": "article:oae-document-prompts_for_jedi/page-1/en/0"
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_toolkit_standard",
+          "section_id": "page-33",
+          "chunk_id": "article:oae-document-oae_evaluation_toolkit_standard/page-33/en/1"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        3
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 31
+    },
+    {
+      "id": "oae-18-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-prompts_for_jedi",
+          "section_id": "page-2",
+          "chunk_id": "article:oae-document-prompts_for_jedi/page-2/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-prompts_for_jedi",
+          "section_id": "page-1",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-prompts_for_jedi",
+          "section_id": "page-3",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-review-equity-diversity-and-inclusion-in-education",
+          "section_id": "about",
+          "chunk_id": "article:oae-review-equity-diversity-and-inclusion-in-education/about/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-prompts_for_jedi",
+          "section_id": "media:oae-pdf-prompts_for_jedi-cover",
+          "chunk_id": "media:oae-pdf-prompts_for_jedi-cover/caption/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-prompts_for_jedi",
+          "section_id": "page-3",
+          "chunk_id": "article:oae-document-prompts_for_jedi/page-3/ru/1"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        3
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 38
+    },
+    {
+      "id": "oae-19-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-remoteobserving_mini_review",
+          "section_id": "page-3",
+          "chunk_id": "article:oae-document-remoteobserving_mini_review/page-3/en/0"
+        },
+        {
+          "record_id": "article:oae-document-remoteobserving_mini_review",
+          "section_id": "page-11",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-remoteobserving_mini_review",
+          "section_id": "page-5",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-review-remote-observing",
+          "section_id": "about",
+          "chunk_id": "article:oae-review-remote-observing/about/en/0"
+        },
+        {
+          "record_id": "article:oae-document-remoteobserving_mini_review",
+          "section_id": "page-6",
+          "chunk_id": "article:oae-document-remoteobserving_mini_review/page-6/en/0"
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_toolkit_standard",
+          "section_id": "page-39",
+          "chunk_id": "article:oae-document-oae_evaluation_toolkit_standard/page-39/en/1"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        3
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 31
+    },
+    {
+      "id": "oae-19-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-remoteobserving_mini_review",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-remoteobserving_mini_review/page-5/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-remoteobserving_mini_review",
+          "section_id": "page-6",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-remoteobserving_mini_review",
+          "section_id": "page-4",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-review-remote-observing",
+          "section_id": "about",
+          "chunk_id": "article:oae-review-remote-observing/about/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-remoteobserving_mini_review",
+          "section_id": "page-6",
+          "chunk_id": "article:oae-document-remoteobserving_mini_review/page-6/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-onlineformatsforastronomyeducation_mini_review",
+          "section_id": "page-16",
+          "chunk_id": "article:oae-document-onlineformatsforastronomyeducation_mini_review/page-16/ru/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        1
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 28
+    },
+    {
+      "id": "oae-20-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-studentcompetitions_mini_review",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-studentcompetitions_mini_review/page-5/en/1"
+        },
+        {
+          "record_id": "article:oae-document-studentcompetitions_mini_review",
+          "section_id": "page-18",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-studentcompetitions_mini_review",
+          "section_id": "page-19",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-review-student-competitions",
+          "section_id": "about",
+          "chunk_id": "article:oae-review-student-competitions/about/en/0"
+        },
+        {
+          "record_id": "article:oae-document-studentcompetitions_mini_review",
+          "section_id": "page-18",
+          "chunk_id": "article:oae-document-studentcompetitions_mini_review/page-18/en/0"
+        },
+        {
+          "record_id": "article:oae-review-daytime-astronomy",
+          "section_id": "media:M079Uo852j31",
+          "chunk_id": null
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        null
+      ],
+      "missing_passages": [
+        {
+          "source": "article:oae-document-studentcompetitions_mini_review#page-6",
+          "quote": "The team competition mixes students from different countries, encouraging them to work"
+        }
+      ],
+      "all_expected": false,
+      "search_mode": "hybrid",
+      "vector_hits": 15
+    },
+    {
+      "id": "oae-20-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-studentcompetitions_mini_review",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-studentcompetitions_mini_review/page-5/ru/2"
+        },
+        {
+          "record_id": "article:oae-document-studentcompetitions_mini_review",
+          "section_id": "page-4",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-studentcompetitions_mini_review",
+          "section_id": "page-9",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-review-student-competitions",
+          "section_id": "about",
+          "chunk_id": "article:oae-review-student-competitions/about/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-studentcompetitions_mini_review",
+          "section_id": "page-6",
+          "chunk_id": "article:oae-document-studentcompetitions_mini_review/page-6/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-studentcompetitions_mini_review",
+          "section_id": "page-9",
+          "chunk_id": "article:oae-document-studentcompetitions_mini_review/page-9/ru/1"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        5
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 23
+    },
+    {
+      "id": "oae-21-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-teachingaboutindigenousastronomy_mini_review",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-teachingaboutindigenousastronomy_mini_review/page-5/en/0"
+        },
+        {
+          "record_id": "article:oae-document-teachingaboutindigenousastronomy_mini_review",
+          "section_id": "page-8",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-teachingaboutindigenousastronomy_mini_review",
+          "section_id": "page-11",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-teachingmethods_mini_review",
+          "section_id": "page-7",
+          "chunk_id": "article:oae-document-teachingmethods_mini_review/page-7/en/2"
+        },
+        {
+          "record_id": "article:oae-document-teachingaboutindigenousastronomy_mini_review",
+          "section_id": "page-4",
+          "chunk_id": "article:oae-document-teachingaboutindigenousastronomy_mini_review/page-4/en/1"
+        },
+        {
+          "record_id": "article:oae-document-teachingaboutindigenousastronomy_mini_review",
+          "section_id": "page-11",
+          "chunk_id": "article:oae-document-teachingaboutindigenousastronomy_mini_review/page-11/en/1"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        1
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 17
+    },
+    {
+      "id": "oae-21-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-teachingaboutindigenousastronomy_mini_review",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-teachingaboutindigenousastronomy_mini_review/page-5/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-teachingaboutindigenousastronomy_mini_review",
+          "section_id": "page-4",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-teachingaboutindigenousastronomy_mini_review",
+          "section_id": "page-10",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-teachingmethods_mini_review",
+          "section_id": "page-7",
+          "chunk_id": "article:oae-document-teachingmethods_mini_review/page-7/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-teachingaboutindigenousastronomy_mini_review",
+          "section_id": "page-4",
+          "chunk_id": "article:oae-document-teachingaboutindigenousastronomy_mini_review/page-4/ru/2"
+        },
+        {
+          "record_id": "article:oae-document-teachingaboutindigenousastronomy_mini_review",
+          "section_id": "page-10",
+          "chunk_id": "article:oae-document-teachingaboutindigenousastronomy_mini_review/page-10/ru/2"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        1
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 28
+    },
+    {
+      "id": "oae-22-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-teachingmethods_mini_review",
+          "section_id": "page-4",
+          "chunk_id": "article:oae-document-teachingmethods_mini_review/page-4/en/0"
+        },
+        {
+          "record_id": "article:oae-document-teachingmethods_mini_review",
+          "section_id": "page-24",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-teachingmethods_mini_review",
+          "section_id": "page-12",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-low-techastronomyeducation_mini_review",
+          "section_id": "page-7",
+          "chunk_id": "article:oae-document-low-techastronomyeducation_mini_review/page-7/en/1"
+        },
+        {
+          "record_id": "article:oae-review-low-tech-astronomy-education",
+          "section_id": "about",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_toolkit_standard",
+          "section_id": "page-39",
+          "chunk_id": "article:oae-document-oae_evaluation_toolkit_standard/page-39/en/1"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        1
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 37
+    },
+    {
+      "id": "oae-22-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-teachingmethods_mini_review",
+          "section_id": "page-4",
+          "chunk_id": "article:oae-document-teachingmethods_mini_review/page-4/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-teachingmethods_mini_review",
+          "section_id": "page-24",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-teachingmethods_mini_review",
+          "section_id": "page-19",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-equitydiversityandinclusionineducation_mini_review",
+          "section_id": "page-13",
+          "chunk_id": "article:oae-document-equitydiversityandinclusionineducation_mini_review/page-13/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-teachingmethods_mini_review",
+          "section_id": "page-24",
+          "chunk_id": "article:oae-document-teachingmethods_mini_review/page-24/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-teachingmethods_mini_review",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-teachingmethods_mini_review/page-5/ru/2"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        1
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 35
+    },
+    {
+      "id": "oae-23-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-teachingwithastronomyexhibits_mini_review",
+          "section_id": "page-6",
+          "chunk_id": "article:oae-document-teachingwithastronomyexhibits_mini_review/page-6/en/0"
+        },
+        {
+          "record_id": "article:oae-document-teachingwithastronomyexhibits_mini_review",
+          "section_id": "page-5",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-teachingwithastronomyexhibits_mini_review",
+          "section_id": "page-10",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-review-teaching-with-astronomy-exhibits",
+          "section_id": "about",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-teachingwithastronomyexhibits_mini_review",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-teachingwithastronomyexhibits_mini_review/page-5/en/1"
+        },
+        {
+          "record_id": "article:oae-document-teachingwithastronomyexhibits_mini_review",
+          "section_id": "page-22",
+          "chunk_id": null
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        1
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 2
+    },
+    {
+      "id": "oae-23-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-teachingwithastronomyexhibits_mini_review",
+          "section_id": "page-6",
+          "chunk_id": "article:oae-document-teachingwithastronomyexhibits_mini_review/page-6/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-teachingwithastronomyexhibits_mini_review",
+          "section_id": "page-5",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-teachingwithastronomyexhibits_mini_review",
+          "section_id": "page-3",
+          "chunk_id": null
+        },
+        {
+          "record_id": "term:451",
+          "section_id": "definition",
+          "chunk_id": "term:451/definition/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-teachingwithastronomyexhibits_mini_review",
+          "section_id": "page-5",
+          "chunk_id": "article:oae-document-teachingwithastronomyexhibits_mini_review/page-5/ru/1"
+        },
+        {
+          "record_id": "term:230",
+          "section_id": "definition",
+          "chunk_id": null
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        1
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 6
+    },
+    {
+      "id": "oae-24-en",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-evaluationofresourcesandactivities_mini_review",
+          "section_id": "page-4",
+          "chunk_id": "article:oae-document-evaluationofresourcesandactivities_mini_review/page-4/en/0"
+        },
+        {
+          "record_id": "article:oae-document-evaluationofresourcesandactivities_mini_review",
+          "section_id": "page-9",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-evaluationofresourcesandactivities_mini_review",
+          "section_id": "page-3",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-review-evaluation-of-resources-and-activities",
+          "section_id": "about",
+          "chunk_id": "article:oae-review-evaluation-of-resources-and-activities/about/en/0"
+        },
+        {
+          "record_id": "article:oae-document-evaluationofresourcesandactivities_mini_review",
+          "section_id": "page-1",
+          "chunk_id": "article:oae-document-evaluationofresourcesandactivities_mini_review/page-1/en/0"
+        },
+        {
+          "record_id": "article:oae-document-evaluationofresourcesandactivities_mini_review",
+          "section_id": "page-21",
+          "chunk_id": "article:oae-document-evaluationofresourcesandactivities_mini_review/page-21/en/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        4
+      ],
+      "missing_passages": [],
+      "all_expected": true,
+      "search_mode": "hybrid",
+      "vector_hits": 38
+    },
+    {
+      "id": "oae-24-ru",
+      "evidence": [
+        {
+          "record_id": "article:oae-document-evaluationofresourcesandactivities_mini_review",
+          "section_id": "page-4",
+          "chunk_id": "article:oae-document-evaluationofresourcesandactivities_mini_review/page-4/ru/1"
+        },
+        {
+          "record_id": "article:oae-document-evaluationofresourcesandactivities_mini_review",
+          "section_id": "page-7",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-document-evaluationofresourcesandactivities_mini_review",
+          "section_id": "page-5",
+          "chunk_id": null
+        },
+        {
+          "record_id": "article:oae-review-evaluation-of-resources-and-activities",
+          "section_id": "about",
+          "chunk_id": "article:oae-review-evaluation-of-resources-and-activities/about/ru/1"
+        },
+        {
+          "record_id": "article:oae-document-evaluationofresourcesandactivities_mini_review",
+          "section_id": "page-3",
+          "chunk_id": "article:oae-document-evaluationofresourcesandactivities_mini_review/page-3/ru/0"
+        },
+        {
+          "record_id": "article:oae-document-oae_evaluation_toolkit_standard",
+          "section_id": "page-13",
+          "chunk_id": "article:oae-document-oae_evaluation_toolkit_standard/page-13/ru/0"
+        }
+      ],
+      "missing_groups": [],
+      "passage_ranks": [
+        null
+      ],
+      "missing_passages": [
+        {
+          "source": "article:oae-review-evaluation-of-resources-and-activities#about",
+          "quote": "как она устроена и как её проводят, каких результатов удалось достичь и"
+        }
+      ],
+      "all_expected": false,
+      "search_mode": "hybrid",
+      "vector_hits": 33
+    }
+  ]
+}

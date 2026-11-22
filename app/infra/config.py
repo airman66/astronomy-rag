@@ -7,10 +7,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 CALL_LEASE_SECONDS = 150
+_release = os.getenv("DATA_RELEASE")
+RELEASE_DIR = Path(_release).resolve(strict=True) if _release else None
 
 
 def data_directory(default: Path = Path("data")) -> Path:
-    return Path(os.getenv("DATA_DIR", str(default)))
+    return RELEASE_DIR or Path(os.getenv("DATA_DIR", str(default)))
 
 
 def cors_origins() -> list[str]:

@@ -4,6 +4,23 @@ import hashlib
 import json
 from pathlib import Path
 
+from app.catalog.index import CHUNK_MANIFEST_NAME, MANIFEST_NAME
+from app.pipeline.chunks import CHUNK_VERSION
+
+
+def bind_vector_index(root: Path, corpus: str) -> None:
+    manifest = root / "index" / MANIFEST_NAME
+    index = json.loads(manifest.read_text())
+    config = {
+        "chunk_version": CHUNK_VERSION,
+        "chunk_count": index["chunk_count"],
+        "chunks_sha256": index["chunks_sha256"],
+        "corpus_sha256": corpus,
+    }
+    (manifest.parent / CHUNK_MANIFEST_NAME).write_text(json.dumps(config))
+    index.update(corpus_sha256=corpus, chunk_config=config)
+    manifest.write_text(json.dumps(index))
+
 
 def seed_vector_index(root: Path) -> None:
     import faiss
@@ -56,6 +73,7 @@ def seed_vector_index(root: Path) -> None:
                 "model_file": "small.gguf",
                 "model_sha256": hashlib.sha256(b"test-model").hexdigest(),
                 "pooling": "last",
+                "corpus_sha256": "test-corpus",
                 "query_instruction": "Find astronomy definitions.",
                 "dimension": 2,
                 "chunk_count": 2,
@@ -65,3 +83,4 @@ def seed_vector_index(root: Path) -> None:
             }
         )
     )
+    bind_vector_index(root, "test-corpus")

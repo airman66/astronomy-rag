@@ -23,16 +23,18 @@ services:
       EMBEDDING_URL: ${EMBEDDING_URL:-http://embeddings:8080/v1/embeddings}
       REDIS_URL: redis://redis:6379/0
       CATALOG_DB_PATH: /app/state/glossary.db
+      DATA_RELEASE:
+      REQUIRE_HYBRID:
     depends_on:
       redis:
         condition: service_healthy
     volumes:
-      - ./data:/app/data
+      - ./data:/app/data:ro
       - catalog-db:/app/state
     restart: unless-stopped
   model-fetch:
     profiles: ["embeddings"]
-    image: &llama-server ghcr.io/ggml-org/llama.cpp:server
+    image: &llama-server ghcr.io/ggml-org/llama.cpp:server@sha256:c2cf6c72d913b6c89a5f0929f2a866e6161e09e7dc187e0f3b0f21e923e26db3
     entrypoint: ["/bin/sh", "/scripts/fetch_model.sh"]
     volumes:
       - ./data/models:/models
@@ -46,6 +48,8 @@ services:
     command:
       - -m
       - /models/Qwen3-Embedding-8B-Q4_K_M.gguf
+      - --alias
+      - Qwen/Qwen3-Embedding-8B-GGUF
       - --embedding
       - --pooling
       - last
@@ -63,7 +67,7 @@ services:
       - ./data/models:/models:ro
     restart: unless-stopped
   redis:
-    image: redis:7-alpine
+    image: redis:7-alpine@sha256:7f7d30b7fdd09467bac58198a1f166dd69789d348d4fe859cccb20e0cf287fbe
     command: ["redis-server", "--save", "", "--appendonly", "no"]
     restart: unless-stopped
     healthcheck:

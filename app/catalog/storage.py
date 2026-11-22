@@ -15,11 +15,13 @@ from contextlib import closing, contextmanager
 from functools import lru_cache
 from pathlib import Path
 
-from app.infra.config import data_directory
+from app.catalog.corpus import corpus_digest, record_files
+from app.infra.config import RELEASE_DIR, data_directory
 
 DATA = data_directory()
-DB = Path(os.getenv("CATALOG_DB_PATH") or DATA / "glossary.db")
-SCHEMA_VERSION = "7"
+DB = DATA / "glossary.db" if RELEASE_DIR else Path(os.getenv("CATALOG_DB_PATH") or DATA / "glossary.db")
+READ_ONLY = RELEASE_DIR is not None or os.getenv("CATALOG_READ_ONLY") == "1"
+SCHEMA_VERSION = "9"
 RECHECK_SECONDS = 30.0
 _lock = threading.Lock()
 _checked: dict[str, float] = {}
@@ -58,15 +60,19 @@ def stems(text: str, locale: str) -> str:
     return " ".join(stemmer.stemWords(words))
 
 
-def canonical_files() -> list[Path]:
-    return sorted((DATA / "processed" / "terms").glob("*.json")) + sorted((DATA / "processed" / "articles").glob("*.json")) + sorted((DATA / "illustrations").glob("manifest.json"))
+def canonical_files(root: Path | None = None) -> list[Path]:
+    root = DATA if root is None else root
+    return record_files(root) + sorted((root / "illustrations").glob("manifest.json"))
 
 
-def fingerprint() -> str:
+def fingerprint(root: Path | None = None) -> str:
+    root = DATA if root is None else root
     digest = hashlib.sha256(SCHEMA_VERSION.encode())
-    for path in canonical_files():
+    for path in canonical_files(root):
         stat = path.stat()
-        digest.update(f"{path.relative_to(DATA).as_posix()}|{stat.st_size}|{stat.st_mtime_ns}\n".encode())
+        digest.update(
+            f"{path.relative_to(root).as_posix()}|{stat.st_size}|{stat.st_mtime_ns}|{stat.st_ctime_ns}|{stat.st_ino}\n".encode()
+        )
     return digest.hexdigest()
 
 
@@ -85,8 +91,9 @@ def _stored_fingerprint() -> str | None:
 
 
 def connection() -> sqlite3.Connection:
-    ensure_database()
-    db = sqlite3.connect(DB)
+    if not READ_ONLY:
+        ensure_database()
+    db = sqlite3.connect(f"{DB.resolve().as_uri()}?mode=ro", uri=True)
     db.row_factory = sqlite3.Row
     return db
 
@@ -101,8 +108,12 @@ def _read():
         db.close()
 
 
-def ensure_database(force_check: bool = False) -> None:
+def ensure_database(force_check: bool = False, *, allow_stale: bool = True) -> None:
     """Rebuild the DB when it is missing or the canonical JSON set changed (checked every 30 s)."""
+    if READ_ONLY:
+        if _stored_fingerprint() is None:
+            raise ValueError("Read-only catalogue is missing or incompatible")
+        return
     key = str(DB)
     if not force_check and DB.exists() and time.monotonic() - _checked.get(key, -RECHECK_SECONDS) < RECHECK_SECONDS:
         return
@@ -115,14 +126,14 @@ def ensure_database(force_check: bool = False) -> None:
             if stored != current:
                 rebuild_database(current)
         except (OSError, ValueError, LookupError, TypeError, AttributeError, OverflowError, sqlite3.Error):
-            if stored is None:
+            if stored is None or not allow_stale:
                 raise
             log.exception("Catalog rebuild failed, serving the previous database for %s seconds", RECHECK_SECONDS)
         _checked[key] = time.monotonic()
 
 
-def _illustrations() -> dict[int, dict]:
-    path = DATA / "illustrations" / "manifest.json"
+def _illustrations(root: Path) -> dict[int, dict]:
+    path = root / "illustrations" / "manifest.json"
     if not path.exists():
         return {}
     manifest = json.loads(path.read_text(encoding="utf-8"))
@@ -134,23 +145,61 @@ def _illustrations() -> dict[int, dict]:
 
 
 def rebuild_database(current_fingerprint: str | None = None) -> None:
-    DB.parent.mkdir(parents=True, exist_ok=True)
-    temporary = DB.with_name(f".{DB.name}.{uuid.uuid4().hex}.building")
+    build_database(DATA, DB, current_fingerprint)
+
+
+def build_database(
+    root: Path, destination: Path, current_fingerprint: str | None = None, *, immutable: bool = False,
+) -> None:
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    temporary = destination.with_name(f".{destination.name}.{uuid.uuid4().hex}.building")
     try:
+        initial = current_fingerprint or fingerprint(root)
+        source_sha = corpus_digest(root)
+        stored_fingerprint = source_sha if immutable else initial
         with closing(sqlite3.connect(temporary)) as db:
-            _populate_database(db, current_fingerprint or fingerprint())
-        temporary.replace(DB)
+            _populate_database(db, stored_fingerprint, root, source_sha)
+        if fingerprint(root) != initial or corpus_digest(root) != source_sha:
+            raise ValueError("Catalogue inputs changed during the build")
+        temporary.replace(destination)
     finally:
         temporary.unlink(missing_ok=True)
     log.info("glossary database rebuilt")
 
 
-def _populate_database(db: sqlite3.Connection, current_fingerprint: str) -> None:
-    term_paths = sorted((DATA / "processed" / "terms").glob("*.json"))
+def corpus_version() -> str | None:
+    with _read() as db:
+        return _ready_corpus(db)
+
+
+def database_corpus(path: Path) -> str | None:
+    """Read the identity of an already-built catalogue without rebuilding it."""
+    with closing(sqlite3.connect(f"{path.resolve().as_uri()}?mode=ro", uri=True)) as db:
+        return _ready_corpus(db)
+
+
+def _ready_corpus(db: sqlite3.Connection) -> str | None:
+    compatible = db.execute(
+        "SELECT 1 FROM meta WHERE key='schema_version' AND value=? AND EXISTS (SELECT 1 FROM terms)",
+        (SCHEMA_VERSION,),
+    ).fetchone()
+    if compatible:
+        db.execute("SELECT rowid FROM search_fts LIMIT 1").fetchone()
+        return _corpus_version(db)
+    return None
+
+
+def _corpus_version(db: sqlite3.Connection) -> str | None:
+    row = db.execute("SELECT value FROM meta WHERE key='corpus_sha256'").fetchone()
+    return row[0] if row else None
+
+
+def _populate_database(db: sqlite3.Connection, current_fingerprint: str, root: Path, source_sha: str) -> None:
+    term_paths = sorted((root / "processed" / "terms").glob("*.json"))
     if not term_paths:
         raise ValueError("No canonical term records")
 
-    illustrations = _illustrations()
+    illustrations = _illustrations(root)
     db.executescript(
         """
         CREATE TABLE meta (key TEXT PRIMARY KEY, value TEXT NOT NULL);
@@ -213,7 +262,7 @@ def _populate_database(db: sqlite3.Connection, current_fingerprint: str) -> None
                 if block.get("body"):
                     index(record["id"], section["id"], locale, "term", loc["title"], block["body"], url, status)
         index_media(record)
-    for path in sorted((DATA / "processed" / "articles").glob("*.json")):
+    for path in sorted((root / "processed" / "articles").glob("*.json")):
         record = json.loads(path.read_text(encoding="utf-8"))
         en, ru = record["locales"]["en"], record["locales"]["ru"]
         status = record["review"]["status"]
@@ -227,14 +276,19 @@ def _populate_database(db: sqlite3.Connection, current_fingerprint: str) -> None
         index_media(record)
     db.execute("INSERT INTO meta VALUES ('fingerprint', ?)", (current_fingerprint,))
     db.execute("INSERT INTO meta VALUES ('schema_version', ?)", (SCHEMA_VERSION,))
+    db.execute("INSERT INTO meta VALUES ('corpus_sha256', ?)", (source_sha,))
     db.commit()
 
 
 def illustration_view(item: dict) -> dict:
     source = item.get("source") or {}
+    number = int(item["term_number"])
+    url = f"/api/v1/terms/{number}/illustration"
+    if digest := item.get("sha256"):
+        url = f"{url}?v={digest}"
     return {
-        "term_number": int(item["term_number"]),
-        "url": f"/api/v1/terms/{int(item['term_number'])}/illustration",
+        "term_number": number,
+        "url": url,
         "width": item.get("width"),
         "height": item.get("height"),
         "alt_ru": item.get("alt_ru", ""),
@@ -280,43 +334,62 @@ def _like(value: str) -> str:
 
 
 def list_records(kind: str, *, page: int, page_size: int, locale: str, query: str = "", category: str = "", letter: str = "", status: str = "") -> tuple[list[dict], int]:
-    table = "terms" if kind == "term" else "articles"
-    clauses, args = [], []
-    if query:
-        needle = f"%{_like(normalize(query))}%"
-        columns = ["title_en_norm", "title_ru_norm"]
-        if table == "terms":
-            columns.append("aliases_norm")
-        clauses.append("(" + " OR ".join(f"{column} LIKE ? ESCAPE '\\'" for column in columns) + ")")
-        args.extend([needle] * len(columns))
-    if category and table == "terms":
-        # JSON1 gives exact category matching and treats %/_ as literal text.
-        clauses.append("EXISTS (SELECT 1 FROM json_each(terms.categories) WHERE value=?)")
-        args.append(category)
-    if letter:
-        clauses.append(f"title_{locale}_norm LIKE ? ESCAPE '\\'")
-        args.append(f"{_like(normalize(letter)[:1])}%")
-    if status:
-        clauses.append("review_status=?")
-        args.append(status)
-    where = " WHERE " + " AND ".join(clauses) if clauses else ""
-    order = f"title_{locale}_norm, title_en_norm"
+    is_term = kind == "term"
+    table = "terms" if is_term else "articles"
+    params = {
+        "is_term": is_term,
+        "ru": locale == "ru",
+        "needle": f"%{_like(normalize(query))}%" if query else "",
+        "category": category if is_term else "",
+        "letter": f"{_like(normalize(letter)[:1])}%" if letter else "",
+        "status": status,
+        "limit": page_size,
+        "offset": min((page - 1) * page_size, 2**63 - 1),
+    }
     with _read() as db:
-        total = db.execute(f"SELECT COUNT(*) FROM {table}{where}", args).fetchone()[0]
-        offset = (page - 1) * page_size
-        if offset >= total:
-            return [], total
-        rows = db.execute(f"SELECT * FROM {table}{where} ORDER BY {order} LIMIT ? OFFSET ?", [*args, page_size, offset]).fetchall()
+        rows = db.execute(
+            r"""WITH records AS (
+                SELECT number AS identifier, title_en_norm, title_ru_norm, aliases_norm, categories, review_status
+                FROM terms WHERE :is_term
+                UNION ALL
+                SELECT id, title_en_norm, title_ru_norm, '', '[]', review_status
+                FROM articles WHERE NOT :is_term
+            ), filtered AS (
+                SELECT identifier, title_en_norm, review_status,
+                       CASE WHEN :ru THEN title_ru_norm ELSE title_en_norm END AS sort_title
+                FROM records
+                WHERE (:needle = '' OR title_en_norm LIKE :needle ESCAPE '\'
+                    OR title_ru_norm LIKE :needle ESCAPE '\' OR aliases_norm LIKE :needle ESCAPE '\')
+                  AND (:category = '' OR EXISTS (SELECT 1 FROM json_each(records.categories) WHERE value=:category))
+                  AND (:letter = '' OR sort_title LIKE :letter ESCAPE '\')
+                  AND (:status = '' OR review_status=:status)
+            ), page AS (
+                SELECT * FROM filtered ORDER BY sort_title, title_en_norm, identifier LIMIT :limit OFFSET :offset
+            )
+            SELECT total, page.identifier, page.review_status,
+                   COALESCE(terms.title_en, articles.title_en) AS title_en,
+                   COALESCE(terms.title_ru, articles.title_ru) AS title_ru,
+                   COALESCE(terms.payload, articles.payload) AS payload
+            FROM (SELECT COUNT(*) AS total FROM filtered)
+            LEFT JOIN page ON 1
+            LEFT JOIN terms ON :is_term AND terms.number = page.identifier
+            LEFT JOIN articles ON NOT :is_term AND articles.id = page.identifier
+            ORDER BY page.sort_title, page.title_en_norm, page.identifier""",
+            params,
+        ).fetchall()
+    total = rows[0]["total"]
+    if rows[0]["identifier"] is None:
+        return [], total
     result = []
     for row in rows:
         payload = json.loads(row["payload"])
-        title = row[f"title_{locale}"] or row["title_en"]
+        title = row["title_ru" if locale == "ru" else "title_en"] or row["title_en"]
         illustration = payload.get("illustration")
         result.append({
             "id": payload["id"],
             "title": title,
             "title_en": row["title_en"],
-            "url": f"/api/v1/{table}/{row['number'] if table == 'terms' else row['id']}",
+            "url": f"/api/v1/{table}/{row['identifier']}",
             "review_status": row["review_status"],
             "categories": payload.get("metadata", {}).get("categories", []),
             "categories_ru": payload.get("metadata", {}).get("categories_ru", []),
@@ -328,7 +401,11 @@ def list_records(kind: str, *, page: int, page_size: int, locale: str, query: st
 def letters(locale: str) -> list[dict]:
     """First letters of term titles in the requested language, for an alphabet index."""
     with _read() as db:
-        rows = db.execute(f"SELECT substr(title_{locale}_norm, 1, 1) AS letter, COUNT(*) AS count FROM terms GROUP BY letter ORDER BY letter").fetchall()
+        rows = db.execute(
+            "SELECT substr(CASE WHEN ? THEN title_ru_norm ELSE title_en_norm END, 1, 1) AS letter, "
+            "COUNT(*) AS count FROM terms GROUP BY letter ORDER BY letter",
+            (locale == "ru",),
+        ).fetchall()
     return [{"letter": row["letter"].upper(), "count": row["count"]} for row in rows if row["letter"] and row["letter"].isalpha()]
 
 
@@ -366,13 +443,27 @@ def lexical_search(query: str, locale: str, limit: int, *, record_id: str | None
     expression = _expression(query, locale)
     if not expression:
         return []
-    record_filter = " AND record_id=?" if record_id is not None else ""
-    params = (expression, locale, record_id, limit) if record_id is not None else (expression, locale, limit)
     with _read() as db:
-        rows = db.execute(
-            "SELECT record_id,section_id,locale,kind,title,body,url,review_status,"
-            "bm25(search_fts, 0,0,0,0,0,0,0,0, 8,1,6,0.8) AS score FROM search_fts "
-            f"WHERE search_fts MATCH ? AND locale=?{record_filter} ORDER BY score LIMIT ?",
-            params,
-        ).fetchall()
+        return _lexical_matches(db, expression, locale, limit, record_id)
+
+
+def lexical_search_snapshot(query: str, locale: str, limit: int) -> tuple[list[dict], str | None]:
+    """Read the lexical hits and their corpus version in one SQLite snapshot."""
+    expression = _expression(query, locale)
+    with _read() as db:
+        db.execute("BEGIN")
+        version = _corpus_version(db)
+        matches = _lexical_matches(db, expression, locale, limit, None) if expression else []
+    return matches, version
+
+
+def _lexical_matches(
+    db: sqlite3.Connection, expression: str, locale: str, limit: int, record_id: str | None,
+) -> list[dict]:
+    rows = db.execute(
+        "SELECT record_id,section_id,locale,kind,title,body,url,review_status,"
+        "bm25(search_fts, 0,0,0,0,0,0,0,0, 8,1,6,0.8) AS score FROM search_fts "
+        "WHERE search_fts MATCH ? AND locale=? AND (? IS NULL OR record_id=?) ORDER BY score LIMIT ?",
+        (expression, locale, record_id, record_id, limit),
+    ).fetchall()
     return [{"record_id": row["record_id"], "section_id": row["section_id"], "kind": row["kind"], "title": row["title"], "excerpt": row["body"][:400], "url": row["url"], "review_status": row["review_status"], "score": -row["score"]} for row in rows]

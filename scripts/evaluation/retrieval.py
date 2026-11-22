@@ -5,6 +5,7 @@ import asyncio
 import hashlib
 import json
 import math
+import os
 import re
 import time
 from collections import Counter
@@ -22,7 +23,7 @@ from app.infra.config import LLMSettings, assistant_deadline, data_directory, lo
 from app.infra.files import write_json
 
 DATA = data_directory()
-EVALUATION = DATA / "eval" / "assistant"
+EVALUATION = Path(os.getenv("DATA_DIR", "data")) / "eval" / "assistant"
 
 
 def matches_source(item: dict, selector: str) -> bool:
@@ -34,17 +35,42 @@ def covers(groups: list, sources: list[dict]) -> bool:
     return all(any(matches_source(item, selector) for item in sources for selector in group) for group in groups)
 
 
+def passage_rank(passage: dict, sources: list[dict]) -> int | None:
+    quote = " ".join(passage["quote"].split())
+    if not quote:
+        raise ValueError("Passage quote must not be empty")
+    return next(
+        (index for index, source in enumerate(sources, 1)
+         if matches_source(source, passage["source"])
+         and quote in " ".join(source.get("text", "").split())),
+        None,
+    )
+
+
 def evaluate_retrieval(case: dict) -> dict | None:
+    mode = case.get("requested_mode", "auto")
     groups = list(case.get("evidence", []))
     for fact in case.get("facts", []):
         groups.extend(fact.get("evidence", []))
-    if not groups:
+    passages = case.get("passages", [])
+    has_expectations = bool(groups or passages)
+    if mode == "general" and not has_expectations:
         return None
-    mode = case.get("requested_mode", "auto")
-    evidence = {} if mode == "general" else evidence_for(case["question"], case["locale"], prefer_article=mode == "article")
+    trace: dict = {}
+    evidence = {} if mode == "general" else evidence_for(
+        case["question"], case["locale"], prefer_article=mode == "article",
+        context_record_id=case.get("context_record_id"), trace=trace,
+    )
     sources = [item.reference() for item in evidence.values()]
+    fragments = [{**source, "text": item.text} for source, item in zip(sources, evidence.values())]
     missing = [group for group in groups if not covers([group], sources)]
-    return {"id": case["id"], "evidence": sources, "missing_groups": missing, "all_expected": not missing}
+    ranks = [passage_rank(passage, fragments) for passage in passages]
+    return {
+        "id": case["id"], "evidence": sources, "missing_groups": missing,
+        "passage_ranks": ranks, "missing_passages": [p for p, rank in zip(passages, ranks) if rank is None],
+        "all_expected": (not missing and all(rank is not None for rank in ranks)) if has_expectations else None,
+        **trace,
+    }
 
 
 def evaluate_response(case: dict, result: dict, evidence: list[dict]) -> dict:
@@ -122,7 +148,9 @@ async def live_case(case: dict, client: LLMClient, args: argparse.Namespace) -> 
                            "expected_modes": case["expected_modes"], "passed": False}
     try:
         result = await asyncio.wait_for(
-            answer(case["question"], case.get("requested_mode", "auto"), case["locale"], None, client, trace=trace),
+            answer(case["question"], case.get("requested_mode", "auto"), case["locale"],
+                   {"record_id": case["context_record_id"]} if "context_record_id" in case else None,
+                   client, trace=trace),
             timeout=assistant_deadline(),
         )
         row.update(result=result, **evaluate_response(case, result, trace["evidence"]))
@@ -133,6 +161,8 @@ async def live_case(case: dict, client: LLMClient, args: argparse.Namespace) -> 
     row["latency_ms"] = round((time.perf_counter() - started) * 1000, 3)
     row["retrieval_ms"] = trace.get("retrieval_ms")
     row["llm_ms"] = trace.get("llm_ms")
+    row["search_mode"] = trace.get("search_mode")
+    row["vector_hits"] = trace.get("vector_hits")
     row["usage"] = trace.get("usage", {})
     row["evidence"] = trace.get("evidence", [])
     if args.input_usd is not None and args.output_usd is not None:
@@ -172,6 +202,8 @@ async def main() -> None:
     parser.add_argument("--suite", type=Path, default=EVALUATION / "full_questions.json")
     parser.add_argument("--output", type=Path)
     parser.add_argument("--retrieval-only", action="store_true", help="Check evidence packing without LLM calls")
+    parser.add_argument("--require-search-mode", choices=("hybrid", "lexical"),
+                        help="Reject retrieval executed in another mode")
     parser.add_argument("--check", action="store_true", help="Exit with an error if any selected case fails")
     parser.add_argument("--case", action="append", help="Run only these case IDs")
     parser.add_argument("--limit", type=int, help="Run the first N selected cases")
@@ -204,11 +236,18 @@ async def main() -> None:
         "index_sha256": hashlib.sha256(manifest.read_bytes()).hexdigest() if manifest.is_file() else None,
     }
     rows = []
+    run_metrics: dict[str, Any]
     if args.retrieval_only:
         for case in cases:
             if (row := evaluate_retrieval(case)) is not None:
                 rows.append(row)
-        report["metrics"] = {"cases": len(rows), "with_all_evidence": sum(row["all_expected"] for row in rows)}
+        ranks = [rank for row in rows for rank in row["passage_ranks"]]
+        run_metrics = {
+            "cases": len(rows), "evidence_cases": sum(row["all_expected"] is not None for row in rows),
+            "with_all_evidence": sum(row["all_expected"] is True for row in rows),
+            "passages_checked": len(ranks), "passages_found": sum(rank is not None for rank in ranks),
+            "passage_mrr": round(sum(1 / rank for rank in ranks if rank) / len(ranks), 4) if ranks else None,
+        }
     else:
         settings = LLMSettings.from_env()
         if not settings.api_key:
@@ -225,18 +264,25 @@ async def main() -> None:
                     report["aborted"] = str(exc)
                     break
                 print(case["id"], "PASS" if rows[-1]["passed"] else "FAIL", round(rows[-1]["latency_ms"]), "ms")
-        report["metrics"] = summarize(rows) if rows else {"cases": 0}
-    report["results"] = rows
+        run_metrics = summarize(rows) if rows else {"cases": 0}
+    retrieval_ids = {case["id"] for case in cases if case.get("requested_mode") != "general"}
+    searched = {row["id"]: row for row in rows if row["id"] in retrieval_ids}
+    search_modes = Counter(searched.get(case_id, {}).get("search_mode") or "missing" for case_id in retrieval_ids)
+    run_metrics["search_modes"] = dict(search_modes)
+    run_metrics["with_vector_hits"] = sum(bool(row.get("vector_hits")) for row in searched.values())
+    report.update(metrics=run_metrics, results=rows)
     output = args.output or EVALUATION / ("full_retrieval_report.json" if args.retrieval_only else "full_report.json")
     write_json(output, report)
-    print(json.dumps(report["metrics"], ensure_ascii=False))
+    print(json.dumps(run_metrics, ensure_ascii=False))
     if "aborted" in report:
         raise SystemExit(report["aborted"])
+    if args.require_search_mode and set(search_modes) != {args.require_search_mode}:
+        raise SystemExit(f"Required {args.require_search_mode} search for every retrieval case. See {output}")
     if args.check:
         outcome = "all_expected" if args.retrieval_only else "passed"
-        failures = [row for row in rows if not row[outcome]]
+        failures = [row for row in rows if row[outcome] is False]
         for row in failures:
             if args.retrieval_only:
-                print(row["id"], "missing", row["missing_groups"])
+                print(row["id"], "missing", row["missing_groups"], row["missing_passages"])
         if not rows or failures:
             raise SystemExit(f"Evaluation check failed. See {output}")

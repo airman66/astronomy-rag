@@ -10,6 +10,8 @@ from functools import lru_cache
 
 from tokenizers import Tokenizer
 
+from app.catalog.corpus import corpus_digest, record_files
+from app.catalog.index import CHUNK_MANIFEST_NAME, index_writer
 from app.infra.config import data_directory
 from app.infra.files import write_bytes, write_json
 
@@ -143,11 +145,7 @@ def make_chunk(record_id: str, section_id: str, locale: str, title: str, heading
 def build_chunks(budget: int = 400, overlap: float = 0.1) -> list[dict]:
     result: list[dict] = []
     seen_media: set[tuple[str, str]] = set()
-    files = (
-        sorted((DATA / "processed" / "terms").glob("*.json"))
-        + sorted((DATA / "processed" / "articles").glob("*.json"))
-    )
-    for path in files:
+    for path in record_files(DATA):
         record = json.loads(path.read_text(encoding="utf-8"))
         record_id = record["id"]
         kind = "article" if record_id.startswith("article:") else "term"
@@ -177,13 +175,16 @@ def build_chunks(budget: int = 400, overlap: float = 0.1) -> list[dict]:
 
 
 def write_chunks(budget: int = 400, overlap: float = 0.1) -> dict:
-    chunks = build_chunks(budget, overlap)
-    destination = DATA / "index" / "chunks.jsonl"
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    content = "".join(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n" for row in chunks).encode()
-    write_bytes(destination, content)
-    manifest = {"chunk_version": CHUNK_VERSION, "budget_tokens": budget, "overlap": overlap, "tokenizer_model": TOKENIZER_MODEL, "chunk_count": len(chunks), "chunks_sha256": hashlib.sha256(content).hexdigest()}
-    write_json(DATA / "index" / "chunk-manifest.json", manifest)
+    root = DATA / "index"
+    with index_writer(root):
+        source_sha = corpus_digest(DATA)
+        chunks = build_chunks(budget, overlap)
+        if corpus_digest(DATA) != source_sha:
+            raise ValueError("Canonical JSON changed during chunk generation")
+        content = "".join(json.dumps(row, ensure_ascii=False, sort_keys=True) + "\n" for row in chunks).encode()
+        manifest = {"chunk_version": CHUNK_VERSION, "corpus_sha256": source_sha, "budget_tokens": budget, "overlap": overlap, "tokenizer_model": TOKENIZER_MODEL, "chunk_count": len(chunks), "chunks_sha256": hashlib.sha256(content).hexdigest()}
+        write_bytes(root / "chunks.jsonl", content)
+        write_json(root / CHUNK_MANIFEST_NAME, manifest)
     return manifest
 
 

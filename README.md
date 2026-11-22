@@ -19,12 +19,24 @@ docker compose --profile embeddings up --build -d
 На macOS можно вместо контейнера запустить `llama-server` с Metal и задать `EMBEDDING_URL=http://host.docker.internal:8082/v1/embeddings`:
 
 ```sh
-llama-server -m data/models/Qwen3-Embedding-8B-Q4_K_M.gguf --embedding --pooling last -ngl 99 -c 4096 --host 0.0.0.0 --port 8082
+llama-server -m data/models/Qwen3-Embedding-8B-Q4_K_M.gguf --alias Qwen/Qwen3-Embedding-8B-GGUF --embedding --pooling last -ngl 99 -c 4096 --host 0.0.0.0 --port 8082
 ```
 
 Чтобы настроить ассистента, скопируйте `.env.example` в `.env` и заполните `DEEPSEEK_API_KEY`. Там же описаны дополнительные настройки Compose. `ASSISTANT_DEADLINE` задаётся в секундах и должен быть меньше 150 секунд, срока аренды слота Redis. В локальных командах `DATA_DIR` может указывать на отдельный каталог данных.
 
-API хранит SQLite в Docker volume `catalog-db`. При запуске без Compose база по умолчанию создаётся в `data/glossary.db`. Путь можно переопределить через `CATALOG_DB_PATH`.
+При обычном старте Docker готовит SQLite в volume `catalog-db` до запуска Uvicorn. Процесс API читает готовую базу. При локальной разработке база по умолчанию создаётся в `data/glossary.db`. Путь можно переопределить через `CATALOG_DB_PATH`.
+
+Для выпуска с фиксированной версией корпуса:
+
+```sh
+python -m scripts.catalog_release publish data/releases
+python -m scripts.catalog_release verify data/releases/current
+DATA_RELEASE=/app/data/releases/current docker compose up -d --build --force-recreate glossary-rag
+```
+
+Публикация проверяет происхождение FAISS, собирает SQLite, сверяет медиа и атомарно меняет ссылку `current`. Процесс закрепляет каталог выпуска на весь срок работы. Монтируйте директорию версий на каждый узел и запускайте экземпляры с одним идентификатором версии. Для отката укажите прежний каталог в `DATA_RELEASE` и перезапустите экземпляры. GGUF поставляется через каталог `models/` в источнике и проверяется отдельно. При переносе выпуска на другой узел сохраните расположение этого каталога относительно выпуска. Для чтения без Docker используйте `DATA_RELEASE=data/releases/current`.
+
+`/health` проверяет процесс, `/ready` показывает готовность каталога и семантики. Семантика проверяется в фоне. Если задано `REQUIRE_HYBRID=1`, до успешной проверки и при её сбое `/ready` возвращает 503. Сборщик Prometheus может читать `/metrics` у каждого процесса отдельно. Для мониторинга доли fallback используйте счётчики `astronomy_search_lexical_total` и `astronomy_search_hybrid_total`. Гибридный счётчик включает ответы из кэша. Счётчики embedding учитывают также фоновые проверки готовности.
 
 Для RunPod вместо DeepSeek задайте `ASSISTANT_PROVIDER=runpod`, `RUNPOD_API_KEY` и `RUNPOD_ENDPOINT_ID`. Без ключа LLM чтение и поиск работают, ассистент возвращает `503 assistant_unavailable`.
 
@@ -71,7 +83,7 @@ python -m scripts.seed_embedding_cache data/index
 
 `python3 -m app.importer --refresh` сохраняет новые версии API и HTML рядом со старыми снимками и повторно проверяет исходные медиа. При изменении изображения прежняя русская версия снимается с выдачи до повторной локализации. `--refresh --ids 1 2` обновляет только указанные термины, но проверяет медиа всех записей.
 
-`data/index/` создан на временном GPU Pod Runpod. Скрипт `scripts/build_index.py` получает `chunks.jsonl` и `chunk-manifest.json`, один и тот же GGUF Qwen3-Embedding-8B и URL `llama-server --embedding --pooling last`. Команда:
+`data/index/` создан на временном GPU Pod Runpod. Скрипт `scripts/build_index.py` получает `chunks.jsonl` и `chunk-manifest.json`, один и тот же GGUF Qwen3-Embedding-8B и URL `llama-server --embedding --pooling last --alias Qwen/Qwen3-Embedding-8B-GGUF`. Команда:
 
 ```sh
 python -m scripts.build_index data/index --model-file data/models/Qwen3-Embedding-8B-Q4_K_M.gguf --embedding-url http://127.0.0.1:8080/v1/embeddings
@@ -123,11 +135,18 @@ python3.12 -m venv .venv
 .venv/bin/python -m unittest tests.api.test_limits -v
 ```
 
-GitHub Actions запускает тесты, BasedPyright, аудит данных и проверку Docker. На чистом клоне `app.audit --skip-original-media` проверяет записи и локализованные медиа. Для полного аудита загрузите оригиналы командой `python3 -m app.importer --media-only --workers 4`. OpenAPI доступен в `/openapi.json`, Swagger UI — в `/docs`.
+GitHub Actions запускает тесты, BasedPyright, аудит данных и проверку Docker. Чистый клон содержит оригиналы и локализации, перечисленные в каталоге. CI сверяет наличие и SHA-256 медиа. OpenAPI доступен в `/openapi.json`, Swagger UI — в `/docs`.
 
 ### Оценка помощника
 
-`python3 -m scripts.evaluate --retrieval-only --output /tmp/rag-retrieval.json` проверяет, попали ли нужные разделы в реальный набор доказательств. Для гибридного прогона с хоста укажите `EMBEDDING_URL` локального сервера эмбеддингов. Основной eval — 50 полных запросов (25 RU, 25 EN), включая статьи, неполный ответ, отсутствие статьи и границы темы. Исторический отчёт лежит в `data/eval/assistant/report.json`.
+`python3 -m scripts.evaluate --retrieval-only --output /tmp/rag-retrieval.json` проверяет, попали ли нужные разделы в реальный набор доказательств. Для гибридного прогона укажите `EMBEDDING_URL` локального сервера эмбеддингов и флаг `--require-search-mode hybrid`. Для набора точных цитат по 24 статьям OAE используйте:
+
+```sh
+python -m scripts.evaluate --retrieval-only --require-search-mode hybrid \
+  --suite data/eval/assistant/oae_passage_questions.json --output /tmp/rag-oae.json
+```
+
+Оценка проверяет цитату в переданном помощнику тексте. В отчёте есть режим и результат по каждому вопросу, число совпадений и MRR. [Прогон v3 и сравнение моделей](data/eval/assistant/oae_v3_experiments.md). Основной eval — 50 полных запросов (25 RU, 25 EN), включая статьи, неполный ответ, отсутствие статьи и границы темы. Исторический отчёт лежит в `data/eval/assistant/report.json`.
 
 Боевой прогон использует провайдера из окружения, а `--case` и `--limit` ограничивают число оплачиваемых вызовов. Записывайте отчёты кандидатов в разные файлы. При заданных тарифах eval считает оценку затрат всех завершённых кейсов на 1 000 прошедших рубрику. При отсутствии usage итоговая оценка затрат остаётся пустой. Проверки фактов по текстовым признакам требуют ручной сверки научной полноты на ответах из отчёта.
 
@@ -176,7 +195,7 @@ python3 -m scripts.wikimedia_covers report                 # CSV и страни
 
 ```sh
 python -m scripts.media.check_paths --report /tmp/astronomy-media.json
-python -m app.importer --media-only  # восстановить отсутствующие исходники по source_url
+python -m app.importer --media-only  # восстановить локальное повреждение по source_url
 python -m scripts.media.check_paths --strict --verify-hashes
 ```
 
@@ -191,3 +210,7 @@ python -m scripts.media.check_paths --strict --verify-hashes
 Кэш перевода теперь контекстно-зависимый: старые текстовые ключи
 `.translation-cache.json` не используются для новых полей, чтобы одинаковые
 английские слова в разных материалах не получали ошибочно общий перевод.
+
+Запросы медиа без версии проверяют ETag. Поля `file_url_ru` и `file_url_en`
+указывают версионные URL с SHA-256. Для CDN с API в роли origin включите
+`locale` и `v` в ключ кэша и учитывайте заголовок `Cache-Control`.

@@ -10,6 +10,7 @@ from app.api.schemas.assistant import AnswerRequest, AnswerResponse
 from app.api.schemas.common import ErrorResponse
 from app.assistant.client import AssistantNotConfigured, AssistantUnavailable
 from app.assistant.service import AssistantOverloaded, run_answer
+from app.infra.metrics import count
 
 router = APIRouter()
 
@@ -107,11 +108,14 @@ async def assistant_answer(
     except AssistantOverloaded as exc:
         return error(503, "assistant_overloaded", str(exc), headers={"Retry-After": "10"})
     except asyncio.TimeoutError:
+        count("astronomy_assistant_errors_total")
         return error(504, "assistant_timeout", "Помощник не уложился во время ответа")
     except AssistantNotConfigured as exc:
+        count("astronomy_assistant_errors_total")
         details = {"upstream_status": exc.status} if exc.status is not None else None
         return error(503, "assistant_unavailable", str(exc), details)
     except AssistantUnavailable as exc:
+        count("astronomy_assistant_errors_total")
         return error(502, "assistant_error", str(exc))
     except redis.RedisError:
         return error(

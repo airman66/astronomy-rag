@@ -46,7 +46,9 @@ class MediaRefreshTests(ImporterCase):
         updated = json.loads(processed.read_text())
         item = updated["media"][0]
         self.assertEqual(original.read_bytes(), b"old original")
-        self.assertEqual(Path(item["original_path"]).read_bytes(), b"new original")
+        stored = Path(item["original_path"])
+        self.assertEqual(stored.parent, Path("media/original"))
+        self.assertEqual((self.root / stored).read_bytes(), b"new original")
         self.assertIsNone(item["ru_path"])
         self.assertIsNone(item["ru_sha256"])
         self.assertEqual(item["review"]["status"], "draft")
@@ -55,3 +57,7 @@ class MediaRefreshTests(ImporterCase):
         self.assertEqual(shared["media"][0]["original_path"], item["original_path"])
         self.assertIsNone(shared["media"][0]["ru_path"])
         self.assertEqual(shared["review"]["status"], "draft")
+
+        with patch.object(importer, "fetch") as fetch:
+            self.assertEqual(importer.download_media(workers=1), (0, 0))
+            fetch.assert_not_called()

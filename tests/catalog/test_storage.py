@@ -1,8 +1,12 @@
 import json
+import os
+import sqlite3
+from contextlib import closing
 import unittest
 from unittest.mock import patch
 
 from app.catalog import storage
+from scripts.catalog_release import prepare_catalog
 from tests.support.catalog import make_term, use_catalog, write_term
 
 
@@ -38,6 +42,36 @@ class CatalogRebuildTests(unittest.TestCase):
         self.assertFalse(storage.DB.exists())
         self.assertEqual(list(self.root.glob("*.building")), [])
 
+    def test_prepare_fails_on_invalid_update_and_recovers_on_retry(self):
+        prepare_catalog()
+        original = storage.DB.read_bytes()
+        self.record.write_text("{")
+
+        with self.assertRaises(json.JSONDecodeError):
+            prepare_catalog()
+        self.assertEqual(storage.DB.read_bytes(), original)
+
+        self.term["locales"]["ru"]["title"] = "Новая звезда"
+        write_term(self.root, self.term)
+        prepare_catalog()
+        with patch.object(storage, "READ_ONLY", True):
+            self.assertEqual(storage.get_term(1), self.term)
+
+    def test_prepare_detects_replacement_with_same_size_and_mtime(self):
+        prepare_catalog()
+        original = self.record.stat()
+        replacement = self.record.with_suffix(".tmp")
+        replacement.write_bytes(self.record.read_bytes().replace(b"Hot.", b"New."))
+        os.utime(replacement, ns=(original.st_atime_ns, original.st_mtime_ns))
+        replacement.replace(self.record)
+        self.assertEqual(self.record.stat().st_mtime_ns, original.st_mtime_ns)
+        self.assertEqual(self.record.stat().st_size, original.st_size)
+
+        prepare_catalog()
+        term = storage.get_term(1)
+        assert term is not None
+        self.assertEqual(term["locales"]["en"]["blocks"]["definition"]["body"], "New.")
+
     def test_empty_update_keeps_catalog(self):
         storage.ensure_database()
         self.record.unlink()
@@ -59,7 +93,7 @@ class CatalogRebuildTests(unittest.TestCase):
 
     def test_existing_empty_database_is_not_accepted_at_startup(self):
         storage.ensure_database()
-        with storage._read() as db, db:
+        with closing(sqlite3.connect(storage.DB)) as db, db:
             self.record.unlink()
             db.execute("DELETE FROM terms")
             db.execute("UPDATE meta SET value=? WHERE key='fingerprint'", (storage.fingerprint(),))

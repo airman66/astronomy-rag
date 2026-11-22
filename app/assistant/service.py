@@ -124,7 +124,7 @@ def render(
 
 async def answer(
     question: str, mode: RequestMode, locale: str, context: dict | None, client: CompletionClient,
-    *, trace: dict | None = None,
+    *, trace: dict | None = None, allow_index_load: bool = True,
 ) -> dict:
     started = time.perf_counter()
     hint = (context or {}).get("record_id")
@@ -132,7 +132,7 @@ async def answer(
         hint = None
     evidence = {} if mode == "general" else await asyncio.to_thread(
         evidence_for, question, locale, prefer_article=mode == "article",
-        context_record_id=hint,
+        context_record_id=hint, trace=trace, allow_index_load=allow_index_load,
     )
     payload = {
         "question": question,
@@ -189,7 +189,9 @@ async def run_answer(
     if not await run_in_threadpool(limiter.acquire_call, token):
         raise AssistantOverloaded("Помощник перегружен")
     try:
-        return await asyncio.wait_for(answer(question, mode, locale, context, client), timeout=deadline)
+        return await asyncio.wait_for(
+            answer(question, mode, locale, context, client, allow_index_load=False), timeout=deadline,
+        )
     finally:
         try:
             await run_in_threadpool(limiter.release_call, token)

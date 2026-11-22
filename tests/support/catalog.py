@@ -19,8 +19,7 @@ def use_vector_root(case: TestCase, root: Path) -> None:
             vector,
             DATA=root,
             _loaded=None,
-            _failure={},
-            _stamp={"key": "", "checked": 0.0},
+            _failure=None,
         )
     )
 
