@@ -102,16 +102,20 @@ def page_sections(html: str, media: list[dict]) -> list[dict]:
             section_id = f"section_{len(result) + 1}"
             kind = "source_block"
             body = section.get_text(" ", strip=True)
-        links = [
-            {"text": anchor.get_text(" ", strip=True), "url": urljoin(BASE, href)}
-            for anchor in section.select("a[href]")
-            if isinstance(href := anchor.get("href"), str) and href.startswith(("/resources/", "https://"))
-        ]
-        media_ids = [
-            media_by_url[urlparse(link["url"]).path.rstrip("/")]
-            for link in links
-            if urlparse(link["url"]).path.rstrip("/") in media_by_url
-        ]
+        links: list[dict[str, str]] = []
+        for anchor in section.select("a[href]"):
+            href = anchor.get("href")
+            if isinstance(href, str) and href.startswith(("/resources/", "https://")):
+                links.append({"text": anchor.get_text(" ", strip=True), "url": urljoin(BASE, href)})
+        media_ids: list[str] = []
+        seen_media: set[str] = set()
+        for link in links:
+            path = urlparse(link["url"]).path.rstrip("/")
+            if path in media_by_url:
+                identifier = media_by_url[path]
+                if identifier not in seen_media:
+                    seen_media.add(identifier)
+                    media_ids.append(identifier)
         result.append(
             {
                 "id": section_id,
@@ -119,7 +123,7 @@ def page_sections(html: str, media: list[dict]) -> list[dict]:
                 "heading": heading,
                 "body": body,
                 "links": links,
-                "media_ids": list(dict.fromkeys(media_ids)),
+                "media_ids": media_ids,
                 "source_html": str(section),
             }
         )
@@ -160,15 +164,13 @@ def merge_sections(sections: list[dict], prior: dict, keep_stale: StaleTranslati
                 source_changed = True
                 keep_stale(f"/sections/{index}/{field}_ru", previous.get(field), previous.get(field + "_ru"))
         old_links = {(link.get("url"), link.get("text")): link for link in previous.get("links", [])}
-        if previous and {(link.get("url"), link.get("text")) for link in previous.get("links", [])} != {
-            (link.get("url"), link.get("text")) for link in section["links"]
-        }:
+        new_links = {(link["url"], link["text"]) for link in section["links"]}
+        if previous and set(old_links) != new_links:
             source_changed = True
         for link in section["links"]:
             old_link = old_links.get((link["url"], link["text"]), {})
             if "text_ru" in old_link:
                 link["text_ru"] = old_link["text_ru"]
-        new_links = {(link["url"], link["text"]) for link in section["links"]}
         for old_index, link in enumerate(previous.get("links", [])):
             if (link.get("url"), link.get("text")) not in new_links:
                 keep_stale(

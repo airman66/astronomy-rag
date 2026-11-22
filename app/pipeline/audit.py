@@ -24,10 +24,8 @@ def check(*, skip_original_media: bool = False) -> dict:
     media: dict[str, dict] = {}
     for record in records:
         number = record["source"]["term_number"]
-        if record["id"] != f"term:{number}" or str(number) not in Path(record["source"]["url"]).name:
-            # Source URLs end in a slash; URL term number is checked below.
-            if record["id"] != f"term:{number}" or not record["source"]["url"].rstrip("/").endswith(f"/{number}"):
-                errors.append(f"term {number}: source ID mismatch")
+        if record["id"] != f"term:{number}" or not record["source"]["url"].rstrip("/").endswith(f"/{number}"):
+            errors.append(f"term {number}: source ID mismatch")
         if set(record["locales"]["en"]["blocks"]) != set(record["locales"]["ru"]["blocks"]):
             errors.append(f"term {number}: block ID mismatch")
         for linked in record["metadata"].get("related_term_numbers", []):

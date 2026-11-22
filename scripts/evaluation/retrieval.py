@@ -35,7 +35,9 @@ def covers(groups: list, sources: list[dict]) -> bool:
 
 
 def evaluate_retrieval(case: dict) -> dict | None:
-    groups = [*case.get("evidence", []), *(group for fact in case.get("facts", []) for group in fact.get("evidence", []))]
+    groups = list(case.get("evidence", []))
+    for fact in case.get("facts", []):
+        groups.extend(fact.get("evidence", []))
     if not groups:
         return None
     mode = case.get("requested_mode", "auto")
@@ -69,12 +71,13 @@ def evaluate_response(case: dict, result: dict, evidence: list[dict]) -> dict:
         source_shape
         and linked == set(range(len(sources)))
         and result["grounding"] == expected_grounding
-        and all(
-            (key := (source["record_id"], source["section_id"], source["chunk_id"])) in known
-            and source["url"] == known[key]["url"]
-            for source in sources
-        )
     )
+    if source_valid:
+        for source in sources:
+            key = source["record_id"], source["section_id"], source["chunk_id"]
+            if key not in known or source["url"] != known[key]["url"]:
+                source_valid = False
+                break
     facts: dict[str, bool] = {}
     for fact in case.get("facts", []):
         # A fact passes when one block matches all lexical cues and covers its expected citations.

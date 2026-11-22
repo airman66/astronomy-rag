@@ -47,3 +47,12 @@ class RedisLimitContractTests(unittest.TestCase):
         self.redis.eval.side_effect = redis_limits.redis.ConnectionError("connection lost")
         with self.assertRaises(redis_limits.redis.ConnectionError):
             self.limiter.check("user", "192.0.2.1", "assistant")
+
+    def test_call_slots_use_atomic_lease_and_configured_capacity(self):
+        self.redis.eval.return_value = 1
+        with patch.object(redis_limits.time, "time", return_value=1000.0):
+            self.assertTrue(self.limiter.acquire_call("call-token", maximum=3))
+
+        script, *args = self.redis.eval.call_args.args
+        self.assertIn("ZREMRANGEBYSCORE", script)
+        self.assertEqual(args, [1, "deepseek:inflight", 1000.0, 1150.0, 3, "call-token"])

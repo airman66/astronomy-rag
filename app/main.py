@@ -1,6 +1,7 @@
 import logging
 import mimetypes
 import time
+from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 
 import httpx
@@ -23,7 +24,7 @@ from app.middleware.request_limits import request_limits
 
 
 @asynccontextmanager
-async def lifespan(application: FastAPI):
+async def lifespan(application: FastAPI) -> AsyncIterator[None]:
     # A fresh checkout has no SQLite database; building the FTS5 catalogue
     # can dominate startup time, especially for a second smoke-test container.
     cold_start = not storage.DB.exists()

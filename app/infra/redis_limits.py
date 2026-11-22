@@ -46,6 +46,17 @@ end
 return 0
 """
 
+
+# Cleanup and capacity checks must run atomically to avoid overbooking slots.
+_ACQUIRE_CALL = """
+redis.call('ZREMRANGEBYSCORE', KEYS[1], '-inf', ARGV[1])
+if redis.call('ZCARD', KEYS[1]) >= tonumber(ARGV[3]) then return 0 end
+redis.call('ZADD', KEYS[1], ARGV[2], ARGV[4])
+redis.call('EXPIRE', KEYS[1], 300)
+return 1
+"""
+
+
 class RedisLimiter:
     def __init__(self, url: str | None = None) -> None:
         # Bound network failures so requests cannot hang indefinitely on Redis.
@@ -70,15 +81,10 @@ class RedisLimiter:
         ))
 
     def acquire_call(self, token: str, maximum: int = 4) -> bool:
-        script = """
-        redis.call('ZREMRANGEBYSCORE', KEYS[1], '-inf', ARGV[1])
-        if redis.call('ZCARD', KEYS[1]) >= tonumber(ARGV[3]) then return 0 end
-        redis.call('ZADD', KEYS[1], ARGV[2], ARGV[4])
-        redis.call('EXPIRE', KEYS[1], 300)
-        return 1
-        """
         now = time.time()
-        return bool(self.redis.eval(script, 1, "deepseek:inflight", now, now + CALL_LEASE_SECONDS, maximum, token))
+        return bool(self.redis.eval(
+            _ACQUIRE_CALL, 1, "deepseek:inflight", now, now + CALL_LEASE_SECONDS, maximum, token,
+        ))
 
     def release_call(self, token: str) -> None:
         self.redis.zrem("deepseek:inflight", token)

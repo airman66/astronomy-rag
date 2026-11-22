@@ -32,11 +32,11 @@ MANUAL_PAGES = DATA / "eval/review_translation_audit/manual_pages.json"
 REVIEW_MODEL = os.getenv("AUDIT_REVIEW_MODEL", "deepseek-v4-pro")
 VERIFY_MODEL = os.getenv("AUDIT_VERIFY_MODEL", "deepseek-flash")
 REVIEW_PROMPT_VERSION = "audit-review-2026-11-14.1"
-# Та же задача рецензента, выполненная GPT-6 Astra через Codex CLI, когда у DeepSeek закончился баланс.
+# Preserve the Codex review version used when DeepSeek ran out of credit.
 CODEX_REVIEW_VERSION = "audit-review-codex-2026-11-14.1"
 REVIEW_VERSIONS = {REVIEW_PROMPT_VERSION, CODEX_REVIEW_VERSION}
 VERIFY_PROMPT_VERSION = "audit-verify-2026-11-14.1"
-# Та же проверка, выполненная GPT-6 Astra через Codex CLI, когда DeepSeek недоступен.
+# Preserve the Codex verification version used when DeepSeek was unavailable.
 CODEX_VERIFY_VERSION = "audit-verify-codex-2026-11-14.1"
 VERIFY_VERSIONS = {VERIFY_PROMPT_VERSION, CODEX_VERIFY_VERSION}
 ISSUE_TYPES = {

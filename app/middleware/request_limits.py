@@ -1,9 +1,11 @@
 import logging
 import time
+from collections.abc import Awaitable, Callable
 
 import redis
 from fastapi import Request
 from fastapi.concurrency import run_in_threadpool
+from starlette.responses import Response
 
 from app.api.errors import error
 from app.api.paths import API_PREFIX, ASSISTANT_ANSWER_PATH
@@ -30,7 +32,9 @@ def request_category(path: str) -> str:
     return "read"
 
 
-async def request_limits(request: Request, call_next):
+async def request_limits(
+    request: Request, call_next: Callable[[Request], Awaitable[Response]],
+) -> Response:
     path = request.url.path
     if not path.startswith(API_PREFIX + "/"):
         return await call_next(request)

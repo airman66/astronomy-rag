@@ -1,3 +1,5 @@
+from starlette.types import ASGIApp, Message, Receive, Scope, Send
+
 from app.api.errors import error
 from app.api.paths import API_PREFIX, ASSISTANT_ANSWER_PATH
 
@@ -5,10 +7,10 @@ MAX_ANSWER_BODY = 16 * 1024
 
 
 class AssistantBodyLimitMiddleware:
-    def __init__(self, app):
+    def __init__(self, app: ASGIApp) -> None:
         self.app = app
 
-    async def __call__(self, scope, receive, send):
+    async def __call__(self, scope: Scope, receive: Receive, send: Send) -> None:
         if scope["type"] != "http" or scope["path"] != API_PREFIX + ASSISTANT_ANSWER_PATH:
             await self.app(scope, receive, send)
             return
@@ -43,7 +45,7 @@ class AssistantBodyLimitMiddleware:
         payload = bytes(body)
         delivered = False
 
-        async def replay_receive():
+        async def replay_receive() -> Message:
             nonlocal delivered
             if not delivered:
                 delivered = True

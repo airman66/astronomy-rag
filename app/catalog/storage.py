@@ -284,9 +284,11 @@ def list_records(kind: str, *, page: int, page_size: int, locale: str, query: st
     clauses, args = [], []
     if query:
         needle = f"%{_like(normalize(query))}%"
-        searchable = "(title_en_norm LIKE ? ESCAPE '\\' OR title_ru_norm LIKE ? ESCAPE '\\'" + (" OR aliases_norm LIKE ? ESCAPE '\\')" if table == "terms" else ")")
-        clauses.append(searchable)
-        args.extend([needle] * (3 if table == "terms" else 2))
+        columns = ["title_en_norm", "title_ru_norm"]
+        if table == "terms":
+            columns.append("aliases_norm")
+        clauses.append("(" + " OR ".join(f"{column} LIKE ? ESCAPE '\\'" for column in columns) + ")")
+        args.extend([needle] * len(columns))
     if category and table == "terms":
         # JSON1 gives exact category matching and treats %/_ as literal text.
         clauses.append("EXISTS (SELECT 1 FROM json_each(terms.categories) WHERE value=?)")

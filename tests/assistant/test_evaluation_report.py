@@ -51,6 +51,11 @@ class AssistantEvaluationReportTests(unittest.TestCase):
         self.assertFalse(metrics["facts"]["distance"])
         self.assertFalse(metrics["passed"])
 
+        other_url = "/api/v1/terms/3"
+        result["primary_url"] = other_url
+        result["sources"] = [{**evidence, "url": other_url}]
+        self.assertFalse(evaluate_response(case, result, [evidence])["source_valid"])
+
     def test_price_includes_failed_billable_answers_in_denominator(self):
         bill = price({"prompt_tokens": 1000, "completion_tokens": 200,
                       "prompt_tokens_details": {"cached_tokens": 200}}, 1, 2, .1)

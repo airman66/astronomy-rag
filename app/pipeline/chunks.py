@@ -66,8 +66,11 @@ def _split_prose(paragraph: str, budget: int) -> list[str]:
             pieces.append(" ".join(words))
         return pieces
 
-    sentences = [piece.strip() for sentence in re.split(r"(?<=[.!?])\s+", paragraph)
-                 if sentence.strip() for piece in split_sentence(sentence)]
+    sentences: list[str] = []
+    for sentence in re.split(r"(?<=[.!?])\s+", paragraph):
+        if sentence.strip():
+            for piece in split_sentence(sentence):
+                sentences.append(piece.strip())
     result: list[str] = []
     current: list[str] = []
     for sentence in sentences:
@@ -83,8 +86,10 @@ def paragraphs(body: str, budget: int, overlap: float) -> list[str]:
     """Pack article prose at paragraph/sentence boundaries with bounded overlap."""
     if budget <= 0 or not 0 <= overlap < 1:
         raise ValueError("budget must be positive and overlap in [0, 1)")
-    parts = [piece for paragraph in re.split(r"\n\s*\n", body) if paragraph.strip()
-             for piece in _split_prose(paragraph.strip(), budget)]
+    parts: list[str] = []
+    for paragraph in re.split(r"\n\s*\n", body):
+        if paragraph.strip():
+            parts.extend(_split_prose(paragraph.strip(), budget))
     if not parts:
         return []
     groups: list[str] = []
@@ -138,7 +143,10 @@ def make_chunk(record_id: str, section_id: str, locale: str, title: str, heading
 def build_chunks(budget: int = 400, overlap: float = 0.1) -> list[dict]:
     result: list[dict] = []
     seen_media: set[tuple[str, str]] = set()
-    files = sorted((DATA / "processed" / "terms").glob("*.json")) + sorted((DATA / "processed" / "articles").glob("*.json"))
+    files = (
+        sorted((DATA / "processed" / "terms").glob("*.json"))
+        + sorted((DATA / "processed" / "articles").glob("*.json"))
+    )
     for path in files:
         record = json.loads(path.read_text(encoding="utf-8"))
         record_id = record["id"]
@@ -151,7 +159,10 @@ def build_chunks(budget: int = 400, overlap: float = 0.1) -> list[dict]:
                 body = (block.get("body") or "").strip()
                 if not body:
                     continue
-                groups = paragraphs(body, budget, overlap) if kind == "article" and section["type"] not in ("definition", "formula", "table") else [body]
+                if kind == "article" and section["type"] not in ("definition", "formula", "table"):
+                    groups = paragraphs(body, budget, overlap)
+                else:
+                    groups = [body]
                 for ordinal, part in enumerate(groups):
                     result.append(make_chunk(record_id, section["id"], locale, loc["title"], block.get("heading") or "", part, kind, route, record["review"]["status"], ordinal))
             for item in record.get("media", []):

@@ -46,8 +46,8 @@ def fetch(url: str, *, binary: bool = False) -> bytes:
         try:
             response = requests.get(url, headers=HEADERS, timeout=(10, 45))
             response.raise_for_status()
-            if not binary:
-                response.json() if "/oae-api/" in url else None
+            if not binary and "/oae-api/" in url:
+                response.json()
             return response.content
         except (requests.RequestException, ValueError) as exc:
             last_error = exc
@@ -144,11 +144,15 @@ def load_term_sources(number: int) -> TermSources | None:
             # page gives the complete ordered set of linked record slugs.
             soup = BeautifulSoup(page_path.read_text(), "html.parser")
             page_kind = "diagram" if kind == "diagram" else "media"
-            slugs = list(dict.fromkeys(
-                href.rstrip("/").split("/")[-1]
-                for anchor in soup.select(f'a[href^="/resources/{page_kind}/"]')
-                if isinstance(href := anchor.get("href"), str)
-            ))
+            slugs: list[str] = []
+            seen_slugs: set[str] = set()
+            for anchor in soup.select(f'a[href^="/resources/{page_kind}/"]'):
+                href = anchor.get("href")
+                if isinstance(href, str):
+                    slug = href.rstrip("/").split("/")[-1]
+                    if slug not in seen_slugs:
+                        seen_slugs.add(slug)
+                        slugs.append(slug)
             rows = []
             for slug in slugs:
                 single = raw_json(

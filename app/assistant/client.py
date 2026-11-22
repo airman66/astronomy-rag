@@ -36,11 +36,16 @@ class AssistantNotConfigured(AssistantUnavailable):
 
 
 class LLMClient:
-    def __init__(self, http: httpx.AsyncClient | None = None, settings: LLMSettings | None = None,
-                 read_timeout: float | None = None) -> None:
+    def __init__(
+        self,
+        http: httpx.AsyncClient | None = None,
+        settings: LLMSettings | None = None,
+        read_timeout: float | None = None,
+    ) -> None:
         self.http = http
         self.settings = settings
         self.read_timeout = read_timeout
+
     def configured_settings(self) -> LLMSettings:
         try:
             settings = self.settings or LLMSettings.from_env()
@@ -56,9 +61,8 @@ class LLMClient:
 
     async def complete(self, system: str, payload: dict[str, Any]) -> Completion:
         settings = self.configured_settings()
-        runpod = settings.provider == "runpod"
-        model = settings.model.casefold()
-        glm = runpod and "glm" in model
+        is_runpod = settings.provider == "runpod"
+        is_glm = is_runpod and "glm" in settings.model.casefold()
         request: dict[str, Any] = {
             "model": settings.model,
             "messages": [
@@ -66,27 +70,31 @@ class LLMClient:
                 {"role": "user", "content": json.dumps(payload, ensure_ascii=False, separators=(",", ":"))},
             ],
             "response_format": {"type": "json_object"},
-            "max_tokens": settings.max_tokens or (1536 if glm else 768),
+            "max_tokens": settings.max_tokens or (1536 if is_glm else 768),
             "stream": False,
         }
-        if glm:
+        if is_glm:
             request.update(temperature=1.0, top_p=0.95, reasoning_effort=settings.reasoning_effort or "low")
-        if runpod and settings.thinking != "default":
+        if is_runpod and settings.thinking != "default":
             request["chat_template_kwargs"] = {"enable_thinking": settings.thinking == "enabled"}
-        if not runpod:
+        if not is_runpod:
             request["thinking"] = {"type": "disabled"}
 
         url = (
             f"https://api.runpod.ai/v2/{settings.endpoint_id}/openai/v1/chat/completions"
-            if runpod else "https://api.deepseek.com/chat/completions"
+            if is_runpod else "https://api.deepseek.com/chat/completions"
         )
-        timeout = httpx.Timeout(self.read_timeout or (90.0 if runpod else 35.0), connect=5.0)
+        timeout = httpx.Timeout(self.read_timeout or (90.0 if is_runpod else 35.0), connect=5.0)
         usage: dict[str, Any] = {}
         try:
             connection = httpx.AsyncClient() if self.http is None else nullcontext(self.http)
             async with connection as http:
-                response = await http.post(url, headers={"Authorization": f"Bearer {settings.api_key}"},
-                                           json=request, timeout=timeout)
+                response = await http.post(
+                    url,
+                    headers={"Authorization": f"Bearer {settings.api_key}"},
+                    json=request,
+                    timeout=timeout,
+                )
             response.raise_for_status()
             body = response.json()
             reported_usage = body.get("usage")
@@ -96,8 +104,9 @@ class LLMClient:
             if choice.get("finish_reason") not in (None, "stop"):
                 raise AssistantUnavailable("Модель не завершила ответ в заданном бюджете", usage=usage)
             reported_model = body.get("model")
-            model = reported_model if isinstance(reported_model, str) and reported_model else settings.model
-            return Completion(json.loads(choice["message"]["content"]), model, usage)
+            if not isinstance(reported_model, str) or not reported_model:
+                reported_model = settings.model
+            return Completion(json.loads(choice["message"]["content"]), reported_model, usage)
         except httpx.HTTPStatusError as exc:
             status = exc.response.status_code
             if status == 402:
