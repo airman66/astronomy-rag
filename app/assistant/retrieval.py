@@ -2,7 +2,7 @@
 
 import re
 from dataclasses import dataclass
-from typing import Literal
+from typing import Literal, TypedDict
 
 from app.catalog import storage
 from app.catalog.media import IMAGE_SUFFIXES, local_file, localized_digest, localized_filename, media_file_url
@@ -60,6 +60,12 @@ NON_EVIDENCE_HEADINGS = (
 EvidenceKind = Literal["term", "article", "caption"]
 
 
+class EvidenceReference(TypedDict):
+    record_id: str
+    section_id: str
+    chunk_id: str | None
+
+
 @dataclass(frozen=True)
 class Evidence:
     record: dict
@@ -73,7 +79,7 @@ class Evidence:
     review_status: str
     chunk_id: str | None
 
-    def reference(self) -> dict[str, str | None]:
+    def reference(self) -> EvidenceReference:
         return {"record_id": self.record["id"], "section_id": self.section["id"], "chunk_id": self.chunk_id}
 
 
@@ -119,7 +125,7 @@ def evidence_for(
             is_term = record_id.startswith("term:")
             if len(records) >= 12 and is_term:
                 continue
-            record = storage.get_term(int(record_id[5:])) if is_term else storage.get_article(record_id)
+            record = storage.get_record(record_id)
             if record is None:
                 continue
             localized = record["locales"][locale]

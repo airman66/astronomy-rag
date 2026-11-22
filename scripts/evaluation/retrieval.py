@@ -9,6 +9,7 @@ import os
 import re
 import time
 from collections import Counter
+from collections.abc import Mapping, Sequence
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -26,12 +27,12 @@ DATA = data_directory()
 EVALUATION = Path(os.getenv("DATA_DIR", "data")) / "eval" / "assistant"
 
 
-def matches_source(item: dict, selector: str) -> bool:
+def matches_source(item: Mapping[str, object], selector: str) -> bool:
     record, _, section = selector.partition("#")
     return item["record_id"] == record and (not section or item["section_id"] == section)
 
 
-def covers(groups: list, sources: list[dict]) -> bool:
+def covers(groups: list[list[str]], sources: Sequence[Mapping[str, object]]) -> bool:
     return all(any(matches_source(item, selector) for item in sources for selector in group) for group in groups)
 
 
@@ -73,7 +74,7 @@ def evaluate_retrieval(case: dict) -> dict | None:
     }
 
 
-def evaluate_response(case: dict, result: dict, evidence: list[dict]) -> dict:
+def valid_sources(result: dict, evidence: Sequence[Mapping[str, object]]) -> bool:
     mode = result["mode"]
     sources = result["sources"]
     blocks = result["blocks"]
@@ -93,17 +94,18 @@ def evaluate_response(case: dict, result: dict, evidence: list[dict]) -> dict:
                 source["record_id"].startswith("article:") and source["url"] == result["primary_url"]
                 for source in sources
             )
-    source_valid = (
-        source_shape
-        and linked == set(range(len(sources)))
-        and result["grounding"] == expected_grounding
-    )
-    if source_valid:
-        for source in sources:
-            key = source["record_id"], source["section_id"], source["chunk_id"]
-            if key not in known or source["url"] != known[key]["url"]:
-                source_valid = False
-                break
+    if not source_shape or linked != set(range(len(sources))) or result["grounding"] != expected_grounding:
+        return False
+    for source in sources:
+        key = source["record_id"], source["section_id"], source["chunk_id"]
+        if key not in known or source["url"] != known[key]["url"]:
+            return False
+    return True
+
+
+def evaluate_response(case: dict, result: dict, evidence: Sequence[Mapping[str, object]]) -> dict:
+    sources = result["sources"]
+    blocks = result["blocks"]
     facts: dict[str, bool] = {}
     for fact in case.get("facts", []):
         # A fact passes when one block matches all lexical cues and covers its expected citations.
@@ -115,9 +117,9 @@ def evaluate_response(case: dict, result: dict, evidence: list[dict]) -> dict:
         )
     forbidden = [pattern for pattern in case.get("forbidden", []) if re.search(pattern, result["answer"], re.I)]
     checks = {
-        "mode_correct": mode in case["expected_modes"],
+        "mode_correct": result["mode"] in case["expected_modes"],
         "coverage_correct": result["coverage"] in case.get("expected_coverages", ["complete"]),
-        "source_valid": source_valid,
+        "source_valid": valid_sources(result, evidence),
         "required_sources": covers(case.get("evidence", []), sources),
     }
     return {**checks, "facts": facts, "forbidden_hits": forbidden,

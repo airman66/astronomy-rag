@@ -32,7 +32,8 @@ class RedisLimitContractTests(unittest.TestCase):
         self.assertEqual(args[4:], (10, 4))
 
     def test_read_and_media_use_one_atomic_eval_for_both_buckets(self):
-        for category, limit in (("read", 30), ("media", 120)):
+        limits: tuple[tuple[redis_limits.RequestCategory, int], ...] = (("read", 30), ("media", 120))
+        for category, limit in limits:
             with self.subTest(category=category):
                 self.redis.eval.reset_mock()
                 self.assertEqual(self.limiter.check("ip:192.0.2.1", "192.0.2.1", category), 0)

@@ -10,6 +10,12 @@ import httpx
 from app.infra.config import LLMSettings
 
 
+class ChatTransport(Protocol):
+    async def post(
+        self, url: str, *, headers: dict[str, str], json: dict[str, Any], timeout: httpx.Timeout,
+    ) -> httpx.Response: ...
+
+
 @dataclass(frozen=True)
 class Completion:
     data: Any
@@ -38,7 +44,7 @@ class AssistantNotConfigured(AssistantUnavailable):
 class LLMClient:
     def __init__(
         self,
-        http: httpx.AsyncClient | None = None,
+        http: ChatTransport | None = None,
         settings: LLMSettings | None = None,
         read_timeout: float | None = None,
     ) -> None:

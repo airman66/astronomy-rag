@@ -9,6 +9,7 @@ from starlette.responses import Response
 
 from app.api.errors import error
 from app.api.paths import API_PREFIX, ASSISTANT_ANSWER_PATH
+from app.infra.redis_limits import RequestCategory
 from app.middleware.client_identity import client_identity
 
 log = logging.getLogger("glossary.limits")
@@ -24,7 +25,7 @@ def warn_limiter_down() -> None:
         _last_warning = now
 
 
-def request_category(path: str) -> str:
+def request_category(path: str) -> RequestCategory:
     if path == API_PREFIX + ASSISTANT_ANSWER_PATH:
         return "assistant"
     if path.endswith(("/file", "/illustration", "/source.pdf", "/translation.pdf")):

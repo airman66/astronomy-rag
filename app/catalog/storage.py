@@ -11,7 +11,7 @@ import sqlite3
 import threading
 import time
 import uuid
-from contextlib import closing, contextmanager
+from contextlib import closing
 from functools import lru_cache
 from pathlib import Path
 
@@ -98,16 +98,6 @@ def connection() -> sqlite3.Connection:
     return db
 
 
-@contextmanager
-def _read():
-    """A connection that is always closed (sqlite3's own context manager only commits)."""
-    db = connection()
-    try:
-        yield db
-    finally:
-        db.close()
-
-
 def ensure_database(force_check: bool = False, *, allow_stale: bool = True) -> None:
     """Rebuild the DB when it is missing or the canonical JSON set changed (checked every 30 s)."""
     if READ_ONLY:
@@ -168,7 +158,7 @@ def build_database(
 
 
 def corpus_version() -> str | None:
-    with _read() as db:
+    with closing(connection()) as db:
         return _ready_corpus(db)
 
 
@@ -308,7 +298,7 @@ def illustration_view(item: dict) -> dict:
 
 
 def _get_payload(query: str, identifier: str | int) -> dict | None:
-    with _read() as db:
+    with closing(connection()) as db:
         row = db.execute(query, (identifier,)).fetchone()
     return json.loads(row[0]) if row else None
 
@@ -323,6 +313,13 @@ def get_illustration(number: int) -> dict | None:
 
 def get_article(identifier: str) -> dict | None:
     return _get_payload("SELECT payload FROM articles WHERE id=?", identifier)
+
+
+def get_record(record_id: str) -> dict | None:
+    """Look up a canonical record ID produced by the catalogue or index."""
+    if record_id.startswith("term:"):
+        return get_term(int(record_id.removeprefix("term:")))
+    return get_article(record_id)
 
 
 def get_media(identifier: str) -> dict | None:
@@ -346,7 +343,7 @@ def list_records(kind: str, *, page: int, page_size: int, locale: str, query: st
         "limit": page_size,
         "offset": min((page - 1) * page_size, 2**63 - 1),
     }
-    with _read() as db:
+    with closing(connection()) as db:
         rows = db.execute(
             r"""WITH records AS (
                 SELECT number AS identifier, title_en_norm, title_ru_norm, aliases_norm, categories, review_status
@@ -400,7 +397,7 @@ def list_records(kind: str, *, page: int, page_size: int, locale: str, query: st
 
 def letters(locale: str) -> list[dict]:
     """First letters of term titles in the requested language, for an alphabet index."""
-    with _read() as db:
+    with closing(connection()) as db:
         rows = db.execute(
             "SELECT substr(CASE WHEN ? THEN title_ru_norm ELSE title_en_norm END, 1, 1) AS letter, "
             "COUNT(*) AS count FROM terms GROUP BY letter ORDER BY letter",
@@ -411,7 +408,7 @@ def letters(locale: str) -> list[dict]:
 
 def categories(locale: str) -> list[dict]:
     counts: dict[str, dict] = {}
-    with _read() as db:
+    with closing(connection()) as db:
         for (payload,) in db.execute("SELECT payload FROM terms"):
             metadata = json.loads(payload).get("metadata", {})
             names_ru = metadata.get("categories_ru", [])
@@ -443,14 +440,14 @@ def lexical_search(query: str, locale: str, limit: int, *, record_id: str | None
     expression = _expression(query, locale)
     if not expression:
         return []
-    with _read() as db:
+    with closing(connection()) as db:
         return _lexical_matches(db, expression, locale, limit, record_id)
 
 
 def lexical_search_snapshot(query: str, locale: str, limit: int) -> tuple[list[dict], str | None]:
     """Read the lexical hits and their corpus version in one SQLite snapshot."""
     expression = _expression(query, locale)
-    with _read() as db:
+    with closing(connection()) as db:
         db.execute("BEGIN")
         version = _corpus_version(db)
         matches = _lexical_matches(db, expression, locale, limit, None) if expression else []

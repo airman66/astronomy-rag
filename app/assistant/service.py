@@ -5,6 +5,7 @@ import logging
 import re
 import time
 import uuid
+from collections.abc import Sequence
 from typing import Annotated, Literal
 
 import redis
@@ -22,7 +23,7 @@ from app.assistant.prompts import (
 )
 from app.assistant.retrieval import EVIDENCE_LIMIT, Evidence, evidence_for, image_for
 from app.infra.config import assistant_deadline
-from app.infra.redis_limits import RedisLimiter
+from app.infra.redis_limits import RateLimiter
 
 EvidenceId = Annotated[str, StringConstraints(max_length=64)]
 RequestMode = Literal["auto", "term", "article", "explain", "general"]
@@ -42,16 +43,19 @@ class ModelBlock(BaseModel):
     evidence_ids: list[EvidenceId] = Field(max_length=EVIDENCE_LIMIT)
 
 
-class ModelReply(BaseModel):
+class ReplyDecision(BaseModel):
     model_config = ConfigDict(extra="forbid", strict=True)
     mode: AnswerMode
     coverage: Coverage
     definition_id: EvidenceId | None
+
+
+class ModelReply(ReplyDecision):
     blocks: list[ModelBlock] = Field(max_length=8)
 
 
 def _select_blocks(
-    reply: ModelReply, requested_mode: RequestMode, evidence: dict[str, Evidence],
+    reply: ReplyDecision, proposed: Sequence[ModelBlock], requested_mode: RequestMode, evidence: dict[str, Evidence],
 ) -> tuple[AnswerMode, Coverage, list[tuple[str, list[str]]]]:
     mode = reply.mode
     if mode == "out_of_scope":
@@ -70,7 +74,7 @@ def _select_blocks(
 
     grounded = mode != "general"
     blocks = []
-    for block in reply.blocks:
+    for block in proposed:
         ids = block.evidence_ids
         if bool(ids) != grounded or any(key not in evidence for key in ids) or UNSAFE_TEXT.search(block.text):
             continue
@@ -80,15 +84,16 @@ def _select_blocks(
         mode = "explain"
     if not blocks:
         return mode, "insufficient", []
-    if article_fallback or missing_article or len(blocks) < len(reply.blocks):
+    if article_fallback or missing_article or len(blocks) < len(proposed):
         return mode, "partial", blocks
     return mode, reply.coverage, blocks
 
 
 def render(
-    reply: ModelReply, requested_mode: RequestMode, locale: str, evidence: dict[str, Evidence], model: str,
+    reply: ReplyDecision, blocks: Sequence[ModelBlock], requested_mode: RequestMode,
+    locale: str, evidence: dict[str, Evidence], model: str,
 ) -> dict:
-    mode, coverage, passages = _select_blocks(reply, requested_mode, evidence)
+    mode, coverage, passages = _select_blocks(reply, blocks, requested_mode, evidence)
     source_ids = list(dict.fromkeys(key for _, keys in passages for key in keys))
     indices = {key: index for index, key in enumerate(source_ids)}
     used = [evidence[key] for key in source_ids]
@@ -122,19 +127,10 @@ def render(
     }
 
 
-async def answer(
-    question: str, mode: RequestMode, locale: str, context: dict | None, client: CompletionClient,
-    *, trace: dict | None = None, allow_index_load: bool = True,
-) -> dict:
-    started = time.perf_counter()
-    hint = (context or {}).get("record_id")
-    if not isinstance(hint, str):
-        hint = None
-    evidence = {} if mode == "general" else await asyncio.to_thread(
-        evidence_for, question, locale, prefer_article=mode == "article",
-        context_record_id=hint, trace=trace, allow_index_load=allow_index_load,
-    )
-    payload = {
+def answer_payload(
+    question: str, mode: RequestMode, locale: str, evidence: dict[str, Evidence], hint: str | None,
+) -> dict[str, object]:
+    return {
         "question": question,
         "locale": locale,
         "requested_mode": mode,
@@ -145,6 +141,20 @@ async def answer(
             for key, item in evidence.items()
         ],
     }
+
+
+async def answer(
+    question: str, mode: RequestMode, locale: str, context: dict[str, object] | None, client: CompletionClient,
+    *, trace: dict | None = None, allow_index_load: bool = True,
+) -> dict:
+    started = time.perf_counter()
+    raw_hint = (context or {}).get("record_id")
+    hint = raw_hint if isinstance(raw_hint, str) else None
+    evidence = {} if mode == "general" else await asyncio.to_thread(
+        evidence_for, question, locale, prefer_article=mode == "article",
+        context_record_id=hint, trace=trace, allow_index_load=allow_index_load,
+    )
+    payload = answer_payload(question, mode, locale, evidence, hint)
     if trace is not None:
         trace["retrieval_ms"] = round((time.perf_counter() - started) * 1000, 3)
         trace["evidence"] = [
@@ -167,16 +177,16 @@ async def answer(
         reply = ModelReply.model_validate(completion.data)
     except ValidationError as exc:
         raise AssistantUnavailable("Модель вернула ответ вне схемы", usage=completion.usage) from exc
-    return render(reply, mode, locale, evidence, completion.model)
+    return render(reply, reply.blocks, mode, locale, evidence, completion.model)
 
 
 async def run_answer(
     question: str,
     mode: RequestMode,
     locale: str,
-    context: dict | None,
+    context: dict[str, object] | None,
     client: CompletionClient,
-    limiter: RedisLimiter,
+    limiter: RateLimiter,
 ) -> dict:
     if isinstance(client, LLMClient):
         client.configured_settings()

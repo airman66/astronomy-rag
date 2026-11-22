@@ -4,10 +4,19 @@ from __future__ import annotations
 
 import hashlib
 import time
+from typing import Literal, Protocol
 
 import redis
 
 from app.infra.config import CALL_LEASE_SECONDS, redis_url
+
+RequestCategory = Literal["assistant", "read", "media"]
+
+
+class RateLimiter(Protocol):
+    def check(self, identity: str, ip: str, category: RequestCategory) -> int: ...
+    def acquire_call(self, token: str) -> bool: ...
+    def release_call(self, token: str) -> None: ...
 
 # Each rate-limit decision updates the client and shared-IP buckets atomically.
 # Rejected requests must not consume quota from a different bucket.
@@ -64,7 +73,7 @@ class RedisLimiter:
             url or redis_url(), decode_responses=True, socket_connect_timeout=2, socket_timeout=2,
         )
 
-    def check(self, identity: str, ip: str, category: str) -> int:
+    def check(self, identity: str, ip: str, category: RequestCategory) -> int:
         limit = {"assistant": 1, "read": 30, "media": 120}[category]
         key = hashlib.sha256(identity.encode()).hexdigest()
         ip_key = hashlib.sha256(ip.encode()).hexdigest()
