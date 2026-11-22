@@ -1,7 +1,7 @@
 from typing import Annotated, Literal
 
-from fastapi import APIRouter, Path, Query, Request
-from fastapi.responses import FileResponse
+from fastapi import APIRouter, Path, Query, Request, Response
+from fastapi.responses import FileResponse, JSONResponse
 
 from app.api.errors import error
 from app.api.media_files import media_not_found, media_response
@@ -56,7 +56,7 @@ def term_facets(locale: Literal["ru", "en"] = "ru") -> FacetsResponse:
 @router.get(
     "/{term_number}", response_model=RecordDetail, responses={404: {"model": ErrorResponse}, **LIMITS}
 )
-def term_detail(term_number: TermNumber):
+def term_detail(term_number: TermNumber) -> RecordDetail | JSONResponse:
     record = storage.get_term(term_number)
     return RecordDetail.model_validate(record) if record else error(404, "term_not_found", "Термин не найден")
 
@@ -71,7 +71,7 @@ def term_detail(term_number: TermNumber):
         **LIMITS,
     },
 )
-def term_illustration(request: Request, term_number: TermNumber, v: str | None = Query(None, max_length=64)):
+def term_illustration(request: Request, term_number: TermNumber, v: str | None = Query(None, max_length=64)) -> Response:
     """Файл обложки термина. Если обложка недоступна, возвращает 404 `illustration_not_found`."""
     item = storage.get_illustration(term_number)
     if not item:

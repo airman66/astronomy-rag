@@ -1,6 +1,7 @@
 import os
 import sqlite3
 import time
+from collections.abc import Iterator
 from contextlib import contextmanager
 from threading import Event, Thread
 
@@ -24,7 +25,7 @@ class SemanticReadiness:
         return corpus == probed_corpus and time.monotonic() - checked < 2 * PROBE_INTERVAL + vector.QUERY_TIMEOUT
 
     @contextmanager
-    def monitor(self):
+    def monitor(self) -> Iterator[None]:
         stop = Event()
         Thread(target=self._check, args=(stop,), name="semantic-readiness", daemon=True).start()
         try:

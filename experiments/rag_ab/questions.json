@@ -1,0 +1,862 @@
+{
+  "schema_version": 1,
+  "questions": [
+    {
+      "id": "n01",
+      "locale": "ru",
+      "kind": "definition",
+      "question": "Дай определение парсека.",
+      "expected_modes": [
+        "term"
+      ],
+      "expected_coverage": "complete",
+      "expected": "Каноническое определение и ссылка на карточку парсека.",
+      "facts": [
+        {
+          "claim": "Единица расстояния: 1 а. е. видна под углом 1 угловой секунды.",
+          "sources": [
+            {
+              "source": "term:238#definition",
+              "quote": "одну угловую секунду",
+              "section_title": "Термин глоссария: Парсек"
+            }
+          ]
+        }
+      ],
+      "distractors": [
+        "term:237#definition"
+      ],
+      "catalog_id": "term:238"
+    },
+    {
+      "id": "n02",
+      "locale": "en",
+      "kind": "definition",
+      "question": "Define occultation.",
+      "expected_modes": [
+        "term"
+      ],
+      "expected_coverage": "complete",
+      "expected": "Canonical definition, with the occultation entry.",
+      "facts": [
+        {
+          "claim": "One object entirely hides another.",
+          "sources": [
+            {
+              "source": "term:464#definition",
+              "quote": "one object entirely hides another",
+              "section_title": "Glossary term: Occultation"
+            }
+          ]
+        }
+      ],
+      "distractors": [
+        "term:367#definition"
+      ],
+      "catalog_id": "term:464"
+    },
+    {
+      "id": "n03",
+      "locale": "ru",
+      "kind": "definition",
+      "question": "Что такое приливный захват?",
+      "expected_modes": [
+        "term"
+      ],
+      "expected_coverage": "complete",
+      "expected": "Определение процесса по канонической записи.",
+      "facts": [
+        {
+          "claim": "Приливные силы меняют вращение одного тела, обращающегося вокруг другого.",
+          "sources": [
+            {
+              "source": "term:484#definition",
+              "quote": "",
+              "section_title": "Термин глоссария: Приливная синхронизация",
+              "whole_definition": true
+            }
+          ]
+        }
+      ],
+      "distractors": [
+        "term:490#definition"
+      ],
+      "catalog_id": "term:484"
+    },
+    {
+      "id": "n04",
+      "locale": "en",
+      "kind": "definition",
+      "question": "What is a sidereal day?",
+      "expected_modes": [
+        "term"
+      ],
+      "expected_coverage": "complete",
+      "expected": "Canonical sidereal day entry in English.",
+      "facts": [
+        {
+          "claim": "A rotation relative to distant stars, about 23 h 56 min.",
+          "sources": [
+            {
+              "source": "term:490#definition",
+              "quote": "",
+              "section_title": "Glossary term: Day",
+              "whole_definition": true
+            }
+          ]
+        }
+      ],
+      "distractors": [
+        "term:303#definition"
+      ],
+      "catalog_id": "term:490"
+    },
+    {
+      "id": "n05",
+      "locale": "ru",
+      "kind": "explain",
+      "question": "Звёздный параллакс 0,25 угловой секунды. Как из него получить расстояние в парсеках?",
+      "expected_modes": [
+        "explain"
+      ],
+      "expected_coverage": "complete",
+      "expected": "Правило и вычисление для данного числа.",
+      "facts": [
+        {
+          "claim": "d[пк] = 1/p[угл. с], поэтому d = 4 пк.",
+          "sources": [
+            {
+              "source": "term:238#definition",
+              "quote": "равно единице, деленной на угол параллакса",
+              "section_title": "Термин глоссария: Парсек"
+            }
+          ]
+        }
+      ],
+      "distractors": [
+        "term:237#definition"
+      ]
+    },
+    {
+      "id": "n06",
+      "locale": "en",
+      "kind": "explain",
+      "question": "If the star gets closer, why does its measured parallax get larger? Use the glossary.",
+      "expected_modes": [
+        "explain"
+      ],
+      "expected_coverage": "complete",
+      "expected": "Explain the geometry with a fixed baseline and the inverse relation.",
+      "facts": [
+        {
+          "claim": "Same change of viewing position / baseline causes a larger apparent angle for a closer object.",
+          "sources": [
+            {
+              "source": "term:237#definition",
+              "quote": "inversely proportional to the object's distance",
+              "section_title": "Glossary term: Parallax"
+            },
+            {
+              "source": "term:238#definition",
+              "quote": "one divided by the parallax angle",
+              "section_title": "Glossary term: Parsec"
+            }
+          ]
+        }
+      ],
+      "distractors": []
+    },
+    {
+      "id": "n07",
+      "locale": "ru",
+      "kind": "compare",
+      "question": "При солнечном затмении что увидят наблюдатели в полной тени и в полутени Луны?",
+      "expected_modes": [
+        "explain"
+      ],
+      "expected_coverage": "complete",
+      "expected": "По одному наблюдаемому результату для каждой области.",
+      "facts": [
+        {
+          "claim": "Полная тень — диск Солнца полностью закрыт.",
+          "sources": [
+            {
+              "source": "term:372#definition",
+              "quote": "диск Солнца полностью закрыт",
+              "section_title": "Термин глоссария: Тень"
+            }
+          ]
+        },
+        {
+          "claim": "Полутень — диск закрыт частично.",
+          "sources": [
+            {
+              "source": "term:243#definition",
+              "quote": "Луна лишь частично покрывает Солнце",
+              "section_title": "Термин глоссария: Полутень"
+            },
+            {
+              "source": "term:372#definition",
+              "quote": "частное затмение",
+              "section_title": "Термин глоссария: Тень"
+            }
+          ]
+        }
+      ],
+      "distractors": []
+    },
+    {
+      "id": "n08",
+      "locale": "en",
+      "kind": "compare",
+      "question": "Compare a transit and an occultation by apparent angular size, and say whether viewing location can matter.",
+      "expected_modes": [
+        "explain"
+      ],
+      "expected_coverage": "complete",
+      "expected": "Angular sizes in both cases and why the viewing angle matters.",
+      "facts": [
+        {
+          "claim": "A transiting body looks smaller than the background body and blocks only part of it.",
+          "sources": [
+            {
+              "source": "term:367#definition",
+              "quote": "another celestial body of larger angular size",
+              "section_title": "Glossary term: Transit"
+            }
+          ]
+        },
+        {
+          "claim": "In an occultation the foreground body hides the background body completely.",
+          "sources": [
+            {
+              "source": "term:464#definition",
+              "quote": "one object entirely hides another",
+              "section_title": "Glossary term: Occultation"
+            },
+            {
+              "source": "term:367#definition",
+              "quote": "has a larger angular size",
+              "section_title": "Glossary term: Transit"
+            }
+          ]
+        },
+        {
+          "claim": "A transit can be absent from a different line of sight.",
+          "sources": [
+            {
+              "source": "term:367#definition",
+              "quote": "may not be seen by another observer",
+              "section_title": "Glossary term: Transit"
+            }
+          ]
+        }
+      ],
+      "distractors": []
+    },
+    {
+      "id": "n09",
+      "locale": "ru",
+      "kind": "named_compare",
+      "question": "Сравни геосинхронную и геостационарную орбиты по статье «Почему геостационарные спутники находятся над экватором». Что даёт наклон, а что — эксцентриситет?",
+      "expected_modes": [
+        "article"
+      ],
+      "expected_coverage": "complete",
+      "expected": "Сравнение строго по указанной статье и два направления смещения.",
+      "facts": [
+        {
+          "claim": "Общий период — звёздные сутки, геостационарная — частный круговой экваториальный случай.",
+          "sources": [
+            {
+              "source": "article:geostationary-orbit#geosynchronous",
+              "quote": "круговой экваториальный случай",
+              "section_title": "Геосинхронная и геостационарная орбиты"
+            }
+          ]
+        },
+        {
+          "claim": "Наклон даёт север–юг, эксцентриситет может дать восток–запад.",
+          "sources": [
+            {
+              "source": "article:geostationary-orbit#geosynchronous",
+              "quote": "смещение на восток и запад",
+              "section_title": "Геосинхронная и геостационарная орбиты"
+            }
+          ]
+        }
+      ],
+      "distractors": [
+        "term:490#definition"
+      ],
+      "ambiguous": true
+    },
+    {
+      "id": "n10",
+      "locale": "en",
+      "kind": "named_compare",
+      "question": "Use “How astronomers detect exoplanets” to compare what transit depth and radial velocity tell you, and what combining them adds.",
+      "expected_modes": [
+        "article"
+      ],
+      "expected_coverage": "complete",
+      "expected": "Three claims using the named article, with the limits of each technique.",
+      "facts": [
+        {
+          "claim": "Transit depth constrains radius ratio squared; a stellar radius is needed for planet radius.",
+          "sources": [
+            {
+              "source": "article:exoplanet-detection#transit",
+              "quote": "planet radius / stellar radius",
+              "section_title": "Transit photometry"
+            }
+          ]
+        },
+        {
+          "claim": "Radial velocity typically constrains minimum mass.",
+          "sources": [
+            {
+              "source": "article:exoplanet-detection#radial-velocity",
+              "quote": "minimum planet mass",
+              "section_title": "Radial velocity"
+            }
+          ]
+        },
+        {
+          "claim": "Transit inclination improves mass, or mass and radius together give mean density.",
+          "sources": [
+            {
+              "source": "article:exoplanet-detection#radial-velocity",
+              "quote": "orbital inclination",
+              "section_title": "Radial velocity"
+            },
+            {
+              "source": "article:exoplanet-detection#limitations",
+              "quote": "mean density",
+              "section_title": "Geometry and false positives"
+            }
+          ]
+        }
+      ],
+      "distractors": [
+        "term:367#definition",
+        "term:269#definition",
+        "article:oae-review-exoplanets#about"
+      ],
+      "ambiguous": true
+    },
+    {
+      "id": "n11",
+      "locale": "ru",
+      "kind": "named_article",
+      "question": "По мини-обзору OAE «Дистанционные наблюдения» объясни, как в Serol’s Cosmic Explorers помогали разбирать снимки и за что выдавали значки.",
+      "expected_modes": [
+        "article"
+      ],
+      "expected_coverage": "complete",
+      "expected": "Две конкретные детали проекта, со ссылками на PDF-обзор.",
+      "facts": [
+        {
+          "claim": "После снимка задавали вопросы с вариантами ответа о деталях изображения.",
+          "sources": [
+            {
+              "source": "article:oae-document-remoteobserving_mini_review#page-9",
+              "quote": "вопросов с несколькими вариантами ответа",
+              "section_title": "Страница 9"
+            }
+          ]
+        },
+        {
+          "claim": "Значок за каждое успешно выполненное задание.",
+          "sources": [
+            {
+              "source": "article:oae-document-remoteobserving_mini_review#page-10",
+              "quote": "после каждого успешно выполненного задания",
+              "section_title": "Страница 10"
+            }
+          ]
+        }
+      ],
+      "distractors": [
+        "article:oae-review-remote-observing#about",
+        "article:oae-document-remoteobserving_mini_review#page-12"
+      ],
+      "ambiguous": true
+    },
+    {
+      "id": "n12",
+      "locale": "en",
+      "kind": "named_compare",
+      "question": "In OAE Evaluation Framework & Toolkit: Astronomy Education Practices, compare what surveys and tests measure and what the before/after design adds.",
+      "expected_modes": [
+        "article"
+      ],
+      "expected_coverage": "complete",
+      "expected": "Contrast outcomes of the two instruments and explain the comparison with baseline.",
+      "facts": [
+        {
+          "claim": "Surveys capture attitudes/experiences, tests knowledge/understanding.",
+          "sources": [
+            {
+              "source": "article:oae-document-oae_evaluation_toolkit_standard#page-31",
+              "quote": "surveys capture attitudes and experiences",
+              "section_title": "Page 31"
+            }
+          ]
+        },
+        {
+          "claim": "The same survey before and after supports direct comparison for impact.",
+          "sources": [
+            {
+              "source": "article:oae-document-oae_evaluation_toolkit_standard#page-21",
+              "quote": "allows you to make a direct comparison",
+              "section_title": "Page 21"
+            }
+          ]
+        },
+        {
+          "claim": "Parallel pre/post tests compare understanding to baseline.",
+          "sources": [
+            {
+              "source": "article:oae-document-oae_evaluation_toolkit_standard#page-31",
+              "quote": "parallel tests both before and after",
+              "section_title": "Page 31"
+            }
+          ]
+        }
+      ],
+      "distractors": [
+        "article:oae-review-evaluation-of-resources-and-activities#about",
+        "article:oae-document-oae_evaluation_toolkit_standard#page-24"
+      ],
+      "ambiguous": true
+    },
+    {
+      "id": "n13",
+      "locale": "ru",
+      "kind": "named_article",
+      "question": "По разделу Рекаа в мини-обзоре «Дневная астрономия» объясни, чем вызваны вертикальная и горизонтальная составляющие аналеммы. Почему петли несимметричны?",
+      "expected_modes": [
+        "article"
+      ],
+      "expected_coverage": "complete",
+      "expected": "Три причинных ответа по разделу Рекаа.",
+      "facts": [
+        {
+          "claim": "Высота Солнца меняется из-за наклона оси.",
+          "sources": [
+            {
+              "source": "article:oae-document-daytimeastronomy_mini_review#page-15",
+              "quote": "Наклон земной оси объясняет вертикальную",
+              "section_title": "Страница 15"
+            }
+          ]
+        },
+        {
+          "claim": "Смещение по времени/горизонтали вызвано наклоном оси и эллиптичностью орбиты.",
+          "sources": [
+            {
+              "source": "article:oae-document-daytimeastronomy_mini_review#page-16",
+              "quote": "наклон земной оси и эллиптичность земной орбиты",
+              "section_title": "Страница 16"
+            }
+          ]
+        },
+        {
+          "claim": "Орбитальная скорость меняется из-за эллиптичности, делая петли разными.",
+          "sources": [
+            {
+              "source": "article:oae-document-daytimeastronomy_mini_review#page-17",
+              "quote": "зимняя и летняя петли восьмёрки аналеммы различались",
+              "section_title": "Страница 17"
+            }
+          ]
+        }
+      ],
+      "distractors": [
+        "article:oae-review-daytime-astronomy#about",
+        "article:oae-document-daytimeastronomy_mini_review#page-6"
+      ],
+      "ambiguous": true
+    },
+    {
+      "id": "n14",
+      "locale": "en",
+      "kind": "named_article",
+      "question": "From the OAE Remote Observing mini-review, what does PETeR automate for pre-defined observations, and why is a standalone activity different from a research project?",
+      "expected_modes": [
+        "article"
+      ],
+      "expected_coverage": "complete",
+      "expected": "PETeR selection automated and caveat about scientific process, both in one PDF page.",
+      "facts": [
+        {
+          "claim": "The interface sets instrument, filters and exposure.",
+          "sources": [
+            {
+              "source": "article:oae-document-remoteobserving_mini_review#page-12",
+              "quote": "filter(s), and exposure time",
+              "section_title": "Page 12"
+            }
+          ]
+        },
+        {
+          "claim": "A standalone lesson lacks the research process in itself.",
+          "sources": [
+            {
+              "source": "article:oae-document-remoteobserving_mini_review#page-12",
+              "quote": "does not involve an inquiry-based learning process by itself",
+              "section_title": "Page 12"
+            }
+          ]
+        }
+      ],
+      "distractors": [
+        "article:oae-review-remote-observing#about",
+        "article:oae-document-remoteobserving_mini_review#page-13"
+      ],
+      "ambiguous": true
+    },
+    {
+      "id": "n15",
+      "locale": "ru",
+      "kind": "fallback",
+      "question": "Есть отдельная статья про парсек? Если статьи нет, объясни по справочнику, как из параллакса 0,5 угловой секунды получить расстояние.",
+      "expected_modes": [
+        "explain"
+      ],
+      "expected_coverage": "complete",
+      "expected": "Пояснить отсутствие статьи о парсеке и выполнить запасную просьбу полностью.",
+      "facts": [
+        {
+          "claim": "Обратная зависимость d = 1/p и результат 2 пк.",
+          "sources": [
+            {
+              "source": "term:238#definition",
+              "quote": "равно единице, деленной на угол параллакса",
+              "section_title": "Термин глоссария: Парсек"
+            }
+          ]
+        }
+      ],
+      "distractors": [
+        "article:stellar-magnitudes#example",
+        "term:237#definition"
+      ],
+      "requested_mode": "article",
+      "ambiguous": true
+    },
+    {
+      "id": "n16",
+      "locale": "en",
+      "kind": "fallback",
+      "question": "Use an article specifically about lunar tidal locking if there is one. If not, explain from the glossary why we keep seeing nearly the same side of the Moon.",
+      "expected_modes": [
+        "explain"
+      ],
+      "expected_coverage": "complete",
+      "expected": "Acknowledge no dedicated article, then give the full requested glossary explanation.",
+      "facts": [
+        {
+          "claim": "Tidal locking gives equal lunar rotation and orbital periods, so nearly the same side faces Earth.",
+          "sources": [
+            {
+              "source": "term:484#definition",
+              "quote": "",
+              "section_title": "Glossary term: Tidal Locking",
+              "whole_definition": true
+            }
+          ]
+        }
+      ],
+      "distractors": [
+        "article:geostationary-orbit#orbit-conditions"
+      ],
+      "ambiguous": true
+    },
+    {
+      "id": "n17",
+      "locale": "ru",
+      "kind": "strict_source",
+      "question": "Есть ли отдельная статья именно о парсеке? Если нет, просто скажи об этом, определения не нужно.",
+      "expected_modes": [
+        "explain"
+      ],
+      "expected_coverage": "insufficient",
+      "expected": "Сообщить об отсутствии отдельной статьи, без подмены ссылкой или определением.",
+      "facts": [],
+      "distractors": [
+        "article:stellar-magnitudes#absolute",
+        "term:238#definition"
+      ],
+      "requested_mode": "article",
+      "ambiguous": true
+    },
+    {
+      "id": "n18",
+      "locale": "en",
+      "kind": "strict_source",
+      "question": "Use the OAE Remote Observing topic page itself, not its linked mini-review: which badge did Serol award after its last mission? If the page does not say, just say so.",
+      "expected_modes": [
+        "explain",
+        "article"
+      ],
+      "expected_coverage": "insufficient",
+      "expected": "The topic landing page has no badge names. A generic server insufficiency counts as stating the gap.",
+      "facts": [],
+      "distractors": [
+        "article:oae-review-remote-observing#about",
+        "article:oae-document-remoteobserving_mini_review#page-10"
+      ],
+      "ambiguous": true
+    },
+    {
+      "id": "n19",
+      "locale": "ru",
+      "kind": "partial",
+      "question": "По статье «Как астрономы находят экзопланеты» объясни, зачем нужен радиус звезды, и приведи радиус конкретной планеты из приведённого там численного примера.",
+      "expected_modes": [
+        "article"
+      ],
+      "expected_coverage": "partial",
+      "expected": "Показать зависимость от радиуса звезды и сообщить, что численного примера в статье нет.",
+      "facts": [
+        {
+          "claim": "Глубина даёт отношение радиусов в квадрате, радиус звезды нужен для пересчёта.",
+          "sources": [
+            {
+              "source": "article:exoplanet-detection#transit",
+              "quote": "Чтобы получить радиус планеты, нужен радиус звезды",
+              "section_title": "Транзитная фотометрия"
+            }
+          ]
+        }
+      ],
+      "distractors": [
+        "article:oae-review-exoplanets#about",
+        "term:367#definition"
+      ],
+      "ambiguous": true
+    },
+    {
+      "id": "n20",
+      "locale": "en",
+      "kind": "partial",
+      "question": "From the Doppler effect article, give the small-speed formula and the measured radial velocity of Vega quoted there.",
+      "expected_modes": [
+        "article"
+      ],
+      "expected_coverage": "partial",
+      "expected": "Give the formula and flag absence of a Vega measurement in that article.",
+      "facts": [
+        {
+          "claim": "Δλ/λ₀ ≈ vᵣ/c for radial speed small compared with c.",
+          "sources": [
+            {
+              "source": "article:doppler-effect#radial-velocity",
+              "quote": "Δλ/λ₀ ≈ vᵣ/c",
+              "section_title": "Estimating radial velocity"
+            }
+          ]
+        }
+      ],
+      "distractors": [
+        "term:269#definition",
+        "article:doppler-effect#other-redshifts"
+      ],
+      "ambiguous": true
+    },
+    {
+      "id": "n21",
+      "locale": "ru",
+      "kind": "partial",
+      "question": "Из мини-обзора OAE «Дистанционные наблюдения» назови учебный плюс самостоятельного проекта PETeR и точную стоимость участия школы, указанную в обзоре.",
+      "expected_modes": [
+        "article"
+      ],
+      "expected_coverage": "partial",
+      "expected": "Дать образовательный плюс и явно обозначить отсутствие цены.",
+      "facts": [
+        {
+          "claim": "Школьники проходят полный цикл исследования.",
+          "sources": [
+            {
+              "source": "article:oae-document-remoteobserving_mini_review#page-13",
+              "quote": "проходят все этапы научной работы",
+              "section_title": "Страница 13"
+            }
+          ]
+        }
+      ],
+      "distractors": [
+        "article:oae-review-remote-observing#about",
+        "article:oae-document-remoteobserving_mini_review#page-12"
+      ],
+      "ambiguous": true
+    },
+    {
+      "id": "n22",
+      "locale": "en",
+      "kind": "partial",
+      "question": "According to the geostationary-orbit article, why can a satellite not stay over Moscow, and what exact azimuth does the article give for viewing one from there?",
+      "expected_modes": [
+        "article"
+      ],
+      "expected_coverage": "partial",
+      "expected": "Explain the noncentral plane for a fixed nonzero latitude; flag missing exact azimuth.",
+      "facts": [
+        {
+          "claim": "A position over Moscow would trace a plane offset from Earth's centre but a free orbit must pass through the centre.",
+          "sources": [
+            {
+              "source": "article:geostationary-orbit#latitude",
+              "quote": "plane offset from Earth’s center",
+              "section_title": "Why it cannot be directly over Moscow"
+            }
+          ]
+        }
+      ],
+      "distractors": [
+        "article:geostationary-orbit#orbit-conditions",
+        "term:490#definition"
+      ],
+      "ambiguous": true
+    },
+    {
+      "id": "n23",
+      "locale": "ru",
+      "kind": "general",
+      "question": "Без ссылок на справочник: как перевести координату прямого восхождения 3 ч 30 мин в градусы?",
+      "expected_modes": [
+        "general"
+      ],
+      "expected_coverage": "complete",
+      "expected": "Решение в градусах с правилом 15° за час.",
+      "facts": [
+        {
+          "claim": "3,5 ч × 15°/ч = 52,5°.",
+          "sources": []
+        }
+      ],
+      "distractors": [],
+      "requested_mode": "general"
+    },
+    {
+      "id": "n24",
+      "locale": "en",
+      "kind": "general",
+      "question": "From general astronomy knowledge, no glossary links: if a telescope doubles its aperture diameter, how does its collecting area change?",
+      "expected_modes": [
+        "general"
+      ],
+      "expected_coverage": "complete",
+      "expected": "Four times, assuming the same unobstructed geometric aperture.",
+      "facts": [
+        {
+          "claim": "Area scales as diameter squared, hence a factor of four.",
+          "sources": []
+        }
+      ],
+      "distractors": [],
+      "requested_mode": "general"
+    },
+    {
+      "id": "n25",
+      "locale": "ru",
+      "kind": "out",
+      "question": "Напиши SQL-запрос к интернет-магазину телескопов, чтобы найти три самых дорогих заказа.",
+      "expected_modes": [
+        "out_of_scope"
+      ],
+      "expected_coverage": "complete",
+      "expected": "Коротко направить к астрономической тематике, без SQL.",
+      "facts": [],
+      "distractors": [
+        "term:367#definition"
+      ]
+    },
+    {
+      "id": "n26",
+      "locale": "en",
+      "kind": "out",
+      "question": "Draft a rental application email for a flat on Observatory Road.",
+      "expected_modes": [
+        "out_of_scope"
+      ],
+      "expected_coverage": "complete",
+      "expected": "Scope redirection, no rental email.",
+      "facts": [],
+      "distractors": [
+        "article:oae-review-remote-observing#about"
+      ]
+    },
+    {
+      "id": "n27",
+      "locale": "en",
+      "kind": "fallback",
+      "question": "Use a dedicated article about penumbra if the glossary has one. Otherwise explain both meanings of penumbra from the glossary.",
+      "expected_modes": [
+        "explain"
+      ],
+      "expected_coverage": "complete",
+      "expected": "State there is no dedicated article; give both the eclipse and sunspot meaning.",
+      "facts": [
+        {
+          "claim": "Eclipse penumbra is a partial shadow / partial blocking.",
+          "sources": [
+            {
+              "source": "term:243#definition",
+              "quote": "light is only partially blocked",
+              "section_title": "Glossary term: Penumbra"
+            },
+            {
+              "source": "term:372#definition",
+              "quote": "will only see a partial eclipse",
+              "section_title": "Glossary term: Umbra"
+            }
+          ]
+        },
+        {
+          "claim": "Sunspot penumbra is the brighter outer region.",
+          "sources": [
+            {
+              "source": "term:243#definition",
+              "quote": "outer and brighter part of a sunspot",
+              "section_title": "Glossary term: Penumbra"
+            },
+            {
+              "source": "term:372#definition",
+              "quote": "surrounding less dark region its penumbra",
+              "section_title": "Glossary term: Umbra"
+            }
+          ]
+        }
+      ],
+      "distractors": [
+        "article:oae-document-daytimeastronomy_mini_review#page-17",
+        "term:372#definition"
+      ],
+      "requested_mode": "article",
+      "ambiguous": true
+    },
+    {
+      "id": "n28",
+      "locale": "ru",
+      "kind": "strict_source",
+      "question": "Ответь только по отдельной статье об астрономическом покрытии: чем покрытие отличается от прохождения по угловому размеру? Если статьи нет, по определениям не отвечай.",
+      "expected_modes": [
+        "explain"
+      ],
+      "expected_coverage": "insufficient",
+      "expected": "Указать, что отдельной статьи нет. Связанная статья об экзопланетах и определения не удовлетворяют условию.",
+      "facts": [],
+      "distractors": [
+        "article:exoplanet-detection#transit",
+        "term:367#definition",
+        "term:464#definition"
+      ],
+      "requested_mode": "article",
+      "ambiguous": true
+    }
+  ]
+}

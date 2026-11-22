@@ -151,6 +151,7 @@ def snapshot_hash(paths: list[Path]) -> str:
 
 def merge_sections(sections: list[dict], prior: dict, keep_stale: StaleTranslationCallback) -> bool:
     old_sections = {section["id"]: section for section in prior.get("sections", [])}
+    old_ru_blocks = prior.get("locales", {}).get("ru", {}).get("blocks", {})
     source_changed = False
     for index, section in enumerate(sections):
         previous = old_sections.get(section["id"], {})
@@ -180,9 +181,9 @@ def merge_sections(sections: list[dict], prior: dict, keep_stale: StaleTranslati
         source_changed = True
         old = old_sections[old_id]
         old_index = prior["sections"].index(old)
+        old_block = old_ru_blocks.get(old_id, {})
         for field in ("heading", "body"):
             keep_stale(f"/sections/{old_index}/{field}_ru", old.get(field), old.get(f"{field}_ru"))
-            old_block = prior.get("locales", {}).get("ru", {}).get("blocks", {}).get(old_id, {})
             keep_stale(f"/locales/ru/blocks/{old_id}/{field}", old.get(field), old_block.get(field))
         for link_index, link in enumerate(old.get("links", [])):
             keep_stale(
@@ -192,11 +193,10 @@ def merge_sections(sections: list[dict], prior: dict, keep_stale: StaleTranslati
 
 
 def merge_media(media_rows: list[dict], prior: dict, keep_stale: StaleTranslationCallback) -> bool:
-    source_changed = False
-    old_media = {m["id"]: m for m in prior.get("media", [])}
-    if prior and {m["id"] for m in media_rows} != set(old_media):
-        source_changed = True
-    for old_id in old_media.keys() - {m["id"] for m in media_rows}:
+    old_media = {item["id"]: item for item in prior.get("media", [])}
+    media_ids = {item["id"] for item in media_rows}
+    source_changed = bool(prior and media_ids != old_media.keys())
+    for old_id in old_media.keys() - media_ids:
         old = old_media[old_id]
         old_index = prior["media"].index(old)
         for field in ("title", "short_caption", "caption", "alt"):
@@ -205,15 +205,13 @@ def merge_media(media_rows: list[dict], prior: dict, keep_stale: StaleTranslatio
         previous = old_media.get(row["id"], {})
         source_file_changed = bool(previous and row.get("source_url") != previous.get("source_url"))
         media_changed = source_file_changed
-        if source_file_changed:
-            source_changed = True
         for field in ("title", "short_caption", "caption", "alt"):
             translated = f"{field}_ru"
             if row.get(field + "_en") == previous.get(field + "_en"):
                 if translated in previous:
                     row[translated] = previous[translated]
             elif previous:
-                source_changed = media_changed = True
+                media_changed = True
                 keep_stale(
                     f"/media/{media_index}/{translated}",
                     previous.get(field + "_en"),
@@ -223,8 +221,11 @@ def merge_media(media_rows: list[dict], prior: dict, keep_stale: StaleTranslatio
             for field in ("ru_path", "ru_sha256", "original_path", "sha256", "size"):
                 if field in previous:
                     row[field] = previous[field]
-        # A reviewed caption whose source changed must return to the translation queue.
-        row["review"] = row["review"] if media_changed else previous.get("review", row["review"])
+        # Changes to the original file or captions invalidate media review.
+        if media_changed:
+            source_changed = True
+        elif "review" in previous:
+            row["review"] = previous["review"]
     return source_changed
 
 
@@ -249,42 +250,49 @@ def merge_term(number: int, sources: TermSources, prior: dict, *, refresh: bool)
     sections_changed = merge_sections(sections, prior, keep_stale)
     media_changed = merge_media(media_rows, prior, keep_stale)
     source_changed = sections_changed or media_changed
-    old_ru = prior.get("locales", {}).get("ru", {})
+    old_locales = prior.get("locales", {})
+    old_en = old_locales.get("en", {})
+    old_ru = old_locales.get("ru", {})
+    old_metadata = prior.get("metadata", {})
+    title = term.get("term_name") or ""
+    aliases = term.get("alternate_terms") or []
+    categories = term.get("categories", [])
+    same_title = old_en.get("title") == title
+    same_aliases = old_en.get("aliases") == aliases
+    same_categories = old_metadata.get("categories") == categories
+
     blocks_en = {s["id"]: {"heading": s["heading"], "body": s["body"]} for s in sections}
-    old_en_blocks = prior.get("locales", {}).get("en", {}).get("blocks", {})
+    old_en_blocks = old_en.get("blocks", {})
+    old_ru_blocks = old_ru.get("blocks", {})
     blocks_ru = {}
     for section in sections:
-        sid = section["id"]
-        blocks_ru[sid] = {}
-        for field in ("heading", "body"):
-            if old_en_blocks.get(sid, {}).get(field) == blocks_en[sid][field]:
-                blocks_ru[sid][field] = old_ru.get("blocks", {}).get(sid, {}).get(field, "")
-            else:
-                blocks_ru[sid][field] = ""
-                if old_en_blocks.get(sid, {}).get(field):
-                    source_changed = True
-                    keep_stale(
-                        f"/locales/ru/blocks/{sid}/{field}",
-                        old_en_blocks[sid][field],
-                        old_ru.get("blocks", {}).get(sid, {}).get(field),
-                    )
-    old_en = prior.get("locales", {}).get("en", {})
-    old_metadata = prior.get("metadata", {})
-    if old_en.get("title") != (term.get("term_name") or "") and old_en:
+        section_id = section["id"]
+        previous_en = old_en_blocks.get(section_id, {})
+        previous_ru = old_ru_blocks.get(section_id, {})
+        translated = {}
+        for field, text in blocks_en[section_id].items():
+            previous = previous_en.get(field)
+            translated[field] = previous_ru.get(field, "") if previous == text else ""
+            if previous and previous != text:
+                source_changed = True
+                keep_stale(f"/locales/ru/blocks/{section_id}/{field}", previous, previous_ru.get(field))
+        blocks_ru[section_id] = translated
+
+    if old_en and not same_title:
         source_changed = True
-    if old_en.get("aliases") != (term.get("alternate_terms") or []) and old_en:
+    if old_en and not same_aliases:
         source_changed = True
+        translation = old_ru.get("aliases", [])
         for index, value in enumerate(old_en.get("aliases", [])):
-            translation = old_ru.get("aliases", [])
             keep_stale(
                 f"/locales/ru/aliases/{index}",
                 value,
                 translation[index] if index < len(translation) else None,
             )
-    if old_metadata.get("categories") != term.get("categories", []) and old_metadata:
+    if old_metadata and not same_categories:
         source_changed = True
+        translation = old_metadata.get("categories_ru", [])
         for index, value in enumerate(old_metadata.get("categories", [])):
-            translation = old_metadata.get("categories_ru", [])
             keep_stale(
                 f"/metadata/categories_ru/{index}",
                 value,
@@ -305,11 +313,9 @@ def merge_term(number: int, sources: TermSources, prior: dict, *, refresh: bool)
         },
         "metadata": {
             "approval_level": term.get("term_approval_level"),
-            "categories": term.get("categories", []),
+            "categories": categories,
             "category_ids": term.get("category_ids", []),
-            "categories_ru": old_metadata.get("categories_ru", [])
-            if old_metadata.get("categories") == term.get("categories", [])
-            else [],
+            "categories_ru": old_metadata.get("categories_ru", []) if same_categories else [],
             "related_term_numbers": term.get("linked_terms", []),
             "redirect_term_number": term.get("override_term_number"),
             "credit": "IAU OAE",
@@ -319,17 +325,13 @@ def merge_term(number: int, sources: TermSources, prior: dict, *, refresh: bool)
         "sections": sections,
         "locales": {
             "en": {
-                "title": term.get("term_name") or "",
-                "aliases": term.get("alternate_terms") or [],
+                "title": title,
+                "aliases": aliases,
                 "blocks": blocks_en,
             },
             "ru": {
-                "title": old_ru.get("title", "")
-                if old_en.get("title") == (term.get("term_name") or "")
-                else "",
-                "aliases": old_ru.get("aliases", [])
-                if old_en.get("aliases") == (term.get("alternate_terms") or [])
-                else [],
+                "title": old_ru.get("title", "") if same_title else "",
+                "aliases": old_ru.get("aliases", []) if same_aliases else [],
                 "blocks": blocks_ru,
             },
         },
@@ -342,7 +344,7 @@ def merge_term(number: int, sources: TermSources, prior: dict, *, refresh: bool)
         if source_changed
         else prior.get("review", {"status": "draft", "reviewer": None}),
     }
-    if old_en.get("title") and old_en.get("title") != record["locales"]["en"]["title"]:
+    if old_en.get("title") and not same_title:
         keep_stale("/locales/ru/title", old_en.get("title"), old_ru.get("title"))
     if stale:
         record["stale_translations"] = stale

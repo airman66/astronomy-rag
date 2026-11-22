@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-11-22T15:51:10.702936+00:00",
+  "prompt_version": "2026-11-18.2",
+  "suite_sha256": "6e03ec8f8c44bebdff953855c215674e411006bc151c2116f9b19c6ba4ed27d8",
+  "index_sha256": "2df889f02ed2461d05e3538be0dcc34b9e29bbd0ee5976cb68e19993ba1f309e",
+  "provider": "deepseek",
+  "model": "deepseek-flash",
+  "max_tokens": null,
+  "thinking": "default",
+  "reasoning_effort": null,
+  "pricing": {
+    "input": null,
+    "output": null,
+    "cached_input": null
+  },
+  "metrics": {
+    "cases": 50,
+    "passed": 45,
+    "mode_correct": 47,
+    "coverage_correct": 47,
+    "sources_valid": 50,
+    "facts_verified": 51,
+    "facts_checked": 52,
+    "errors": 0,
+    "p50_ms": 1563.935,
+    "p95_ms": 2867.814,
+    "estimated_total_usd": null,
+    "estimated_usd_per_1000_valid": null,
+    "confusion": {
+      "article": {
+        "explain": 2,
+        "article": 4
+      },
+      "explain": {
+        "explain": 13,
+        "out_of_scope": 1
+      },
+      "general": {
+        "general": 6
+      },
+      "out_of_scope": {
+        "out_of_scope": 8
+      },
+      "term": {
+        "term": 16
+      }
+    },
+    "search_modes": {
+      "hybrid": 42
+    },
+    "with_vector_hits": 37
+  },
+  "report_sha256": "b3bf7f0f8b5f6071792db419f0115b72e2095886e34a688d60fbae6b395d6e9e"
+}

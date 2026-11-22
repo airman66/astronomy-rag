@@ -15,11 +15,11 @@ from app.api.errors import http_error, validation_error
 from app.api.paths import API_PREFIX
 from app.api.routes import articles, assistant, health, media, search, terms
 from app.api.schemas.common import ErrorResponse
-from app.assistant.client import LLMClient
+from app.assistant.client import CompletionClient, LLMClient
 from app.catalog import storage
 from app.catalog.release import verify_release
 from app.infra.config import RELEASE_DIR, cors_origins
-from app.infra.redis_limits import RedisLimiter
+from app.infra.redis_limits import RateLimiter, RedisLimiter
 from app.middleware.body_limit import AssistantBodyLimitMiddleware
 from app.middleware.request_limits import request_limits
 
@@ -52,7 +52,9 @@ async def lifespan(application: FastAPI) -> AsyncIterator[None]:
             yield
 
 
-def create_app(*, rate_limiter=None, llm_client=None) -> FastAPI:
+def create_app(
+    *, rate_limiter: RateLimiter | None = None, llm_client: CompletionClient | None = None,
+) -> FastAPI:
     application = FastAPI(
         title="Astronomy Glossary and RAG",
         version="1.1.0",

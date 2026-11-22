@@ -2,6 +2,7 @@ import asyncio
 
 import redis
 from fastapi import APIRouter, Body, Request
+from fastapi.responses import JSONResponse
 
 from app.api.errors import error
 from app.api.paths import ASSISTANT_ANSWER_PATH
@@ -95,7 +96,7 @@ async def assistant_answer(
             },
         }
     ),
-):
+) -> AnswerResponse | JSONResponse:
     try:
         result = await run_answer(
             body.question,
