@@ -58,7 +58,7 @@ def term_facets(locale: Literal["ru", "en"] = "ru") -> FacetsResponse:
 )
 def term_detail(term_number: TermNumber) -> RecordDetail | JSONResponse:
     record = storage.get_term(term_number)
-    if record is None:
+    if not record:
         return error(404, "term_not_found", "Термин не найден")
     return RecordDetail.model_validate(record)
 

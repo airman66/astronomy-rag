@@ -138,8 +138,9 @@ def price(usage: dict, input_rate: float, output_rate: float, cached_rate: float
     incoming, outgoing = usage.get("prompt_tokens"), usage.get("completion_tokens")
     if not isinstance(incoming, int) or not isinstance(outgoing, int) or min(incoming, outgoing) < 0:
         return None
-    cached = usage.get("prompt_cache_hit_tokens")
-    if cached is None:
+    if "prompt_cache_hit_tokens" in usage:
+        cached = usage["prompt_cache_hit_tokens"]
+    else:
         details = usage.get("prompt_tokens_details")
         cached = details.get("cached_tokens", 0) if isinstance(details, dict) else 0
     if not isinstance(cached, int) or not 0 <= cached <= incoming or cached_rate is None:

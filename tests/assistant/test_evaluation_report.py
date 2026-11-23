@@ -83,6 +83,7 @@ class AssistantEvaluationReportTests(unittest.TestCase):
         }
         self.assertAlmostEqual(price(usage, 1, 2, 0.1), 0.00113)
         self.assertAlmostEqual(price({**usage, "prompt_cache_hit_tokens": 2000}, 1, 2, 0.1), 0.0014)
+        self.assertAlmostEqual(price({**usage, "prompt_cache_hit_tokens": None}, 1, 2, 0.1), 0.0014)
         self.assertAlmostEqual(price(usage, 1, 2, None), 0.0014)
         self.assertIsNone(price({"prompt_tokens": -1, "completion_tokens": 5}, 1, 2, 0.1))
 

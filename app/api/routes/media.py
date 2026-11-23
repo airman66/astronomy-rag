@@ -17,7 +17,7 @@ router = APIRouter(prefix="/media")
 @router.get("/{media_id}", response_model=MediaDetail, responses={404: {"model": ErrorResponse}, **LIMITS})
 def media_detail(media_id: str) -> MediaDetail | JSONResponse:
     item = storage.get_media(media_id)
-    if item is None:
+    if not item:
         return error(404, "media_not_found", "Медиа не найдено")
     return MediaDetail.model_validate(item)
 
