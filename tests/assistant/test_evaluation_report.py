@@ -81,10 +81,10 @@ class AssistantEvaluationReportTests(unittest.TestCase):
             "prompt_cache_hit_tokens": 300,
             "prompt_tokens_details": {"cached_tokens": 100},
         }
-        self.assertAlmostEqual(price(usage, 1, 2, 0.1), 0.00113)
-        self.assertAlmostEqual(price({**usage, "prompt_cache_hit_tokens": 2000}, 1, 2, 0.1), 0.0014)
-        self.assertAlmostEqual(price({**usage, "prompt_cache_hit_tokens": None}, 1, 2, 0.1), 0.0014)
-        self.assertAlmostEqual(price(usage, 1, 2, None), 0.0014)
+        self.assertEqual(price(usage, 1, 2, 0.1), 0.00113)
+        self.assertEqual(price({**usage, "prompt_cache_hit_tokens": 2000}, 1, 2, 0.1), 0.0014)
+        self.assertEqual(price({**usage, "prompt_cache_hit_tokens": None}, 1, 2, 0.1), 0.0014)
+        self.assertEqual(price(usage, 1, 2, None), 0.0014)
         self.assertIsNone(price({"prompt_tokens": -1, "completion_tokens": 5}, 1, 2, 0.1))
 
     def test_retrieval_checks_fact_only_sources_and_uses_explicit_mode(self):
