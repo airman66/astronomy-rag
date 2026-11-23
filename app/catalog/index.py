@@ -122,7 +122,12 @@ def load_artifacts(root: Path, *, require_provenance: bool = True):
 
 def model_path(models: Path, manifest: dict) -> Path:
     filename = manifest.get("model_file")
-    if not isinstance(filename, str) or not filename or Path(filename).name != filename or filename == "..":
+    if (
+        not isinstance(filename, str)
+        or not filename
+        or Path(filename).name != filename
+        or filename == ".."
+    ):
         raise ValueError("Embedding model must be a local filename")
     return models / filename
 

@@ -210,11 +210,25 @@ def _populate_database(db: sqlite3.Connection, current_fingerprint: str, root: P
         """
     )
 
-    def index(record_id: str, section_id: str, locale: str, kind: str, title: str, body: str, url: str, status: str, heading: str = "") -> None:
+    def index(
+        record_id: str,
+        section_id: str,
+        locale: str,
+        kind: str,
+        title: str,
+        body: str,
+        url: str,
+        status: str,
+        heading: str = "",
+    ) -> None:
         searchable_title = f"{title} {heading}" if heading else title
         db.execute(
             "INSERT INTO search_fts VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
-            (record_id, section_id, locale, kind, title, body, url, status, normalize(searchable_title), normalize(body), stems(searchable_title, locale), stems(body, locale)),
+            (
+                record_id, section_id, locale, kind, title, body, url, status,
+                normalize(searchable_title), normalize(body),
+                stems(searchable_title, locale), stems(body, locale),
+            ),
         )
 
     seen_media: set[str] = set()
@@ -227,7 +241,12 @@ def _populate_database(db: sqlite3.Connection, current_fingerprint: str, root: P
             db.execute("INSERT INTO media VALUES (?,?)", (item["id"], json.dumps(item, ensure_ascii=False)))
             for locale in ("en", "ru"):
                 title = item.get(f"title_{locale}") or ""
-                body = " ".join(filter(None, [item.get(f"short_caption_{locale}"), item.get(f"caption_{locale}"), item.get(f"alt_{locale}")]))
+                captions = (
+                    item.get(f"short_caption_{locale}"),
+                    item.get(f"caption_{locale}"),
+                    item.get(f"alt_{locale}"),
+                )
+                body = " ".join(filter(None, captions))
                 if title or body:
                     index(record["id"], item["id"], locale, item["kind"], title, body, f"/api/v1/media/{item['id']}", item["review"]["status"])
 
@@ -238,11 +257,19 @@ def _populate_database(db: sqlite3.Connection, current_fingerprint: str, root: P
         status = record["review"]["status"]
         if number in illustrations:
             record["illustration"] = illustration_view(illustrations[number])
-            db.execute("INSERT INTO illustrations VALUES (?,?)", (number, json.dumps(illustrations[number], ensure_ascii=False)))
+            db.execute(
+                "INSERT INTO illustrations VALUES (?,?)",
+                (number, json.dumps(illustrations[number], ensure_ascii=False)),
+            )
         aliases = " | ".join(en.get("aliases", []) + ru.get("aliases", []))
         db.execute(
             "INSERT INTO terms VALUES (?,?,?,?,?,?,?,?,?)",
-            (number, en["title"], ru["title"], normalize(en["title"]), normalize(ru["title"]), normalize(aliases), json.dumps(record["metadata"].get("categories", [])), status, json.dumps(record, ensure_ascii=False)),
+            (
+                number, en["title"], ru["title"],
+                normalize(en["title"]), normalize(ru["title"]), normalize(aliases),
+                json.dumps(record["metadata"].get("categories", [])),
+                status, json.dumps(record, ensure_ascii=False),
+            ),
         )
         url = f"/api/v1/terms/{number}"
         for locale, loc in (("en", en), ("ru", ru)):
@@ -256,7 +283,14 @@ def _populate_database(db: sqlite3.Connection, current_fingerprint: str, root: P
         record = json.loads(path.read_text(encoding="utf-8"))
         en, ru = record["locales"]["en"], record["locales"]["ru"]
         status = record["review"]["status"]
-        db.execute("INSERT INTO articles VALUES (?,?,?,?,?,?,?)", (record["id"], en["title"], ru["title"], normalize(en["title"]), normalize(ru["title"]), status, json.dumps(record, ensure_ascii=False)))
+        db.execute(
+            "INSERT INTO articles VALUES (?,?,?,?,?,?,?)",
+            (
+                record["id"], en["title"], ru["title"],
+                normalize(en["title"]), normalize(ru["title"]),
+                status, json.dumps(record, ensure_ascii=False),
+            ),
+        )
         url = f"/api/v1/articles/{record['id']}"
         for locale, loc in (("en", en), ("ru", ru)):
             for section in record["sections"]:
@@ -330,7 +364,17 @@ def _like(value: str) -> str:
     return value.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_")
 
 
-def list_records(kind: str, *, page: int, page_size: int, locale: str, query: str = "", category: str = "", letter: str = "", status: str = "") -> tuple[list[dict], int]:
+def list_records(
+    kind: str,
+    *,
+    page: int,
+    page_size: int,
+    locale: str,
+    query: str = "",
+    category: str = "",
+    letter: str = "",
+    status: str = "",
+) -> tuple[list[dict], int]:
     is_term = kind == "term"
     table = "terms" if is_term else "articles"
     params = {
@@ -382,16 +426,18 @@ def list_records(kind: str, *, page: int, page_size: int, locale: str, query: st
         payload = json.loads(row["payload"])
         title = row["title_ru" if locale == "ru" else "title_en"] or row["title_en"]
         illustration = payload.get("illustration")
-        result.append({
-            "id": payload["id"],
-            "title": title,
-            "title_en": row["title_en"],
-            "url": f"/api/v1/{table}/{row['identifier']}",
-            "review_status": row["review_status"],
-            "categories": payload.get("metadata", {}).get("categories", []),
-            "categories_ru": payload.get("metadata", {}).get("categories_ru", []),
-            "illustration_url": illustration["url"] if illustration else None,
-        })
+        result.append(
+            {
+                "id": payload["id"],
+                "title": title,
+                "title_en": row["title_en"],
+                "url": f"/api/v1/{table}/{row['identifier']}",
+                "review_status": row["review_status"],
+                "categories": payload.get("metadata", {}).get("categories", []),
+                "categories_ru": payload.get("metadata", {}).get("categories_ru", []),
+                "illustration_url": illustration["url"] if illustration else None,
+            }
+        )
     return result, total
 
 
@@ -403,7 +449,11 @@ def letters(locale: str) -> list[dict]:
             "COUNT(*) AS count FROM terms GROUP BY letter ORDER BY letter",
             (locale == "ru",),
         ).fetchall()
-    return [{"letter": row["letter"].upper(), "count": row["count"]} for row in rows if row["letter"] and row["letter"].isalpha()]
+    return [
+        {"letter": row["letter"].upper(), "count": row["count"]}
+        for row in rows
+        if row["letter"] and row["letter"].isalpha()
+    ]
 
 
 def categories(locale: str) -> list[dict]:
@@ -463,4 +513,16 @@ def _lexical_matches(
         "WHERE search_fts MATCH ? AND locale=? AND (? IS NULL OR record_id=?) ORDER BY score LIMIT ?",
         (expression, locale, record_id, record_id, limit),
     ).fetchall()
-    return [{"record_id": row["record_id"], "section_id": row["section_id"], "kind": row["kind"], "title": row["title"], "excerpt": row["body"][:400], "url": row["url"], "review_status": row["review_status"], "score": -row["score"]} for row in rows]
+    return [
+        {
+            "record_id": row["record_id"],
+            "section_id": row["section_id"],
+            "kind": row["kind"],
+            "title": row["title"],
+            "excerpt": row["body"][:400],
+            "url": row["url"],
+            "review_status": row["review_status"],
+            "score": -row["score"],
+        }
+        for row in rows
+    ]
