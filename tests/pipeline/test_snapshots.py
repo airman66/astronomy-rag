@@ -25,6 +25,17 @@ class SnapshotRefreshTests(ImporterCase):
         importer.REFRESH = False
         self.assertEqual(importer.raw_json(path, "https://example.test/1")["results"], [1])
 
+    def test_rejects_unsafe_snapshot_pointers(self):
+        path = self.root / "raw/terms/1.json"
+        pointer = path.with_suffix(".json.current")
+        pointer.parent.mkdir(parents=True)
+
+        for name in ("../another.json", "/tmp/1.json", "1.other.txt", "..", ""):
+            with self.subTest(name=name):
+                pointer.write_text(name)
+                with self.assertRaisesRegex(ValueError, "Invalid raw snapshot pointer"):
+                    importer.current_snapshot(path)
+
     def test_invalid_refreshed_json_does_not_replace_current_snapshot(self):
         path = self.root / "raw/terms/1.json"
         importer.save_snapshot(path, b'{"results": [1]}')

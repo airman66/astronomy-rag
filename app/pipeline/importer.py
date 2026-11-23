@@ -32,6 +32,11 @@ from app.pipeline.records import (
 DATA = data_directory()
 HEADERS = {"User-Agent": "glossary-rag-import/1.0 (+https://astro4edu.org/)"}
 REFRESH = False
+SOURCE_IMAGE_CHANGED_REVIEW = {
+    "status": "draft",
+    "reviewer": None,
+    "notes": "Source image changed; localization requires review",
+}
 
 
 def digest(content: bytes) -> str:
@@ -63,7 +68,8 @@ def current_snapshot(path: Path) -> Path:
     if not pointer.exists():
         return path
     name = pointer.read_text(encoding="utf-8").strip()
-    if not name or Path(name).name != name or name == ".." or not (name == path.name or (name.startswith(f"{path.stem}.") and name.endswith(path.suffix))):
+    versioned_name = name.startswith(f"{path.stem}.") and name.endswith(path.suffix)
+    if not name or Path(name).name != name or name == ".." or not (name == path.name or versioned_name):
         raise ValueError(f"Invalid raw snapshot pointer: {pointer}")
     return path.with_name(name)
 
@@ -91,7 +97,10 @@ def save_snapshot(path: Path, content: bytes) -> Path:
     current = current_snapshot(path)
     if current.exists() and current.read_bytes() == content:
         return current
-    target = path if not path.exists() or path.read_bytes() == content else path.with_name(f"{path.stem}.{digest(content)}{path.suffix}")
+    if not path.exists() or path.read_bytes() == content:
+        target = path
+    else:
+        target = path.with_name(f"{path.stem}.{digest(content)}{path.suffix}")
     write_immutable(target, content)
     pointer = path.with_suffix(path.suffix + ".current")
     if target != path or pointer.exists():
@@ -188,8 +197,9 @@ def download_media(workers: int = 8, refresh: bool = False, preferred_ids: set[i
     entries: dict[str, dict] = {}
     for path in files:
         record = json.loads(path.read_text())
+        preferred = preferred_ids is not None and record.get("source", {}).get("term_number") in preferred_ids
         for item in record["media"]:
-            if item["id"] not in entries or preferred_ids is None or record.get("source", {}).get("term_number") in preferred_ids:
+            if item["id"] not in entries or preferred_ids is None or preferred:
                 entries[item["id"]] = item
     downloaded = 0
     failed = 0
@@ -220,7 +230,13 @@ def download_media(workers: int = 8, refresh: bool = False, preferred_ids: set[i
             content = fetch(url, binary=True)
             actual = digest(content)
             if expected and actual != expected and not refresh:
-                return identifier, False, f"checksum mismatch: source changed since import (recorded {expected[:12]}, downloaded {actual[:12]}); file not stored", False
+                return (
+                    identifier,
+                    False,
+                    f"checksum mismatch: source changed since import "
+                    f"(recorded {expected[:12]}, downloaded {actual[:12]}); file not stored",
+                    False,
+                )
             if recorded_path and checksum(recorded_path) == actual:
                 path = recorded_path
             elif base_path.exists() and checksum(base_path) == actual:
@@ -236,7 +252,7 @@ def download_media(workers: int = 8, refresh: bool = False, preferred_ids: set[i
             if content_changed:
                 item["ru_path"] = None
                 item["ru_sha256"] = None
-                item["review"] = {"status": "draft", "reviewer": None, "notes": "Source image changed; localization requires review"}
+                item["review"] = SOURCE_IMAGE_CHANGED_REVIEW.copy()
             return identifier, path != recorded_path, None, content_changed
         except Exception as exc:
             return identifier, False, str(exc), False
@@ -254,19 +270,20 @@ def download_media(workers: int = 8, refresh: bool = False, preferred_ids: set[i
     for path in files:
         record = json.loads(path.read_text())
         changed = False
+        source_changed = False
         for item in record["media"]:
             source = entries[item["id"]]
             if item.get("source_url") != source.get("source_url"):
                 item["source_url"] = source.get("source_url")
-                item["review"] = {"status": "draft", "reviewer": None, "notes": "Source image changed; localization requires review"}
-                record["review"] = {"status": "draft", "reviewer": None, "notes": "Source image changed; localization requires review"}
+                item["review"] = SOURCE_IMAGE_CHANGED_REVIEW.copy()
+                source_changed = True
                 changed = True
             for field in ("original_path", "sha256", "size", "ru_path", "ru_sha256", "review"):
                 if item.get(field) != source.get(field):
                     item[field] = source.get(field)
                     changed = True
-        if any(item["id"] in changed_media for item in record["media"]):
-            record["review"] = {"status": "draft", "reviewer": None, "notes": "Source image changed; localization requires review"}
+        if source_changed or any(item["id"] in changed_media for item in record["media"]):
+            record["review"] = SOURCE_IMAGE_CHANGED_REVIEW.copy()
             changed = True
         if changed:
             write_json(path, record)
@@ -304,8 +321,9 @@ def main() -> None:
     args = parser.parse_args()
     global REFRESH
     REFRESH = args.refresh
+    preferred_ids = set(args.ids) if args.ids is not None else None
     if args.media_only:
-        media_summary = download_media(args.workers, refresh=args.refresh, preferred_ids=set(args.ids) if args.ids is not None else None)
+        media_summary = download_media(args.workers, refresh=args.refresh, preferred_ids=preferred_ids)
         print("media summary", media_summary, flush=True)
         if media_summary[1]:
             raise SystemExit(1)
@@ -335,7 +353,7 @@ def main() -> None:
         print(f"API count mismatch: imported {counts['imported']} of {expected}", flush=True)
         raise SystemExit(1)
     if args.download_media or args.refresh:
-        media_summary = download_media(args.workers, refresh=args.refresh, preferred_ids=set(args.ids) if args.ids is not None else None)
+        media_summary = download_media(args.workers, refresh=args.refresh, preferred_ids=preferred_ids)
         print("media summary", media_summary, flush=True)
         if media_summary[1]:
             raise SystemExit(1)
