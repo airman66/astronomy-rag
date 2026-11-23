@@ -73,13 +73,22 @@ def _select_blocks(
         return mode, "insufficient", []
 
     grounded = mode != "general"
-    blocks = []
+    blocks: list[tuple[str, list[str]]] = []
     for block in proposed:
         ids = block.evidence_ids
-        if bool(ids) != grounded or any(key not in evidence for key in ids) or UNSAFE_TEXT.search(block.text):
+        if bool(ids) != grounded:
+            continue
+        if any(key not in evidence for key in ids):
+            continue
+        if UNSAFE_TEXT.search(block.text):
             continue
         blocks.append((block.text, list(dict.fromkeys(ids))))
-    missing_article = mode == "article" and not any(evidence[key].kind == "article" for _, keys in blocks for key in keys)
+
+    missing_article = mode == "article" and not any(
+        evidence[key].kind == "article"
+        for _, keys in blocks
+        for key in keys
+    )
     if missing_article:
         mode = "explain"
     if not blocks:
@@ -113,6 +122,11 @@ def render(
         image = image_for(item.record, item.section, locale)
         if image:
             images_by_url.setdefault(image["url"], {"record_id": item.record["id"], **image})
+
+    review_status = None
+    if used:
+        review_status = "draft" if any(item.review_status == "draft" for item in used) else "reviewed"
+
     return {
         "mode": mode,
         "grounding": {"out_of_scope": "policy", "general": "model"}.get(mode, "knowledge_base"),
@@ -120,7 +134,7 @@ def render(
         "primary_url": primary.url if primary else None,
         "sources": [{**item.reference(), "url": item.url, "review_status": item.review_status} for item in used],
         "images": list(images_by_url.values())[:3],
-        "review_status": ("draft" if any(item.review_status == "draft" for item in used) else "reviewed") if used else None,
+        "review_status": review_status,
         "coverage": coverage,
         "blocks": [{"text": text, "source_indices": [indices[key] for key in keys]} for text, keys in passages],
         "diagnostics": {"prompt_version": PROMPT_VERSION, "model": model},
@@ -136,8 +150,14 @@ def answer_payload(
         "requested_mode": mode,
         "page_evidence_ids": [key for key, item in evidence.items() if item.record["id"] == hint],
         "evidence": [
-            {"id": key, "kind": item.kind, "title": item.title, "heading": item.heading,
-             "definition": item.canonical_definition is not None, "text": item.text}
+            {
+                "id": key,
+                "kind": item.kind,
+                "title": item.title,
+                "heading": item.heading,
+                "definition": item.canonical_definition is not None,
+                "text": item.text,
+            }
             for key, item in evidence.items()
         ],
     }
@@ -150,10 +170,15 @@ async def answer(
     started = time.perf_counter()
     raw_hint = (context or {}).get("record_id")
     hint = raw_hint if isinstance(raw_hint, str) else None
-    evidence = {} if mode == "general" else await asyncio.to_thread(
-        evidence_for, question, locale, prefer_article=mode == "article",
-        context_record_id=hint, trace=trace, allow_index_load=allow_index_load,
-    )
+    if mode == "general":
+        evidence = {}
+    else:
+        evidence = await asyncio.to_thread(
+            evidence_for, question, locale,
+            prefer_article=mode == "article",
+            context_record_id=hint, trace=trace,
+            allow_index_load=allow_index_load,
+        )
     payload = answer_payload(question, mode, locale, evidence, hint)
     if trace is not None:
         trace["retrieval_ms"] = round((time.perf_counter() - started) * 1000, 3)
