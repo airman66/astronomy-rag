@@ -24,7 +24,7 @@ def articles(
     items, total = storage.list_records(
         "article", page=page, page_size=page_size, locale=locale, query=q, status=status
     )
-    return ListResponse(items=items, total=total, page=page, page_size=page_size)
+    return ListResponse.model_validate({"items": items, "total": total, "page": page, "page_size": page_size})
 
 
 @router.get("/{article_id}", response_model=RecordDetail, responses={404: {"model": ErrorResponse}, **LIMITS})
