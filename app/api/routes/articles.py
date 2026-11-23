@@ -24,17 +24,15 @@ def articles(
     items, total = storage.list_records(
         "article", page=page, page_size=page_size, locale=locale, query=q, status=status
     )
-    return ListResponse.model_validate({"items": items, "total": total, "page": page, "page_size": page_size})
+    return ListResponse(items=items, total=total, page=page, page_size=page_size)
 
 
 @router.get("/{article_id}", response_model=RecordDetail, responses={404: {"model": ErrorResponse}, **LIMITS})
 def article_detail(article_id: str) -> RecordDetail | JSONResponse:
     record = storage.get_article(article_id)
-    return (
-        RecordDetail.model_validate(record)
-        if record
-        else error(404, "article_not_found", "Статья не найдена")
-    )
+    if record is None:
+        return error(404, "article_not_found", "Статья не найдена")
+    return RecordDetail.model_validate(record)
 
 
 @router.get(

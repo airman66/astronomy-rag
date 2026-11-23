@@ -19,12 +19,10 @@ def search(
 ) -> SearchResponse:
     """Гибридный поиск (FTS5 со стеммингом + векторный индекс). `total` — размер пула релевантных результатов (не больше 200)."""
     matches, mode = paged_search(q, locale, limit=SEARCH_POOL)
-    return SearchResponse.model_validate(
-        {
-            "items": matches[(page - 1) * page_size : page * page_size],
-            "total": len(matches),
-            "page": page,
-            "page_size": page_size,
-            "mode": mode,
-        }
+    return SearchResponse(
+        items=matches[(page - 1) * page_size : page * page_size],
+        total=len(matches),
+        page=page,
+        page_size=page_size,
+        mode=mode,
     )

@@ -1,7 +1,7 @@
 from typing import Literal
 
-from fastapi import APIRouter, Query, Request
-from fastapi.responses import FileResponse
+from fastapi import APIRouter, Query, Request, Response
+from fastapi.responses import FileResponse, JSONResponse
 
 from app.api.errors import error
 from app.api.media_files import media_not_found, media_response
@@ -15,9 +15,11 @@ router = APIRouter(prefix="/media")
 
 
 @router.get("/{media_id}", response_model=MediaDetail, responses={404: {"model": ErrorResponse}, **LIMITS})
-def media_detail(media_id: str):
+def media_detail(media_id: str) -> MediaDetail | JSONResponse:
     item = storage.get_media(media_id)
-    return MediaDetail.model_validate(item) if item else error(404, "media_not_found", "Медиа не найдено")
+    if item is None:
+        return error(404, "media_not_found", "Медиа не найдено")
+    return MediaDetail.model_validate(item)
 
 
 @router.get(
@@ -30,8 +32,12 @@ def media_detail(media_id: str):
         **LIMITS,
     },
 )
-def media_file(request: Request, media_id: str, locale: Literal["ru", "en"] = "ru",
-               v: str | None = Query(None, max_length=64)):
+def media_file(
+    request: Request,
+    media_id: str,
+    locale: Literal["ru", "en"] = "ru",
+    v: str | None = Query(None, max_length=64),
+) -> Response:
     item = storage.get_media(media_id)
     if not item:
         return media_not_found("media_not_found", "Медиа не найдено", v)

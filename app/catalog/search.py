@@ -34,11 +34,11 @@ def search_with_mode(
             query, locale, min(limit, SEMANTIC_POOL), corpus_sha=corpus_sha, allow_index_load=allow_index_load,
         )
     except Exception as exc:  # embedding server/model/index problems must not break search
-        if time.monotonic() - _last_semantic_error > 60:
+        now = time.monotonic()
+        if now - _last_semantic_error > 60:
             log.warning("semantic search unavailable, using lexical results: %s: %s", type(exc).__name__, exc)
-            _last_semantic_error = time.monotonic()
-        count("astronomy_search_lexical_total")
-        return lexical, "lexical"
+            _last_semantic_error = now
+        semantic = None
     if semantic is None:
         count("astronomy_search_lexical_total")
         return lexical, "lexical"
@@ -68,11 +68,13 @@ _page_lock = Lock()
 def _page_generation() -> tuple | None:
     try:
         files = (storage.DB, vector.DATA / "index" / MANIFEST_NAME)
-        stamps = tuple((file.resolve(), stat.st_ino, stat.st_mtime_ns, stat.st_ctime_ns, stat.st_size)
-                       for file in files for stat in (file.stat(),))
+        stamps = []
+        for file in files:
+            stat = file.stat()
+            stamps.append((file.resolve(), stat.st_ino, stat.st_mtime_ns, stat.st_ctime_ns, stat.st_size))
     except OSError:
         return None
-    return stamps, vector.loaded_generation()
+    return tuple(stamps), vector.loaded_generation()
 
 
 def paged_search(query: str, locale: str, limit: int) -> tuple[list[dict], Literal["hybrid", "lexical"]]:
