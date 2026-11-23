@@ -78,8 +78,10 @@ def validate_parity(record: dict[str, Any], *, complete: bool = False) -> None:
             raise ValueError(f"Locale field mismatch in block {block_id}")
     if complete and len(en.get("aliases", [])) != len(ru.get("aliases", [])):
         raise ValueError("Locale alias count mismatch")
-    if complete and len(record.get("metadata", {}).get("categories", [])) != len(record.get("metadata", {}).get("categories_ru", [])):
-        raise ValueError("Category translation count mismatch")
+    if complete:
+        metadata = record.get("metadata", {})
+        if len(metadata.get("categories", [])) != len(metadata.get("categories_ru", [])):
+            raise ValueError("Category translation count mismatch")
 
 
 def set_path(obj: dict[str, Any], path: str, value: str) -> None:
