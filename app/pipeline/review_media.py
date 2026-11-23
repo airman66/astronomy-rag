@@ -28,14 +28,12 @@ def label_text(root: Tag, name: str) -> str:
             node.name in ("b", "p") or str(node.get("href", "")).startswith("#")
         ):
             break
-        if (
-            not isinstance(node, Tag)
-            or node.name != "a"
-            or node.get_text(strip=True) != "Credit Link"
-        ):
-            parts.append(
-                node.get_text(" ", strip=True) if isinstance(node, Tag) else str(node)
-            )
+        if isinstance(node, Tag):
+            if node.name == "a" and node.get_text(strip=True) == "Credit Link":
+                continue
+            parts.append(node.get_text(" ", strip=True))
+        else:
+            parts.append(str(node))
     return " ".join(" ".join(parts).split())
 
 

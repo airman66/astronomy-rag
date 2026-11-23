@@ -137,13 +137,15 @@ def run_report(records: dict[str, dict[str, Any]], units_payload: dict[str, Any]
                         "verification": row.get("verification", "accepted_by_verifier"),
                     }
                 )
-            if protected_tokens(unit["en"]) != protected_tokens(unit["ru"]):
+            source_tokens = protected_tokens(unit["en"])
+            translated_tokens = protected_tokens(unit["ru"])
+            if source_tokens != translated_tokens:
                 deterministic.append(
                     {
                         "check": "numbers_units",
                         "path": field["ru_path"],
-                        "en": protected_tokens(unit["en"]),
-                        "ru": protected_tokens(unit["ru"]),
+                        "en": source_tokens,
+                        "ru": translated_tokens,
                     }
                 )
             for kind in unit["kinds"]:

@@ -40,12 +40,10 @@ def passage_rank(passage: dict, sources: list[dict]) -> int | None:
     quote = " ".join(passage["quote"].split())
     if not quote:
         raise ValueError("Passage quote must not be empty")
-    return next(
-        (index for index, source in enumerate(sources, 1)
-         if matches_source(source, passage["source"])
-         and quote in " ".join(source.get("text", "").split())),
-        None,
-    )
+    for index, source in enumerate(sources, 1):
+        if matches_source(source, passage["source"]) and quote in " ".join(source.get("text", "").split()):
+            return index
+    return None
 
 
 def evaluate_retrieval(case: dict) -> dict | None:
@@ -62,8 +60,12 @@ def evaluate_retrieval(case: dict) -> dict | None:
         case["question"], case["locale"], prefer_article=mode == "article",
         context_record_id=case.get("context_record_id"), trace=trace,
     )
-    sources = [item.reference() for item in evidence.values()]
-    fragments = [{**source, "text": item.text} for source, item in zip(sources, evidence.values())]
+    sources = []
+    fragments = []
+    for item in evidence.values():
+        source = item.reference()
+        sources.append(source)
+        fragments.append({**source, "text": item.text})
     missing = [group for group in groups if not covers([group], sources)]
     ranks = [passage_rank(passage, fragments) for passage in passages]
     return {
@@ -136,8 +138,11 @@ def price(usage: dict, input_rate: float, output_rate: float, cached_rate: float
     incoming, outgoing = usage.get("prompt_tokens"), usage.get("completion_tokens")
     if not isinstance(incoming, int) or not isinstance(outgoing, int) or min(incoming, outgoing) < 0:
         return None
-    details = usage.get("prompt_tokens_details")
-    cached = usage.get("prompt_cache_hit_tokens", details.get("cached_tokens", 0) if isinstance(details, dict) else 0)
+    if "prompt_cache_hit_tokens" in usage:
+        cached = usage["prompt_cache_hit_tokens"]
+    else:
+        details = usage.get("prompt_tokens_details")
+        cached = details.get("cached_tokens", 0) if isinstance(details, dict) else 0
     if not isinstance(cached, int) or not 0 <= cached <= incoming or cached_rate is None:
         cached = 0
     return ((incoming - cached) * input_rate + cached * (cached_rate or 0) + outgoing * output_rate) / 1_000_000

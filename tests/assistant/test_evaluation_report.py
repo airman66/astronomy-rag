@@ -74,6 +74,19 @@ class AssistantEvaluationReportTests(unittest.TestCase):
         self.assertEqual(summary["p95_ms"], 900)
         self.assertAlmostEqual(summary["estimated_usd_per_1000_valid"], 2.44)
 
+    def test_price_prioritizes_reported_cache_hits_and_rejects_invalid_usage(self):
+        usage = {
+            "prompt_tokens": 1000,
+            "completion_tokens": 200,
+            "prompt_cache_hit_tokens": 300,
+            "prompt_tokens_details": {"cached_tokens": 100},
+        }
+        self.assertEqual(price(usage, 1, 2, 0.1), 0.00113)
+        self.assertEqual(price({**usage, "prompt_cache_hit_tokens": 2000}, 1, 2, 0.1), 0.0014)
+        self.assertEqual(price({**usage, "prompt_cache_hit_tokens": None}, 1, 2, 0.1), 0.0014)
+        self.assertEqual(price(usage, 1, 2, None), 0.0014)
+        self.assertIsNone(price({"prompt_tokens": -1, "completion_tokens": 5}, 1, 2, 0.1))
+
     def test_retrieval_checks_fact_only_sources_and_uses_explicit_mode(self):
         case = {"id": "fact-only", "requested_mode": "article", "locale": "ru", "question": "Объясни",
                 "facts": [{"evidence": [["article:stellar-magnitudes#absolute"]]}]}

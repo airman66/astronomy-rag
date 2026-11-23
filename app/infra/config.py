@@ -52,7 +52,12 @@ class LLMSettings:
                 thinking=os.getenv("RUNPOD_THINKING") or "default",
                 reasoning_effort=os.getenv("RUNPOD_REASONING_EFFORT") or "",
             )
-        return cls(provider, os.getenv("DEEPSEEK_MODEL") or "deepseek-flash", os.getenv("DEEPSEEK_API_KEY", ""), max_tokens=max_tokens)
+        return cls(
+            provider,
+            os.getenv("DEEPSEEK_MODEL") or "deepseek-flash",
+            os.getenv("DEEPSEEK_API_KEY", ""),
+            max_tokens=max_tokens,
+        )
 
 
 def redis_url() -> str:

@@ -5,10 +5,21 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from unittest.mock import patch
 
+from bs4 import BeautifulSoup
+
 from app.pipeline import review_media
 
 
 class ReviewMediaTests(unittest.TestCase):
+    def test_caption_ignores_credit_link_and_stops_at_next_block(self):
+        html = (
+            '<div><b>Image caption:</b> Bright <a href="/file">star</a>'
+            '<a href="/credit">Credit Link</a> in space<p>Other content</p></div>'
+        )
+        page = BeautifulSoup(html, "html.parser")
+        self.assertEqual(review_media.label_text(page, "caption"), "Bright star in space")
+        self.assertEqual(review_media.label_text(page, "license"), "")
+
     def test_discovery_preserves_order_and_deduplicates_links(self):
         media_url = "https://astro4edu.org/resources/media/ABC/"
         diagram_url = "https://astro4edu.org/resources/diagram/DEF/"

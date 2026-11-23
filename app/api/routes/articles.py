@@ -30,11 +30,9 @@ def articles(
 @router.get("/{article_id}", response_model=RecordDetail, responses={404: {"model": ErrorResponse}, **LIMITS})
 def article_detail(article_id: str) -> RecordDetail | JSONResponse:
     record = storage.get_article(article_id)
-    return (
-        RecordDetail.model_validate(record)
-        if record
-        else error(404, "article_not_found", "Статья не найдена")
-    )
+    if not record:
+        return error(404, "article_not_found", "Статья не найдена")
+    return RecordDetail.model_validate(record)
 
 
 @router.get(

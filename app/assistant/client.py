@@ -86,10 +86,10 @@ class LLMClient:
         if not is_runpod:
             request["thinking"] = {"type": "disabled"}
 
-        url = (
-            f"https://api.runpod.ai/v2/{settings.endpoint_id}/openai/v1/chat/completions"
-            if is_runpod else "https://api.deepseek.com/chat/completions"
-        )
+        if is_runpod:
+            url = f"https://api.runpod.ai/v2/{settings.endpoint_id}/openai/v1/chat/completions"
+        else:
+            url = "https://api.deepseek.com/chat/completions"
         timeout = httpx.Timeout(self.read_timeout or (90.0 if is_runpod else 35.0), connect=5.0)
         usage: dict[str, Any] = {}
         try:
