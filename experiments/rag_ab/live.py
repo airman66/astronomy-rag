@@ -24,13 +24,15 @@ from app.assistant.client import (
     CompletionClient,
     LLMClient,
 )
-from app.assistant.prompts import ANSWER_PROMPT
-from app.assistant.retrieval import Evidence
-from app.assistant.service import ModelBlock, ModelReply, ReplyDecision, answer_payload, render
+from app.assistant.prompts import ANSWER_PROMPT, PROMPT_VERSION
+from app.assistant.retrieval import PACKING_VERSION, Evidence
+from app.assistant.service import ModelReply, answer_payload, render
+from app.assistant.source_policy import allows_glossary, explicit_articles
 from app.catalog import storage
 from app.infra.config import LLMSettings, assistant_deadline, load_env
 from app.infra.files import write_json
-from experiments.rag_ab.prompts import JUDGE, PLAN, REVISED, WRITE
+from experiments.rag_ab import baseline
+from experiments.rag_ab.prompts import JUDGE, PLAN, WRITE
 from experiments.rag_ab.retrieval import (
     CONFIGS,
     OLD,
@@ -79,14 +81,6 @@ class Grades(Strict):
     grades: list[Grade]
 
 
-class ExperimentalBlock(ModelBlock):
-    evidence_ids: list[Eid] = Field(max_length=8)
-
-
-class ExperimentalReply(ReplyDecision):
-    blocks: list[ExperimentalBlock] = Field(max_length=8)
-
-
 class ThinkingHTTP:
     def __init__(self, http: httpx.AsyncClient) -> None:
         self.http = http
@@ -98,11 +92,6 @@ class ThinkingHTTP:
         return await self.http.post(url, headers=headers, json=json, timeout=timeout)
 
 
-GLOSSARY_FALLBACK = re.compile(
-    r"(?:если (?:статьи нет|не найд[её]тся).{0,120}(?:объясни|ответь).{0,50}по справочнику"
-    r"|(?:if (?:there is (?:none|no (?:dedicated )?article)|not)|otherwise).{0,160}from the glossary)",
-    re.I | re.S,
-)
 DEFINITION = re.compile(
     r"^(?:что такое |дай(?:те)? определение |define (?:the |an? )?|what is (?:the |an? )?)([^.!?,:;]+)[.!?]*$",
     re.I,
@@ -149,8 +138,8 @@ def checked_plan(raw: object, question: str, evidence: dict[str, Evidence]) -> d
         raise ValueError("named article plan needs a source phrase")
     if any(not set(part.evidence_ids) <= evidence.keys() for part in plan.parts):
         raise ValueError("unknown evidence ID in plan")
-    if plan.fallback == "glossary" and not GLOSSARY_FALLBACK.search(question):
-        raise ValueError("glossary permission not recognized in question")
+    if plan.fallback == "glossary" and not allows_glossary(question):
+        raise ValueError("the question does not explicitly allow a glossary fallback")
     return plan.model_dump()
 
 
@@ -171,9 +160,10 @@ def direct_catalog(case: dict, evidence: dict[str, Evidence]) -> dict | None:
     ]
     if len(matches) != 1:
         return None
-    reply = ModelReply(mode="term", coverage="complete", definition_id=matches[0], blocks=[])
+    reply = baseline.ModelReply(mode="term", coverage="complete", definition_id=matches[0], blocks=[])
     return render(
-        reply, reply.blocks, case.get("requested_mode", "auto"), case["locale"], evidence, "catalog"
+        reply, reply.blocks, case.get("requested_mode", "auto"), case["locale"], evidence, "catalog",
+        prompt_version=baseline.PROMPT_VERSION,
     )
 
 
@@ -247,8 +237,10 @@ async def trial(
                 return row
             question = case["question"]
             mode = case.get("requested_mode", "auto")
-            payload = answer_payload(question, mode, case["locale"], evidence, case.get("context_record_id"))
-            system = ANSWER_PROMPT if variant == "A" else REVISED
+            hint = case.get("context_record_id")
+            scope = explicit_articles(question, hint) if variant != "A" and mode != "general" else None
+            payload = answer_payload(question, mode, case["locale"], evidence, hint, article_scope=scope)
+            system = baseline.ANSWER_PROMPT if variant == "A" else ANSWER_PROMPT
             if variant in {"C", "C-low"}:
                 try:
                     completion = await one_call(planner, PLAN, payload, "plan", calls)
@@ -261,20 +253,14 @@ async def trial(
                 except (AssistantUnavailable, ValueError) as exc:
                     row["plan_error"] = "plan schema" if isinstance(exc, ValidationError) else str(exc)
             completion = await one_call(client, system, payload, "answer", calls)
-            reply = (
-                ModelReply.model_validate(completion.data)
-                if variant == "A"
-                else ExperimentalReply.model_validate(completion.data)
+            reply_schema = baseline.ModelReply if variant == "A" else ModelReply
+            reply = reply_schema.model_validate(completion.data)
+            row["result"] = render(
+                reply, reply.blocks, mode, case["locale"], evidence, completion.model,
+                question="" if variant == "A" else question,
+                article_scope=scope,
+                prompt_version=baseline.PROMPT_VERSION if variant == "A" else PROMPT_VERSION,
             )
-            if (
-                variant != "A"
-                and mode == "article"
-                and reply.mode == "explain"
-                and GLOSSARY_FALLBACK.search(question)
-            ):
-                # An explicitly accepted fallback can fully satisfy the request.
-                mode = "auto"
-            row["result"] = render(reply, reply.blocks, mode, case["locale"], evidence, completion.model)
             row["model_mode"] = reply.mode
             row["model_coverage"] = reply.coverage
     except AssistantNotConfigured:
@@ -449,6 +435,8 @@ async def run_phase(phase: str, config: str, concurrency: int, settings: LLMSett
     retrieval = json.loads(snapshot_bytes)
     if not isinstance(retrieval, dict) or retrieval["suite_sha256"].get(suite) != suite_sha:
         raise SystemExit(f"Retrieval snapshot suite differs: {snapshot_path}. Rebuild the snapshot.")
+    if retrieval.get("packing_version") != PACKING_VERSION:
+        raise SystemExit(f"Retrieval snapshot packing differs: {snapshot_path}. Rebuild the snapshot.")
     corpus_sha = retrieval["index"]["corpus_sha256"]
     if not corpus_sha or corpus_sha != storage.corpus_version():
         raise SystemExit(f"Retrieval snapshot corpus differs from the active catalogue: {snapshot_path}")
@@ -468,6 +456,7 @@ async def run_phase(phase: str, config: str, concurrency: int, settings: LLMSett
     provenance = {
         "phase": phase,
         "context": "factorial" if phase == "packing" else config,
+        "packing_version": PACKING_VERSION,
         "concurrency": concurrency,
         "model": settings.model,
         "answer_budget": settings.max_tokens or 768,
@@ -476,8 +465,8 @@ async def run_phase(phase: str, config: str, concurrency: int, settings: LLMSett
         "system_sha256": {
             key: hashlib.sha256(value.encode()).hexdigest()
             for key, value in {
-                "A": ANSWER_PROMPT,
-                "B": REVISED,
+                "A": baseline.ANSWER_PROMPT,
+                "B": ANSWER_PROMPT,
                 "planner": PLAN,
                 "writer": WRITE,
                 "judge": JUDGE,

@@ -6,18 +6,19 @@ from unittest.mock import AsyncMock, patch
 from pydantic import ValidationError
 
 from app.assistant.client import Completion
+from app.assistant.prompts import ANSWER_PROMPT
+from app.assistant.retrieval import PACKING_VERSION
 from app.assistant.service import ModelReply
 from app.infra.config import LLMSettings
 from app.infra.files import write_json
-from experiments.rag_ab import live, report
-from experiments.rag_ab.live import ExperimentalReply, run_batches, trial
-from experiments.rag_ab.prompts import REVISED
+from experiments.rag_ab import baseline, live, providers, report
+from experiments.rag_ab.live import run_batches, trial
 from experiments.rag_ab.retrieval import PackedContext
 from tests.support.catalog import temporary_dir
 
 
 class ExperimentTests(unittest.IsolatedAsyncioTestCase):
-    def test_experimental_reply_accepts_eight_passages(self) -> None:
+    def test_production_reply_accepts_eight_passages(self) -> None:
         reply = {
             "mode": "explain",
             "coverage": "complete",
@@ -25,8 +26,42 @@ class ExperimentTests(unittest.IsolatedAsyncioTestCase):
             "blocks": [{"text": "Answer", "evidence_ids": [f"e{i}" for i in range(1, 9)]}],
         }
         with self.assertRaises(ValidationError):
-            ModelReply.model_validate(reply)
-        self.assertEqual(ExperimentalReply.model_validate(reply).blocks[0].evidence_ids[-1], "e8")
+            baseline.ModelReply.model_validate(reply)
+        self.assertEqual(ModelReply.model_validate({**reply, "article_fallback": "default", "article_reference": None}).blocks[0].evidence_ids[-1], "e8")
+
+    async def test_provider_comparison_scores_complete_checkpoint_without_oauth(self) -> None:
+        out = temporary_dir(self)
+        case = {"id": "star", "question": "What is a star?", "locale": "en", "expected_modes": ["term"]}
+        snapshot = {
+            "suite_sha256": {"legacy": "suite"}, "index": {"corpus_sha256": "corpus"},
+            "index_manifest_sha256": "index", "results": [{
+                "id": "star", "configs": {"6x8500": {"evidence": []}},
+            }],
+        }
+        write_json(out / "legacy-retrieval.json", {**snapshot, "packing_version": PACKING_VERSION})
+        rows = [
+            {"id": "star", "variant": provider, "error": "timeout", "latency_ms": 1, "calls": [], "usage": {}}
+            for provider in ("deepseek", "gigachat")
+        ]
+        (out / "providers-responses.jsonl").write_text("".join(json.dumps(row) + "\n" for row in rows))
+        with (
+            patch.object(providers, "OUT", out),
+            patch.object(providers, "open_checkpoint"),
+            patch.dict("os.environ", {"GIGACHAT_API_KEY": "fake", "GIGACHAT_CA_FILE": ""}),
+            patch.object(LLMSettings, "from_env", return_value=LLMSettings("deepseek", "flash", "fake")),
+            patch.object(providers, "questions_with_sha", return_value=([case], "suite")),
+            patch.object(providers, "checksum", return_value="index"),
+            patch.object(providers.storage, "corpus_version", return_value="corpus"),
+            patch.object(providers.GigaChatClient, "access_token", side_effect=AssertionError("Unexpected OAuth")),
+            patch("builtins.print"),
+        ):
+            await providers.compare("A")
+            for stale in (snapshot, {**snapshot, "packing_version": "old"}):
+                write_json(out / "legacy-retrieval.json", stale)
+                with self.assertRaisesRegex(SystemExit, "current packing"):
+                    await providers.compare("A")
+        scored = json.loads((out / "providers-scored.json").read_text())
+        self.assertEqual([row["error"] for row in scored["results"]], ["timeout", "timeout"])
 
     async def test_invalid_plan_uses_the_single_call_prompt(self) -> None:
         case = {"id": "planet", "question": "Why do planets orbit stars?", "locale": "en"}
@@ -41,6 +76,7 @@ class ExperimentTests(unittest.IsolatedAsyncioTestCase):
         response = {
             "mode": "general",
             "coverage": "complete",
+            "article_fallback": "default", "article_reference": None,
             "definition_id": None,
             "blocks": [{"text": "Gravity keeps planets in orbit.", "evidence_ids": []}],
         }
@@ -55,7 +91,7 @@ class ExperimentTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(result["result"]["answer"], "Gravity keeps planets in orbit.")
         self.assertEqual(result["usage"], {"prompt_tokens": 30})
         system, payload = writer.complete.call_args.args
-        self.assertEqual(system, REVISED)
+        self.assertEqual(system, ANSWER_PROMPT)
         self.assertNotIn("validated_plan", payload)
 
     async def test_resume_only_runs_missing_keys(self) -> None:
@@ -111,10 +147,10 @@ class ExperimentTests(unittest.IsolatedAsyncioTestCase):
         retrieval = {
             "index": {"corpus_sha256": "corpus"},
             "index_manifest_sha256": "same-index",
+            "packing_version": PACKING_VERSION,
             "suite_sha256": {"new": hashlib.sha256(suite_path.read_bytes()).hexdigest()},
             "results": [{"id": "a", "configs": {"8x11000": snapshot}}],
         }
-        write_json(snapshot_path, retrieval)
         write_json(schedule_path, {"a": ["A"]})
         trial_mock = self.enterContext(patch.object(live, "trial", return_value={
             "id": "a", "variant": "A", "result": {
@@ -128,6 +164,10 @@ class ExperimentTests(unittest.IsolatedAsyncioTestCase):
         }))
         settings = LLMSettings("deepseek", "deepseek-flash", "unused")
 
+        write_json(snapshot_path, {**retrieval, "packing_version": "old"})
+        with self.assertRaisesRegex(SystemExit, "snapshot packing differs"):
+            await live.run_phase("repeat", "8x11000", 1, settings)
+        write_json(snapshot_path, retrieval)
         await live.run_phase("repeat", "8x11000", 1, settings)
         await live.run_phase("repeat", "8x11000", 1, settings)
 

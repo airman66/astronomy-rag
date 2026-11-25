@@ -22,6 +22,7 @@ from app.assistant.prompts import (
     PROMPT_VERSION,
 )
 from app.assistant.retrieval import EVIDENCE_LIMIT, Evidence, evidence_for, image_for
+from app.assistant.source_policy import ArticleScope, allows_glossary, explicit_articles, proposed_article, requires_article
 from app.infra.config import assistant_deadline
 from app.infra.redis_limits import RateLimiter
 
@@ -29,6 +30,7 @@ EvidenceId = Annotated[str, StringConstraints(max_length=64)]
 RequestMode = Literal["auto", "term", "article", "explain", "general"]
 AnswerMode = Literal["term", "article", "explain", "general", "out_of_scope"]
 Coverage = Literal["complete", "partial", "insufficient"]
+ArticleFallback = Literal["default", "allow_glossary", "article_only"]
 UNSAFE_TEXT = re.compile(r"://|www\.|<\s*/?[a-z][^>]*>|\]\s*[([]", re.IGNORECASE)
 log = logging.getLogger(__name__)
 
@@ -51,18 +53,26 @@ class ReplyDecision(BaseModel):
 
 
 class ModelReply(ReplyDecision):
+    article_fallback: ArticleFallback
+    article_reference: Annotated[str, StringConstraints(strip_whitespace=True, min_length=1, max_length=2000)] | None
     blocks: list[ModelBlock] = Field(max_length=8)
 
 
 def _select_blocks(
     reply: ReplyDecision, proposed: Sequence[ModelBlock], requested_mode: RequestMode, evidence: dict[str, Evidence],
+    *, fallback: ArticleFallback | None, scope: ArticleScope | None,
 ) -> tuple[AnswerMode, Coverage, list[tuple[str, list[str]]]]:
     mode = reply.mode
     if mode == "out_of_scope":
         return mode, "complete", []
-    article_fallback = requested_mode == "article" and mode == "explain"
-    if requested_mode != "auto" and requested_mode != mode and not article_fallback:
+    article_first = fallback in {"article_only", "allow_glossary"} or bool(scope)
+    if article_first and requested_mode == "explain" and mode == "article":
+        mode = "explain"
+    article_to_explain = requested_mode == "article" and mode == "explain"
+    if requested_mode != "auto" and requested_mode != mode and not article_to_explain:
         return ("explain" if requested_mode == "article" else requested_mode), "insufficient", []
+    if article_first and mode not in {"article", "explain"}:
+        return ("explain" if requested_mode == "auto" else mode), "insufficient", []
     if reply.coverage == "insufficient":
         return ("explain" if mode == "article" else mode), "insufficient", []
     if mode == "term":
@@ -84,16 +94,43 @@ def _select_blocks(
             continue
         blocks.append((block.text, list(dict.fromkeys(ids))))
 
-    missing_article = mode == "article" and not any(
+    if article_first:
+        article_blocks = [
+            (text, keys) for text, keys in blocks if all(
+                evidence[key].record["id"].startswith("article:")
+                and (not scope or evidence[key].record["id"] in scope.record_ids)
+                for key in keys
+            )
+        ]
+        cited_articles = {
+            evidence[key].record["id"] for _, keys in article_blocks for key in keys if evidence[key].kind == "article"
+        }
+        if cited_articles:
+            missing_sources = bool(scope and (scope.unresolved or not cited_articles.issuperset(scope.record_ids)))
+            coverage = "partial" if len(article_blocks) < len(proposed) or missing_sources else reply.coverage
+            return ("article" if requested_mode == "article" else mode), coverage, article_blocks
+        if fallback != "allow_glossary":
+            return "explain", "insufficient", []
+
+    missing_article = mode == "article" and (article_first or not any(
         evidence[key].kind == "article"
         for _, keys in blocks
         for key in keys
-    )
+    ))
     if missing_article:
         mode = "explain"
+    glossary_fallback = article_to_explain or missing_article or (mode == "explain" and fallback == "allow_glossary")
+    if fallback is not None and glossary_fallback:
+        blocks = [
+            (text, keys) for text, keys in blocks
+            if all(evidence[key].record["id"].startswith("term:") for key in keys)
+        ]
     if not blocks:
         return mode, "insufficient", []
-    if article_fallback or missing_article or len(blocks) < len(proposed):
+    if (
+        len(blocks) < len(proposed)
+        or ((missing_article or article_to_explain) and fallback != "allow_glossary")
+    ):
         return mode, "partial", blocks
     return mode, reply.coverage, blocks
 
@@ -101,8 +138,26 @@ def _select_blocks(
 def render(
     reply: ReplyDecision, blocks: Sequence[ModelBlock], requested_mode: RequestMode,
     locale: str, evidence: dict[str, Evidence], model: str,
+    *, question: str = "", article_scope: ArticleScope | None = None, prompt_version: str = PROMPT_VERSION,
 ) -> dict:
-    mode, coverage, passages = _select_blocks(reply, blocks, requested_mode, evidence)
+    fallback: ArticleFallback | None = None
+    if isinstance(reply, ModelReply) and requested_mode != "general":
+        if allows_glossary(question):
+            fallback = "allow_glossary"
+        elif reply.article_fallback == "article_only" or requires_article(question, requested_article=requested_mode == "article"):
+            fallback = "article_only"
+        else:
+            fallback = "default"
+        if not article_scope and reply.article_reference:
+            titles = [
+                (item.record["id"], localized["title"])
+                for item in evidence.values() if item.kind == "article"
+                for localized in item.record["locales"].values()
+            ]
+            article_scope = proposed_article(question, reply.article_reference, titles, require_match=fallback != "default")
+    mode, coverage, passages = _select_blocks(
+        reply, blocks, requested_mode, evidence, fallback=fallback, scope=article_scope,
+    )
     source_ids = list(dict.fromkeys(key for _, keys in passages for key in keys))
     indices = {key: index for index, key in enumerate(source_ids)}
     used = [evidence[key] for key in source_ids]
@@ -137,14 +192,15 @@ def render(
         "review_status": review_status,
         "coverage": coverage,
         "blocks": [{"text": text, "source_indices": [indices[key] for key in keys]} for text, keys in passages],
-        "diagnostics": {"prompt_version": PROMPT_VERSION, "model": model},
+        "diagnostics": {"prompt_version": prompt_version, "model": model},
     }
 
 
 def answer_payload(
     question: str, mode: RequestMode, locale: str, evidence: dict[str, Evidence], hint: str | None,
+    *, article_scope: ArticleScope | None = None,
 ) -> dict[str, object]:
-    return {
+    payload: dict[str, object] = {
         "question": question,
         "locale": locale,
         "requested_mode": mode,
@@ -161,6 +217,13 @@ def answer_payload(
             for key, item in evidence.items()
         ],
     }
+    if article_scope:
+        payload["requested_articles"] = {
+            record_id: [key for key, item in evidence.items() if item.record["id"] == record_id]
+            for record_id in article_scope.record_ids
+        }
+        payload["unresolved_article_reference"] = article_scope.unresolved
+    return payload
 
 
 async def answer(
@@ -170,16 +233,18 @@ async def answer(
     started = time.perf_counter()
     raw_hint = (context or {}).get("record_id")
     hint = raw_hint if isinstance(raw_hint, str) else None
+    scope = None
     if mode == "general":
         evidence = {}
     else:
+        scope = await asyncio.to_thread(explicit_articles, question, hint)
         evidence = await asyncio.to_thread(
             evidence_for, question, locale,
             prefer_article=mode == "article",
             context_record_id=hint, trace=trace,
-            allow_index_load=allow_index_load,
+            allow_index_load=allow_index_load, article_scope=scope,
         )
-    payload = answer_payload(question, mode, locale, evidence, hint)
+    payload = answer_payload(question, mode, locale, evidence, hint, article_scope=scope)
     if trace is not None:
         trace["retrieval_ms"] = round((time.perf_counter() - started) * 1000, 3)
         trace["evidence"] = [
@@ -202,7 +267,7 @@ async def answer(
         reply = ModelReply.model_validate(completion.data)
     except ValidationError as exc:
         raise AssistantUnavailable("Модель вернула ответ вне схемы", usage=completion.usage) from exc
-    return render(reply, reply.blocks, mode, locale, evidence, completion.model)
+    return render(reply, reply.blocks, mode, locale, evidence, completion.model, question=question, article_scope=scope)
 
 
 async def run_answer(

@@ -2,8 +2,10 @@
 
 import re
 from dataclasses import dataclass
+from itertools import zip_longest
 from typing import Literal, TypedDict
 
+from app.assistant.source_policy import ARTICLE_ID, ARTICLE_REQUEST, ArticleScope, allows_glossary, explicit_articles
 from app.catalog import storage
 from app.catalog.media import IMAGE_SUFFIXES, local_file, localized_digest, localized_filename, media_file_url
 from app.catalog.search import search_with_mode
@@ -47,10 +49,10 @@ def image_for(record: dict, section: dict, locale: str) -> dict | None:
     return None
 
 
-EVIDENCE_LIMIT = 6
+EVIDENCE_LIMIT = 8
 FRAGMENT_LIMIT = 1800
 CONTEXT_LIMIT = 8500
-ARTICLE_REQUEST = re.compile(r"\b(?:articles?|стать\w*)\b", re.IGNORECASE)
+PACKING_VERSION = "2026-11-25.3"
 ARTICLE_PASSAGES_REQUEST = re.compile(r"\b(?:по статье|из статьи|use (?:the |an? )?article|from (?:the |an? )?article)\b", re.IGNORECASE)
 DEFINITION_REQUEST = re.compile(r"\b(?:define(?:\s+(?:an?|the))?|дай(?:те)?\s+определение)\s+", re.IGNORECASE)
 NON_EVIDENCE_HEADINGS = (
@@ -110,9 +112,13 @@ def _page_evidence(record_id: str, locale: str) -> tuple[dict, Evidence] | None:
 def evidence_for(
     question: str, locale: str, *, prefer_article: bool = False,
     context_record_id: str | None = None, trace: dict | None = None, allow_index_load: bool = True,
+    article_scope: ArticleScope | None = None,
 ) -> dict[str, Evidence]:
     """Keep exact passages, diversify by record and reserve space for a matching article."""
+    scope = article_scope if article_scope is not None else explicit_articles(question, context_record_id)
     hits, search_mode = search_with_mode(question, locale, limit=80, allow_index_load=allow_index_load)
+    if scope:
+        hits = _scoped_hits(hits, question, locale, scope)
     if trace is not None:
         trace["search_mode"] = search_mode
         trace["vector_hits"] = sum(bool(hit.get("chunk_id")) for hit in hits)
@@ -154,6 +160,9 @@ def evidence_for(
                 primary[record_id] = item
             else:
                 extras.setdefault((record_id, item.section["id"], item.text), item)
+
+    if scope:
+        return _pack_scoped(scope, primary, extras, locale)
 
     ordered = list(primary.values())
     if context_record_id:
@@ -206,9 +215,56 @@ def evidence_for(
         supporting.sort(key=lambda item: item.record["id"] != article.record["id"])
     lead.extend(supporting[:EVIDENCE_LIMIT - len(lead)])
     lead.extend(item for item in ordered if item.record["id"] not in lead_ids)
+    packed = _pack_context(lead)
+    if prefer_article and article and not any(item.kind == "term" for item in packed.values()):
+        glossary = next((item for item in ordered if item.kind == "term"), None)
+        if glossary is not None:
+            return _pack_context([lead[0], glossary, *(item for item in lead[1:] if item is not glossary)])
+    return packed
+
+
+def _scoped_hits(hits: list[dict], question: str, locale: str, scope: ArticleScope) -> list[dict]:
+    query = ARTICLE_ID.sub(" ", question)
+    selected = []
+    for record_id in scope.record_ids[:EVIDENCE_LIMIT]:
+        local = storage.lexical_search(query, locale, limit=EVIDENCE_LIMIT, record_id=record_id)
+        global_hits = [hit for hit in hits if hit["record_id"] == record_id]
+        exact = {hit["section_id"]: hit for hit in global_hits if hit.get("chunk_id")}
+        # Start with the within-article ranking. Prefer exact indexed excerpts
+        # over whole sections when the same section also ranked globally.
+        selected.extend(exact.get(hit["section_id"], hit) for hit in local)
+        seen = {hit["section_id"] for hit in local}
+        selected.extend(hit for hit in global_hits if hit["section_id"] not in seen)
+    if allows_glossary(question):
+        selected.extend(hit for hit in hits if hit["record_id"].startswith("term:"))
+    return selected
+
+
+def _pack_scoped(
+    scope: ArticleScope, primary: dict[str, Evidence], extras: dict[tuple[str, str, str], Evidence], locale: str,
+) -> dict[str, Evidence]:
+    groups: list[list[Evidence]] = []
+    for record_id in scope.record_ids[:EVIDENCE_LIMIT]:
+        passages = [item for (rid, _, _), item in extras.items() if rid == record_id]
+        if item := primary.get(record_id):
+            passages.insert(0, item)
+        if not any(item.kind == "article" for item in passages) and (page := _page_evidence(record_id, locale)):
+            passages.insert(0, page[1])
+        if passages:
+            groups.append(sorted(passages, key=lambda item: item.kind != "article"))
+    glossary = [item for record_id, item in primary.items() if record_id.startswith("term:")]
+    for (record_id, _, _), item in extras.items():
+        if record_id.startswith("term:"):
+            glossary.append(item)
+    # Give every requested article a turn before packing additional passages.
+    candidates = [item for row in zip_longest(*groups, glossary) for item in row if item is not None]
+    return _pack_context(candidates)
+
+
+def _pack_context(candidates: list[Evidence]) -> dict[str, Evidence]:
     packed: dict[str, Evidence] = {}
     remaining = CONTEXT_LIMIT
-    for item in lead:
+    for item in candidates:
         size = len(item.text) + len(item.title) + len(item.heading)
         if size <= remaining:
             packed[f"e{len(packed) + 1}"] = item

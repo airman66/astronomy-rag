@@ -27,7 +27,7 @@ class AssistantErrorTests(ApiCase):
 
     def test_grounded_mode_with_missing_definition_does_not_generate_a_general_answer(self):
         complete = AsyncMock(return_value=Completion({
-            "mode": "term", "coverage": "complete", "definition_id": "e6", "blocks": [],
+            "mode": "term", "coverage": "complete", "article_fallback": "default", "article_reference": None, "definition_id": "e6", "blocks": [],
         }, "test-model"))
         self.app.state.llm_client = Mock(complete=complete)
         response = self.client.post(ANSWER_PATH, json={"question": "Что такое чёрная дыра?"})
