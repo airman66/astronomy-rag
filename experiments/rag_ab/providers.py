@@ -79,7 +79,6 @@ async def compare(variant: str) -> None:
         httpx.AsyncClient(verify=tls_context(os.getenv("GIGACHAT_CA_FILE", "")), timeout=timeout) as giga_http,
     ):
         gigachat = GigaChatClient(giga_http, key, budget, response_format=response_format)
-        await gigachat.access_token()
         clients = {"deepseek": LLMClient(deepseek_http, settings), "gigachat": gigachat}
         # Resuming can leave only one response of a pair in the checkpoint.
         slots = {provider: asyncio.Lock() for provider in providers}
@@ -88,6 +87,8 @@ async def compare(variant: str) -> None:
             case_id, provider = job
             client = clients[provider]
             async with slots[provider]:
+                if provider == "gigachat":
+                    await gigachat.access_token()
                 return await trial(case_by_id[case_id], snapshots[case_id], variant, client, client, version=provider)
 
         rows = await run_batches(

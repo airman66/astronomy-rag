@@ -26,7 +26,7 @@ from app.assistant.client import (
 )
 from app.assistant.prompts import ANSWER_PROMPT, PROMPT_VERSION
 from app.assistant.retrieval import Evidence
-from app.assistant.service import GLOSSARY_FALLBACK, ModelReply, answer_payload, render
+from app.assistant.service import GLOSSARY_FORBIDDEN, ModelReply, answer_payload, render
 from app.catalog import storage
 from app.infra.config import LLMSettings, assistant_deadline, load_env
 from app.infra.files import write_json
@@ -137,8 +137,8 @@ def checked_plan(raw: object, question: str, evidence: dict[str, Evidence]) -> d
         raise ValueError("named article plan needs a source phrase")
     if any(not set(part.evidence_ids) <= evidence.keys() for part in plan.parts):
         raise ValueError("unknown evidence ID in plan")
-    if plan.fallback == "glossary" and not GLOSSARY_FALLBACK.search(question):
-        raise ValueError("glossary permission not recognized in question")
+    if plan.fallback == "glossary" and GLOSSARY_FORBIDDEN.search(question):
+        raise ValueError("the question forbids a glossary fallback")
     return plan.model_dump()
 
 
@@ -159,7 +159,7 @@ def direct_catalog(case: dict, evidence: dict[str, Evidence]) -> dict | None:
     ]
     if len(matches) != 1:
         return None
-    reply = ModelReply(mode="term", coverage="complete", definition_id=matches[0], blocks=[])
+    reply = baseline.ModelReply(mode="term", coverage="complete", definition_id=matches[0], blocks=[])
     return render(
         reply, reply.blocks, case.get("requested_mode", "auto"), case["locale"], evidence, "catalog",
         prompt_version=baseline.PROMPT_VERSION,

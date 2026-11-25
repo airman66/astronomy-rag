@@ -206,9 +206,18 @@ def evidence_for(
         supporting.sort(key=lambda item: item.record["id"] != article.record["id"])
     lead.extend(supporting[:EVIDENCE_LIMIT - len(lead)])
     lead.extend(item for item in ordered if item.record["id"] not in lead_ids)
+    packed = _pack_context(lead)
+    if prefer_article and article and not any(item.kind == "term" for item in packed.values()):
+        glossary = next((item for item in ordered if item.kind == "term"), None)
+        if glossary is not None:
+            return _pack_context([lead[0], glossary, *(item for item in lead[1:] if item is not glossary)])
+    return packed
+
+
+def _pack_context(candidates: list[Evidence]) -> dict[str, Evidence]:
     packed: dict[str, Evidence] = {}
     remaining = CONTEXT_LIMIT
-    for item in lead:
+    for item in candidates:
         size = len(item.text) + len(item.title) + len(item.heading)
         if size <= remaining:
             packed[f"e{len(packed) + 1}"] = item

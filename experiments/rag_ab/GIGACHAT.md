@@ -62,6 +62,8 @@
 
 Нужны `DEEPSEEK_API_KEY` и авторизационный ключ `GIGACHAT_API_KEY` в локальном `.env` или окружении. Запустить локальный сервер эмбеддингов по инструкции в README репозитория.
 
+Таблицы выше относятся к коммиту `d2909a8`. В текущем коде `--variant B` запускает рабочую версию промпта из `SPEC.md`.
+
 ```sh
 export RAG_AB_OUTPUT_DIR=.git/gigachat-benchmark-b
 mkdir -p "$RAG_AB_OUTPUT_DIR"

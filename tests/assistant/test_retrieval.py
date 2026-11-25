@@ -40,6 +40,30 @@ class AssistantRetrievalTests(unittest.TestCase):
                     sum(len(item.text) + len(item.title) + len(item.heading) for item in fragments.values()), 8500,
                 )
 
+    def test_article_context_keeps_a_glossary_fragment_when_article_passages_fill_the_budget(self):
+        term = storage.get_term(1)
+        assert term is not None
+        term["locales"]["ru"]["blocks"]["definition"]["body"] = "звезда " * 180
+        article_id = "article:sample"
+        pages = [f"page-{i}" for i in range(1, 4)]
+        article = {
+            "id": article_id, "review": {"status": "reviewed"},
+            "sections": [{"id": page, "type": "article_body"} for page in pages],
+            "locales": {"ru": {"title": "Статья", "blocks": {
+                page: {"body": "текст " * 425} for page in pages
+            }}},
+        }
+        article_hits = [{"record_id": article_id, "section_id": page} for page in pages]
+        hits = [*article_hits, {"record_id": "term:1", "section_id": "definition"}]
+        with (
+            patch.object(retrieval, "search_with_mode", return_value=(hits, "hybrid")),
+            patch.object(storage, "get_record", side_effect={article_id: article, "term:1": term}.__getitem__),
+            patch.object(storage, "lexical_search", return_value=article_hits),
+        ):
+            fragments = retrieval.evidence_for("Есть статья о звезде?", "ru", prefer_article=True)
+        self.assertEqual([item.kind for item in fragments.values()], ["article", "term", "article"])
+        self.assertEqual(fragments["e1"].section["id"], "page-1")
+
     def test_retrieval_preserves_the_exact_chunk_and_ignores_activities(self):
         record = storage.get_term(1)
         assert record is not None

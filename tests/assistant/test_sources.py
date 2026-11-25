@@ -27,7 +27,7 @@ class AssistantSourceTests(ApiCase):
             self.assertIn("Transit photometry", article)
             self.assertIn("Radial velocity", article)
             self.assertNotIn("url", json.dumps(payload))
-            return Completion({"mode": "article", "coverage": "complete", "definition_id": None, "blocks": [
+            return Completion({"mode": "article", "coverage": "complete", "article_fallback": "default", "definition_id": None, "blocks": [
                 {"text": "Transits cause dips in brightness.", "evidence_ids": [article["Transit photometry"]]},
                 {"text": "Radial velocity uses spectral shifts.", "evidence_ids": [article["Radial velocity"]]},
             ]}, "test-model")
@@ -51,7 +51,7 @@ class AssistantSourceTests(ApiCase):
 
     def test_article_request_without_article_uses_only_supported_part(self):
         call = AsyncMock(return_value=Completion({
-            "mode": "article", "coverage": "complete", "definition_id": None, "blocks": [
+            "mode": "article", "coverage": "complete", "article_fallback": "default", "definition_id": None, "blocks": [
                 {"text": "Звезда класса A имеет высокую температуру.", "evidence_ids": ["e1"]},
                 {"text": "Этот тезис без ссылки.", "evidence_ids": []},
                 {"text": "Ссылка неизвестна.", "evidence_ids": ["e999"]},
@@ -78,7 +78,7 @@ class AssistantSourceTests(ApiCase):
         for model_mode in ("article", "explain"):
             with self.subTest(model_mode=model_mode):
                 self.app.state.llm_client = Mock(complete=AsyncMock(return_value=Completion({
-                    "mode": model_mode, "coverage": "complete", "definition_id": None,
+                    "mode": model_mode, "coverage": "complete", "article_fallback": "default", "definition_id": None,
                     "blocks": [{"text": "Горячая звезда.", "evidence_ids": ["e1"]}],
                 }, "test-model")))
                 with patch.object(service, "evidence_for", return_value={"e1": term}):
@@ -87,20 +87,23 @@ class AssistantSourceTests(ApiCase):
                 self.assertEqual(response.json()["coverage"], "partial")
                 self.assertEqual(response.json()["mode"], "explain")
 
-    def test_article_mode_preserves_complete_when_glossary_fallback_is_allowed(self):
+    def test_article_glossary_fallback_respects_source_policy(self):
         cases = (
-            ("ru", "Есть статья про звёзды? Если статьи нет, объясни по справочнику.", "complete"),
-            ("en", "Use an article if there is one. If not, explain from the glossary.", "complete"),
-            ("en", "Use an article. Otherwise do not answer from the glossary.", "partial"),
+            ("ru", "Если не найдётся отдельной статьи, объясни по справочнику.", "allow_glossary", "complete"),
+            ("en", "If the article is unavailable, use the glossary.", "allow_glossary", "complete"),
+            ("en", "Do not use the glossary unless the article is missing.", "allow_glossary", "complete"),
+            ("en", "Use an article. Otherwise do not answer from the glossary.", "default", "insufficient"),
+            ("ru", "Если статьи нет, не отвечай по справочнику.", "allow_glossary", "insufficient"),
+            ("en", "Use the article as your sole source.", "article_only", "insufficient"),
         )
-        for locale, question, coverage in cases:
+        for locale, question, fallback, coverage in cases:
             with self.subTest(locale=locale, coverage=coverage):
                 term = next(
                     item for item in service.evidence_for("Star" if locale == "en" else "Звезда", locale).values()
                     if item.record["id"] == "term:1"
                 )
                 self.app.state.llm_client = Mock(complete=AsyncMock(return_value=Completion({
-                    "mode": "explain", "coverage": "complete", "definition_id": None,
+                    "mode": "explain", "coverage": "complete", "article_fallback": fallback, "definition_id": None,
                     "blocks": [{"text": term.text, "evidence_ids": ["e1"]}],
                 }, "test-model")))
                 with patch.object(service, "evidence_for", return_value={"e1": term}):
@@ -111,4 +114,34 @@ class AssistantSourceTests(ApiCase):
                 body = response.json()
                 self.assertEqual(body["mode"], "explain")
                 self.assertEqual(body["coverage"], coverage)
-                self.assertEqual(body["blocks"][0]["source_indices"], [0])
+                self.assertEqual(
+                    [block["source_indices"] for block in body["blocks"]], [[0]] if coverage == "complete" else [],
+                )
+                self.assertEqual(
+                    [source["record_id"] for source in body["sources"]], ["term:1"] if coverage == "complete" else [],
+                )
+
+    def test_glossary_fallback_drops_blocks_from_another_article(self):
+        term = next(item for item in service.evidence_for("Star", "en").values() if item.record["id"] == "term:1")
+        article = next(item for item in service.evidence_for("exoplanet transits", "en").values()
+                       if item.kind == "article")
+        cases = (
+            ("article", "default", "Explain how a star shines, based on an article."),
+            ("auto", "allow_glossary", "If the article on stars is unavailable, use the glossary."),
+        )
+        for mode, fallback, question in cases:
+            with self.subTest(mode=mode):
+                self.app.state.llm_client = Mock(complete=AsyncMock(return_value=Completion({
+                    "mode": "explain", "coverage": "complete", "article_fallback": fallback, "definition_id": None,
+                    "blocks": [
+                        {"text": term.text, "evidence_ids": ["e1"]},
+                        {"text": "An unrelated article claim.", "evidence_ids": ["e1", "e2"]},
+                    ],
+                }, "test-model")))
+                with patch.object(service, "evidence_for", return_value={"e1": term, "e2": article}):
+                    response = self.client.post(ANSWER_PATH, json={"question": question, "locale": "en", "mode": mode})
+                self.assertEqual(response.status_code, 200, response.text)
+                body = response.json()
+                self.assertEqual(body["coverage"], "partial")
+                self.assertEqual([source["record_id"] for source in body["sources"]], ["term:1"])
+                self.assertEqual([block["text"] for block in body["blocks"]], [term.text])

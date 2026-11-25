@@ -10,7 +10,7 @@ from app.assistant.prompts import ANSWER_PROMPT
 from app.assistant.service import ModelReply
 from app.infra.config import LLMSettings
 from app.infra.files import write_json
-from experiments.rag_ab import baseline, live, report
+from experiments.rag_ab import baseline, live, providers, report
 from experiments.rag_ab.live import run_batches, trial
 from experiments.rag_ab.retrieval import PackedContext
 from tests.support.catalog import temporary_dir
@@ -26,7 +26,36 @@ class ExperimentTests(unittest.IsolatedAsyncioTestCase):
         }
         with self.assertRaises(ValidationError):
             baseline.ModelReply.model_validate(reply)
-        self.assertEqual(ModelReply.model_validate(reply).blocks[0].evidence_ids[-1], "e8")
+        self.assertEqual(ModelReply.model_validate({**reply, "article_fallback": "default"}).blocks[0].evidence_ids[-1], "e8")
+
+    async def test_provider_comparison_scores_complete_checkpoint_without_oauth(self) -> None:
+        out = temporary_dir(self)
+        case = {"id": "star", "question": "What is a star?", "locale": "en", "expected_modes": ["term"]}
+        write_json(out / "legacy-retrieval.json", {
+            "suite_sha256": {"legacy": "suite"}, "index": {"corpus_sha256": "corpus"},
+            "index_manifest_sha256": "index", "results": [{
+                "id": "star", "configs": {"6x8500": {"evidence": []}},
+            }],
+        })
+        rows = [
+            {"id": "star", "variant": provider, "error": "timeout", "latency_ms": 1, "calls": [], "usage": {}}
+            for provider in ("deepseek", "gigachat")
+        ]
+        (out / "providers-responses.jsonl").write_text("".join(json.dumps(row) + "\n" for row in rows))
+        with (
+            patch.object(providers, "OUT", out),
+            patch.object(providers, "open_checkpoint"),
+            patch.dict("os.environ", {"GIGACHAT_API_KEY": "fake", "GIGACHAT_CA_FILE": ""}),
+            patch.object(LLMSettings, "from_env", return_value=LLMSettings("deepseek", "flash", "fake")),
+            patch.object(providers, "questions_with_sha", return_value=([case], "suite")),
+            patch.object(providers, "checksum", return_value="index"),
+            patch.object(providers.storage, "corpus_version", return_value="corpus"),
+            patch.object(providers.GigaChatClient, "access_token", side_effect=AssertionError("Unexpected OAuth")),
+            patch("builtins.print"),
+        ):
+            await providers.compare("A")
+        scored = json.loads((out / "providers-scored.json").read_text())
+        self.assertEqual([row["error"] for row in scored["results"]], ["timeout", "timeout"])
 
     async def test_invalid_plan_uses_the_single_call_prompt(self) -> None:
         case = {"id": "planet", "question": "Why do planets orbit stars?", "locale": "en"}
@@ -41,6 +70,7 @@ class ExperimentTests(unittest.IsolatedAsyncioTestCase):
         response = {
             "mode": "general",
             "coverage": "complete",
+            "article_fallback": "default",
             "definition_id": None,
             "blocks": [{"text": "Gravity keeps planets in orbit.", "evidence_ids": []}],
         }
