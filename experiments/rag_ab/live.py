@@ -27,7 +27,7 @@ from app.assistant.client import (
 from app.assistant.prompts import ANSWER_PROMPT, PROMPT_VERSION
 from app.assistant.retrieval import PACKING_VERSION, Evidence
 from app.assistant.service import ModelReply, answer_payload, render
-from app.assistant.source_policy import GLOSSARY_FORBIDDEN
+from app.assistant.source_policy import allows_glossary, explicit_articles
 from app.catalog import storage
 from app.infra.config import LLMSettings, assistant_deadline, load_env
 from app.infra.files import write_json
@@ -138,8 +138,8 @@ def checked_plan(raw: object, question: str, evidence: dict[str, Evidence]) -> d
         raise ValueError("named article plan needs a source phrase")
     if any(not set(part.evidence_ids) <= evidence.keys() for part in plan.parts):
         raise ValueError("unknown evidence ID in plan")
-    if plan.fallback == "glossary" and GLOSSARY_FORBIDDEN.search(question):
-        raise ValueError("the question forbids a glossary fallback")
+    if plan.fallback == "glossary" and not allows_glossary(question):
+        raise ValueError("the question does not explicitly allow a glossary fallback")
     return plan.model_dump()
 
 
@@ -237,7 +237,9 @@ async def trial(
                 return row
             question = case["question"]
             mode = case.get("requested_mode", "auto")
-            payload = answer_payload(question, mode, case["locale"], evidence, case.get("context_record_id"))
+            hint = case.get("context_record_id")
+            scope = explicit_articles(question, hint) if variant != "A" and mode != "general" else None
+            payload = answer_payload(question, mode, case["locale"], evidence, hint, article_scope=scope)
             system = baseline.ANSWER_PROMPT if variant == "A" else ANSWER_PROMPT
             if variant in {"C", "C-low"}:
                 try:
@@ -256,7 +258,7 @@ async def trial(
             row["result"] = render(
                 reply, reply.blocks, mode, case["locale"], evidence, completion.model,
                 question="" if variant == "A" else question,
-                page=case.get("context_record_id"),
+                article_scope=scope,
                 prompt_version=baseline.PROMPT_VERSION if variant == "A" else PROMPT_VERSION,
             )
             row["model_mode"] = reply.mode

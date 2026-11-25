@@ -349,6 +349,11 @@ def get_article(identifier: str) -> dict | None:
     return _get_payload("SELECT payload FROM articles WHERE id=?", identifier)
 
 
+def article_titles() -> list[tuple[str, str, str]]:
+    with closing(connection()) as db:
+        return [(row[0], row[1], row[2]) for row in db.execute("SELECT id, title_en, title_ru FROM articles")]
+
+
 def get_record(record_id: str) -> dict | None:
     """Look up a canonical record ID produced by the catalogue or index."""
     if record_id.startswith("term:"):

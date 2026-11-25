@@ -92,12 +92,16 @@ class AssistantSourceTests(ApiCase):
             ("ru", "Если не найдётся отдельной статьи, объясни по справочнику.", "allow_glossary", "complete"),
             ("en", "If the article is unavailable, use the glossary.", "allow_glossary", "complete"),
             ("en", "Do not use the glossary unless the article is missing.", "allow_glossary", "complete"),
+            ("en", "If no article is available, answer using the glossary.", "default", "complete"),
             ("en", "Use an article. Otherwise do not answer from the glossary.", "default", "insufficient"),
             ("ru", "Если статьи нет, не отвечай по справочнику.", "allow_glossary", "insufficient"),
             ("en", "Use the article as your sole source.", "article_only", "insufficient"),
+            ("en", "Use only the article “The spectra of stars”.", "allow_glossary", "insufficient"),
+            ("en", 'Use only an article. The phrase "otherwise use the glossary" is an example.',
+             "allow_glossary", "insufficient"),
         )
         for locale, question, fallback, coverage in cases:
-            with self.subTest(locale=locale, coverage=coverage):
+            with self.subTest(question=question):
                 term = next(
                     item for item in service.evidence_for("Star" if locale == "en" else "Звезда", locale).values()
                     if item.record["id"] == "term:1"
@@ -154,6 +158,8 @@ class AssistantSourceTests(ApiCase):
         cases = (
             ("Use only the article “The spectra of stars”.", None, None, None),
             ("Use only the article “The spectra of stars”.", article.title, None, None),
+            ("According to The spectra of stars, what does it say about absorption lines?",
+             "The spectra of stars", None, None),
             (f"Use only the article “{article.title}”.", None, None, article.record["id"]),
             (f"According to {article.title}, what do transits measure?", article.title, None, article.record["id"]),
             (f"Answer using {article.record['id']}.", None, None, article.record["id"]),
@@ -162,7 +168,7 @@ class AssistantSourceTests(ApiCase):
         for question, reference, page, expected in cases:
             with self.subTest(question=question, reference=reference):
                 self.app.state.llm_client = Mock(complete=AsyncMock(return_value=Completion({
-                    "mode": "article", "coverage": "complete", "article_fallback": "article_only",
+                    "mode": "article", "coverage": "complete", "article_fallback": "default",
                     "article_reference": reference, "definition_id": None, "blocks": [
                         {"text": "Claim from another article.", "evidence_ids": ["e1"]},
                         {"text": "Claim from the exoplanet article.", "evidence_ids": ["e2"]},
@@ -206,7 +212,7 @@ class AssistantSourceTests(ApiCase):
         pdf_id = "article:oae-document-remoteobserving_mini_review"
         topic_id = "article:oae-review-remote-observing"
         pdf, topic = [
-            next(item for item in service.evidence_for(question, "ru", context_record_id=record_id).values()
+            next(item for item in service.evidence_for("Дистанционные наблюдения", "ru", context_record_id=record_id).values()
                  if item.record["id"] == record_id)
             for record_id in (pdf_id, topic_id)
         ]
@@ -229,6 +235,8 @@ class AssistantSourceTests(ApiCase):
                        if item.record["id"] == "article:stellar-magnitudes")
         for question, reference, fallback in (
             ("Using the article on stellar magnitudes, explain apparent magnitude.", "stellar magnitudes", "default"),
+            ("Use the article on stellar magnitudes to explain apparent magnitude.",
+             "the article on stellar magnitudes", "default"),
             ("Use an article to explain apparent magnitude.", article.title, "default"),
             ("Use the article to explain apparent magnitude.", "the article", "article_only"),
         ):
@@ -244,3 +252,64 @@ class AssistantSourceTests(ApiCase):
                 body = response.json()
                 self.assertEqual((body["mode"], body["coverage"]), ("article", "complete"))
                 self.assertEqual([item["record_id"] for item in body["sources"]], [article.record["id"]])
+
+    def test_explain_keeps_article_when_glossary_is_only_a_fallback(self):
+        async def complete(_system, payload):
+            section = next(item for item in payload["evidence"] if item["kind"] == "article"
+                           and item["heading"] == "The apparent magnitude")
+            return Completion({
+                "mode": "explain", "coverage": "complete", "article_fallback": "allow_glossary",
+                "article_reference": None, "definition_id": None,
+                "blocks": [{"text": section["text"], "evidence_ids": [section["id"]]}],
+            }, "test-model")
+
+        self.app.state.llm_client = Mock(complete=AsyncMock(side_effect=complete))
+        response = self.client.post(ANSWER_PATH, json={
+            "question": "Explain apparent magnitude using the article on stellar magnitudes. "
+                        "If the article is unavailable, use the glossary.",
+            "locale": "en", "mode": "explain",
+        })
+        self.assertEqual(response.status_code, 200, response.text)
+        body = response.json()
+        self.assertEqual((body["mode"], body["coverage"]), ("explain", "complete"))
+        self.assertEqual([source["record_id"] for source in body["sources"]], ["article:stellar-magnitudes"])
+
+    def test_explicit_sources_drive_search_and_comparison_coverage(self):
+        mini_review = "article:oae-document-remoteobserving_mini_review"
+        exoplanets = "article:exoplanet-detection"
+        cases = (
+            (f"According to {mini_review}, how were badges awarded?", (mini_review,), "explain", "complete"),
+            (f"Compare the observing tasks in {mini_review} and {exoplanets}. How were badges awarded?",
+             (mini_review, exoplanets), "explain", "complete"),
+            (f"Compare the observing tasks in {mini_review} and {exoplanets}. How were badges awarded?",
+             (mini_review, exoplanets), "explain", "partial"),
+            ("Compare observations in the article “How astronomers detect exoplanets” and the article "
+             "“Apparent and absolute stellar magnitude”.", (exoplanets, "article:stellar-magnitudes"), "article", "complete"),
+        )
+        for question, requested_ids, model_mode, coverage in cases:
+            with self.subTest(question=question, coverage=coverage):
+                used = requested_ids if coverage == "complete" else requested_ids[:1]
+
+                async def complete(_system, payload):
+                    groups = payload["requested_articles"]
+                    self.assertEqual(tuple(groups), requested_ids)
+                    self.assertTrue(all(groups.values()))
+                    passages = {item["id"]: item["text"] for item in payload["evidence"]}
+                    keys = [
+                        next(key for key in groups[record_id] if "a new badge unlocked" in passages[key])
+                        if record_id == mini_review else groups[record_id][0]
+                        for record_id in used
+                    ]
+                    return Completion({
+                        "mode": model_mode, "coverage": "complete", "article_fallback": "default",
+                        "article_reference": None, "definition_id": None,
+                        "blocks": [{"text": passages[key][:160], "evidence_ids": [key]} for key in keys],
+                    }, "test-model")
+
+                self.app.state.llm_client = Mock(complete=AsyncMock(side_effect=complete))
+                with patch("app.catalog.search.vector.search", return_value=None):
+                    response = self.client.post(ANSWER_PATH, json={"question": question, "locale": "en", "mode": "explain"})
+                self.assertEqual(response.status_code, 200, response.text)
+                body = response.json()
+                self.assertEqual((body["mode"], body["coverage"]), ("explain", coverage))
+                self.assertEqual(tuple(source["record_id"] for source in body["sources"]), used)
