@@ -1,5 +1,6 @@
 """Compare DeepSeek and GigaChat on the same production RAG inputs."""
 
+import argparse
 import asyncio
 import fcntl
 import hashlib
@@ -10,10 +11,13 @@ from collections import Counter
 import httpx
 
 from app.assistant.client import LLMClient
+from app.assistant.prompts import ANSWER_PROMPT, PROMPT_VERSION
+from app.assistant.retrieval import CONTEXT_LIMIT, EVIDENCE_LIMIT
+from app.assistant.service import ModelReply
 from app.catalog import storage
 from app.infra.config import LLMSettings, assistant_deadline, load_env
 from app.infra.files import checksum, write_json
-from experiments.rag_ab.baseline import ANSWER_PROMPT, CONTEXT_LIMIT, EVIDENCE_LIMIT, PROMPT_VERSION
+from experiments.rag_ab import baseline
 from experiments.rag_ab.gigachat import MODEL, RESPONSE_FORMAT, GigaChatClient, tls_context
 from experiments.rag_ab.live import open_checkpoint, run_batches, trial, usage_totals
 from experiments.rag_ab.retrieval import OLD, OUT, questions_with_sha
@@ -22,7 +26,7 @@ from scripts.evaluation.retrieval import evaluate_response, percentile, summariz
 PHASE = "providers"
 
 
-async def compare() -> None:
+async def compare(variant: str) -> None:
     settings = LLMSettings.from_env()
     key = os.getenv("GIGACHAT_API_KEY")
     if settings.provider != "deepseek" or not settings.api_key or not key:
@@ -40,7 +44,14 @@ async def compare() -> None:
         or retrieval["index_manifest_sha256"] != index_sha
     ):
         raise SystemExit("Rebuild legacy-retrieval.json against the active catalogue and index")
-    packing = f"{EVIDENCE_LIMIT}x{CONTEXT_LIMIT}"
+    if variant == "A":
+        packing = f"{baseline.EVIDENCE_LIMIT}x{baseline.CONTEXT_LIMIT}"
+        system, prompt_version = baseline.ANSWER_PROMPT, baseline.PROMPT_VERSION
+        response_format = RESPONSE_FORMAT
+    else:
+        packing = f"{EVIDENCE_LIMIT}x{CONTEXT_LIMIT}"
+        system, prompt_version = ANSWER_PROMPT, PROMPT_VERSION
+        response_format = {"type": "json_schema", "schema": ModelReply.model_json_schema(), "strict": True}
     snapshots = {row["id"]: row["configs"][packing] for row in retrieval["results"]}
     if snapshots.keys() != case_by_id.keys():
         raise SystemExit("Retrieval snapshot doesn't contain the full question suite")
@@ -50,9 +61,9 @@ async def compare() -> None:
         "models": {"deepseek": settings.model, "gigachat": MODEL},
         "answer_budget": budget,
         "deadline_s": assistant_deadline(),
-        "prompt_version": PROMPT_VERSION,
-        "prompt_sha256": hashlib.sha256(ANSWER_PROMPT.encode()).hexdigest(),
-        "gigachat_schema_sha256": hashlib.sha256(json.dumps(RESPONSE_FORMAT, sort_keys=True).encode()).hexdigest(),
+        "prompt_version": prompt_version,
+        "prompt_sha256": hashlib.sha256(system.encode()).hexdigest(),
+        "gigachat_schema_sha256": hashlib.sha256(json.dumps(response_format, sort_keys=True).encode()).hexdigest(),
         "packing": packing,
         "index_sha256": index_sha,
         "retrieval_sha256": hashlib.sha256(raw).hexdigest(),
@@ -67,7 +78,7 @@ async def compare() -> None:
         httpx.AsyncClient() as deepseek_http,
         httpx.AsyncClient(verify=tls_context(os.getenv("GIGACHAT_CA_FILE", "")), timeout=timeout) as giga_http,
     ):
-        gigachat = GigaChatClient(giga_http, key, budget)
+        gigachat = GigaChatClient(giga_http, key, budget, response_format=response_format)
         await gigachat.access_token()
         clients = {"deepseek": LLMClient(deepseek_http, settings), "gigachat": gigachat}
         # Resuming can leave only one response of a pair in the checkpoint.
@@ -77,7 +88,7 @@ async def compare() -> None:
             case_id, provider = job
             client = clients[provider]
             async with slots[provider]:
-                return await trial(case_by_id[case_id], snapshots[case_id], "A", client, client, version=provider)
+                return await trial(case_by_id[case_id], snapshots[case_id], variant, client, client, version=provider)
 
         rows = await run_batches(
             order, generate, OUT / "providers-responses.jsonl", lambda row: (row["id"], row["variant"]), 2,
@@ -123,13 +134,16 @@ async def compare() -> None:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--variant", choices=("A", "B"), default="A")
+    args = parser.parse_args()
     load_env()
     with (OUT / ".providers-run.lock").open("a") as lock:
         try:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except BlockingIOError:
             raise SystemExit(f"Provider comparison already running in {OUT}") from None
-        asyncio.run(compare())
+        asyncio.run(compare(args.variant))
 
 
 if __name__ == "__main__":

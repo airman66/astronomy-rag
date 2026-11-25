@@ -25,10 +25,13 @@ def tls_context(ca_file: str) -> ssl.SSLContext:
 
 
 class GigaChatClient:
-    def __init__(self, http: httpx.AsyncClient, key: str, max_tokens: int) -> None:
+    def __init__(
+        self, http: httpx.AsyncClient, key: str, max_tokens: int, *, response_format: dict[str, Any],
+    ) -> None:
         self.http = http
         self.key = key
         self.max_tokens = max_tokens
+        self.response_format = response_format
         self.token = ""
         self.expires_at = 0.0
 
@@ -62,7 +65,7 @@ class GigaChatClient:
                         {"role": "system", "content": system},
                         {"role": "user", "content": json.dumps(payload, ensure_ascii=False, separators=(",", ":"))},
                     ],
-                    "response_format": RESPONSE_FORMAT,
+                    "response_format": self.response_format,
                     "max_tokens": self.max_tokens,
                     "stream": False,
                 },
