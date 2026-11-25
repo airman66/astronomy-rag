@@ -18,6 +18,28 @@ class AssistantRetrievalTests(unittest.TestCase):
         self.assertEqual(fragments["e1"].section["id"], "definition")
         self.assertEqual(fragments["e1"].canonical_definition, "Горячая звезда.")
 
+    def test_context_applies_fragment_and_character_limits(self):
+        record = storage.get_term(1)
+        assert record is not None
+        hits = []
+        for i in range(9):
+            section_id = f"section-{i}"
+            record["sections"].append({"id": section_id, "type": "source_block"})
+            hits.append({"record_id": "term:1", "section_id": section_id})
+        for size, expected in ((80, 8), (1300, 7)):
+            with self.subTest(size=size):
+                for hit in hits:
+                    record["locales"]["ru"]["blocks"][hit["section_id"]] = {"body": "а" * size}
+                with (
+                    patch.object(retrieval, "search_with_mode", return_value=(hits, "hybrid")),
+                    patch.object(storage, "get_term", return_value=record),
+                ):
+                    fragments = retrieval.evidence_for("Как светят звёзды?", "ru")
+                self.assertEqual(list(fragments), [f"e{i}" for i in range(1, expected + 1)])
+                self.assertLessEqual(
+                    sum(len(item.text) + len(item.title) + len(item.heading) for item in fragments.values()), 8500,
+                )
+
     def test_retrieval_preserves_the_exact_chunk_and_ignores_activities(self):
         record = storage.get_term(1)
         assert record is not None

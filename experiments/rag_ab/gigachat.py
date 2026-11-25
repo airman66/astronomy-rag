@@ -9,7 +9,7 @@ from uuid import uuid4
 import httpx
 
 from app.assistant.client import AssistantNotConfigured, AssistantUnavailable, Completion
-from app.assistant.service import ModelReply
+from experiments.rag_ab.baseline import ModelReply
 
 MODEL = "GigaChat-3-Ultra"
 OAUTH_URL = "https://ngw.devices.sberbank.ru:9443/api/v2/oauth"

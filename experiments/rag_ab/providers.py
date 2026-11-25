@@ -10,11 +10,10 @@ from collections import Counter
 import httpx
 
 from app.assistant.client import LLMClient
-from app.assistant.prompts import ANSWER_PROMPT, PROMPT_VERSION
-from app.assistant.retrieval import CONTEXT_LIMIT, EVIDENCE_LIMIT
 from app.catalog import storage
 from app.infra.config import LLMSettings, assistant_deadline, load_env
 from app.infra.files import checksum, write_json
+from experiments.rag_ab.baseline import ANSWER_PROMPT, CONTEXT_LIMIT, EVIDENCE_LIMIT, PROMPT_VERSION
 from experiments.rag_ab.gigachat import MODEL, RESPONSE_FORMAT, GigaChatClient, tls_context
 from experiments.rag_ab.live import open_checkpoint, run_batches, trial, usage_totals
 from experiments.rag_ab.retrieval import OLD, OUT, questions_with_sha

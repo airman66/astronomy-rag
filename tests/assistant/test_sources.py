@@ -3,6 +3,7 @@ from unittest.mock import AsyncMock, Mock, patch
 
 from app.assistant import service
 from app.assistant.client import Completion
+from app.assistant.prompts import ANSWER_PROMPT, PROMPT_VERSION
 from app.infra.config import ROOT
 from tests.support.api import ANSWER_PATH, ApiCase
 from tests.support.catalog import seed_star
@@ -18,8 +19,9 @@ class AssistantSourceTests(ApiCase):
             (articles / path.name).write_bytes(path.read_bytes())
 
     def test_article_uses_exact_sections_and_single_completion(self):
-        async def complete(_system, payload):
-            self.assertLessEqual(len(payload["evidence"]), 6)
+        async def complete(system, payload):
+            self.assertEqual(system, ANSWER_PROMPT)
+            self.assertLessEqual(len(payload["evidence"]), 8)
             article = {item["heading"]: item["id"] for item in payload["evidence"]
                        if item["kind"] == "article" and item["title"] == "How astronomers detect exoplanets"}
             self.assertIn("Transit photometry", article)
@@ -40,6 +42,7 @@ class AssistantSourceTests(ApiCase):
         body = response.json()
         self.assertEqual(body["mode"], "article")
         self.assertEqual(body["diagnostics"]["model"], "test-model")
+        self.assertEqual(body["diagnostics"]["prompt_version"], PROMPT_VERSION)
         self.assertEqual(body["primary_url"], "/api/v1/articles/article:exoplanet-detection")
         self.assertEqual([source["section_id"] for source in body["sources"]], ["transit", "radial-velocity"])
         self.assertEqual([row["source_indices"] for row in body["blocks"]], [[0], [1]])
@@ -83,3 +86,29 @@ class AssistantSourceTests(ApiCase):
                 self.assertEqual(response.status_code, 200, response.text)
                 self.assertEqual(response.json()["coverage"], "partial")
                 self.assertEqual(response.json()["mode"], "explain")
+
+    def test_article_mode_preserves_complete_when_glossary_fallback_is_allowed(self):
+        cases = (
+            ("ru", "Есть статья про звёзды? Если статьи нет, объясни по справочнику.", "complete"),
+            ("en", "Use an article if there is one. If not, explain from the glossary.", "complete"),
+            ("en", "Use an article. Otherwise do not answer from the glossary.", "partial"),
+        )
+        for locale, question, coverage in cases:
+            with self.subTest(locale=locale, coverage=coverage):
+                term = next(
+                    item for item in service.evidence_for("Star" if locale == "en" else "Звезда", locale).values()
+                    if item.record["id"] == "term:1"
+                )
+                self.app.state.llm_client = Mock(complete=AsyncMock(return_value=Completion({
+                    "mode": "explain", "coverage": "complete", "definition_id": None,
+                    "blocks": [{"text": term.text, "evidence_ids": ["e1"]}],
+                }, "test-model")))
+                with patch.object(service, "evidence_for", return_value={"e1": term}):
+                    response = self.client.post(
+                        ANSWER_PATH, json={"question": question, "mode": "article", "locale": locale},
+                    )
+                self.assertEqual(response.status_code, 200, response.text)
+                body = response.json()
+                self.assertEqual(body["mode"], "explain")
+                self.assertEqual(body["coverage"], coverage)
+                self.assertEqual(body["blocks"][0]["source_indices"], [0])

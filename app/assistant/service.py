@@ -30,6 +30,12 @@ RequestMode = Literal["auto", "term", "article", "explain", "general"]
 AnswerMode = Literal["term", "article", "explain", "general", "out_of_scope"]
 Coverage = Literal["complete", "partial", "insufficient"]
 UNSAFE_TEXT = re.compile(r"://|www\.|<\s*/?[a-z][^>]*>|\]\s*[([]", re.IGNORECASE)
+GLOSSARY_FALLBACK = re.compile(
+    r"\b(?:если (?:статьи нет|не найд[её]тся)[,\s]+(?:объясни|ответь)\b[^.!?]{0,50}\bпо справочнику"
+    r"|(?:if (?:there is (?:none|no (?:dedicated )?article)|not)|otherwise)[,\s]+(?:please\s+)?"
+    r"(?:(?:explain|answer)\b[^.!?]{0,160}\bfrom the glossary|use the glossary))\b",
+    re.IGNORECASE,
+)
 log = logging.getLogger(__name__)
 
 
@@ -56,6 +62,7 @@ class ModelReply(ReplyDecision):
 
 def _select_blocks(
     reply: ReplyDecision, proposed: Sequence[ModelBlock], requested_mode: RequestMode, evidence: dict[str, Evidence],
+    *, glossary_fallback_allowed: bool,
 ) -> tuple[AnswerMode, Coverage, list[tuple[str, list[str]]]]:
     mode = reply.mode
     if mode == "out_of_scope":
@@ -93,7 +100,12 @@ def _select_blocks(
         mode = "explain"
     if not blocks:
         return mode, "insufficient", []
-    if article_fallback or missing_article or len(blocks) < len(proposed):
+    only_glossary = all(evidence[key].record["id"].startswith("term:") for _, keys in blocks for key in keys)
+    if (
+        missing_article
+        or len(blocks) < len(proposed)
+        or (article_fallback and not (glossary_fallback_allowed and only_glossary))
+    ):
         return mode, "partial", blocks
     return mode, reply.coverage, blocks
 
@@ -101,8 +113,12 @@ def _select_blocks(
 def render(
     reply: ReplyDecision, blocks: Sequence[ModelBlock], requested_mode: RequestMode,
     locale: str, evidence: dict[str, Evidence], model: str,
+    *, question: str = "", prompt_version: str = PROMPT_VERSION,
 ) -> dict:
-    mode, coverage, passages = _select_blocks(reply, blocks, requested_mode, evidence)
+    mode, coverage, passages = _select_blocks(
+        reply, blocks, requested_mode, evidence,
+        glossary_fallback_allowed=bool(GLOSSARY_FALLBACK.search(question)),
+    )
     source_ids = list(dict.fromkeys(key for _, keys in passages for key in keys))
     indices = {key: index for index, key in enumerate(source_ids)}
     used = [evidence[key] for key in source_ids]
@@ -137,7 +153,7 @@ def render(
         "review_status": review_status,
         "coverage": coverage,
         "blocks": [{"text": text, "source_indices": [indices[key] for key in keys]} for text, keys in passages],
-        "diagnostics": {"prompt_version": PROMPT_VERSION, "model": model},
+        "diagnostics": {"prompt_version": prompt_version, "model": model},
     }
 
 
@@ -202,7 +218,7 @@ async def answer(
         reply = ModelReply.model_validate(completion.data)
     except ValidationError as exc:
         raise AssistantUnavailable("Модель вернула ответ вне схемы", usage=completion.usage) from exc
-    return render(reply, reply.blocks, mode, locale, evidence, completion.model)
+    return render(reply, reply.blocks, mode, locale, evidence, completion.model, question=question)
 
 
 async def run_answer(

@@ -6,18 +6,18 @@ from unittest.mock import AsyncMock, patch
 from pydantic import ValidationError
 
 from app.assistant.client import Completion
+from app.assistant.prompts import ANSWER_PROMPT
 from app.assistant.service import ModelReply
 from app.infra.config import LLMSettings
 from app.infra.files import write_json
-from experiments.rag_ab import live, report
-from experiments.rag_ab.live import ExperimentalReply, run_batches, trial
-from experiments.rag_ab.prompts import REVISED
+from experiments.rag_ab import baseline, live, report
+from experiments.rag_ab.live import run_batches, trial
 from experiments.rag_ab.retrieval import PackedContext
 from tests.support.catalog import temporary_dir
 
 
 class ExperimentTests(unittest.IsolatedAsyncioTestCase):
-    def test_experimental_reply_accepts_eight_passages(self) -> None:
+    def test_production_reply_accepts_eight_passages(self) -> None:
         reply = {
             "mode": "explain",
             "coverage": "complete",
@@ -25,8 +25,8 @@ class ExperimentTests(unittest.IsolatedAsyncioTestCase):
             "blocks": [{"text": "Answer", "evidence_ids": [f"e{i}" for i in range(1, 9)]}],
         }
         with self.assertRaises(ValidationError):
-            ModelReply.model_validate(reply)
-        self.assertEqual(ExperimentalReply.model_validate(reply).blocks[0].evidence_ids[-1], "e8")
+            baseline.ModelReply.model_validate(reply)
+        self.assertEqual(ModelReply.model_validate(reply).blocks[0].evidence_ids[-1], "e8")
 
     async def test_invalid_plan_uses_the_single_call_prompt(self) -> None:
         case = {"id": "planet", "question": "Why do planets orbit stars?", "locale": "en"}
@@ -55,7 +55,7 @@ class ExperimentTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(result["result"]["answer"], "Gravity keeps planets in orbit.")
         self.assertEqual(result["usage"], {"prompt_tokens": 30})
         system, payload = writer.complete.call_args.args
-        self.assertEqual(system, REVISED)
+        self.assertEqual(system, ANSWER_PROMPT)
         self.assertNotIn("validated_plan", payload)
 
     async def test_resume_only_runs_missing_keys(self) -> None:

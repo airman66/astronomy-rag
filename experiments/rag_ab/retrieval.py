@@ -13,12 +13,12 @@ from typing import Any, TypedDict
 from unittest.mock import patch
 
 from app.assistant import retrieval
-from app.assistant.prompts import ANSWER_PROMPT, PROMPT_VERSION
 from app.assistant.retrieval import Evidence, EvidenceKind, EvidenceReference
 from app.catalog import search, storage, vector
 from app.catalog.corpus import corpus_digest
 from app.catalog.index import read_manifest
 from app.infra.files import checksum, write_json
+from experiments.rag_ab.baseline import ANSWER_PROMPT, PROMPT_VERSION
 from scripts.evaluation.retrieval import matches_source, percentile
 
 ROOT = Path(__file__).parent

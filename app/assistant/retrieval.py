@@ -47,7 +47,7 @@ def image_for(record: dict, section: dict, locale: str) -> dict | None:
     return None
 
 
-EVIDENCE_LIMIT = 6
+EVIDENCE_LIMIT = 8
 FRAGMENT_LIMIT = 1800
 CONTEXT_LIMIT = 8500
 ARTICLE_REQUEST = re.compile(r"\b(?:articles?|стать\w*)\b", re.IGNORECASE)
