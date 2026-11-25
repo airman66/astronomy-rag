@@ -13,7 +13,7 @@ from typing import Any, TypedDict
 from unittest.mock import patch
 
 from app.assistant import retrieval
-from app.assistant.retrieval import Evidence, EvidenceKind, EvidenceReference
+from app.assistant.retrieval import PACKING_VERSION, Evidence, EvidenceKind, EvidenceReference
 from app.catalog import search, storage, vector
 from app.catalog.corpus import corpus_digest
 from app.catalog.index import read_manifest
@@ -279,6 +279,7 @@ def main() -> None:
     index_provenance = {
         "index": manifest,
         "index_manifest_sha256": checksum(storage.DATA / "index" / "index-manifest.json"),
+        "packing_version": PACKING_VERSION,
     }
     assert vector.load() is not None
     warm, mode = search.search_with_mode("What is a star?", "en", limit=80)

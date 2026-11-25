@@ -25,8 +25,9 @@ from app.assistant.client import (
     LLMClient,
 )
 from app.assistant.prompts import ANSWER_PROMPT, PROMPT_VERSION
-from app.assistant.retrieval import Evidence
-from app.assistant.service import GLOSSARY_FORBIDDEN, ModelReply, answer_payload, render
+from app.assistant.retrieval import PACKING_VERSION, Evidence
+from app.assistant.service import ModelReply, answer_payload, render
+from app.assistant.source_policy import GLOSSARY_FORBIDDEN
 from app.catalog import storage
 from app.infra.config import LLMSettings, assistant_deadline, load_env
 from app.infra.files import write_json
@@ -255,6 +256,7 @@ async def trial(
             row["result"] = render(
                 reply, reply.blocks, mode, case["locale"], evidence, completion.model,
                 question="" if variant == "A" else question,
+                page=case.get("context_record_id"),
                 prompt_version=baseline.PROMPT_VERSION if variant == "A" else PROMPT_VERSION,
             )
             row["model_mode"] = reply.mode
@@ -431,6 +433,8 @@ async def run_phase(phase: str, config: str, concurrency: int, settings: LLMSett
     retrieval = json.loads(snapshot_bytes)
     if not isinstance(retrieval, dict) or retrieval["suite_sha256"].get(suite) != suite_sha:
         raise SystemExit(f"Retrieval snapshot suite differs: {snapshot_path}. Rebuild the snapshot.")
+    if retrieval.get("packing_version") != PACKING_VERSION:
+        raise SystemExit(f"Retrieval snapshot packing differs: {snapshot_path}. Rebuild the snapshot.")
     corpus_sha = retrieval["index"]["corpus_sha256"]
     if not corpus_sha or corpus_sha != storage.corpus_version():
         raise SystemExit(f"Retrieval snapshot corpus differs from the active catalogue: {snapshot_path}")
@@ -450,6 +454,7 @@ async def run_phase(phase: str, config: str, concurrency: int, settings: LLMSett
     provenance = {
         "phase": phase,
         "context": "factorial" if phase == "packing" else config,
+        "packing_version": PACKING_VERSION,
         "concurrency": concurrency,
         "model": settings.model,
         "answer_budget": settings.max_tokens or 768,

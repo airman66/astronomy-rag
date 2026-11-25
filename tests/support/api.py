@@ -36,14 +36,14 @@ class FakeModel:
         evidence = payload["evidence"]
         requested = payload["requested_mode"]
         if "борщ" in payload["question"].lower():
-            return Completion({"mode": "out_of_scope", "coverage": "complete", "article_fallback": "default", "definition_id": None, "blocks": []},
+            return Completion({"mode": "out_of_scope", "coverage": "complete", "article_fallback": "default", "article_reference": None, "definition_id": None, "blocks": []},
                               "test-model")
         if requested == "general":
-            return Completion({"mode": "general", "coverage": "complete", "article_fallback": "default", "definition_id": None,
+            return Completion({"mode": "general", "coverage": "complete", "article_fallback": "default", "article_reference": None, "definition_id": None,
                                "blocks": [{"text": "Гравитация удерживает планету на орбите.", "evidence_ids": []}]},
                               "test-model")
         definition = next((item["id"] for item in evidence if item["definition"]), None)
-        return Completion({"mode": "term", "coverage": "complete", "article_fallback": "default", "definition_id": definition, "blocks": []},
+        return Completion({"mode": "term", "coverage": "complete", "article_fallback": "default", "article_reference": None, "definition_id": definition, "blocks": []},
                           "test-model")
 
 

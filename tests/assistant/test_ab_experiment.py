@@ -7,6 +7,7 @@ from pydantic import ValidationError
 
 from app.assistant.client import Completion
 from app.assistant.prompts import ANSWER_PROMPT
+from app.assistant.retrieval import PACKING_VERSION
 from app.assistant.service import ModelReply
 from app.infra.config import LLMSettings
 from app.infra.files import write_json
@@ -26,17 +27,18 @@ class ExperimentTests(unittest.IsolatedAsyncioTestCase):
         }
         with self.assertRaises(ValidationError):
             baseline.ModelReply.model_validate(reply)
-        self.assertEqual(ModelReply.model_validate({**reply, "article_fallback": "default"}).blocks[0].evidence_ids[-1], "e8")
+        self.assertEqual(ModelReply.model_validate({**reply, "article_fallback": "default", "article_reference": None}).blocks[0].evidence_ids[-1], "e8")
 
     async def test_provider_comparison_scores_complete_checkpoint_without_oauth(self) -> None:
         out = temporary_dir(self)
         case = {"id": "star", "question": "What is a star?", "locale": "en", "expected_modes": ["term"]}
-        write_json(out / "legacy-retrieval.json", {
+        snapshot = {
             "suite_sha256": {"legacy": "suite"}, "index": {"corpus_sha256": "corpus"},
             "index_manifest_sha256": "index", "results": [{
                 "id": "star", "configs": {"6x8500": {"evidence": []}},
             }],
-        })
+        }
+        write_json(out / "legacy-retrieval.json", {**snapshot, "packing_version": PACKING_VERSION})
         rows = [
             {"id": "star", "variant": provider, "error": "timeout", "latency_ms": 1, "calls": [], "usage": {}}
             for provider in ("deepseek", "gigachat")
@@ -54,6 +56,10 @@ class ExperimentTests(unittest.IsolatedAsyncioTestCase):
             patch("builtins.print"),
         ):
             await providers.compare("A")
+            for stale in (snapshot, {**snapshot, "packing_version": "old"}):
+                write_json(out / "legacy-retrieval.json", stale)
+                with self.assertRaisesRegex(SystemExit, "current packing"):
+                    await providers.compare("A")
         scored = json.loads((out / "providers-scored.json").read_text())
         self.assertEqual([row["error"] for row in scored["results"]], ["timeout", "timeout"])
 
@@ -70,7 +76,7 @@ class ExperimentTests(unittest.IsolatedAsyncioTestCase):
         response = {
             "mode": "general",
             "coverage": "complete",
-            "article_fallback": "default",
+            "article_fallback": "default", "article_reference": None,
             "definition_id": None,
             "blocks": [{"text": "Gravity keeps planets in orbit.", "evidence_ids": []}],
         }
@@ -141,10 +147,10 @@ class ExperimentTests(unittest.IsolatedAsyncioTestCase):
         retrieval = {
             "index": {"corpus_sha256": "corpus"},
             "index_manifest_sha256": "same-index",
+            "packing_version": PACKING_VERSION,
             "suite_sha256": {"new": hashlib.sha256(suite_path.read_bytes()).hexdigest()},
             "results": [{"id": "a", "configs": {"8x11000": snapshot}}],
         }
-        write_json(snapshot_path, retrieval)
         write_json(schedule_path, {"a": ["A"]})
         trial_mock = self.enterContext(patch.object(live, "trial", return_value={
             "id": "a", "variant": "A", "result": {
@@ -158,6 +164,10 @@ class ExperimentTests(unittest.IsolatedAsyncioTestCase):
         }))
         settings = LLMSettings("deepseek", "deepseek-flash", "unused")
 
+        write_json(snapshot_path, {**retrieval, "packing_version": "old"})
+        with self.assertRaisesRegex(SystemExit, "snapshot packing differs"):
+            await live.run_phase("repeat", "8x11000", 1, settings)
+        write_json(snapshot_path, retrieval)
         await live.run_phase("repeat", "8x11000", 1, settings)
         await live.run_phase("repeat", "8x11000", 1, settings)
 

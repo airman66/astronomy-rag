@@ -50,6 +50,7 @@ def image_for(record: dict, section: dict, locale: str) -> dict | None:
 EVIDENCE_LIMIT = 8
 FRAGMENT_LIMIT = 1800
 CONTEXT_LIMIT = 8500
+PACKING_VERSION = "2026-11-25.2"
 ARTICLE_REQUEST = re.compile(r"\b(?:articles?|стать\w*)\b", re.IGNORECASE)
 ARTICLE_PASSAGES_REQUEST = re.compile(r"\b(?:по статье|из статьи|use (?:the |an? )?article|from (?:the |an? )?article)\b", re.IGNORECASE)
 DEFINITION_REQUEST = re.compile(r"\b(?:define(?:\s+(?:an?|the))?|дай(?:те)?\s+определение)\s+", re.IGNORECASE)

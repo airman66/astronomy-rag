@@ -12,7 +12,7 @@ import httpx
 
 from app.assistant.client import LLMClient
 from app.assistant.prompts import ANSWER_PROMPT, PROMPT_VERSION
-from app.assistant.retrieval import CONTEXT_LIMIT, EVIDENCE_LIMIT
+from app.assistant.retrieval import CONTEXT_LIMIT, EVIDENCE_LIMIT, PACKING_VERSION
 from app.assistant.service import ModelReply
 from app.catalog import storage
 from app.infra.config import LLMSettings, assistant_deadline, load_env
@@ -39,11 +39,12 @@ async def compare(variant: str) -> None:
     index_sha = checksum(storage.DATA / "index" / "index-manifest.json")
     if (
         not isinstance(retrieval, dict)
+        or retrieval.get("packing_version") != PACKING_VERSION
         or retrieval["suite_sha256"]["legacy"] != suite_sha
         or retrieval["index"]["corpus_sha256"] != storage.corpus_version()
         or retrieval["index_manifest_sha256"] != index_sha
     ):
-        raise SystemExit("Rebuild legacy-retrieval.json against the active catalogue and index")
+        raise SystemExit("Rebuild legacy-retrieval.json with the current packing, catalogue and index")
     if variant == "A":
         packing = f"{baseline.EVIDENCE_LIMIT}x{baseline.CONTEXT_LIMIT}"
         system, prompt_version = baseline.ANSWER_PROMPT, baseline.PROMPT_VERSION
@@ -65,6 +66,7 @@ async def compare(variant: str) -> None:
         "prompt_sha256": hashlib.sha256(system.encode()).hexdigest(),
         "gigachat_schema_sha256": hashlib.sha256(json.dumps(response_format, sort_keys=True).encode()).hexdigest(),
         "packing": packing,
+        "packing_version": PACKING_VERSION,
         "index_sha256": index_sha,
         "retrieval_sha256": hashlib.sha256(raw).hexdigest(),
         "suite_sha256": suite_sha,
