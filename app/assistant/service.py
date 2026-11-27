@@ -226,10 +226,10 @@ def answer_payload(
     return payload
 
 
-async def answer(
-    question: str, mode: RequestMode, locale: str, context: dict[str, object] | None, client: CompletionClient,
+async def prepare_answer(
+    question: str, mode: RequestMode, locale: str, context: dict[str, object] | None,
     *, trace: dict | None = None, allow_index_load: bool = True,
-) -> dict:
+) -> tuple[dict[str, object], dict[str, Evidence], ArticleScope | None]:
     started = time.perf_counter()
     raw_hint = (context or {}).get("record_id")
     hint = raw_hint if isinstance(raw_hint, str) else None
@@ -251,6 +251,16 @@ async def answer(
             {"id": key, **item.reference(), "url": item.url, "text": item.text}
             for key, item in evidence.items()
         ]
+    return payload, evidence, scope
+
+
+async def answer(
+    question: str, mode: RequestMode, locale: str, context: dict[str, object] | None, client: CompletionClient,
+    *, trace: dict | None = None, allow_index_load: bool = True,
+) -> dict:
+    payload, evidence, scope = await prepare_answer(
+        question, mode, locale, context, trace=trace, allow_index_load=allow_index_load,
+    )
     started = time.perf_counter()
     try:
         completion = await client.complete(ANSWER_PROMPT, payload)

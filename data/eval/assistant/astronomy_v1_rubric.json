@@ -1,0 +1,1747 @@
+{
+  "schema_version": 1,
+  "rubric": [
+    {
+      "id": "q001",
+      "category": "definition",
+      "mode": "term",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Расстояние, внутри которого приливные силы могут разрушить удерживаемое собственной гравитацией тело.",
+          "sources": [
+            {
+              "source": "term:420#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q002",
+      "category": "definition",
+      "mode": "term",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "A graph of an object's brightness, magnitude or colour versus time.",
+          "sources": [
+            {
+              "source": "term:176#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q003",
+      "category": "definition",
+      "mode": "term",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Гравитационное присоединение вещества к объекту.",
+          "sources": [
+            {
+              "source": "term:425#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q004",
+      "category": "definition",
+      "mode": "term",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "An early stage of star formation, formed by contraction of material from a molecular cloud.",
+          "sources": [
+            {
+              "source": "term:264#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q005",
+      "category": "definition",
+      "mode": "term",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Газ и пыль между звёздными системами галактики.",
+          "sources": [
+            {
+              "source": "term:450#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q006",
+      "category": "definition",
+      "mode": "term",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "A collection of observational data covering a region or all of the sky.",
+          "sources": [
+            {
+              "source": "term:529#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q007",
+      "category": "definition",
+      "mode": "term",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Классификация звёзд по светимости относительно других звёзд того же спектрального класса.",
+          "sources": [
+            {
+              "source": "term:503#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q008",
+      "category": "definition",
+      "mode": "term",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Minimum initial speed for escape from the gravity of the body without further propulsion.",
+          "sources": [
+            {
+              "source": "term:105#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q009",
+      "category": "definition",
+      "mode": "term",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Слабое свечение солнечного света, рассеянного межпланетной пылью.",
+          "sources": [
+            {
+              "source": "term:392#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q010",
+      "category": "definition",
+      "mode": "term",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "A large expulsion of plasma and magnetic field from the solar corona.",
+          "sources": [
+            {
+              "source": "term:505#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q011",
+      "category": "definition",
+      "mode": "term",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Координата вдоль небесного экватора, аналог долготы; отсчёт от точки весеннего равноденствия.",
+          "sources": [
+            {
+              "source": "term:286#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q012",
+      "category": "definition",
+      "mode": "term",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "An object of known or inferable luminosity used to estimate distance.",
+          "sources": [
+            {
+              "source": "term:476#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q013",
+      "category": "definition",
+      "mode": "term",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Двойная система, в которой звёзды периодически закрывают друг друга с точки зрения наблюдателя.",
+          "sources": [
+            {
+              "source": "term:508#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q014",
+      "category": "definition",
+      "mode": "term",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "The farthest point from Earth along its orbit.",
+          "sources": [
+            {
+              "source": "term:519#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q015",
+      "category": "definition",
+      "mode": "term",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Протяжённая примерно сферическая область вокруг Галактики, выходящая за пределы диска.",
+          "sources": [
+            {
+              "source": "term:118#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q016",
+      "category": "definition",
+      "mode": "term",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Slow change in the direction of a spinning body's axis; in Earth's case it changes the celestial poles over time.",
+          "sources": [
+            {
+              "source": "term:498#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q017",
+      "category": "glossary",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Синхронизация периода вращения Луны с периодом обращения вокруг Земли удерживает одну сторону обращённой к Земле.",
+          "sources": [
+            {
+              "source": "term:484#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q018",
+      "category": "glossary",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Atmospheric turbulence deflects starlight and can cause the observed fluctuations independently of the star.",
+          "sources": [
+            {
+              "source": "term:427#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q019",
+      "category": "glossary",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Один угловой диаметр зависит и от размера, и от расстояния; без размера однозначного расстояния нет.",
+          "sources": [
+            {
+              "source": "term:9#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q020",
+      "category": "glossary",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Interstellar dust dims light by absorption/scattering and removes shorter wavelengths preferentially, making the light redder.",
+          "sources": [
+            {
+              "source": "term:396#definition"
+            },
+            {
+              "source": "term:472#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q021",
+      "category": "glossary",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Наклон меняет высоту Солнца и/или продолжительность дня при движении Земли вокруг Солнца, меняя освещённость участка.",
+          "sources": [
+            {
+              "source": "term:300#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q022",
+      "category": "glossary",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Some ionised shells appeared like planetary discs through small telescopes; their origin is stellar.",
+          "sources": [
+            {
+              "source": "term:256#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q023",
+      "category": "glossary",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Угловое разрешение задаёт минимальный угловой промежуток между различимыми точками.",
+          "sources": [
+            {
+              "source": "term:284#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q024",
+      "category": "glossary",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "The Moon's apparent disk is smaller than the Sun's, leaving a ring; there is no totality at that observer's location.",
+          "sources": [
+            {
+              "source": "term:11#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q025",
+      "category": "glossary",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Период связан со светимостью или абсолютной величиной; сопоставление с наблюдаемым блеском даёт расстояние.",
+          "sources": [
+            {
+              "source": "term:54#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q026",
+      "category": "glossary",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "A meteorite is surviving material reaching the surface; an incoming object is a meteoroid and its atmospheric light is a meteor.",
+          "sources": [
+            {
+              "source": "term:196#definition"
+            },
+            {
+              "source": "term:197#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q027",
+      "category": "glossary",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Поле тяготения неоднородно по размеру тела; ближняя сторона притягивается сильнее, разность даёт приливный эффект.",
+          "sources": [
+            {
+              "source": "term:501#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q028",
+      "category": "glossary",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Stars of similar spectral type or temperature can have different luminosity due to size; luminosity class provides the distinction.",
+          "sources": [
+            {
+              "source": "term:503#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q029",
+      "category": "glossary",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Излучение увеличивает интенсивность на определённой длине волны, поглощение уменьшает её.",
+          "sources": [
+            {
+              "source": "term:514#definition"
+            },
+            {
+              "source": "term:515#definition"
+            },
+            {
+              "source": "term:516#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q030",
+      "category": "glossary",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Gravitational energy becomes heat as material contracts.",
+          "sources": [
+            {
+              "source": "term:264#definition"
+            },
+            {
+              "source": "term:525#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q031",
+      "category": "glossary",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "В обоих случаях вещество под действием гравитации присоединяется к другому объекту: аккреция.",
+          "sources": [
+            {
+              "source": "term:425#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q032",
+      "category": "glossary",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Jupiter is a gas giant whose bulk is dominated by hydrogen and helium.",
+          "sources": [
+            {
+              "source": "term:125#definition"
+            }
+          ]
+        },
+        {
+          "claim": "Uranus is an ice giant with a large internal component rich in water, ammonia and methane despite a hydrogen-helium atmosphere.",
+          "sources": [
+            {
+              "source": "term:153#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q033",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Звезда A ярче по наблюдаемому потоку примерно в 100 раз.",
+          "sources": [
+            {
+              "source": "article:stellar-magnitudes#apparent",
+              "quote": "пять величин"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q034",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Apparent magnitude is 8; the distance modulus is 5.",
+          "sources": [
+            {
+              "source": "article:stellar-magnitudes#example",
+              "quote": "distance modulus"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q035",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Нет. Абсолютная величина в полосе характеризует стандартный блеск только в выбранной полосе, а полная светимость суммируется по спектру.",
+          "sources": [
+            {
+              "source": "article:stellar-magnitudes#absolute",
+              "quote": "полной светимост"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q036",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Approximately −30 km/s or 30 km/s towards the observer under the nonrelativistic approximation.",
+          "sources": [
+            {
+              "source": "article:doppler-effect#radial-velocity",
+              "quote": "fractional change in wavelength"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q037",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Расширение пространства и разность гравитационных потенциалов.",
+          "sources": [
+            {
+              "source": "article:doppler-effect#other-redshifts",
+              "quote": "расширен"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q038",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Longer wavelength is a redshift and, for motion, indicates recession along the line of sight.",
+          "sources": [
+            {
+              "source": "article:doppler-effect#wavelength-shift",
+              "quote": "producing a redshift"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q039",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "0,05 радиуса звезды, или 5%; квадратный корень из доли 0,0025.",
+          "sources": [
+            {
+              "source": "article:exoplanet-detection#transit",
+              "quote": "квадрат"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q040",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Yes: the orbit's projection may never cross the stellar disc as seen from Earth.",
+          "sources": [
+            {
+              "source": "article:exoplanet-detection#limitations",
+              "quote": "orbit may not cross the stellar disk"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q041",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Затменная двойная может имитировать транзиты; активность звезды может искажать данные лучевой скорости.",
+          "sources": [
+            {
+              "source": "article:exoplanet-detection#limitations",
+              "quote": "Затменная двойная"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q042",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "No; the sub-satellite point moves north and south and only an equatorial circular prograde case is geostationary.",
+          "sources": [
+            {
+              "source": "article:geostationary-orbit#geosynchronous",
+              "quote": "moves north and south"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q043",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Примерно 35 786 км над экватором; период равен звёздным суткам, примерно 23 ч 56 мин.",
+          "sources": [
+            {
+              "source": "article:geostationary-orbit#orbit-conditions",
+              "quote": "звёздн"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q044",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "That point traces a circle in a plane offset from Earth's centre, but a free orbit in Earth's central field must lie in a plane through the centre.",
+          "sources": [
+            {
+              "source": "article:geostationary-orbit#latitude",
+              "quote": "a plane offset from Earth’s center"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q045",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Нет; они дают сведения о распределении дополнительной гравитирующей массы и не устанавливают её частичную природу.",
+          "sources": [
+            {
+              "source": "article:dark-matter-and-energy#matter",
+              "quote": "вращение галактик"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q046",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Distance measurements of Type Ia supernovae and a cosmological constant.",
+          "sources": [
+            {
+              "source": "article:dark-matter-and-energy#energy",
+              "quote": "Distance measurements of Type Ia"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q047",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "«Восход Земли» Apollo 8 и Pale Blue Dot / «Бледная голубая точка» Voyager 1.",
+          "sources": [
+            {
+              "source": "article:oae-document-earthasaplanet_mini_review#page-4",
+              "quote": "Аполлон"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q048",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Check each image as soon as it is taken, rather than waiting until all observations finish.",
+          "sources": [
+            {
+              "source": "article:oae-document-remoteobserving_mini_review#page-8",
+              "quote": "check each image as soon as taken"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q049",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "На момент обзора более 350 проектов и более 2 миллионов зарегистрированных добровольцев.",
+          "sources": [
+            {
+              "source": "article:oae-document-citizenscience_mini_review#page-4",
+              "quote": "350 проектов"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q050",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Pinhole projection and mirror projection.",
+          "sources": [
+            {
+              "source": "article:oae-document-daytimeastronomy_mini_review#page-17",
+              "quote": "pinhole and mirror projection"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q051",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "По окончании программы; например, количество наблюдений/ответов или доля/процент.",
+          "sources": [
+            {
+              "source": "article:oae-document-evaluationofresourcesandactivities_mini_review#page-3",
+              "quote": "По завершении"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q052",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "A cardboard strip of 20 by 3 cm and a 65 cm string.",
+          "sources": [
+            {
+              "source": "article:oae-document-low-techastronomyeducation_mini_review#page-16",
+              "quote": "string of length of 65cm"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q053",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Интервал определяет орбитальный период; глубина при известном радиусе звезды даёт радиус планеты.",
+          "sources": [
+            {
+              "source": "article:exoplanet-detection#transit",
+              "quote": "квадрат"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q054",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Galaxy rotation and lensing probe mass distribution; the distance–redshift relation probes expansion history.",
+          "sources": [
+            {
+              "source": "article:dark-matter-and-energy#comparison",
+              "quote": "distance–redshift relation"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q055",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Допустимы телескопы, купол, датчики погоды, сервер; функции ПО — дистанционное управление сервером, куполом, телескопом, наблюдениями или камерой.",
+          "sources": [
+            {
+              "source": "article:oae-document-remoteobserving_mini_review#page-6",
+              "quote": "метеодатчики"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q056",
+      "category": "article",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Learners perceive and understand information in different ways; providing it via multiple perceptual channels helps access.",
+          "sources": [
+            {
+              "source": "article:oae-document-equitydiversityandinclusionineducation_mini_review#page-4",
+              "quote": "different per- ception channels"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q057",
+      "category": "cross_source",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Измеряется компонента относительной скорости вдоль луча зрения.",
+          "sources": [
+            {
+              "source": "article:doppler-effect#wavelength-shift",
+              "quote": "красное смещение"
+            }
+          ]
+        },
+        {
+          "claim": "Звезда обращается вокруг общего центра масс, поэтому движение к наблюдателю и от него периодически меняет линии.",
+          "sources": [
+            {
+              "source": "article:exoplanet-detection#radial-velocity",
+              "quote": "нижнюю границу массы"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q058",
+      "category": "cross_source",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Under the assumptions, the same fractional dip follows from the same planet-to-star radius ratio.",
+          "sources": [
+            {
+              "source": "article:exoplanet-detection#transit",
+              "quote": "fractional depth is approximately"
+            }
+          ]
+        },
+        {
+          "claim": "Different distances or extinction can give different apparent magnitudes irrespective of the fractional dip.",
+          "sources": [
+            {
+              "source": "article:stellar-magnitudes#apparent",
+              "quote": "both distance and extinction"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q059",
+      "category": "cross_source",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "История расширения наблюдается по зависимости расстояния и красного смещения; важны расстояния по сверхновым Ia.",
+          "sources": [
+            {
+              "source": "article:dark-matter-and-energy#energy",
+              "quote": "сверхновых"
+            },
+            {
+              "source": "article:dark-matter-and-energy#comparison",
+              "quote": "связь расстояния с красным смещением"
+            }
+          ]
+        },
+        {
+          "claim": "Красное смещение может возникать из-за расширения пространства, поэтому его нельзя автоматически толковать как обычную лучевую скорость.",
+          "sources": [
+            {
+              "source": "article:doppler-effect#other-redshifts",
+              "quote": "расширен"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q060",
+      "category": "cross_source",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "A receding star's spectral line shifts to a longer wavelength.",
+          "sources": [
+            {
+              "source": "article:doppler-effect#wavelength-shift",
+              "quote": "producing a redshift"
+            }
+          ]
+        },
+        {
+          "claim": "Extinction reduces observed flux and makes apparent magnitude numerically larger in the band.",
+          "sources": [
+            {
+              "source": "article:stellar-magnitudes#apparent",
+              "quote": "both distance and extinction"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q061",
+      "category": "cross_source",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Угловой диаметр — видимый размер объекта, измеряемый углом.",
+          "sources": [
+            {
+              "source": "term:9#definition"
+            }
+          ]
+        },
+        {
+          "claim": "Угловое разрешение — минимальный угол для различения двух точек.",
+          "sources": [
+            {
+              "source": "term:284#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q062",
+      "category": "cross_source",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Planetary nebula comes from expelled outer layers of a dying star.",
+          "sources": [
+            {
+              "source": "term:256#definition"
+            }
+          ]
+        },
+        {
+          "claim": "Supernova remnant is shocked material from an explosive supernova.",
+          "sources": [
+            {
+              "source": "term:526#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q063",
+      "category": "cross_source",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Главная последовательность включает звёзды на стадии синтеза водорода в ядре, образующие полосу диаграммы HR.",
+          "sources": [
+            {
+              "source": "term:186#definition"
+            }
+          ]
+        },
+        {
+          "claim": "Класс светимости сравнивает светимости звёзд одного спектрального типа.",
+          "sources": [
+            {
+              "source": "term:503#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q064",
+      "category": "cross_source",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "A meteorite is material that reaches the surface.",
+          "sources": [
+            {
+              "source": "term:196#definition"
+            }
+          ]
+        },
+        {
+          "claim": "An impact crater is a depression made by an object hitting the surface.",
+          "sources": [
+            {
+              "source": "term:154#definition"
+            },
+            {
+              "source": "term:74#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q065",
+      "category": "cross_source",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Эксперимент с тенью позволяет оценить местный солнечный полдень, стороны света или сезонные изменения длины тени.",
+          "sources": [
+            {
+              "source": "article:oae-document-daytimeastronomy_mini_review#page-4",
+              "quote": "местный астрономический полдень"
+            },
+            {
+              "source": "article:oae-document-daytimeastronomy_mini_review#page-6"
+            }
+          ]
+        },
+        {
+          "claim": "Дистанционный телескоп с управляемой камерой; засчитываются указанные в обзоре телескоп и камера.",
+          "sources": [
+            {
+              "source": "article:oae-document-remoteobserving_mini_review#page-6",
+              "quote": "метеодатчики"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q066",
+      "category": "cross_source",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Volunteers make classifications across projects.",
+          "sources": [
+            {
+              "source": "article:oae-document-citizenscience_mini_review#page-4",
+              "quote": "one million classifications"
+            },
+            {
+              "source": "article:oae-document-citizenscience_mini_review#page-5"
+            }
+          ]
+        },
+        {
+          "claim": "Teachers use the same online astronomy data archives as professional astronomers and do authentic research.",
+          "sources": [
+            {
+              "source": "article:oae-document-astronomyeducationwithauthenticdata_mini_review#page-4",
+              "quote": "the same online astronomy"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q067",
+      "category": "cross_source",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Межзвёздная среда — общий газ и пыль между звёздными системами.",
+          "sources": [
+            {
+              "source": "term:450#definition"
+            }
+          ]
+        },
+        {
+          "claim": "Протозвезда — ранний объект при коллапсе вещества молекулярного облака.",
+          "sources": [
+            {
+              "source": "term:264#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q068",
+      "category": "cross_source",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Perihelion is the closest point to the Sun.",
+          "sources": [
+            {
+              "source": "term:244#definition"
+            }
+          ]
+        },
+        {
+          "claim": "Apogee is the farthest point from Earth.",
+          "sources": [
+            {
+              "source": "term:519#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q069",
+      "category": "cross_source",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Линии смещаются к более коротким волнам при приближении.",
+          "sources": [
+            {
+              "source": "article:doppler-effect#wavelength-shift",
+              "quote": "красное смещение"
+            }
+          ]
+        },
+        {
+          "claim": "При неизвестном наклоне лучевая скорость обычно ограничивает минимальную массу планеты.",
+          "sources": [
+            {
+              "source": "article:exoplanet-detection#radial-velocity",
+              "quote": "нижнюю границу массы"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q070",
+      "category": "cross_source",
+      "mode": "article",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "A satellite completes one orbit per sidereal Earth rotation and stays over the same equatorial point.",
+          "sources": [
+            {
+              "source": "article:geostationary-orbit#orbit-conditions",
+              "quote": "one sidereal day"
+            }
+          ]
+        },
+        {
+          "claim": "Planetary transits cause repeated brightness dips; the time between them measures the orbital period.",
+          "sources": [
+            {
+              "source": "article:exoplanet-detection#transit",
+              "quote": "fractional depth is approximately"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q071",
+      "category": "policy",
+      "mode": "explain",
+      "coverage": "insufficient",
+      "facts": [],
+      "note": "Explain that the requested material is unavailable. Do not fill the missing value from another source."
+    },
+    {
+      "id": "q072",
+      "category": "policy",
+      "mode": "explain",
+      "coverage": "insufficient",
+      "facts": [],
+      "note": "Explain that the requested material is unavailable. Do not fill the missing value from another source."
+    },
+    {
+      "id": "q073",
+      "category": "policy",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Для разрешённого запасного ответа периоды вращения и обращения Луны равны; отмечено отсутствие нужной статьи.",
+          "sources": [
+            {
+              "source": "term:484#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term",
+      "note": "The response must clearly say the requested article was unavailable before grounding the answer in the glossary."
+    },
+    {
+      "id": "q074",
+      "category": "policy",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Material remaining after atmospheric entry reaches the surface, with a brief acknowledgement that the named article was unavailable.",
+          "sources": [
+            {
+              "source": "term:196#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term",
+      "note": "The response must clearly say the requested article was unavailable before grounding the answer in the glossary."
+    },
+    {
+      "id": "q075",
+      "category": "policy",
+      "mode": "article",
+      "coverage": "partial",
+      "facts": [
+        {
+          "claim": "Затменная двойная имитирует транзит. Номер партии не указан, придумывать его нельзя.",
+          "sources": [
+            {
+              "source": "article:exoplanet-detection#limitations",
+              "quote": "Затменная двойная"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q076",
+      "category": "policy",
+      "mode": "article",
+      "coverage": "partial",
+      "facts": [
+        {
+          "claim": "The reference is 10 parsecs. The article gives no CCD serial number.",
+          "sources": [
+            {
+              "source": "article:stellar-magnitudes#absolute",
+              "quote": "10 parsecs"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q077",
+      "category": "policy",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Геостационарный спутник вращается по круговой прямой экваториальной орбите с периодом вращения Земли, оставаясь над одной точкой.",
+          "sources": [
+            {
+              "source": "article:geostationary-orbit#orbit-conditions",
+              "quote": "звёздн"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q078",
+      "category": "policy",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "One star passes in front of the other along our line of sight; the eclipse is a projection, not physical coincidence.",
+          "sources": [
+            {
+              "source": "term:508#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q079",
+      "category": "policy",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Видимое перекрытие одной звезды другой уменьшает суммарный видимый поток.",
+          "sources": [
+            {
+              "source": "term:508#definition"
+            }
+          ]
+        }
+      ],
+      "source_kind": "term"
+    },
+    {
+      "id": "q080",
+      "category": "policy",
+      "mode": "explain",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Lensing and other gravitational effects reveal more mass than can be accounted for by luminous matter alone.",
+          "sources": [
+            {
+              "source": "article:dark-matter-and-energy#matter"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article"
+    },
+    {
+      "id": "q081",
+      "category": "policy",
+      "mode": "article",
+      "coverage": "partial",
+      "facts": [
+        {
+          "claim": "Круговая прямая экваториальная орбита синхронна земному вращению; вторая названная статья или её число недоступны.",
+          "sources": [
+            {
+              "source": "article:geostationary-orbit#orbit-conditions",
+              "quote": "звёздн"
+            }
+          ]
+        }
+      ],
+      "source_kind": "article",
+      "note": "Answer the available part and indicate that the second article or its requested number is unavailable."
+    },
+    {
+      "id": "q082",
+      "category": "policy",
+      "mode": "general",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Earth's rotation causes apparent motion around the celestial pole and star trails.",
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "q083",
+      "category": "general",
+      "mode": "general",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "При той же базе разрешаемый угол примерно λ/B, поэтому угол удваивается, разрешение ухудшается.",
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "q084",
+      "category": "general",
+      "mode": "general",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "It blocks off-axis stray light and reduces unwanted background without doing the focusing.",
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "q085",
+      "category": "general",
+      "mode": "general",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Для измерения и вычитания электронного нулевого уровня/пьедестала считывания, без светового сигнала.",
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "q086",
+      "category": "general",
+      "mode": "general",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Incomplete sampling gives a dirty beam with sidelobes; deconvolution helps separate artefacts from real emission.",
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "q087",
+      "category": "general",
+      "mode": "general",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Вычитание масштабированного континуума выделяет линейное излучение Hα и области ионизованного газа.",
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "q088",
+      "category": "general",
+      "mode": "general",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Changing focus can change the line profile or measured centroid and introduce systematic differences in calibration.",
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "q089",
+      "category": "general",
+      "mode": "general",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Нужно предсказать времена прихода; ошибка фазы даёт ошибку времени и проекции координаты/расстояния.",
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "q090",
+      "category": "general",
+      "mode": "general",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Polarisation phase rotates in proportion to λ², so the transform is over λ² and the resolution is set by inverse coverage in λ².",
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "q091",
+      "category": "general",
+      "mode": "general",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "Это продольная и поперечная компоненты; собственное движение переводится в поперечную скорость при известном расстоянии.",
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "q092",
+      "category": "general",
+      "mode": "general",
+      "coverage": "complete",
+      "facts": [
+        {
+          "claim": "It limits the detector's view to the cold, intended optical pupil and suppresses warm stray thermal radiation.",
+          "sources": []
+        }
+      ]
+    },
+    {
+      "id": "q093",
+      "category": "scope",
+      "mode": "out_of_scope",
+      "coverage": "complete",
+      "facts": []
+    },
+    {
+      "id": "q094",
+      "category": "scope",
+      "mode": "out_of_scope",
+      "coverage": "complete",
+      "facts": []
+    },
+    {
+      "id": "q095",
+      "category": "scope",
+      "mode": "out_of_scope",
+      "coverage": "complete",
+      "facts": []
+    },
+    {
+      "id": "q096",
+      "category": "scope",
+      "mode": "out_of_scope",
+      "coverage": "complete",
+      "facts": []
+    },
+    {
+      "id": "q097",
+      "category": "scope",
+      "mode": "out_of_scope",
+      "coverage": "complete",
+      "facts": []
+    },
+    {
+      "id": "q098",
+      "category": "scope",
+      "mode": "out_of_scope",
+      "coverage": "complete",
+      "facts": []
+    },
+    {
+      "id": "q099",
+      "category": "scope",
+      "mode": "out_of_scope",
+      "coverage": "complete",
+      "facts": []
+    },
+    {
+      "id": "q100",
+      "category": "scope",
+      "mode": "out_of_scope",
+      "coverage": "complete",
+      "facts": []
+    }
+  ]
+}
