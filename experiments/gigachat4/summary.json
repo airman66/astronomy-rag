@@ -1,0 +1,241 @@
+{
+  "configuration": {
+    "inputs_sha256": "0720ada953796c3c47a9b27915bf448facb13dbd49c5a1e315f901fd18d46fdd",
+    "rubric_sha256": "88ffad3d7b45f17d630b9a20959239d5d931b54e2be0b67aab41aaea380594b2",
+    "judge_prompt_sha256": "8aa5ef98211870361240e140a315d324a835f02455c29ce5c2df9fe119def33e",
+    "providers": {
+      "deepseek": {
+        "configuration": {
+          "request": {
+            "model": "deepseek-flash",
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "stream": false,
+            "thinking": {
+              "type": "enabled"
+            },
+            "reasoning_effort": "max"
+          },
+          "inputs_sha256": "0720ada953796c3c47a9b27915bf448facb13dbd49c5a1e315f901fd18d46fdd",
+          "provider": "deepseek",
+          "timeout_s": 180,
+          "concurrency_per_provider": 2
+        },
+        "preflight": {
+          "reported_model": "deepseek-flash",
+          "reported_provider": null,
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 81,
+            "completion_tokens": 115,
+            "total_tokens": 196,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 108
+            },
+            "prompt_cache_hit_tokens": 0,
+            "prompt_cache_miss_tokens": 81
+          },
+          "reasoning_observed": true
+        }
+      },
+      "gigachat": {
+        "configuration": {
+          "request": {
+            "model": "GigaChat/GigaChat-4-708B-A41",
+            "max_tokens": 8192,
+            "response_format": {
+              "type": "json_object"
+            },
+            "stream": false,
+            "reasoning_effort": "high",
+            "provider": {
+              "sort": "price"
+            }
+          },
+          "inputs_sha256": "0720ada953796c3c47a9b27915bf448facb13dbd49c5a1e315f901fd18d46fdd",
+          "provider": "gigachat",
+          "timeout_s": 180,
+          "concurrency_per_provider": 2
+        },
+        "preflight": {
+          "reported_model": "GigaChat-4-708B-A41B:4.0.17.11",
+          "reported_provider": null,
+          "finish_reason": "stop",
+          "usage": {
+            "prompt_tokens": 52,
+            "completion_tokens": 308,
+            "total_tokens": 360
+          },
+          "reasoning_observed": true
+        }
+      }
+    },
+    "judge": {
+      "reviewer": "Codex, blind review of rendered answers and cited passages",
+      "grades_sha256": "53f520a49710aa947d06a0bffd049c6214e76e919678a677917819fa1953c874"
+    }
+  },
+  "models": {
+    "deepseek": {
+      "attempted": 100,
+      "valid_schema": 95,
+      "errors": {
+        "finish_reason=length": 3,
+        "answer schema": 2
+      },
+      "reasoning_observed": 100,
+      "reported_models": {
+        "deepseek-flash": 100
+      },
+      "checks_passed": {
+        "mode": 91,
+        "coverage": 91,
+        "raw_citation_ids": 95,
+        "citation_integrity": 95,
+        "source_kind": 94,
+        "expected_citations": 86
+      },
+      "model_mode_on_auto": 86,
+      "auto_cases": 95,
+      "blind_graded": 95,
+      "correct_facts": 92,
+      "supported_facts": 90,
+      "graded_facts": 97,
+      "material_errors": 6,
+      "strict_pass": 79,
+      "pass_by_category": {
+        "definition": 15,
+        "glossary": 13,
+        "article": 21,
+        "cross_source": 6,
+        "policy": 9,
+        "general": 7,
+        "scope": 8
+      },
+      "pass_by_locale": {
+        "en": 40,
+        "ru": 39
+      },
+      "llm_p50_ms": 4870.28,
+      "llm_p95_ms": 26254.218,
+      "usage": {
+        "prompt_tokens": 282906,
+        "completion_tokens": 119768,
+        "total_tokens": 402674,
+        "prompt_cache_hit_tokens": 89856,
+        "reasoning_tokens": 106914
+      }
+    },
+    "gigachat": {
+      "attempted": 100,
+      "valid_schema": 98,
+      "errors": {
+        "HTTP 500": 1,
+        "answer schema": 1
+      },
+      "reasoning_observed": 99,
+      "reported_models": {
+        "GigaChat-4-708B-A41B:4.0.17.11": 99
+      },
+      "checks_passed": {
+        "mode": 96,
+        "coverage": 89,
+        "raw_citation_ids": 98,
+        "citation_integrity": 98,
+        "source_kind": 98,
+        "expected_citations": 85
+      },
+      "model_mode_on_auto": 90,
+      "auto_cases": 95,
+      "blind_graded": 98,
+      "correct_facts": 95,
+      "supported_facts": 91,
+      "graded_facts": 102,
+      "material_errors": 12,
+      "strict_pass": 74,
+      "pass_by_category": {
+        "definition": 13,
+        "glossary": 13,
+        "article": 20,
+        "cross_source": 7,
+        "policy": 9,
+        "general": 4,
+        "scope": 8
+      },
+      "pass_by_locale": {
+        "en": 38,
+        "ru": 36
+      },
+      "llm_p50_ms": 9050.433,
+      "llm_p95_ms": 37359.579,
+      "usage": {
+        "prompt_tokens": 240833,
+        "completion_tokens": 91059,
+        "total_tokens": 331892
+      }
+    }
+  },
+  "paired": {
+    "graded_pairs": 100,
+    "both_pass": 70,
+    "both_fail": 17,
+    "only_pass": {
+      "deepseek": 9,
+      "gigachat": 4
+    }
+  },
+  "retrieval": {
+    "cases": 100,
+    "with_expected_sources": 79,
+    "all_expected_found": 68,
+    "by_category": {
+      "article": {
+        "found": 22,
+        "total": 24
+      },
+      "cross_source": {
+        "found": 9,
+        "total": 14
+      },
+      "definition": {
+        "found": 16,
+        "total": 16
+      },
+      "glossary": {
+        "found": 13,
+        "total": 16
+      },
+      "policy": {
+        "found": 8,
+        "total": 9
+      }
+    },
+    "p50_ms": 384.556,
+    "p95_ms": 591.913,
+    "missed_cases": [
+      "q017",
+      "q021",
+      "q028",
+      "q048",
+      "q056",
+      "q057",
+      "q060",
+      "q065",
+      "q066",
+      "q067",
+      "q073"
+    ]
+  },
+  "artifact_sha256": {
+    "inputs.json": "0720ada953796c3c47a9b27915bf448facb13dbd49c5a1e315f901fd18d46fdd",
+    "deepseek-answers.jsonl": "6f64eec71f3a4d66b36d462b202d03c6d4776193c1c338381d4146492b518b06",
+    "gigachat-answers.jsonl": "68607b4a655631cbe005aecfb526387e0ba3b1f7c35e82adec5f092983e091d5",
+    "manual-review.json": "53f520a49710aa947d06a0bffd049c6214e76e919678a677917819fa1953c874",
+    "report.json": "2ea81919d47bbff16be0b6b3d45681d3d307dd88ecc54d94168d482095a27446"
+  }
+}
